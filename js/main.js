@@ -30,6 +30,24 @@ jQuery(function($) {'use strict';
 		})
 	};
 
+	$('#tile-view').on('click', function(){
+		$('.viewlist').addClass('hidden');
+		$('.tile').removeClass('hidden');
+		$('#tile-view').addClass('hidden');
+		$('#list-view').removeClass('hidden');
+		$('#blog').attr('id','meet-team')
+		return false;
+	});
+	$('#list-view').on('click', function(){
+		$('.tile').addClass('hidden');
+		$('.viewlist').removeClass('hidden');
+		$('#tile-view').removeClass('hidden');
+		$('#list-view').addClass('hidden');
+		$('#meet-team').attr('id','blog')
+		return false;
+
+	});
+
 	$('#tohash').on('click', function(){
 		$('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
 		return false;
@@ -209,9 +227,9 @@ jQuery(function($) {'use strict';
 	});
 
 	//Pretty Photo
-	$("a[rel^='prettyPhoto']").prettyPhoto({
-		social_tools: false
-	});
+	// $("a[rel^='prettyPhoto']").prettyPhoto({
+	// 	social_tools: false
+	// });
 
 
 });
