@@ -22,7 +22,8 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="/favicon.ico">
-</head><!--/head-->
+<script src="/js/jquery.js"></script></head><!--/head-->
+
 
 <body id="home" class="homepage">
 
@@ -62,19 +63,19 @@
                                     <div class="col-sm-12">
                                         <div class="sidebar-container">
                                             <ul class="">
-                                                <li class="active">
+                                                <li class="">
                                                     <a href="/mx/overview"><span>MX Overview</span></a> 
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <a href="/mx"><span>MX Features</span></a> 
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <a href="/mx/compatibility"><span>Feature Compatibility</span></a> 
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <a href="/mx/choosing-a-version"><span>Choosing a MX Version</span></a> 
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <a href="/mx/mx-version-on-device"><span>Checking Device MX Version</span></a> 
                                                 </li>
                                             </ul>
@@ -82,6 +83,35 @@
                                     </div>
                                 </div>
                     </aside>
+                    
+                    <script type="text/javascript">
+                        $(window).load(function() {
+                            var pathname = window.location.pathname.slice(0, -1);
+                            // console.log(pathname);
+                            var menuitem = $('.sidebar-container').find('a[href^="' + pathname + '"]').first()[0];
+                            var menulevel = $(menuitem).parents('ul').length;
+                            // console.log(menuitem);
+                            // console.log(menulevel);
+                            var parentLI = $(menuitem).parent().parent().parent();
+                            var itemarrow = parentLI.find('.arrow').first()[0];
+                    
+                            //now check for higher level
+                            if(menulevel==3){
+                    
+                                var parentFirstLevel = $(parentLI).parent().parent().first()[0];
+                                var parentarrow = $(parentFirstLevel).find('.arrow').first()[0];
+                                parentarrow.click();
+                            }
+                    
+                            itemarrow.click();
+                            $(menuitem).addClass('sidebar-selected');
+                    
+                    
+                        });
+                    
+                    
+                    
+                    </script>
                 </div>                
                 <div class="col-sm-9">
                     <div class="row">
@@ -136,7 +166,6 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/mousescroll.js"></script>

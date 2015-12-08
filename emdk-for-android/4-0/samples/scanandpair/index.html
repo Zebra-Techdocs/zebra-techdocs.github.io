@@ -22,7 +22,8 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="/favicon.ico">
-</head><!--/head-->
+<script src="/js/jquery.js"></script></head><!--/head-->
+
 
 <body id="home" class="homepage">
 
@@ -56,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h2>Scan and Pair</h2>
+                    <h1>Scan and Pair</h1>
                     <p>This sample application will show how the Scan and Pair API can be used to pair two bluetooth devices programmatically.
                     </p>
                 </div>
@@ -72,17 +73,17 @@
         <div class="container">
             
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-8">
                     <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
 	                    <div class="media service-box wow fadeInRight">
 	                        <div class="media-body">
-	                            <h4 class="media-heading">Product</h4>
+	                            <h2 class="media-heading">Product</h2>
 	                            <p>EMDK For Android - 4.0</p>
 	                        </div>
 	                    </div>
 	                    <div class="media service-box wow fadeInRight">
 	                        <div class="media-body">
-	                            <h4 class="media-heading">Devices</h4>
+	                            <h2 class="media-heading">Devices</h2>
 	                            <p>
 	                            	MC18KK
 	                            	MC32N0JB
@@ -101,13 +102,56 @@
 	                    <div class="media service-box wow fadeInRight">
 	                        <div class="media-body">
 	                            <h4 class="media-heading"></h4>
-	                            <p></p>
+	                            <p></p><h2 id="overview">Overview</h2>
+
+<p>This sample application will show how the Scan and Pair API can be used to pair two bluetooth devices programmatically.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+<li>Java JDK </li>
+
+<li>Eclipse with ADT plugin or  Android Studio</li>
+
+<li>EMDK for Android  </li>
+
+<li>An EMDK supported Android device</li>
+</ul>
+
+<p>For more information about setting up the EMDK please see the <a href="/emdk-for-android/4-0/guide/about">EMDK Overview</a>.</p>
+
+<p>For this sample, you will need two Android Bluetooth devices, one must be an EMDK for Android supported device. You will also need a barcode that contains the Bluetooth MAC address of the remote bluetooth device that we will be pairing with(The one not running the EMDK app).</p>
+
+<h2 id="loadingthesampleapplication">Loading the Sample Application</h2>
+
+<p>The following guide will walk you through setting up the EMDK samples in your IDE.</p>
+
+<ul>
+<li><a href="/emdk-for-android/4-0/guide/sample/emdksamples_androidstudio">Android Studio</a></li>
+</ul>
+
+<h2 id="usingthissample">Using This Sample</h2>
+
+<ol>
+<li><p>When the application starts it should look like the following. Leave the <strong>Always Scan</strong> and <strong>Hard Trigger</strong> check boxes selected, and insure the <strong>ScanData Type</strong> spinner is set to <strong>MAC ADDRESS</strong>.  </p>
+
+<p><img src="scanandpair1.png" alt="img">  </p></li>
+
+<li><p>Press the <strong>Pair</strong> button. The Status label will update, stating that the Scan and Pair process has started, and then prompt the user to press the hard scan trigger.</p>
+
+<p><img src="scanandpair3.png" alt="img">   </p></li>
+
+<li><p>Now place the Pairing Barcode in view of the devices scan window, and then press the devices Hard Scan Trigger. The Scan and Pair sample app will retrieve MAC address from the barcode and place it in the <strong>Bluetooth Address</strong> field, then it will initiate the pairing and connection process. Press <strong>Pair</strong> in the Pairing Request dialog, to complete the pairing process. 
+After pairing is complete, the status label will display "Bluetooth device is paired successfully".</p>
+
+<p><img src="scanandpair4.png" alt="img"> </p></li>
+</ol><p></p>
 	                        </div>
 	                    </div>
 
                     </div>
                 </div><!--/.col-sm-6-->
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                 	<div class="row">
                 		<div class="col-sm-12">
 						    <section id="main-slider">
@@ -151,7 +195,6 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/mousescroll.js"></script>

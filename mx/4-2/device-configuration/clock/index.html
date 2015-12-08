@@ -22,7 +22,8 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="/favicon.ico">
-</head><!--/head-->
+<script src="/js/jquery.js"></script></head><!--/head-->
+
 
 <body id="home" class="homepage">
 
@@ -62,19 +63,19 @@
                                     <div class="col-sm-12">
                                         <div class="sidebar-container">
                                             <ul class="">
-                                                <li class="active">
+                                                <li class="">
                                                     <span class="arrow"></span>
                                                     <a href="/mx/4-2/app-management/"><span>Application Management</span></a> 
-                                                        <ul style="display:block;">
+                                                        <ul style="">
                                                             <li>
                                                                 <a href="/mx/4-2/app-management/appmgr/"><span>App Manager</span></a>
                                                             </li>
                                                         </ul>
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <span class="arrow"></span>
                                                     <a href="/mx/4-2/device-configuration/"><span>Device Configuration</span></a> 
-                                                        <ul style="display:block;">
+                                                        <ul style="">
                                                             <li>
                                                                 <a href="/mx/4-2/device-configuration/clock/"><span>Clock Manager</span></a>
                                                             </li>
@@ -86,10 +87,10 @@
                                                             </li>
                                                         </ul>
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <span class="arrow"></span>
                                                     <a href="/mx/4-2/mx/"><span>MX Core</span></a> 
-                                                        <ul style="display:block;">
+                                                        <ul style="">
                                                             <li>
                                                                 <a href="/mx/4-2/mx/cspmgr/"><span>CSP Manager</span></a>
                                                             </li>
@@ -104,10 +105,10 @@
                                                             </li>
                                                         </ul>
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <span class="arrow"></span>
                                                     <a href="/mx/4-2/security/"><span>Security</span></a> 
-                                                        <ul style="display:block;">
+                                                        <ul style="">
                                                             <li>
                                                                 <a href="/mx/4-2/security/accessmgr/"><span>Access Manager</span></a>
                                                             </li>
@@ -119,10 +120,10 @@
                                                             </li>
                                                         </ul>
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <span class="arrow"></span>
                                                     <a href="/mx/4-2/wireless/"><span>Wireless</span></a> 
-                                                        <ul style="display:block;">
+                                                        <ul style="">
                                                             <li>
                                                                 <a href="/mx/4-2/wireless/wifi/"><span>WiFi Manager</span></a>
                                                             </li>
@@ -136,6 +137,35 @@
                                     </div>
                                 </div>
                     </aside>
+                    
+                    <script type="text/javascript">
+                        $(window).load(function() {
+                            var pathname = window.location.pathname.slice(0, -1);
+                            // console.log(pathname);
+                            var menuitem = $('.sidebar-container').find('a[href^="' + pathname + '"]').first()[0];
+                            var menulevel = $(menuitem).parents('ul').length;
+                            // console.log(menuitem);
+                            // console.log(menulevel);
+                            var parentLI = $(menuitem).parent().parent().parent();
+                            var itemarrow = parentLI.find('.arrow').first()[0];
+                    
+                            //now check for higher level
+                            if(menulevel==3){
+                    
+                                var parentFirstLevel = $(parentLI).parent().parent().first()[0];
+                                var parentarrow = $(parentFirstLevel).find('.arrow').first()[0];
+                                parentarrow.click();
+                            }
+                    
+                            itemarrow.click();
+                            $(menuitem).addClass('sidebar-selected');
+                    
+                    
+                        });
+                    
+                    
+                    
+                    </script>
                 </div>                
                 <div class="col-sm-9">
                     <div class="row">
@@ -553,7 +583,6 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/mousescroll.js"></script>

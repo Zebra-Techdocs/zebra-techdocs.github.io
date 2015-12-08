@@ -22,7 +22,8 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="/favicon.ico">
-</head><!--/head-->
+<script src="/js/jquery.js"></script></head><!--/head-->
+
 
 <body id="home" class="homepage">
 
@@ -56,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h2>Document Capture</h2>
+                    <h1>Document Capture</h1>
                     <p>This sample application will show how the Simulscan API's can be used to capture multiple types of data from paper forms.
                     </p>
                 </div>
@@ -72,17 +73,17 @@
         <div class="container">
             
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-8">
                     <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
 	                    <div class="media service-box wow fadeInRight">
 	                        <div class="media-body">
-	                            <h4 class="media-heading">Product</h4>
+	                            <h2 class="media-heading">Product</h2>
 	                            <p>EMDK For Android - 4.0</p>
 	                        </div>
 	                    </div>
 	                    <div class="media service-box wow fadeInRight">
 	                        <div class="media-body">
-	                            <h4 class="media-heading">Devices</h4>
+	                            <h2 class="media-heading">Devices</h2>
 	                            <p>
 	                            	TC55KK
 	                            	TC75KK
@@ -93,13 +94,72 @@
 	                    <div class="media service-box wow fadeInRight">
 	                        <div class="media-body">
 	                            <h4 class="media-heading"></h4>
-	                            <p></p>
+	                            <p></p><h2 id="overview">Overview</h2>
+
+<p>This sample application will show how the Simulscan API's can be used to capture multiple types of data from forms, boxes and the like.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+<li>Java JDK </li>
+
+<li>Eclipse with ADT plugin or  Android Studio</li>
+
+<li>EMDK for Android  </li>
+
+<li>An EMDK supported Android device</li>
+</ul>
+
+<p>For more information about setting up the EMDK please see the <a href="/emdk-for-android/4-0/guide/about">EMDK Overview</a>.</p>
+
+<p>You will also need:</p>
+
+<ul>
+<li>A SimulScan licensed device</li>
+
+<li>A Simulscan template</li>
+
+<li>A printed copy of the form used to create the template</li>
+</ul>
+
+<p>Follow the template generation and device licensing sections of the <a href="/emdk-for-android/4-0/tutorial/tutSimulScanAPI">SimulScan API tutorial</a></p>
+
+<h2 id="loadingthesampleapplication">Loading the Sample Application</h2>
+
+<p>The following guide will walk you through setting up the EMDK samples in your IDE.</p>
+
+<ul>
+<li><a href="/emdk-for-android/4-0/guide/sample/emdksamples_androidstudio">Android Studio</a></li>
+</ul>
+
+<h2 id="usingthissample">Using This Sample</h2>
+
+<ol>
+<li><p>Place a template on the sdcard of you SimulScan licensed device.</p>
+
+<pre class="prettyprint"><code>
+adb push myTemplate.xml /sdcard/simulscan/templates/
+</code></pre></li>
+
+<li><p>Launch The SimulScan sample application</p>
+
+<p>The Simulscan sample app will find the templates you place on the devices sdcard, and populate the "Set Template" option list.  Select the template you wish to use from that list.
+<img src="simulscanSample1.png" alt="img"> </p></li>
+
+<li><p>Press the "Read" button, and follow the on screen instructions. The sample app will extract the fields defined in the template. If the "Display Results View" option is checked, a list of results will be displayed for you to review.</p>
+
+<p><img src="simulscanSample2.png" alt="img">  <img src="simulscanSample3.png" alt="img">   </p></li>
+
+<li><p>Press the "Accept" button. The sample app will then display a screen showing how long simulscan took to capture and decode the template fields. Press the devices "Back" hardware button to return to the main screen.</p>
+
+<p><img src="simulscanSample4.png" alt="img"> </p></li>
+</ol><p></p>
 	                        </div>
 	                    </div>
 
                     </div>
                 </div><!--/.col-sm-6-->
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                 	<div class="row">
                 		<div class="col-sm-12">
 						    <section id="main-slider">
@@ -151,7 +211,6 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/mousescroll.js"></script>
