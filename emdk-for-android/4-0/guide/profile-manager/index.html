@@ -529,10 +529,13 @@
 <h3 id="accessingtheprofilemanager">Accessing the Profile Manager</h3>
 
 <ol>
-<li>Inside your IDE select an open Android Application.</li>
+<li><p>Inside your IDE, select an open Android project.</p>
 
-<li>Select "EMDK" -&gt; "Profile Manager" on the toolbar. <br>
-<img src="images/profiles/image001.jpg" alt="img"></li>
+<p>NOTE: Profile manager will create a profile xml file and add it to your project. Selecting and open project will tell profile manager which project you want the profile added to. </p></li>
+
+<li><p>Select "EMDK" -&gt; "Profile Manager" on the tool bar. </p>
+
+<p><img src="open-profile-manager.png" alt="img"></p></li>
 </ol>
 
 <h3 id="creatingaprofile">Creating a Profile</h3>
@@ -542,11 +545,17 @@
 
 <li><p>Click "Create".  </p>
 
-<p><img src="images/profiles/image002.jpg" alt="img"></p></li>
+<p><img src="open-new-profile-dialog.png" alt="img"></p></li>
 
-<li><p>Enter a Profile Name and click "Create".  This name is how the profile will be identified by the EMDK.</p>
+<li><p>Enter a name for your new Profile.  This name is how the profile will be identified by the EMDK. </p>
 
-<p><img src="images/profiles/image003.jpg" alt="img">  </p></li>
+<p><img src="enter-name-for-profile.png" alt="img">  </p></li>
+
+<li><p>Select the <strong>MX</strong> version you would like to use in your profile.</p>
+
+<p>Use the <a href="/mx/choosing-a-version/">Choosing a MX Version</a> Guide as an aid to decide which MX version to use.</p>
+
+<p><img src="select-mx-version-for-profile.png" alt="img"></p></li>
 
 <li><p>Select the features you would like to enable by selecting the item from the list of "Available Features" and clicking the right arrow button.</p>
 
@@ -558,17 +567,17 @@
   <p>You can remove a feature from the "Selected Features" list by clicking the left arrow button.</p>
 </blockquote>
 
-<p><img src="images/profiles/image004.jpg" alt="img">  </p></li>
+<p><img src="select-profile-features.png" alt="img">  </p></li>
 
 <li><p>Select a "Selected Features" and the list of parameters will populate on the right hand side of the dialog. When you click on a parameter a description with populate on the lower left hand corner of the dialog.  </p>
 
-<p><img src="images/profiles/image005.jpg" alt="img">  </p></li>
+<p><img src="modify-profile-feature-params.png" alt="img">  </p></li>
 
 <li><p>When complete click "Finish".</p></li>
 
 <li><p>Click "Close".  </p>
 
-<p><img src="images/profiles/image006.jpg" alt="img"></p>
+<p><img src="profile-create-complete.png" alt="img"></p>
 
 <blockquote>
   <p>Note: <br>
@@ -583,7 +592,7 @@
 
 <li><p>Select a Profile to modify and click "Edit".  </p>
 
-<p><img src="images/profiles/image007.jpg" alt="img">  </p></li>
+<p><img src="profile-create-complete.png" alt="img">  </p></li>
 
 <li><p>Edit the profile using the Profile Manager in the same way you would when creating a new profile.</p></li>
 
@@ -591,7 +600,7 @@
 
 <li><p>Click "Close".  </p>
 
-<p><img src="images/profiles/image008.jpg" alt="img"></p>
+<p><img src="profile-create-complete.png" alt="img"></p>
 
 <blockquote>
   <p>Note: <br>
@@ -606,15 +615,15 @@
 
 <li><p>Select a Profile to rename and click "Rename".  </p>
 
-<p><img src="images/profiles/image009.jpg" alt="img">  </p></li>
+<p><img src="profile-create-complete.png" alt="img">  </p></li>
 
 <li><p>Enter the new name and click "Rename";  </p>
 
-<p><img src="images/profiles/image010.jpg" alt="img">  </p></li>
+<p><img src="profile-rename-enter-new-name.png" alt="img">  </p></li>
 
 <li><p>Click "Close".  </p>
 
-<p><img src="images/profiles/image011.jpg" alt="img">  </p>
+<p><img src="profile-renamed.png" alt="img">  </p>
 
 <blockquote>
   <p>Note: <br>
@@ -629,20 +638,47 @@
 
 <li><p>Select a Profile to copy and click "Copy".  </p>
 
-<p><img src="images/profiles/image012.jpg" alt="img">  </p></li>
+<p><img src="profile-before-copy.png" alt="img">  </p></li>
 
 <li><p>Enter the a name profile name to uses and click "Copy";  </p>
 
-<p><img src="images/profiles/image013.jpg" alt="img">  </p></li>
+<p><img src="profile-copy.png" alt="img">  </p></li>
 
 <li><p>Click "Close".  </p>
 
-<p><img src="images/profiles/image014.jpg" alt="img">  </p>
+<p><img src="profile-after-copy.png" alt="img">  </p>
 
 <blockquote>
   <p>Note: <br>
   The profile XML will be updated and saved to "EMDKConfig.XML" inside your projects "assets" folder.</p>
 </blockquote></li>
+</ol>
+
+<h3 id="upgradingaprofile">Upgrading a Profile</h3>
+
+<blockquote>
+  <p>Note: The Profile Manager does not provide a method to downgrade a profile, so the upgrade process is not reversible.  It is advised that you make a copy of your profile before upgrading.</p>
+</blockquote>
+
+<ol>
+<li><p>Open the EMDK Profile Manager.</p></li>
+
+<li><p>Select a Profile to upgrade and click "Upgrade".  </p>
+
+<p><img src="profile-after-copy.png" alt="img">  </p></li>
+
+<li><p>Select the <strong>MX</strong> version you would like to upgrade to and click "Upgrade"; <br>
+Use the <a href="/mx/choosing-a-version/">Choosing a MX Version</a> Guide as an aid to decide which MX version to use.</p>
+
+<p><img src="profile-upgrade-select-mx-version.png" alt="img">  </p></li>
+
+
+
+<li><p>Edit the profile using the Profile Manager in the same way you would when creating a new profile.</p></li>
+
+<li><p>When complete click "Finish". </p>
+
+<p><img src="profile-upgrade-after.png" alt="img"></p></li>
 </ol>
 
 <h3 id="deletingaprofile">Deleting a Profile</h3>
@@ -652,15 +688,15 @@
 
 <li><p>Select a Profile to delete and click "Delete".  </p>
 
-<p><img src="images/profiles/image015.jpg" alt="img">  </p></li>
+<p><img src="profile-delete-before.png" alt="img">  </p></li>
 
 <li><p>Confirm delete by clicking "Delete";  </p>
 
-<p><img src="images/profiles/image016.jpg" alt="img">  </p></li>
+<p><img src="profile-delete-confirm.png" alt="img">  </p></li>
 
 <li><p>Click "Close".  </p>
 
-<p><img src="images/profiles/image017.jpg" alt="img">  </p>
+<p><img src="profile-delete-after.png" alt="img">  </p>
 
 <blockquote>
   <p>Note: <br>
@@ -670,7 +706,7 @@
 
 <h2 id="usingtheprofilemanagerapi">Using the Profile Manager API</h2>
 
-<p>Once you create your profiles using the Profile Manager, they will be bundled with your application and available to access using the <a href="/emdk-for-android/4-0/guide/reference/EMDKList">Profile Manager APIs</a>. These profiles will NOT be applied on the device until it is processed using these APIs.</p>
+<p>Once you create your profiles using the Profile Manager, they will be bundled with your application and available to access using the <a href="/emdk-for-android/4-0/api/core">Profile Manager APIs</a>. These profiles will NOT be applied on the device until it is processed using these APIs.</p>
 
 <h3 id="multiplewaystoaccess">Multiple Ways to Access</h3>
 
