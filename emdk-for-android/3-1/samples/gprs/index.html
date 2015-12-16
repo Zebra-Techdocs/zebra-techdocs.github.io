@@ -62,8 +62,29 @@
                     </p>
                 </div>
                 <div class="col-sm-3 text-right">
-        			<a class="btn btn-primary" href="https://github.com/developer-zebra/samples-emdkforandroid-3_1/archive/ProfileGprsMgrSample1.zip"><i class="fa fa-download"></i> Download</a>
-        			<a class="btn btn-primary" href="https://github.com/developer-zebra/samples-emdkforandroid-3_1/tree/ProfileGprsMgrSample1"><i class="fa fa-github"></i> Source</a>
+		            <a class="btn btn-primary" href="https://github.com/developer-zebra/samples-emdkforandroid-3_1/archive/ProfileGprsMgrSample1.zip"><i class="fa fa-download"></i> Download</a>
+		            <a class="btn btn-primary" href="https://github.com/developer-zebra/samples-emdkforandroid-3_1/tree/ProfileGprsMgrSample1"><i class="fa fa-github"></i> Source</a>
+
+					<div class="hidden" id="download">
+						<div class="popover-heading">
+						    Available Downloads
+						</div>
+
+						<div class="popover-body">
+						<ul class="nav nav-pills">
+						</ul>
+						</div>
+					</div>
+					<div class="hidden" id="source">
+						<div class="popover-heading">
+						    Available Source 
+						</div>
+
+						<div class="popover-body">
+						<ul class="nav nav-pills">
+						</ul>
+						</div>
+					</div>
                 </div>
             </div>
         </div>
@@ -139,6 +160,21 @@
             </div>
         </div>
     </section>    
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("[data-toggle=popover]").popover({
+	        html : true,
+	        content: function() {
+	          var content = $(this).attr("data-popover-content");
+	          return $(content).children(".popover-body").html();
+	        },
+	        title: function() {
+	          var title = $(this).attr("data-popover-content");
+	          return $(title).children(".popover-heading").html();
+	        }
+	    });
+	});
+</script>
  </div>
     <footer id="footer">
         <div class="container-fluid">
