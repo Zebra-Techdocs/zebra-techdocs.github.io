@@ -537,7 +537,7 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><h2 id="introduction">Introduction</h2>
+                                        <p></p><h2 id="introduction" class="anchor"><a class="heading-anchor" href="#introduction"><span></span></a>Introduction</h2>
 
 <p>The EMDK for Android provides developers with a comprehensive set of tools to easily create Secure NFC application for use with the Zebra Technologies Corporation mobility device.</p>
 
@@ -545,7 +545,7 @@
   <p>NOTE: At this time only MifarePlus 4K memory contactless Security level 3 cards are not supported, only 2k cards are supported.</p>
 </blockquote>
 
-<h2 id="securenfcmanagerusage">SecureNfcManager Usage</h2>
+<h2 id="securenfcmanagerusage" class="anchor"><a class="heading-anchor" href="#securenfcmanagerusage"><span></span></a>SecureNfcManager Usage</h2>
 
 <p>The APIs provided by this class are used to determine the type of SAM available in the mobile device, get the instance of the SAM object, to know the type of the tag detected by the device and to get the instance of the tag type object.</p>
 
@@ -553,7 +553,7 @@
   <p>NOTE: To use SecureNfcManager APIs, a SAM (Secure Access Module) must be inserted into SIM Slot 1 in the device</p>
 </blockquote>
 
-<h3 id="androidmanifestchanges">Android Manifest Changes</h3>
+<h3 id="androidmanifestchanges" class="anchor"><a class="heading-anchor" href="#androidmanifestchanges"><span></span></a>Android Manifest Changes</h3>
 
 <p><strong>Request NFC Access</strong></p>
 
@@ -589,7 +589,7 @@
     &lt;/intent-filter&gt;
 </code></pre>
 
-<h3 id="exampleusage">Example usage</h3>
+<h3 id="exampleusage" class="anchor"><a class="heading-anchor" href="#exampleusage"><span></span></a>Example usage</h3>
 
 <p><strong>Determine the type of SAM available on device and get the instance of MifareSam object</strong></p>
 
@@ -632,7 +632,7 @@
         }
 </code></pre>
 
-<h2 id="mifaresamapiusage">MifareSam API Usage</h2>
+<h2 id="mifaresamapiusage" class="anchor"><a class="heading-anchor" href="#mifaresamapiusage"><span></span></a>MifareSam API Usage</h2>
 
 <p>The APIs provided by this class are used to establish a secure connection with SAM, to do SAM to Host authentication, and to get the SAM information such as (manufacturer Id, type, version , memory size ,compliant protocol ,UID, batch number and production date(MM/DD/YYYY) ).</p>
 
@@ -640,7 +640,7 @@
 
 <p>Host to Sam authentication is <strong>mandatory</strong> before using any of the tag APIs i.e., MifareDesfire or MifarePlus APIs. Failing to authenticate will restrict read/write operations to/from files. Successful authentication will persist until the device is rebooted. It is recommended to close the MifareSam as soon as the authentication is done.</p>
 
-<h3 id="exampleusage-1">Example Usage</h3>
+<h3 id="exampleusage-1" class="anchor"><a class="heading-anchor" href="#exampleusage-1"><span></span></a>Example Usage</h3>
 
 <p><strong>Establish the secure connection from SAM to host</strong></p>
 
@@ -655,7 +655,7 @@
     mifareSam.close();
 </code></pre>
 
-<h2 id="mifaredesfireapiusage">MifareDesfire API Usage</h2>
+<h2 id="mifaredesfireapiusage" class="anchor"><a class="heading-anchor" href="#mifaredesfireapiusage"><span></span></a>MifareDesfire API Usage</h2>
 
 <p>The APIs provided by this class are used to:</p>
 
@@ -681,11 +681,11 @@
 <li>Determine the free memory available on the tag and etc.</li>
 </ul>
 
-<h3 id="enablingandauthenticatingwithdesfireapis">Enabling and authenticating with Desfire APIs</h3>
+<h3 id="enablingandauthenticatingwithdesfireapis" class="anchor"><a class="heading-anchor" href="#enablingandauthenticatingwithdesfireapis"><span></span></a>Enabling and authenticating with Desfire APIs</h3>
 
 <p>The enable API is used to establish a connection with the tag. Without which other operations cannot be performed. The application on the tag on which I/O operations are to be performed, needs to be authenticated using the authenticate API. The tag is enabled until the connection is disabled or until a tag lost exception has occurred. On tag lost, the connection has to enabled again by the application user. Authentication API must not be called from the main application thread since it is blocking operation.</p>
 
-<h3 id="performingtheiooperationonthetag">Performing the I/O operation on the tag</h3>
+<h3 id="performingtheiooperationonthetag" class="anchor"><a class="heading-anchor" href="#performingtheiooperationonthetag"><span></span></a>Performing the I/O operation on the tag</h3>
 
 <blockquote>
   <p>NOTE: To perform any I/O operation on the tag , it has to be preceded with the authentication and must not be called from the main application thread.</p>
@@ -727,7 +727,7 @@
 
 <p>Resets cyclic or linear record file to empty state. Preceding authentication, with key specified for Read&amp;Write access is required. The transaction  has to be committed after reset call without which the changes will get invalidated.</p>
 
-<h3 id="exampleusage-2">Example Usage</h3>
+<h3 id="exampleusage-2" class="anchor"><a class="heading-anchor" href="#exampleusage-2"><span></span></a>Example Usage</h3>
 
 <p>Authentication must occur before performing credit operation on the Value File. After calling credit(), commitTransaction() has to be called to validate all previous write access’ on value files, within one application</p>
 
@@ -775,11 +775,11 @@
     mifareDesfire.commitTransaction();
 </code></pre>
 
-<h2 id="mifareplussl3apiusage">MifarePlusSL3 API Usage</h2>
+<h2 id="mifareplussl3apiusage" class="anchor"><a class="heading-anchor" href="#mifareplussl3apiusage"><span></span></a>MifarePlusSL3 API Usage</h2>
 
 <p>The APIs provided by this class is used to enable the connection with the tag ,authenticate the sectors before performing any read/write operation, read/write the data from/to the data block, and also the API to increment/decrement the  integer value from the value block.</p>
 
-<h3 id="apioperations">API operations</h3>
+<h3 id="apioperations" class="anchor"><a class="heading-anchor" href="#apioperations"><span></span></a>API operations</h3>
 
 <ul>
 <li><p><strong>Enabling the tag</strong> - The enable API is used to establish the connection with the tag without which other operations cannot be performed.</p></li>
@@ -799,7 +799,7 @@
 <li><p><strong>Restore</strong> - This is used to transfer the contents from the specific value block to the transfer buffer.</p></li>
 </ul>
 
-<h3 id="exampleusage-3">Example Usage</h3>
+<h3 id="exampleusage-3" class="anchor"><a class="heading-anchor" href="#exampleusage-3"><span></span></a>Example Usage</h3>
 
 <blockquote>
   <p>NOTE: Authentication is <strong>mandatory</strong> before performing the following API operations.</p>

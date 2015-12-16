@@ -648,11 +648,11 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><h2 id="developinganemdkforandroidapplicationpart3">Developing an EMDK for Android Application Part 3</h2>
+                                        <p></p><h2 id="developinganemdkforandroidapplicationpart3" class="anchor"><a class="heading-anchor" href="#developinganemdkforandroidapplicationpart3"><span></span></a>Developing an EMDK for Android Application Part 3</h2>
 
 <p>This guide will walk you through adding MSR support and multiple profiles to the Android application you made using <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofilePt2">Developing an EMDK for Android Application Part 2</a>. This tutorial will add some more complexity by adding a second screen as well as adding a second Data Capture Profile.</p>
 
-<h3 id="prerequisites">Prerequisites</h3>
+<h3 id="prerequisites" class="anchor"><a class="heading-anchor" href="#prerequisites"><span></span></a>Prerequisites</h3>
 
 <ul>
 <li>Java Development Kit (JDK)</li>
@@ -668,7 +668,7 @@
 
 <p>For more information about setting up the EMDK please see the EMDK <a href="/emdk-for-android/4-0/guide/setup">Setup</a>.</p>
 
-<h2 id="addingmsractivity">Adding MSR Activity</h2>
+<h2 id="addingmsractivity" class="anchor"><a class="heading-anchor" href="#addingmsractivity"><span></span></a>Adding MSR Activity</h2>
 
 <p>Let's start by defining a second activity for the application. This activity will be used to to activate a Data Capture profile that listens for MSR data.</p>
 
@@ -676,7 +676,7 @@
 <li>Select "EMDKSample" project, right click on it and create a new Activity with the name "MSRActivity".</li>
 </ol>
 
-<h2 id="addingmsrcompletedactivity">Adding MSR Completed Activity</h2>
+<h2 id="addingmsrcompletedactivity" class="anchor"><a class="heading-anchor" href="#addingmsrcompletedactivity"><span></span></a>Adding MSR Completed Activity</h2>
 
 <p>Next let's create a third activity that will listen for the MSR data and display the data to the user.</p>
 
@@ -684,7 +684,7 @@
 <li>Select "EMDKSample" project, right click on it and create a new Activity with the name "MSRCompletedActivity".  </li>
 </ol>
 
-<h2 id="updatingmainactivity">Updating Main Activity</h2>
+<h2 id="updatingmainactivity" class="anchor"><a class="heading-anchor" href="#updatingmainactivity"><span></span></a>Updating Main Activity</h2>
 
 <p>Now we will update "MainActivity", adding a button to launch our "MSRActivity".</p>
 
@@ -773,7 +773,7 @@ startActivity(myIntent);
 <p><img src="/img/setup/image136.jpg" alt="img"> </p></li>
 </ol>
 
-<h2 id="creatingmsrui">Creating MSR UI</h2>
+<h2 id="creatingmsrui" class="anchor"><a class="heading-anchor" href="#creatingmsrui"><span></span></a>Creating MSR UI</h2>
 
 <p>Next we will create the UI for "MSRActivity". </p>
 
@@ -799,7 +799,7 @@ startActivity(myIntent);
 <p><img src="/img/setup/image138.jpg" alt="img"> </p></li>
 </ol>
 
-<h2 id="creatingourmsrprofile">Creating our MSR Profile</h2>
+<h2 id="creatingourmsrprofile" class="anchor"><a class="heading-anchor" href="#creatingourmsrprofile"><span></span></a>Creating our MSR Profile</h2>
 
 <p>Next we will create a Data Capture profile that will activate the MSR on "MSRActivity" and send the data via a startActivity Intent to "MSRCompletedActivity".  </p>
 
@@ -892,7 +892,7 @@ startActivity(myIntent);
 &gt;Now the "EMDKConfig.xml" file under the "\assets" folder will be updated with your changes.</p></li>
 </ol>
 
-<h2 id="addingthemsrintentfilter">Adding the MSR Intent Filter</h2>
+<h2 id="addingthemsrintentfilter" class="anchor"><a class="heading-anchor" href="#addingthemsrintentfilter"><span></span></a>Adding the MSR Intent Filter</h2>
 
 <p>Now will add an Intent filter to our Manifest file to allow "MSRCompletedActivity" to listen for our new Data Capture Intent. </p>
 
@@ -924,7 +924,7 @@ startActivity(myIntent);
 </blockquote></li>
 </ol>
 
-<h2 id="registeringthemsremdkprofile">Registering the MSR EMDK profile</h2>
+<h2 id="registeringthemsremdkprofile" class="anchor"><a class="heading-anchor" href="#registeringthemsremdkprofile"><span></span></a>Registering the MSR EMDK profile</h2>
 
 <p>Next we will register our new Data Capture profile from "MainActivity".</p>
 
@@ -957,7 +957,7 @@ if(results.statusCode == STATUS_CODE.FAILURE)
 <p><img src="/img/setup/image155.jpg" alt="img">  </p></li>
 </ol>
 
-<h2 id="creatingmsrcompletedui">Creating MSR Completed UI</h2>
+<h2 id="creatingmsrcompletedui" class="anchor"><a class="heading-anchor" href="#creatingmsrcompletedui"><span></span></a>Creating MSR Completed UI</h2>
 
 <p>Now we will create the UI for "MSRCompletedActivity". This UI will allow us to display the MSR data to the user.</p>
 
@@ -983,7 +983,7 @@ android:textAppearance="?android:attr/textAppearanceMedium" /&gt;
 <p><img src="/img/setup/image157.jpg" alt="img"> </p></li>
 </ol>
 
-<h2 id="handlingmsrintents">Handling MSR Intents</h2>
+<h2 id="handlingmsrintents" class="anchor"><a class="heading-anchor" href="#handlingmsrintents"><span></span></a>Handling MSR Intents</h2>
 
 <p>Next will will add the code to "MSRCompletedActivity" for capturing the startActivity Intent and displaying the result data to the user. </p>
 
@@ -1107,7 +1107,7 @@ textViewMSRData.setText("Data = " + data);
 <p><img src="/img/setup/image168.jpg" alt="img"> </p></li>
 </ol>
 
-<h2 id="runningtheapplication">Running the Application</h2>
+<h2 id="runningtheapplication" class="anchor"><a class="heading-anchor" href="#runningtheapplication"><span></span></a>Running the Application</h2>
 
 <p>Lastly we will run and test our application. </p>
 
@@ -1140,11 +1140,11 @@ textViewMSRData.setText("Data = " + data);
 <li><p>Press return to go back to the MSR where you can swipe another card, or hit return again to go back to the main screen. </p></li>
 </ol>
 
-<h2 id="whatsnext">What's Next</h2>
+<h2 id="whatsnext" class="anchor"><a class="heading-anchor" href="#whatsnext"><span></span></a>What's Next</h2>
 
 <p>The <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofilePt4">next tutorial</a> will show you how to use the Intent Output as a Broadcast instead of starting an activity.</p>
 
-<h2 id="downloadthesource">Download the Source</h2>
+<h2 id="downloadthesource" class="anchor"><a class="heading-anchor" href="#downloadthesource"><span></span></a>Download the Source</h2>
 
 <p>The project source to this tutorial can be <a href="https://s3.amazonaws.com/emdk/Tutorials/EMDK-UsingMultipleDataCaptureProfiles.zip">downloaded (Internet Connection Required)</a>.</p><p></p>
                                     </div>

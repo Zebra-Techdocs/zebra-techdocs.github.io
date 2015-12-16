@@ -650,11 +650,11 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><h2 id="overview">Overview</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>The purpose of this document is to describe the functionality of the Data Capture API. Its intended audience are Android developers. The Data Capture API is an application programming interface which provides a number of specific commands that another application can use to control certain aspects of data capture on Android devices.</p>
 
-<h2 id="requirements">Requirements</h2>
+<h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
 
 <p>Knowledge of Android programming and familiarity with the Android intent mechanism are assumed. Also assumed is some familiarity with DataWedge and that you have read the DataWedge section in the Integrator Guide for your device.</p>
 
@@ -674,7 +674,7 @@
 </li>
 </ul>
 
-<h2 id="features">Features</h2>
+<h2 id="features" class="anchor"><a class="heading-anchor" href="#features"><span></span></a>Features</h2>
 
 <p>The following is a list of the high-level API functions:</p>
 
@@ -692,21 +692,21 @@
 <li>Switch the current profile to a user created profile that is un-associated.</li>
 </ul>
 
-<h2 id="datawedgeprofiles">DataWedge Profiles</h2>
+<h2 id="datawedgeprofiles" class="anchor"><a class="heading-anchor" href="#datawedgeprofiles"><span></span></a>DataWedge Profiles</h2>
 
 <p>The DataCapture APIs use the DataWedge profiles for collecting and formatting data.  For example, each user application can have a profile which outputs scanned data in the required format when that application comes to the foreground. DataWedge can be configured to process the same set of captured data differently based on the requirements of each application.  Refer to the DataWedge section in your devices Integrator Guide for more information on DataWedge profiles.</p>
 
-<h2 id="programminginterface">Programming Interface</h2>
+<h2 id="programminginterface" class="anchor"><a class="heading-anchor" href="#programminginterface"><span></span></a>Programming Interface</h2>
 
 <p>An application will access the Data Capture API by broadcasting an intent. It will use the primary pieces of information in a intent, action and data, to specify the API function to perform.</p>
 
-<h3 id="softscantrigger">SoftScanTrigger</h3>
+<h3 id="softscantrigger" class="anchor"><a class="heading-anchor" href="#softscantrigger"><span></span></a>SoftScanTrigger</h3>
 
-<h4 id="description">Description</h4>
+<h4 id="description" class="anchor"><a class="heading-anchor" href="#description"><span></span></a>Description</h4>
 
 <p>The SoftScanTrigger API command can be used to start, stop or toggle the soft scan trigger.</p>
 
-<h4 id="functionprototype">Function Prototype</h4>
+<h4 id="functionprototype" class="anchor"><a class="heading-anchor" href="#functionprototype"><span></span></a>Function Prototype</h4>
 
 <pre class="prettyprint"><code>
 Intent i = new Intent();  
@@ -714,7 +714,7 @@ i.setAction(ACTION);
 i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 </code></pre>
 
-<h4 id="parameters">Parameters</h4>
+<h4 id="parameters" class="anchor"><a class="heading-anchor" href="#parameters"><span></span></a>Parameters</h4>
 
 <ul>
 <li>ACTION: String "com.motorolasolutions.emdk.datawedge.api.ACTION_SOFTSCANTRIGGER"</li>
@@ -725,15 +725,15 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 
 
 <ul>
-<li>"START<em>SCANNING" - to start scanning</em></li><em>
+<li>"START<em>SCANNING" - to start scanning</em></li>
 
-</em><li><em>"STOP</em>SCANNING" - to stop scanning</li>
+<li>"STOPSCANNING" - to stop scanning</li>
 
 <li>"TOGGLE_SCANNING" - to toggle between start scanning and stop scanning</li></ul>
 </li>
 </ul>
 
-<h4 id="returnvalues">Return Values</h4>
+<h4 id="returnvalues" class="anchor"><a class="heading-anchor" href="#returnvalues"><span></span></a>Return Values</h4>
 
 <ul>
 <li>None.</li>
@@ -745,7 +745,7 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 <li>Error messages will be logged for invalid actions and parameters</li>
 </ul>
 
-<h4 id="example">Example</h4>
+<h4 id="example" class="anchor"><a class="heading-anchor" href="#example"><span></span></a>Example</h4>
 
 <pre class="prettyprint"><code>
 // define action and data strings  
@@ -761,7 +761,7 @@ i.putExtra(extraData, "START_SCANNING");
 // send the intent to DataWedgecontext.this.sendBroadcast(i);  
 </code></pre>
 
-<h4 id="comments">Comments</h4>
+<h4 id="comments" class="anchor"><a class="heading-anchor" href="#comments"><span></span></a>Comments</h4>
 
 <p>The received API commands are not queued; API commands are processed immediately. Commands received while the current API command is still being processed may be ignored. For example, attempting to send the soft scan trigger start command immediately after sending the scanner enable command will result in the soft scan trigger command being ignored because the scanner enable will not have had time to complete. In this case, the soft scan trigger command should be delayed sufficiently for the scanner enable to complete; one example of how this could be done is given below.</p>
 
@@ -778,13 +778,13 @@ handler.postDelayed(new Runnable() {
 }, triggerDelay);  
 </code></pre>
 
-<h3 id="scannerinputplugin">ScannerInputPlugin</h3>
+<h3 id="scannerinputplugin" class="anchor"><a class="heading-anchor" href="#scannerinputplugin"><span></span></a>ScannerInputPlugin</h3>
 
-<h4 id="description-1">Description</h4>
+<h4 id="description-1" class="anchor"><a class="heading-anchor" href="#description-1"><span></span></a>Description</h4>
 
 <p>The ScannerInputPlugin API command can be used to enable/disable the scanner plug-in in the currently active profile. Disabling the scanner plug-in effectively disables scanning in that profile (associated or un-associated).</p>
 
-<h4 id="functionprototype-1">Function Prototype</h4>
+<h4 id="functionprototype-1" class="anchor"><a class="heading-anchor" href="#functionprototype-1"><span></span></a>Function Prototype</h4>
 
 <pre class="prettyprint"><code>
 Intent i = new Intent();  
@@ -792,7 +792,7 @@ i.setAction(ACTION);
 i.putExtra(EXTRA_DATA, "&lt;parameter&gt;"); 
 </code></pre>
 
-<h4 id="parameters-1">Parameters</h4>
+<h4 id="parameters-1" class="anchor"><a class="heading-anchor" href="#parameters-1"><span></span></a>Parameters</h4>
 
 <ul>
 <li>ACTION: String "com.motorolasolutions.emdk.datawedge.api.ACTION_SCANNERINPUTPLUGIN"</li>
@@ -803,13 +803,13 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 
 
 <ul>
-<li>"ENABLE<em>PLUGIN" - enables the plug-in</em></li><em>
+<li>"ENABLE<em>PLUGIN" - enables the plug-in</em></li>
 
-</em><li><em>"DISABLE</em>PLUGIN" - disables the plug-in</li></ul>
+<li>"DISABLEPLUGIN" - disables the plug-in</li></ul>
 </li>
 </ul>
 
-<h4 id="returnvalues-1">Return Values</h4>
+<h4 id="returnvalues-1" class="anchor"><a class="heading-anchor" href="#returnvalues-1"><span></span></a>Return Values</h4>
 
 <ul>
 <li>None.</li>
@@ -824,7 +824,7 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 <li>Error messages will be logged for invalid actions and parameters</li>
 </ul>
 
-<h4 id="example-1">Example</h4>
+<h4 id="example-1" class="anchor"><a class="heading-anchor" href="#example-1"><span></span></a>Example</h4>
 
 <pre class="prettyprint"><code>
 // define action and data strings  
@@ -843,7 +843,7 @@ public void onResume() {
 }  
 </code></pre>
 
-<h4 id="comments-1">Comments</h4>
+<h4 id="comments-1" class="anchor"><a class="heading-anchor" href="#comments-1"><span></span></a>Comments</h4>
 
 <p>This Data Capture API intent will allow you to enable/disable the scanner plug-in for the current profile. For example, let’s say that activity A launches and uses the Data Capture API intent to switch to profileA in which the scanner plug-in is enabled, then at some point it uses the Data Capture API to disable the scanner plug-in. Activity B is launched. In DataWedge, profileB is associated with activity B. DataWedge switches to profileB. When activity A comes back to the foreground, in the onResume method, activity A will need to use the Data Capture API intent to switch back to profileA, then use the Data Capture API intent again to disable the scanner plug-in, to return back to the state it was in.</p>
 
@@ -851,26 +851,26 @@ public void onResume() {
   <p>Note: The above assumes that profileA is not associated to any applications/activities, therefore when focus switches back to activity A, DataWedge will not automatically switch to profileA therefore activity A must switch back to profileA in its onResume method. Because DataWedge will automatically switch profile when your activity is paused, it is recommended that this API function be called from the onResume method of your activity.</p>
 </blockquote>
 
-<h3 id="enumeratescanners">enumerateScanners</h3>
+<h3 id="enumeratescanners" class="anchor"><a class="heading-anchor" href="#enumeratescanners"><span></span></a>enumerateScanners</h3>
 
-<h4 id="description-2">Description</h4>
+<h4 id="description-2" class="anchor"><a class="heading-anchor" href="#description-2"><span></span></a>Description</h4>
 
 <p>The enumerateScanners API command can be used to get a list of scanners available on the device.</p>
 
-<h4 id="functionprototype-2">Function Prototype</h4>
+<h4 id="functionprototype-2" class="anchor"><a class="heading-anchor" href="#functionprototype-2"><span></span></a>Function Prototype</h4>
 
 <pre class="prettyprint"><code>
 Intent i = new Intent();  
 i.setAction(ACTION);  
 </code></pre>
 
-<h4 id="parameters-2">Parameters</h4>
+<h4 id="parameters-2" class="anchor"><a class="heading-anchor" href="#parameters-2"><span></span></a>Parameters</h4>
 
 <ul>
 <li>ACTION:    String "com.motorolasolutions.emdk.datawedge.api.ACTION_ENUMERATESCANNERS"</li>
 </ul>
 
-<h4 id="returnvalues-2">Return Values</h4>
+<h4 id="returnvalues-2" class="anchor"><a class="heading-anchor" href="#returnvalues-2"><span></span></a>Return Values</h4>
 
 <ul>
 <li>The enumerated list of scanners will be returned via a broadcast intent. The broadcast intent action is "com.motorolasolutions.emdk.datawedge.api.ACTION_ENUMERATEDSCANNERLIST" and the list of scanners is returned as a string array (see the example below).</li>
@@ -885,7 +885,7 @@ i.setAction(ACTION);
 <li>Error messages will be logged for invalid actions and parameters</li>
 </ul>
 
-<h4 id="example-2">Example</h4>
+<h4 id="example-2" class="anchor"><a class="heading-anchor" href="#example-2"><span></span></a>Example</h4>
 
 <pre class="prettyprint"><code>
 // first send the intent to enumerate the available scanners on the device  
@@ -912,17 +912,17 @@ private BroadcastReceiver myBroadcastReceiver = new BroadcastReceiver() {
 };  
 </code></pre>
 
-<h4 id="comments-2">Comments</h4>
+<h4 id="comments-2" class="anchor"><a class="heading-anchor" href="#comments-2"><span></span></a>Comments</h4>
 
 <p>The scanner and its parameters are set based on the currently active profile.</p>
 
-<h3 id="setdefaultprofile">setDefaultProfile</h3>
+<h3 id="setdefaultprofile" class="anchor"><a class="heading-anchor" href="#setdefaultprofile"><span></span></a>setDefaultProfile</h3>
 
-<h4 id="description-3">Description</h4>
+<h4 id="description-3" class="anchor"><a class="heading-anchor" href="#description-3"><span></span></a>Description</h4>
 
 <p>The setDefaultProfile API function can be used to set the specified profile as the default profile.</p>
 
-<h4 id="defaultprofilerecap">Default Profile Recap</h4>
+<h4 id="defaultprofilerecap" class="anchor"><a class="heading-anchor" href="#defaultprofilerecap"><span></span></a>Default Profile Recap</h4>
 
 <p>Profile0 is the generic profile used when there are no user created profiles associated with an application. Profile0 can be edited but cannot be associated with an application. That is, DataWedge allows manipulation of plug-in settings for Profile0 but it does not allow assignment of a foreground application.</p>
 
@@ -930,7 +930,7 @@ private BroadcastReceiver myBroadcastReceiver = new BroadcastReceiver() {
 
 <p>Profile0 can be disabled to allow DataWedge to only send output data to those applications which are associated in user-defined profiles. For example, create a profile associating a specific application, disable Profile0 and then scan. DataWedge only sends data to the application specified in the user-created profile. This adds additional security to DataWedge enabling the sending of data only to specified applications.</p>
 
-<h4 id="usagescenario">Usage Scenario</h4>
+<h4 id="usagescenario" class="anchor"><a class="heading-anchor" href="#usagescenario"><span></span></a>Usage Scenario</h4>
 
 <p>Let’s say a launcher application has a list of apps that a user can launch and that none of the listed apps has an associated DataWedge profile. Once the user has selected an app, the launcher needs to set the appropriate DataWedge profile for the selected app. This could be done by using setDefaultProfile to set the default profile to the required profile. Then when the user selected app is launched, DataWedge auto profile switching will switch to the default profile (which is now the required profile for that app).</p>
 
@@ -938,7 +938,7 @@ private BroadcastReceiver myBroadcastReceiver = new BroadcastReceiver() {
 
 <p>When control is returned to the launcher application, resetDefaultProfile can be used to reset the default profile.</p>
 
-<h4 id="functionprototype-3">Function Prototype</h4>
+<h4 id="functionprototype-3" class="anchor"><a class="heading-anchor" href="#functionprototype-3"><span></span></a>Function Prototype</h4>
 
 <pre class="prettyprint"><code>
 Intent i = new Intent();  
@@ -946,7 +946,7 @@ i.setAction(ACTION);
 i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");
 </code></pre>
 
-<h4 id="parameters-3">Parameters</h4>
+<h4 id="parameters-3" class="anchor"><a class="heading-anchor" href="#parameters-3"><span></span></a>Parameters</h4>
 
 <ul>
 <li>ACTION:    String "com.motorolasolutions.emdk.datawedge.api.ACTION_SETDEFAULTPROFILE"</li>
@@ -956,7 +956,7 @@ i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");
 <li><code>&lt;profile name&gt;</code>:    The profile name to set as the default profile as a string (case-sensitive).</li>
 </ul>
 
-<h4 id="returnvalues-3">Return Values</h4>
+<h4 id="returnvalues-3" class="anchor"><a class="heading-anchor" href="#returnvalues-3"><span></span></a>Return Values</h4>
 
 <ul>
 <li>None.</li>
@@ -971,7 +971,7 @@ i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");
 <li>Error messages will be logged for invalid actions, parameters and failures (e.g. profile not found or associated to an application).</li>
 </ul>
 
-<h4 id="example-3">Example</h4>
+<h4 id="example-3" class="anchor"><a class="heading-anchor" href="#example-3"><span></span></a>Example</h4>
 
 <pre class="prettyprint"><code>
 // define action and data strings  
@@ -990,7 +990,7 @@ public void onResume() {
 }  
 </code></pre>
 
-<h4 id="comments-3">Comments</h4>
+<h4 id="comments-3" class="anchor"><a class="heading-anchor" href="#comments-3"><span></span></a>Comments</h4>
 
 <ul>
 <li>The API command will have no effect if the specified profile does not exist or if the specified profile is already associated to an application.</li>
@@ -1002,13 +1002,13 @@ public void onResume() {
 
 <p>To explain by example, let’s say that initially Profile0 is the default profile using the camera as the barcode scanner. Using the Browser application and scanning a barcode with the camera, DataWedge enters the data into the Browser. Now you launch an application that changes the default profile to a profile using the blockbuster as the barcode scanner. When you go back to the Browser application, since it is using the default profile, scanning will now be via the blockbuster not the camera as previously. To ensure that the Browser continues to use the camera as the barcode scanner a profile should be created and associated to the Browser that specifies the camera as the barcode scanner.</p>
 
-<h3 id="resetdefaultprofile">resetDefaultProfile</h3>
+<h3 id="resetdefaultprofile" class="anchor"><a class="heading-anchor" href="#resetdefaultprofile"><span></span></a>resetDefaultProfile</h3>
 
-<h4 id="description-4">Description</h4>
+<h4 id="description-4" class="anchor"><a class="heading-anchor" href="#description-4"><span></span></a>Description</h4>
 
 <p>The resetDefaultProfile API function can be used to reset the default profile back to Profile0.</p>
 
-<h4 id="functionprototype-4">Function Prototype</h4>
+<h4 id="functionprototype-4" class="anchor"><a class="heading-anchor" href="#functionprototype-4"><span></span></a>Function Prototype</h4>
 
 <pre class="prettyprint"><code>
 Intent i = new Intent();  
@@ -1016,7 +1016,7 @@ i.setAction(ACTION);
 i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");
 </code></pre>
 
-<h4 id="parameters-4">Parameters</h4>
+<h4 id="parameters-4" class="anchor"><a class="heading-anchor" href="#parameters-4"><span></span></a>Parameters</h4>
 
 <ul>
 <li>ACTION:    String "com.motorolasolutions.emdk.datawedge.api.ACTION_RESETDEFAULTPROFILE"</li>
@@ -1026,7 +1026,7 @@ i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");
 <li><code>&lt;profile name&gt;</code>:    The profile name to set as the default profile as a string (case-sensitive).</li>
 </ul>
 
-<h4 id="returnvalues-4">Return Values</h4>
+<h4 id="returnvalues-4" class="anchor"><a class="heading-anchor" href="#returnvalues-4"><span></span></a>Return Values</h4>
 
 <ul>
 <li>None.</li>
@@ -1041,7 +1041,7 @@ i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");
 <li>Error messages will be logged for invalid actions, parameters and failures (e.g. profile not found or associated to an application).</li>
 </ul>
 
-<h4 id="example-4">Example</h4>
+<h4 id="example-4" class="anchor"><a class="heading-anchor" href="#example-4"><span></span></a>Example</h4>
 
 <pre class="prettyprint"><code>
 // define action string  
@@ -1056,19 +1056,19 @@ public void onResume() {
 }  
 </code></pre>
 
-<h4 id="comments-4">Comments</h4>
+<h4 id="comments-4" class="anchor"><a class="heading-anchor" href="#comments-4"><span></span></a>Comments</h4>
 
 <ul>
 <li>None.</li>
 </ul>
 
-<h3 id="switchtoprofile">switchToProfile</h3>
+<h3 id="switchtoprofile" class="anchor"><a class="heading-anchor" href="#switchtoprofile"><span></span></a>switchToProfile</h3>
 
-<h4 id="description-5">Description</h4>
+<h4 id="description-5" class="anchor"><a class="heading-anchor" href="#description-5"><span></span></a>Description</h4>
 
 <p>The switchToProfile API action can be used to switch to the specified profile.</p>
 
-<h4 id="profilesrecap">Profiles Recap</h4>
+<h4 id="profilesrecap" class="anchor"><a class="heading-anchor" href="#profilesrecap"><span></span></a>Profiles Recap</h4>
 
 <p>DataWedge is based on profiles and plug-ins. A profile contains information on how DataWedge should behave with different applications.</p>
 
@@ -1090,7 +1090,7 @@ public void onResume() {
   <p>Note: A single profile may be associated with one or many activities/apps, however, given an acitivty, only one profile may be associated to it.</p>
 </blockquote>
 
-<h4 id="usagescenario-1">Usage Scenario</h4>
+<h4 id="usagescenario-1" class="anchor"><a class="heading-anchor" href="#usagescenario-1"><span></span></a>Usage Scenario</h4>
 
 <p>Let’s say an application has two activities. ActivityA only requires EAN13 barcodes to be scanned. ActivityB only requires MSR card data. ProfileB is configured to only scan EAN13 barcodes and is left unassociated. ProfileM is configured to only accept MSR input and is left unassociated. When ActivityA launches it uses switchToProfile to activate ProfileB. Similarily, when ActivityB launches it uses switchToProfile to activate ProfileM.</p>
 
@@ -1098,7 +1098,7 @@ public void onResume() {
 
 <p>When ActivityA (or ActivityB) comes back to the foreground it will use switchToProfile to reset the profile back to ProfileB (or ProfileM).</p>
 
-<h4 id="functionprototype-5">Function Prototype</h4>
+<h4 id="functionprototype-5" class="anchor"><a class="heading-anchor" href="#functionprototype-5"><span></span></a>Function Prototype</h4>
 
 <pre class="prettyprint"><code>
 Intent i = new Intent();  
@@ -1106,7 +1106,7 @@ i.setAction(ACTION);
 i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");  
 </code></pre>
 
-<h4 id="parameters-5">Parameters</h4>
+<h4 id="parameters-5" class="anchor"><a class="heading-anchor" href="#parameters-5"><span></span></a>Parameters</h4>
 
 <ul>
 <li>ACTION:    String "com.motorolasolutions.emdk.datawedge.api.ACTION_SWITCHTOPROFILE"</li>
@@ -1116,7 +1116,7 @@ i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");
 <li><code>&lt;profile name&gt;</code>:    The profile name to switch to as a string (case-sensitive).</li>
 </ul>
 
-<h4 id="returnvalues-5">Return Values</h4>
+<h4 id="returnvalues-5" class="anchor"><a class="heading-anchor" href="#returnvalues-5"><span></span></a>Return Values</h4>
 
 <ul>
 <li>None.</li>
@@ -1131,7 +1131,7 @@ i.putExtra(EXTRA_DATA, "&lt;profile name&gt;");
 <li>Error messages will be logged for invalid actions, parameters and failures (e.g. profile not found or associated to an application).</li>
 </ul>
 
-<h4 id="example-5">Example</h4>
+<h4 id="example-5" class="anchor"><a class="heading-anchor" href="#example-5"><span></span></a>Example</h4>
 
 <pre class="prettyprint"><code>
 // define action and data strings  
@@ -1151,7 +1151,7 @@ public void onResume() {
 }  
 </code></pre>
 
-<h4 id="comments-5">Comments</h4>
+<h4 id="comments-5" class="anchor"><a class="heading-anchor" href="#comments-5"><span></span></a>Comments</h4>
 
 <ul>
 <li>This API function will have no effect if the specified profile does not exist or if the specified profile is associated to an application.</li>

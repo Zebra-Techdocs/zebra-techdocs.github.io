@@ -537,11 +537,11 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><h2 id="overview">Overview</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>The purpose of this document is to describe the functionality of the Battery Intent API Interface. Its intended audience are Android developers. </p>
 
-<h2 id="requirements">Requirements</h2>
+<h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
 
 <p>Knowledge of Android programming and familiarity with the Android intent mechanism are assumed. </p>
 
@@ -561,7 +561,7 @@
 </li>
 </ul>
 
-<h2 id="features">Features</h2>
+<h2 id="features" class="anchor"><a class="heading-anchor" href="#features"><span></span></a>Features</h2>
 
 <p>On Symbol devices like the MC40, extra battery information can be retrieved using the standard <a href="http://developer.android.com/training/monitoring-device-state/battery-monitoring.html">Android Battery Intent</a>. Setting up to receive this information is the same as with consumer Android devices. However, the data that is returned to your application includes some extra information like:</p>
 
@@ -581,9 +581,9 @@
 <li>Charge Cycle count of the Battery</li>
 </ul>
 
-<h2 id="programminginterface">Programming Interface</h2>
+<h2 id="programminginterface" class="anchor"><a class="heading-anchor" href="#programminginterface"><span></span></a>Programming Interface</h2>
 
-<h4 id="functionprototype">Function Prototype</h4>
+<h4 id="functionprototype" class="anchor"><a class="heading-anchor" href="#functionprototype"><span></span></a>Function Prototype</h4>
 
 <pre class="prettyprint"><code>
 mIntent_Receiver = new Intent_Receiver();  
@@ -592,11 +592,11 @@ mIntentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
 registerReceiver(mIntent_Receiver,mIntentFilter); 
 </code></pre>
 
-<h4 id="parameters">Parameters</h4>
+<h4 id="parameters" class="anchor"><a class="heading-anchor" href="#parameters"><span></span></a>Parameters</h4>
 
 <p>Please reference the Android Battery Manager <a href="http://developer.android.com/reference/android/os/BatteryManager.html">API</a>. </p>
 
-<h4 id="returnvalues">Return Values</h4>
+<h4 id="returnvalues" class="anchor"><a class="heading-anchor" href="#returnvalues"><span></span></a>Return Values</h4>
 
 <p>In addition to the battery information Android returns by default, which can be found <a href="http://developer.android.com/reference/android/os/BatteryManager.html">here</a>, Symbol devices return the following additional parameters: </p>
 
@@ -616,7 +616,7 @@ registerReceiver(mIntent_Receiver,mIntentFilter);
 <li><strong>cycle</strong> - Charge Cycle count of the Battery</li>
 </ul>
 
-<h4 id="example">Example</h4>
+<h4 id="example" class="anchor"><a class="heading-anchor" href="#example"><span></span></a>Example</h4>
 
 <pre class="prettyprint"><code>
 public void onReceive(Context context, Intent intent) {      

@@ -634,7 +634,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h2></h2>
+                                    <h2>Settings Manager</h2>
                                     <p>
                                         EMDK For Android
                                         4.0
@@ -651,7 +651,359 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p>
+                                        <p></p><h2 id="aboutsettingsmgr" class="anchor"><a class="heading-anchor" href="#aboutsettingsmgr"><span></span></a>About SettingsMgr</h2>
+
+<h3 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h3>
+
+<p>All Android devices provide an in-device System Settings Menu that presents a user interface that a device user can use to configure a variety of Setting Settings. Some of these System Settings may be sensitive in nature and could lead to undesired consequences if a device user changed them inappropriately.</p>
+
+<p>Zebra Android devices provide a few ways to prevent a device user from making unwanted changes via the System Settings Menu. The <a href="../guide/csp/app">AppMgr Feature Type</a> could be used to disable launching of the System Settings Menu application altogether. Or, the <a href="../guide/csp/access">AccessMgr Feature Type</a> could be used to restrict the device user to a very limited version of the System Settings Menu with a reduced set of the capabilities (e.g. Display, Volume, About). But in some cases, it may be important to allow the device user to configure more System Settings while preventing configuration of especially sensitive ones.</p>
+
+<p>The SettingsMgr Feature Type allows you to individually control whether the user can use selected especially sensitive System Settings via the System Settings Menu.</p>
+
+<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
+
+<ul>
+<li>Turn On or Off the ability for the device user to do the following from the System Settings Menu:
+
+
+<ul>
+<li>Perform an Enterprise Reset of the device</li>
+
+<li>Change the Wi-Fi configuration of the device</li>
+
+<li>Change whether applications from Unknown Sources (e.g. not from the Google Play Store) can be installed</li>
+
+<li>Turn Airplane Mode On or Off</li>
+
+<li>Access the "Apps" section, where installed and running applications can be affected</li></ul>
+</li>
+</ul>
+
+<h2 id="parameternotes" class="anchor"><a class="heading-anchor" href="#parameternotes"><span></span></a>Parameter Notes</h2>
+
+<h3 id="abilitytoinvokeenterpriseresetinsettingsui" class="anchor"><a class="heading-anchor" href="#abilitytoinvokeenterpriseresetinsettingsui"><span></span></a>Ability to invoke Enterprise Reset in Settings UI</h3>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: InvokeEnterpriseReset</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm allows you to specify whether or not the device user will be allowed invoke the "Enterprise data reset" function, usually found in the "Backup &amp; reset" section of the System Settings Menu. Since this function could lead to data loss or could render a device less functional, it may be advisable to prevent device users from invoking it.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Do not change</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to be made as to whether or not a device user will be allowed to invoke the "Enterprise data reset" function from the System Settings Menu.</td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>"1"</td>
+    <td>This value will cause the device user to be allowed to invoke the "Enterprise data reset" function from the System Settings Menu.</td>
+  </tr>
+  <tr>
+    <td>Disable</td>
+    <td>"2"</td>
+    <td>This value will cause the device user to be prevented from invoking the "Enterprise data reset" function from the System Settings Menu.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h3 id="abilitytoturnwifionoffinsettingsui" class="anchor"><a class="heading-anchor" href="#abilitytoturnwifionoffinsettingsui"><span></span></a>Ability to Turn Wifi On/Off in Settings UI</h3>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: WifiSettingsUI</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm allows you to specify whether or not the device user will be allowed to change any Wi-Fi configuration from the "Wi-Fi" section of the System Settings Menu and the Quick Settings.</p>
+  
+  <p><strong>Note:</strong> While the title of this parm might make it seem that it only controls whether the device user is allowed to Turn Wi-Fi On or Off, it actually controls whether any changes to Wi-Fi configuration can be made. There is no way to control the ability to Turn Wi-Fi On and Off independently of other Wi-Fi configuration.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Do not change</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to be made as to whether or not a device user will be allowed to make changes to the Wi-Fi configuration from the System Settings Menu and the Quick Settings.</td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>"1"</td>
+    <td>This value will cause the device user to be allowed to make changes to the Wi-Fi configuration from the System Settings Menu and the Quick Settings.</td>
+  </tr>
+  <tr>
+    <td>Disable</td>
+    <td>"2"</td>
+    <td>This value will cause the device user to be prevented from making changes to the Wi-Fi configuration from the System Settings Menu and the Quick Settings.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h3 id="abilitytoturnunknownsourcesonoffinsettingsui" class="anchor"><a class="heading-anchor" href="#abilitytoturnunknownsourcesonoffinsettingsui"><span></span></a>Ability to Turn UnknownSources On/Off in Settings UI</h3>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: UnknownSources</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm allows you to specify whether or not the device user will be allowed to Turn On or Off the ability to install applications from "Unknown Sources" on or off from the "Security" section of the System Settings Menu.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Do not change</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to be made as to whether or not a device user will be allowed to Turn "Unknown Sources" On or Off from the System Settings Menu.</td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>"1"</td>
+    <td>This value will cause the device user to be allowed to Turn "Unknown Sources" On or Off from the System Settings Menu.</td>
+  </tr>
+  <tr>
+    <td>Disable</td>
+    <td>"2"</td>
+    <td>This value will cause the device user to be prevented from Turning "Unknown Sources" On or Off from the System Settings Menu.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h3 id="abilitytoturnairplanemodeonoffinsettingsui" class="anchor"><a class="heading-anchor" href="#abilitytoturnairplanemodeonoffinsettingsui"><span></span></a>Ability to Turn Airplane Mode On/Off in Settings UI</h3>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: AirplaneMode</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm allows you to specify whether or not the device user will be allowed to Turn "Airplane Mode" On or Off from the "Wireless &amp; Networks" section of the System Settings Menu, from the Quick Settings, and from the Power Key Menu.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Do not change</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to be made as to whether or not a device user will be allowed to Turn "Airplane Mode" On or Off from the System Settings Menu, Quick Settings, and Power Key Menu.</td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>"1"</td>
+    <td>This value will cause the device user to be allowed to Turn "Airplane Mode" On or Off from the System Settings Menu, Quick Settings, and Power Key Menu.</td>
+  </tr>
+  <tr>
+    <td>Disable</td>
+    <td>"2"</td>
+    <td>This value will cause the device user to be prevented from Turning "Airplane Mode" On or Off from the System Settings Menu, Quick Settings, and Power Key Menu.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h3 id="abilitytoaccessappssectioninsettingsui" class="anchor"><a class="heading-anchor" href="#abilitytoaccessappssectioninsettingsui"><span></span></a>Ability to Access Apps Section in Settings UI</h3>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: AccessAppsSection</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm allows you to specify whether or not the device user will be allowed to access the "Apps" section of the System Settings Menu.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Do not change</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to be made as to whether or not a device user will be allowed to access the "Apps" section of the System Settings Menu.</td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>"1"</td>
+    <td>This value will cause the device user to be allowed to access the "Apps" section of the System Settings Menu.</td>
+  </tr>
+  <tr>
+    <td>Disable</td>
+    <td>"2"</td>
+    <td>This value will cause the device user to be prevented from accessing the "Apps" section of the System Settings Menu.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h2 id="queries" class="anchor"><a class="heading-anchor" href="#queries"><span></span></a>Queries</h2>
+
+<h3 id="queryeverything" class="anchor"><a class="heading-anchor" href="#queryeverything"><span></span></a>Query Everything</h3>
+
+<h4 id="input" class="anchor"><a class="heading-anchor" href="#input"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic-query type="SettingsMgr" /&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output" class="anchor"><a class="heading-anchor" href="#output"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" version="4.3" &gt;
+        &lt;parm name="InvokeEnterpriseReset" value="1"/&gt;
+        &lt;parm name="WifiSettingsUI" value="1"/&gt;
+        &lt;parm name="UnknownSources" value="1"/&gt;
+        &lt;parm name="AirplaneMode" value="1"/&gt;
+        &lt;parm name="AccessAppsSection" value="1"/&gt;
+    &lt;/characteristic&gt;   
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="queryifinvokingenterpriseresetisallowed" class="anchor"><a class="heading-anchor" href="#queryifinvokingenterpriseresetisallowed"><span></span></a>Query if Invoking Enterprise Reset is Allowed</h3>
+
+<h4 id="input-1" class="anchor"><a class="heading-anchor" href="#input-1"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" &gt;
+        &lt;parm-query name="InvokeEnterpriseReset"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-1" class="anchor"><a class="heading-anchor" href="#output-1"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" version="4.3" &gt;
+        &lt;parm name="InvokeEnterpriseReset" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="queryifchangingwificonfigurationisallowed" class="anchor"><a class="heading-anchor" href="#queryifchangingwificonfigurationisallowed"><span></span></a>Query if Changing Wifi Configuration is Allowed</h3>
+
+<h4 id="input-2" class="anchor"><a class="heading-anchor" href="#input-2"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" &gt;
+        &lt;parm-query name="WifiSettingsUI"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-2" class="anchor"><a class="heading-anchor" href="#output-2"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" version="4.3" &gt;
+        &lt;parm name="WifiSettingsUI" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="queryifchangingunknownsourcesisallowed" class="anchor"><a class="heading-anchor" href="#queryifchangingunknownsourcesisallowed"><span></span></a>Query if Changing Unknown Sources is Allowed</h3>
+
+<h4 id="input-3" class="anchor"><a class="heading-anchor" href="#input-3"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" &gt;
+        &lt;parm-query name="UnknownSources"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-3" class="anchor"><a class="heading-anchor" href="#output-3"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" version="4.3" &gt;
+        &lt;parm name="UnknownSources" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="queryifchangingairplanemodeisallowed" class="anchor"><a class="heading-anchor" href="#queryifchangingairplanemodeisallowed"><span></span></a>Query if Changing Airplane Mode is Allowed</h3>
+
+<h4 id="input-4" class="anchor"><a class="heading-anchor" href="#input-4"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" &gt;
+        &lt;parm-query name="AirplaneMode"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-4" class="anchor"><a class="heading-anchor" href="#output-4"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" version="4.3" &gt;
+        &lt;parm name="AirplaneMode" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="queryifaccessingappssectionisallowed" class="anchor"><a class="heading-anchor" href="#queryifaccessingappssectionisallowed"><span></span></a>Query if Accessing Apps Section is Allowed</h3>
+
+<h4 id="input-5" class="anchor"><a class="heading-anchor" href="#input-5"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" &gt;
+        &lt;parm-query name="AccessAppsSection"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-5" class="anchor"><a class="heading-anchor" href="#output-5"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="SettingsMgr" version="4.3" &gt;
+        &lt;parm name="AccessAppsSection" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre><p></p>
                                     </div>
                                 </div>
 

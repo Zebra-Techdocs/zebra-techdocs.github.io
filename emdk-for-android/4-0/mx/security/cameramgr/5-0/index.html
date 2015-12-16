@@ -634,7 +634,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h2></h2>
+                                    <h2>Camera Manager</h2>
                                     <p>
                                         EMDK For Android
                                         4.0
@@ -651,7 +651,267 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p>
+                                        <p></p><h2 id="aboutcameramgr" class="anchor"><a class="heading-anchor" href="#aboutcameramgr"><span></span></a>About CameraMgr</h2>
+
+<h3 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h3>
+
+<p>Many Zebra Android devices are equipped with mechanisms that may be used to take pictures, scan barcodes, and/or capture documents. Some Zebra Android devices may also be equipped with special-purpose mechanisms, such as lasers or imagers, which are optimized to scan barcodes. In some sensitive environments, it may be necessary to restrict the use of devices from taking pictures or capturing documents to avoid potential security risks.</p>
+
+<p>The CameraMgr Feature Type allows you to control which of the mechanisms supported by a device can be used by the device user to take pictures or capture documents, and hence are considered to be cameras. For example you could prevent the device user from using all cameras on the device or selectively control which cameras the device user can use.</p>
+
+<p><strong>Note:</strong> If a device is equipped with a mechanism that can be used to take pictures or capture documents, then that mechanism will be considered to be a camera, for the purposes of the CameraMgr Feature Type. For example, if a device is equipped with a CCD-based imager that is primarily designed to scan barcodes but also supports the ability to take pictures or capture documents, then that imager will be considered to be a camera and hence will need to support enable and disable. But if no method was available to use that imager to take pictures or capture documents, then it would not be considered a cameras, since it would not introduce the same camera-oriented security risks.</p>
+
+<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
+
+<ul>
+<li>Enable or disable the use of all Cameras</li>
+
+<li>Enable or disable the use of the Front Facing Camera</li>
+
+<li>Enable or disable the use of the Rear Facing Camera</li>
+</ul>
+
+<h2 id="parameternotes" class="anchor"><a class="heading-anchor" href="#parameternotes"><span></span></a>Parameter Notes</h2>
+
+<h3 id="allcameras" class="anchor"><a class="heading-anchor" href="#allcameras"><span></span></a>All Cameras</h3>
+
+<p>Pivotal parm: Yes</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm will enable or disable use of all of the cameras that are on the device, which may affect cameras that are not explicitly listed. In other words, this will globally allow or disallow all camera support.</p>
+  
+  <p><strong>Note:</strong> Enabling or disabling all cameras will affect all mechanism that are considered cameras that are supported on a device. This will be the case even if that device has more cameras than can be individually controlled on that device using the CameraMgr Feature Type. For example, if a device had a front facing camera, a rear facing, and a side-facing imager that can capture documents, all three would be considered cameras would be enabled or disabled together. This would be the cases even the side facing imager could not be enabled or disabled individually. Enabling or disabling all cameras may override prior enabling or disabling of individual cameras using the CameraMgr Feature Type or may be overridden for individual cameras by subsequent use of the CameraMgr Feature Type.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Control Individual Cameras</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to whether any of the device's cameras can be used.</td>
+  </tr>
+  <tr>
+    <td>Enable ALL Cameras</td>
+    <td>"1"</td>
+    <td>This value will cause use of all the device's cameras to be enabled, thus allowing the device user to use any of those cameras to take pictures, if an application exists on the device to do so.</td>
+  </tr>
+  <tr>
+    <td>Disable ALL Cameras</td>
+    <td>"2"</td>
+    <td>This value will cause use of all the device's cameras to be disabled, thus preventing the device user from using any of those cameras to take pictures, even if an application exists on the device to do so.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h3 id="frontcamera" class="anchor"><a class="heading-anchor" href="#frontcamera"><span></span></a>Front Camera</h3>
+
+<p>Settable if: The "All Cameras" parm is set to "Control Individual Cameras"</p>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: UseFrontCamera</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm will enable or disable the use of the device's front facing camera, which means that the user will be allowed or disallowed from using this camera.</p>
+  
+  <p>If the device does not have a front facing camera, then an error will be returned in the Result XML document.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Do not change</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to whether the device's front facing camera can be used.</td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>"1"</td>
+    <td>This value will cause use of the device's front facing camera to be enabled, thus allowing the device user to use that camera to take pictures, if an application exists on the device to do so.</td>
+  </tr>
+  <tr>
+    <td>Disable</td>
+    <td>"2"</td>
+    <td>This value will cause use of the device's front facing camera to be disabled, thus preventing the device user from using that camera to take pictures, even if an application exists on the device to do so.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h3 id="rearcamera" class="anchor"><a class="heading-anchor" href="#rearcamera"><span></span></a>Rear Camera</h3>
+
+<p>Settable if: The "All Cameras" parm is set to "Control Individual Cameras"</p>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: UseRearCamera</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm will enable or disable the use of the device's rear facing camera, which means that the user will be allowed or disallowed from using this camera.</p>
+  
+  <p>If the device does not have a rear facing camera, then an error will be returned in the Result XML document.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Do not change</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to whether the device's rear facing camera can be used.</td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>"1"</td>
+    <td>This value will cause use of the device's rear facing camera to be enabled, thus allowing the device user to use that camera to take pictures, if an application exists on the device to do so.</td>
+  </tr>
+  <tr>
+    <td>Disable</td>
+    <td>"2"</td>
+    <td>This value will cause use of the device's rear facing camera to be disabled, thus preventing the device user from using that camera to take pictures, even if an application exists on the device to do so.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h2 id="examplexml" class="anchor"><a class="heading-anchor" href="#examplexml"><span></span></a>Example XML</h2>
+
+<h3 id="enablethefrontfacingcamera" class="anchor"><a class="heading-anchor" href="#enablethefrontfacingcamera"><span></span></a>Enable the Front Facing Camera</h3>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" version="4.3" &gt;
+        &lt;parm name="UseFrontCamera" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="disabletherearfacingcamera" class="anchor"><a class="heading-anchor" href="#disabletherearfacingcamera"><span></span></a>Disable the Rear Facing Camera</h3>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" version="4.3" &gt;
+        &lt;parm name="UseRearCamera" value="2"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="disablethefrontfacingcameraandenabletherearfacingcamera" class="anchor"><a class="heading-anchor" href="#disablethefrontfacingcameraandenabletherearfacingcamera"><span></span></a>Disable the Front Facing Camera and Enable the Rear Facing Camera</h3>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" version="4.3" &gt;
+        &lt;parm name="UseFrontCamera" value="2"/&gt;
+        &lt;parm name="UseRearCamera" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="enableallcameras" class="anchor"><a class="heading-anchor" href="#enableallcameras"><span></span></a>Enable All Cameras</h3>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" version="4.3" &gt;
+        &lt;parm name="UseAllCameras" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="disableallcameras" class="anchor"><a class="heading-anchor" href="#disableallcameras"><span></span></a>Disable All Cameras</h3>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" version="4.3" &gt;
+        &lt;parm name="UseAllCameras" value="2"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h2 id="queries" class="anchor"><a class="heading-anchor" href="#queries"><span></span></a>Queries</h2>
+
+<h3 id="getuseallcameras" class="anchor"><a class="heading-anchor" href="#getuseallcameras"><span></span></a>Get Use All Cameras</h3>
+
+<h4 id="input" class="anchor"><a class="heading-anchor" href="#input"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" &gt;
+        &lt;parm-query name="UseAllCameras"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output" class="anchor"><a class="heading-anchor" href="#output"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" version="4.3" &gt;
+        &lt;parm name="UseAllCameras" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="getusefrontcamera" class="anchor"><a class="heading-anchor" href="#getusefrontcamera"><span></span></a>Get Use Front Camera</h3>
+
+<h4 id="input-1" class="anchor"><a class="heading-anchor" href="#input-1"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" &gt;
+        &lt;parm-query name="UseFrontCamera"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-1" class="anchor"><a class="heading-anchor" href="#output-1"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" version="4.3" &gt;
+        &lt;parm name="UseFrontCamera" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="getuserearcamera" class="anchor"><a class="heading-anchor" href="#getuserearcamera"><span></span></a>Get Use Rear Camera</h3>
+
+<h4 id="input-2" class="anchor"><a class="heading-anchor" href="#input-2"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" &gt;
+        &lt;parm-query name="UseRearCamera"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-2" class="anchor"><a class="heading-anchor" href="#output-2"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="CameraMgr" version="4.3" &gt;
+        &lt;parm name="UseRearCamera" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre><p></p>
                                     </div>
                                 </div>
 

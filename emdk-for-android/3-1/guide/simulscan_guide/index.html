@@ -537,7 +537,7 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><h2 id="introduction">Introduction</h2>
+                                        <p></p><h2 id="introduction" class="anchor"><a class="heading-anchor" href="#introduction"><span></span></a>Introduction</h2>
 
 <p>SimulScan is an end-to-end data capture solution for extracting critical data from documents. A differentiating data capture value-add, it involves capturing fields of interest in a given document and converting it into data that an end-user application can use immediately at the point of transaction.</p>
 
@@ -553,7 +553,7 @@
 
 <p>Customers can interactively capture documents and obtain meaningful data present in the document.  Barcodes are identified and decoded; strings are recognized from fields containing text; images are refined from fields containing pictures and so forth. Based on a "template", an image of the entire document is processed by various engines to extract the relevant data.</p>
 
-<h2 id="determiningdevicesupport">Determining device support</h2>
+<h2 id="determiningdevicesupport" class="anchor"><a class="heading-anchor" href="#determiningdevicesupport"><span></span></a>Determining device support</h2>
 
 <ul>
 <li>Supported devices : TC55, TC75</li>
@@ -563,7 +563,7 @@
 <li>EMDK v3.1.x</li>
 </ul>
 
-<h3 id="ourlicensingprocedure">Our licensing procedure</h3>
+<h3 id="ourlicensingprocedure" class="anchor"><a class="heading-anchor" href="#ourlicensingprocedure"><span></span></a>Our licensing procedure</h3>
 
 <ul>
 <li><p>Obtain a device license from <a href="https://softwarelicensing.zebra.com/">https://softwarelicensing.zebra.com/</a></p>
@@ -585,9 +585,9 @@
 <li>Once this is complete, the License Information should be updated to reflect the fact that a license is installed</li></ul></li>
 </ul>
 
-<h2 id="gettingstarted">Getting started</h2>
+<h2 id="gettingstarted" class="anchor"><a class="heading-anchor" href="#gettingstarted"><span></span></a>Getting started</h2>
 
-<h3 id="initializeemdkmanager">Initialize EMDK manager</h3>
+<h3 id="initializeemdkmanager" class="anchor"><a class="heading-anchor" href="#initializeemdkmanager"><span></span></a>Initialize EMDK manager</h3>
 
 <p>Follow the <a href="/emdk-for-android/4-0/tutorial/tutBasicScanningAPI">“Basic Scanning Tutorial using Barcode API”</a> to
 set up your project for the EMDK.</p>
@@ -596,7 +596,7 @@ set up your project for the EMDK.</p>
   <p>Note: It is recommended to release EMDKManager in onDestroy() and onClose() (Service disconnected unexpectedly)</p>
 </blockquote>
 
-<h3 id="getsimulscanmanager">Get SimulScanManager</h3>
+<h3 id="getsimulscanmanager" class="anchor"><a class="heading-anchor" href="#getsimulscanmanager"><span></span></a>Get SimulScanManager</h3>
 
 <pre class="prettyprint"><code>
 SimulScanManager simulscanManager = (SimulScanManager) emdkManager.getInstance(FEATURE_TYPE.SimulScan);
@@ -606,7 +606,7 @@ SimulScanManager simulscanManager = (SimulScanManager) emdkManager.getInstance(F
   <p>Note: Release() must be called on SimulScanManager before switching to another EMDK or DataWedge application</p>
 </blockquote>
 
-<h3 id="getsimulscanreader">Get SimulScanReader</h3>
+<h3 id="getsimulscanreader" class="anchor"><a class="heading-anchor" href="#getsimulscanreader"><span></span></a>Get SimulScanReader</h3>
 
 <p>There are two options here:</p>
 
@@ -644,7 +644,7 @@ try {
 </code></pre></li>
 </ol>
 
-<h3 id="usingsimulscanreader">Using SimulScanReader</h3>
+<h3 id="usingsimulscanreader" class="anchor"><a class="heading-anchor" href="#usingsimulscanreader"><span></span></a>Using SimulScanReader</h3>
 
 <p>First register data and status listener to the SimulScanReader object. The listeners must implement the SimulScanDataEventListerner &amp; SimulScanStatusEventListerne interfaces.</p>
 
@@ -735,7 +735,7 @@ public void onStop(){
 }
 </code></pre>
 
-<h3 id="simulscanconfigindetail">SimulScanConfig in detail</h3>
+<h3 id="simulscanconfigindetail" class="anchor"><a class="heading-anchor" href="#simulscanconfigindetail"><span></span></a>SimulScanConfig in detail</h3>
 
 <p>The SimulScanConfig APIs can be used to set various SimulScan configuration parameters for each SimulScan reader. To get the current configuration of a SimulScanReader via a SimulScanConfig object, use the SimulScanReader.getConfig() API. Use the SimulScanConfig object’s public parameters to change the configuration and then call SimulScanReader.setConfig(SimulScanConfig config) to apply the changes.</p>
 
@@ -771,7 +771,7 @@ SimulScanConfig config = selectedSimulScanReader.getConfig();</p>
  selectedSimulScanReader.setConfig(config);</p></li>
 </ul>
 
-<h3 id="handlingonsimulscanstatusevents">Handling onSimulScanStatus events</h3>
+<h3 id="handlingonsimulscanstatusevents" class="anchor"><a class="heading-anchor" href="#handlingonsimulscanstatusevents"><span></span></a>Handling onSimulScanStatus events</h3>
 
 <p>EMDK will generate onSimulSCanStatus events when there is a change in state in a particular SimulScanReader. Use the SimulScanStatusData object in the onSimulScanScanStatus callback method to get information on the status.</p>
 
@@ -829,7 +829,7 @@ public void onSimulScanStatus(SimulScanStatusData statusData) {
   <p>Note: If you plan to do any significant processing during the onSimulScanStatus callback, you should do so in a background thread so that it does not block the UI thread.</p>
 </blockquote>
 
-<h3 id="handlingonsimulscandataevents">Handling onSimulScanData events</h3>
+<h3 id="handlingonsimulscandataevents" class="anchor"><a class="heading-anchor" href="#handlingonsimulscandataevents"><span></span></a>Handling onSimulScanData events</h3>
 
 <p>EMDK will generate onSimulScanData events after a successful scan. Use the SimulScanData object that is passed to this callback routine to get the extracted scanned information.  </p>
 
@@ -879,11 +879,11 @@ The <strong>SimulScanElements</strong> returned from <strong>SimulScanData.getEl
 </tr>
 </tbody></table>
 
-<h3 id="importantconsiderations">Important considerations</h3>
+<h3 id="importantconsiderations" class="anchor"><a class="heading-anchor" href="#importantconsiderations"><span></span></a>Important considerations</h3>
 
 <p>Due to a known issue with the Symbol SimulScan framework version 1.8, the orientation of your application must be fixed preferably using the AndroidManifest.xml. Failing to do so may cause your application to hang if the orientation changes during a scan.</p>
 
-<h2 id="simulscandefaulttemplates">SimulScan Default Templates</h2>
+<h2 id="simulscandefaulttemplates" class="anchor"><a class="heading-anchor" href="#simulscandefaulttemplates"><span></span></a>SimulScan Default Templates</h2>
 
 <p>The SimulScan default templates are available under <code>"/enterprise/device/settings/datawedge/templates"</code>. Although this path is not accessible via the file browser on devices having latest images, it is possible to access the path programmatically and get templates copied to any other location preferred by the application. The application must obtain the SimulScanManager instance before attempting to copy these templates from above location.</p><p></p>
                                     </div>

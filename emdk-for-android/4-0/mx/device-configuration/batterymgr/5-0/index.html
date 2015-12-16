@@ -634,7 +634,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h2></h2>
+                                    <h2>Battery Manager</h2>
                                     <p>
                                         EMDK For Android
                                         4.0
@@ -651,7 +651,111 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p>
+                                        <p></p><h2 id="aboutbatterymgr" class="anchor"><a class="heading-anchor" href="#aboutbatterymgr"><span></span></a>About BatteryMgr</h2>
+
+<h3 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h3>
+
+<p>Zebra Android devices can support three classes of batteries: Regular (dumb), Smart, and Gifted. Regular batteries provide only basic support for battery level. Smart Batteries add capabilities to identify batteries uniquely and to track battery provenance and usage history. Gifted Batteries add capabilities that can be used to provide more accurate gas gauging, monitor battery charging, and track battery health.</p>
+
+<p>A key capability that is lacking for Regular batteries but is provided for both Smart and Gifted Batteries is the ability to determine when a battery is nearing the end of its useful lifetime and needs to be decommissioned (replaced). In the case of Smart Batteries, decommissioning must be based strictly on the charge history of the device. In the case of Gifted Batteries, which have more robust capabilities to track battery health, decommissioning can be based on the actual condition of the battery. In either case, the determination of when a battery needs to be decommissioned is configurable, to account for different demands that are likely to be placed batteries in different environments.</p>
+
+<p>The BatteryMgr Feature Type allows you to configure the thresholds that will be used to determine when a battery needs to be decommissioned. These values, once configured, will be used by battery management software, along with other battery parameters, to determine the value of the decommission flag that will be stored in, and that will thereafter be carried with, a Smart or Gifted Battery.</p>
+
+<p>The supported thresholds are:</p>
+
+<ul>
+<li>Battery Usage Decommission Threshold
+
+
+<ul>
+<li>A battery is considered to be decommissioned if the battery usage number is greater than or equal to Battery Usage Decommission Threshold.</li>
+
+<li>Battery Usage Decommission Threshold is applicable for Smart Batteries, TC50 batteries, and TC75 batteries.</li>
+
+<li><strong>Note:</strong> Battery usage number is Aggregatecharge/RatedCapacity of the battery.</li></ul>
+</li>
+
+<li>Percent Decommission Threshold
+
+
+<ul>
+<li>A battery is considered to be decommissioned if the Health percentage of the battery is less than or equal to Percent Decommission Threshold.</li>
+
+<li>Percent Decommission Threshold is applicable for Gifted Batteries.</li>
+
+<li><strong>Note:</strong> Health percentage is the ratio of "present<em>capacity" to "design</em>capacity" at a discharge rate of "design_capacity".</li></ul>
+</li>
+</ul>
+
+<p>The values that are set for the threshold values are persisted across reboots by the use of shared preferences which will save the configuration data. The configured threshold values will also be persisted across an enterprise reset.</p>
+
+<p>An error will be reported if the OS does not support the battery decommission feature, which will be determined by whether or not the syfs files, either batteryusage<em>decommission</em>threshold or percent<em>decommission</em>threshold, are present on the device.</p>
+
+<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
+
+<ul>
+<li>Set the Battery Usage Decommission Threshold for Smart Batteries</li>
+
+<li>Set the Battery Percentage Decommission Threshold Gifted Batteries</li>
+</ul>
+
+<h2 id="parameternotes" class="anchor"><a class="heading-anchor" href="#parameternotes"><span></span></a>Parameter Notes</h2>
+
+<h3 id="batteryusagedecommissionedthreshold" class="anchor"><a class="heading-anchor" href="#batteryusagedecommissionedthreshold"><span></span></a>Battery Usage Decommissioned Threshold</h3>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: SetBatteryUsageDecommissionThreshold</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm allows you to set the Battery Usage Decommissioned Threshold on devices that have support for Smart Batteries.</p>
+  
+  <p>Smart Batteries accumulate the total amount of charge that is placed into the battery over time. This accumulation is referred to as Aggregated Charge. Over time, the Aggregated Charge will grow, and it is a reasonable expectation that a battery with a larger Aggregated Charge has a shorter remaining useful lifetime than a device with a smaller Aggregated Charge.</p>
+  
+  <p>The Battery Number is determined by dividing the Aggregated Charge of a Smart Battery by its Rated Capacity. Battery Number is therefore an attempt to assess how much impact on the health of the battery has occurred as a result of the absolute amount of charging and discharging that battery has undergone.</p>
+  
+  <p><strong>Note:</strong> It is not possible to say with any certainty what the relative impact on battery health will be as a result of partial charge cycles vs. full charge cycles. Two batteries will have similar Battery Numbers if they have similar amounts of Aggregated Charge. But if those batteries had very different charging and discharging patterns, then comparing their Battery Numbers may not tell us anything useful about their relative health. One thing we can say with certainty is that the health of a given battery will reduce as its computed Battery Number battery increases. Nonetheless, it is likely reasonable to assume that batteries with very high Battery Numbers are "less healthy" than batteries with very low Battery Numbers. Therefore, by setting a threshold based on a very high Battery Number, it should be possible to identify batteries that are most likely to need replacement.</p>
+  
+  <p>A Smart Battery is considered to be ready to be decommissioned if the Battery Usage Number is greater than or equal to the currently configured Battery Usage Decommissioned Threshold. The default value for the Battery Usage Decommissioned Threshold is 400, indicating that a Smart Battery should be decommissioned once it has undergone an approximate of 400 "full discharge/charge" cycles.</p>
+  
+  <p><strong>Note:</strong> This parm can be used on a Zebra Android device that has the ability to support Smart Batteries, whether or not a Smart Battery is currently present in the device. For example, a device could support both Regular and Smart Batteries. In such a case, this parm could be used to configure how the device will handle a Smart Battery in the future, should one be inserted, even if the device currently has a Regular Battery inserted. If this parm is on a device that does not support Smart Batteries, then an error will be returned in the Result XML document.</p>
+</blockquote>
+
+<p>Parm value input rules: </p>
+
+<ul>
+<li>The input value must be an integer between 0 and 65535</li>
+
+<li>Setting this parm to 0 (or the absence of this parm from the XML) indicates no change or not applicable</li>
+</ul>
+
+<h3 id="batterypercentagedecommissionedthreshold" class="anchor"><a class="heading-anchor" href="#batterypercentagedecommissionedthreshold"><span></span></a>Battery Percentage Decommissioned Threshold</h3>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: SetPercentDecommissionThreshold</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm allows you to set the Battery Percentage Decommissioned Threshold on devices that have support for Gifted Batteries.</p>
+  
+  <p>Gifted Batteries have the ability to determine their Actual Capacity under specific discharge conditions. Based on this, Gifted Batteries can estimate their Battery Health as the percentage the Actual Capacity is of the Rated Capacity. Over time, both the Actual Capacity and the Battery Health will reduce and it is a reasonable expectation that a battery with a lower Battery Health has a shorter remaining useful lifetime than a device with a larger Battery Health.</p>
+  
+  <p>A Gifted Battery is considered to be ready to be decommissioned if the Battery Health is less than the currently configured Battery Percentage Decommissioned Threshold. The default value for the Battery Percentage Decommissioned Threshold is 75, indicating that a Smart Battery should be decommissioned once its Actual Capacity is less than 75% of its original Rated Capacity.</p>
+  
+  <p><strong>Note:</strong> This parm can be used on a Zebra Android device that has the ability to support Gifted Batteries, whether or not a Gifted Battery is currently present in the device. For example, a device could support both Smart and Gifted Batteries. In such a case, this parm could be used to configure how the device will handle a Gifted Battery in the future, should one be inserted, even if the device currently has a Smart Battery inserted. If this parm is on a device that does not support Gifted Batteries, then an error will be returned in the Result XML document.</p>
+</blockquote>
+
+<p>Parm value input rules: </p>
+
+<ul>
+<li>The input value must be an integer between 0 and 100</li>
+
+<li>Setting this parm to 0 (or the absence of this parm from the XML) indicates no change or not applicable</li>
+</ul><p></p>
                                     </div>
                                 </div>
 

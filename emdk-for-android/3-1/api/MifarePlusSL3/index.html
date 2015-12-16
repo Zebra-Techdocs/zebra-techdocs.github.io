@@ -539,9 +539,9 @@
  an IsoDep Tag object. This class encapsulates all the methods required for
  communicating with the IsoDep tag using the tag technology protocol.</p>
 
-<h2 id="publicmethods">Public Methods</h2>
+<h2 id="publicmethods" class="anchor"><a class="heading-anchor" href="#publicmethods"><span></span></a>Public Methods</h2>
 
-<h3 id="enable">enable</h3>
+<h3 id="enable" class="anchor"><a class="heading-anchor" href="#enable"><span></span></a>enable</h3>
 
 <p><strong>public void enable(Tag tag)</strong></p>
 
@@ -567,7 +567,7 @@
 
 <p>The exception will be thrown if it fails to enable the tag.</p>
 
-<h3 id="disable">disable</h3>
+<h3 id="disable" class="anchor"><a class="heading-anchor" href="#disable"><span></span></a>disable</h3>
 
 <p><strong>public void disable()</strong></p>
 
@@ -586,7 +586,7 @@
 
 <p>The exception will be thrown if it fails to disable the tag.</p>
 
-<h3 id="firstauthentication">firstAuthentication</h3>
+<h3 id="firstauthentication" class="anchor"><a class="heading-anchor" href="#firstauthentication"><span></span></a>firstAuthentication</h3>
 
 <p><strong>public byte firstAuthentication(short keyBlockNo, SamKey samkey, byte samDiverseParams, byte pcdCap2)</strong></p>
 
@@ -625,7 +625,7 @@ lSamKey.keyVer = 0x00;
 mifarePlusSl3.firstAuthentication(blockNo_of_the_key,lSamKey, null, null);
 </code></pre>
 
-<h3 id="followingauthentication">followingAuthentication</h3>
+<h3 id="followingauthentication" class="anchor"><a class="heading-anchor" href="#followingauthentication"><span></span></a>followingAuthentication</h3>
 
 <p><strong>public void followingAuthentication(short keyBlockNo, SamKey samkey, byte samDiverseParams)</strong></p>
 
@@ -669,7 +669,7 @@ blockNo_of_the_key,
 lSamKey, null);
 </code></pre>
 
-<h3 id="resetauthentication">resetAuthentication</h3>
+<h3 id="resetauthentication" class="anchor"><a class="heading-anchor" href="#resetauthentication"><span></span></a>resetAuthentication</h3>
 
 <p><strong>public void resetAuthentication()</strong></p>
 
@@ -687,7 +687,7 @@ lSamKey, null);
 
 <p>The exception will be thrown if it fails to perform resetAuthentication on the tag.</p>
 
-<h3 id="readblock">readBlock</h3>
+<h3 id="readblock" class="anchor"><a class="heading-anchor" href="#readblock"><span></span></a>readBlock</h3>
 
 <p><strong>public byte readBlock(boolean isEncrypted, boolean macOnCmd, boolean macOnResponse, short blockNumber, short numOfBlocks)</strong></p>
 
@@ -743,7 +743,7 @@ byte[] data =  mifarePlusSl3.readBlock(true, true, true,
 BLOCK_NO, NumberOfBlocksToBeRead);
 </code></pre>
 
-<h3 id="writeblock">writeBlock</h3>
+<h3 id="writeblock" class="anchor"><a class="heading-anchor" href="#writeblock"><span></span></a>writeBlock</h3>
 
 <p><strong>public void writeBlock(boolean encrypted, boolean macOnResponse, short blockNo, byte blockData)</strong></p>
 
@@ -794,7 +794,7 @@ mifarePlusSl3.writeBlock(true, true,
 BLOCK_NO, dataToBeWritten);
 </code></pre>
 
-<h3 id="isvalueblock">isValueBlock</h3>
+<h3 id="isvalueblock" class="anchor"><a class="heading-anchor" href="#isvalueblock"><span></span></a>isValueBlock</h3>
 
 <p><strong>public boolean isValueBlock(boolean macOnResponse, short blockNumber)</strong></p>
 
@@ -830,7 +830,7 @@ lSamKey, null, null);
 boolean value= mifarePlusSl3.isValueBlock(false,BLOCK_NO);
 </code></pre>
 
-<h3 id="readvalue">readValue</h3>
+<h3 id="readvalue" class="anchor"><a class="heading-anchor" href="#readvalue"><span></span></a>readValue</h3>
 
 <p><strong>public int readValue(boolean encrypted, boolean macOnCmd, boolean macOnResponse, short blockNumber)</strong></p>
 
@@ -881,7 +881,7 @@ int value = mifarePlusSl3.readValue(false, true,
 true, VALUE_BLOCK_NO);
 </code></pre>
 
-<h3 id="writevalue">writeValue</h3>
+<h3 id="writevalue" class="anchor"><a class="heading-anchor" href="#writevalue"><span></span></a>writeValue</h3>
 
 <p><strong>public void writeValue(boolean encrypted, boolean macOnResponse, short blockNumber, int value)</strong></p>
 
@@ -935,7 +935,7 @@ mifarePlusSl3.writeValue(false,true, VALUE_BLOCK_NO,
 Value_To_Be_Written);
 </code></pre>
 
-<h3 id="increment">increment</h3>
+<h3 id="increment" class="anchor"><a class="heading-anchor" href="#increment"><span></span></a>increment</h3>
 
 <p><strong>public void increment(boolean macOnResponse, short blockNumber, int value)</strong></p>
 
@@ -983,7 +983,7 @@ value);
 mifarePlusSl3.transfer(true,VALUE_BLOCK_NO);
 </code></pre>
 
-<h3 id="decrement">decrement</h3>
+<h3 id="decrement" class="anchor"><a class="heading-anchor" href="#decrement"><span></span></a>decrement</h3>
 
 <p><strong>public void decrement(boolean macOnResponse, short blockNumber, int value)</strong></p>
 
@@ -1017,7 +1017,7 @@ mifarePlusSl3.transfer(true,VALUE_BLOCK_NO);
          is not value block then decrement will fail.
 </code></pre>
 
-<h3 id="restore">restore</h3>
+<h3 id="restore" class="anchor"><a class="heading-anchor" href="#restore"><span></span></a>restore</h3>
 
 <p><strong>public void restore(boolean macOnResponse, short blockNumber)</strong></p>
 
@@ -1047,7 +1047,7 @@ mifarePlusSl3.transfer(true,VALUE_BLOCK_NO);
          is not value block then restore will fail.
 </code></pre>
 
-<h3 id="transfer">transfer</h3>
+<h3 id="transfer" class="anchor"><a class="heading-anchor" href="#transfer"><span></span></a>transfer</h3>
 
 <p><strong>public void transfer(boolean macOnResponse, short blockNumber)</strong></p>
 
@@ -1077,7 +1077,7 @@ mifarePlusSl3.transfer(true,VALUE_BLOCK_NO);
          is not value block then transfer will fail.
 </code></pre>
 
-<h3 id="incrementtransfer">incrementTransfer</h3>
+<h3 id="incrementtransfer" class="anchor"><a class="heading-anchor" href="#incrementtransfer"><span></span></a>incrementTransfer</h3>
 
 <p><strong>public void incrementTransfer(boolean macOnResponse, short srcblockNumber, short destBlockNumber, int value)</strong></p>
 
@@ -1125,7 +1125,7 @@ mifarePlusSl3.incrementTransfer(true, VALUE_BLOCK_NO, VALUE_BLOCK_NO
 value);
 </code></pre>
 
-<h3 id="decrementtransfer">decrementTransfer</h3>
+<h3 id="decrementtransfer" class="anchor"><a class="heading-anchor" href="#decrementtransfer"><span></span></a>decrementTransfer</h3>
 
 <p><strong>public void decrementTransfer(boolean macOnResponse, short srcblockNumber, short destBlockNumber, int value)</strong></p>
 
@@ -1160,7 +1160,7 @@ value);
          value block then API will fail.
 </code></pre>
 
-<h3 id="isenabled">isEnabled</h3>
+<h3 id="isenabled" class="anchor"><a class="heading-anchor" href="#isenabled"><span></span></a>isEnabled</h3>
 
 <p><strong>public boolean isEnabled()</strong></p>
 

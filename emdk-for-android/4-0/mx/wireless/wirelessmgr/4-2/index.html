@@ -634,7 +634,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h2></h2>
+                                    <h2>Wireless Manager</h2>
                                     <p>
                                         EMDK For Android
                                         4.0
@@ -651,7 +651,95 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p>
+                                        <p></p><h2 id="aboutwirelessmgr" class="anchor"><a class="heading-anchor" href="#aboutwirelessmgr"><span></span></a>About WirelessMgr</h2>
+
+<h3 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h3>
+
+<p>Android devices often support a variety of wireless communication interfaces, including bidirectional interfaces, such as Wireless Wide Area Network (WWAN/cellular data), Bluetooth, and Near Field Communications (NFC), and including unidirectional (receive only) interfaces, such as the Global Positioning System (GPS). Wireless radios that can transmit may significantly affect battery life if turned on unnecessarily and may also need to be turned off in certain situations (e.g. when on an airplane or in "incendiary" environments). Wireless radios that can only receive may affect battery life if turned on unnecessarily.</p>
+
+<p>The WirelessMgr Feature allows you to prevent the state of various wireless radios from being changed, this providing a sort of "lock" to prevent the state from being changed by the device user.</p>
+
+<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
+
+<ul>
+<li>Enable or Disable changing the state (on/off) of various wireless radios
+
+
+<ul>
+<li>Bluetooth</li></ul>
+</li>
+</ul>
+
+<h2 id="parameternotes" class="anchor"><a class="heading-anchor" href="#parameternotes"><span></span></a>Parameter Notes</h2>
+
+<h3 id="enabledisablebluetooth" class="anchor"><a class="heading-anchor" href="#enabledisablebluetooth"><span></span></a>Enable/Disable Bluetooth</h3>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: Bluetooth</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>This parm will allow you to control whether the state (On/Off) of the Bluetooth radio can be changed.</p>
+  
+  <p><strong>Note:</strong> On JellyBean devices, this parm allows you to change the state of the Bluetooth radio by Turning it On or Off. </p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Do not change</td>
+    <td>"0"</td>
+    <td>This value (or the absence of this parm from the XML) will cause no changes to be made as to whether the state of the Bluetooth radio can be changed.</td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>"1"</td>
+    <td>This value will allow changes to be made to the state of the Bluetooth radio. On JellyBean devices, this will cause the Bluetooth radio to be Turned On.</td>
+  </tr>
+  <tr>
+    <td>Disable</td>
+    <td>"2"</td>
+    <td>This value will prevent changes from being made to the state of the Bluetooth radio. On JellyBean devices, this will cause the Bluetooth radio to be Turned Off.</td>
+  </tr>
+</tbody></table>
+</div>    
+
+<h2 id="examplexml" class="anchor"><a class="heading-anchor" href="#examplexml"><span></span></a>Example XML</h2>
+
+<h3 id="enablechangestobemadetobluetoothstate" class="anchor"><a class="heading-anchor" href="#enablechangestobemadetobluetoothstate"><span></span></a>Enable Changes to be made to Bluetooth State</h3>
+
+<blockquote>
+  <p><strong>Note:</strong> In JellyBean devices, this XML will change the state of the Bluetooth radio by Turning it On.</p>
+</blockquote>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="WirelessMgr" version="4.3" &gt;
+        &lt;parm name="Bluetooth" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="disablechangesfrombeingmadetobluetoothstate" class="anchor"><a class="heading-anchor" href="#disablechangesfrombeingmadetobluetoothstate"><span></span></a>Disable Changes from being made to Bluetooth State</h3>
+
+<blockquote>
+  <p><strong>Note:</strong> In JellyBean devices, this XML will change the state of the Bluetooth radio by Turning it Off.</p>
+</blockquote>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="WirelessMgr" version="4.3" &gt;
+        &lt;parm name="Bluetooth" value="2"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre><p></p>
                                     </div>
                                 </div>
 

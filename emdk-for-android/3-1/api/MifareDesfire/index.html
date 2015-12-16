@@ -579,9 +579,9 @@ e.printStackTrace();
 }
 </code></pre>
 
-<h2 id="publicmethods">Public Methods</h2>
+<h2 id="publicmethods" class="anchor"><a class="heading-anchor" href="#publicmethods"><span></span></a>Public Methods</h2>
 
-<h3 id="enable">enable</h3>
+<h3 id="enable" class="anchor"><a class="heading-anchor" href="#enable"><span></span></a>enable</h3>
 
 <p><strong>public void enable(Tag tag)</strong></p>
 
@@ -608,7 +608,7 @@ e.printStackTrace();
 
 <p>The exception will be thrown if it fails to enable the tag.</p>
 
-<h3 id="disable">disable</h3>
+<h3 id="disable" class="anchor"><a class="heading-anchor" href="#disable"><span></span></a>disable</h3>
 
 <p><strong>public void disable()</strong></p>
 
@@ -628,7 +628,7 @@ e.printStackTrace();
 
 <p>The exception will be thrown if it fails to disable the tag.</p>
 
-<h3 id="authenticate">authenticate</h3>
+<h3 id="authenticate" class="anchor"><a class="heading-anchor" href="#authenticate"><span></span></a>authenticate</h3>
 
 <p><strong>public void authenticate(MifareDesfire.AuthenticateType authType, int cardKeyNum, SamKey samkey, SamDiverseParams samDiverseParams)</strong></p>
 
@@ -666,7 +666,7 @@ e.printStackTrace();
 <p>The exception will be thrown if it fails to authenticate the
              tag.</p>
 
-<h3 id="getkeyversion">getKeyVersion</h3>
+<h3 id="getkeyversion" class="anchor"><a class="heading-anchor" href="#getkeyversion"><span></span></a>getKeyVersion</h3>
 
 <p><strong>public byte getKeyVersion(byte keyNum)</strong></p>
 
@@ -696,7 +696,7 @@ mifareDesfire.selectApplication(APP_ID);
 mifareDesfire.getKeyVersion(keynum);
 </code></pre>
 
-<h3 id="getapplicationids">getApplicationIDs</h3>
+<h3 id="getapplicationids" class="anchor"><a class="heading-anchor" href="#getapplicationids"><span></span></a>getApplicationIDs</h3>
 
 <p><strong>public int getApplicationIDs()</strong></p>
 
@@ -721,7 +721,7 @@ mifareDesfire.getKeyVersion(keynum);
 int[] getAppIDs =  mifareDesfire.getApplicationIDs();
 </code></pre>
 
-<h3 id="getfreememory">getFreeMemory</h3>
+<h3 id="getfreememory" class="anchor"><a class="heading-anchor" href="#getfreememory"><span></span></a>getFreeMemory</h3>
 
 <p><strong>public int getFreeMemory()</strong></p>
 
@@ -740,7 +740,7 @@ int[] getAppIDs =  mifareDesfire.getApplicationIDs();
 <p>The exception will be thrown if it fails to get the total
              free memory available on the tag.</p>
 
-<h3 id="getdfnames">getDFNames</h3>
+<h3 id="getdfnames" class="anchor"><a class="heading-anchor" href="#getdfnames"><span></span></a>getDFNames</h3>
 
 <p><strong>public DFNames getDFNames()</strong></p>
 
@@ -765,7 +765,7 @@ int[] getAppIDs =  mifareDesfire.getApplicationIDs();
 DFNames dfnames[] = mifareDesfire.getDFNames();
 </code></pre>
 
-<h3 id="getkeysettings">getKeySettings</h3>
+<h3 id="getkeysettings" class="anchor"><a class="heading-anchor" href="#getkeysettings"><span></span></a>getKeySettings</h3>
 
 <p><strong>public KeySettings getKeySettings()</strong></p>
 
@@ -792,7 +792,7 @@ mifareDesfire.selectApplication(APP_ID);
 KeySettings keySettings = mifareDesfire.getKeySettings();
 </code></pre>
 
-<h3 id="selectapplication">selectApplication</h3>
+<h3 id="selectapplication" class="anchor"><a class="heading-anchor" href="#selectapplication"><span></span></a>selectApplication</h3>
 
 <p><strong>public void selectApplication(int appID)</strong></p>
 
@@ -812,7 +812,7 @@ KeySettings keySettings = mifareDesfire.getKeySettings();
 
 <p>com.symbol.emdk.securenfc.MifareDesfireExpection</p>
 
-<h3 id="getcardversion">getCardVersion</h3>
+<h3 id="getcardversion" class="anchor"><a class="heading-anchor" href="#getcardversion"><span></span></a>getCardVersion</h3>
 
 <p><strong>public CardVersionInfo getCardVersion()</strong></p>
 
@@ -833,7 +833,7 @@ KeySettings keySettings = mifareDesfire.getKeySettings();
              version information such manufacturing, software and
              production related information.</p>
 
-<h3 id="getfileids">getFileIDs</h3>
+<h3 id="getfileids" class="anchor"><a class="heading-anchor" href="#getfileids"><span></span></a>getFileIDs</h3>
 
 <p><strong>public int getFileIDs(MifareDesfire.FileIDType fileIDType)</strong></p>
 
@@ -865,7 +865,7 @@ int[] getFileIDs= mifareDesfire.getFileIDs(FileIDType.NATIVE or FileIDType.ISO78
              file IDs or ISO 7816-4 file IDs of active files within the
              currently selected application.</p>
 
-<h3 id="getfilesettings">getFileSettings</h3>
+<h3 id="getfilesettings" class="anchor"><a class="heading-anchor" href="#getfilesettings"><span></span></a>getFileSettings</h3>
 
 <p><strong>public FileSettings getFileSettings(byte fileID)</strong></p>
 
@@ -896,7 +896,7 @@ mifareDesfire.selectApplication(APP_ID);
 FileSettings fileSettings = getFileSettings(fileID)
 </code></pre>
 
-<h3 id="readdata">readData</h3>
+<h3 id="readdata" class="anchor"><a class="heading-anchor" href="#readdata"><span></span></a>readData</h3>
 
 <p><strong>public byte readData(byte fileID, MifareDesfire.FileCommMode fileCommMode, int readOffset, int bytesToBeRead)</strong></p>
 
@@ -946,7 +946,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 0, 0);
 </code></pre>
 
-<h3 id="writedata">writeData</h3>
+<h3 id="writedata" class="anchor"><a class="heading-anchor" href="#writedata"><span></span></a>writeData</h3>
 
 <p><strong>public void writeData(byte fileID, MifareDesfire.FileCommMode fileCommMode, int writeOffset, byte writeDataBuffer)</strong></p>
 
@@ -980,7 +980,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to write the data to
              the file.</p>
 
-<h3 id="getvalue">getValue</h3>
+<h3 id="getvalue" class="anchor"><a class="heading-anchor" href="#getvalue"><span></span></a>getValue</h3>
 
 <p><strong>public int getValue(byte fileID)</strong></p>
 
@@ -1002,7 +1002,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to retieve the value
              from the value file.</p>
 
-<h3 id="credit">credit</h3>
+<h3 id="credit" class="anchor"><a class="heading-anchor" href="#credit"><span></span></a>credit</h3>
 
 <p><strong>public void credit(MifareDesfire.CreditType creditType, byte fileID, MifareDesfire.FileCommMode fileCommMode, int value)</strong></p>
 
@@ -1035,7 +1035,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to credit the value
              from the value file.</p>
 
-<h3 id="debit">debit</h3>
+<h3 id="debit" class="anchor"><a class="heading-anchor" href="#debit"><span></span></a>debit</h3>
 
 <p><strong>public void debit(byte fileID, MifareDesfire.FileCommMode fileCommMode, int value)</strong></p>
 
@@ -1064,7 +1064,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to debit the value
              from the value file.</p>
 
-<h3 id="readrecord">readRecord</h3>
+<h3 id="readrecord" class="anchor"><a class="heading-anchor" href="#readrecord"><span></span></a>readRecord</h3>
 
 <p><strong>public byte readRecord(byte fileID, MifareDesfire.FileCommMode fileCommMode, int recordOffset, int recordsToBeRead)</strong></p>
 
@@ -1099,7 +1099,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to read the data
              from the record.</p>
 
-<h3 id="writerecord">writeRecord</h3>
+<h3 id="writerecord" class="anchor"><a class="heading-anchor" href="#writerecord"><span></span></a>writeRecord</h3>
 
 <p><strong>public void writeRecord(byte fileID, MifareDesfire.FileCommMode fileCommMode, int recordOffset, int recordSize, byte writeRecordBuffer)</strong></p>
 
@@ -1138,7 +1138,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to write the data to
              the record.</p>
 
-<h3 id="resetrecord">resetRecord</h3>
+<h3 id="resetrecord" class="anchor"><a class="heading-anchor" href="#resetrecord"><span></span></a>resetRecord</h3>
 
 <p><strong>public void resetRecord(byte fileID)</strong></p>
 
@@ -1163,7 +1163,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to reset the record
              on the tag.</p>
 
-<h3 id="committransaction">commitTransaction</h3>
+<h3 id="committransaction" class="anchor"><a class="heading-anchor" href="#committransaction"><span></span></a>commitTransaction</h3>
 
 <p><strong>public void commitTransaction()</strong></p>
 
@@ -1185,7 +1185,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to commit the
              transaction on the tag.</p>
 
-<h3 id="aborttransaction">abortTransaction</h3>
+<h3 id="aborttransaction" class="anchor"><a class="heading-anchor" href="#aborttransaction"><span></span></a>abortTransaction</h3>
 
 <p><strong>public void abortTransaction()</strong></p>
 
@@ -1207,7 +1207,7 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 <p>The exception will be thrown if it fails to abort the
              transaction on the tag.</p>
 
-<h3 id="isenabled">isEnabled</h3>
+<h3 id="isenabled" class="anchor"><a class="heading-anchor" href="#isenabled"><span></span></a>isEnabled</h3>
 
 <p><strong>public boolean isEnabled()</strong></p>
 
@@ -1223,9 +1223,9 @@ byte[] rawData = mifareDesfire.readData(STD_ID,Communication_Type,
 
 <p>The exception will be thrown if the emdk is not opened.</p>
 
-<h2 id="publicenums">Public Enums</h2>
+<h2 id="publicenums" class="anchor"><a class="heading-anchor" href="#publicenums"><span></span></a>Public Enums</h2>
 
-<h3 id="mifaredesfirefilecommmode">MifareDesfire.FileCommMode</h3>
+<h3 id="mifaredesfirefilecommmode" class="anchor"><a class="heading-anchor" href="#mifaredesfirefilecommmode"><span></span></a>MifareDesfire.FileCommMode</h3>
 
 <p>File Communication Mode. Value PLAIN and Enchipered is supported. Value
  MACED is not supported.</p>
@@ -1242,7 +1242,7 @@ type NATIVE (TDEA-DESFire). It is not supported for authentication
 type ISO &amp; AES.</p></li>
 </ul>
 
-<h3 id="mifaredesfirecredittype">MifareDesfire.CreditType</h3>
+<h3 id="mifaredesfirecredittype" class="anchor"><a class="heading-anchor" href="#mifaredesfirecredittype"><span></span></a>MifareDesfire.CreditType</h3>
 
 <p><strong>Values:</strong></p>
 
@@ -1253,7 +1253,7 @@ type ISO &amp; AES.</p></li>
 permissions to the file</p></li>
 </ul>
 
-<h3 id="mifaredesfirefileidtype">MifareDesfire.FileIDType</h3>
+<h3 id="mifaredesfirefileidtype" class="anchor"><a class="heading-anchor" href="#mifaredesfirefileidtype"><span></span></a>MifareDesfire.FileIDType</h3>
 
 <p><strong>Values:</strong></p>
 
@@ -1263,7 +1263,7 @@ permissions to the file</p></li>
 <li><p><strong>ISO7816</strong> -ISO 7816-4 complaint file ID: 2 byte long</p></li>
 </ul>
 
-<h3 id="mifaredesfirefiletype">MifareDesfire.FileType</h3>
+<h3 id="mifaredesfirefiletype" class="anchor"><a class="heading-anchor" href="#mifaredesfirefiletype"><span></span></a>MifareDesfire.FileType</h3>
 
 <p><strong>Values:</strong></p>
 
@@ -1279,7 +1279,7 @@ permissions to the file</p></li>
 <li><p><strong>CYCLIC_RECORD</strong> -Cyclic record file</p></li>
 </ul>
 
-<h3 id="mifaredesfireauthenticatetype">MifareDesfire.AuthenticateType</h3>
+<h3 id="mifaredesfireauthenticatetype" class="anchor"><a class="heading-anchor" href="#mifaredesfireauthenticatetype"><span></span></a>MifareDesfire.AuthenticateType</h3>
 
 <p>Authentication mode.</p>
 

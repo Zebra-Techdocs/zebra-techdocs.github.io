@@ -535,13 +535,13 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><h2 id="overview">Overview</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>DataWedge on Android has the ability to output captured data via Intents. This article describes how to use the DataWedge Intent output plug-in and the Data Capture API to receive captured data in your native Android application.</p>
 
 <p>Knowledge of Android programming and familiarity with the Android intent mechanism are assumed. Also assumed is some familiarity with DataWedge and that you have read the DataWedge section in the Integrator Guide for your device.</p>
 
-<h2 id="applicationlayout">Application Layout</h2>
+<h2 id="applicationlayout" class="anchor"><a class="heading-anchor" href="#applicationlayout"><span></span></a>Application Layout</h2>
 
 <p>For this article we created an Android application with a blank activity using Eclipse, to which we added the following layout.</p>
 
@@ -579,11 +579,11 @@
 
 <p>The things to note in the above layout are the ImageView and the EditText widgets.  The ImageView widget will effectively act as a button which can be used to toggle the scanner instead of pressing the trigger button on the device. The EditText widget will be used to display the data that we receive in the intent.</p>
 
-<h2 id="intentstrings">Intent Strings</h2>
+<h2 id="intentstrings" class="anchor"><a class="heading-anchor" href="#intentstrings"><span></span></a>Intent Strings</h2>
 
 <p>The intent we will receive from DataWedge will contain a bundle of data which we will be retrieving using the Intent.getStringtExtra() and Intent.getSerializableExtra() methods.  </p>
 
-<h3 id="dataitems">Data Items</h3>
+<h3 id="dataitems" class="anchor"><a class="heading-anchor" href="#dataitems"><span></span></a>Data Items</h3>
 
 <p>The following is a list of the data item names that the bundle could contain.</p>
 
@@ -611,7 +611,7 @@
 </li>
 </ul>
 
-<h3 id="msrintentnames">MSR Intent Names</h3>
+<h3 id="msrintentnames" class="anchor"><a class="heading-anchor" href="#msrintentnames"><span></span></a>MSR Intent Names</h3>
 
 <p>Let's list the MSR intent names (in case we want to use these in the future).
 The MSR related data added to the intent's bundle can be retrieved using the Intent.getStringtExtra() and Intent.getSerializableExtra() calls, using the following String tags:</p>
@@ -709,7 +709,7 @@ The MSR related data added to the intent's bundle can be retrieved using the Int
 </li>
 </ul>
 
-<h3 id="softscantriggerintentnames">Soft Scan Trigger Intent Names</h3>
+<h3 id="softscantriggerintentnames" class="anchor"><a class="heading-anchor" href="#softscantriggerintentnames"><span></span></a>Soft Scan Trigger Intent Names</h3>
 
 <p>Here are the API intent names for the soft scan trigger:</p>
 
@@ -754,7 +754,7 @@ The MSR related data added to the intent's bundle can be retrieved using the Int
   <p>In the code that follows we will just be using the SOURCE<em>TAG, DATA</em>STRING<em>TAG and LABEL</em>TYPE_TAG intent data to display the intent data in the EditText widget.</p>
 </blockquote>
 
-<h2 id="handlingintents">Handling Intents</h2>
+<h2 id="handlingintents" class="anchor"><a class="heading-anchor" href="#handlingintents"><span></span></a>Handling Intents</h2>
 
 <p>Incoming intents can be handled by overriding the onNewIntent method.</p>
 
@@ -839,7 +839,7 @@ private void handleDecodeData(Intent i) {
 } 
 </code></pre>
 
-<h2 id="togglingthescantrigger">Toggling The Scan Trigger</h2>
+<h2 id="togglingthescantrigger" class="anchor"><a class="heading-anchor" href="#togglingthescantrigger"><span></span></a>Toggling The Scan Trigger</h2>
 
 <p>Our activity layout has an ImageView which we will use as a button to toggle the scan trigger.  This is done by using the Data Capture API.  The following code toggles the scan trigger each time the image is tapped.</p>
 
@@ -857,7 +857,7 @@ img.setOnClickListener(new OnClickListener() {
 }); 
 </code></pre>
 
-<h2 id="puttingitalltogether">Putting It All Together</h2>
+<h2 id="puttingitalltogether" class="anchor"><a class="heading-anchor" href="#puttingitalltogether"><span></span></a>Putting It All Together</h2>
 
 <p>Let's put all that code together so that we can see what our final activity class should look like.</p>
 
@@ -1028,7 +1028,7 @@ public class MainActivity extends Activity {
 }  
 </code></pre>
 
-<h2 id="definingintentfilters">Defining Intent Filters</h2>
+<h2 id="definingintentfilters" class="anchor"><a class="heading-anchor" href="#definingintentfilters"><span></span></a>Defining Intent Filters</h2>
 
 <p>Having dealt with the coding of our activity, we now need to inform the system which implicit intents our application can handle.  For that we need to define an intent-filter as follows.</p>
 
@@ -1075,7 +1075,7 @@ android:launchMode="singleTask"</p>
 &lt;/manifest&gt;  
 </code></pre>
 
-<h2 id="configuringdatawedge">Configuring DataWedge</h2>
+<h2 id="configuringdatawedge" class="anchor"><a class="heading-anchor" href="#configuringdatawedge"><span></span></a>Configuring DataWedge</h2>
 
 <p>Now we need to configure DataWedge to send the desired intent to our application.</p>
 
@@ -1103,7 +1103,7 @@ android:launchMode="singleTask"</p>
 <li>For the intent category enter android.intent.category.DEFAULT</li>
 </ul>
 
-<h2 id="summary">Summary</h2>
+<h2 id="summary" class="anchor"><a class="heading-anchor" href="#summary"><span></span></a>Summary</h2>
 
 <p>That's it.  You should now be able to scan a bar-code and see it appear in the sample application.
 In this article, we covered:</p>
@@ -1124,7 +1124,7 @@ In this article, we covered:</p>
 <li>Configuring DataWedge to send intents to our application</li>
 </ul>
 
-<h2 id="samplecode">Sample Code</h2>
+<h2 id="samplecode" class="anchor"><a class="heading-anchor" href="#samplecode"><span></span></a>Sample Code</h2>
 
 <p>Download the source for this project in the <a href="/emdk-for-android/4-0/guide/sample/sampledatacaptureintent">associated sample</a>.</p><p></p>
                                     </div>

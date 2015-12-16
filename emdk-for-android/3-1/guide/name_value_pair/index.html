@@ -537,14 +537,14 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><h2 id="introduction">Introduction</h2>
+                                        <p></p><h2 id="introduction" class="anchor"><a class="heading-anchor" href="#introduction"><span></span></a>Introduction</h2>
 
 <p>The <a href="/emdk-for-android/4-0/api/ProfileManager">ProfileManager</a> API exposes a method ( processProfile ) that is used
 to install and activate a static XML profile located in your projects Assets folder. The API also exposes an overload for processProfile that allows one to submit a String Array containing Name=Value Pairs that can be used to replace Name=Value Pairs in a specified Profile before installing and activating that profile. The following guide explains the use of Name=Value Pair replacement and a utility method to help create Name=Value pairs.</p>
 
-<h2 id="stringarrayextradataasnamevaluepairarray">String Array ( extraData )as Name-Value Pair Array</h2>
+<h2 id="stringarrayextradataasnamevaluepairarray" class="anchor"><a class="heading-anchor" href="#stringarrayextradataasnamevaluepairarray"><span></span></a>String Array ( extraData )as Name-Value Pair Array</h2>
 
-<h3 id="methodsignature">Method Signature</h3>
+<h3 id="methodsignature" class="anchor"><a class="heading-anchor" href="#methodsignature"><span></span></a>Method Signature</h3>
 
 <pre class="prettyprint"><code>
 processProfile(String profileName,
@@ -552,7 +552,7 @@ processProfile(String profileName,
                String[] extraData);
 </code></pre>
 
-<h3 id="profilename">profileName</h3>
+<h3 id="profilename" class="anchor"><a class="heading-anchor" href="#profilename"><span></span></a>profileName</h3>
 
 <p>The profileName argument, can be used to specify the entire profile or a named section of XML Profile.</p>
 
@@ -567,7 +567,7 @@ processProfile(String profileName,
   <p>For example, if my profile is called ‘EmdkSampleProfile-1’ and the name I gave to the Clock feature is 'clock1'. Passing 'profileName' as ' EmdkSampleProfile-1/Clock/clock1’ will just process this part of the profile.</p>
 </blockquote>
 
-<h3 id="featuretype">featureType</h3>
+<h3 id="featuretype" class="anchor"><a class="heading-anchor" href="#featuretype"><span></span></a>featureType</h3>
 
 <p>Valid FeatureTypes:</p>
 
@@ -601,15 +601,15 @@ processProfile(String profileName,
 <li>GprsMgr</li>
 </ul>
 
-<h3 id="profileflag">profileFlag</h3>
+<h3 id="profileflag" class="anchor"><a class="heading-anchor" href="#profileflag"><span></span></a>profileFlag</h3>
 
 <p>The profileFlag should be ProfileManager.PROFILE_FLAG.SET.</p>
 
-<h3 id="extradata">extraData</h3>
+<h3 id="extradata" class="anchor"><a class="heading-anchor" href="#extradata"><span></span></a>extraData</h3>
 
 <p>ExtraData should be an array of Strings. Each string element should be <code>&lt;Feature_Name&gt;.&lt;Param_name&gt;=&lt;param_value&gt;</code> format. For example "bc1.decoder<em>upce0=true". The Feature</em>Name can be from multiple features.</p>
 
-<h2 id="exampleusage">Example Usage</h2>
+<h2 id="exampleusage" class="anchor"><a class="heading-anchor" href="#exampleusage"><span></span></a>Example Usage</h2>
 
 <pre class="prettyprint"><code>
 //EMDKConfig.xml
@@ -657,9 +657,9 @@ ProfileManager.PROFILE_FLAG.SET, extraData);
 
 <p>In above example the profileName is given as ClockProfile-1/Clock/Clk01. The ClockProfile-1 is the profileName in XML. Clock is the feature Type and Clk01 is the feature Name. The feature name also referred as emdk_name.</p>
 
-<h2 id="namevaluepairutilityfunction">Name Value Pair Utility Function</h2>
+<h2 id="namevaluepairutilityfunction" class="anchor"><a class="heading-anchor" href="#namevaluepairutilityfunction"><span></span></a>Name Value Pair Utility Function</h2>
 
-<h3 id="createnamevaluepair">CreateNameValuePair</h3>
+<h3 id="createnamevaluepair" class="anchor"><a class="heading-anchor" href="#createnamevaluepair"><span></span></a>CreateNameValuePair</h3>
 
 <p>CreateNameValuePair is a static function of the ProfileManager class. This function creates a name value pair string according to the format that is compatible with com.symbol.emdk.ProfileManager.processProfile(String, * PROFILE_FLAG, String[]) function. </p>
 
