@@ -848,7 +848,7 @@ Use the <a href="/mx/choosing-a-version/">Choosing a MX Version</a> Guide as an 
 
 <p>Once you create your profiles using the Profile Manager, they will be bundled with your application and available to access using the <a href="/emdk-for-android/4-0/api/core">Profile Manager APIs</a>. These profiles will NOT be applied on the device until it is processed using these APIs.</p>
 
-<h3 id="multiplewaystoaccess" class="anchor"><a class="heading-anchor" href="#multiplewaystoaccess"><span></span></a>Multiple Ways to Access</h3>
+<h2 id="multiplewaystoaccess" class="anchor"><a class="heading-anchor" href="#multiplewaystoaccess"><span></span></a>Multiple Ways to Access</h2>
 
 <p>In the ProfileManager API, you will see three methods for <code>processProfile</code>. Essentially the last parameter, <code>extraData</code>, is one of three types:</p>
 
@@ -860,7 +860,7 @@ Use the <a href="/mx/choosing-a-version/">Choosing a MX Version</a> Guide as an 
 <li><strong>ProfileConfig</strong> - data will be handled as a ProfileConfig class.</li>
 </ul>
 
-<h3 id="creatingoractivatingaprofile" class="anchor"><a class="heading-anchor" href="#creatingoractivatingaprofile"><span></span></a>Creating or Activating a Profile</h3>
+<h2 id="creatingoractivatingaprofile" class="anchor"><a class="heading-anchor" href="#creatingoractivatingaprofile"><span></span></a>Creating or Activating a Profile</h2>
 
 <p>A profile is created or activated with using the PROFILE_FLAG.SET option. If the profileFlag is set to SET, and if the given profile is not available, it will look for a valid profile in the extraData argument and if present, the profile  will be added to the internal XML volatile repository and also applied to the device.  If the profile is present, then it will be applied to the device.</p>
 
@@ -883,7 +883,7 @@ public void onOpened(EMDKManager emdkmanager)
 }  
 </code></pre>
 
-<h3 id="gettingaprofile" class="anchor"><a class="heading-anchor" href="#gettingaprofile"><span></span></a>Getting a Profile</h3>
+<h2 id="gettingaprofile" class="anchor"><a class="heading-anchor" href="#gettingaprofile"><span></span></a>Getting a Profile</h2>
 
 <p>If profileFlag is set to GET and if the profile is present in the internal repository, it will be returned in the extraData object.</p>
 
@@ -906,7 +906,7 @@ public void onOpened(EMDKManager emdkmanager)
 }  
 </code></pre>
 
-<h3 id="modifyingaprofile" class="anchor"><a class="heading-anchor" href="#modifyingaprofile"><span></span></a>Modifying a Profile</h3>
+<h2 id="modifyingaprofile" class="anchor"><a class="heading-anchor" href="#modifyingaprofile"><span></span></a>Modifying a Profile</h2>
 
 <p>To modify a profile, you would:</p>
 
@@ -943,19 +943,19 @@ public void onOpened(EMDKManager emdkmanager)
 
 <h2 id="usagenotes" class="anchor"><a class="heading-anchor" href="#usagenotes"><span></span></a>Usage Notes</h2>
 
-<h3 id="gettingstartedwithtutorial" class="anchor"><a class="heading-anchor" href="#gettingstartedwithtutorial"><span></span></a>Getting Started with Tutorial</h3>
+<h2 id="gettingstartedwithtutorial" class="anchor"><a class="heading-anchor" href="#gettingstartedwithtutorial"><span></span></a>Getting Started with Tutorial</h2>
 
 <p>This is an overview of how you can create and integrate Profiles using EMDK Profile Manager. Click <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofile">here</a> to get started with a detailed tutorial on Data Capture Profiles to understand better.  </p>
 
-<h3 id="multipleinstanceoffeatures" class="anchor"><a class="heading-anchor" href="#multipleinstanceoffeatures"><span></span></a>Multiple Instance of Features</h3>
+<h2 id="multipleinstanceoffeatures" class="anchor"><a class="heading-anchor" href="#multipleinstanceoffeatures"><span></span></a>Multiple Instance of Features</h2>
 
 <p>There should only be one instance of the DataCapture feature. The EMDK Profile Manager will not allow you to add multiple DataCapture features, but may happen if you are manually editing the EMDKConfig.xml. Other profile features can have multiple instances and may be required in some cases. For example, you may need two 'Certificate Manager' features. The first one to initialize the certificate store and the second one to install a new certificate.</p>
 
-<h3 id="orderoffeatures" class="anchor"><a class="heading-anchor" href="#orderoffeatures"><span></span></a>Order of Features</h3>
+<h2 id="orderoffeatures" class="anchor"><a class="heading-anchor" href="#orderoffeatures"><span></span></a>Order of Features</h2>
 
 <p>The profile features will be applied synchronously in the order they appear. For example, you may want to set the clock before you attempt to connect to a Wi-Fi network.</p>
 
-<h3 id="extradataasxmlstring" class="anchor"><a class="heading-anchor" href="#extradataasxmlstring"><span></span></a>extraData as XML String</h3>
+<h2 id="extradataasxmlstring" class="anchor"><a class="heading-anchor" href="#extradataasxmlstring"><span></span></a>extraData as XML String</h2>
 
 <p>The processProfile method has an overload method that allows sending XML content in the <code>extraData</code> parameter as a String.  </p>
 
@@ -979,7 +979,7 @@ processProfile(String profileName, ProfileManager.PROFILE_FLAG profileFlag, Stri
 </li>
 </ol>
 
-<h4 id="xmlstringstructure" class="anchor"><a class="heading-anchor" href="#xmlstringstructure"><span></span></a>XML String Structure</h4>
+<h2 id="xmlstringstructure" class="anchor"><a class="heading-anchor" href="#xmlstringstructure"><span></span></a>XML String Structure</h2>
 
 <p>One way you can see how this XML string should be structured is to use the Profile Manager in Eclipse.</p>
 
@@ -1003,7 +1003,7 @@ processProfile(String profileName, ProfileManager.PROFILE_FLAG profileFlag, Stri
   <p>WARNING!: XML parm names and values may not be the same as what is presented in the Profile Manager wizard. Pay close attention to the fields of interest. It is not recommended to manually edit this XML, use the Profile Manager Wizard to ensure proper formation of the XML structure and values.</p>
 </blockquote>
 
-<h4 id="profilenameusagenotes" class="anchor"><a class="heading-anchor" href="#profilenameusagenotes"><span></span></a>Profile Name Usage Notes</h4>
+<h2 id="profilenameusagenotes" class="anchor"><a class="heading-anchor" href="#profilenameusagenotes"><span></span></a>Profile Name Usage Notes</h2>
 
 <p>If the ProfileName node is given in extraData and the ProfileFlag is SET, ProfileName in ExtraData should match with the first parameter passed to processProfile.</p>
 
@@ -1034,7 +1034,7 @@ emdkStatus = mProfileManager.processProfile("EMDKProfile1", ProfileManager.PROFI
 <li><p>DataCapture content (Activity Selection, Barcode, MSR, Intent, Keystroke, IP) is considered as a whole and setting any individual feature will set as a whole. In other words, setting "EmdkSampleProfile-1/Keystroke" will push all the DataCapture features to the device.</p></li>
 </ul>
 
-<h4 id="featurenameusagenotes" class="anchor"><a class="heading-anchor" href="#featurenameusagenotes"><span></span></a>Feature Name Usage Notes</h4>
+<h2 id="featurenameusagenotes" class="anchor"><a class="heading-anchor" href="#featurenameusagenotes"><span></span></a>Feature Name Usage Notes</h2>
 
 <p>Each specific profile feature can be named so that only that portion of the profile can be referenced. This can be accomplished by:</p>
 
@@ -1089,7 +1089,7 @@ extraData[0]=
 emdkStatus = mProfileManager.processProfile("EMDKProfile1/Clock", ProfileManager.PROFILE_FLAG.SET, extraData);
 </code></pre>
 
-<h4 id="profile_flagsetusagesummary" class="anchor"><a class="heading-anchor" href="#profile_flagsetusagesummary"><span></span></a>PROFILE_FLAG.SET Usage Summary</h4>
+<h2 id="profile_flagsetusagesummary" class="anchor"><a class="heading-anchor" href="#profile_flagsetusagesummary"><span></span></a>PROFILE_FLAG.SET Usage Summary</h2>
 
 <p>Here is a summary of the above scenarios when using PROFILE_FLAG.SET and XML in the extraData parameter:</p>
 
