@@ -446,105 +446,15 @@
 
 <p>The Encrypt Manager setting type sets encryption policies on a device through MX XML. For example a developer can create an EFS for storing application data.  </p>
 
-<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
+<h3 id="versions" class="anchor"><a class="heading-anchor" href="#versions"><span></span></a>Versions</h3>
 
 <ul>
-<li>Install/Revoke Encryption Key</li>
+<li><a href="4-3">4.3</a></li>
 
-<li>Create/Delete EFS (Encrypted File System) </li>
+<li><a href="4-4">4.4</a></li>
 
-<li>Encrypt SD Card</li>
-
-<li>Format SD Card</li>
-</ul>
-
-<h2 id="parameternotes" class="anchor"><a class="heading-anchor" href="#parameternotes"><span></span></a>Parameter Notes</h2>
-
-<h3 id="installrevokeencryptionkey" class="anchor"><a class="heading-anchor" href="#installrevokeencryptionkey"><span></span></a>Install/Revoke Encryption Key</h3>
-
-<p>This feature installs a new encryption key or revokes a named key that resides in the key store. When installing a key, the value is optional. The key value is a HEX string of length 64 bytes. If you do not provide a value, a random key is generated for a given key name. This feature does not function if a key of the same name already resides in the device key store. After installing a key, each EFS using the key is mounted. If multiple EFS use the same mount point, only the first is mounted.</p>
-
-<ul>
-<li>Install Key Name - Provide a name for the key to install.</li>
-
-<li>Install Key Value - Provide the key to install.</li>
-
-<li>Revoke Key Name(s) - Provide the key name or names (separated by commas) to revoke. After revoking a key, all EFS using that key are unmounted.</li>
-</ul>
-
-<h3 id="createdeleteefs" class="anchor"><a class="heading-anchor" href="#createdeleteefs"><span></span></a>Create/Delete EFS</h3>
-
-<p>This feature creates an Encrypted File System (EFS) on a device. Provide a name for the new EFS, a mount point for the EFS, a storage type (SDcard or Internal), the name of the key to use for encryption, and a size for the EFS in MB. The size must be between 1MB and 4096MB. Access to the EFS is denied during the creation process, which takes time.</p>
-
-<ul>
-<li>Create EFS 
-
-
-<ul>
-<li>EFS Name - Provide a name for the EFS to create.</li>
-
-<li>EFS encryption Key Name - Provide the name of the encryption key to use to encyrpt the new EFS.</li>
-
-<li>EFS Location (internal/SDcard) - Select a location in which to create the new EFS.</li>
-
-<li>Mount point for EFS - Provide a mount point for the new EFS.</li>
-
-<li>Size of EFS in MB - Provide a size in MB (1-4095) for the new EFS.</li></ul>
-</li>
-</ul>
-
-<p>Note: EFS creation can fail in any of the following conditions:</p>
-
-<ul>
-<li><p>Duplicate EFS name - EFS's with the same name can reside on different supporting file systems, but cannot reside on the same FS</p></li>
-
-<li><p>EFS storage type is not available, e.g., no SD card is inserted and mounted</p></li>
-
-<li><p>Not enough space on supporting file system </p></li>
-
-<li><p>Key does not exist </p></li>
-
-<li><p>Creating EFS on encrypted SDCard </p></li>
-
-<li><p>Invalid parm values, e.g., EFS size too big or too small or not an integer number</p></li>
-
-<li><p>Unmatched mount point and EFS storage type</p></li>
-
-<li><p>Delete EFS </p>
-
-<p></p><ul>
-<li>Delete EFS Name - Provide the name of the EFS to delete.</li></ul><p></p>
-
-<p></p></li><li>EFS Location - Select the location in which the EFS to delete resides.</li><p></p></ul><p></p>
-
-
-<h3 id="encryptsdcard" class="anchor"><a class="heading-anchor" href="#encryptsdcard"><span></span></a>Encrypt SD Card</h3>
-
-<ul>
-<li>Encrypt SDcard - Key to encrypt SDcard. Provide the name of the key to use to encrypt the sdcard.</li>
-</ul>
-
-<p>Note: This process formats and encrypts the SDcard, and deletes all existing data on the SDCard.</p>
-
-<p>The process of encrypting the SDCard takes time. Access to the encrypted SDCard is denied during the creation process. When encrypting an SDCard that was previously encrypted, the SDCard is re-formated and re-encrypted, and as a result deletes all existing data.</p>
-
-<p>Encrypted SDCard creation can fail in any of the following conditions:</p>
-
-<ul>
-<li>SDCard is not inserted</li>
-
-<li>SDCard is not mounted, e.g., UMS is in use</li>
-
-<li>Key name is invalid</li>
-</ul>
-
-<h3 id="formatsdcard" class="anchor"><a class="heading-anchor" href="#formatsdcard"><span></span></a>Format SD Card</h3>
-
-<p>This feature formats an SDCard. This results in a formatted, un-encrypted SDCard.</p>
-
-<h2 id="featurecompatibility" class="anchor"><a class="heading-anchor" href="#featurecompatibility"><span></span></a>Feature Compatibility</h2>
-
-<iframe src="compare.html#mx=4.3&amp;csp=EncryptMgr&amp;os=All&amp;embed=true"></iframe> <p></p>
+<li><a href="5-0">5-0</a></li>
+</ul><p></p>
                                     </div>
                                 </div>
 
