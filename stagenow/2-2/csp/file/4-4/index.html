@@ -424,7 +424,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h2></h2>
+                                    <h2>File Manager</h2>
                                     <p>
                                         Stagenow
                                         2.2
@@ -441,7 +441,207 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p>
+                                        <p></p><h2 id="aboutfilemanager" class="anchor"><a class="heading-anchor" href="#aboutfilemanager"><span></span></a>About File Manager</h2>
+
+<h3 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h3>
+
+<p>The File Manager setting type allows your application to manage files on the device. For example you can download a file from an ftp server and it save on the device.</p>
+
+<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
+
+<ul>
+<li>Copy a file from a location on a server (identified by a URI) to a location on the device (identified by a path and file name) </li>
+
+<li>Copy a file from data embedded in the XML object to a location on the device (identified by a path and file name) </li>
+
+<li>Transfer a file from one location on a device (identified by a path and file name) to another location on the same device (identified by a path and file name)</li>
+
+<li>Delete a file from the device</li>
+
+<li>Copy a folder or archive file containing multiple files to the device</li>
+</ul>
+
+<h2 id="parameternotes" class="anchor"><a class="heading-anchor" href="#parameternotes"><span></span></a>Parameter Notes</h2>
+
+<h3 id="fileaction" class="anchor"><a class="heading-anchor" href="#fileaction"><span></span></a>File Action</h3>
+
+<p>Pivotal parm: Yes</p>
+
+<p>Parm name: FileAction</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>Specify action to perform on file.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>Transfer\Copy File/td&gt;
+    </td><td>1</td>
+    <td>A file to be transfered or copied to the device </td>
+  </tr>
+  <tr>
+    <td>Delete File</td>
+    <td>2</td>
+    <td><p>Delete a file from a device.</p>
+  </td></tr>
+</tbody></table>
+</div>    
+
+<h3 id="targetaccessmethod" class="anchor"><a class="heading-anchor" href="#targetaccessmethod"><span></span></a>Target Access Method</h3>
+
+<p>Settable if: File Action is transfer\copy</p>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: TargetAccessMethod</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>Specify whether the batch file will be available on the device file system or embedded in the XML.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>File in Device File System/td&gt;
+    </td><td>2</td>
+    <td>The destination will be a file in the device file system.</td>
+  </tr>
+
+</tbody></table>
+</div>    
+
+<h4 id="targetpathandfilename" class="anchor"><a class="heading-anchor" href="#targetpathandfilename"><span></span></a>Target Path and File name</h4>
+
+<p>Settable if: File Action is transfer\copy</p>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: TargetPathAndFileName</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>Enter a path and file name on the device where the file will be copied or transferred to.</p>
+</blockquote>
+
+<h3 id="sourceaccessmethod" class="anchor"><a class="heading-anchor" href="#sourceaccessmethod"><span></span></a>Source Access Method</h3>
+
+<p>Pivotal parm: Yes</p>
+
+<p>Parm name: FileAction</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>Specify where the source of te transfer\copy will be located.</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>File on remote server/td&gt;
+    </td><td>1</td>
+    <td>The source file will be located on a remote server. </td>
+  </tr>
+  <tr>
+    <td>File on device file system</td>
+    <td>2</td>
+    <td><p>The source file will be located on the device.</p>
+  </td></tr>
+  <tr>
+    <td>File embedded in XML</td>
+    <td>3</td>
+    <td><p>The source file will be embedded in the xml.</p>
+  </td></tr>
+</tbody></table>
+</div>    
+
+<h4 id="sourcefileuri" class="anchor"><a class="heading-anchor" href="#sourcefileuri"><span></span></a>Source File URI</h4>
+
+<p>Settable if: File Action is transfer\copy and source is remote server</p>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: SourceURI</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>Enter a URI of the location of the file on the server.</p>
+</blockquote>
+
+<h4 id="sourcepathandfile" class="anchor"><a class="heading-anchor" href="#sourcepathandfile"><span></span></a>Source Path and File</h4>
+
+<p>Settable if: File Action is transfer\copy and source is on device</p>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: SourcePathAndFileName</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>Enter the path and file name of the source file location on the device.</p>
+</blockquote>
+
+<h4 id="embeddedfiletype" class="anchor"><a class="heading-anchor" href="#embeddedfiletype"><span></span></a>Embedded File Type</h4>
+
+<p>Settable if: File Action is transfer\copy and source is embedded</p>
+
+<p>Pivotal parm: No</p>
+
+<p>Parm name: SourceType</p>
+
+<p>Description: </p>
+
+<blockquote>
+  <p>Choose what type of file is being embedded</p>
+</blockquote>
+
+<div class="parm-table">
+ <table>
+    <tbody><tr>
+        <th>Parm Option Name</th>
+        <th>Parm Value</th>
+        <th>Description</th>
+    </tr>
+  <tr>
+    <td>General Data File</td>
+    <td>1</td>
+    <td>The embedded source file will be of any extension type. </td>
+  </tr>
+  <tr>
+    <td>Android Application</td>
+    <td>2</td>
+    <td>The embedded source file will be an Android application .APK. </td>
+  </tr>
+  <tr>
+    <td>Android OS Update</td>
+    <td>3</td>
+    <td><p>The embedded source file will be an Android OS Update in the form of a ZIP file.</p>
+  </td></tr>
+</tbody></table>
+</div>    <p></p>
                                     </div>
                                 </div>
 
