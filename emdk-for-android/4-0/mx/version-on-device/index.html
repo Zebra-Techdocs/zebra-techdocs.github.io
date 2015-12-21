@@ -375,6 +375,11 @@
                                                                 </a> 
                                                             </li>
                                                             <li>
+                                                                <a href="/emdk-for-android/4-0/mx/version-on-device">
+                                                                <span class="arrow-li">Getting Device MX Version</span>
+                                                                </a> 
+                                                            </li>
+                                                            <li>
                                                                 <span class="arrow"></span>
                                                                 <a href="/emdk-for-android/4-0/mx/app-management">
                                                                 <span class="arrow-li">Application Management</span>
@@ -697,9 +702,81 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><blockquote>
-  <p>Placeholder - this document will describe different methods for identifying what version of MX is installed on a device - manually, programtically, etc</p>
-</blockquote><p></p>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p>The version of MX on a device is a factor in determining if certain settings will be supported. There are a few ways that you can determine the version that is installed:</p>
+
+<ul>
+<li>Manually using the Settings UI</li>
+
+<li>From application code at runtime using the EMDK</li>
+
+<li>Submitting XML using the MX CSP</li>
+</ul>
+
+<h2 id="usingthesettingsui" class="anchor"><a class="heading-anchor" href="#usingthesettingsui"><span></span></a>Using the Settings UI</h2>
+
+<p>The version of MX on a Zebra Android KitKat device you can visually look in the Settings UI to determine the MX version installed:</p>
+
+<blockquote>
+  <p>Note: This is only available on KitKat 4.4+ or later versions of Zebra Android devices.</p>
+</blockquote>
+
+<ol>
+<li><p>Open the <code>Settings</code> application in the list of applications</p>
+
+<p><img src="settings.jpg" alt="img"></p></li>
+
+<li><p>Select <code>About Phone</code></p>
+
+<p><img src="aboutphone.jpg" alt="img"></p></li>
+
+<li><p>Select <code>SW Components</code></p>
+
+<p><img src="software.jpg" alt="img"></p></li>
+
+<li><p>Inspect the <code>OSX</code> item</p>
+
+<p><img src="osx.jpg" alt="img"></p></li>
+
+<li><p>In the below example the version that is installed is <code>4.4.2</code></p>
+
+<p><img src="osx-highlighted.jpg" alt="img"></p></li>
+</ol>
+
+<h2 id="usingemdkforandroid" class="anchor"><a class="heading-anchor" href="#usingemdkforandroid"><span></span></a>Using EMDK For Android</h2>
+
+<p>If your application needs to determine the version of MX installed on a device at run time, then you can use a the <code>VersionManager</code> EMDK for Android API.</p>
+
+<pre class="prettyprint"><code>
+// Get an instance of VersionManager
+versionManager = (VersionManager) EMDKManager.getInstance(EMDKManager.FEATURE_TYPE.VERSION);
+
+// Use the getVersion method passing in the version_Type.mx enum
+mxVersion = versionManager.getVersion(VERSION_TYPE.MX)
+</code></pre>
+
+<h2 id="submittingxml" class="anchor"><a class="heading-anchor" href="#submittingxml"><span></span></a>Submitting XML</h2>
+
+<p>System Administrators and MDMs can submit XML using the <code>MX</code> CSP </p>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="MX"&gt;
+        &lt;parm-query name="Version"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<p>The corresponding result returned would contain the MX version information returned in the <code>MXMFVersion</code> parm</p>
+
+<pre class="prettyprint"><code> 
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="MX" version="4.4"&gt;
+        &lt;parm name="MXMFVersion" value="4.4.3.6"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre><p></p>
                                     </div>
                                 </div>
 
