@@ -193,6 +193,8 @@
 <li>From application code at runtime using the EMDK</li>
 
 <li>Submitting XML using the MX CSP</li>
+
+<li>Using ADB</li>
 </ul>
 
 <h2 id="usingthesettingsui" class="anchor"><a class="heading-anchor" href="#usingthesettingsui"><span></span></a>Using the Settings UI</h2>
@@ -257,7 +259,34 @@ mxVersion = versionManager.getVersion(VERSION_TYPE.MX)
         &lt;parm name="MXMFVersion" value="4.4.3.6"/&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
-</code></pre><p></p>
+</code></pre>
+
+<h2 id="usingadb" class="anchor"><a class="heading-anchor" href="#usingadb"><span></span></a>Using ADB</h2>
+
+<p>The version of MX can also be obtained by using an <code>adb shell command</code></p>
+
+<pre class="prettyprint"><code>$ adb shell getprop
+</code></pre>
+
+<p>The output will need to be filtered using something like <code>grep</code>. If the device is considered to be <code>rebranded</code> to Zebra Technologies then <code>ro.symbol.osx.version</code> should be used:</p>
+
+<pre class="prettyprint"><code>$ adb shell getprop | grep ro.symbol.osx.version
+[ro.symbol.osx.version]: [QC_OSX_4.4-3]
+</code></pre>
+
+<blockquote>
+  <p>The above device has MX version <code>4.4</code> on it. The hypen 3 is merely a patch release that has been applied.</p>
+</blockquote>
+
+<p>On legacy Motorola Solutions branded devices, <code>ro.motosln.enterprise.version</code> should be used:</p>
+
+<pre class="prettyprint"><code>$ adb shell getprop | grep ro.motosln.enterprise.version
+[ro.motosln.enterprise.version]: [MX_TI4AJ.1.1_3.5.1-1]
+</code></pre>
+
+<blockquote>
+  <p>The above device has MX version <code>1.1</code> on it.</p>
+</blockquote><p></p>
                                     </div>
                                 </div>
 
