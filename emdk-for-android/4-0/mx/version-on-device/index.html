@@ -712,7 +712,13 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
                                         <h4 class=""></h4>
-                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+                                        <p></p><hr>
+
+<p>title: How to Check a Device's MX Version</p>
+
+<hr>
+
+<h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>The version of MX on a device is a factor in determining if certain settings will be supported. There are a few ways that you can determine the version that is installed:</p>
 
@@ -766,28 +772,6 @@ versionManager = (VersionManager) EMDKManager.getInstance(EMDKManager.FEATURE_TY
 
 // Use the getVersion method passing in the version_Type.mx enum
 mxVersion = versionManager.getVersion(VERSION_TYPE.MX)
-</code></pre>
-
-<h2 id="submittingxml" class="anchor"><a class="heading-anchor" href="#submittingxml"><span></span></a>Submitting XML</h2>
-
-<p>System Administrators and MDMs can submit XML using the <code>MX</code> CSP </p>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="MX"&gt;
-        &lt;parm-query name="Version"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
-
-<p>The corresponding result returned would contain the MX version information returned in the <code>MXMFVersion</code> parm</p>
-
-<pre class="prettyprint"><code> 
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="MX" version="4.4"&gt;
-        &lt;parm name="MXMFVersion" value="4.4.3.6"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
 </code></pre>
 
 <h2 id="usingadb" class="anchor"><a class="heading-anchor" href="#usingadb"><span></span></a>Using ADB</h2>
