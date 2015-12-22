@@ -57,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h1>Using the EMDK Samples with Android Studio</h1>
+                    <h1>Using the EMDK Samples with Eclipse</h1>
                     <p>
                     </p>
                 </div>
@@ -116,50 +116,64 @@
 <p>Sample Applications are installed along with the EMDK and can be found in your start bar. </p>
 
 <ol>
-<li><p>Select Start </p></li>
+<li><p>Choose a sample and click the <strong>See Details</strong> button.
+<img src="select_a_sample.png" alt="img"></p></li>
 
-<li><p>Select "EMDK for Android v2.0"</p></li>
+<li><p>Now click the <strong>Download</strong> button and select <strong>ADT Eclipse Project</strong>
+<img src="download_a_sample.png" alt="img"></p></li>
 
-<li><p>Select "Samples"</p>
+<li><p>Extract the downloaded project zip file and make note of the extracted sample's path. You will need to know where it exists on your file system in following steps.</p></li>
 
-<p><img src="/img/sample/1.jpg" alt="img"></p></li>
+<li><p>Now open Eclipse. Once the IDE has completely launched, select <strong>Import</strong> from the <strong>File</strong> menu.</p></li>
 
-<li><p>Your browser should open with a list of included samples</p>
+<li><p>Select <strong>Android</strong> then <strong>Existing Android Code into Workspace</strong> then <strong>Next</strong> in the <strong>Import</strong> dialog</p></li>
 
-<p><img src="/img/sample/2.jpg" alt="img"></p></li>
+<li><p>Click the <strong>Browse</strong> button, and then browse to the path where you extracted the downloaded sample (from step #3)</p></li>
 
-<li><p>Select "ADTSamples" from the web page   </p>
+<li><p>Check the <strong>Copy projects into workspace</strong> checkbox.</p></li>
 
-<p><img src="/img/sample/3.jpg" alt="img"></p></li>
-
-<li><p>Copy the path to the directory on your computer <br>
-  <img src="/img/sample/4.jpg" alt="img"></p></li>
-
-<li><p>In the Android Studio Quick Start pane, select <strong>Import project(Eclipse ADT,Gradle,etc.)</strong>
-<img src="/img/sample/as_import_samples_1.png" alt="img"></p></li>
-
-<li><p>Paste the path copied from step 6, into the import dialog, and click OK.
-<img src="/img/sample/as_import_samples_2.png" alt="img"></p></li>
-
-<li><p>Accept the default options on the following six dialogs by clicking <strong>Next</strong>, then select <strong>Finish</strong> on the last dialog
-<img src="/img/sample/as_import_samples_9.png" alt="img"></p></li>
-
-<li><p>When the projects are imported, the run configuration for each App is defaulted to run in the android emulator. Lets change that by clicking on the run configuration drop down and select <strong>Edit Configurations</strong>. 
-<img src="/img/sample/as_import_samples_12.png" alt="img"></p></li>
-
-<li><p>Select the configuration you want to edit in the left pane, select the <strong>USB device</strong> radio button under target device, and then click <strong>OK</strong>
-<img src="/img/sample/as_import_samples_13.png" alt="img"></p></li>
+<li><p>Now click the <strong>Finish</strong> button.</p></li>
 </ol>
+
+<p>When the import process is complete, the project load in the IDE, ready to deploy.</p>
 
 <h2 id="deployingasampleapplication" class="anchor"><a class="heading-anchor" href="#deployingasampleapplication"><span></span></a>Deploying a Sample Application</h2>
 
 <ol>
-<li><p>Select the project you want to deploy from the run configuration drop down, then press the green play button.
-<img src="/img/sample/as_import_samples_11.png" alt="img"></p>
+<li><p>Select the project.  </p></li>
 
-<p>Android studio will push the application to your device via USB and start the main activity.</p>
+<li><p>Select "File -&gt; Properties" or right click on the project and select "Properties". <br>
+<img src="/img/setup/image033.jpg" alt="img"> <br>
+<img src="/img/setup/image035.jpg" alt="img">   </p></li>
 
-<p><img src="/img/sample/BarcodeSample1_screen.png" alt="img"></p></li>
+<li><p>Click "Android" from the left pane. <br>
+<img src="/img/setup/image037.jpg" alt="img"> </p></li>
+
+<li><p>Select the "EMDK" target name from the list of Project Build Targets for the API version you require. <br>
+<img src="/img/setup/image039.jpg" alt="img">  </p>
+
+<blockquote>
+  <p>Note: <br>
+  If an "EMDK..." target name is not on the list of Build Targets, please confirm you have installed Android API 16 SDK Platform.</p>
+</blockquote></li>
+
+<li><p>Click "Apply" and "OK".  </p></li>
+
+<li><p>Attach an EMDK supported Android device to your computer in USB debug mode. </p>
+
+<blockquote>
+  <p>NOTE: The device needs the EMDK runtime installed.</p>
+</blockquote></li>
+
+<li><p>From the Package Explorer right click on the select the sample application </p></li>
+
+<li><p>Right click on the project and select "Run As" -&gt; "Android Application"</p>
+
+<p><img src="/img/sample/7.jpg" alt="img"></p></li>
+
+<li><p>Select your Android device and click "Okay". </p>
+
+<p><img src="/img/sample/8.jpg" alt="img"></p></li>
 </ol><p></p>
 	                        </div>
 	                    </div>
