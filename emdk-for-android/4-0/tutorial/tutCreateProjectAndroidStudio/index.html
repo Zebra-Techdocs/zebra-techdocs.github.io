@@ -717,61 +717,91 @@
                                         <h4 class=""></h4>
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>This tutorial will aid  you creating a new Android application project using <a href="http://developer.android.com/sdk/index.html">Android Studio</a>. This is going to be a common step for all the tutorials that use <a href="https://developer.motorolasolutions.com/community/android/emdk">EMDK for Android</a> API.</p>
+<p>This tutorial will aid you creating a new Android application project using Android Studio.</p>
 
 <h2 id="creatingtheproject" class="anchor"><a class="heading-anchor" href="#creatingtheproject"><span></span></a>Creating The Project</h2>
 
+<p>Open Android Studio.  If you have a previous project open, close the project by clicking <strong>Close Project</strong> from the <strong>File</strong> menu.</p>
+
 <ol>
-<li><p>If you have launched a fresh Android Studio, it should look like this:</p>
+<li><p>Select <strong>Start a new Android Studio project</strong> under <strong>Quick Start</strong> section.</p>
 
-<p><img src="/img/CreatingProjectAndroidStudioImages/fresh_launch.jpg" alt="img"></p>
+<p><img src="/img/CreatingProjectAndroidStudioImages/fresh_launch.jpg" alt="img"></p></li>
 
-<p>So just click the first button "Start a new Android Studio project" under "Quick Start" section.</p>
-
-<p><img src="/img/CreatingProjectAndroidStudioImages/create_new_project_from_fresh.jpg" alt="img"></p></li>
-
-<li><p>If you already have some open project in Android Studio, it should look like:</p>
-
-<p><img src="/img/CreatingProjectAndroidStudioImages/existing_open_project.jpg" alt="img"></p>
-
-<p>Click on the "File" button at the top left and select "New Project" option.</p>
-
-<p><img src="/img/CreatingProjectAndroidStudioImages/create_new_project_from_existing.jpg" alt="img"></p></li>
-
-<li><p>This would pop up the project creation screen where you need to specify project details.</p>
-
-<p><img src="/img/CreatingProjectAndroidStudioImages/create_new_project_from_existing.jpg" alt="img"></p></li>
-
-<li><p>Assign Application Name specific to your tutorial of EMDK feature along with Company Domain and click "Next".</p>
+<li><p>In the new project wizard we need to assign Application Name specific to your tutorial of EMDK feature along with Company Domain and click "Next".</p>
 
 <p><img src="/img/CreatingProjectAndroidStudioImages/app_name.jpg" alt="img"></p></li>
 
-<li><p>Select <code>EMDK x.x (API 16) (Symbol Technologies, Inc.) (API 16)</code> or <code>EMDK x.x (API 19) (Symbol Technologies, Inc.) (API 19)</code> depending on the project/EMDK feature requirement and click "Next".</p>
+<li><p>Select the <strong>Minimum SDK</strong> that supports the SDK features your project requires and click <strong>Next</strong>.</p>
 
-<p><img src="/img/CreatingProjectAndroidStudioImages/select_minimum_sdk.jpg" alt="img"></p></li>
+<p><img src="/img/CreatingProjectAndroidStudioImages/as_select_min_sdk.png" alt="img"></p></li>
 
-<li><p>Select "Blank Activity" option on "Add an activity to Mobile" screen and click "Next".</p>
+<li><p>Select <strong>Blank Activity</strong> option on <strong>Add an activity to Mobile</strong> screen and click <strong>Next</strong>.</p>
 
-<p><img src="/img/CreatingProjectAndroidStudioImages/blank_activity.jpg" alt="img"></p></li>
+<p><img src="/img/CreatingProjectAndroidStudioImages/as_select_blank_activity.png" alt="img"></p></li>
 
-<li><p>Click "Finish" and your new Android Studio project will be created.</p>
+<li><p>Click <strong>Finish</strong> and your new Android Studio project will be created.</p>
 
-<p><img src="/img/CreatingProjectAndroidStudioImages/create_project_finish.jpg" alt="img"></p>
-
-<p><img src="/img/CreatingProjectAndroidStudioImages/main_activity.jpg" alt="img"></p>
+<p><img src="/img/CreatingProjectAndroidStudioImages/as_new_project_wizard_finish.png" alt="img"></p>
 
 <blockquote>
-  <p>Note: The <code>\assets</code> folder is not present in the project structure by default unless you have created any profile. But, you can add it by simply right clicking the <code>app</code> directory and selecting <code>Assets Folder</code> under <code>New &gt; Folder</code> option. </p>
+  <p>Note: The <code>\assets</code> folder is not present in the project structure but Profile Manager will create this folder when needed.</p>
+</blockquote></li>
+</ol>
+
+<h2 id="enabletheemdkforandroidinyourproject" class="anchor"><a class="heading-anchor" href="#enabletheemdkforandroidinyourproject"><span></span></a>Enable the EMDK for Android in your project</h2>
+
+<h3 id="setemdkapi19ascompilesdkinprojectstructure" class="anchor"><a class="heading-anchor" href="#setemdkapi19ascompilesdkinprojectstructure"><span></span></a>Set EMDK API 19 as Compile SDK in Project Structure</h3>
+
+<blockquote>
+  <p>Note: At the time of this writing, Android Studio's New project wizard scaffolds new projects with dependencies that prohibit setting the <strong>Compile SDK Version</strong> below API 19. See the sections below for alternative methods of enabling the EMDK API in your project should your project require a compile SDK below API 19.</p>
 </blockquote>
 
-<p><img src="/img/CreatingProjectAndroidStudioImages/add_assets_folder.jpg" alt="img"></p>
+<p>After completing the steps in <strong>Creating The Project</strong></p>
 
-<p><img src="/img/CreatingProjectAndroidStudioImages/assets_folder_creating.jpg" alt="img"></p>
+<ol>
+<li>Select <strong>Project Structure</strong> from the <strong>File</strong> menu.</li>
 
-<p>Click "Finish" and this is how <code>\assets</code> folder can be manually added to the project structure.</p>
+<li>In the Project Structure window select <strong>app</strong> from the left pane under <strong>Modules</strong>.</li>
 
-<p><img src="/img/CreatingProjectAndroidStudioImages/assets_folder_created.jpg" alt="img"></p></li>
-</ol><p></p>
+<li>Now select <strong>EMDK x.x (API 19) (Symbol Technologies LLC) (API 19)</strong> in from the **Compile Sdk Version drop-down box.</li>
+
+<li>Now click the <strong>OK</strong> button.</li>
+</ol>
+
+<p><strong>Your project is now ready to use the EMDK for Android APIs</strong></p>
+
+<h3 id="emdkasadependencyingradlebuild" class="anchor"><a class="heading-anchor" href="#emdkasadependencyingradlebuild"><span></span></a>EMDK as a dependency in gradle.build</h3>
+
+<p>Use this method to make use of the EMDK 16 or 19 APIs in a project with a Compile SDK set above API 19.</p>
+
+<p>After completing the steps in <strong>Creating The Project</strong></p>
+
+<ol>
+<li><p>In the project folder viewer, open the <strong>build.gradle</strong> file for the <strong>app</strong> module.</p></li>
+
+<li><p>Add the following to the dependencies section</p>
+
+<p><strong>Windows</strong></p>
+
+<pre class="prettyprint"><code>
+dependencies {
+provided fileTree(include: ['com.symbol.emdk.jar'], dir: 'C:\\Users\\&lt;YOUR USER NAME&gt;\\AppData\\Local\\Android\\sdk\\add-ons\\addon-symbol-emdk_v4.0_API-19\\libs')
+compile fileTree(exclude: ['com.symbol.emdk.jar'], dir: 'libs')
+</code></pre>
+
+<p><strong>Mac</strong></p>
+
+<pre class="prettyprint"><code>
+dependencies {
+provided fileTree(include: ['com.symbol.emdk.jar'], dir: '/Users/&lt;YOUR USERNAME/Library/Android/sdk/add-ons/addon-symbol-emdk_v4.0_API-19/libs')
+compile fileTree(exclude: ['com.symbol.emdk.jar'], dir: 'libs')
+</code></pre></li>
+
+<li><p>Now rebuild your project by selecting <strong>Make Project</strong> from the <strong>Build</strong> menu.</p></li>
+</ol>
+
+<p><strong>Your project is now ready to use the EMDK for Android APIs</strong></p><p></p>
                                     </div>
                                 </div>
 
