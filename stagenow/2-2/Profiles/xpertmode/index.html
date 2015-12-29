@@ -543,7 +543,21 @@
 <li><p>Select Continue to set EHS as the default launch screen on the device.</p></li>
 
 <li><p>See <a href="../stagingprofiles?Review">Review</a> to continue creating the EHS profile.</p></li>
-</ol><p></p>
+</ol>
+
+<h2 id="usingenterprisehomescreensubwizardwithothersettingsandwizards" class="anchor"><a class="heading-anchor" href="#usingenterprisehomescreensubwizardwithothersettingsandwizards"><span></span></a>Using Enterprise Home Screen Sub-Wizard With Other Settings and Wizards</h2>
+
+<p>Some configuration parameters in the Enterprise Home Screen configuration file can force the device to reboot in order to apply them. When creating an Xpert Mode profile using other settings and wizards, the administrator should avoid this intermediate reboot while applying the configuration. StageNow Client and MX Framework cannot resume the staging process after a device reboot. It is recommended to reboot the device as a last step in the wizard if required.</p>
+
+<p>The following items force a device reboot, and list equivalent StageNow settings that achieve the same result. These settings avoid an uncontrolled reboot when applying a profile using the EHS wizard along with other settings:</p>
+
+<ul>
+<li><p>Disable Wi-Fi and Bluetooth ON/OFF in the quick settings panel:  Use Wireless Manager to manage Bluetooth and Wi-Fi Manager to manage Wi-Fi.</p></li>
+
+<li><p>Disable Airplane mode ON/OFF in the quick settings panel:  Use Settings Manager to manage Airplane mode.</p></li>
+
+<li><p>Clear the recent app list:  Reboot using Power Manager (make this the last step in the profile).</p></li>
+</ul><p></p>
                                     </div>
                                 </div>
 
