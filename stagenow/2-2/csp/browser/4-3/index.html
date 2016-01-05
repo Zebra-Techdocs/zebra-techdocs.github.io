@@ -446,7 +446,7 @@
 
 <h3 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h3>
 
-<p>Many Zebra Android devices include a default Web Browser that is derived from the stock Android Open Source Project (AOSP) Web Browser source code. The key changes made are to enable configurability of selected settings. The BrowserMgr Feature Type is used to configure these settings.</p>
+<p>The Browser Manager permits the configuration of browser settings such as the default home page.</p>
 
 <h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
 
@@ -501,21 +501,21 @@
         <th>Parm Value</th>
         <th>Description</th>
     </tr>
-  <tr>
-    <td>Do not change</td>
-    <td>"0"</td>
+ <tr>
+  <td>Do not change</td>
+  <td>"0"</td>
     <td>This value (or the absence of this parm from the XML) will cause no change to whether the Remember Passwords Option is turned On or Off.</td>
-  </tr>
-  <tr>
-    <td>Turn on</td>
-    <td>"1"</td>
+ </tr>
+ <tr>
+  <td>Turn on</td>
+  <td>"1"</td>
     <td>This value will turn the Remember Passwords Option On, which will cause the user to be prompted, following password entry, as to whether or not they would like to save the password.</td>
-  </tr>
-  <tr>
-    <td>Turn off</td>
-    <td>"2"</td>
+ </tr>
+ <tr>
+  <td>Turn off</td>
+  <td>"2"</td>
     <td>This value will turn the Remember Passwords Option Off, which will prevent any saving of passwords.</td>
-  </tr>
+ </tr>
 </tbody></table>
 </div>    
 
@@ -540,21 +540,21 @@
         <th>Parm Value</th>
         <th>Description</th>
     </tr>
-  <tr>
-    <td>Do not change</td>
-    <td>"0"</td>
+ <tr>
+  <td>Do not change</td>
+  <td>"0"</td>
     <td>This value (or the absence of this parm from the XML) will cause no change to whether or the Save Form Data Option is turned On or Off.</td>
-  </tr>
-  <tr>
-    <td>Turn on</td>
-    <td>"1"</td>
+ </tr>
+ <tr>
+  <td>Turn on</td>
+  <td>"1"</td>
     <td>This value will turn the Save Form Data Option On, which will give the device user the option to save form data so it can be automatically re-entered into the same form later.</td>
-  </tr>
-  <tr>
-    <td>Turn off</td>
-    <td>"2"</td>
+ </tr>
+ <tr>
+  <td>Turn off</td>
+  <td>"2"</td>
     <td>This value will turn the Save Form Data Option Off, which prevent any saving of form data.</td>
-  </tr>
+ </tr>
 </tbody></table>
 </div>    
 
@@ -564,89 +564,81 @@
 
 <h4 id="input" class="anchor"><a class="heading-anchor" href="#input"><span></span></a>Input</h4>
 
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic-query type = "BrowserMgr"/&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
+<p>:::XML
+  <wap-provisioningdoc>
+    <characteristic-query type="BrowserMgr">
+  </characteristic-query></wap-provisioningdoc></p>
 
 <h4 id="output" class="anchor"><a class="heading-anchor" href="#output"><span></span></a>Output</h4>
 
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="BrowserMgr" version="4.3"&gt;
-        &lt;parm name="SetDefaultHomepage" value="www.google.com"/&gt;
-        &lt;parm name="SetRememberPasswords" value="1"/&gt;
-        &lt;parm name="SetSaveFormData" value="1"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
+<p>:::XML
+  <wap-provisioningdoc>
+    <characteristic type="BrowserMgr" version="4.3">
+      <parm name="SetDefaultHomepage" value="www.google.com">
+      <parm name="SetRememberPasswords" value="1">
+      <parm name="SetSaveFormData" value="1">
+    </parm></parm></parm></characteristic>
+  </wap-provisioningdoc></p>
 
 <h3 id="getdefaulthomepagesetting" class="anchor"><a class="heading-anchor" href="#getdefaulthomepagesetting"><span></span></a>Get Default Homepage Setting</h3>
 
 <h4 id="input-1" class="anchor"><a class="heading-anchor" href="#input-1"><span></span></a>Input</h4>
 
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type = "BrowserMgr"&gt;
-        &lt;parm-query name="SetDefaultHomepage"/&gt;
-    &lt;/characteristic&gt;    
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
+<p>:::XML
+  <wap-provisioningdoc>
+    <characteristic type="BrowserMgr">
+      <parm-query name="SetDefaultHomepage">
+    </parm-query></characteristic> <br>
+  </wap-provisioningdoc></p>
 
 <h4 id="output-1" class="anchor"><a class="heading-anchor" href="#output-1"><span></span></a>Output</h4>
 
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="BrowserMgr" version="4.3"&gt;
-        &lt;parm name="SetDefaultHomepage" value="www.google.com"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
+<p>:::XML
+  <wap-provisioningdoc>
+    <characteristic type="BrowserMgr" version="4.3">
+      <parm name="SetDefaultHomepage" value="www.google.com">
+    </parm></characteristic>
+  </wap-provisioningdoc></p>
 
 <h3 id="getrememberpasswordsetting" class="anchor"><a class="heading-anchor" href="#getrememberpasswordsetting"><span></span></a>Get Remember Password Setting</h3>
 
 <h4 id="input-2" class="anchor"><a class="heading-anchor" href="#input-2"><span></span></a>Input</h4>
 
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type = "BrowserMgr"&gt;
-        &lt;parm-query name="SetRememberPasswords"/&gt;
-    &lt;/characteristic&gt;    
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
+<p>:::XML
+  <wap-provisioningdoc>
+    <characteristic type="BrowserMgr">
+      <parm-query name="SetRememberPasswords">
+    </parm-query></characteristic> <br>
+  </wap-provisioningdoc></p>
 
 <h4 id="output-2" class="anchor"><a class="heading-anchor" href="#output-2"><span></span></a>Output</h4>
 
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="BrowserMgr" version="4.3"&gt;
-        &lt;parm name="SetRememberPasswords" value="1"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
+<p>:::XML
+  <wap-provisioningdoc>
+    <characteristic type="BrowserMgr" version="4.3">
+      <parm name="SetRememberPasswords" value="1">
+    </parm></characteristic>
+  </wap-provisioningdoc></p>
 
 <h3 id="getsaveformdatasetting" class="anchor"><a class="heading-anchor" href="#getsaveformdatasetting"><span></span></a>Get Save Form Data Setting</h3>
 
 <h4 id="input-3" class="anchor"><a class="heading-anchor" href="#input-3"><span></span></a>Input</h4>
 
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type = "BrowserMgr"&gt;
-        &lt;parm-query name="SetSaveFormData"/&gt;
-    &lt;/characteristic&gt;    
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
+<p>:::XML
+  <wap-provisioningdoc>
+    <characteristic type="BrowserMgr">
+      <parm-query name="SetSaveFormData">
+    </parm-query></characteristic> <br>
+  </wap-provisioningdoc></p>
 
 <h4 id="output-3" class="anchor"><a class="heading-anchor" href="#output-3"><span></span></a>Output</h4>
 
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="BrowserMgr" version="4.3"&gt;
-        &lt;parm name="SetSaveFormData" value="1"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre><p></p>
+<p>:::XML
+  <wap-provisioningdoc>
+    <characteristic type="BrowserMgr" version="4.3">
+      <parm name="SetSaveFormData" value="1">
+    </parm></characteristic>
+  </wap-provisioningdoc></p><p></p>
                                         <div>    <footer id="footer">
         <div class="container-fluid">
             <div class="row">
