@@ -7,7 +7,7 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <title>Data Capture - Zebra Technologies Online Documentation</title>
+    <title>(Staging)- Data Capture - Zebra Technologies Online Documentation</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -56,7 +56,8 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
-<div class="container-fluid">    <section id="cta" class="wow fadeIn">
+<div class="container-fluid">
+    <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
@@ -126,7 +127,63 @@
 	                    <div class="service-box wow fadeInRight">
 	                        <div class="">
 	                            <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
-	                            <p></p>
+	                            <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p>One of the features of the EMDK is the ability to create Barcode scanning profiles. This application allows you to modify a Barcode profile to select which types of Barcodes should be interpreted.</p>
+
+<h2 id="loadingthesampleapplication" class="anchor"><a class="heading-anchor" href="#loadingthesampleapplication"><span></span></a>Loading the Sample Application</h2>
+
+<ol>
+<li>Choose a sample and click the <strong>See Details</strong> button.</li>
+
+<li>Now click the <strong>Download</strong> button </li>
+
+<li>Extract the downloaded project zip file.</li>
+
+<li>Navigate to the root of the unzipped project folder and double-click the <strong>.sln</strong> file. The project will load in the default IDE for that file type.</li>
+</ol>
+
+<p>Alternatively, you can Launch your prefered IDE ( Visual Studio or Xamarin Studio ) and load the project via the File &gt; Open menu.  </p>
+
+<h2 id="runningthesample" class="anchor"><a class="heading-anchor" href="#runningthesample"><span></span></a>Running the Sample</h2>
+
+<p>Now that we have the project loaded, lets run the application and see how it works</p>
+
+<h3 id="visualstudio" class="anchor"><a class="heading-anchor" href="#visualstudio"><span></span></a>Visual Studio</h3>
+
+<p>Visual Studio will detect your device connected via USB, it will display the name of that device next to the "Play" button.</p>
+
+<p><img src="../../images/samples/vsPlayButton.png" alt="img"></p>
+
+<p>Press the "Play" button next to the devices name.  The IDE will build, deploy and start the sample app on your device.</p>
+
+<h3 id="xamarinstudio" class="anchor"><a class="heading-anchor" href="#xamarinstudio"><span></span></a>Xamarin Studio</h3>
+
+<p>In Xamarin Studio, you may need to select your attached device from the devices dropdown under <code>Physical Devices</code>.</p>
+
+<p><img src="../../images/samples/xs-select-device.png" alt="img"></p>
+
+<p>Now press the "Play" button. The IDE will build, deploy and start the sample app on your device.</p>
+
+<p><img src="../../images/samples/xsPlayButton.png" alt="img"></p>
+
+<h2 id="usingthesample" class="anchor"><a class="heading-anchor" href="#usingthesample"><span></span></a>Using the Sample</h2>
+
+<p>When the Sample Application loads it will present the following screen. The user interface provides a means to configure the barcode type that the scanner is allowed to decode. In order to make best use of this sample you will need a barcode that represents each of the listed type.</p>
+
+<p>A successful scan of an enabled barcode symbology will append the barcode data to a list in the lower section of the user interface. Disabled type will not scan and will not append data to the barcode data list.</p>
+
+<p><img src="../../images/samples/ProfileDataCaptureScreen1.png" alt="img"></p>
+
+<p>To test this sample, change the barcode types that are allowed by checking, or un-checking the checkboxes next to the barcode types. Then press the <code>Set</code> button.</p>
+
+<p><img src="../../images/samples/ProfileDataCaptureScreen2.png" alt="img"></p>
+
+<p>The Status message should change, stating that the profile was successfully modified.</p>
+
+<p><img src="../../images/samples/ProfileDataCaptureScreen3.png" alt="img"></p>
+
+<p>To test that your settings have taken effect, scan a barcode type that was disabled previously, the barcode should not scan. Now scan a barcode that was previously disabled, the user interface should update with the decoded barcode data.</p><p></p>
 	                        </div>
 	                    </div>
 

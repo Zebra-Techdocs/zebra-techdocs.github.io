@@ -7,7 +7,7 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <title>Barcode APIs - Zebra Technologies Online Documentation</title>
+    <title>(Staging)- Barcode APIs - Zebra Technologies Online Documentation</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -56,7 +56,8 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
-<div class="container-fluid">    <section id="cta" class="wow fadeIn">
+<div class="container-fluid">
+    <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
@@ -126,7 +127,97 @@
 	                    <div class="service-box wow fadeInRight">
 	                        <div class="">
 	                            <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
-	                            <p></p>
+	                            <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p>The Barcode API's are used when you wish to handle all barcode scanning entirely in C# using <a href="/emdk-for-xamarin/1-0/api/">Barcode/Scanning APIs</a>. These API's work independently of any Data Capture profiles.  </p>
+
+<p>The available actions in the <a href="/emdk-for-xamarin/1-0/api/barcode/">Barcode/Scanning API</a> are:</p>
+
+<ul>
+<li>Set Scanner Device  </li>
+
+<li>Set <a href="/emdk-for-xamarin/1-0/api/barcode/Scanner_TriggerTypes">TriggerType</a></li>
+
+<li>Set <a href="/emdk-for-xamarin/1-0/api/barcode/ScannerConfig_DecoderParameters">Decoder Params</a></li>
+
+<li>Set <a href="/emdk-for-xamarin/1-0/api/barcode/ScannerConfig_ReaderParameters">Reader Params</a></li>
+
+<li>Set <a href="/emdk-for-xamarin/1-0/api/barcode/ScannerConfig_ScanParameters">Scan Params</a></li>
+
+<li>Scan barcodes based on selected features   </li>
+</ul>
+
+<p>This sample application will allow you to scan barcodes based on selected scanner device, trigger type and few decoder <a href="/emdk-for-xamarin/1-0/api/barcode/ScannerConfig_DecoderParameters">Decoder Params</a>.</p>
+
+<h2 id="openingthecomponentsample" class="anchor"><a class="heading-anchor" href="#openingthecomponentsample"><span></span></a>Opening The Component Sample</h2>
+
+<p>This sample is also included with the EMDK Component, follow this guide to <a href="../../guide/component-sample">open Sample included in Component</a>.</p>
+
+<h2 id="loadingthesampleapplication" class="anchor"><a class="heading-anchor" href="#loadingthesampleapplication"><span></span></a>Loading the Sample Application</h2>
+
+<ol>
+<li>Choose a sample and click the <strong>See Details</strong> button.</li>
+
+<li>Now click the <strong>Download</strong> button </li>
+
+<li>Extract the downloaded project zip file.</li>
+
+<li>Navigate to the root of the unzipped project folder and double-click the <strong>.sln</strong> file. The project will load in the default IDE for that file type.</li>
+</ol>
+
+<p>Alternatively, you can Launch your prefered IDE ( Visual Studio or Xamarin Studio ) and load the project via the File &gt; Open menu.  </p>
+
+<h2 id="runningthesample" class="anchor"><a class="heading-anchor" href="#runningthesample"><span></span></a>Running The Sample</h2>
+
+<h3 id="visualstudio" class="anchor"><a class="heading-anchor" href="#visualstudio"><span></span></a>Visual Studio</h3>
+
+<p>Visual Studio will detect your device connected via USB, it will display the name of that device next to the "Play" button.</p>
+
+<p><img src="../../images/samples/vsPlayButton.png" alt="img"></p>
+
+<p>Press the "Play" button next to the devices name.  The IDE will build, deploy and start the sample app on your device.</p>
+
+<h3 id="xamarinstudio" class="anchor"><a class="heading-anchor" href="#xamarinstudio"><span></span></a>Xamarin Studio</h3>
+
+<p>In Xamarin Studio, you may need to select your attached device from the devices dropdown under <code>Physical Devices</code>.</p>
+
+<p><img src="../../images/samples/xs-select-device.png" alt="img"></p>
+
+<p>Now press the "Play" button. The IDE will build, deploy and start the sample app on your device.</p>
+
+<p><img src="../../images/samples/xsPlayButton.png" alt="img"></p>
+
+<h2 id="usingthesample" class="anchor"><a class="heading-anchor" href="#usingthesample"><span></span></a>Using the Sample</h2>
+
+<ol>
+<li><p>When the application starts it should look like the following.</p>
+
+<p><img src="../../images/samples/barcode_1.png" alt="img"></p></li>
+
+<li><p>Set scanner to "Serial SSI Scanner", which is the default one". </p>
+
+<p><img src="../../images/samples/barcode_2.png" alt="img"></p></li>
+
+<li><p>Set Trigger Type to "HARD".</p>
+
+<p><img src="../../images/samples/barcode_3.png" alt="img"></p>
+
+<blockquote>
+  <p>Note: Trigger Type "HARD" lets you scan the barcode using device's hard scan key whereas "SOFT" allows you to scan without using device's hard scan key.</p>
+</blockquote></li>
+
+<li><p>Keep all checkboxes checked for decoder params and this is how it should look after setting all fields.</p>
+
+<p><img src="../../images/samples/barcode_4.png" alt="img">      </p></li>
+
+<li><p>Click "Start" button and the status will be updated.</p>
+
+<p><img src="../../images/samples/barcode_5.png" alt="img"> </p></li>
+
+<li><p>Since we selected Trigger Type as "HARD", press the hard scan key of Symbol device and scan a particular barcode. It will get the scanned barcode data in "Data" field of UI.</p>
+
+<p><img src="../../images/samples/barcode_6.png" alt="img"> </p></li>
+</ol><p></p>
 	                        </div>
 	                    </div>
 
