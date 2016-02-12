@@ -103,11 +103,11 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-3 fixed-column-left">
+                <div class="col-sm-3 ">
                     <!-- <nav id="automenu"   >
                     
                     </nav> -->
-                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 95%; overflow-y: auto; ">
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         <ul class="nav">
                             <li><strong>DevAdmin Manager</strong></li>
                         </ul>
@@ -214,7 +214,7 @@
                     
                     </script>
                 </div>                
-                <div class="col-sm-9 fixed-column-right">
+                <div class="col-sm-9 ">
                     <div class="row">
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
@@ -238,6 +238,21 @@
                                 <div class="">
                                 <!-- Start of content list -->
                                 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -278,24 +293,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -531,6 +528,76 @@
                                     
                                     
                                 <div class="">
+                                    <h2 class="anchor" id="device-administration-action"><a class="heading-anchor" href="#device-administration-action"><span></span></a>Device Administration Action</h2>
+                                    <p class="">
+
+        </p><p>This parm allows you to approve or remove approval to be a Device Administrator from an application that is written to conform to the DeviceAdminReceiver model.</p>
+
+<blockquote>
+  <p>By default, an application is not initially approved as a Device Administrator when it is first installed and launched. Only an application that is written to conform to the DeviceAdminReceiver model and that is currently installed can be approved to be a Device Administrator.</p>
+  
+  <p>When an application that is written to conform to the DeviceAdminReceiver model is approved to be a Device Administrator, it will be notified so it can begin using the Device Administration APIs. When Device Administrator approval is removed from such an application, it will be notified that it must stop using the Device Administration APIs.</p>
+  
+  <p><strong>Note:</strong> The ability to control approve or remove approval for an application using the DevAdmin does not prevent the device user from approving or removing approval for an application from the System Settings Menu. The effect on an application of approval or removal of approval is the same whether initiated by the device user or by the DevAdmin.</p>
+</blockquote>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Parm Name:</b> DevAdminAction</p>
+                                        <p><b>Pivotal Parm:</b> Yes</p>
+                                         <p><b>Versions:</b>
+                                                    <span class="label label-default">MX 4.3 +</span>
+                                        </p>                                     
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th>Versions</th>
+                                            </tr>
+                                            <tr>
+                                                <td>0</td>
+                                                <td>Do nothing</td>
+                                                <td>This value (or the absence of this parm from the XML) will not make any change to whether any application is approved to be a Device Administrator.</td>
+                                                <td>
+                                                            MX 4.3+
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Turn On as Device Administrator</td>
+                                                <td>This value will approve a specific application as a Device Administrator.</td>
+                                                <td>
+                                                            MX 4.3+
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Turn Off as Device Administrator</td>
+                                                <td>This value will remove Device Administrator approval from a specific application.</td>
+                                                <td>
+                                                            MX 4.3+
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                <div class="">
                                     <h2 class="anchor" id="install-app-from-unknown-sources"><a class="heading-anchor" href="#install-app-from-unknown-sources"><span></span></a>Install App from Unknown Sources</h2>
                                     <p class="">
 
@@ -605,74 +672,23 @@
                                     
                                     
                                     
-                                <div class="">
-                                    <h2 class="anchor" id="device-administration-action"><a class="heading-anchor" href="#device-administration-action"><span></span></a>Device Administration Action</h2>
-                                    <p class="">
-
-        </p><p>This parm allows you to approve or remove approval to be a Device Administrator from an application that is written to conform to the DeviceAdminReceiver model.</p>
-
-<blockquote>
-  <p>By default, an application is not initially approved as a Device Administrator when it is first installed and launched. Only an application that is written to conform to the DeviceAdminReceiver model and that is currently installed can be approved to be a Device Administrator.</p>
-  
-  <p>When an application that is written to conform to the DeviceAdminReceiver model is approved to be a Device Administrator, it will be notified so it can begin using the Device Administration APIs. When Device Administrator approval is removed from such an application, it will be notified that it must stop using the Device Administration APIs.</p>
-  
-  <p><strong>Note:</strong> The ability to control approve or remove approval for an application using the DevAdmin does not prevent the device user from approving or removing approval for an application from the System Settings Menu. The effect on an application of approval or removal of approval is the same whether initiated by the device user or by the DevAdmin.</p>
-</blockquote>
-
-
-<p></p>
-                                        <blockquote>
-                                        <p><b>Parm Name:</b> DevAdminAction</p>
-                                        <p><b>Pivotal Parm:</b> Yes</p>
-                                         <p><b>Versions:</b>
-                                                    <span class="label label-default">MX 4.3 +</span>
-                                        </p>                                     
-                                        </blockquote>
                                     
                                     
-                                    <div>
-                                        <table class="table">
-                                            <tbody><tr>
-                                                <th>Option</th>
-                                                <th>Name</th>
-                                                <th>Description</th>
-                                                <th>Versions</th>
-                                            </tr>
-                                            <tr>
-                                                <td>0</td>
-                                                <td>Do nothing</td>
-                                                <td>This value (or the absence of this parm from the XML) will not make any change to whether any application is approved to be a Device Administrator.</td>
-                                                <td>
-                                                            MX 4.3+
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Turn On as Device Administrator</td>
-                                                <td>This value will approve a specific application as a Device Administrator.</td>
-                                                <td>
-                                                            MX 4.3+
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Turn Off as Device Administrator</td>
-                                                <td>This value will remove Device Administrator approval from a specific application.</td>
-                                                <td>
-                                                            MX 4.3+
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            
-                                        </tbody></table>
-                                    </div>	
                                     
-                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -716,31 +732,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1023,26 +1014,17 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div><!--/.container-->
-                                <div>     <footer id="footer" class="navbar-fixed-bottom">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-10">
-                    © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
-                </div>
-                <div class="col-sm-2">
-                    <ul class="social-icons">
-                        <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer><!--/#footer-->
-</div>
+                                
                             </section><!--/#services-->
                         </div>
                     </div>
@@ -1052,6 +1034,24 @@
         </div>
     </section>    
  </div>
+         <footer id="footer" class="navbar-fixed-bottom">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                    </div>
+                    <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer><!--/#footer-->
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/mousescroll.js"></script>
