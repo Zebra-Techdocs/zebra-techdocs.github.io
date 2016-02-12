@@ -7,6 +7,7 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
+    <meta title="App Manager">
     <title>App Manager - Zebra Technologies Online Documentation</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +28,7 @@
 <script src="/js/jquery.js"></script></head><!--/head-->
 
 
-<body id="home" class="homepage">
+<body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
 
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -39,17 +40,58 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><span class="navbar-text"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
-    padding-right: 3px;"> <strong>Online Documentation</strong></span></a>
+                    <span class="navbar-text"><a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
+    padding-right: 3px;"></a> <strong>Online Documentation</strong>
+                    <p style="padding-left:50px;">
+                                        EMDK For Android
+                                        3.1
+                    </p>
+    </span>
+                   
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="/products">SDKs</a></li>
-                        <li><a href="/samples">Samples</a></li>
-                        <li><a href="/guides">Guides</a></li>
-                        <li><a href="/tutorials">Tutorials</a></li>
-                        <li><a href="/apis">APIs</a></li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/about">
+                                    Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/gettingstarted">
+                                    Getting Started
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/tutorial/">
+                                    Tutorials
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/samples">
+                                    Samples
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/programming-guides">
+                                    Guides
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/profile-manager-guides">
+                                    Profile Manager
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/api">
+                                    APIs
+                            </a>
+                        </li>
+                        <!-- <li ><a href="/products">SDKs</a></li>
+                        <li ><a href="/samples">Samples</a></li>
+                        <li ><a href="/guides">Guides</a></li>
+                        <li ><a href="/tutorials">Tutorials</a></li>
+                        <li ><a href="/apis">APIs</a></li> -->
                         <!-- <li><a href="#"><input type="text" class="st-default-search-input"></a></li> -->
                     </ul>
                 </div>
@@ -127,7 +169,68 @@
 	                    <div class="service-box wow fadeInRight">
 	                        <div class="">
 	                            <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
-	                            <p></p>
+	                            <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p>The EMDK for Android allows you to manage applications on the device. </p>
+
+<p>The available actions are:  </p>
+
+<ul>
+<li>Install an application</li>
+
+<li>Uninstall an application</li>
+
+<li>Upgrade an application  </li>
+
+<li>Set an application as the default launcher </li>
+</ul>
+
+<p>This sample application will allow you to install, upgrade, and uninstall an application. </p>
+
+<h2 id="prerequisites" class="anchor"><a class="heading-anchor" href="#prerequisites"><span></span></a>Prerequisites</h2>
+
+<ul>
+<li>Java JDK </li>
+
+<li>Eclipse with ADT plugin or  Android Studio</li>
+
+<li>EMDK for Android  </li>
+
+<li>An EMDK supported Android device</li>
+</ul>
+
+<p>For more information about setting up the EMDK please see the <a href="../../guide/setup">EMDK Setup Guide</a>.</p>
+
+<h2 id="loadingthesampleapplication" class="anchor"><a class="heading-anchor" href="#loadingthesampleapplication"><span></span></a>Loading the Sample Application</h2>
+
+<p>The following guide will walk you through setting up the EMDK samples in your IDE.</p>
+
+<ul>
+<li><a href="../../guide/emdksamples_androidstudio">Android Studio</a></li>
+
+<li><a href="../../guide/emdksamples_eclipse">Eclipse/ADT</a></li>
+</ul>
+
+<h2 id="deployingthesampleapplication" class="anchor"><a class="heading-anchor" href="#deployingthesampleapplication"><span></span></a>Deploying The Sample Application</h2>
+
+<p><a href="../../guide/sample/emdksamples">Using the EMDK Samples</a></p>
+
+<h2 id="usingthissample" class="anchor"><a class="heading-anchor" href="#usingthissample"><span></span></a>Using This Sample</h2>
+
+<ol>
+<li>When the application starts it should look like the following. <br>
+<img src="../../images/samples/2_1.png" alt="img">  </li>
+
+<li>Enter the path to an APK file that you have placed on your device.  /sdcard/Battery Sample Application.apk
+<img src="../../images/samples/2_2.png" alt="img"> <br>
+&gt;Note: <br>
+&gt;To place an APK file on the device connect the device to to you computer over USB as a "Medea Device" and copy an APK to your device.  </li>
+
+<li>Click "Set" </li>
+
+<li>Check the status field. <br>
+<img src="../../images/samples/2_3.png" alt="img">  </li>
+</ol><p></p>
 	                        </div>
 	                    </div>
 
@@ -177,7 +280,7 @@
 	});
 </script>
  </div>
-        <footer id="footer">
+         <footer id="footer" class="navbar-fixed-bottom">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
@@ -207,7 +310,6 @@
     <script src="/js/prettify.js"></script>
     <script src="/js/zepto.js"></script>
     <script src="/js/jquery.waterfall.js"></script>   
-    <script src="/js/lunr.min.js"></script>   
     <script src="/js/main.js"></script>
 
 <script type="text/javascript">

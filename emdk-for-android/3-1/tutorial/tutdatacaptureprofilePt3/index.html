@@ -7,6 +7,7 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
+    <meta title="Using Multiple Data Capture Profiles">
     <title>Using Multiple Data Capture Profiles - Zebra Technologies Online Documentation</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +28,7 @@
 <script src="/js/jquery.js"></script></head><!--/head-->
 
 
-<body id="home" class="homepage">
+<body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
 
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -39,17 +40,58 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><span class="navbar-text"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
-    padding-right: 3px;"> <strong>Online Documentation</strong></span></a>
+                    <span class="navbar-text"><a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
+    padding-right: 3px;"></a> <strong>Online Documentation</strong>
+                    <p style="padding-left:50px;">
+                                        EMDK For Android
+                                        3.1
+                    </p>
+    </span>
+                   
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="/products">SDKs</a></li>
-                        <li><a href="/samples">Samples</a></li>
-                        <li><a href="/guides">Guides</a></li>
-                        <li><a href="/tutorials">Tutorials</a></li>
-                        <li><a href="/apis">APIs</a></li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/about">
+                                    Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/gettingstarted">
+                                    Getting Started
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/tutorial/">
+                                    Tutorials
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/samples">
+                                    Samples
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/programming-guides">
+                                    Guides
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/profile-manager-guides">
+                                    Profile Manager
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/api">
+                                    APIs
+                            </a>
+                        </li>
+                        <!-- <li ><a href="/products">SDKs</a></li>
+                        <li ><a href="/samples">Samples</a></li>
+                        <li ><a href="/guides">Guides</a></li>
+                        <li ><a href="/tutorials">Tutorials</a></li>
+                        <li ><a href="/apis">APIs</a></li> -->
                         <!-- <li><a href="#"><input type="text" class="st-default-search-input"></a></li> -->
                     </ul>
                 </div>
@@ -61,58 +103,173 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-3 fixed-column-left">
-                    <aside class="tree-sidebar">            
+                <div class="col-sm-3 " id="sidebar">
+                    <!-- <nav id="automenu"   >
                     
-                                <div class="row">
-                                    <div class="col-sm-12">
+                    </nav> -->
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 95%; overflow-y: auto; ">
+                        <ul class="nav">
+                            <li><strong>Using Multiple Data Capture Profiles</strong></li>
+                        </ul>
+                    </nav>
+                    <!-- <div class="row">
+                        <nav class="col-xs-3 bs-docs-sidebar">
+                            <ul id="sidebar" class="nav nav-stacked fixed">
+                                <li>
+                                    <a href="/emdk-for-android/3-1/guide/about">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/guide/gettingstarted">Getting Started</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/download">Download</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/setup">EMDK For Android Setup</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/setupDevice">Configuring A Device</a></li>
+                                        <li><a href="/emdk-for-android/3-1/tutorial/tutdatacaptureprofile">Build Hello EMDK</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/profile-manager">Using Profile Manager</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/tutorial/">Tutorials</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="">Profile Manager</a></li>
+                                        <li><a href="">Platform Intents</a></li>
+                                        <li><a href="">Scanning APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/tutorial/tutScanAndPairAPI">ScanAndPair Remote Device</a></li>
+                                        <li><a href="/emdk-for-android/3-1/tutorial/tutSimulScanAPI">Document Capture</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/samples">Samples</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/3-1/guide/emdksamples_androidstudio">Importing Samples(Android Studio)</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/emdksamples_eclipse">Importing Samples(Eclipse/ADT)</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/barcode">Barcode Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/data-capture">DataCapture Profile Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/app-manager">AppManager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/clock">Clock Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/gprs">GPRS Manager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/power">PowerManager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/wifi">Wi-Fi Manager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/bluetooth">Wireless Manager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/scanandpair">Scan and Pair Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/simulscan">SimulScan Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/personal-shopper">PersonalShopper Sample</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/guide/programming-guides">Guides</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/3-1/guide/simulscan_guide">SimulScan API</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/name_value_pair">Name-Value Pair</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/personalshopper">PersonalShopper API</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/securenfc">Secure NFC API</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/scanner">Barcode Scanner States</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/payment-api">Payment API</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/pd40-firmware-update">PD40 Firmware Update</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/guide/profile-manager-guides">Profile Manager</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/3-1/guide/profile-manager/">Using Profile Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx">Profile Features</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/overview">MX Overview</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/choosing-a-version">Choosing a Version</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/compatibility">Feature Compatibility</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/version-on-device">Getting Device MX Version</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/accessmgr">Access Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/analytics/">Analytics Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/appmgr">App Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/audiomgr/">Audio Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/batterymgr/">Battery Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/browsermgr">Browser Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/cameramgr">Camera Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/cellularmgr/">Cellular Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/certmgr">Cert Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/clock/">Clock</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/componentmgr/">Component Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/data-capture">Data Capture</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/devadmin">DevAdmin</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/dhcp">DHCP Options Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/displaymgr/">Display Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/encryptmgr">Encrypt Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/gprsmgr/">GPRS Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/keymappingmgr">KeyMap Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/persistance">Persistance Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/powermgr/">Power Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/powerkeymgr">PowerKey Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/settingsmgr">Settings Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/sdcardmgr">SD Card Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/touchmgr/">Touch Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/threatmgr">Threat Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/usbmgr">USB Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/uimgr">UI Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/wifi/">WiFi Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/wirelessmgr/">Wireless Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/xml">XML Manager</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/api">APIs</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/3-1/api/core">Core and ProfileManager APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/barcode">Barcode APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/scanandpair">ScanAndPair APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/simulscan">SimulScan APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/personalshopper">Personal Shopper APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/securenfc">Secure NFC APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/payment">Payment APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/serialcomm">Serial Comm APIs</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div> -->
                     
-                                        <div class="sidebar-container">
-                                            <!-- <ul  class="" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> -->
-                                            <ul class="">
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                    </aside>
-                    
+                    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
                     <script type="text/javascript">
-                        $(window).load(function() {
-                            var pathname = window.location.pathname.slice(0, -1);
-                            // console.log(pathname);
-                            var menuitem = $('.sidebar-container').find('a[href^="' + pathname + '"]').first()[0];
-                            var menulevel = $(menuitem).parents('ul').length;
-                            // console.log(menuitem);
-                            // console.log(menulevel);
-                            var parentLI = $(menuitem).parent().parent().parent();
-                            var itemarrow = parentLI.find('.arrow').first()[0];
+                        // $(window).load(function() {
+                        //     var pathname = window.location.pathname.slice(0, -1);
+                        //     // console.log(pathname);
+                        //     var menuitem = $('.sidebar-container').find('a[href^="' + pathname + '"]').first()[0];
+                        //     var menulevel = $(menuitem).parents('ul').length;
+                        //     // console.log(menuitem);
+                        //     // console.log(menulevel);
+                        //     var parentLI = $(menuitem).parent().parent().parent();
+                        //     var itemarrow = parentLI.find('.arrow').first()[0];
                     
-                            //now check for higher level
-                            if(menulevel==3){
+                        //     //now check for higher level
+                        //     if(menulevel==3){
                     
-                                var parentFirstLevel = $(parentLI).parent().parent().first()[0];
-                                var parentarrow = $(parentFirstLevel).find('.arrow').first()[0];
-                                parentarrow.click();
-                            }
+                        //         var parentFirstLevel = $(parentLI).parent().parent().first()[0];
+                        //         var parentarrow = $(parentFirstLevel).find('.arrow').first()[0];
+                        //         parentarrow.click();
+                        //     }
                     
-                            if(menulevel>1){
-                                itemarrow.click();
+                        //     if(menulevel>1){
+                        //         itemarrow.click();
                     
-                            }
-                            $(menuitem).addClass('sidebar-selected');
-                            $(menuitem).parent().append('<ul style="display:block" id="indoc"></ul>')
-                            $('h2').each(function(index, value){
-                                  if($(this).attr('id')){
-                                    var anchor = "#" + $(this).attr('id');
-                                    var text = $(this).text();
-                                    var li = "<li><a href='" + anchor + "'>" + text + "</a>" ;
-                                    $('#indoc').append(li);               
-                                  }
+                        //     }
+                        //     $(menuitem).addClass('sidebar-selected');
+                        //     $(menuitem).parent().append('<ul style="display:block" id="indoc"></ul>')
+                        //     $('h2').each(function(index, value){
+                        //           if($(this).attr('id')){
+                        //             var anchor = "#" + $(this).attr('id');
+                        //             var text = $(this).text();
+                        //             var li = "<li><a href='" + anchor + "'>" + text + "</a>" ;
+                        //             $('#indoc').append(li);               
+                        //           }
                     
                                   
-                            });
-                        });
+                        //     });
+                        // });
+                      // var $myNav = $('#toc');
+                      // $('body').scrollspy({
+                      //   target: $myNav
+                      // });
                     
+                     
                         function affix() {
                             
                             // Fit affix width to its parent's width
@@ -136,14 +293,14 @@
                             }
                         };
                     
-                        $(window).on('scroll resize', function() {
-                            affix();
+                        // $(window).on('scroll resize', function() {
+                        //     affix();
                      
-                        });
+                        // });
                     
                     </script>
                 </div>                
-                <div class="col-sm-9 fixed-column-right">
+                <div class="col-sm-9 ">
                     <div class="row">
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
@@ -163,10 +320,10 @@
                             <!-- Start of guide -->
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
-                                        <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
+
                                         <p></p><h2 id="developinganemdkforandroidapplicationpart3" class="anchor"><a class="heading-anchor" href="#developinganemdkforandroidapplicationpart3"><span></span></a>Developing an EMDK for Android Application Part 3</h2>
 
-<p>This guide will walk you through adding MSR support and multiple profiles to the Android application you made using <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofilePt2">Developing an EMDK for Android Application Part 2</a>. This tutorial will add some more complexity by adding a second screen as well as adding a second Data Capture Profile.</p>
+<p>This guide will walk you through adding MSR support and multiple profiles to the Android application you made using <a href="../tutdatacaptureprofilePt2">Developing an EMDK for Android Application Part 2</a>. This tutorial will add some more complexity by adding a second screen as well as adding a second Data Capture Profile.</p>
 
 <h3 id="prerequisites" class="anchor"><a class="heading-anchor" href="#prerequisites"><span></span></a>Prerequisites</h3>
 
@@ -177,12 +334,12 @@
 
 <li>EMDK for Android </li>
 
-<li>Completion of <a href="/emdk-for-android/4-0/guide/tutorial/tutdatacaptureprofile">Developing an EMDK for Android Application Part 1</a></li>
+<li>Completion of <a href="../tutdatacaptureprofile">Developing an EMDK for Android Application Part 1</a></li>
 
-<li>Completion of <a href="/emdk-for-android/4-0/guide/tutorial/tutdatacaptureprofilePt2">Developing an EMDK for Android Application Part 2</a></li>
+<li>Completion of <a href="../tutdatacaptureprofilePt2">Developing an EMDK for Android Application Part 2</a></li>
 </ul>
 
-<p>For more information about setting up the EMDK please see the EMDK <a href="/emdk-for-android/4-0/guide/setup">Setup</a>.</p>
+<p>For more information about setting up the EMDK please see the EMDK <a href="../../guide/setup">Setup</a>.</p>
 
 <h2 id="addingmsractivity" class="anchor"><a class="heading-anchor" href="#addingmsractivity"><span></span></a>Adding MSR Activity</h2>
 
@@ -220,11 +377,11 @@ android:layout_marginLeft="50dp"
 android:text="MSR" /&gt;
 </code></pre>
 
-<p><img src="images/setup/image129.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image129.jpg" alt="img"></p></li>
 
 <li><p>Select "MainActivity.java" from "Package Explorer" in Eclipse/Android Studio. </p>
 
-<p><img src="images/setup/image130.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image130.jpg" alt="img"></p></li>
 
 <li><p>Add the following Imports to "MainActivity.java".  </p>
 
@@ -234,7 +391,7 @@ import android.view.View;
 import android.view.View.OnClickListener; 
 </code></pre>
 
-<p><img src="images/setup/image131.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image131.jpg" alt="img"></p></li>
 
 <li><p>Declare a variable inside "MainActivity" to store "buttonMSR". </p>
 
@@ -243,7 +400,7 @@ import android.view.View.OnClickListener;
 private Button buttonMSR = null;  
 </code></pre>
 
-<p><img src="images/setup/image132.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image132.jpg" alt="img"></p></li>
 
 <li><p>Inside "onCreate" get a reference to "buttonMSR".</p>
 
@@ -252,7 +409,7 @@ private Button buttonMSR = null;
 private Button buttonMSR = null; 
 </code></pre>
 
-<p><img src="images/setup/image133.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image133.jpg" alt="img"></p></li>
 
 <li><p>Inside "onCreate" add an "OnClickListener" for "buttonMSR".  </p>
 
@@ -261,7 +418,7 @@ private Button buttonMSR = null;
 buttonMSR.setOnClickListener(buttonMSROnClick);     
 </code></pre>
 
-<p><img src="images/setup/image134.jpg" alt="img">  </p></li>
+<p><img src="../../images/setup/image134.jpg" alt="img">  </p></li>
 
 <li><p>Add a new "OnClickListener" inside "MainActivity". </p>
 
@@ -276,7 +433,7 @@ private OnClickListener buttonMSROnClick = new OnClickListener() {
 };  
 </code></pre>
 
-<p><img src="images/setup/image135.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image135.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to "onClick" to launch "MSRActivity". </p>
 
@@ -286,7 +443,7 @@ Intent myIntent = new Intent(MainActivity.this, MSRActivity.class);
 startActivity(myIntent);  
 </code></pre>
 
-<p><img src="images/setup/image136.jpg" alt="img"> </p></li>
+<p><img src="../../images/setup/image136.jpg" alt="img"> </p></li>
 </ol>
 
 <h2 id="creatingmsrui" class="anchor"><a class="heading-anchor" href="#creatingmsrui"><span></span></a>Creating MSR UI</h2>
@@ -312,7 +469,7 @@ startActivity(myIntent);
     android:textAppearance="?android:attr/textAppearanceLarge" /&gt; 
 </code></pre>
 
-<p><img src="images/setup/image138.jpg" alt="img"> </p></li>
+<p><img src="../../images/setup/image138.jpg" alt="img"> </p></li>
 </ol>
 
 <h2 id="creatingourmsrprofile" class="anchor"><a class="heading-anchor" href="#creatingourmsrprofile"><span></span></a>Creating our MSR Profile</h2>
@@ -326,11 +483,11 @@ startActivity(myIntent);
 
 <li><p>The EMDK Profile Manager Window will appear.</p>
 
-<p><img src="images/setup/image139.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image139.jpg" alt="img"></p></li>
 
 <li><p>click "Create".</p>
 
-<p><img src="images/setup/image140.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image140.jpg" alt="img"></p></li>
 
 <li><p>Provide "DataCaptureProfileMSR" as the Profile Name for this tutorial.</p>
 
@@ -338,7 +495,7 @@ startActivity(myIntent);
   <p>Note: You can provide any Profile Name but make sure to access it with the similar name in the Android code.</p>
 </blockquote>
 
-<p><img src="images/setup/image141.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image141.jpg" alt="img"></p></li>
 
 <li><p>select "ActivitySelection" from the list of "Available Features" and add it to "Selected Features" using the arrow.</p>
 
@@ -347,19 +504,19 @@ startActivity(myIntent);
   The field "Name" contains user defined name to identify a particular feature. This is required when editing any specific feature programmatically, which is outside the scope of this tutorial. So we will keep the "Name" field empty.</p>
 </blockquote>
 
-<p><img src="images/setup/image142.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image142.jpg" alt="img"></p></li>
 
 <li><p>Select "Activity Selection".</p>
 
-<p><img src="images/setup/image143.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image143.jpg" alt="img"></p></li>
 
 <li><p>Enter "com.symbol.emdksample" as the application name and click apply.</p>
 
-<p><img src="images/setup/image144.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image144.jpg" alt="img"></p></li>
 
 <li><p>Enter "MSRActivity" as the activity name and click apply.</p>
 
-<p><img src="images/setup/image145.jpg" alt="img">      </p></li>
+<p><img src="../../images/setup/image145.jpg" alt="img">      </p></li>
 
 <li><p>Click OK.  </p></li>
 
@@ -370,15 +527,15 @@ startActivity(myIntent);
   The field "Name" contains user defined name to identify a particular Data Input MSR feature. This is required when editing any specific Data Input MSR feature programmatically, which is outside the scope of this tutorial. So we will keep the "Name" field empty.</p>
 </blockquote>
 
-<p><img src="images/setup/image146.jpg" alt="img">      </p></li>
+<p><img src="../../images/setup/image146.jpg" alt="img">      </p></li>
 
 <li><p>Change "MSR Input Enable" to "Enable".</p>
 
-<p><img src="images/setup/image147.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image147.jpg" alt="img"></p></li>
 
 <li><p>select "Intent" from the list of "Available Features" and add it to "Selected Features" using the arrow.</p>
 
-<p><img src="images/setup/image148.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image148.jpg" alt="img"></p></li>
 
 <li><p>Now we will configure the "Intent" parameters.  </p>
 
@@ -397,11 +554,11 @@ startActivity(myIntent);
 
 <p>Your Intent configuration should now look like this:</p>
 
-<p><img src="images/setup/image149.jpg" alt="img">  </p></li>
+<p><img src="../../images/setup/image149.jpg" alt="img">  </p></li>
 
 <li><p>Click "Apply" and "Finish".</p>
 
-<p><img src="images/setup/image150.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image150.jpg" alt="img"></p></li>
 
 <li><p>Click "Close". <br>
 &gt;Note: <br>
@@ -415,7 +572,7 @@ startActivity(myIntent);
 <ol>
 <li><p>Open your application's "Manifest.xml" file.</p>
 
-<p><img src="images/setup/image151.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image151.jpg" alt="img"></p></li>
 
 <li><p>Add the following configuration to the activity "com.symbol.emdksample.MSRCompletedActivity" to revive our MSR intent.  </p>
 
@@ -428,7 +585,7 @@ startActivity(myIntent);
 
 <p>When done, your manifest.xml should look like this:</p>
 
-<p><img src="images/setup/image152.jpg" alt="img">  </p>
+<p><img src="../../images/setup/image152.jpg" alt="img">  </p>
 
 <blockquote>
   <p>Note:  </p>
@@ -447,7 +604,7 @@ startActivity(myIntent);
 <ol>
 <li><p>Select "MainActivity.java" from "Package Explorer" in Eclipse. </p>
 
-<p><img src="images/setup/image153.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image153.jpg" alt="img"></p></li>
 
 <li><p>Inside "MainActivity" add the following code to hold the name of our MSR profile.  </p>
 
@@ -456,7 +613,7 @@ startActivity(myIntent);
 private String profileNameMSR = "DataCaptureProfileMSR";  
 </code></pre>
 
-<p><img src="images/setup/image154.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image154.jpg" alt="img"></p></li>
 
 <li><p>Inside "onOpened" add the following code to register the MSR EMDK profile. </p>
 
@@ -470,7 +627,7 @@ if(results.statusCode == STATUS_CODE.FAILURE)
 }  
 </code></pre>
 
-<p><img src="images/setup/image155.jpg" alt="img">  </p></li>
+<p><img src="../../images/setup/image155.jpg" alt="img">  </p></li>
 </ol>
 
 <h2 id="creatingmsrcompletedui" class="anchor"><a class="heading-anchor" href="#creatingmsrcompletedui"><span></span></a>Creating MSR Completed UI</h2>
@@ -496,7 +653,7 @@ android:text="Data = "
 android:textAppearance="?android:attr/textAppearanceMedium" /&gt;  
 </code></pre>
 
-<p><img src="images/setup/image157.jpg" alt="img"> </p></li>
+<p><img src="../../images/setup/image157.jpg" alt="img"> </p></li>
 </ol>
 
 <h2 id="handlingmsrintents" class="anchor"><a class="heading-anchor" href="#handlingmsrintents"><span></span></a>Handling MSR Intents</h2>
@@ -506,7 +663,7 @@ android:textAppearance="?android:attr/textAppearanceMedium" /&gt;
 <ol>
 <li><p>Select "MSRCompletedActivity.java" from "Package Explorer" in Eclipse. </p>
 
-<p><img src="images/setup/image158.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image158.jpg" alt="img"></p></li>
 
 <li><p>Add the following imports.  </p>
 
@@ -515,7 +672,7 @@ import android.content.Intent;
 import android.widget.TextView; 
 </code></pre>
 
-<p><img src="images/setup/image159.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image159.jpg" alt="img"></p></li>
 
 <li><p>Add the following function for processing intents.  </p>
 
@@ -527,7 +684,7 @@ private void handleDecodeData(Intent i)
 }  
 </code></pre>
 
-<p><img src="images/setup/image160.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image160.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "onCreate" function to check for a possible intent;  </p>
 
@@ -537,7 +694,7 @@ Intent i = getIntent();
 handleDecodeData(i);
 </code></pre>
 
-<p><img src="images/setup/image161.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image161.jpg" alt="img"></p></li>
 
 <li><p>Overide "onNewIntent" to handle incoming intents.  </p>
 
@@ -550,7 +707,7 @@ public void onNewIntent(Intent i) {
 }
 </code></pre>
 
-<p><img src="images/setup/image162.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image162.jpg" alt="img"></p></li>
 
 <li><p>Add a global variable for the TextView. </p>
 
@@ -559,7 +716,7 @@ public void onNewIntent(Intent i) {
 private TextView textViewMSRData = null; 
 </code></pre>
 
-<p><img src="images/setup/image163.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image163.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your onCreate function to get a handle on the TextView.</p>
 
@@ -568,7 +725,7 @@ private TextView textViewMSRData = null;
 textViewMSRData = (TextView) findViewById(R.id.textViewMSRData); 
 </code></pre>
 
-<p><img src="images/setup/image164.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image164.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "handleDecodeData" function to confirm the intent was meant for us. </p>
 
@@ -580,7 +737,7 @@ if (i.getAction().contentEquals("com.symbol.emdksample.RECVRMSR"))
 }
 </code></pre>
 
-<p><img src="images/setup/image165.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image165.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "handleDecodeData" function to check if the intent contains MSR data.  </p>
 
@@ -596,7 +753,7 @@ if(source.equalsIgnoreCase("msr"))
 }  
 </code></pre>
 
-<p><img src="images/setup/image166.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image166.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "handleDecodeData" function to retrieve MSR data.  </p>
 
@@ -611,7 +768,7 @@ if(data != null &amp;&amp; data.length() &gt; 0)
 }
 </code></pre>
 
-<p><img src="images/setup/image167.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image167.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "handleDecodeData" function to populate the TextView with the revived MSR data.</p>
 
@@ -620,7 +777,7 @@ if(data != null &amp;&amp; data.length() &gt; 0)
 textViewMSRData.setText("Data = " + data);  
 </code></pre>
 
-<p><img src="images/setup/image168.jpg" alt="img"> </p></li>
+<p><img src="../../images/setup/image168.jpg" alt="img"> </p></li>
 </ol>
 
 <h2 id="runningtheapplication" class="anchor"><a class="heading-anchor" href="#runningtheapplication"><span></span></a>Running the Application</h2>
@@ -637,33 +794,33 @@ textViewMSRData.setText("Data = " + data);
 
 <li><p>Run the application.  </p>
 
-<p><img src="images/setup/image169.png" alt="img"></p></li>
+<p><img src="../../images/setup/image169.png" alt="img"></p></li>
 
 <li><p>Press the trigger button and scan a Barcode. </p></li>
 
 <li><p>Like before the scanned data will be populated in the Edit Text field Through the previous Keystroke Intent and will appear on the Text View using the previous Datawedge Intent.   </p>
 
-<p><img src="images/setup/image170.png" alt="img"></p></li>
+<p><img src="../../images/setup/image170.png" alt="img"></p></li>
 
 <li><p>Press the button "MSR".  </p>
 
-<p><img src="images/setup/image171.png" alt="img"></p></li>
+<p><img src="../../images/setup/image171.png" alt="img"></p></li>
 
 <li><p>Swipe a cad through the MSR.  </p>
 
-<p><img src="images/setup/image172.png" alt="img"></p></li>
+<p><img src="../../images/setup/image172.png" alt="img"></p></li>
 
 <li><p>Press return to go back to the MSR where you can swipe another card, or hit return again to go back to the main screen. </p></li>
 </ol>
 
 <h2 id="whatsnext" class="anchor"><a class="heading-anchor" href="#whatsnext"><span></span></a>What's Next</h2>
 
-<p>The <a href="/emdk-for-android/4-0/guide/tutorial/tutdatacaptureprofilePt4">next tutorial</a> will show you how to use the Intent Output as a Broadcast instead of starting an activity.</p>
+<p>The <a href="../tutdatacaptureprofilePt4">next tutorial</a> will show you how to use the Intent Output as a Broadcast instead of starting an activity.</p>
 
 <h2 id="downloadthesource" class="anchor"><a class="heading-anchor" href="#downloadthesource"><span></span></a>Download the Source</h2>
 
 <p>The project source to this tutorial can be <a href="https://s3.amazonaws.com/emdk/Tutorials/EMDK-UsingMultipleDataCaptureProfiles.zip">downloaded (Internet Connection Required)</a>.</p><p></p>
-                                        <div>    <footer id="footer">
+                                        <div>     <footer id="footer" class="navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-10">
@@ -682,13 +839,14 @@ textViewMSRData.setText("Data = " + data);
         </div>
     </footer><!--/#footer-->
 </div>
+
+
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
                 </div><!--/.col-sm-6-->
             </div>
             </section>
@@ -709,7 +867,6 @@ textViewMSRData.setText("Data = " + data);
     <script src="/js/prettify.js"></script>
     <script src="/js/zepto.js"></script>
     <script src="/js/jquery.waterfall.js"></script>   
-    <script src="/js/lunr.min.js"></script>   
     <script src="/js/main.js"></script>
 
 <script type="text/javascript">

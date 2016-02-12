@@ -7,6 +7,7 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
+    <meta title="Using Intent Output With DataCapture Profiles">
     <title>Using Intent Output With DataCapture Profiles - Zebra Technologies Online Documentation</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +28,7 @@
 <script src="/js/jquery.js"></script></head><!--/head-->
 
 
-<body id="home" class="homepage">
+<body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
 
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -39,17 +40,58 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><span class="navbar-text"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
-    padding-right: 3px;"> <strong>Online Documentation</strong></span></a>
+                    <span class="navbar-text"><a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
+    padding-right: 3px;"></a> <strong>Online Documentation</strong>
+                    <p style="padding-left:50px;">
+                                        EMDK For Android
+                                        3.1
+                    </p>
+    </span>
+                   
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="/products">SDKs</a></li>
-                        <li><a href="/samples">Samples</a></li>
-                        <li><a href="/guides">Guides</a></li>
-                        <li><a href="/tutorials">Tutorials</a></li>
-                        <li><a href="/apis">APIs</a></li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/about">
+                                    Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/gettingstarted">
+                                    Getting Started
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/tutorial/">
+                                    Tutorials
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/samples">
+                                    Samples
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/programming-guides">
+                                    Guides
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/guide/profile-manager-guides">
+                                    Profile Manager
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/3-1/api">
+                                    APIs
+                            </a>
+                        </li>
+                        <!-- <li ><a href="/products">SDKs</a></li>
+                        <li ><a href="/samples">Samples</a></li>
+                        <li ><a href="/guides">Guides</a></li>
+                        <li ><a href="/tutorials">Tutorials</a></li>
+                        <li ><a href="/apis">APIs</a></li> -->
                         <!-- <li><a href="#"><input type="text" class="st-default-search-input"></a></li> -->
                     </ul>
                 </div>
@@ -61,58 +103,173 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-3 fixed-column-left">
-                    <aside class="tree-sidebar">            
+                <div class="col-sm-3 " id="sidebar">
+                    <!-- <nav id="automenu"   >
                     
-                                <div class="row">
-                                    <div class="col-sm-12">
+                    </nav> -->
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 95%; overflow-y: auto; ">
+                        <ul class="nav">
+                            <li><strong>Using Intent Output With DataCapture Profiles</strong></li>
+                        </ul>
+                    </nav>
+                    <!-- <div class="row">
+                        <nav class="col-xs-3 bs-docs-sidebar">
+                            <ul id="sidebar" class="nav nav-stacked fixed">
+                                <li>
+                                    <a href="/emdk-for-android/3-1/guide/about">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/guide/gettingstarted">Getting Started</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/download">Download</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/setup">EMDK For Android Setup</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/setupDevice">Configuring A Device</a></li>
+                                        <li><a href="/emdk-for-android/3-1/tutorial/tutdatacaptureprofile">Build Hello EMDK</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/profile-manager">Using Profile Manager</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/tutorial/">Tutorials</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="">Profile Manager</a></li>
+                                        <li><a href="">Platform Intents</a></li>
+                                        <li><a href="">Scanning APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/tutorial/tutScanAndPairAPI">ScanAndPair Remote Device</a></li>
+                                        <li><a href="/emdk-for-android/3-1/tutorial/tutSimulScanAPI">Document Capture</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/samples">Samples</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/3-1/guide/emdksamples_androidstudio">Importing Samples(Android Studio)</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/emdksamples_eclipse">Importing Samples(Eclipse/ADT)</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/barcode">Barcode Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/data-capture">DataCapture Profile Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/app-manager">AppManager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/clock">Clock Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/gprs">GPRS Manager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/power">PowerManager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/wifi">Wi-Fi Manager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/bluetooth">Wireless Manager Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/scanandpair">Scan and Pair Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/simulscan">SimulScan Sample</a></li>
+                                        <li><a href="/emdk-for-android/3-1/samples/personal-shopper">PersonalShopper Sample</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/guide/programming-guides">Guides</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/3-1/guide/simulscan_guide">SimulScan API</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/name_value_pair">Name-Value Pair</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/personalshopper">PersonalShopper API</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/securenfc">Secure NFC API</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/scanner">Barcode Scanner States</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/payment-api">Payment API</a></li>
+                                        <li><a href="/emdk-for-android/3-1/guide/pd40-firmware-update">PD40 Firmware Update</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/guide/profile-manager-guides">Profile Manager</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/3-1/guide/profile-manager/">Using Profile Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx">Profile Features</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/overview">MX Overview</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/choosing-a-version">Choosing a Version</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/compatibility">Feature Compatibility</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/version-on-device">Getting Device MX Version</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/accessmgr">Access Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/analytics/">Analytics Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/appmgr">App Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/audiomgr/">Audio Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/batterymgr/">Battery Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/browsermgr">Browser Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/cameramgr">Camera Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/cellularmgr/">Cellular Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/certmgr">Cert Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/clock/">Clock</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/componentmgr/">Component Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/data-capture">Data Capture</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/devadmin">DevAdmin</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/dhcp">DHCP Options Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/displaymgr/">Display Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/encryptmgr">Encrypt Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/gprsmgr/">GPRS Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/keymappingmgr">KeyMap Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/persistance">Persistance Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/powermgr/">Power Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/powerkeymgr">PowerKey Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/settingsmgr">Settings Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/sdcardmgr">SD Card Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/touchmgr/">Touch Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/threatmgr">Threat Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/usbmgr">USB Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/uimgr">UI Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/wifi/">WiFi Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/wirelessmgr/">Wireless Manager</a></li>
+                                        <li><a href="/emdk-for-android/3-1/mx/xml">XML Manager</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/3-1/api">APIs</a>
+                                    <ul class="nav nav-stacked">
+                                        <li><a href="/emdk-for-android/3-1/api/core">Core and ProfileManager APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/barcode">Barcode APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/scanandpair">ScanAndPair APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/simulscan">SimulScan APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/personalshopper">Personal Shopper APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/securenfc">Secure NFC APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/payment">Payment APIs</a></li>
+                                        <li><a href="/emdk-for-android/3-1/api/serialcomm">Serial Comm APIs</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div> -->
                     
-                                        <div class="sidebar-container">
-                                            <!-- <ul  class="" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> -->
-                                            <ul class="">
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                    </aside>
-                    
+                    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
                     <script type="text/javascript">
-                        $(window).load(function() {
-                            var pathname = window.location.pathname.slice(0, -1);
-                            // console.log(pathname);
-                            var menuitem = $('.sidebar-container').find('a[href^="' + pathname + '"]').first()[0];
-                            var menulevel = $(menuitem).parents('ul').length;
-                            // console.log(menuitem);
-                            // console.log(menulevel);
-                            var parentLI = $(menuitem).parent().parent().parent();
-                            var itemarrow = parentLI.find('.arrow').first()[0];
+                        // $(window).load(function() {
+                        //     var pathname = window.location.pathname.slice(0, -1);
+                        //     // console.log(pathname);
+                        //     var menuitem = $('.sidebar-container').find('a[href^="' + pathname + '"]').first()[0];
+                        //     var menulevel = $(menuitem).parents('ul').length;
+                        //     // console.log(menuitem);
+                        //     // console.log(menulevel);
+                        //     var parentLI = $(menuitem).parent().parent().parent();
+                        //     var itemarrow = parentLI.find('.arrow').first()[0];
                     
-                            //now check for higher level
-                            if(menulevel==3){
+                        //     //now check for higher level
+                        //     if(menulevel==3){
                     
-                                var parentFirstLevel = $(parentLI).parent().parent().first()[0];
-                                var parentarrow = $(parentFirstLevel).find('.arrow').first()[0];
-                                parentarrow.click();
-                            }
+                        //         var parentFirstLevel = $(parentLI).parent().parent().first()[0];
+                        //         var parentarrow = $(parentFirstLevel).find('.arrow').first()[0];
+                        //         parentarrow.click();
+                        //     }
                     
-                            if(menulevel>1){
-                                itemarrow.click();
+                        //     if(menulevel>1){
+                        //         itemarrow.click();
                     
-                            }
-                            $(menuitem).addClass('sidebar-selected');
-                            $(menuitem).parent().append('<ul style="display:block" id="indoc"></ul>')
-                            $('h2').each(function(index, value){
-                                  if($(this).attr('id')){
-                                    var anchor = "#" + $(this).attr('id');
-                                    var text = $(this).text();
-                                    var li = "<li><a href='" + anchor + "'>" + text + "</a>" ;
-                                    $('#indoc').append(li);               
-                                  }
+                        //     }
+                        //     $(menuitem).addClass('sidebar-selected');
+                        //     $(menuitem).parent().append('<ul style="display:block" id="indoc"></ul>')
+                        //     $('h2').each(function(index, value){
+                        //           if($(this).attr('id')){
+                        //             var anchor = "#" + $(this).attr('id');
+                        //             var text = $(this).text();
+                        //             var li = "<li><a href='" + anchor + "'>" + text + "</a>" ;
+                        //             $('#indoc').append(li);               
+                        //           }
                     
                                   
-                            });
-                        });
+                        //     });
+                        // });
+                      // var $myNav = $('#toc');
+                      // $('body').scrollspy({
+                      //   target: $myNav
+                      // });
                     
+                     
                         function affix() {
                             
                             // Fit affix width to its parent's width
@@ -136,14 +293,14 @@
                             }
                         };
                     
-                        $(window).on('scroll resize', function() {
-                            affix();
+                        // $(window).on('scroll resize', function() {
+                        //     affix();
                      
-                        });
+                        // });
                     
                     </script>
                 </div>                
-                <div class="col-sm-9 fixed-column-right">
+                <div class="col-sm-9 ">
                     <div class="row">
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
@@ -163,10 +320,10 @@
                             <!-- Start of guide -->
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
-                                        <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
+
                                         <p></p><h2 id="developinganemdkforandroidapplicationpart2" class="anchor"><a class="heading-anchor" href="#developinganemdkforandroidapplicationpart2"><span></span></a>Developing an EMDK for Android Application Part 2</h2>
 
-<p>This tutorial will walk you through adding <a href="/emdk-for-android/4-0/guide/profiles/profileintent">Intent Output</a> support to the EMDK For Android application you made using <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofile">Developing an EMDK for Android Application Part 1</a>. This tutorial will assume your project is at the state of the end of that tutorial and build on top of it. You can follow the tutorial in the previous step of download the source from the previous step and start from there.</p>
+<p>This tutorial will walk you through adding <a href="../../mx/data-capture/intent">Intent Output</a> support to the EMDK For Android application you made using <a href="../tutdatacaptureprofile">Developing an EMDK for Android Application Part 1</a>. This tutorial will assume your project is at the state of the end of that tutorial and build on top of it. You can follow the tutorial in the previous step of download the source from the previous step and start from there.</p>
 
 <p>The tutorial uses EMDK V 2.1 that has organized existing features as well as got some new features that would be discussed later in the tutorial.</p>
 
@@ -179,7 +336,7 @@
 
 <li>EMDK for Android </li>
 
-<li>Completion of <a href="/emdk-for-android/4-0/guide/tutorial/tutdatacaptureprofile">Developing an EMDK for Android Application Part 1</a></li>
+<li>Completion of <a href="../tutdatacaptureprofile">Developing an EMDK for Android Application Part 1</a></li>
 </ul>
 
 <p>For more information about setting up the EMDK please see the EMDK Overview.</p>
@@ -193,7 +350,7 @@
 
 <li><p>The EMDK Profile Manager Window will appear.</p>
 
-<p><img src="images/setup/image105.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image105.jpg" alt="img"></p></li>
 
 <li><p>select "DataCaptureProfile" and click "Edit".</p></li>
 
@@ -204,7 +361,7 @@
   The field "Name" contains user defined name to identify a particular Intent Output feature. This is required when editing any specific Intent Output feature programmatically, which is outside the scope of this tutorial. So we will keep the "Name" field empty.</p>
 </blockquote>
 
-<p><img src="images/setup/image106.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image106.jpg" alt="img"></p></li>
 
 <li><p>Select "Intent" from the list of "Selected Features". </p></li>
 
@@ -225,11 +382,11 @@
 
 <p>Your Intent configuration should now look like this:</p>
 
-<p><img src="images/setup/image107.jpg" alt="img">  </p></li>
+<p><img src="../../images/setup/image107.jpg" alt="img">  </p></li>
 
 <li><p>Click "Apply" and "Finish".</p>
 
-<p><img src="images/setup/image105.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image105.jpg" alt="img"></p></li>
 
 <li><p>Click "Close". <br>
 &gt;Note: <br>
@@ -241,7 +398,7 @@
 <ol>
 <li><p>Open your application's "Manifest.xml" file.</p>
 
-<p><img src="images/setup/image211.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image211.jpg" alt="img"></p></li>
 
 <li><p>Make the following changes to your application's"Manifest.xml" file.  </p>
 
@@ -262,7 +419,7 @@ android:launchMode="singleTask"
 
 <p>When done, your manifest.xml should look like this:</p>
 
-<p><img src="images/setup/image108.jpg" alt="img">  </p>
+<p><img src="../../images/setup/image108.jpg" alt="img">  </p>
 
 <blockquote>
   <p>Note:  </p>
@@ -284,7 +441,7 @@ import android.content.Intent;
 import android.widget.TextView; 
 </code></pre>
 
-<p><img src="images/setup/image109.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image109.jpg" alt="img"></p></li>
 
 <li><p>Add the following function to your program for processing intents. </p>
 
@@ -296,7 +453,7 @@ private void handleDecodeData(Intent i)
 }
 </code></pre>
 
-<p><img src="images/setup/image110.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image110.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "onCreate" function check for a possible intent; </p>
 
@@ -306,7 +463,7 @@ Intent i = getIntent();
 handleDecodeData(i); 
 </code></pre>
 
-<p><img src="images/setup/image112.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image112.jpg" alt="img"></p></li>
 
 <li><p>Overide "onNewIntent" to handle incoming intents. </p>
 
@@ -319,7 +476,7 @@ public void onNewIntent(Intent i) {
 } 
 </code></pre>
 
-<p><img src="images/setup/image111.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image111.jpg" alt="img"></p></li>
 
 <li><p>Add a TextView in the UI called "textViewBarcode", inside "res/layout/activity_main.xml".</p>
 
@@ -335,7 +492,7 @@ public void onNewIntent(Intent i) {
     android:textAppearance="?android:attr/textAppearanceMedium" /&gt;  
 </code></pre>
 
-<p><img src="images/setup/image113.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image113.jpg" alt="img"></p></li>
 
 <li><p>Add a global variable for the TextView. </p>
 
@@ -344,7 +501,7 @@ public void onNewIntent(Intent i) {
 private TextView textViewBarcode = null;
 </code></pre>
 
-<p><img src="images/setup/image114.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image114.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your onCreate function to get a handle on the TextView.</p>
 
@@ -353,7 +510,7 @@ private TextView textViewBarcode = null;
 textViewBarcode = (TextView) findViewById(R.id.textViewBarcode); 
 </code></pre>
 
-<p><img src="images/setup/image115.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image115.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "handleDecodeData" function to confirm the intent was meant for us. </p>
 
@@ -364,7 +521,7 @@ if (i.getAction().contentEquals("com.symbol.emdksample.RECVR") ) {
 } 
 </code></pre>
 
-<p><img src="images/setup/image116.jpg" alt="img">   </p></li>
+<p><img src="../../images/setup/image116.jpg" alt="img">   </p></li>
 
 <li><p>Add the following code to your "handleDecodeData" function to check if the intent contains Barcode data.  </p>
 
@@ -379,7 +536,7 @@ if(source.equalsIgnoreCase("scanner"))
 }
 </code></pre>
 
-<p><img src="images/setup/image117.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image117.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "handleDecodeData" function to retrieve Barcode data.  </p>
 
@@ -394,7 +551,7 @@ if(data != null &amp;&amp; data.length() &gt; 0)
 } 
 </code></pre>
 
-<p><img src="images/setup/image118.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image118.jpg" alt="img"></p></li>
 
 <li><p>Add the following code to your "handleDecodeData" function to populate the TextView with the revived Barcode data.</p>
 
@@ -403,7 +560,7 @@ if(data != null &amp;&amp; data.length() &gt; 0)
 textViewBarcode.setText("Data = " + data); 
 </code></pre>
 
-<p><img src="images/setup/image119.jpg" alt="img"></p></li>
+<p><img src="../../images/setup/image119.jpg" alt="img"></p></li>
 
 <li><p>Connect the device (having the latest EMDK runtime) to USB port.</p>
 
@@ -414,23 +571,23 @@ textViewBarcode.setText("Data = " + data);
 
 <li><p>Run the application.</p>
 
-<p><img src="images/setup/image120.png" alt="img"></p></li>
+<p><img src="../../images/setup/image120.png" alt="img"></p></li>
 
 <li><p>Press the trigger button and scan a Barcode.</p></li>
 
 <li><p>The scanned data will be populated in the Edit Text field Through the previous Keystroke Intent and will appear on the Text View using the new Datawedge Intent.</p>
 
-<p><img src="images/setup/image121.png" alt="img"> </p></li>
+<p><img src="../../images/setup/image121.png" alt="img"> </p></li>
 </ol>
 
 <h2 id="whatsnext" class="anchor"><a class="heading-anchor" href="#whatsnext"><span></span></a>What's Next</h2>
 
-<p>The <a href="/emdk-for-android/4-0/guide/tutorial/tutdatacaptureprofilePt3">next tutorial</a> will show you how to use multiple Data Capture Profiles that are handled by multiple activities.</p>
+<p>The <a href="../tutdatacaptureprofilePt3">next tutorial</a> will show you how to use multiple Data Capture Profiles that are handled by multiple activities.</p>
 
 <h2 id="downloadthesource" class="anchor"><a class="heading-anchor" href="#downloadthesource"><span></span></a>Download the Source</h2>
 
 <p>The project source to this tutorial can be <a href="https://s3.amazonaws.com/emdk/Tutorials/EMDK-DataCaptureProfiles-Using+Intent+Output.zip">downloaded (Internet Connection Required)</a>.</p><p></p>
-                                        <div>    <footer id="footer">
+                                        <div>     <footer id="footer" class="navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-10">
@@ -449,13 +606,14 @@ textViewBarcode.setText("Data = " + data);
         </div>
     </footer><!--/#footer-->
 </div>
+
+
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
                 </div><!--/.col-sm-6-->
             </div>
             </section>
@@ -476,7 +634,6 @@ textViewBarcode.setText("Data = " + data);
     <script src="/js/prettify.js"></script>
     <script src="/js/zepto.js"></script>
     <script src="/js/jquery.waterfall.js"></script>   
-    <script src="/js/lunr.min.js"></script>   
     <script src="/js/main.js"></script>
 
 <script type="text/javascript">

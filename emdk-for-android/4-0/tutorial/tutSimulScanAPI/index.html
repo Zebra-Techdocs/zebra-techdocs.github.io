@@ -7,6 +7,7 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
+    <meta title="Capture critical data from documents using SimulScan API">
     <title>Capture critical data from documents using SimulScan API - Zebra Technologies Online Documentation</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +28,7 @@
 <script src="/js/jquery.js"></script></head><!--/head-->
 
 
-<body id="home" class="homepage">
+<body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
 
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -39,17 +40,63 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><span class="navbar-text"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
-    padding-right: 3px;"> <strong>Online Documentation</strong></span></a>
+                    <span class="navbar-text"><a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
+    padding-right: 3px;"></a> <strong>Online Documentation</strong>
+                    <p style="padding-left:50px;">
+                                        EMDK For Android
+                                        4.0
+                    </p>
+    </span>
+                   
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="/products">SDKs</a></li>
-                        <li><a href="/samples">Samples</a></li>
-                        <li><a href="/guides">Guides</a></li>
-                        <li><a href="/tutorials">Tutorials</a></li>
-                        <li><a href="/apis">APIs</a></li>
+                        <li>
+                            <a href="/emdk-for-android/4-0/guide/about">
+                                    Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/4-0/guide/gettingstarted">
+                                    Getting Started
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/4-0/tutorial/">
+                                    Tutorials
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/4-0/samples">
+                                    Samples
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/4-0/guide/programming-guides">
+                                    Guides
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/4-0/guide/profile-manager-guides">
+                                    Profile Manager
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/4-0/api">
+                                    APIs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/emdk-for-android/4-0/search">
+                                    <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <!-- <li ><a href="/products">SDKs</a></li>
+                        <li ><a href="/samples">Samples</a></li>
+                        <li ><a href="/guides">Guides</a></li>
+                        <li ><a href="/tutorials">Tutorials</a></li>
+                        <li ><a href="/apis">APIs</a></li> -->
                         <!-- <li><a href="#"><input type="text" class="st-default-search-input"></a></li> -->
                     </ul>
                 </div>
@@ -61,635 +108,90 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-3 fixed-column-left">
-                    <aside class="tree-sidebar">            
+                <div class="col-sm-3 " id="sidebar">
+                    <!-- <nav id="automenu"   >
                     
-                                <div class="row">
-                                    <div class="col-sm-12">
+                    </nav> -->
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 95%; overflow-y: auto; ">
+                        <ul class="nav">
+                            <li><strong>Capture critical data from documents using SimulScan API</strong></li>
+                        </ul>
+                    </nav>
+                    <!-- <div class="row">
+                        <nav class="col-xs-3 bs-docs-sidebar">
+                            <ul id="sidebar" class="nav nav-stacked fixed">
+                                <li>
+                                    <a href="/emdk-for-android/4-0/guide/about">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/4-0/guide/gettingstarted">Getting Started</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/4-0/tutorial/">Tutorials</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/4-0/samples">Samples</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/4-0/guide/programming-guides">Guides</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/4-0/guide/profile-manager-guides">Profile Manager</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/4-0/api">APIs</a>
+                                </li>
+                                <li>
+                                    <a href="/emdk-for-android/4-0/search"></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div> -->
                     
-                                        <div class="sidebar-container">
-                                            <!-- <ul  class="" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> -->
-                                            <ul class="">
-                                                <li>
-                                                      <img src="/emdk-for-android/images/logo.png" alt="logo" style="max-height:42px" class="img-responsive"> 
-                                                      <strong>EMDK For Android 4.0</strong>
-                                                </li>
-                                                <li class="">
-                                                    <a href="/emdk-for-android/4-0/guide/about">
-                                                    <span class="arrow-li">Home</span>
-                                                    </a> 
-                                                </li>
-                                                <li class="">
-                                                    <span class="arrow"></span>
-                                                    <a>
-                                                    <span class="arrow-li">Getting Started</span>
-                                                    </a> 
-                                                        <ul style="">
-                                                            <li>
-                                                                <a href="/emdk-for-android/download">
-                                                                <span class="arrow-li">Download</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/setup">
-                                                                <span class="arrow-li">EMDK For Android Setup</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/setupDevice">
-                                                                <span class="arrow-li">Configuring A Device</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofile">
-                                                                <span class="arrow-li">Build Hello EMDK</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/profile-manager">
-                                                                <span class="arrow-li">Using Profile Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                        </ul>
-                                                </li>
-                                                <li class="">
-                                                    <span class="arrow"></span>
-                                                    <a>
-                                                    <span class="arrow-li">Tutorials</span>
-                                                    </a> 
-                                                        <ul style="">
-                                                            <li>
-                                                                <span class="arrow"></span>
-                                                                <a>
-                                                                <span class="arrow-li">Profile Manager</span>
-                                                                </a> 
-                                                                    <ul>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofile"><span>Basic Data Capture</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofilePt2"><span>Using Intent Output</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofilePt3"><span>Multiple Profiles</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureprofilePt4"><span>Using Broadcast Intent Output</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutModifyBarcodeProfileSettings"><span>Modifying Profiles</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxBrowserManager"><span>Browser Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxCameraManager"><span>Camera Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxCellularManager"><span>Cellular Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxDevAdminManager"><span>Dev Admin</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxDisplayManager"><span>Display Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxAppManager"><span>App Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxDefaultLauncher"><span>Set the Default Launcher</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxClock"><span>Clock</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxErrors"><span>Profile Errors</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxGPRSManager"><span>GPRS Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxPersistManager"><span>Persistence Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxPowerKeyManager"><span>Power Key Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxPowerManager"><span>Power Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxWiFiManager"><span>Wi-Fi</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxAccessManager"><span>Access Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutApplyProfileSilently"><span>Apply Mx Profile Silently in a Non-Blocking way</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxWirelessManager"><span>Wireless Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxUIManager"><span>UI Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxTouchManager"><span>Touch Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxSettingsManager"><span>Settings Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxUSBManager"><span>USB Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxSDCardManager"><span>SD Card Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxCertificateManager"><span>Certificate Manager</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutMxEncryptManager"><span>Encrypt Manager</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                            </li>
-                                                            <li>
-                                                                <span class="arrow"></span>
-                                                                <a>
-                                                                <span class="arrow-li">Platform Intents</span>
-                                                                </a> 
-                                                                    <ul>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutdatacaptureintent"><span>Datawedge Intents</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutbatteryintent"><span>Battery Intent</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                            </li>
-                                                            <li>
-                                                                <span class="arrow"></span>
-                                                                <a>
-                                                                <span class="arrow-li">Scanning APIs</span>
-                                                                </a> 
-                                                                    <ul>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutBasicScanningAPI"><span>Basic Scanning Tutorial</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutAdvancedScanningAPI"><span>Advanced Scanning Tutorial</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/tutorial/tutBluetoothScannerAPI"><span>Using Bluetooth Scanners</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/tutorial/tutScanAndPairAPI">
-                                                                <span class="arrow-li">ScanAndPair Remote Device</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/tutorial/tutSimulScanAPI">
-                                                                <span class="arrow-li">Document Capture</span>
-                                                                </a> 
-                                                            </li>
-                                                        </ul>
-                                                </li>
-                                                <li class="">
-                                                    <span class="arrow"></span>
-                                                    <a href="/emdk-for-android/4-0/samples">
-                                                    <span class="arrow-li">Samples</span>
-                                                    </a> 
-                                                        <ul style="">
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/emdksamples_androidstudio">
-                                                                <span class="arrow-li">Importing Samples(Android Studio)</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/emdksamples_eclipse">
-                                                                <span class="arrow-li">Importing Samples(Eclipse/ADT)</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/barcode">
-                                                                <span class="arrow-li">Barcode Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/data-capture">
-                                                                <span class="arrow-li">DataCapture Profile Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/app-manager">
-                                                                <span class="arrow-li">AppManager Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/clock">
-                                                                <span class="arrow-li">Clock Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/gprs">
-                                                                <span class="arrow-li">GPRS Manager Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/power">
-                                                                <span class="arrow-li">PowerManager Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/wifi">
-                                                                <span class="arrow-li">Wi-Fi Manager Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/bluetooth">
-                                                                <span class="arrow-li">Wireless Manager Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/scanandpair">
-                                                                <span class="arrow-li">Scan and Pair Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/simulscan">
-                                                                <span class="arrow-li">SimulScan Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/samples/personal-shopper">
-                                                                <span class="arrow-li">PersonalShopper Sample</span>
-                                                                </a> 
-                                                            </li>
-                                                        </ul>
-                                                </li>
-                                                <li class="">
-                                                    <span class="arrow"></span>
-                                                    <a>
-                                                    <span class="arrow-li">Programming Guides</span>
-                                                    </a> 
-                                                        <ul style="">
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/simulscan_guide">
-                                                                <span class="arrow-li">SimulScan API</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/name_value_pair">
-                                                                <span class="arrow-li">Name-Value Pair</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/personalshopper">
-                                                                <span class="arrow-li">PersonalShopper API</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/securenfc">
-                                                                <span class="arrow-li">Secure NFC API</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/scanner">
-                                                                <span class="arrow-li">Barcode Scanner States</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/payment-api">
-                                                                <span class="arrow-li">Payment API</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/pd40-firmware-update">
-                                                                <span class="arrow-li">PD40 Firmware Update</span>
-                                                                </a> 
-                                                            </li>
-                                                        </ul>
-                                                </li>
-                                                <li class="">
-                                                    <span class="arrow"></span>
-                                                    <a>
-                                                    <span class="arrow-li">Profile Manager</span>
-                                                    </a> 
-                                                        <ul style="">
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/profile-manager/">
-                                                                <span class="arrow-li">Using Profile Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx">
-                                                                <span class="arrow-li">Profile Features</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/overview">
-                                                                <span class="arrow-li">MX Overview</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/choosing-a-version">
-                                                                <span class="arrow-li">Choosing a Version</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/compatibility">
-                                                                <span class="arrow-li">Feature Compatibility</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/version-on-device">
-                                                                <span class="arrow-li">Getting Device MX Version</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/accessmgr">
-                                                                <span class="arrow-li">Access Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/analytics/">
-                                                                <span class="arrow-li">Analytics Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/appmgr">
-                                                                <span class="arrow-li">App Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/audiomgr/">
-                                                                <span class="arrow-li">Audio Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/batterymgr/">
-                                                                <span class="arrow-li">Battery Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/browsermgr">
-                                                                <span class="arrow-li">Browser Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/cameramgr">
-                                                                <span class="arrow-li">Camera Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/cellularmgr/">
-                                                                <span class="arrow-li">Cellular Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/certmgr">
-                                                                <span class="arrow-li">Cert Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/clock/">
-                                                                <span class="arrow-li">Clock</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/componentmgr/">
-                                                                <span class="arrow-li">Component Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <span class="arrow"></span>
-                                                                <a href="/emdk-for-android/4-0/mx/data-capture">
-                                                                <span class="arrow-li">Data Capture</span>
-                                                                </a> 
-                                                                    <ul>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/mx/data-capture/activity"><span>Activity Selection</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/mx/data-capture/barcode"><span>Barcode Input</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/mx/data-capture/intent"><span>Int Output</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/mx/data-capture/IP"><span>IP Output</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/mx/data-capture/keystroke"><span>Keystroke Output</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                        <a href="/emdk-for-android/4-0/mx/data-capture/msr"><span>MSR Input</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/devadmin">
-                                                                <span class="arrow-li">DevAdmin</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/dhcp">
-                                                                <span class="arrow-li">DHCP Options Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/displaymgr/">
-                                                                <span class="arrow-li">Display Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/encryptmgr">
-                                                                <span class="arrow-li">Encrypt Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/gprsmgr/">
-                                                                <span class="arrow-li">GPRS Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/keymappingmgr">
-                                                                <span class="arrow-li">KeyMap Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/persistance">
-                                                                <span class="arrow-li">Persistance Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/powermgr/">
-                                                                <span class="arrow-li">Power Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/powerkeymgr">
-                                                                <span class="arrow-li">PowerKey Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/settingsmgr">
-                                                                <span class="arrow-li">Settings Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/sdcardmgr">
-                                                                <span class="arrow-li">SD Card Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/touchmgr/">
-                                                                <span class="arrow-li">Touch Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/threatmgr">
-                                                                <span class="arrow-li">Threat Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/usbmgr">
-                                                                <span class="arrow-li">USB Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/uimgr">
-                                                                <span class="arrow-li">UI Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/wifi/">
-                                                                <span class="arrow-li">WiFi Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/wirelessmgr/">
-                                                                <span class="arrow-li">Wireless Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/mx/xml">
-                                                                <span class="arrow-li">XML Manager</span>
-                                                                </a> 
-                                                            </li>
-                                                        </ul>
-                                                </li>
-                                                <li class="">
-                                                    <span class="arrow"></span>
-                                                    <a href="/emdk-for-android/4-0/api">
-                                                    <span class="arrow-li">APIs</span>
-                                                    </a> 
-                                                        <ul style="">
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/api/core">
-                                                                <span class="arrow-li">Core and ProfileManager APIs</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/api/barcode">
-                                                                <span class="arrow-li">Barcode APIs</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/api/scanandpair">
-                                                                <span class="arrow-li">ScanAndPair APIs</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/api/simulscan">
-                                                                <span class="arrow-li">SimulScan APIs</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/api/personalshopper">
-                                                                <span class="arrow-li">Personal Shopper APIs</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/api/securenfc">
-                                                                <span class="arrow-li">Secure NFC APIs</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/api/payment">
-                                                                <span class="arrow-li">Payment APIs</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/api/serialcomm">
-                                                                <span class="arrow-li">Serial Comm APIs</span>
-                                                                </a> 
-                                                            </li>
-                                                        </ul>
-                                                </li>
-                                                <li class="">
-                                                    <span class="arrow"></span>
-                                                    <a>
-                                                    <span class="arrow-li">Platform Intents</span>
-                                                    </a> 
-                                                        <ul style="">
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/reference/refdatacaptureintent">
-                                                                <span class="arrow-li">Datawedge Intents</span>
-                                                                </a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="/emdk-for-android/4-0/guide/reference/refbatteryintent">
-                                                                <span class="arrow-li">Battery Intent</span>
-                                                                </a> 
-                                                            </li>
-                                                        </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                    </aside>
-                    
+                    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
                     <script type="text/javascript">
-                        $(window).load(function() {
-                            var pathname = window.location.pathname.slice(0, -1);
-                            // console.log(pathname);
-                            var menuitem = $('.sidebar-container').find('a[href^="' + pathname + '"]').first()[0];
-                            var menulevel = $(menuitem).parents('ul').length;
-                            // console.log(menuitem);
-                            // console.log(menulevel);
-                            var parentLI = $(menuitem).parent().parent().parent();
-                            var itemarrow = parentLI.find('.arrow').first()[0];
+                        // $(window).load(function() {
+                        //     var pathname = window.location.pathname.slice(0, -1);
+                        //     // console.log(pathname);
+                        //     var menuitem = $('.sidebar-container').find('a[href^="' + pathname + '"]').first()[0];
+                        //     var menulevel = $(menuitem).parents('ul').length;
+                        //     // console.log(menuitem);
+                        //     // console.log(menulevel);
+                        //     var parentLI = $(menuitem).parent().parent().parent();
+                        //     var itemarrow = parentLI.find('.arrow').first()[0];
                     
-                            //now check for higher level
-                            if(menulevel==3){
+                        //     //now check for higher level
+                        //     if(menulevel==3){
                     
-                                var parentFirstLevel = $(parentLI).parent().parent().first()[0];
-                                var parentarrow = $(parentFirstLevel).find('.arrow').first()[0];
-                                parentarrow.click();
-                            }
+                        //         var parentFirstLevel = $(parentLI).parent().parent().first()[0];
+                        //         var parentarrow = $(parentFirstLevel).find('.arrow').first()[0];
+                        //         parentarrow.click();
+                        //     }
                     
-                            if(menulevel>1){
-                                itemarrow.click();
+                        //     if(menulevel>1){
+                        //         itemarrow.click();
                     
-                            }
-                            $(menuitem).addClass('sidebar-selected');
-                            $(menuitem).parent().append('<ul style="display:block" id="indoc"></ul>')
-                            $('h2').each(function(index, value){
-                                  if($(this).attr('id')){
-                                    var anchor = "#" + $(this).attr('id');
-                                    var text = $(this).text();
-                                    var li = "<li><a href='" + anchor + "'>" + text + "</a>" ;
-                                    $('#indoc').append(li);               
-                                  }
+                        //     }
+                        //     $(menuitem).addClass('sidebar-selected');
+                        //     $(menuitem).parent().append('<ul style="display:block" id="indoc"></ul>')
+                        //     $('h2').each(function(index, value){
+                        //           if($(this).attr('id')){
+                        //             var anchor = "#" + $(this).attr('id');
+                        //             var text = $(this).text();
+                        //             var li = "<li><a href='" + anchor + "'>" + text + "</a>" ;
+                        //             $('#indoc').append(li);               
+                        //           }
                     
                                   
-                            });
-                        });
+                        //     });
+                        // });
+                      // var $myNav = $('#toc');
+                      // $('body').scrollspy({
+                      //   target: $myNav
+                      // });
                     
+                     
                         function affix() {
                             
                             // Fit affix width to its parent's width
@@ -713,14 +215,14 @@
                             }
                         };
                     
-                        $(window).on('scroll resize', function() {
-                            affix();
+                        // $(window).on('scroll resize', function() {
+                        //     affix();
                      
-                        });
+                        // });
                     
                     </script>
                 </div>                
-                <div class="col-sm-9 fixed-column-right">
+                <div class="col-sm-9 ">
                     <div class="row">
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
@@ -740,7 +242,7 @@
                             <!-- Start of guide -->
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
-                                        <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
+
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>This guide will walk you through creating an EMDK For Android application that will use <a href="/emdk-for-android/4-0/api/simulscan">SimulScan APIs</a> introduced in EMDK V 3.1, to capture critical data from documents. This facilitates capturing fields of interest from a document and converting them into data that an end-user application can use immediately at the point of transaction.</p>
@@ -763,11 +265,11 @@
 
 <p><strong>Use Case:</strong></p>
 
-<p><img src="/img/SimulScanTutorialImages/example_document.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/example_document.jpg" alt="img"></p>
 
 <p>The above document has various fields having text, barcode, signature that could be needed to capture and display on UI for an application repeatedly.</p>
 
-<p><img src="/img/SimulScanTutorialImages/example_document_requirement.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/example_document_requirement.jpg" alt="img"></p>
 
 <p>Suppose, we need to capture two highlighted fields through our application, which contains barcode and characters.</p>
 
@@ -794,21 +296,21 @@
 <ol>
 <li><p>Log in using your partner credentials to <a href="https://simulscan.zebra.com">https://simulscan.zebra.com</a>.</p>
 
-<p><img src="/img/SimulScanTutorialImages/template_builder_home.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/template_builder_home.jpg" alt="img"></p></li>
 
 <li><p>Click on "Create Template" button.</p>
 
-<p><img src="/img/SimulScanTutorialImages/choose_document_type.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/choose_document_type.jpg" alt="img"></p></li>
 
 <li><p>You could see different document types based on your needs. Since we already have a document format that contains barcodes and characters, click "Structured Targets" button.</p></li>
 
 <li><p>Take an image of the document and provide path of this image on your machine. You should see following:</p>
 
-<p><img src="/img/SimulScanTutorialImages/select_area_for_template.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/select_area_for_template.jpg" alt="img"></p></li>
 
 <li><p>Click "Ok" and you would see something like this:</p>
 
-<p><img src="/img/SimulScanTutorialImages/create_new_template.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/create_new_template.jpg" alt="img"></p></li>
 
 <li><p>Provide the "Template Name" at the top left corner (Ex: MyTemplate) and press "enter".</p></li>
 
@@ -817,22 +319,22 @@
 <ul>
 <li>Shipper's VAT/GST number (Provide "Shippers VATGST number" as the field name). Select OCR processing with word check.</li></ul>
 
-<p><img src="/img/SimulScanTutorialImages/first_field.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/first_field.jpg" alt="img"></p>
 
 <ul>
 <li>Barcode at the top right of the document (Provide "postal barcode" as the field name). Select Barcode processing with any barcode type.  </li></ul>
 
-<p><img src="/img/SimulScanTutorialImages/second_field.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/second_field.jpg" alt="img"></p></li>
 
 <li><p>Your template should now look like this:</p>
 
-<p><img src="/img/SimulScanTutorialImages/template_with_both_fields.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/template_with_both_fields.jpg" alt="img"></p></li>
 
 <li><p>Click "File" and "Download Template" to download this created template on your machine.</p></li>
 
 <li><p>Downloaded template is an xml file (Ex: MyTemplate.xml). Put this template file under "/sdcard/simulscan/templates" on your device so that our Android application can detect this template.</p>
 
-<p><img src="/img/SimulScanTutorialImages/template_on_device.png" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/template_on_device.png" alt="img"></p></li>
 
 <li><p>This is how you can create your own template to capture any field on any document.</p></li>
 </ol>
@@ -873,7 +375,7 @@ license ? -&gt; Yes -&gt; point to the file on the sdcard.</li>
 <ol>
 <li><p>Modify the Application's Manifest.xml to use the EMDK library and to set permission for the EMDK to scan the barcodes.</p>
 
-<p><img src="/img/SimulScanTutorialImages/manifest_file.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/manifest_file.jpg" alt="img"></p>
 
 <p>You must first enable permissions for 'com.symbol.emdk.permission.EMDK': </p>
 
@@ -898,7 +400,7 @@ android:screenOrientation="portrait"
 
 <p>When done, your manifest.xml should look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/manifest_permissions_added.jpg" alt="img"> </p></li>
+<p><img src="../../images/SimulScanTutorialImages/manifest_permissions_added.jpg" alt="img"> </p></li>
 </ol>
 
 <h2 id="addingsomecode" class="anchor"><a class="heading-anchor" href="#addingsomecode"><span></span></a>Adding Some Code</h2>
@@ -1014,8 +516,8 @@ private Exception lastException;
 
 <p>The code till here looks like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/variables_added_1.jpg" alt="img">
-<img src="/img/SimulScanTutorialImages/variables_added_2.jpg" alt="img"> </p></li>
+<p><img src="../../images/SimulScanTutorialImages/variables_added_1.jpg" alt="img">
+<img src="../../images/SimulScanTutorialImages/variables_added_2.jpg" alt="img"> </p></li>
 
 <li><p>Now, let us design a simple UI that has UI components explained above.</p>
 
@@ -1104,7 +606,7 @@ if (results.statusCode != EMDKResults.STATUS_CODE.SUCCESS) {
 
 <p>So the complete <code>onCreate</code> method looks like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/on_create_added.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/on_create_added.jpg" alt="img"></p></li>
 
 <li><p>Get <a href="/emdk-for-android/4-0/api/core/EMDKManager">EMDK Manager</a> and <a href="/emdk-for-android/4-0/api/simulscan/SimulScanManager">SimulScanManager</a> objects in the <code>onOpened</code> method and update the <code>StatusView</code> TextView.</p>
 
@@ -1140,7 +642,7 @@ deviceSelectionSpinner.setOnItemSelectedListener(this);
 
 <p>The <code>onOpened</code> method should look like: </p>
 
-<p><img src="/img/SimulScanTutorialImages/on_opened_method.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/on_opened_method.jpg" alt="img"></p></li>
 
 <li><p>You will see an error as we have not added <code>addItemsOnSpinner</code> method. So lets add it now. This method would basically get Spinner and list of SimulScan supported device as arguments. It would add this list in an adapter and set that adapter into spinner to display this list on UI.</p>
 
@@ -1160,7 +662,7 @@ spinner.setAdapter(dataAdapter);
 
 <p>This method should look like:   </p>
 
-<p><img src="/img/SimulScanTutorialImages/add_items_on_spinner_method.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/add_items_on_spinner_method.jpg" alt="img"></p></li>
 
 <li><p>The user would select any SimulScan supported device from the list in spinner. So we need get that <a href="/emdk-for-android/4-0/api/simulscan/SimulScanReader">SimulScanReader</a> and initiate it. Since the user would select it from the spinner, we need to add our code in <code>onItemSelected</code> method of the spinner that we have already overridden.</p>
 
@@ -1189,7 +691,7 @@ if (parent.equals(deviceSelectionSpinner)) {
 
 <p>So the <code>onItemSelected</code> method should now look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/on_item_selected_method.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/on_item_selected_method.jpg" alt="img"></p>
 
 <p>We would simply de-initialize scanner in <code>onNothingSelected</code> method when nothing is selected in the spinner as follows:</p>
 
@@ -1206,7 +708,7 @@ if (parent.equals(deviceSelectionSpinner)) {
 
 <p>The <code>onNothingSelected</code> method should now look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/on_nothing_selected_method.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/on_nothing_selected_method.jpg" alt="img"></p></li>
 
 <li><p>Lets add <code>initCurrentScanner</code> and <code>deinitCurrentScanner</code> methods to initialize and de-initialize the current scanner respectively. This would also get read of errors. </p>
 
@@ -1241,7 +743,7 @@ private void deinitCurrentScanner() throws SimulScanException {
 
 <p>Both <code>initCurrentScanner</code> and <code>deinitCurrentScanner</code> methods should look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/init_deinit_scanner_methods.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/init_deinit_scanner_methods.jpg" alt="img"></p></li>
 
 <li><p>According to the life cycle of Activity, we would add <code>onStart</code> and <code>onStop</code> methods to enable and disable the scanner (SimulScanReader device) respectively as follows:</p>
 
@@ -1292,9 +794,9 @@ public void onStop() {
 
 <p>Both <code>onStart</code> and <code>onStop</code> methods should now look like: </p>
 
-<p><img src="/img/SimulScanTutorialImages/on_start_method.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/on_start_method.jpg" alt="img"></p>
 
-<p><img src="/img/SimulScanTutorialImages/on_stop_method.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/on_stop_method.jpg" alt="img"></p></li>
 
 <li><p>Now we would add a method to set SimulScanConfig settings, where we would set different parameters for the current scanner (SimulScanReader device) as follows:</p>
 
@@ -1343,9 +845,9 @@ private void setCurrentConfig() throws Exception {
 
 <p><code>setCurrentConfig</code> method should now look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/set_current_config_method_1.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/set_current_config_method_1.jpg" alt="img"></p>
 
-<p><img src="/img/SimulScanTutorialImages/set_current_config_method_2.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/set_current_config_method_2.jpg" alt="img"></p></li>
 
 <li><p>In this step, we would add methods that would actually start (<code>readCurrentScanner</code>) and stop (<code>stopReadCurrentScanner</code>) reading templates with the help of <a href="/emdk-for-android/4-0/api/simulscan/SimulScanReader">SimulScanReader</a> instance for the current scanner that we created.</p>
 
@@ -1373,7 +875,7 @@ private void stopReadCurrentScanner() throws SimulScanException {
 
 <p>The methods <code>readCurrentScanner</code> and <code>stopReadCurrentScanner</code> should now look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/start_stop_reading_scanner.jpg" alt="img">   </p></li>
+<p><img src="../../images/SimulScanTutorialImages/start_stop_reading_scanner.jpg" alt="img">   </p></li>
 
 <li><p>We would now add the code in <code>onClick</code> method that is overridden for the "Start" and "Stop" buttons in the UI that would call <code>readCurrentScanner</code> and <code>stopReadCurrentScanner</code> methods to start and stop the template reading respectively on click of these buttons.</p>
 
@@ -1419,9 +921,9 @@ if(v.equals(stopReadButton)){
 
 <p>The entire <code>onClick</code> method should now look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/on_click_method_1.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/on_click_method_1.jpg" alt="img"></p>
 
-<p><img src="/img/SimulScanTutorialImages/on_click_method_2.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/on_click_method_2.jpg" alt="img"></p></li>
 
 <li><p>Once we start scanning a template, we would get the template data in <code>onData</code> and status while executing scanning operations in <code>onStatus</code> methods respectively that have been overridden already but not handled yet.</p>
 
@@ -1441,7 +943,7 @@ synchronized (simulScanDataList) {
 
 <p>So the <code>onData</code> method should now look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/on_data.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/on_data.jpg" alt="img"></p></li>
 
 <li><p>The status of any SimulScan operation is received in <code>onStatus</code> method, which is a callback method upon scan status event occurs.</p>
 
@@ -1454,7 +956,7 @@ textViewStatus.post(new StatusDataRunnable(simulScanStatusData));
 
 <p>The <code>onStatus</code> method should look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/on_status_method.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/on_status_method.jpg" alt="img"></p></li>
 
 <li><p>You can see an error as we have not created a class <code>StatusDataRunnable</code> implementing runnable to update "StatusView" on UI thread.</p>
 
@@ -1514,9 +1016,9 @@ public void run() {
 
 <p>The <code>StatusDataRunnable</code> class should look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/status_data_runnable_1.jpg" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/status_data_runnable_1.jpg" alt="img"></p>
 
-<p><img src="/img/SimulScanTutorialImages/status_data_runnable_2.jpg" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/status_data_runnable_2.jpg" alt="img"></p></li>
 
 <li><p>Finally, we would update "StatusView" TextView in the <code>onClosed</code> method for any abrupt closing of EMDK using following line.</p>
 
@@ -1526,9 +1028,9 @@ textViewStatus.setText("Status: " + "EMDK closed unexpectedly!");
 
 <p>So the <code>onClosed</code> method should now look like:</p>
 
-<p><img src="/img/SimulScanTutorialImages/on_closed.jpg" alt="img">             </p>
+<p><img src="../../images/SimulScanTutorialImages/on_closed.jpg" alt="img">             </p>
 
-<p>That's it!!! We are done with all the coding and configuration part that will let us scan the template stored in sdcard and display fields that we marked in the template, on Symbol device UI using <a href="/emdk-for-android/4-0/api/simulscan/simulscan">SimulScan APIs</a> introduced in EMDK V 3.1. Now let us run the application.</p></li>
+<p>That's it!!! We are done with all the coding and configuration part that will let us scan the template stored in sdcard and display fields that we marked in the template, on Symbol device UI using <a href="/emdk-for-android/4-0/api/simulscan">SimulScan APIs</a> introduced in EMDK V 3.1. Now let us run the application.</p></li>
 </ol>
 
 <h2 id="runningtheapplication" class="anchor"><a class="heading-anchor" href="#runningtheapplication"><span></span></a>Running the Application</h2>
@@ -1543,37 +1045,37 @@ textViewStatus.setText("Status: " + "EMDK closed unexpectedly!");
 
 <li><p>Run the application.</p>
 
-<p><img src="/img/SimulScanTutorialImages/home_screen.png" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/home_screen.png" alt="img"></p>
 
 <p>You can see a message on the "StatusView" that indicates EMDK Manager has been successfully initialized and reader has been opened successfully.</p>
 
 <p>You can select different SimulScanReader device by clicking on Spinner but as of now TC55 supports only Internal Camera for SimulScan. Hence its the only device in the spinner.</p>
 
-<p><img src="/img/SimulScanTutorialImages/spinner.png" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/spinner.png" alt="img"></p></li>
 
 <li><p>Once selecting Internal Camera as SimulScanReader device from the spinner, click read button. It opens the Internal Camera.</p>
 
-<p><img src="/img/SimulScanTutorialImages/place_doc_for_scanning.png" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/place_doc_for_scanning.png" alt="img"></p>
 
 <p>You can see that its searching for "MyTemplate" that we had set.</p></li>
 
 <li><p>Place Internal Camera above the printed copy of "MyTemplate". It would process the template by outlining it and read the marked fields in the template viz. Shipper's VAT/GST Number and barcode at the top right.</p>
 
-<p><img src="/img/SimulScanTutorialImages/processing_template.png" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/processing_template.png" alt="img"></p>
 
-<p><img src="/img/SimulScanTutorialImages/parsed_data.png" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/parsed_data.png" alt="img"></p>
 
 <p>You can see that SimulScanReader device has successfully scanned and parsed the Shipper's VAT/GST number and barcode fields and displayed them on UI. You can press "Accept" button at the bottom to use these values in your application.</p></li>
 
 <li><p>If the SimulScanReader device is not sure about the correctness of scanned fields, it would display them in red background. It means you need to re-scan the template by pressing "Rescan" button at the bottom left. </p>
 
-<p><img src="/img/SimulScanTutorialImages/re_scan_template.png" alt="img"></p></li>
+<p><img src="../../images/SimulScanTutorialImages/re_scan_template.png" alt="img"></p></li>
 
 <li><p>You can see the message "Check Result", which indicates that you need to re-scan the template to get correct data from marked fields of the template until the "Check Result" message is not shown like below:</p>
 
-<p><img src="/img/SimulScanTutorialImages/parsed_data.png" alt="img"></p>
+<p><img src="../../images/SimulScanTutorialImages/parsed_data.png" alt="img"></p>
 
-<p>This illustrates how to access critical fields from a document using <a href="/emdk-for-android/4-0/api/simulscan/simulscan">SimulScan APIs</a> by creating its template from the <a href="https://simulscan.zebra.com">Template Builder</a>.</p></li>
+<p>This illustrates how to access critical fields from a document using <a href="/emdk-for-android/4-0/api/simulscan">SimulScan APIs</a> by creating its template from the <a href="https://simulscan.zebra.com">Template Builder</a>.</p></li>
 </ol>
 
 <h2 id="importantprogrammingtips" class="anchor"><a class="heading-anchor" href="#importantprogrammingtips"><span></span></a>Important Programming Tips</h2>
@@ -1612,7 +1114,7 @@ textViewStatus.setText("Status: " + "EMDK closed unexpectedly!");
 <h2 id="downloadthesource" class="anchor"><a class="heading-anchor" href="#downloadthesource"><span></span></a>Download the Source</h2>
 
 <p>The project source to this tutorial can be <a href="https://s3.amazonaws.com/emdk/Tutorials/SimulScanTutorial.zip">downloaded (Internet Connection Required)</a>.</p><p></p>
-                                        <div>    <footer id="footer">
+                                        <div>     <footer id="footer" class="navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-10">
@@ -1631,13 +1133,14 @@ textViewStatus.setText("Status: " + "EMDK closed unexpectedly!");
         </div>
     </footer><!--/#footer-->
 </div>
+
+
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
                 </div><!--/.col-sm-6-->
             </div>
             </section>
@@ -1658,7 +1161,6 @@ textViewStatus.setText("Status: " + "EMDK closed unexpectedly!");
     <script src="/js/prettify.js"></script>
     <script src="/js/zepto.js"></script>
     <script src="/js/jquery.waterfall.js"></script>   
-    <script src="/js/lunr.min.js"></script>   
     <script src="/js/main.js"></script>
 
 <script type="text/javascript">
