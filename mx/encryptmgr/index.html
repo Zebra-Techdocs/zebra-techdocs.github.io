@@ -24,6 +24,7 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
+    <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
     <link rel="shortcut icon" href="/favicon.ico">
 <script src="/js/jquery.js"></script></head><!--/head-->
 
@@ -331,9 +332,23 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 <div class="">
                                     <h2 class="anchor" id="install-key"><a class="heading-anchor" href="#install-key"><span></span></a>Install Key</h2>
-                                    <p class=""></p><p>This parm allows you to choose whether or not to Add a Named Key to the Key Storage Database on the device.</p>
+                                    <p class="">
+
+        </p><p>This parm allows you to choose whether or not to Add a Named Key to the Key Storage Database on the device.</p>
 
 <blockquote>
   <p><strong>Note:</strong> Only one Encrypted File System can be mounted at a time using a given Mount Point. If an attempt to create an EFS with a Mount Point that is already in used by a mounted EFS, the new EFS will be created, but will not be mounted.</p>
@@ -343,7 +358,10 @@ To configure encryption, certain questions must be answered:</p>
 
 <blockquote>
   <p><strong>Note:</strong> If you Add a Named Key to the Key Storage Database, it can have an impact on a Storage Card or on Encrypted File Systems that were encrypted using that key and that previously became inaccessible when that key was Removed. By adding the same Key Name with the same associated Key Value, they will be re-mounted and hence will become accessible again.</p>
-</blockquote><p></p>
+</blockquote>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> InstallKeyAction</p>
                                         <p><b>Pivotal Parm:</b> Yes</p>
@@ -411,20 +429,11 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="install-key-name"><a class="heading-anchor" href="#install-key-name"><span></span></a>Install Key Name</h2>
-                                    <p class=""></p><p>This parm allows you to specify the name of the Named Key that will be added to the Key Storage Database.</p>
+                                    <p class="">
+
+        </p><p>This parm allows you to specify the name of the Named Key that will be added to the Key Storage Database.</p>
 
 <blockquote>
   <p><strong>Note:</strong> If an attempt is made to add a Named Key that is already in the Key Storage Database, then an error will be returned in the Result XML.</p>
@@ -434,7 +443,10 @@ To configure encryption, certain questions must be answered:</p>
 
 <ul>
 <li>String with a minimum size of 1 character</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Install Key action is "Install key"</p>
                                         <p><b>Parm Name:</b> InstallKeyName</p>
@@ -447,9 +459,6 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -507,6 +516,26 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -598,25 +627,6 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="revoke-key-names"><a class="heading-anchor" href="#revoke-key-names"><span></span></a>Revoke Key Name(s)</h2>
                                     <p class=""></p><p>This parm allows you to specify the name(s) of the Named Key(s) to be Removed from the Key Storage Database.</p>
@@ -662,9 +672,15 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                 <div class="">
                                     <h2 class="anchor" id="create-efs"><a class="heading-anchor" href="#create-efs"><span></span></a>Create EFS</h2>
-                                    <p class=""></p><p>This parm allows you to choose whether or not to create an Encrypted File System on the device.</p>
+                                    <p class="">
+
+        </p><p>This parm allows you to choose whether or not to create an Encrypted File System on the device.</p>
 
 <blockquote>
   <p><strong>Note:</strong> The process of Creating an Encrypted File System takes time since it must create the Backing Storage File and mount the EFS on its designated Mount Point. As a result, applications will not be able to access an EFS via its Mount Point until it is successfully mounted. Further, an EFS could later be un-mounted if the Key Name it is using is Removed from the Key Storage Database. Applications that use an EFS should thus include error handling logic that can deal with situations where the EFS is not mounted and hence cannot be accessed.</p>
@@ -684,7 +700,10 @@ To configure encryption, certain questions must be answered:</p>
 <li>The Named Key specified for the EFS is not present in the Key Storage Database.</li>
 
 <li>The size specified for the EFS is invalid.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> CreateEFSAction</p>
                                         <p><b>Pivotal Parm:</b> Yes</p>
@@ -738,17 +757,20 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
-                                    
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="efs-key-name"><a class="heading-anchor" href="#efs-key-name"><span></span></a>EFS Key Name</h2>
-                                    <p class=""></p><p>This parm allows you to specify the Named Key to use to Create the Encrypted File System.</p>
+                                    <p class="">
+
+        </p><p>This parm allows you to specify the Named Key to use to Create the Encrypted File System.</p>
 
 <p>Parm value input rules: </p>
 
 <ul>
 <li>String with a minimum size of 1 character</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Create EFS action is "Create EFS"</p>
                                         <p><b>Parm Name:</b> EFSKeyName</p>
@@ -765,15 +787,25 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                 <div class="">
                                     <h2 class="anchor" id="efs-name"><a class="heading-anchor" href="#efs-name"><span></span></a>EFS Name</h2>
-                                    <p class=""></p><p>This parm allows you to specify the name of the Encrypted File System to be Created.</p>
+                                    <p class="">
+
+        </p><p>This parm allows you to specify the name of the Encrypted File System to be Created.</p>
 
 <p>Parm value input rules: </p>
 
 <ul>
 <li>String with a minimum size of 1 character</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Create EFS action is "Create EFS"</p>
                                         <p><b>Parm Name:</b> EFSName</p>
@@ -813,13 +845,14 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="efs-location-internalsdcard"><a class="heading-anchor" href="#efs-location-internalsdcard"><span></span></a>EFS Location (internal/SDcard)</h2>
-                                    <p class=""></p><p>This parm allows you to specify the storage location where the Backing Storage File should be stored for the Encrypted File System to be created.</p><p></p>
+                                    <p class="">
+
+        </p><p>This parm allows you to specify the storage location where the Backing Storage File should be stored for the Encrypted File System to be created.</p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Create EFS action is "Create EFS"</p>
                                         <p><b>Parm Name:</b> EFSLocation</p>
@@ -870,7 +903,6 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="mount-path-for-efs"><a class="heading-anchor" href="#mount-path-for-efs"><span></span></a>Mount path for EFS</h2>
                                     <p class=""></p><p>This parm allows you to specify the Mount Path to be used for the Encrypted File System to be Created.</p>
@@ -892,10 +924,6 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -931,9 +959,17 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                 <div class="">
                                     <h2 class="anchor" id="delete-efs"><a class="heading-anchor" href="#delete-efs"><span></span></a>Delete EFS</h2>
-                                    <p class=""></p><p>This parm allows you to choose whether or not to Delete an Encrypted File System.</p><p></p>
+                                    <p class="">
+
+        </p><p>This parm allows you to choose whether or not to Delete an Encrypted File System.</p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> DeleteEFSAction</p>
                                         <p><b>Pivotal Parm:</b> Yes</p>
@@ -986,7 +1022,12 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                 <div class="">
                                     <h2 class="anchor" id="delete-efs-location-internalsdcard"><a class="heading-anchor" href="#delete-efs-location-internalsdcard"><span></span></a>Delete EFS Location (internal/SDcard)</h2>
-                                    <p class=""></p><p>This parm allows you to specify the storage location of the Backing Storage File of the Encrypted File System to be deleted.</p><p></p>
+                                    <p class="">
+
+        </p><p>This parm allows you to specify the storage location of the Backing Storage File of the Encrypted File System to be deleted.</p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Create EFS action is "Delete EFS"</p>
                                         <p><b>Parm Name:</b> DeleteEFSLocation</p>
@@ -1030,7 +1071,6 @@ To configure encryption, certain questions must be answered:</p>
                                     </div>	
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -1105,6 +1145,9 @@ To configure encryption, certain questions must be answered:</p>
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1247,10 +1290,11 @@ To configure encryption, certain questions must be answered:</p>
                                     
                                     
                                     
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="examples"><a class="heading-anchor" href="#examples"><span></span></a>Examples</h2>
-                                    <p class=""></p><h3 id="encryptsdcard" class="anchor"><a class="heading-anchor" href="#encryptsdcard"><span></span></a>Encrypt SD Card</h3>
+                                    <p class="">
+
+        </p><h3 id="encryptsdcard" class="anchor"><a class="heading-anchor" href="#encryptsdcard"><span></span></a>Encrypt SD Card</h3>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
@@ -1361,12 +1405,14 @@ To configure encryption, certain questions must be answered:</p>
         &lt;/characteristic&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
-</code></pre><p></p>
+</code></pre>
+
+
+<p></p>
                                     
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
