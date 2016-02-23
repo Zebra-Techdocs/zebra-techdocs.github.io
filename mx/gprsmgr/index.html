@@ -96,32 +96,12 @@
                     <!-- <nav id="automenu"   >
                     
                     </nav> -->
+                    
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         <ul class="nav">
                             <li><strong>GPRS Manager</strong></li>
                         </ul>
                     </nav>
-                    <!-- <div class="row">
-                        <nav class="col-xs-3 bs-docs-sidebar">
-                            <ul id="sidebar" class="nav nav-stacked fixed">
-                                <li>
-                                    <a href="/mx/features">Features</a>
-                                </li>
-                                <li>
-                                    <a href="/mx/overview">Architecture</a>
-                                </li>
-                                <li>
-                                    <a href="/mx/compatibility">Compatibility</a>
-                                </li>
-                                <li>
-                                    <a href="/mx/choosing-a-version">Choosing a MX Version</a>
-                                </li>
-                                <li>
-                                    <a href="/mx/mx-version-on-device">Checking Device MX Version</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div> -->
                     
                     <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
                     <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
@@ -224,8 +204,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
                                     <p class=""></p><p>The GprsMgr administers Access Point Name (APN) settings for the GPRS network used by the device.</p>
@@ -259,6 +237,8 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -395,7 +375,6 @@
                                     
                                     
                                     
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="gprs-carrier"><a class="heading-anchor" href="#gprs-carrier"><span></span></a>GPRS Carrier</h2>
                                     <p class=""></p><p>This parm allows you to specify whether the APN to be defined should be a standard pre-defined APN of a well-known GPRS carrier or if the APN should be configured by specifying custom information.</p><p></p>
@@ -473,6 +452,7 @@
                                     
                                     
                                     
+                                    
                                 <div class="">
                                     <h2 class="anchor" id="apn-name"><a class="heading-anchor" href="#apn-name"><span></span></a>APN Name</h2>
                                     <p class=""></p><p>This parm allows you to specify the name by which the APN will be known in the device. Each APN defined in a device must have a unique name. Once an APN with a given name has been added, that name can be used to Remove that APN definition from the device or to Replace the definition of that APN with a new definition.</p>
@@ -498,6 +478,13 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -602,20 +589,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="make-default-apn"><a class="heading-anchor" href="#make-default-apn"><span></span></a>Make Default APN</h2>
                                     <p class=""></p><p>This parm allows you to specify whether the new APN being added should be made the new default (preferred) APN. When connecting automatically, the system will connect to the default APN if possible, before considering other APNs.</p><p></p>
@@ -662,6 +635,13 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -952,116 +932,94 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                 <div class="">
                                     <h2 class="anchor" id="examples"><a class="heading-anchor" href="#examples"><span></span></a>Examples</h2>
-                                    <p class=""></p><h2 id="queries" class="anchor"><a class="heading-anchor" href="#queries"><span></span></a>Queries</h2>
-
-<h3 id="getairplanemode" class="anchor"><a class="heading-anchor" href="#getairplanemode"><span></span></a>Get Air Plane Mode</h3>
-
-<h4 id="input" class="anchor"><a class="heading-anchor" href="#input"><span></span></a>Input</h4>
+                                    <p class=""></p><h3 id="addattgprsapn" class="anchor"><a class="heading-anchor" href="#addattgprsapn"><span></span></a>Add AT&amp;T GPRS APN</h3>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" &gt;
-        &lt;parm-query name="AirPlaneMode"/&gt;
+    &lt;characteristic type="GprsMgr" version="4.2" &gt;
+    &lt;parm name="GprsAction" value="1"/&gt;
+    &lt;parm name="GprsCarrier" value="1"/&gt;
+        &lt;characteristic type="gprs-details"&gt;
+            &lt;parm name="ApnName" value="myATT"/&gt;
+            &lt;parm name="ReplaceIfExisting" value="1"/&gt;
+            &lt;parm name="MakeDefault" value="1"/&gt;
+        &lt;/characteristic&gt;
+        &lt;characteristic type="att-details"&gt;
+            &lt;parm name="AttAccessPoint" value="wap.cingular"/&gt;
+            &lt;parm name="AttUserName" value="WAP@CINGULARGPRS.COM"/&gt;
+            &lt;parm name="AttPassword" value="CINGULAR1"/&gt;
+        &lt;/characteristic&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
 </code></pre>
 
-<h4 id="output" class="anchor"><a class="heading-anchor" href="#output"><span></span></a>Output</h4>
+<h3 id="addtmobilegprsapn" class="anchor"><a class="heading-anchor" href="#addtmobilegprsapn"><span></span></a>Add T-Mobile GPRS APN</h3>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
-        &lt;parm name="AirPlaneMode" value="1"/&gt;
+    &lt;characteristic type="GprsMgr" version="4.2" &gt;
+    &lt;parm name="GprsAction" value="1"/&gt;
+    &lt;parm name="GprsCarrier" value="2"/&gt;
+        &lt;characteristic type="gprs-details"&gt;
+            &lt;parm name="ApnName" value="myTMobile"/&gt;
+            &lt;parm name="ReplaceIfExisting" value="0"/&gt;
+            &lt;parm name="MakeDefault" value="1"/&gt;
+        &lt;/characteristic&gt;
+        &lt;characteristic type="tmobile-details"&gt;
+            &lt;parm name="TmobileAccessPoint" value="internet3.voicestream.com"/&gt;
+            &lt;parm name="TmobileUserName" value=""/&gt;
+            &lt;parm name="TmobilePassword" value=""/&gt;
+        &lt;/characteristic&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
 </code></pre>
 
-<h3 id="gettouchpanel" class="anchor"><a class="heading-anchor" href="#gettouchpanel"><span></span></a>Get Touch Panel</h3>
-
-<h4 id="input-1" class="anchor"><a class="heading-anchor" href="#input-1"><span></span></a>Input</h4>
+<h3 id="addcustomgprsapn" class="anchor"><a class="heading-anchor" href="#addcustomgprsapn"><span></span></a>Add Custom GPRS APN</h3>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" &gt;
-        &lt;parm-query name="TouchPanel"/&gt;
+    &lt;characteristic type="GprsMgr" version="4.2" &gt;
+    &lt;parm name="GprsAction" value="1"/&gt;
+    &lt;parm name="GprsCarrier" value="0"/&gt;
+        &lt;characteristic type="gprs-details"&gt;
+            &lt;parm name="ApnName" value="myCustom"/&gt;
+            &lt;parm name="ReplaceIfExisting" value="1"/&gt;
+            &lt;parm name="MakeDefault" value="1"/&gt;
+        &lt;/characteristic&gt;
+        &lt;characteristic type="custom-details"&gt;
+            &lt;parm name="CustomAccessPoint" value="apn"/&gt;
+            &lt;parm name="CustomUserName" value="user"/&gt;
+            &lt;parm name="CustomPassword" value="pass"/&gt;
+        &lt;/characteristic&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;  
+</code></pre>
+
+<h3 id="removeexistingnamedapn" class="anchor"><a class="heading-anchor" href="#removeexistingnamedapn"><span></span></a>Remove Existing Named APN</h3>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="GprsMgr" version="4.2" &gt;
+        &lt;parm name="GprsAction" value="2"/&gt;
+        &lt;characteristic type="gprs-details"&gt;
+            &lt;parm name="ApnName" value="myTMobile"/&gt;
+        &lt;/characteristic&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
 </code></pre>
 
-<h4 id="output-1" class="anchor"><a class="heading-anchor" href="#output-1"><span></span></a>Output</h4>
+<h3 id="removeallexistingapns" class="anchor"><a class="heading-anchor" href="#removeallexistingapns"><span></span></a>Remove All Existing APNs</h3>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
-        &lt;parm name="TouchPanel" value="1"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
-
-<h3 id="getsafemode" class="anchor"><a class="heading-anchor" href="#getsafemode"><span></span></a>Get Safe Mode</h3>
-
-<h4 id="input-2" class="anchor"><a class="heading-anchor" href="#input-2"><span></span></a>Input</h4>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" &gt;
-        &lt;parm-query name="SafeMode"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
-
-<h4 id="output-2" class="anchor"><a class="heading-anchor" href="#output-2"><span></span></a>Output</h4>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
-        &lt;parm name="SafeMode" value="1"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
-
-<h3 id="getautoscreenlockoption" class="anchor"><a class="heading-anchor" href="#getautoscreenlockoption"><span></span></a>Get Auto Screen Lock Option</h3>
-
-<h4 id="input-3" class="anchor"><a class="heading-anchor" href="#input-3"><span></span></a>Input</h4>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" &gt;
-        &lt;parm-query name="AutoScreenLockOption"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
-
-<h4 id="output-3" class="anchor"><a class="heading-anchor" href="#output-3"><span></span></a>Output</h4>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
-        &lt;parm name="AutoScreenLockOption" value="1"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
-
-<h3 id="getautoscreenlockstate" class="anchor"><a class="heading-anchor" href="#getautoscreenlockstate"><span></span></a>Get Auto Screen Lock State</h3>
-
-<h4 id="input-4" class="anchor"><a class="heading-anchor" href="#input-4"><span></span></a>Input</h4>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" &gt;
-        &lt;parm-query name="AutoScreenLockState"/&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
-</code></pre>
-
-<h4 id="output-4" class="anchor"><a class="heading-anchor" href="#output-4"><span></span></a>Output</h4>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
-        &lt;parm name="AutoScreenLockState" value="1"/&gt;
+    &lt;characteristic type="GprsMgr" version="4.2" &gt;
+        &lt;parm name="GprsAction" value="3"/&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
 </code></pre><p></p>
@@ -1069,8 +1027,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -1152,7 +1108,7 @@
 &lt;/wap-provisioningdoc&gt;
 </code></pre>
 
-<h2 id="queries-1" class="anchor"><a class="heading-anchor" href="#queries-1"><span></span></a>Queries</h2>
+<h2 id="queries" class="anchor"><a class="heading-anchor" href="#queries"><span></span></a>Queries</h2>
 
 <blockquote>
   <p><strong>Note:</strong> The following queries are supported in by the PersistMgr. However, they have not been indicated in the PersistMgr DSD. Therefore, the following queries cannot be generated with the DSD tool and will need to be created manually.</p>
@@ -1269,91 +1225,116 @@
                                     
                                     
                                     
-                                    
                                 <div class="">
                                     <h2 class="anchor" id="examples-2"><a class="heading-anchor" href="#examples-2"><span></span></a>Examples</h2>
-                                    <p class=""></p><h3 id="addattgprsapn" class="anchor"><a class="heading-anchor" href="#addattgprsapn"><span></span></a>Add AT&amp;T GPRS APN</h3>
+                                    <p class=""></p><h2 id="queries-1" class="anchor"><a class="heading-anchor" href="#queries-1"><span></span></a>Queries</h2>
+
+<h3 id="getairplanemode" class="anchor"><a class="heading-anchor" href="#getairplanemode"><span></span></a>Get Air Plane Mode</h3>
+
+<h4 id="input" class="anchor"><a class="heading-anchor" href="#input"><span></span></a>Input</h4>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="GprsMgr" version="4.2" &gt;
-    &lt;parm name="GprsAction" value="1"/&gt;
-    &lt;parm name="GprsCarrier" value="1"/&gt;
-        &lt;characteristic type="gprs-details"&gt;
-            &lt;parm name="ApnName" value="myATT"/&gt;
-            &lt;parm name="ReplaceIfExisting" value="1"/&gt;
-            &lt;parm name="MakeDefault" value="1"/&gt;
-        &lt;/characteristic&gt;
-        &lt;characteristic type="att-details"&gt;
-            &lt;parm name="AttAccessPoint" value="wap.cingular"/&gt;
-            &lt;parm name="AttUserName" value="WAP@CINGULARGPRS.COM"/&gt;
-            &lt;parm name="AttPassword" value="CINGULAR1"/&gt;
-        &lt;/characteristic&gt;
+    &lt;characteristic type="PowerKeyMgr" &gt;
+        &lt;parm-query name="AirPlaneMode"/&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
 </code></pre>
 
-<h3 id="addtmobilegprsapn" class="anchor"><a class="heading-anchor" href="#addtmobilegprsapn"><span></span></a>Add T-Mobile GPRS APN</h3>
+<h4 id="output" class="anchor"><a class="heading-anchor" href="#output"><span></span></a>Output</h4>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="GprsMgr" version="4.2" &gt;
-    &lt;parm name="GprsAction" value="1"/&gt;
-    &lt;parm name="GprsCarrier" value="2"/&gt;
-        &lt;characteristic type="gprs-details"&gt;
-            &lt;parm name="ApnName" value="myTMobile"/&gt;
-            &lt;parm name="ReplaceIfExisting" value="0"/&gt;
-            &lt;parm name="MakeDefault" value="1"/&gt;
-        &lt;/characteristic&gt;
-        &lt;characteristic type="tmobile-details"&gt;
-            &lt;parm name="TmobileAccessPoint" value="internet3.voicestream.com"/&gt;
-            &lt;parm name="TmobileUserName" value=""/&gt;
-            &lt;parm name="TmobilePassword" value=""/&gt;
-        &lt;/characteristic&gt;
+    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
+        &lt;parm name="AirPlaneMode" value="1"/&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
 </code></pre>
 
-<h3 id="addcustomgprsapn" class="anchor"><a class="heading-anchor" href="#addcustomgprsapn"><span></span></a>Add Custom GPRS APN</h3>
+<h3 id="gettouchpanel" class="anchor"><a class="heading-anchor" href="#gettouchpanel"><span></span></a>Get Touch Panel</h3>
+
+<h4 id="input-1" class="anchor"><a class="heading-anchor" href="#input-1"><span></span></a>Input</h4>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="GprsMgr" version="4.2" &gt;
-    &lt;parm name="GprsAction" value="1"/&gt;
-    &lt;parm name="GprsCarrier" value="0"/&gt;
-        &lt;characteristic type="gprs-details"&gt;
-            &lt;parm name="ApnName" value="myCustom"/&gt;
-            &lt;parm name="ReplaceIfExisting" value="1"/&gt;
-            &lt;parm name="MakeDefault" value="1"/&gt;
-        &lt;/characteristic&gt;
-        &lt;characteristic type="custom-details"&gt;
-            &lt;parm name="CustomAccessPoint" value="apn"/&gt;
-            &lt;parm name="CustomUserName" value="user"/&gt;
-            &lt;parm name="CustomPassword" value="pass"/&gt;
-        &lt;/characteristic&gt;
-    &lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;  
-</code></pre>
-
-<h3 id="removeexistingnamedapn" class="anchor"><a class="heading-anchor" href="#removeexistingnamedapn"><span></span></a>Remove Existing Named APN</h3>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="GprsMgr" version="4.2" &gt;
-        &lt;parm name="GprsAction" value="2"/&gt;
-        &lt;characteristic type="gprs-details"&gt;
-            &lt;parm name="ApnName" value="myTMobile"/&gt;
-        &lt;/characteristic&gt;
+    &lt;characteristic type="PowerKeyMgr" &gt;
+        &lt;parm-query name="TouchPanel"/&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
 </code></pre>
 
-<h3 id="removeallexistingapns" class="anchor"><a class="heading-anchor" href="#removeallexistingapns"><span></span></a>Remove All Existing APNs</h3>
+<h4 id="output-1" class="anchor"><a class="heading-anchor" href="#output-1"><span></span></a>Output</h4>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
-    &lt;characteristic type="GprsMgr" version="4.2" &gt;
-        &lt;parm name="GprsAction" value="3"/&gt;
+    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
+        &lt;parm name="TouchPanel" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="getsafemode" class="anchor"><a class="heading-anchor" href="#getsafemode"><span></span></a>Get Safe Mode</h3>
+
+<h4 id="input-2" class="anchor"><a class="heading-anchor" href="#input-2"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="PowerKeyMgr" &gt;
+        &lt;parm-query name="SafeMode"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-2" class="anchor"><a class="heading-anchor" href="#output-2"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
+        &lt;parm name="SafeMode" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="getautoscreenlockoption" class="anchor"><a class="heading-anchor" href="#getautoscreenlockoption"><span></span></a>Get Auto Screen Lock Option</h3>
+
+<h4 id="input-3" class="anchor"><a class="heading-anchor" href="#input-3"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="PowerKeyMgr" &gt;
+        &lt;parm-query name="AutoScreenLockOption"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-3" class="anchor"><a class="heading-anchor" href="#output-3"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
+        &lt;parm name="AutoScreenLockOption" value="1"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h3 id="getautoscreenlockstate" class="anchor"><a class="heading-anchor" href="#getautoscreenlockstate"><span></span></a>Get Auto Screen Lock State</h3>
+
+<h4 id="input-4" class="anchor"><a class="heading-anchor" href="#input-4"><span></span></a>Input</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="PowerKeyMgr" &gt;
+        &lt;parm-query name="AutoScreenLockState"/&gt;
+    &lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
+
+<h4 id="output-4" class="anchor"><a class="heading-anchor" href="#output-4"><span></span></a>Output</h4>
+
+<pre class="prettyprint"><code>
+&lt;wap-provisioningdoc&gt;
+    &lt;characteristic type="PowerKeyMgr" version="4.3" &gt;
+        &lt;parm name="AutoScreenLockState" value="1"/&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
 </code></pre><p></p>
@@ -1361,7 +1342,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
