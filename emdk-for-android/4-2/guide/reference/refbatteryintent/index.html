@@ -73,10 +73,11 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> EMDK For Android 4.2
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> EMDK For Android 5.0
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('4-2','4-0','/emdk-for-android/4-0/guide/about')">EMDK For Android 4.0</a></li>
+                                <li><a onclick="changeVersion('5-0','4-2','/emdk-for-android/4-2/guide/about')">EMDK For Android 4.2</a></li>
+                                <li><a onclick="changeVersion('5-0','4-0','/emdk-for-android/4-0/guide/about')">EMDK For Android 4.0</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -87,42 +88,42 @@
 
 
                         <li>
-                            <a href="/emdk-for-android/4-2/guide/about">
+                            <a href="/emdk-for-android/5-0/guide/about">
                                     Home
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/4-2/guide/gettingstarted">
+                            <a href="/emdk-for-android/5-0/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/4-2/tutorial/">
+                            <a href="/emdk-for-android/5-0/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/4-2/samples">
+                            <a href="/emdk-for-android/5-0/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/4-2/guide/programming-guides">
+                            <a href="/emdk-for-android/5-0/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/4-2/guide/profile-manager-guides">
+                            <a href="/emdk-for-android/5-0/guide/profile-manager-guides">
                                     Profile Manager
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/4-2/api">
+                            <a href="/emdk-for-android/5-0/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/4-2/search">
+                            <a href="/emdk-for-android/5-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -237,7 +238,7 @@
                                     <h1 id="battery-intent-api-reference" class="anchor"><a class="heading-anchor" href="#battery-intent-api-reference"><span></span></a>Battery Intent API Reference</h1>
                                     <p>
                                         EMDK For Android
-                                        4.2
+                                        5.0
                                     </p>
                                 </div>
                             </section>                    
@@ -265,13 +266,6 @@
 <ul>
 <li>4.4 and later.</li></ul>
 </li>
-
-<li>Devices: <br>
-
-
-<ul>
-<li>o Symbol Android devices, such as the MC40, MC92, MC18, TC75, TC70 and TC55</li></ul>
-</li>
 </ul>
 
 <h2 id="features" class="anchor"><a class="heading-anchor" href="#features"><span></span></a>Features</h2>
@@ -285,15 +279,15 @@
     </tr>
     <tr>
         <td>Power Precision </td>
-        <td>MC40, MC92, TC55, TC75, TC70</td>
+        <td>MC40, MC92, TC55, TC75, TC70, MC67</td>
     </tr>
     <tr>
         <td>Power Precision Plus </td>
-        <td>MC18, TC8000</td>
+        <td>MC18, TC8000, WT6000</td>
     </tr>
     <tr>
         <td>Backup Battery</td>
-        <td>TC8000, MC92, MC40</td>
+        <td>TC8000, MC92, MC40, MC67, WT6000</td>
     </tr>
 </tbody></table>
 
@@ -436,7 +430,7 @@
         <td>Remaining time until the device becomes unusable under current discharge conditions. If the returned value is 65535, then time_to_empty is considered to be unknown</td> 
         <td>time_to_empty </td>
         <td>Int</td>
-        <td>Units=</td>
+        <td>Units=mins</td>
         <td> </td>
         <td>X</td>
         <td> </td>  
@@ -483,11 +477,11 @@ registerReceiver(mIntent_Receiver,mIntentFilter);
 <p>In addition to the battery information Android returns by default, which can be found <a href="http://developer.android.com/reference/android/os/BatteryManager.html">here</a>, Symbol devices return the following additional parameters: </p>
 
 <ul>
-<li><strong>bkvoltage</strong> </li>
+<li><strong>bkvoltage</strong></li>
 
-<li><strong>mfd</strong></li>
+<li><strong>mfd</strong> </li>
 
-<li><strong>serialnumber</strong> </li>
+<li><strong>serialnumber</strong></li>
 
 <li><strong>partnumber</strong></li>
 
@@ -495,23 +489,23 @@ registerReceiver(mIntent_Receiver,mIntentFilter);
 
 <li><strong>battery_decommission</strong> </li>
 
-<li><strong>battery_usage_numb</strong></li>
+<li><strong>battery_usage_numb</strong>&nbsp;&nbsp;&nbsp;</li>
 
-<li><strong>health_percentage</strong></li>
+<li><strong>health_percentage</strong>&nbsp;</li>
 
-<li><strong>present_capacity</strong></li>
+<li><strong>present_capacity</strong>&nbsp;</li>
 
-<li><strong>base_cumulative_charge</strong></li>
+<li><strong>base_cumulative_charge</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
-<li><strong>total_cumulative_charge</strong></li>
+<li><strong>total_cumulative_charge</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
-<li><strong>present_charge</strong></li>
+<li><strong>present_charge</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
-<li><strong>time_to_empty</strong></li>
+<li><strong>time_to_empty</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
-<li><strong>time_to_full</strong></li>
+<li><strong>time_to_full</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
-<li><strong>seconds_since_first_use</strong></li>
+<li><strong>seconds_since_first_use</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 </ul>
 
 <h4 id="example" class="anchor"><a class="heading-anchor" href="#example"><span></span></a>Example</h4>
