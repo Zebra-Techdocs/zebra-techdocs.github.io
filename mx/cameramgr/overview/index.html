@@ -1,21 +1,37 @@
 
 
-        <p>The CameraMgr controls access to the device camera(s).</p>
+        <p>The CameraMgr controls access to camera(s) and other mechanisms on the device that are capable of capturing images. Many Zebra Android products are equipped with devices that can be used to take pictures, scan barcodes or otherwise capture or acquire data, documents and images. For secure environments, CameraMgr can be used to restrict picture-taking and document capture and eliminate potential security risks posed by cameras and non-camera devices.</p>
 
-<p>Many Zebra Android devices are equipped with mechanisms that may be used to take pictures, scan barcodes, and/or capture documents. Some Zebra Android devices may also be equipped with special-purpose mechanisms, such as lasers or imagers, which are optimized to scan barcodes. In some sensitive environments, it may be necessary to restrict the use of devices from taking pictures or capturing documents to avoid potential security risks.</p>
+<p><strong>Important:</strong> Any mechanism on a device that can be used to take pictures or otherwise capture images is treated as a camera by CameraMgr. For example, if a device is equipped with a CCD-based imager that is intended primarily to scan barcodes but also supports some means to take pictures, that imager's picture-taking capabilities can be disabled with the UseAllCameras (enable/disable) parameter. Its barcode scanning capabilities will remain operational if doing so does not expose the ability to take pictures. If such a device offers only the ability to scan barcodes, it would not be treated as a camera since it poses little risk to image security. </p>
 
-<p>The CameraMgr controls which of the mechanisms supported by a device can be used by the device user to take pictures or capture documents, and hence are considered to be cameras. CameraMgr can prevent the use of all cameras on the device or selectively control which cameras can be used.</p>
-
-<p><strong>Note:</strong> If a device is equipped with a mechanism that can be used to take pictures or capture documents, then that mechanism will be considered to be a camera, for the purposes of the CameraMgr. For example, if a device is equipped with a CCD-based imager that is primarily designed to scan barcodes but also supports the ability to take pictures or capture documents, then that imager will be considered to be a camera and hence will need to support enable and disable. But if no method was available to use that imager to take pictures or capture documents, then it would not be considered a camera, since it would not introduce the same camera-oriented security risks.</p>
+<blockquote>
+  <p><strong>Notes:</strong></p>
+  
+  <ul>
+  <li>Limited support for picture-taking using non-camera devices may be available on devices running Android L or higher.</li>
+  
+  <li>Additional support for picture-taking using non-camera devices may become available in later Android versions.</li>
+  
+  <li>Blocking some or all cameras also might inhibit barcode scanning via those cameras if barcode scanning would directly or indirectly expose the ability to take pictures.</li>
+  
+  <li>Blocking some or all cameras also might inhibit use of SimulScan via those cameras since some or all functions of SimulScan might rely on or expose the ability to take pictures.</li>
+  
+  <li>Blocking the imager on Android L devices disables SimulScan. </li>
+  </ul>
+</blockquote>
 
 <h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
 
 <ul>
-<li>Enable or disable the use of all Cameras</li>
+<li>Enable/disable the use of all cameras and image-capture devices</li>
 
-<li>Enable or disable the use of the Front Facing Camera</li>
+<li>Enable/disable the front-facing camera</li>
 
-<li>Enable or disable the use of the Rear Facing Camera</li>
+<li>Enable/disable the rear-facing camera</li>
+
+<li>Enable/disable the imager camera</li>
+
+<li>Report which cameras and image-capture devices are enabled/disabled</li>
 </ul>
 
 
