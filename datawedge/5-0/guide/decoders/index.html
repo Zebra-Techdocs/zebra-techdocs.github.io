@@ -26,28 +26,6 @@
     <![endif]--> 
 
     <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
-    <script type="text/javascript">
-(function(e, t) {
-    function r(e, t) {
-        e[t] = function() {
-            e.push([ t ].concat(Array.prototype.slice.call(arguments, 0)));
-        };
-    }
-    var n = "JacoRecorder";
-    (function(e, t, i, s) {
-        if (!i.__VERSION) {
-            e[n] = i;
-            var o = [ "init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo" ];
-            for (var u = 0; u < o.length; u++) r(i, o[u]);
-            i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
-            var a = t.createElement("script");
-            a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
-            var f = t.getElementsByTagName("head")[0];
-            f.appendChild(a);
-        }
-    })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
-}).call(window, window, document), window.JacoRecorder.push([ "init", "0e8738ef-44eb-4eed-8d47-e564ec9b5587", {} ]);
-</script>
     <link rel="shortcut icon" href="/favicon.ico">
 <script src="/js/jquery.js"></script></head><!--/head-->
 
@@ -234,8 +212,8 @@
                                 <div class="">
                                     <h1 id="datawedge-decoders" class="anchor"><a class="heading-anchor" href="#datawedge-decoders"><span></span></a>DataWedge Decoders</h1>
                                     <p>
-                                        DataWedge
-                                        5.0
+                                            DataWedge
+                                            5.0
                                     </p>
                                 </div>
                             </section>                    
@@ -371,6 +349,13 @@
 <h2 id="decoderparameters" class="anchor"><a class="heading-anchor" href="#decoderparameters"><span></span></a>Decoder Parameters</h2>
 
 <p>Editable parameters of individual Decoders are explained below. <strong>Note: Decoders that do not have configurable parameters do not appear in the Decoder Parameters section</strong>. For further instructions about creating and editing DataWedge Profiles, please see "Create a Profile" in the <a href="../setup">Setup Guide</a>.</p>
+
+<h3 id="reducedquietzone" class="anchor"><a class="heading-anchor" href="#reducedquietzone"><span></span></a>Reduced Quiet Zone</h3>
+
+<p>The quiet zone is the blank space on either side of a bar code that indicates where the symbology begins and ends, and is intended to prevent the reader from scanning irrelevant information. When margin-less decoders are used with Reduced Quiet Zone Level reader parameters, the decoders behave according to the following table: 
+<img style="height:350px" src="Marginless_C128_param_table.png">
+<em><strong>Descriptions of the 1D Quiet Zone Levels</strong> shown above are in the <a href="#readerparams">Reader Params</a> section along with important warnings</em>. 
+<br></p>
 
 <h3 id="upce0" class="anchor"><a class="heading-anchor" href="#upce0"><span></span></a>UPCE0</h3>
 
@@ -937,7 +922,11 @@
 <li><p><strong>Level 3 -</strong> The decoder can decode anything.</p></li>
 </ul>
 
-<p><strong>Note: Since higher margin-less levels will increase the mis-decode risk and decoding time, we strongly recommend the user only enable the symbologies which needs to choose higher margin-less level, and leave all other symbologies at default level 1</strong>. </p>
+<p><strong>Behavior of these levels will vary based on the margin-less decoder selected. See the <a href="#reducedquietzone">Reduced Quiet Zone</a> table for behaviors</strong>. </p>
+
+<blockquote>
+  <p><strong>Note</strong>: Higher margin-less levels will increase decoding times and the risk of decoding errors. Zebra therefore recommends enabling only the symbologies that require a higher margin-less level, and leaving all other symbologies at the default level of 1. </p>
+</blockquote>
 
 <hr>
 
