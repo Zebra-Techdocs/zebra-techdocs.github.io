@@ -26,28 +26,6 @@
     <![endif]--> 
 
     <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
-    <script type="text/javascript">
-(function(e, t) {
-    function r(e, t) {
-        e[t] = function() {
-            e.push([ t ].concat(Array.prototype.slice.call(arguments, 0)));
-        };
-    }
-    var n = "JacoRecorder";
-    (function(e, t, i, s) {
-        if (!i.__VERSION) {
-            e[n] = i;
-            var o = [ "init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo" ];
-            for (var u = 0; u < o.length; u++) r(i, o[u]);
-            i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
-            var a = t.createElement("script");
-            a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
-            var f = t.getElementsByTagName("head")[0];
-            f.appendChild(a);
-        }
-    })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
-}).call(window, window, document), window.JacoRecorder.push([ "init", "0e8738ef-44eb-4eed-8d47-e564ec9b5587", {} ]);
-</script>
     <link rel="shortcut icon" href="/favicon.ico">
 <script src="/js/jquery.js"></script></head><!--/head-->
 
@@ -666,17 +644,14 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-                                    <p class=""></p><p>The UiMgr provides control of miscellaneous UI configuration settings, such as those for language and locale, the notification pulldown, Quick Settings controls, default input device and Clipboard behavior.</p>
+                                    <p class=""></p><p>The UiMgr provides control of miscellaneous UI configuration settings, such as those for language and locale, the device notification pull-down, Quick Settings controls, default input device and Clipboard behavior.</p>
 
-<p>Android devices contain a variety of System applications with UI elements spread throughout the OS. In some cases, one or more of these "standard" UI elements are undesireable for devices deployed in an enterprise, or may be thought to hinder the productivity of device users engaged in specific business tasks. </p>
+<p>Android devices contain a variety of System applications with UI elements spread throughout the OS. In some cases, one or more of the "standard" UI elements were deemed undesirable for devices deployed in an enterprise or thought to hinder the productivity of device users engaged in specific business tasks. As requested by Zebra partners, the UiMgr provides control over these various UI elements to allow more control over default Android behaviors or features.</p>
 
-<p>The UiMgr provides control over these various UI elements as requested by customers because the default Android behaviors and/or controls were deemed unacceptable or inadequate.</p>
+<p><strong>Security Warning</strong>: The UiMgr permits the "Network may be monitored..." message to be suppressed. This important safeguard is intended to warn device users of a potential security risk. <strong>Administrators should not suppress this message unless CA certificates have been properly vetted before installation on a device, and should ensure that no untrusted certificates can be subsequently installed</strong> while the message remains suppressed. </p>
 
 <h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
 
@@ -693,7 +668,9 @@
 
 <li>The Home Key function, which exits current application and presents the Home Screen application</li>
 
-<li>The Bluetooth Paring pop-up feature, which requests device-user involvement even if an application has supplied all required pairing information</li></ul>
+<li>The Bluetooth Paring pop-up feature, which requests device-user involvement even if an application has supplied all required pairing information</li>
+
+<li>"The network may be monitored..." message</li></ul>
 </li>
 
 <li>Configure localization settings to:
@@ -711,6 +688,22 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -829,10 +822,16 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="clear-clipboard"><a class="heading-anchor" href="#clear-clipboard"><span></span></a>Clear Clipboard</h2>
-                                    <p class=""></p><p>used to immediately clear the contents of the clipboard, preventing data that was stored there from being pasted at any time thereafter. If use of the Clipboard function is allowed by an application, it might be advisable to use this parm to clear sensitive information from clipboard upon exiting. This would ensure that such information could not later be pasted into another application.</p><p></p>
+                                    <p class=""></p><p>Used to immediately clear the contents of the clipboard, preventing data that was stored there from being pasted at any time thereafter. If use of the Clipboard function is allowed by an application, it might be advisable to use this parm to clear sensitive information from clipboard upon exiting. This would ensure that such information could not later be pasted into another application.</p><p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> ClipBoardClear</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -913,12 +912,19 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
-                                    <h2 class="anchor" id="autocorrect-enabledisable"><a class="heading-anchor" href="#autocorrect-enabledisable"><span></span></a>AutoCorrect Enable/Disable</h2>
+                                    <h2 class="anchor" id="autocorrect-usage-enabledisable"><a class="heading-anchor" href="#autocorrect-usage-enabledisable"><span></span></a>AutoCorrect Usage Enable/Disable</h2>
                                     <p class="">
 
-        </p><p>Controls whether the AutoCorrect function is accessible by the device user. AutoCorrect can be used to save commonly entered words or industry-specific words or phrases and offer them as corrections to potentially mistyped words. This function could present a security risk since it could expose sensitive information to subsequent device users that are not authorized to view or reuse that information.</p>
+        </p><p>Controls whether AutoCorrect functionality is accessible by an administrator or the device user. AutoCorrect can be used to save commonly entered words or industry-specific words or phrases and offer them as corrections to potentially mistyped words. Such functionality could present a security risk by exposing sensitive information to subsequent device users that are not authorized to view or reuse that information. </p>
+
+<p><strong>Note: This parameter does not turn the AutoCorrect function on or off or configure any of its functions</strong>. When AutoCorrect is enabled, an administrator or device user must still use the System Settings panel turn the function on or off and configure its functions. When disabled, AutoCorrect functionality cannot be used on the device. </p>
 
 
 <p></p>
@@ -956,7 +962,7 @@
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="1" data-smartdoc="">
                                                 <td>1</td>
                                                 <td>Enable</td>
-                                                <td>Enables use of the AutoCorrect function. Note- This value does not turn the AutoCorrect function on or off or configure any of its functions. When AutoCorrect is enabled, the device user can Turn the function On or Off and configure its functions using the System Settings panel.</td>
+                                                <td>Enables use of the AutoCorrect function, allowing an administrator or device user to the turn the function on and off and configure its settings using the System Settings panel.</td>
                                                 <td>
                                                     
 
@@ -970,7 +976,7 @@
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="1" data-smartdoc="">
                                                 <td>2</td>
                                                 <td>Disable</td>
-                                                <td>Disables the AutoCorrect function. Enables use of the AutoCorrect function. Note- This value does not turn the AutoCorrect function on or off or configure any of its functions. When AutoCorrect is disabled, the device user cannot Turn the function On or Off or configure its functions using the System Settings panel.</td>
+                                                <td>Disables use of the AutoCorrect function, preventing an administrator or device user from turning the function on or off and configuring its settings using the System Settings panel.</td>
                                                 <td>
                                                     
 
@@ -986,44 +992,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1053,10 +1021,12 @@
                                     
                                         <div class="">
                                     
-                                    <h2 class="anchor" id="homekey-enabledisable"><a class="heading-anchor" href="#homekey-enabledisable"><span></span></a>HomeKey Enable/Disable</h2>
-                                    <p class=""></p><p>Can be used to prevent use of the HOME key. This might be desirable when using an application that should normally not be exited, such as that of a kiosk. By preventing the use of the HOME key, a common method of navigating away from the application (whether intentional or not) can be eliminated.</p><p></p>
+                                    <h2 class="anchor" id="network-monitored-message-enabledisable"><a class="heading-anchor" href="#network-monitored-message-enabledisable"><span></span></a>Network Monitored Message Enable/Disable</h2>
+                                    <p class=""></p><p>Controls whether the message "Network may be monitored..." will be displayed on the device when the device user connects to some types of networks. This message is generally associated with networks that implement a public key infrastructure and require a root certificate on the device before a client will be allowed to connect. </p>
+
+<p><strong>Security Warning</strong>: The "Network may be monitored..." message is a safeguard intended to warn device users of a potential security risk. <strong>Administrators should not suppress this message unless CA certificates have been properly vetted before installation on a device, and should ensure that no untrusted certificates can be subsequently installed</strong> while the message remains suppressed. </p><p></p>
                                         <blockquote>
-                                        <p><b>Parm Name:</b> HomeKeyUsage</p>
+                                        <p><b>Parm Name:</b> NetworkMonitorNotification</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
 
@@ -1072,46 +1042,46 @@
                                                 <th>Description</th>
                                                 <th>Requires</th>
                                             </tr>
-                                            <tr data-osx="1.0" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="" data-smartdoc="">
+                                            <tr data-osx="1.0" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
-                                                <td>This value (or the absence of this parm from the XML) will cause no changes to be made as to whether or not the HOME key can be used; any previously selected setting will be retained.</td>
+                                                <td>This value (or the absence of this parm from the XML) will cause no changes to whether the "Network may be monitored..." message will be displayed; any previously selected setting will be retained.</td>
                                                 <td>
                                                     
                                                         <p>OSX: 1.0+   
                                                         </p>
 
-                                                        <p>MX: 4.3+ </p>
+                                                        <p>MX: 6.1+ </p>
                                                     
                                                 </td> 
                                                 
                                             </tr>
                                             
-                                            <tr data-osx="1.0" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="" data-smartdoc="">
+                                            <tr data-osx="1.0" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="" data-smartdoc="">
                                                 <td>1</td>
-                                                <td>Enable</td>
-                                                <td>Allows use of the HOME Key.</td>
+                                                <td>Turn On</td>
+                                                <td>Allows "Network may be monitored..." notifications to be displayed.</td>
                                                 <td>
                                                     
                                                         <p>OSX: 1.0+   
                                                         </p>
 
-                                                        <p>MX: 4.3+ </p>
+                                                        <p>MX: 6.1+ </p>
                                                     
                                                 </td> 
                                                 
                                             </tr>
                                             
-                                            <tr data-osx="1.0" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="" data-smartdoc="">
+                                            <tr data-osx="1.0" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="" data-smartdoc="">
                                                 <td>2</td>
-                                                <td>Disable</td>
-                                                <td>Prevents use of the HOME key, thus preventing it from being used to navigate to the current Home Screen application and away from the currently running application. Note- Preventing use of the HOME key does not affect its "long press" behavior. To completely prevent all HOME key functionality, the KeyMappingMgr can be used (on supported devices) to remap the HOME key to some other behavior (or no behavior).</td>
+                                                <td>Turn Off</td>
+                                                <td>Prevents "Network may be monitored..." notifications from being displayed.</td>
                                                 <td>
                                                     
                                                         <p>OSX: 1.0+   
                                                         </p>
 
-                                                        <p>MX: 4.3+ </p>
+                                                        <p>MX: 6.1+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1122,6 +1092,11 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1200,17 +1175,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1706,6 +1670,36 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-a-custom-locale"><a class="heading-anchor" href="#set-a-custom-locale"><span></span></a>Set a Custom Locale</h2>
@@ -1741,16 +1735,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1823,7 +1807,7 @@
                                             </tr>
                                             
                                             <tr data-osx="1.3" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.1" data-api="" data-smartdoc="">
-                                                <td>se_SE</td>
+                                                <td>sv_SE</td>
                                                 <td>SWEDEN_SWEDISH</td>
                                                 <td></td>
                                                 <td>
@@ -1887,17 +1871,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1982,6 +1955,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="16" data-smartdoc="">
 
                                     <h2 class="anchor" id="input-method-package-name"><a class="heading-anchor" href="#input-method-package-name"><span></span></a>Input Method Package Name</h2>
@@ -2036,6 +2011,12 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="16" data-smartdoc="">
 
                                     <h2 class="anchor" id="input-method-class-name"><a class="heading-anchor" href="#input-method-class-name"><span></span></a>Input Method Class Name</h2>
@@ -2068,8 +2049,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -2167,10 +2146,24 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
-                                    <h2 class="anchor" id="notification-quick-settings-icons-showhide"><a class="heading-anchor" href="#notification-quick-settings-icons-showhide"><span></span></a>Notification Quick Settings Icons Show/Hide</h2>
-                                    <p class=""></p><p>Controls whether Quick Settings icons will be displayed in the Android Notifications panel. Quick Settings icons provide immediate access to Wi-Fi, Bluetooth, GPS and other commonly used System settings without having to go through the Settings panel. The Notifications panel is accessed from most applications by dragging downward from the Notification/Status bar at the top of the Android screen. Hiding the Quick Settings icons can prevent a device user from accessing those Quick Settings and changing device behavior. </p><p></p>
+                                    <h2 class="anchor" id="gear-icon-in-notifications-panel-showhide"><a class="heading-anchor" href="#gear-icon-in-notifications-panel-showhide"><span></span></a>Gear Icon in Notifications Panel Show/Hide</h2>
+                                    <p class=""></p><p>Controls whether the "Gear" icon is displayed in the Android Notifications panel. The Gear icon provides immediate access to Wi-Fi, Bluetooth, GPS and other commonly used System settings without having to go through the Settings panel. The Notifications panel is accessed from most applications by dragging downward from the Notification/Status bar at the top of the Android screen. Hiding the Gear icon can prevent a device user from accessing those Settings and changing device behavior. </p><p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> NotificationSettings</p>
                                         <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
@@ -2191,7 +2184,7 @@
                                             <tr data-osx="5.1" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.1" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
-                                                <td>This value (or the absence of this parm from the XML) will cause no change to visibility of the Quick Settings icons in the Notifications panel; any previously selected setting will be retained.</td>
+                                                <td>This value (or the absence of this parm from the XML) will cause no change to visibility of the Gear icon in the Notifications panel; any previously selected setting will be retained.</td>
                                                 <td>
                                                     
                                                         <p>OSX: 5.1+   
@@ -2206,7 +2199,7 @@
                                             <tr data-osx="5.1" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.1" data-api="" data-smartdoc="">
                                                 <td>1</td>
                                                 <td>Show</td>
-                                                <td>Shows the Quick Settings icons in the Notifications panel.</td>
+                                                <td>Shows the Gear icon in the Notifications panel.</td>
                                                 <td>
                                                     
                                                         <p>OSX: 5.1+   
@@ -2221,7 +2214,7 @@
                                             <tr data-osx="5.1" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.1" data-api="" data-smartdoc="">
                                                 <td>2</td>
                                                 <td>Hide</td>
-                                                <td>Hides the Quick Settings icons in the Notifications panel.</td>
+                                                <td>Hides the Gear icon in the Notifications panel.</td>
                                                 <td>
                                                     
                                                         <p>OSX: 5.1+   
@@ -2238,22 +2231,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2336,6 +2313,9 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="two-finger-quick-settings-enabledisable"><a class="heading-anchor" href="#two-finger-quick-settings-enabledisable"><span></span></a>Two-Finger Quick Settings Enable/Disable</h2>
@@ -2407,6 +2387,52 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2742,27 +2768,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -2779,6 +2784,19 @@
         csp: "uimgr",
         name: "UI Manager",
         parms: [
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -2931,6 +2949,12 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "ClipBoardClear",
@@ -3004,6 +3028,11 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "AutoCorrectUsage",
@@ -3032,7 +3061,7 @@
                                 {
                                     code: "1",
                                     name: "Enable",
-                                    description: "Enables use of the AutoCorrect function. Note- This value does not turn the AutoCorrect function on or off or configure any of its functions. When AutoCorrect is enabled, the device user can Turn the function On or Off and configure its functions using the System Settings panel.",
+                                    description: "Enables use of the AutoCorrect function, allowing an administrator or device user to the turn the function on and off and configure its settings using the System Settings panel.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -3050,7 +3079,7 @@
                                 {
                                     code: "2",
                                     name: "Disable",
-                                    description: "Disables the AutoCorrect function. Enables use of the AutoCorrect function. Note- This value does not turn the AutoCorrect function on or off or configure any of its functions. When AutoCorrect is disabled, the device user cannot Turn the function On or Off or configure its functions using the System Settings panel.",
+                                    description: "Disables use of the AutoCorrect function, preventing an administrator or device user from turning the function on or off and configuring its settings using the System Settings panel.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -3067,44 +3096,6 @@
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3134,7 +3125,7 @@
                     
                     {
                             presentif: "",
-                            name: "HomeKeyUsage",
+                            name: "NetworkMonitorNotification",
                             pivotal: "No",
                         
                         
@@ -3142,11 +3133,11 @@
                                 {
                                     code: "0",
                                     name: "Do not change",
-                                    description: "This value (or the absence of this parm from the XML) will cause no changes to be made as to whether or not the HOME key can be used; any previously selected setting will be retained.",
+                                    description: "This value (or the absence of this parm from the XML) will cause no changes to whether the &quot;Network may be monitored...&quot; message will be displayed; any previously selected setting will be retained.",
                                     requires: {
                                         osx: "1.0",
                                         osxEnd: "",
-                                        mx: "4.3",
+                                        mx: "6.1",
                                         api: "",
                                         osxSpecific: "",
                                         osxSpecificList: "",
@@ -3159,12 +3150,12 @@
                         
                                 {
                                     code: "1",
-                                    name: "Enable",
-                                    description: "Allows use of the HOME Key.",
+                                    name: "Turn On",
+                                    description: "Allows &quot;Network may be monitored...&quot; notifications to be displayed.",
                                     requires: {
                                         osx: "1.0",
                                         osxEnd: "",
-                                        mx: "4.3",
+                                        mx: "6.1",
                                         api: "",
                                         osxSpecific: "",
                                         osxSpecificList: "",
@@ -3177,12 +3168,12 @@
                         
                                 {
                                     code: "2",
-                                    name: "Disable",
-                                    description: "Prevents use of the HOME key, thus preventing it from being used to navigate to the current Home Screen application and away from the currently running application. Note- Preventing use of the HOME key does not affect its &quot;long press&quot; behavior. To completely prevent all HOME key functionality, the KeyMappingMgr can be used (on supported devices) to remap the HOME key to some other behavior (or no behavior).",
+                                    name: "Turn Off",
+                                    description: "Prevents &quot;Network may be monitored...&quot; notifications from being displayed.",
                                     requires: {
                                         osx: "1.0",
                                         osxEnd: "",
-                                        mx: "4.3",
+                                        mx: "6.1",
                                         api: "",
                                         osxSpecific: "",
                                         osxSpecificList: "",
@@ -3195,6 +3186,11 @@
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3265,17 +3261,6 @@
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3828,6 +3813,36 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -3846,16 +3861,6 @@
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3905,7 +3910,7 @@
                                 },
                         
                                 {
-                                    code: "se_SE",
+                                    code: "sv_SE",
                                     name: "SWEDEN_SWEDISH",
                                     description: "",
                                     requires: {
@@ -3995,17 +4000,6 @@
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "InputMethodAction",
@@ -4064,6 +4058,8 @@
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -4102,6 +4098,12 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -4120,8 +4122,6 @@
                         
                         
                     },
-                    
-                    
                     
                     
                     
@@ -4217,6 +4217,20 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "NotificationSettings",
@@ -4227,7 +4241,7 @@
                                 {
                                     code: "0",
                                     name: "Do not change",
-                                    description: "This value (or the absence of this parm from the XML) will cause no change to visibility of the Quick Settings icons in the Notifications panel; any previously selected setting will be retained.",
+                                    description: "This value (or the absence of this parm from the XML) will cause no change to visibility of the Gear icon in the Notifications panel; any previously selected setting will be retained.",
                                     requires: {
                                         osx: "5.1",
                                         osxEnd: "",
@@ -4245,7 +4259,7 @@
                                 {
                                     code: "1",
                                     name: "Show",
-                                    description: "Shows the Quick Settings icons in the Notifications panel.",
+                                    description: "Shows the Gear icon in the Notifications panel.",
                                     requires: {
                                         osx: "5.1",
                                         osxEnd: "",
@@ -4263,7 +4277,7 @@
                                 {
                                     code: "2",
                                     name: "Hide",
-                                    description: "Hides the Quick Settings icons in the Notifications panel.",
+                                    description: "Hides the Gear icon in the Notifications panel.",
                                     requires: {
                                         osx: "5.1",
                                         osxEnd: "",
@@ -4280,22 +4294,6 @@
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4370,6 +4368,9 @@
                     
                     
                     
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "QuickSettings",
@@ -4433,6 +4434,31 @@
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
