@@ -118,6 +118,7 @@
                             <li class="csp-select" data-id="displaymgr"><a>Display Manager</a></li>
                             <li class="csp-select" data-id="encryptmgr"><a>Encrypt Manager</a></li>
                             <li class="csp-select" data-id="enterprisekeyboardmgr"><a>Enterprise Keyboard Manager</a></li>
+                            <li class="csp-select" data-id="ethernetmgr"><a>Ethernet Manager</a></li>
                             <li class="csp-select" data-id="filemgr"><a>File Manager</a></li>
                             <li class="csp-select" data-id="gprsmgr"><a>GPRS Manager</a></li>
                             <li class="csp-select" data-id="hostsmgr"><a>Hosts Manager</a></li>
@@ -189,6 +190,7 @@
                         			  <li class="smartdocs-osx" data-value="4.2"><a>4.2</a></li>
                         			  <li class="smartdocs-osx" data-value="4.3"><a>4.3</a></li>
                         			  <li class="smartdocs-osx" data-value="4.4"><a>4.4</a></li>
+                                <li class="smartdocs-osx" data-value="6.2"><a>6.2</a></li>
                         
                                   </ul>
                                 </li>
@@ -205,19 +207,22 @@
                                 <li class="smartdocs-mx" data-value="5.1"><a>5.1</a></li>
                                 <li class="smartdocs-mx" data-value="5.2"><a>5.2</a></li>
                                 <li class="smartdocs-mx" data-value="6.0"><a>6.0</a></li>
+                                <li class="smartdocs-mx" data-value="6.1"><a>6.1</a></li>
+                                <li class="smartdocs-mx" data-value="6.2"><a>6.2</a></li>
                                   </ul>
                                 </li>
                              	<li class="dropdown">
                                   <a href="#" class="dropdown-toggle" id="smartdocs-api-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Android: All <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
                         			  <li class="smartdocs-api" data-value=""><a>All</a></li>
+                                <li class="smartdocs-api" data-value="23"><a>6.0 Marshmallow</a></li>
                         			  <li class="smartdocs-api" data-value="22"><a>5.1 Lollipop</a></li>
                         			  <li class="smartdocs-api" data-value="21"><a>5.0 Lollipop</a></li>
-                        			  <li class="smartdocs-api" data-value="19"><a>4.4 Kitkat</a></li>
-                        			  <li class="smartdocs-api" data-value="18"><a>4.3 Jellybean</a></li>
-                        			  <li class="smartdocs-api" data-value="17"><a>4.2.x Jellybean</a></li>
-                        			  <li class="smartdocs-api" data-value="16"><a>4.1.x Jellybean</a></li>
-                        			  <li class="smartdocs-api" data-value="15"><a>4.0.3-4.0.4 Ice Cream Sandwic
+                        			  <li class="smartdocs-api" data-value="19"><a>4.4 KitKat</a></li>
+                        			  <li class="smartdocs-api" data-value="18"><a>4.3 Jelly Bean</a></li>
+                        			  <li class="smartdocs-api" data-value="17"><a>4.2.x Jelly Bean</a></li>
+                        			  <li class="smartdocs-api" data-value="16"><a>4.1.x Jelly Bean</a></li>
+                        			  <li class="smartdocs-api" data-value="15"><a>4.0.3-4.0.4 Ice Cream Sandwich
                         			  </a></li><li class="smartdocs-api" data-value="14"><a>4.0-4.0.2 Ice Cream Sandwich</a></li>
                         			  <li class="smartdocs-api" data-value="10"><a>2.3.3-2.3.4 Gingerbread</a></li>
                                   </ul>
@@ -4987,7 +4992,7 @@
                                                     </tr>                                                          
 
                                                     <tr data-osx="4.4" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td><span><i>Alarm Wired Headset Levels</i></span></td>
+                                                        <td><span><i>Alarm Receiver Levels</i></span></td>
                                                         <td class="col-md-2">
 
                                                                 4.4+
@@ -5002,7 +5007,7 @@
                                                     </tr>                                                          
 
                                                     <tr data-osx="4.4" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td><span><i>Alarm Receiver Levels</i></span></td>
+                                                        <td><span><i>Alarm Wired Headset Levels</i></span></td>
                                                         <td class="col-md-2">
 
                                                                 4.4+
@@ -5350,7 +5355,7 @@
                                                     
                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td><span><i>Security Password</i></span></td>
+                                                        <td><span><i>File Path</i></span></td>
                                                         <td class="col-md-2">
 
                                                                     All
@@ -5365,7 +5370,7 @@
                                                     </tr>                                                          
 
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td><span><i>File Path</i></span></td>
+                                                        <td><span><i>Security Password</i></span></td>
                                                         <td class="col-md-2">
 
                                                                     All
@@ -6185,111 +6190,137 @@
                                                 <th> MX </th>
                                                 <th> Android API Level </th>
                                             </tr>
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="17" data-smartdoc="">
-                                                        <td><span><i>Set the state of Data Roaming</i></span></td>
+                                                    <tr data-osx="4.4" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td><span><i>Select SIM Socket</i></span></td>
                                                         <td class="col-md-2">
 
-                                                                    All
+                                                                4.4+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
-                                                                4.3+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                17+
-                                                        </td>
-                                                    </tr>                                                          
-
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="17" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                17+
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="17" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn On</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                17+
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="17" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn Off</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                17+
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    
-                                                    
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td><span><i>Set the state of Background Data</i></span></td>
-                                                        <td class="col-md-2">
-
-                                                                1.3+
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.3+
+                                                                4.4+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
                                                         </td>
                                                     </tr>                                                          
 
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.2+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
-                                                                4.3+
+                                                                6.2+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn On</i></span></td>
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>SIM1</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.2+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
-                                                                4.3+
+                                                                6.2+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn Off</i></span></td>
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>SIM2</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.2+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
-                                                                4.3+
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>SIM3</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>SIM4</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td><span><i>SIM Socket Selection Enable/Disable</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Enable</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Disable</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
@@ -6298,7 +6329,7 @@
                                                     
                                                     
                                                     <tr data-osx="4.4" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td><span><i>Enable/Disable Data Roaming Option</i></span></td>
+                                                        <td><span><i>Data Roaming Enable/Disable</i></span></td>
                                                         <td class="col-md-2">
 
                                                                 4.4+
@@ -6353,8 +6384,64 @@
                                                     </tr>                                                                                     
                                                     
                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="17" data-smartdoc="">
+                                                        <td><span><i>Data Roaming Turn On/Off</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                17+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="17" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                17+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="17" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn On</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                17+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="17" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn Off</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                17+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
                                                     <tr data-osx="4.4" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td><span><i>Enable/DisableBackground Data Option</i></span></td>
+                                                        <td><span><i>Background Data Enable/Disable</i></span></td>
                                                         <td class="col-md-2">
 
                                                                 4.4+
@@ -6402,6 +6489,62 @@
                                                         </td>
                                                         <td class="col-md-2">
                                                                 4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                        <td><span><i>Background Data Turn On/Off</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                1.3+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                1.3+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn On</i></span></td>
+                                                        <td class="col-md-2">
+                                                                1.3+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn Off</i></span></td>
+                                                        <td class="col-md-2">
+                                                                1.3+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
@@ -6660,7 +6803,7 @@
                                                     </tr>                                                          
 
                                                     <tr data-osx="1.0" data-osx-specific="" data-osx-exclude="" data-mx="4.1" data-api="" data-smartdoc="">
-                                                        <td><span><i>Keystore Password</i></span></td>
+                                                        <td><span><i>Private Key Password</i></span></td>
                                                         <td class="col-md-2">
 
                                                                 1.0+
@@ -6675,7 +6818,7 @@
                                                     </tr>                                                          
 
                                                     <tr data-osx="1.0" data-osx-specific="" data-osx-exclude="" data-mx="4.1" data-api="" data-smartdoc="">
-                                                        <td><span><i>Private Key Password</i></span></td>
+                                                        <td><span><i>Keystore Password</i></span></td>
                                                         <td class="col-md-2">
 
                                                                 1.0+
@@ -8122,11 +8265,11 @@
                                                     </tr>                                                                                     
                                                     
                                                     
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                    <tr data-osx="6.0" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
                                                         <td><span><i>Screen Lock Type</i></span></td>
                                                         <td class="col-md-2">
 
-                                                                1.3+
+                                                                6.0+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
@@ -8137,10 +8280,10 @@
                                                         </td>
                                                     </tr>                                                          
 
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                    <tr data-osx="6.0" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.0+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
@@ -8150,10 +8293,10 @@
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                    <tr data-osx="6.0" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Swipe</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.0+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
@@ -8163,10 +8306,10 @@
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                    <tr data-osx="6.0" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Pattern</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.0+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
@@ -8176,10 +8319,10 @@
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                    <tr data-osx="6.0" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Pin</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.0+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
@@ -8189,10 +8332,10 @@
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                    <tr data-osx="6.0" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Password</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.0+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
@@ -8202,10 +8345,10 @@
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="1.3" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                    <tr data-osx="6.0" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>None</i></span></td>
                                                         <td class="col-md-2">
-                                                                1.3+
+                                                                6.0+
                                                             
                                                         </td>
                                                         <td class="col-md-2">
@@ -8641,6 +8784,118 @@
                                                     
                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td><span><i>TFTP Server Name (66)</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Enable</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Disable</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td><span><i>TFTP Server Name (66)</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Enable</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Disable</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.4+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
                                                         <td><span><i>Boot File Name (67)</i></span></td>
                                                         <td class="col-md-2">
 
@@ -8697,63 +8952,7 @@
                                                     
                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td><span><i>TFTP Server Name (66)</i></span></td>
-                                                        <td class="col-md-2">
-
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.4+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                          
-
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.4+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Enable</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.4+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Disable</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.4+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    
-                                                    
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td><span><i>TFTP Server Name (66)</i></span></td>
+                                                        <td><span><i>TFTP Server Address (150)</i></span></td>
                                                         <td class="col-md-2">
 
                                                                     All
@@ -8810,62 +9009,6 @@
                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
                                                         <td><span><i>Domain Search (119)</i></span></td>
-                                                        <td class="col-md-2">
-
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.4+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                          
-
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.4+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Enable</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.4+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Disable</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.4+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    
-                                                    
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.4" data-api="" data-smartdoc="">
-                                                        <td><span><i>TFTP Server Address (150)</i></span></td>
                                                         <td class="col-md-2">
 
                                                                     All
@@ -10072,49 +10215,6 @@
                                                     </tr>                                                                                     
                                                     
                                                     
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
-                                                        <td><span><i>Key Long-Press Delay Mode</i></span></td>
-                                                        <td class="col-md-2">
-
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                6.0+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                          
-
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                6.0+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Specify duration</i></span></td>
-                                                        <td class="col-md-2">
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                6.0+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    
-                                                    
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.1" data-api="" data-smartdoc="">
                                                         <td><span><i>Flick Enable/Disable</i></span></td>
                                                         <td class="col-md-2">
@@ -10164,6 +10264,49 @@
                                                         </td>
                                                         <td class="col-md-2">
                                                                 6.1+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                        <td><span><i>Key Long-Press Delay Mode</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.0+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.0+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Specify duration</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.0+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
@@ -10314,21 +10457,6 @@
                                                     
                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
-                                                        <td><span><i>Keypress Vibration Duration</i></span></td>
-                                                        <td class="col-md-2">
-
-                                                                    All
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                6.0+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                          
-
-                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
                                                         <td><span><i>Next Word Suggestions Enable/Disable</i></span></td>
                                                         <td class="col-md-2">
 
@@ -10384,6 +10512,21 @@
                                                     </tr>                                                                                     
                                                     
                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.0" data-api="" data-smartdoc="">
+                                                        <td><span><i>Keypress Vibration Duration</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.0+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.1" data-api="" data-smartdoc="">
                                                         <td><span><i>Numeric Layout Mode</i></span></td>
                                                         <td class="col-md-2">
@@ -10960,6 +11103,260 @@
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                        </tbody></table>
+                                    </div>	
+                                </div><!--/.container-->
+                                
+                            </section><!--/#services-->
+                        </div>
+                    </div>
+                                        <div class="row">
+                        <div class="col-sm-12">
+
+                            <section id="ethernetmgr" class="csp">
+                                <h2 id="ethernet-manager" class="anchor"><a class="heading-anchor" href="#ethernet-manager"><span></span></a><a href="/mx/ethernetmgr">Ethernet Manager</a></h2>
+                                <div class="">
+                                <!-- Start of content list -->
+                                    <div class="parm-table">
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th></th>
+                                                <th> OSX</th>
+                                                <th> MX </th>
+                                                <th> Android API Level </th>
+                                            </tr>
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Ethernet Enable/Disable</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn On</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn Off</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Set IP Address</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Set Default Gateway</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Set Subnet Mask</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Set Primary DNS</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Set Secondary DNS</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Ethernet Proxy Enable/Disable</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>None</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Manual</i></span></td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Set Proxy Host Name</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Set Proxy Port</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="6.2" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="23" data-smartdoc="">
+                                                        <td><span><i>Set Bypass Proxy</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                6.2+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                23+
                                                         </td>
                                                     </tr>                                                          
 
@@ -12797,6 +13194,19 @@
                                                         </td>
                                                         <td class="col-md-2">
                                                                 5.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Touch NAV_PAD</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
@@ -16864,6 +17274,62 @@
                                                     
                                                     
                                                     <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                        <td><span><i>Automatic Screen Lock on Power Key State</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                4.3+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn on</i></span></td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn off</i></span></td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
                                                         <td><span><i>Safe Mode Power Key Menu Option</i></span></td>
                                                         <td class="col-md-2">
 
@@ -16919,7 +17385,7 @@
                                                     </tr>                                                                                     
                                                     
                                                     
-                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="23" data-smartdoc="">
                                                         <td><span><i>Automatic Screen Lock on Power Key Option</i></span></td>
                                                         <td class="col-md-2">
 
@@ -16930,11 +17396,11 @@
                                                                 4.3+
                                                         </td>
                                                         <td class="col-md-2">
-                                                                All
+                                                                23+
                                                         </td>
                                                     </tr>                                                          
 
-                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="23" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
                                                         <td class="col-md-2">
                                                                 4.3+
@@ -16944,10 +17410,10 @@
                                                                 4.3+
                                                         </td>
                                                         <td class="col-md-2">
-                                                                All
+                                                                23+
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="23" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Show Menu Option</i></span></td>
                                                         <td class="col-md-2">
                                                                 4.3+
@@ -16957,10 +17423,10 @@
                                                                 4.3+
                                                         </td>
                                                         <td class="col-md-2">
-                                                                All
+                                                                23+
                                                         </td>
                                                     </tr>                                                                                     
-                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
+                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="23" data-smartdoc="">
                                                         <td class="col-md-4"><span style="padding-left:15px"><i>Do not show Menu Option</i></span></td>
                                                         <td class="col-md-2">
                                                                 4.3+
@@ -16970,63 +17436,7 @@
                                                                 4.3+
                                                         </td>
                                                         <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    
-                                                    
-                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td><span><i>Automatic Screen Lock on Power Key State</i></span></td>
-                                                        <td class="col-md-2">
-
-                                                                4.3+
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                          
-
-                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn on</i></span></td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
-                                                        </td>
-                                                    </tr>                                                                                     
-                                                    <tr data-osx="4.3" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Turn off</i></span></td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                            
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                4.3+
-                                                        </td>
-                                                        <td class="col-md-2">
-                                                                All
+                                                                23+
                                                         </td>
                                                     </tr>                                                                                     
                                                     
@@ -17227,7 +17637,7 @@
                                                         </td>
                                                     </tr>                                                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="5.2" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Apply 123Scan configuration package</i></span></td>
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Apply 123Scan configuration package(RS6000 only)</i></span></td>
                                                         <td class="col-md-2">
                                                                     All
                                                             
@@ -17253,7 +17663,7 @@
                                                         </td>
                                                     </tr>                                                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="5.2" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Reset Scanner</i></span></td>
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Reset Scanner(RS6000 only)</i></span></td>
                                                         <td class="col-md-2">
                                                                     All
                                                             
@@ -17266,7 +17676,7 @@
                                                         </td>
                                                     </tr>                                                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="5.2" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Page Scanner</i></span></td>
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Page Scanner(RS6000 only)</i></span></td>
                                                         <td class="col-md-2">
                                                                     All
                                                             
@@ -17279,7 +17689,7 @@
                                                         </td>
                                                     </tr>                                                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="5.2" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Disconnect Bluetooth Scanner</i></span></td>
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Disconnect Bluetooth Scanner(RS6000 only)</i></span></td>
                                                         <td class="col-md-2">
                                                                     All
                                                             
@@ -17292,7 +17702,7 @@
                                                         </td>
                                                     </tr>                                                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="5.2" data-api="" data-smartdoc="">
-                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Unpair Bluetooth Scanner</i></span></td>
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Unpair Bluetooth Scanner(RS6000 only)</i></span></td>
                                                         <td class="col-md-2">
                                                                     All
                                                             
@@ -18970,6 +19380,62 @@
                                                 <th> MX </th>
                                                 <th> Android API Level </th>
                                             </tr>
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td><span><i>Device Type</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Any</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>8960</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>8956</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.2" data-api="" data-smartdoc="">
                                                         <td><span><i>Touch Action</i></span></td>
                                                         <td class="col-md-2">
@@ -19019,6 +19485,88 @@
                                                         </td>
                                                         <td class="col-md-2">
                                                                 4.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    
+                                                    
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td><span><i>Touch Action Any</i></span></td>
+                                                        <td class="col-md-2">
+
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                          
+
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Do not change</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Stylus and Finger</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Glove and Finger</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Finger Only</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Stylus, Glove and Finger</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
@@ -22556,7 +23104,7 @@
                                                     
                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.2" data-api="" data-smartdoc="">
-                                                        <td><span><i>Specify Advanced Options</i></span></td>
+                                                        <td><span><i>Use Advanced Options</i></span></td>
                                                         <td class="col-md-2">
 
                                                                     All
@@ -23714,7 +24262,7 @@
                                                     </tr>                                                          
 
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.2" data-api="" data-smartdoc="">
-                                                        <td><span><i>CKM</i></span></td>
+                                                        <td><span><i>Aggregated Fast Transition</i></span></td>
                                                         <td class="col-md-2">
 
                                                                     All
@@ -23729,7 +24277,7 @@
                                                     </tr>                                                          
 
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.2" data-api="" data-smartdoc="">
-                                                        <td><span><i>Aggregated Fast Transition</i></span></td>
+                                                        <td><span><i>CKM</i></span></td>
                                                         <td class="col-md-2">
 
                                                                     All
@@ -23909,6 +24457,19 @@
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Unsupported</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
                                                     
                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
@@ -23973,6 +24534,19 @@
                                                         </td>
                                                         <td class="col-md-2">
                                                                 4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Unsupported</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
@@ -24148,6 +24722,19 @@
                                                                 All
                                                         </td>
                                                     </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Unsupported</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
                                                     
                                                     
                                                     <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="4.3" data-api="" data-smartdoc="">
@@ -24212,6 +24799,19 @@
                                                         </td>
                                                         <td class="col-md-2">
                                                                 4.3+
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                All
+                                                        </td>
+                                                    </tr>                                                                                     
+                                                    <tr data-osx="" data-osx-specific="" data-osx-exclude="" data-mx="6.2" data-api="" data-smartdoc="">
+                                                        <td class="col-md-4"><span style="padding-left:15px"><i>Unsupported</i></span></td>
+                                                        <td class="col-md-2">
+                                                                    All
+                                                            
+                                                        </td>
+                                                        <td class="col-md-2">
+                                                                6.2+
                                                         </td>
                                                         <td class="col-md-2">
                                                                 All
