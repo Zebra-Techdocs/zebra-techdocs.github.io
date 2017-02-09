@@ -26,28 +26,6 @@
     <![endif]--> 
 
     <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
-    <script type="text/javascript">
-(function(e, t) {
-    function r(e, t) {
-        e[t] = function() {
-            e.push([ t ].concat(Array.prototype.slice.call(arguments, 0)));
-        };
-    }
-    var n = "JacoRecorder";
-    (function(e, t, i, s) {
-        if (!i.__VERSION) {
-            e[n] = i;
-            var o = [ "init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo" ];
-            for (var u = 0; u < o.length; u++) r(i, o[u]);
-            i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
-            var a = t.createElement("script");
-            a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
-            var f = t.getElementsByTagName("head")[0];
-            f.appendChild(a);
-        }
-    })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
-}).call(window, window, document), window.JacoRecorder.push([ "init", "0e8738ef-44eb-4eed-8d47-e564ec9b5587", {} ]);
-</script>
     <link rel="shortcut icon" href="/favicon.ico">
 <script src="/js/jquery.js"></script></head><!--/head-->
 
@@ -72,13 +50,11 @@
                 <div class="collapse navbar-collapse navbar-left">
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
-                        <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enteprise Home Screen 2.3
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-3','2-4','/ehs/2-3/guide/about')">Enteprise Home Screen 2.4</a></li>
-                          </ul>
-                        </li>                    
+                        <p class="navbar-text">
+                                            Enterprise Home Screen
+                                            2.3
+                        </p>
+
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse navbar-right">
@@ -86,36 +62,6 @@
                         
 
 
-                        <li>
-                            <a href="/ehs/2-3/guide/about">
-                                    About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ehs/2-3/guide/setup">
-                                    Setup
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ehs/2-3/guide/settings">
-                                    Advanced Settings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ehs/2-3/guide/features">
-                                    Special Features
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ehs/2-3/search">
-                                    <i class="fa fa-search"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ehs/2-3/download">
-                                    <i class="fa fa-download"></i>
-                            </a>
-                        </li>
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -226,8 +172,8 @@
                                 <div class="">
                                     <h1 id="ehs-special-features" class="anchor"><a class="heading-anchor" href="#ehs-special-features"><span></span></a>EHS Special Features</h1>
                                     <p>
-                                        Enteprise Home Screen
-                                        2.3
+                                            Enterprise Home Screen
+                                            2.3
                                     </p>
                                 </div>
                             </section>                    
@@ -566,7 +512,7 @@ adb pull /enterprise/device/settings/mdm/autoimport/Results.xml.
 <ul>
 <li>Accessing an app from the Recent Apps list could represent a security risk. </li>
 
-<li>EHS does not add apps or activities to the Android Recent Apps list, but apps launched from within EHS might. </li>
+<li>EHS does not add apps or activities to the Android Recent Apps list, but apps/activities launched from within EHS might. Such apps/activities could launch others that might appear on the Recent Apps list and pose a security risk.</li>
 
 <li>To clear the Recent Apps list, reboot the device or bring up the list and manually swipe away each app. </li>
 
@@ -586,7 +532,20 @@ adb pull /enterprise/device/settings/mdm/autoimport/Results.xml.
 <h3 id="otherunintendedaccess" class="anchor"><a class="heading-anchor" href="#otherunintendedaccess"><span></span></a>Other Unintended Access</h3>
 
 <ul>
-<li>On devices running Android 4.4 KitKat, users might gain access to Airplane mode, Wi-Fi, Bluetooth and other device settings via the Quick Settings menu in the Notification drop-down. This can be prevented with the <a href="../settings#disablestatusbarsettings">Disable Status Bar Settings tag</a> ot through EMDK or StageNow. </li>
+<li>On devices running Android 4.4 KitKat, users might gain access to Airplane mode, Wi-Fi, Bluetooth and other device settings via the Quick Settings menu in the Notification drop-down. This can be prevented with the <a href="../settings#disablestatusbarsettings">Disable Status Bar Settings tag</a>. </li>
+
+<li>Wireless capabilities also can be individually disabled through these MX modules: 
+
+
+<ul>
+<li><a href="../../../../mx/settingsmgr">SettingsMgr</a> for Airplane Mode and Wi-Fi </li>
+
+<li><a href="../../../../mx/uimgr">UiMgr</a> for Quick Settings and the "Gear" icon</li>
+
+<li><a href="../../../../mx/wirelessmgr">WirelessMgr</a> for Bluetooth, GPS, NFC and WWAN </li></ul>
+</li>
+
+<li>MX modules are accessible using EMDK or StageNow tools. </li>
 
 <li>Taking a screenshot (by pressing the "volume-down" and "Power" buttons simultaneously) while in User Mode might expose users to the Gallery app. To prevent this, disable the Gallery app in the Disable/Enable Applications section of <a href="../settings#optionalfeaturetags">Optional Feature Tags section</a>.</li>
 
