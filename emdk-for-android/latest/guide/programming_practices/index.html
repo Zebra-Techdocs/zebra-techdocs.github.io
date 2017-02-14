@@ -51,7 +51,7 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> EMDK For Android 6.0
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> EMDK For Android 6.3
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
                                 <li><a onclick="changeVersion('5-0','4-2','/emdk-for-android/4-2/guide/about')">EMDK For Android 4.2</a></li>
@@ -66,42 +66,42 @@
 
 
                         <li>
-                            <a href="/emdk-for-android/6-0/guide/about">
+                            <a href="/emdk-for-android/6-3/guide/about">
                                     Home
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/guide/gettingstarted">
+                            <a href="/emdk-for-android/6-3/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/tutorial/">
+                            <a href="/emdk-for-android/6-3/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/samples">
+                            <a href="/emdk-for-android/6-3/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/guide/programming-guides">
+                            <a href="/emdk-for-android/6-3/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/guide/profile-manager-guides">
+                            <a href="/emdk-for-android/6-3/guide/profile-manager-guides">
                                     Profile Manager
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/api">
+                            <a href="/emdk-for-android/6-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/search">
+                            <a href="/emdk-for-android/6-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -216,7 +216,7 @@
                                     <h1 id="emdk-for-android-programming-practices" class="anchor"><a class="heading-anchor" href="#emdk-for-android-programming-practices"><span></span></a>EMDK for Android Programming Practices</h1>
                                     <p>
                                             EMDK For Android
-                                            6.0
+                                            6.3
                                     </p>
                                 </div>
                             </section>                    
@@ -353,6 +353,10 @@ public void onClosed() {
 
 <p>The EMDKListener.onClosed gets called to notify the application that the EMDKManager object has been abruptly closed due to some failures at EMDK or a lower layer. When this occurs, the application must the release the current EMDK manager instance and get the new EMDK Manager instance </p>
 
+<blockquote>
+  <p>Note: If you are blocking the main thread, the application will not get notification when the EMDK closes unexpected reasons and therefore the application must not block the main thread to receive the EMDKListener.onClosed callback.</p>
+</blockquote>
+
 <h3 id="referthebelowcodesnippetsforemdkmanageropeningandclosing" class="anchor"><a class="heading-anchor" href="#referthebelowcodesnippetsforemdkmanageropeningandclosing"><span></span></a>Refer the below code snippets for EMDKManager opening and closing</h3>
 
 <pre class="prettyprint"><code>
@@ -432,14 +436,14 @@ LOCAL_JAVA_LIBRARIES := com.symbol.emdk
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := libemdk:com.symbol.emdk/com.symbol.emdk.jar
 </code></pre>
 
-<h2 id="emdkasadependencyingradlebuild" class="anchor"><a class="heading-anchor" href="#emdkasadependencyingradlebuild"><span></span></a>EMDK as a dependency in gradle.build</h2>
+<h2 id="emdkasadependencyinbuildgradle" class="anchor"><a class="heading-anchor" href="#emdkasadependencyinbuildgradle"><span></span></a>EMDK as a dependency in build.gradle</h2>
 
 <p>Use this method to make use of the EMDK in a project with a Compile SDK set above API 19.</p>
 
 <ol>
 <li><p>In the project folder viewer, open the <strong>build.gradle</strong> file for the <strong>app</strong> module.</p></li>
 
-<li><p>Add the following to the dependencies section</p>
+<li><p>Add the following to the dependencies section. Be sure to update the <code>dir:</code> path to the path where com.symbol.emdk.jar exists on your development system.</p>
 
 <p><strong>Windows</strong></p>
 
@@ -453,7 +457,7 @@ compile fileTree(exclude: ['com.symbol.emdk.jar'], dir: 'libs')
 
 <pre class="prettyprint"><code>
 dependencies {
-provided fileTree(include: ['com.symbol.emdk.jar'], dir: '/Users/&lt;YOUR USERNAME/Library/Android/sdk/add-ons/addon-symbol_emdk-symbol-19/libs')
+provided fileTree(include: ['com.symbol.emdk.jar'], dir: '/Users/&lt;YOUR USERNAME&gt;/Library/Android/sdk/add-ons/addon-symbol_emdk-symbol-19/libs')
 compile fileTree(exclude: ['com.symbol.emdk.jar'], dir: 'libs')
 </code></pre></li>
 

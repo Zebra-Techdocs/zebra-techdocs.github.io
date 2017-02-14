@@ -51,7 +51,7 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> EMDK For Android 6.0
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> EMDK For Android 6.3
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
                                 <li><a onclick="changeVersion('5-0','4-2','/emdk-for-android/4-2/guide/about')">EMDK For Android 4.2</a></li>
@@ -66,42 +66,42 @@
 
 
                         <li>
-                            <a href="/emdk-for-android/6-0/guide/about">
+                            <a href="/emdk-for-android/6-3/guide/about">
                                     Home
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/guide/gettingstarted">
+                            <a href="/emdk-for-android/6-3/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/tutorial/">
+                            <a href="/emdk-for-android/6-3/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/samples">
+                            <a href="/emdk-for-android/6-3/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/guide/programming-guides">
+                            <a href="/emdk-for-android/6-3/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/guide/profile-manager-guides">
+                            <a href="/emdk-for-android/6-3/guide/profile-manager-guides">
                                     Profile Manager
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/api">
+                            <a href="/emdk-for-android/6-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-0/search">
+                            <a href="/emdk-for-android/6-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -216,7 +216,7 @@
                                     <h1 id="barcode-profile-feature-reference" class="anchor"><a class="heading-anchor" href="#barcode-profile-feature-reference"><span></span></a>Barcode Profile Feature Reference</h1>
                                     <p>
                                             EMDK For Android
-                                            6.0
+                                            6.3
                                     </p>
                                 </div>
                             </section>                    
@@ -236,7 +236,7 @@
 <ul>
 <li>Barcode</li>
 
-<li><a href="/emdk-for-android/6-0/guide/profiles/profilekeystroke">Keystroke</a>,<a href="/emdk-for-android/6-0/guide/profiles/profileintent">Intent</a>,<a href="/emdk-for-android/6-0/guide/profiles/profileIP">IP</a> (Output)</li>
+<li><a href="/emdk-for-android/6-3/guide/profiles/profilekeystroke">Keystroke</a>,<a href="/emdk-for-android/6-3/guide/profiles/profileintent">Intent</a>,<a href="/emdk-for-android/6-3/guide/profiles/profileIP">IP</a> (Output)</li>
 </ul>
 
 <p>The <code>Barcode</code> feature in the Profile Manager is responsible for reading data from the device's integrated bar code scanner and supports different types of bar code readers including laser, imager and internal camera. It also contains detailed parameters for scanner behavior as well as individual barcode symbology parameters.</p>
@@ -253,7 +253,7 @@
 
 <h2 id="name" class="anchor"><a class="heading-anchor" href="#name"><span></span></a>Name</h2>
 
-<p>The name field is used by the EMDK to identify this particular feature parameter set when you want to manage just part of the profile programmatically using the EMDK <a href="/emdk-for-android/6-0/api/ProfileManager">ProfileManager</a> API. This can be useful if you have multiple types of the same feature and want to update only one of them without having to update the whole profile. See <a href="/emdk-for-android/6-0/guide/profile-manager">EMDK Profiles Overview</a> for more information.</p>
+<p>The name field is used by the EMDK to identify this particular feature parameter set when you want to manage just part of the profile programmatically using the EMDK <a href="/emdk-for-android/6-3/api/ProfileManager">ProfileManager</a> API. This can be useful if you have multiple types of the same feature and want to update only one of them without having to update the whole profile. See <a href="/emdk-for-android/6-3/guide/profile-manager">EMDK Profiles Overview</a> for more information.</p>
 
 <h2 id="enabled" class="anchor"><a class="heading-anchor" href="#enabled"><span></span></a>Enabled</h2>
 
@@ -266,10 +266,44 @@
 <ul>
 <li>Auto - Automatically determines the best scanning device. If a Scan Module or Scan/MSR Module is installed on the MC40, then the 2D imager is selected. Otherwise the camera is selected.</li>
 
-<li>Camera Scanner - Scanning is performed with the rear-facing camera.</li>
+<li>Internal Laser 1 - Scanning is performed using the internal 1D laser scanner.</li>
 
-<li>2D Imager - Scanning is performed using the installed Scan or Scan/MSR module.</li>
+<li>Internal Imager 1 - Scanning is performed using the internal 2D scanner or MSR module.</li>
+
+<li>Internal Camera 1 - Scanning is performed with the rear-facing camera.</li>
+
+<li>Pluggable Laser 1 - Scanning is performed using an external 1D laser scanner plugged into the device.</li>
+
+<li>Bluetooth Imager 1 - Scanning is performed using an external 2D scanner connected via BlueTooth.</li>
+
+<li>RS6000 Bluetooth Imager - Scanning is performed using a RS6000 over Bluetooth.</li>
 </ul>
+
+<p>The following Bluetooth scanners are supported: </p>
+
+<ul>
+<li><strong>Zebra RS507</strong> Cordless Ring Scanner</li>
+
+<li><strong>RS6000 Bluetooth Ring Scanner</strong> (when used with WT6000 only)  </li>
+</ul>
+
+<p>Bluetooth scanners are supported according to the following rules:</p>
+
+<ul>
+<li><strong>To initially configure the RS507</strong> in a Profile, the scanner must be paired and connected.</li>
+
+<li><strong>After initial configuration</strong>, the Bluetooth scanner can be enabled and disabled in the Profile even if it is disconnected from the device. However, to configure reader parameters, decoders and other scanner settings, the Bluetooth scanner must be connected.</li>
+
+<li><strong>The device will not automatically reconnect</strong> to a Bluetooth scanner if that scanner is connected while it is using a different auto-selected scanner. To re-enable a Bluetooth scanner, connect the scanner and select it in the Profile or re-choose the Auto select option.</li>
+
+<li><strong>Auto-selection and Battery Swap -</strong> If Scanner selection is set to Auto and the RS507 was enabled prior to a battery swap, DataWedge will continue working with that RS507 scanner upon reconnection after the battery is swapped. If the RS507 does not reconnect with after the swap, DataCapture will revert to the current default scanner.</li>
+</ul>
+
+<h2 id="keepenabledonsuspend" class="anchor"><a class="heading-anchor" href="#keepenabledonsuspend"><span></span></a>Keep Enabled on Suspend</h2>
+
+<p>This mode is supported on Bluetooth and pluggable scanners only, and might result in faster battery drain than would otherwise be expected while in suspend mode. </p>
+
+<p><strong>Note: The Zebra computing device will wake from suspend mode when the RS507 scan trigger is pressed</strong>.</p>
 
 <h2 id="decoders" class="anchor"><a class="heading-anchor" href="#decoders"><span></span></a>Decoders</h2>
 
@@ -958,11 +992,11 @@ code length.</li></ul><p></p>
 <p>In order for your application to receive the barcode data, you must specify one or more Output features. Please  refer to their reference documentation for more information.</p>
 
 <ul>
-<li><a href="/emdk-for-android/6-0/guide/profiles/profileintent">Intent</a></li>
+<li><a href="/emdk-for-android/6-3/guide/profiles/profileintent">Intent</a></li>
 
-<li><a href="/emdk-for-android/6-0/guide/profiles/profilekeystroke">Keystroke</a></li>
+<li><a href="/emdk-for-android/6-3/guide/profiles/profilekeystroke">Keystroke</a></li>
 
-<li><a href="/emdk-for-android/6-0/guide/profiles/profileIP">IP</a></li>
+<li><a href="/emdk-for-android/6-3/guide/profiles/profileIP">IP</a></li>
 </ul><p></p>
                                         
 
