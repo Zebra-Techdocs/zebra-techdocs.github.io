@@ -26,28 +26,6 @@
     <![endif]--> 
 
     <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
-    <script type="text/javascript">
-(function(e, t) {
-    function r(e, t) {
-        e[t] = function() {
-            e.push([ t ].concat(Array.prototype.slice.call(arguments, 0)));
-        };
-    }
-    var n = "JacoRecorder";
-    (function(e, t, i, s) {
-        if (!i.__VERSION) {
-            e[n] = i;
-            var o = [ "init", "identify", "startRecording", "stopRecording", "removeUserTracking", "setUserInfo" ];
-            for (var u = 0; u < o.length; u++) r(i, o[u]);
-            i.__VERSION = .9, i.__INIT_TIME = 1 * new Date;
-            var a = t.createElement("script");
-            a.async = !0, a.setAttribute("crossorigin", "anonymous"), a.src = s;
-            var f = t.getElementsByTagName("head")[0];
-            f.appendChild(a);
-        }
-    })(e, t, e[n] || [], "//recorder-assets.getjaco.com/recorder.js");
-}).call(window, window, document), window.JacoRecorder.push([ "init", "0e8738ef-44eb-4eed-8d47-e564ec9b5587", {} ]);
-</script>
     <link rel="shortcut icon" href="/favicon.ico">
 <script src="/js/jquery.js"></script></head><!--/head-->
 
@@ -282,6 +260,7 @@
                         			  <li class="smartdocs-osx" data-value="4.2"><a>4.2</a></li>
                         			  <li class="smartdocs-osx" data-value="4.3"><a>4.3</a></li>
                         			  <li class="smartdocs-osx" data-value="4.4"><a>4.4</a></li>
+                                <li class="smartdocs-osx" data-value="6.2"><a>6.2</a></li>
                         
                                   </ul>
                                 </li>
@@ -298,19 +277,22 @@
                                 <li class="smartdocs-mx" data-value="5.1"><a>5.1</a></li>
                                 <li class="smartdocs-mx" data-value="5.2"><a>5.2</a></li>
                                 <li class="smartdocs-mx" data-value="6.0"><a>6.0</a></li>
+                                <li class="smartdocs-mx" data-value="6.1"><a>6.1</a></li>
+                                <li class="smartdocs-mx" data-value="6.2"><a>6.2</a></li>
                                   </ul>
                                 </li>
                              	<li class="dropdown">
                                   <a href="#" class="dropdown-toggle" id="smartdocs-api-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Android: All <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
                         			  <li class="smartdocs-api" data-value=""><a>All</a></li>
+                                <li class="smartdocs-api" data-value="23"><a>6.0 Marshmallow</a></li>
                         			  <li class="smartdocs-api" data-value="22"><a>5.1 Lollipop</a></li>
                         			  <li class="smartdocs-api" data-value="21"><a>5.0 Lollipop</a></li>
-                        			  <li class="smartdocs-api" data-value="19"><a>4.4 Kitkat</a></li>
-                        			  <li class="smartdocs-api" data-value="18"><a>4.3 Jellybean</a></li>
-                        			  <li class="smartdocs-api" data-value="17"><a>4.2.x Jellybean</a></li>
-                        			  <li class="smartdocs-api" data-value="16"><a>4.1.x Jellybean</a></li>
-                        			  <li class="smartdocs-api" data-value="15"><a>4.0.3-4.0.4 Ice Cream Sandwic
+                        			  <li class="smartdocs-api" data-value="19"><a>4.4 KitKat</a></li>
+                        			  <li class="smartdocs-api" data-value="18"><a>4.3 Jelly Bean</a></li>
+                        			  <li class="smartdocs-api" data-value="17"><a>4.2.x Jelly Bean</a></li>
+                        			  <li class="smartdocs-api" data-value="16"><a>4.1.x Jelly Bean</a></li>
+                        			  <li class="smartdocs-api" data-value="15"><a>4.0.3-4.0.4 Ice Cream Sandwich
                         			  </a></li><li class="smartdocs-api" data-value="14"><a>4.0-4.0.2 Ice Cream Sandwich</a></li>
                         			  <li class="smartdocs-api" data-value="10"><a>2.3.3-2.3.4 Gingerbread</a></li>
                                   </ul>
@@ -328,15 +310,18 @@
                         				<h4 class="modal-title anchor" id="about-smartdocs"><a class="heading-anchor" href="#about-smartdocs"><span></span></a>About <i class="fa fa-mobile fa-lg"></i> SmartDocs</h4>
                         			</div>
                         			<div class="modal-body">
-                        			<p>This document contains "SmartDocs" capabilities. This will allow you to easily see only the content that is relevant to the Zebra device you are working with.<br><br> MX Features will be available on a device based on a combination of factors:</p>
+                        			<p><br><b>The "SmartDocs" bar can customize this page to show only the features present on a particular Zebra device.</b> 
+                              </p><ol>
+                               <li><b>Use drop-downs to select the OSX, MX and/or Android version(s)</b> on the device. <b>Unsupported features will turn gray based on selection(s)</b>.</li> 
+                               <li>With at least one version selected when viewing a CSP (i.e. "App Manager"), <b>click forward and back buttons to scroll to the next and previous supported feature</b> of that CSP (not supported on Compatibility matrix).</li>
+                               <li><b>To clear all selections</b> press the SmartDocs button.</li> 
+                               </ol>
+                              <p></p><p><b>OSX, MX and Android version information</b> for a device can be found in the Android Settings panel or by querying the device through ADB, EMDK or the MX CSP.<a href="/mx/mx-version-on-device/"> More info</a></p>
                         			<ul>
-                        				<li><b>MX Version:</b> The version of MX on the device can be retrieved by <a href="/mx/mx-version-on-device/">following these instructions</a>. </li>
-                        				<li><b>OSX Version:</b> The version of OSX on the device can be retrieved by <a href="/mx/mx-version-on-device/">following these instructions</a>. Most features require a combination of OSX and MX in order to operate.</li>
-                        				<li><b>Android Version:</b> Some features only require a specific version of MX and a minimum version of Android. The version of Android on the device can be retrieved by checking the system settings application. </li>
-                        
-                        			</ul>
-                        			<p>After identifying the version information for your device, simply select them in the SmartDocs bar. Any section that does not apply to your device will be greyed out. You can clear all settings by hitting the SmartDocs button. Clicking the back and next buttons on the SmartDocs bar will navigate to the sections that are relevant to your device.
-                        			</p>				
+                        				<li><b>The OSX layer</b> provides extensions to the base operating system to implement functionality not offered by Android. The root OSX version number always matches the root number of the Android version that it extends.<a href="/mx/overview/"> More info</a></li>
+                                <li><b>The MX Management System</b> provides a uniform interface into privileged and unprivileged Android APIs on the device. Some features require a specific pairing of MX and OSX versions. <a href="/mx/overview/">More info</a></li>
+                        				<li><b>The Android version</b> is sometimes enough to determine a feature set. Others require a specific MX version plus a minimum version of Android.</li>
+                        			</ul>				
                         			</div>
                         	</div>
                           </div>
@@ -684,14 +669,12 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-                                    <p class=""></p><p>The AudioVolUIMgr can add, delete and replace Audio Profiles, and can select the current Audio Profile that will be in effect on the device. It also allows you to modify the "Factory Preset" Audio Profile (which cannot be deleted), and to directly control the Mute and Vibrate states of the device, which are independent of all Audio Streams and Audio Profiles.</p>
+                                    <p class="">
+
+        </p><p>The AudioVolUIMgr can add, delete and replace Audio Profiles, and can select the current Audio Profile that will be in effect on the device. It also allows you to modify the "Factory Preset" Audio Profile (which cannot be deleted), and to directly control the Mute and Vibrate states of the device, which are independent of all Audio Streams and Audio Profiles.</p>
 
 <p>Many Zebra Android devices contains a Zebra Audio Volume Control UI (ZVC) that allows a device user to adjust the volumes of various Audio Streams in the device. An Audio Stream is a channel via which audio can generated and physically output (e.g. to a speaker, headset, etc.). The number of Audio Streams that can be supported by an Android device is generally fixed. But the number of possible purposes for which audio could be generated is theoretically unlimited. As a result, a particular Audio Stream might be used for a purpose other than that for which that Audio Stream is normally used in Android or a given Audio Stream might need to be used for multiple purposes.</p>
 
@@ -759,7 +742,10 @@
 <li>Change the volume levels to be the Preset volume levels of the current Audio Profile</li>
 
 <li>Directly control the global Mute and Vibrate states of the device</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                     
                                     
                                     
@@ -784,10 +770,26 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="mutevibrate-state"><a class="heading-anchor" href="#mutevibrate-state"><span></span></a>Mute/Vibrate State</h2>
-                                    <p class=""></p><p>Select whether to mute the device, set the device to vibrate, or unmute the device. </p><p></p>
+                                    <p class="">
+
+        </p><p>Select whether to mute the device, set the device to vibrate, or unmute the device. </p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> MuteVibrateState</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -918,10 +920,25 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="current-active-profile-action"><a class="heading-anchor" href="#current-active-profile-action"><span></span></a>Current Active Profile Action</h2>
-                                    <p class=""></p><p>This parm is used to set a previously-created Audio Profile or the Factory Preset Audio Profile to be the current Audio Profile. It can also be used to force the volumes of all Audio Streams back to the Preset volumes specified for the current Audio Profile.</p><p></p>
+                                    <p class="">
+
+        </p><p>This parm is used to set a previously-created Audio Profile or the Factory Preset Audio Profile to be the current Audio Profile. It can also be used to force the volumes of all Audio Streams back to the Preset volumes specified for the current Audio Profile.</p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> CurrentProfileAction</p>
                                         <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
@@ -1018,32 +1035,21 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="name-of-the-current-audio-ui-profile"><a class="heading-anchor" href="#name-of-the-current-audio-ui-profile"><span></span></a>Name of the Current Audio UI Profile</h2>
-                                    <p class=""></p><p>This parm specifies the name of the previously-created Audio Profile that will be set as the new current Audio Profile. If the specified name does not match the name of a currently defined Audio Profile, then an error will be returned in the Result XML document.</p>
+                                    <p class="">
+
+        </p><p>This parm specifies the name of the previously-created Audio Profile that will be set as the new current Audio Profile. If the specified name does not match the name of a currently defined Audio Profile, then an error will be returned in the Result XML document.</p>
 
 <p>Parm value input rules: </p>
 
 <ul>
 <li>String that has a minimum size of 1 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Current Active Profile Action is "Set an Audio UI Profile as the current Profile"</p>
                                         <p><b>Parm Name:</b> CurrentProfileName</p>
@@ -1095,21 +1101,15 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="adjust-current-audio-volume"><a class="heading-anchor" href="#adjust-current-audio-volume"><span></span></a>Adjust current audio volume</h2>
-                                    <p class=""></p><p>This parm specifies whether the current volume levels of all Audio Streams affected by the Audio Profile should be set to the Preset volume levels of that Audio Profile.</p><p></p>
+                                    <p class="">
+
+        </p><p>This parm specifies whether the current volume levels of all Audio Streams affected by the Audio Profile should be set to the Preset volume levels of that Audio Profile.</p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Current Active Profile Action is "Set an Audio UI Profile as the current Profile"</p>
                                         <p><b>Parm Name:</b> SetCurrentProfileOption</p>
@@ -1200,10 +1200,19 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="audio-ui-profile-action"><a class="heading-anchor" href="#audio-ui-profile-action"><span></span></a>Audio UI Profile Action</h2>
-                                    <p class=""></p><p>This parm allows you to Create a new Audio Profile, Modify a previously created Audio Profile, Modify the Factory Present Audio Profile, or Delete a previously-created Audio Profile.</p><p></p>
+                                    <p class="">
+
+        </p><p>This parm allows you to Create a new Audio Profile, Modify a previously created Audio Profile, Modify the Factory Present Audio Profile, or Delete a previously-created Audio Profile.</p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> UIProfileAction</p>
                                         <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
@@ -1283,10 +1292,29 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="name-of-the-audio-ui-profile"><a class="heading-anchor" href="#name-of-the-audio-ui-profile"><span></span></a>Name of the Audio UI Profile</h2>
-                                    <p class=""></p><p>This parm specifies the name of the Audio Profile that will be Created, Modified, or Deleted. This name must be the same name supplied for the parm CurrentProfileName when setting an Audio Profile to be the new current Audio Profile.</p>
+                                    <p class="">
+
+        </p><p>This parm specifies the name of the Audio Profile that will be Created, Modified, or Deleted. This name must be the same name supplied for the parm CurrentProfileName when setting an Audio Profile to be the new current Audio Profile.</p>
 
 <blockquote>
   <p><strong>Note:</strong> This value cannot be "FactoryPreset" since this is a reserved name for the FactoryPreset Profile that is built into the device.</p>
@@ -1296,7 +1324,10 @@
 
 <ul>
 <li>String that has a minimum size of 1 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile" or "Remove an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> ProfileName</p>
@@ -1330,10 +1361,19 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-label"><a class="heading-anchor" href="#music-label"><span></span></a>Music Label</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for music playback. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for music playback. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), then no customized label will be specified for the Audio Stream. This will cause ZVC to display not label the Audio Stream.</p>
@@ -1343,7 +1383,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_MUSIC_Label</p>
@@ -1374,24 +1417,12 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-icon"><a class="heading-anchor" href="#music-icon"><span></span></a>Music Icon</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for music playback. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for music playback. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), or if the value provided does not reference an icon file, then no customized icon will be specified for the Audio Stream. This will cause ZVC to display the default icon defined for the Audio Stream.</p>
@@ -1401,7 +1432,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> he Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_MUSIC_Icon</p>
@@ -1439,16 +1473,12 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-control-parameters"><a class="heading-anchor" href="#music-control-parameters"><span></span></a>Music Control Parameters</h2>
-                                    <p class=""></p><p>This parm allows you to control whether the ZVC allows the user to view and modify the volume settings for the Audio Stream that is typically used for music playback. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to control whether the ZVC allows the user to view and modify the volume settings for the Audio Stream that is typically used for music playback. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
 
 <p>Parm value input rules: </p>
 
@@ -1456,7 +1486,10 @@
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
 
 <li>The value that is entered must be either "1", which will make the stream visible, or "0", which will make the Audio Stream hidden.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_MUSIC_Ctrl</p>
@@ -1496,10 +1529,20 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-speaker-levels"><a class="heading-anchor" href="#music-speaker-levels"><span></span></a>Music Speaker Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for music playback when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the music volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for music playback when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the music volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for music playback to this set level. </p>
 
@@ -1511,7 +1554,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_MUSIC_SPK_LEVEL</p>
@@ -1546,10 +1592,13 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-receiver-levels"><a class="heading-anchor" href="#music-receiver-levels"><span></span></a>Music Receiver Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for music playback when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the music volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for music playback when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the music volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for music playback to this set level. </p>
 
@@ -1561,7 +1610,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> TThe Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_MUSIC_RCVR_LEVEL</p>
@@ -1589,12 +1641,12 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-wired-headset-levels"><a class="heading-anchor" href="#music-wired-headset-levels"><span></span></a>Music Wired Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for music playback when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the music volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for music playback when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the music volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for music playback to this set level. </p>
 
@@ -1606,7 +1658,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_MUSIC_WHS_LEVEL</p>
@@ -1631,10 +1686,17 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-bluetooth-headset-levels"><a class="heading-anchor" href="#music-bluetooth-headset-levels"><span></span></a>Music Bluetooth Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for music playback when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the music volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for music playback when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the music volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for music playback to this set level. </p>
 
@@ -1646,7 +1708,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_MUSIC_BTHS_LEVEL</p>
@@ -1683,11 +1748,12 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-label"><a class="heading-anchor" href="#incoming-call-label"><span></span></a>Incoming Call Label</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for the incoming call notification. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for the incoming call notification. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), then no customized label will be specified for the Audio Stream. This will cause ZVC to display not label the Audio Stream.</p>
@@ -1697,7 +1763,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_RING_Label</p>
@@ -1726,10 +1795,20 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-icon"><a class="heading-anchor" href="#incoming-call-icon"><span></span></a>Incoming Call Icon</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for the incoming call notification. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for the incoming call notification. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), or if the value provided does not reference an icon file, then no customized icon will be specified for the Audio Stream. This will cause ZVC to display the default icon defined for the Audio Stream.</p>
@@ -1739,7 +1818,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_RING_Icon</p>
@@ -1760,11 +1842,12 @@
                                     
                                 </div> 
                                     
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-control-parameters"><a class="heading-anchor" href="#incoming-call-control-parameters"><span></span></a>Incoming Call Control Parameters</h2>
-                                    <p class=""></p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used for the typically used for the incoming call notification. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used for the typically used for the incoming call notification. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
 
 <p>Parm value input rules: </p>
 
@@ -1772,7 +1855,10 @@
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
 
 <li>The value that is entered must be either "1", which will make the stream visible, or "0", which will make the Audio Stream hidden.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_RING_Ctrl</p>
@@ -1796,10 +1882,13 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-speaker-levels"><a class="heading-anchor" href="#incoming-call-speaker-levels"><span></span></a>Incoming Call Speaker Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for the incoming call notification when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the ring tone volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for the incoming call notification when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the ring tone volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for the incoming call notification to this set level. </p>
 
@@ -1811,7 +1900,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_RING_SPK_LEVEL</p>
@@ -1835,10 +1927,16 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-receiver-levels"><a class="heading-anchor" href="#incoming-call-receiver-levels"><span></span></a>Incoming Call Receiver Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for the incoming call notification when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the ring tone volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for the incoming call notification when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the ring tone volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for the incoming call notification to this set level. </p>
 
@@ -1850,7 +1948,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_RING_RCVR_LEVEL</p>
@@ -1873,10 +1974,15 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-wired-headset-levels"><a class="heading-anchor" href="#incoming-call-wired-headset-levels"><span></span></a>Incoming Call Wired Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for the incoming call notification when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the ring tone volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for the incoming call notification when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the ring tone volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for the incoming call notification to this set level. </p>
 
@@ -1888,7 +1994,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_RING_WHS_LEVEL</p>
@@ -1911,10 +2020,14 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-bluetooth-headset-levels"><a class="heading-anchor" href="#incoming-call-bluetooth-headset-levels"><span></span></a>Incoming Call Bluetooth Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for the incoming call notification when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the ring tone volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for the incoming call notification when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the ring tone volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for the incoming call notification to this set level. </p>
 
@@ -1926,7 +2039,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_RING_BTHS_LEVEL</p>
@@ -1951,11 +2067,12 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-label"><a class="heading-anchor" href="#notification-label"><span></span></a>Notification Label</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for other notifications. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for other notifications. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), then no customized label will be specified for the Audio Stream. This will cause ZVC to display not label the Audio Stream.</p>
@@ -1965,7 +2082,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_NOTIFICATION_Label</p>
@@ -1988,10 +2108,15 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-icon"><a class="heading-anchor" href="#notification-icon"><span></span></a>Notification Icon</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for other notifications. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for other notifications. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), then no customized label will be specified for the Audio Stream. This will cause ZVC to display not label the Audio Stream.</p>
@@ -2001,7 +2126,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_NOTIFICATION_Icon</p>
@@ -2025,10 +2153,14 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-control-parameters"><a class="heading-anchor" href="#notification-control-parameters"><span></span></a>Notification Control Parameters</h2>
-                                    <p class=""></p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used for other notifications. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used for other notifications. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
 
 <p>Parm value input rules: </p>
 
@@ -2036,7 +2168,10 @@
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
 
 <li>The value that is entered must be either "1", which will make the stream visible, or "0", which will make the Audio Stream hidden.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_NOTIFICATION_Ctrl</p>
@@ -2058,11 +2193,12 @@
                                 </div> 
                                     
                                     
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-speaker-levels"><a class="heading-anchor" href="#notification-speaker-levels"><span></span></a>Notification Speaker Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for other notifications when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the notification volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for other notifications when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the notification volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for other notifications to this set level. </p>
 
@@ -2074,7 +2210,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_NOTIFICATION_SPK_LEVEL</p>
@@ -2096,10 +2235,14 @@
                                 </div> 
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-receiver-levels"><a class="heading-anchor" href="#notification-receiver-levels"><span></span></a>Notification Receiver Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for other notifications when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the notification volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for other notifications when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the notification volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for other notifications to this set level. </p>
 
@@ -2111,7 +2254,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_NOTIFICATION_RCVR_LEVEL</p>
@@ -2132,10 +2278,14 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-wired-headset-levels"><a class="heading-anchor" href="#notification-wired-headset-levels"><span></span></a>Notification Wired Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for other notifications when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the notification volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for other notifications when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the notification volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for other notifications to this set level. </p>
 
@@ -2147,7 +2297,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_NOTIFICATION_WHS_LEVEL</p>
@@ -2169,10 +2322,14 @@
                                 </div> 
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-bluetooth-headset-levels"><a class="heading-anchor" href="#notification-bluetooth-headset-levels"><span></span></a>Notification Bluetooth Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for other notifications when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the notification volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for other notifications when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the notification volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for other notifications to this set level. </p>
 
@@ -2184,7 +2341,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_NOTIFICATION_BTHS_LEVEL</p>
@@ -2212,7 +2372,9 @@
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-label"><a class="heading-anchor" href="#system-sounds-label"><span></span></a>System Sounds Label</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used by system sounds. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used by system sounds. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), then no customized label will be specified for the Audio Stream. This will cause ZVC to display not label the Audio Stream.</p>
@@ -2222,7 +2384,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_SYSTEM_Label</p>
@@ -2247,10 +2412,13 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-icon"><a class="heading-anchor" href="#system-sounds-icon"><span></span></a>System Sounds Icon</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used by system sounds. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used by system sounds. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), or if the value provided does not reference an icon file, then no customized icon will be specified for the Audio Stream. This will cause ZVC to display the default icon defined for the Audio Stream.</p>
@@ -2260,7 +2428,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_SYSTEM_Icon</p>
@@ -2283,10 +2454,13 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-control-parameters"><a class="heading-anchor" href="#system-sounds-control-parameters"><span></span></a>System Sounds Control Parameters</h2>
-                                    <p class=""></p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used by system sounds. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used by system sounds. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
 
 <p>Parm value input rules: </p>
 
@@ -2294,7 +2468,10 @@
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
 
 <li>The value that is entered must be either "1", which will make the stream visible, or "0", which will make the Audio Stream hidden.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_SYSTEM_Ctrl</p>
@@ -2315,14 +2492,12 @@
                                     
                                 </div> 
                                     
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-speaker-levels"><a class="heading-anchor" href="#system-sounds-speaker-levels"><span></span></a>System Sounds Speaker Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used by system sounds when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used by system sounds when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used by system sounds to this set level. </p>
 
@@ -2334,7 +2509,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_SYSTEM_SPK_LEVEL</p>
@@ -2357,10 +2535,13 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-receiver-levels"><a class="heading-anchor" href="#system-sounds-receiver-levels"><span></span></a>System Sounds Receiver Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used by system sounds when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used by system sounds when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used by system sounds to this set level. </p>
 
@@ -2372,7 +2553,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_SYSTEM_RCVR_LEVEL</p>
@@ -2395,10 +2579,14 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-wired-headset-levels"><a class="heading-anchor" href="#system-sounds-wired-headset-levels"><span></span></a>System Sounds Wired Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used by system sounds when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used by system sounds when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used by system sounds to this set level. </p>
 
@@ -2410,7 +2598,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_SYSTEM_WHS_LEVEL</p>
@@ -2439,7 +2630,9 @@
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-bluetooth-headset-levels"><a class="heading-anchor" href="#system-sounds-bluetooth-headset-levels"><span></span></a>System Sounds Bluetooth Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used by system sounds when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used by system sounds when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used by system sounds to this set level. </p>
 
@@ -2451,7 +2644,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_SYSTEM_BTHS_LEVEL</p>
@@ -2473,10 +2669,14 @@
                                 </div> 
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-label"><a class="heading-anchor" href="#alarm-label"><span></span></a>Alarm Label</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for alarms. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for alarms. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), then no customized label will be specified for the Audio Stream. This will cause ZVC to display not label the Audio Stream.</p>
@@ -2486,7 +2686,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_ALARM_Label</p>
@@ -2508,10 +2711,15 @@
                                 </div> 
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-icon"><a class="heading-anchor" href="#alarm-icon"><span></span></a>Alarm Icon</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for alarms. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for alarms. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), or if the value provided does not reference an icon file, then no customized icon will be specified for the Audio Stream. This will cause ZVC to display the default icon defined for the Audio Stream.</p>
@@ -2521,7 +2729,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_ALARM_Icon</p>
@@ -2543,10 +2754,14 @@
                                 </div> 
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-control-parameters"><a class="heading-anchor" href="#alarm-control-parameters"><span></span></a>Alarm Control Parameters</h2>
-                                    <p class=""></p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used for alarms. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used for alarms. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
 
 <p>Parm value input rules: </p>
 
@@ -2554,7 +2769,10 @@
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
 
 <li>The value that is entered must be either "1", which will make the stream visible, or "0", which will make the Audio Stream hidden.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_ALARM_Ctrl</p>
@@ -2577,10 +2795,13 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-speaker-levels"><a class="heading-anchor" href="#alarm-speaker-levels"><span></span></a>Alarm Speaker Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for alarms when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the alarm volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for alarms when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the alarm volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <blockquote>
   <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for alarms to this set level. </p>
@@ -2594,7 +2815,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_ALARM_SPK_LEVEL</p>
@@ -2615,10 +2839,16 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-wired-headset-levels"><a class="heading-anchor" href="#alarm-wired-headset-levels"><span></span></a>Alarm Wired Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for alarms when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for alarms when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for alarms to this set level. </p>
 
@@ -2630,7 +2860,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_ALARM_WHS_LEVEL</p>
@@ -2651,10 +2884,13 @@
                                     
                                 </div> 
                                     
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-receiver-levels"><a class="heading-anchor" href="#alarm-receiver-levels"><span></span></a>Alarm Receiver Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for alarms when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the alarm volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for alarms when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the alarm volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <blockquote>
   <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for alarms to this set level. </p>
@@ -2668,7 +2904,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_ALARM_RCVR_LEVEL</p>
@@ -2694,7 +2933,9 @@
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-bluetooth-levels"><a class="heading-anchor" href="#alarm-bluetooth-levels"><span></span></a>Alarm Bluetooth Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for alarms when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for alarms when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the system volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for alarms to this set level. </p>
 
@@ -2706,7 +2947,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_ALARM_BTHS_LEVEL</p>
@@ -2730,7 +2974,9 @@
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-label"><a class="heading-anchor" href="#voice-call-label"><span></span></a>Voice Call Label</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for phone calls. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the Audio Stream that is typically used for phone calls. </p>
 
 <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), then no customized label will be specified for the Audio Stream. This will cause ZVC to display not label the Audio Stream.</p>
 
@@ -2738,7 +2984,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VOICECALL_Label</p>
@@ -2761,10 +3010,14 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-icon"><a class="heading-anchor" href="#voice-call-icon"><span></span></a>Voice Call Icon</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for phone calls. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the Audio Stream that is typically used for phone calls. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), or if the value provided does not reference an icon file, then no customized icon will be specified for the Audio Stream. This will cause ZVC to display the default icon defined for the Audio Stream.</p>
@@ -2774,7 +3027,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VOICECALL_Icon</p>
@@ -2799,7 +3055,9 @@
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-control-parameters"><a class="heading-anchor" href="#voice-call-control-parameters"><span></span></a>Voice Call Control Parameters</h2>
-                                    <p class=""></p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used for phone calls. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the Audio Stream that is typically used for phone calls. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
 
 <p>Parm value input rules: </p>
 
@@ -2807,7 +3065,10 @@
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
 
 <li>The value that is entered must be either "1", which will make the stream visible, or "0", which will make the Audio Stream hidden.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VOICECALL_Ctrl</p>
@@ -2828,10 +3089,14 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-speaker-levels"><a class="heading-anchor" href="#voice-call-speaker-levels"><span></span></a>Voice Call Speaker Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for phone calls when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the voice call volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for phone calls when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the voice call volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for phone calls to this set level. </p>
 
@@ -2843,7 +3108,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VOICECALL_SPK_LEVEL</p>
@@ -2867,7 +3135,9 @@
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-receiver-levels"><a class="heading-anchor" href="#voice-call-receiver-levels"><span></span></a>Voice Call Receiver Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for phone calls when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the voice call volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for phone calls when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the voice call volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for phone calls to this set level. </p>
 
@@ -2879,7 +3149,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VOICECALL_RCVR_LEVEL</p>
@@ -2902,12 +3175,12 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-wired-headset-levels"><a class="heading-anchor" href="#voice-call-wired-headset-levels"><span></span></a>Voice Call Wired Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for phone calls when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the voice call volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for phone calls when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the voice call volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for phone calls to this set level. </p>
 
@@ -2919,7 +3192,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VOICECALL_WHS_LEVEL</p>
@@ -2940,10 +3216,17 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-bluetooth-headset-levels"><a class="heading-anchor" href="#voice-call-bluetooth-headset-levels"><span></span></a>Voice Call Bluetooth Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for phone calls when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the voice call volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the Audio Stream that is typically used for phone calls when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the voice call volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the Audio Stream that is typically used for phone calls to this set level. </p>
 
@@ -2955,7 +3238,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VOICECALL_BTHS_LEVEL</p>
@@ -2976,11 +3262,12 @@
                                     
                                 </div> 
                                     
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-label"><a class="heading-anchor" href="#decode-beep-label"><span></span></a>Decode Beep Label</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the decode beep virtual volume stream. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized label that the ZVC will display to visually identify the decode beep virtual volume stream. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), then no customized label will be specified for the Audio Stream. This will cause ZVC to display not label the Audio Stream.</p>
@@ -2990,7 +3277,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VVS_Label</p>
@@ -3012,10 +3302,14 @@
                                 </div> 
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-icon"><a class="heading-anchor" href="#decode-beep-icon"><span></span></a>Decode Beep Icon</h2>
-                                    <p class=""></p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the decode beep virtual volume stream. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to set a customized icon that the ZVC will display to visually identify the decode beep virtual volume stream. If specified, the value must be the full path and file name of an icon file in PNG format that resides in the device file system. An icon size of 48x48 pixels is recommended. </p>
 
 <blockquote>
   <p><strong>Note:</strong> If the value of this parm is empty (a length of 0), or if the value provided does not reference an icon file, then no customized icon will be specified for the Audio Stream. This will cause ZVC to display the default icon defined for the Audio Stream.</p>
@@ -3025,7 +3319,10 @@
 
 <ul>
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VVS_Icon</p>
@@ -3047,11 +3344,12 @@
                                 </div> 
                                     
                                     
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-control-parameters"><a class="heading-anchor" href="#decode-beep-control-parameters"><span></span></a>Decode Beep Control Parameters</h2>
-                                    <p class=""></p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the decode beep virtual volume stream. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
+                                    <p class="">
+
+        </p><p>This parm allows you to control whether the ZVC allow the device user to view and modify the volume settings for the decode beep virtual volume stream. Specifying an empty (length of zero) value (or the absence of this parm from the XML) will cause no change to this Audio Stream's visibility. </p>
 
 <p>Parm value input rules: </p>
 
@@ -3059,7 +3357,10 @@
 <li>String that has a minimum size of 0 character and a maximum size of 255 characters</li>
 
 <li>The value that is entered must be either "1", which will make the stream visible, or "0", which will make the Audio Stream hidden.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VVS_Ctrl</p>
@@ -3085,7 +3386,9 @@
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-speaker-levels"><a class="heading-anchor" href="#decode-beep-speaker-levels"><span></span></a>Decode Beep Speaker Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the decode beep virtual stream when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the decode beep virtual volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the decode beep virtual stream when the device is in speaker mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the decode beep virtual volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <blockquote>
   <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the decode beep virtual stream to this set level. </p>
@@ -3099,7 +3402,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VVS_SPK_LEVEL</p>
@@ -3124,7 +3430,9 @@
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-receiver-levels"><a class="heading-anchor" href="#decode-beep-receiver-levels"><span></span></a>Decode Beep Receiver Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the decode beep virtual stream when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the decode beep virtual volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the decode beep virtual stream when the device is in receiver mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the decode beep virtual volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the decode beep virtual stream to this set level. </p>
 
@@ -3136,7 +3444,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VVS_RCVR_LEVEL</p>
@@ -3157,10 +3468,16 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-wired-headset-levels"><a class="heading-anchor" href="#decode-beep-wired-headset-levels"><span></span></a>Decode Beep Wired Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the decode beep virtual stream when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the decode beep virtual volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the decode beep virtual stream when the device is in wired headset mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the decode beep virtual volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <blockquote>
   <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the decode beep virtual stream to this set level. </p>
@@ -3174,7 +3491,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VVS_WHS_LEVEL</p>
@@ -3195,13 +3515,12 @@
                                     
                                 </div> 
                                     
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-bluetooth-headset-levels"><a class="heading-anchor" href="#decode-beep-bluetooth-headset-levels"><span></span></a>Decode Beep Bluetooth Headset Levels</h2>
-                                    <p class=""></p><p>This will set the minimum, maximum, and preset volume levels for the decode beep virtual stream when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the decode beep virtual volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
+                                    <p class="">
+
+        </p><p>This will set the minimum, maximum, and preset volume levels for the decode beep virtual stream when the device is in bluetooth headset mode mode. The user will not be able to lower or raise the volume outside of the minimum/maximum range that is set. If the decode beep virtual volume level was outside of this range at the time that this range is set, then the volume of this stream will be equal to the minimum or maximum level depending on whether it was below or above this volume range.</p>
 
 <blockquote>
   <p>The preset volume level is a third volume level that must be greater than or equal to the minimum volume level and less than or equal to the maximum volume level. If the preset volume is outside of the minimum/maximum range, then this value will be be equal to the minimum or maximum level depending on whether it was below or above this volume range. This will be used by the SetCurrentProfileOption feature to adjust the volume of the decode beep virtual stream to this set level. </p>
@@ -3215,7 +3534,10 @@
 <li>String that contains the minimum, maximum, and preset volumes in this order and separated by commas. For example, "1,5,3"</li>
 
 <li>The volume levels must be positive integers that are less than 256.</li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> The Audio UI Profile Action is "Add an Audio UI Profile"</p>
                                         <p><b>Parm Name:</b> STREAM_VVS_BTHS_LEVEL</p>
@@ -3263,12 +3585,12 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="examples"><a class="heading-anchor" href="#examples"><span></span></a>Examples</h2>
-                                    <p class=""></p><h3 id="addanewaudioprofile" class="anchor"><a class="heading-anchor" href="#addanewaudioprofile"><span></span></a>Add a New Audio Profile</h3>
+                                    <p class="">
+
+        </p><h3 id="addanewaudioprofile" class="anchor"><a class="heading-anchor" href="#addanewaudioprofile"><span></span></a>Add a New Audio Profile</h3>
 
 <pre class="prettyprint"><code>
 &lt;wap-provisioningdoc&gt;
@@ -3330,11 +3652,18 @@
         &lt;/characteristic&gt;
     &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
-</code></pre><p></p>
+</code></pre>
+
+
+<p></p>
                                     
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3362,6 +3691,13 @@
         csp: "audiovoluimgr",
         name: "Audio Volume UI Manager",
         parms: [
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3540,6 +3876,16 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "CurrentProfileAction",
@@ -3635,22 +3981,6 @@
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -3669,17 +3999,6 @@
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3794,6 +4113,10 @@
                     
                     
                     
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "UIProfileAction",
@@ -3869,6 +4192,23 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -3887,6 +4227,13 @@
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3930,20 +4277,6 @@
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -3962,12 +4295,6 @@
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4024,6 +4351,14 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4042,6 +4377,7 @@
                         
                         
                     },
+                    
                     
                     
                     
@@ -4083,8 +4419,6 @@
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4108,6 +4442,11 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4126,7 +4465,6 @@
                         
                         
                     },
-                    
                     
                     
                     
@@ -4171,6 +4509,14 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4190,7 +4536,6 @@
                         
                     },
                     
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4209,6 +4554,7 @@
                         
                         
                     },
+                    
                     
                     
                     
@@ -4235,6 +4581,10 @@
                     
                     
                     
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4256,6 +4606,9 @@
                     
                     
                     
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4274,6 +4627,8 @@
                         
                         
                     },
+                    
+                    
                     
                     
                     
@@ -4300,7 +4655,6 @@
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4319,6 +4673,9 @@
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -4344,6 +4701,8 @@
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4362,7 +4721,6 @@
                         
                         
                     },
-                    
                     
                     
                     {
@@ -4385,6 +4743,8 @@
                     },
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4404,6 +4764,8 @@
                         
                     },
                     
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4422,6 +4784,8 @@
                         
                         
                     },
+                    
+                    
                     
                     
                     {
@@ -4470,6 +4834,7 @@
                     
                     
                     
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4488,6 +4853,7 @@
                         
                         
                     },
+                    
                     
                     
                     
@@ -4510,10 +4876,6 @@
                         
                     },
                     
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4535,6 +4897,7 @@
                     
                     
                     
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4553,6 +4916,8 @@
                         
                         
                     },
+                    
+                    
                     
                     
                     
@@ -4600,6 +4965,8 @@
                     },
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4620,6 +4987,9 @@
                     },
                     
                     
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4638,6 +5008,8 @@
                         
                         
                     },
+                    
+                    
                     
                     
                     {
@@ -4661,6 +5033,7 @@
                     
                     
                     
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4680,6 +5053,10 @@
                         
                     },
                     
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4698,6 +5075,7 @@
                         
                         
                     },
+                    
                     
                     {
                         requires: {
@@ -4760,6 +5138,8 @@
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4798,6 +5178,8 @@
                         
                         
                     },
+                    
+                    
                     
                     {
                         requires: {
@@ -4839,8 +5221,6 @@
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4860,6 +5240,11 @@
                         
                     },
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4878,7 +5263,6 @@
                         
                         
                     },
-                    
                     
                     {
                         requires: {
@@ -4900,6 +5284,8 @@
                     },
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -4918,7 +5304,6 @@
                         
                         
                     },
-                    
                     
                     
                     {
@@ -4981,6 +5366,10 @@
                         
                     },
                     
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5000,9 +5389,6 @@
                         
                     },
                     
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5021,6 +5407,8 @@
                         
                         
                     },
+                    
+                    
                     
                     
                     
