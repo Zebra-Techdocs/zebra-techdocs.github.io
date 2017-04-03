@@ -50,14 +50,11 @@
                 <div class="collapse navbar-collapse navbar-left">
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
-                        <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> EMDK For Android 6.3
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('5-0','4-2','/emdk-for-android/4-2/guide/about')">EMDK For Android 4.2</a></li>
-                                <li><a onclick="changeVersion('5-0','4-0','/emdk-for-android/4-0/guide/about')">EMDK For Android 4.0</a></li>
-                          </ul>
-                        </li>                    
+                        <p class="navbar-text">
+                                            EMDK For Xamarin
+                                            2.3
+                        </p>
+
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse navbar-right">
@@ -66,42 +63,42 @@
 
 
                         <li>
-                            <a href="/emdk-for-android/6-3/guide/about">
+                            <a href="/emdk-for-xamarin/2-3/guide/about">
                                     Home
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-3/guide/gettingstarted">
+                            <a href="/emdk-for-xamarin/2-3/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-3/tutorial/">
+                            <a href="/emdk-for-xamarin/2-3/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-3/samples">
+                            <a href="/emdk-for-xamarin/2-3/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-3/guide/programming-guides">
+                            <a href="/emdk-for-xamarin/2-3/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-3/guide/profile-manager-guides">
+                            <a href="/emdk-for-xamarin/2-3/guide/profile-manager-guides">
                                     Profile Manager
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-3/api">
+                            <a href="/emdk-for-xamarin/2-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-android/6-3/search">
+                            <a href="/emdk-for-xamarin/2-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -215,8 +212,8 @@
                                 <div class="">
                                     <h1 id="barcode-scanning-api-programmers-guide" class="anchor"><a class="heading-anchor" href="#barcode-scanning-api-programmers-guide"><span></span></a>Barcode Scanning API Programmer's Guide</h1>
                                     <p>
-                                            EMDK For Android
-                                            6.3
+                                            EMDK For Xamarin
+                                            2.3
                                     </p>
                                 </div>
                             </section>                    
@@ -231,7 +228,7 @@
 
                                         <p></p><h2 id="barcodeapi" class="anchor"><a class="heading-anchor" href="#barcodeapi"><span></span></a>Barcode API</h2>
 
-<p>The EMDK Barcode API provides applications with an ability to read a
+<p>The EMDK Barcode API provides applications with an ability to read the
 variety barcode labels using different scanner devices such as built-in
 imager/laser, built-in camera, Bluetooth ring scanners such as RS507 and
 RS600 and Pluggable ring scanner such as RS4000.</p>
@@ -262,7 +259,7 @@ below:</p>
 release BarcodeManager before exiting the application.</p>
 
 <pre class="prettyprint"><code>    
-    BarcodeManager barcodeManager = (BarcodeManager)emdkManager.getInstance(FEATURE_TYPE.BARCODE);
+    barcodeManager = (BarcodeManager)emdkManager.GetInstance(EMDKManager.FEATURE_TYPE.Barcode);
 </code></pre>
 
 <h3 id="gettingscanner" class="anchor"><a class="heading-anchor" href="#gettingscanner"><span></span></a>Getting Scanner</h3>
@@ -272,12 +269,12 @@ release BarcodeManager before exiting the application.</p>
 <ol>
 <li><p><strong>Get Scanner using DeviceIdentifier without device enumeration</strong></p>
 
-<p>Use the BarcodeManager.getDevice(DeviceIdentifier deviceIdentifier) API</p>
+<p>Use the BarcodeManager.GetDevice(DeviceIdentifier deviceIdentifier) API</p>
 
 <p>If the specified Device Identifier is not supported on the target platform, call to “getDevice” will return null.</p>
 
 <pre class="prettyprint"><code>
-Scanner scanner = barcodeManager.getDevice(DeviceIdentifier.BLUETOOTH_IMAGER_RS6000);
+scanner = barcodeManager.GetDevice(BarcodeManager.DeviceIdentifier.BluetoothImagerRs6000);
 </code></pre></li>
 
 <li><p><strong>Get Scanner using ScannerInfo from device enumeration</strong></p>
@@ -286,25 +283,21 @@ Scanner scanner = barcodeManager.getDevice(DeviceIdentifier.BLUETOOTH_IMAGER_RS6
 
 <pre class="prettyprint"><code>
 
-List&lt;ScannerInfo&gt; supportedDevList =
-
-barcodeManager.getSupportedDevicesInfo();
+IList&lt;ScannerInfo&gt; scannerList = barcodeManager.SupportedDevicesInfo; ;
 
 Scanner scanner = null;
 
-Iterator&lt;ScannerInfo&gt; it = deviceList.iterator();
+if ((scannerList != null) &amp;&amp; (scannerList.Count &gt; 0))
+{
+        foreach (ScannerInfo scnInfo in scannerList)
+        {
+                if (scnInfo.DeviceIdentifier == BarcodeManager.DeviceIdentifier.BluetoothImagerRs6000)
+                {
 
-while(it.hasNext()) {
-
-ScannerInfo scnInfo = it.next();
-
-if(scnInfo.getDeviceIdentifier()==DeviceIdentifier.BLUETOOTH_IMAGER_RS6000){
-
-scanner = barcodeManager.getDevice(scnInfo);
-
-break;
-
-}
+<pre><code>                    scanner = barcodeManager.GetDevice(scnInfo);
+            }
+    }
+</code></pre>
 
 }
 </code></pre></li>
@@ -332,37 +325,38 @@ break;
 
 <pre class="prettyprint"><code>    
     try {
-            ScannerConfig scannerConfig = scanner.getConfig();
-            scannerConfig.decoderParams.code128.enabled = false; 
+
+    ScannerConfig scannerConfig = scanner.GetConfig();
+    scannerConfig.DecoderParams.Code128.Enabled = false; 
 
             //Set beam timer for imager
-            config.readerParams.readerSpecific.imagerSpecific.beamTimer = 4000;
+            scannerConfig.ReaderParams.ReaderSpecific.ImagerSpecific.BeamTimer = 4000;
 
-            scanner.setConfig(config); 
+    scanner.SetConfig(scannerConfig); 
 
     } catch (ScannerException e) {
 
-    //Error occurred and the error can be obtained by e.getResult()
+    //Error occurred and the error can be obtained by e.Message
 
     }
 </code></pre>
 
-<p>Calling SetConfig() should be done in the Status callback. This way you can check that the scanner is indeed IDLE and that a scanner read is not pending.</p>
+<p>Calling SetConfig() should be done in the Status callback/Event. This way you can check that the scanner is indeed IDLE and that a scanner read is not pending.</p>
 
 <p>Below is an example of how that should be done:</p>
 
 <pre class="prettyprint"><code>    
-    @Override
-    public void onStatus(StatusData statusData) {
-            ScannerStates state = statusData.getState();
-            switch(state) {
-            case IDLE:
-                    if(!scanner.isReadPending()){
-                    // call SetConfig() here
-                    }
-            break;
+    void scanner_Status(object sender, Scanner.StatusEventArgs e)
+    {
+        StatusData statusData = e.P0;
+        StatusData.ScannerStates state = e.P0.State;
 
+        if (state == StatusData.ScannerStates.Idle)
+        {
+            if(!scanner.IsReadPending){
+                    // call SetConfig() here
             }
+        }
     }
 </code></pre>
 
@@ -373,7 +367,7 @@ break;
 <p>The following code snippet shows how to disable the Code128 symbology:</p>
 
 <pre class="prettyprint"><code>    
-    scannerConfig.decoderParams.code128.enabled = false;
+    scannerConfig.DecoderParams.Code128.Enabled = false;
 </code></pre>
 
 <h3 id="readerparameters" class="anchor"><a class="heading-anchor" href="#readerparameters"><span></span></a>Reader Parameters</h3>
@@ -384,11 +378,11 @@ break;
 
 <pre class="prettyprint"><code>    
     //Set beam timer for camera
-    config.readerParams.readerSpecific. cameraSpecific.beamTimer = 4000;
+    scannerConfig.ReaderParams.ReaderSpecific.CameraSpecific.BeamTimer = 4000;
     //Set beam timer for imager
-    config.readerParams.readerSpecific.imagerSpecific.beamTimer = 4000;
+    scannerConfig.ReaderParams.ReaderSpecific.ImagerSpecific.BeamTimer = 4000;
     //Set beam timer for laser
-    config.readerParams.readerSpecific.laserSpecific.beamTimer = 4000;
+    scannerConfig.ReaderParams.ReaderSpecific.LaserSpecific.BeamTimer = 4000;
 </code></pre>
 
 <h3 id="scanparameters" class="anchor"><a class="heading-anchor" href="#scanparameters"><span></span></a>Scan Parameters</h3>
@@ -398,7 +392,7 @@ break;
 <p>The below code snippet shows how to modify the decode LED time.</p>
 
 <pre class="prettyprint"><code>    
-    config.scanParams.decodeLEDTime = 75;
+    scannerConfig.ScanParams.DecodeLEDTime = 75;
 </code></pre>
 
 <h2 id="scannerstates" class="anchor"><a class="heading-anchor" href="#scannerstates"><span></span></a>Scanner States</h2>
