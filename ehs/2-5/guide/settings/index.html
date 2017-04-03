@@ -85,13 +85,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/2-5/search">
-                                    <i class="fa fa-search"></i>
+                            <a href="/ehs/2-5/download">
+                                    <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/2-5/download">
-                                    <i class="fa fa-download"></i>
+                            <a href="/ehs/2-5/search">
+                                    <i class="fa fa-search"></i>
                             </a>
                         </li>
                         <!-- <li ><a href="/products">SDKs</a></li>
@@ -441,6 +441,10 @@ It may be necessary to also tap "txt" to specify the extension type.  </p>
 &lt;/kiosk&gt;
 </code></pre>
 
+<blockquote>
+  <p><strong>Note: When starting up in Kiosk Mode on a device running KitKat</strong>, a "please wait" prompt remains displayed. Press the HOME key to launch the Kiosk-Mode app and resume normal behavior. </p>
+</blockquote>
+
 <hr>
 
 <h3 id="applications" class="anchor"><a class="heading-anchor" href="#applications"><span></span></a>Applications</h3>
@@ -596,6 +600,16 @@ It may be necessary to also tap "txt" to specify the extension type.  </p>
 </code></pre>
 
 <p>In the example above, the package and activity attributes are used to launch the URL in the Mozilla Mobile browser. If the specified app (as defined in the package and activity parameters) is not present on the device, the URL will not be displayed. If no activity is specified, EHS will launch the link using the default browser. </p>
+
+<h4 id="linkremoval" class="anchor"><a class="heading-anchor" href="#linkremoval"><span></span></a>Link Removal</h4>
+
+<p>To remove a web link from the User Mode screen: </p>
+
+<ol>
+<li>Delete the <strong>entire tag</strong> (which begins with "&lt;link label=" and ends with "/&gt;" as shown above) from the &lt;applications&gt; node of the <code>enterprisehomescreen.xml</code> file. </li>
+
+<li>Redeploy the modified <code>enterprisehomescreen.xml</code> file to the device. </li>
+</ol>
 
 <hr>
 
@@ -970,6 +984,10 @@ The admin password <b><i>must</i></b> be entered and changed using the Admin Too
 
 <pre class="prettyprint"><code>&lt;kiosk_mode_enabled&gt;0&lt;/kiosk_mode_enabled&gt;
 </code></pre>
+
+<blockquote>
+  <p><strong>Note: When starting up in Kiosk Mode on a device running KitKat</strong>, a "please wait" prompt remains displayed. Press the HOME key to launch the Kiosk-Mode app and resume normal behavior. </p>
+</blockquote>
 
 <hr>
 
