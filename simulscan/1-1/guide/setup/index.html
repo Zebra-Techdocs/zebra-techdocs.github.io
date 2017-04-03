@@ -78,8 +78,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/simulscan/1-1/guide/templates">
-                                    Pre-built Templates
+                            <a href="/simulscan/1-1/guide/glossary">
+                                    Glossary
                             </a>
                         </li>
                         <li>
@@ -95,6 +95,16 @@
                         <li>
                             <a href="/simulscan/1-1/guide/license">
                                     Licensing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/playlist?list=PLce6-npz5dKf_5mTtakWU1ostOIaeGXzz">
+                                    <i class="fa fa-youtube-play"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.zebra.com/community/android/simulscan/discussions">
+                                    <i class="fa fa-comment"></i>
                             </a>
                         </li>
                         <li>
@@ -228,21 +238,21 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>SimulScan can be accessed through</strong>: </p>
+<p><strong>SimulScan can be used in three ways</strong>: </p>
 
 <ul>
-<li><a href="../../../../datawedge">DataWedge</a>, which is covered below</li>
+<li>With <a href="../../../../datawedge">DataWedge</a>, which is covered below</li>
 
-<li>The <a href="../../api">SimulScan API</a> from within a custom Android app </li>
+<li>Through the <a href="../../api">SimulScan APIs</a> from within a custom Android app </li>
 
-<li>The <a href="../demo">SimulScan Demo App</a>, which exposes all features except the ability to save acquired data</li>
+<li>By using the <a href="../demo">SimulScan Demo App</a>, which exposes all features except the ability to save acquired data</li>
 </ul>
 
-<p><strong>To <a href="/simulscan/1-1/guide/setup/#activatesimulscan">activate SimulScan</a></strong>, simply select it as an Input Plug-in from within DataWedge, an app that comes with every Zebra device. The exact process is detailed below, beginning with a short intro. For more information, see the <a href="../about">About SimulScan page</a>. </p>
+<p>To <a href="/simulscan/1-1/guide/setup/#activatesimulscan">activate SimulScan</a>, simply select it as an Input Plug-in from within DataWedge, an app that comes with every Zebra device. The exact process is detailed below, beginning with a short introduction to SimulScan concepts. For more information, see the <a href="../about">About SimulScan page</a>. </p>
 
 <hr>
 
-<h3 id="intrototemplates" class="anchor"><a class="heading-anchor" href="#intrototemplates"><span></span></a>Intro to Templates</h3>
+<h3 id="abouttemplates" class="anchor"><a class="heading-anchor" href="#abouttemplates"><span></span></a>About Templates</h3>
 
 <p><strong>Templates are central to the power of SimulScan</strong>; they are used in all modes to: </p>
 
@@ -254,96 +264,53 @@
 <li>Determine how acquired data is consumed by an application</li>
 </ul>
 
-<p>At least one Template must be present and selected within SimulScan before the tool can be used; a number of <a href="#accessthroughdatawedge">generic Templates</a> are included. Zebra also provides <a href="../templates">industry-specific templates</a> for partners to downloaded and modify as needed.</p>
+<p>At least one Template must be present and selected within SimulScan before the tool can be used; a number of <a href="#usewithdatawedge">generic Templates</a> are included. <!--Zebra also provides <a href="../templates">industry-specific templates</a> for partners to downloaded and modify as needed.--></p>
 
-<p>For use cases in which generic or pre-built templates are unsuitable, custom Templates can be easily creating using the cloud-based <a href="../templatebuilder">Template Builder</a> tool. Custom Templates can either be Structured or Unstructured. </p>
-
-<ul>
-<li><p>A <strong>Structured Template</strong> is used when the Document to be scanned has a fixed layout--one that doesn't change from one instance of the form to another. Structured Templates are used to acquire mixed types of data at once (barcodes, text, images, etc.), and are generally used for Document Capture.  </p></li>
-
-<li><p><strong>Unstructured Templates</strong> are predominantly used for capturing a single data type (only barcodes or only text, etc.). Unstructured Templates allow for target Documents that vary in layout, permitting the target <em><strong>data</strong></em> to be located anywhere on the form. These are generally used for Multi-barcode use cases. </p></li>
-</ul>
-
-<p><strong>Note</strong>: Use cases involving OCR require that the view finder be positioned directly over the text to be captured. </p>
-
-<h4 id="structuredtemplates" class="anchor"><a class="heading-anchor" href="#structuredtemplates"><span></span></a>Structured Templates</h4>
-
-<p>Structured Templates work on the principle that the <em><strong>location</strong></em> and <em><strong>type</strong></em> of data in each field of a form (i.e. barcodes, alphanumeric characters, signatures, etc.) will remain consistent whenever the form is used, and that <strong>only the data</strong> will change with each new instance of the form. By creating a SimulScan Template to uniquely identify each region and data type, SimulScan learns what to expect from each region of a form, which allows the developer to map the data from each region to specific fields of an application. </p>
-
-<p>For example, if a form like the one below was encountered regularly, a Structured Template using <strong>Mixed Data-type</strong> mode could be created to acquire the barcode, numbers, text, checkboxes and signature in a single pass. For a demonstration using this form, see the <a href="../demo">SimulScan Demo App</a>. </p>
-
-<p><img style="height:300px" src="template.png">
-<em>A Structured Template using Multi Data-type mode would be best here</em>. 
-<br></p>
-
-<p><strong>Notes</strong>:</p>
-
-<ul>
-<li><strong>Zebra recommends using the camera for Mixed Data-type</strong> capture.</li>
-
-<li>The camera is automatically selected when a Mixed Data-type Template is used.</li>
-
-<li>Structured Templates are generally associated with Mixed Data-type mode. <br>
-<br></li>
-</ul>
-
-<h4 id="unstructuredtemplates" class="anchor"><a class="heading-anchor" href="#unstructuredtemplates"><span></span></a>Unstructured Templates</h4>
-
-<p>Unstructured Templates are useful for Multi-barcoding use cases in which the target Document varies, or when acquiring a single type of data--such as barcodes or text--from a form. <!-- For example, if the only data ever acquired in a company's warehouse is from barcodes, then warehouse operations might be completely satisfied by using one or more of the generic barcode-only templates included with SimulScan. Included Templates are designed to handle from 1-10 barcodes (<a href="#accessthroughdatawedge">see below</a>).--></p>
-
-<p>Companies could help improve scanning performance and workflow by creating an Unstructured Template that's configured only for the types of barcodes it receives on a regular basis. <strong>Multi-barcode</strong> mode can simultaneously handle a large number of 1D/2D barcodes of the same or differing symbologies, but works most efficiently if the universe of potential symbologies is narrowed to just a few. </p>
-
-<p><img style="height:250px" src="AIAG B-10 Label File P, Q, K, V, 4S.jpg">
-<em>An Unstructured Template using Multi-barcode mode would be best here</em>. <br>
-<br></p>
-
-<p><strong>Notes</strong>:</p>
-
-<ul>
-<li><strong>Zebra recommends using the 2D imager for capturing in Multi-barcode mode</strong>.</li>
-
-<li>The device imager is automatically selected for Barcode-only Templates.</li>
-
-<li>The camera is automatically selected for OCR Templates.  </li>
-
-<li>All <a href="../about/#supporteddevices">Zebra devices that support SimulScan</a> are equipped with 1D/2D imagers (except early TC70 models).</li>
-</ul>
+<p>For use cases in which generic or pre-built templates are unsuitable, custom Templates can be easily creating using the cloud-based <a href="../templatebuilder">Template Builder</a> tool. See the Template Builder guide for more information about Templates. </p>
 
 <hr>
 
-<h3 id="accessthroughdatawedge" class="anchor"><a class="heading-anchor" href="#accessthroughdatawedge"><span></span></a>Access Through DataWedge</h3>
+<h3 id="usewithdatawedge" class="anchor"><a class="heading-anchor" href="#usewithdatawedge"><span></span></a>Use With DataWedge</h3>
 
-<p>SimulScan includes a number of generic Templates for common scanning scenarios that DataWedge can use when SimulScan is selected as the Input Plug-in. For more advanced use-cases, custom Templates can be created <a href="../templatebuilder/#usingtemplatebuilder">Using Template Builder</a> or downloaded from Zebra's library of <a href="../templates">Pre-built Templates</a> and imported and modified with Template Builder. </p>
+<p>SimulScan includes a number of generic Templates to cover common scanning scenarios when SimulScan is selected as the DataWedge Input Plug-in. For more advanced use-cases, custom Templates can be created <a href="../templatebuilder/#usingtemplatebuilder">Using Template Builder</a> or downloaded from Zebra's library of <a href="../templates">Pre-built Templates</a>. Downloaded Templates can be modified as needed using Template Builder. </p>
 
-<p><strong>Templates included with DataWedge</strong>:</p>
+<p><a href="http://www.isbn.org/about_ISBN_standard"><img src="default_templates.png" alt="img"></a>
+<strong><em>Note: The names of all Templates included with SimulScan are preceded by the word "Default" plus a hyphen</em></strong>.</p>
 
-<ul>
-<li><p><strong>BankCheck.xml -</strong> captures the account number and routing number from the machine-readable zone (MRZ) of a check. </p></li>
+<!--
+<img style="height:350px" src="default_templates.png"/>
+_Templates included with SimulScan_
+<br>
+-->
 
-<li><p><strong>Barcode1.xml -</strong> decodes a single barcode of any symbology. </p></li>
+<!--
+**Templates included with DataWedge** and the [SimulScan Demo App](../demo):
 
-<li><p><strong>Barcode2.xml -</strong> decodes two barcodes of the same or differing symbologies. </p></li>
+* **BankCheck.xml -** captures the account number and routing number from the machine-readable zone (MRZ) of a check. 
 
-<li><p><strong>Barcode4.xml -</strong> decodes four barcodes of the same or differing symbologies. </p></li>
+* **Barcode1.xml -** decodes a single barcode of any symbology. 
 
-<li><p><strong>Barcode5.xml -</strong> decodes five barcodes of the same or differing symbologies. </p></li>
+* **Barcode2.xml -** decodes two barcodes of the same or differing symbologies. 
 
-<li><p><strong>Barcode10.xml -</strong> decodes 10 barcodes of the same or differing symbologies. </p></li>
+* **Barcode4.xml -** decodes four barcodes of the same or differing symbologies. 
 
-<li><p><strong>BookNumber.xml -</strong> decodes 10- or 13-digit <a href="http://www.isbn.org/about_ISBN_standard">ISBN codes</a>.</p></li>
+* **Barcode5.xml -** decodes five barcodes of the same or differing symbologies. 
 
-<li><p><strong>DocCap+Optional-Barcode.xml -</strong> captures the form as an image and optionally decodes a barcode if present. This is the default form if none is selected.</p></li>
+* **Barcode10.xml -** decodes 10 barcodes of the same or differing symbologies. 
 
-<li><p><strong>DocCap+Required-Barcode.xml -</strong> captures the form and decodes any available barcode.</p></li>
+* **BookNumber.xml -** decodes 10- or 13-digit [ISBN codes](http://www.isbn.org/about_ISBN_standard).
 
-<li><p><strong>TravelDoc.xml -</strong> captures information from the machine-readable zone (MRZ) of a travel document such as a passport.</p></li>
+* **DocCap+Optional-Barcode.xml -** captures the form as an image and optionally decodes a barcode if present. This is the default form if none is selected.
 
-<li><p><strong>Unstructured Multi-Line.xml -</strong> uses OCR to acquire multiple lines of alpha/numeric text. </p></li>
+* **DocCap+Required-Barcode.xml -** captures the form and decodes any available barcode.
 
-<li><p><strong>Unstructured Single Line.xml -</strong> uses OCR to acquire a single line of alpha/numeric text. </p></li>
-</ul>
+* **TravelDoc.xml -** captures information from the machine-readable zone (MRZ) of a travel document such as a passport.
 
-<p><em>The names of all Templates included with SimulScan are preceded by the word "Default" plus a hyphen</em>. </p>
+* **Unstructured Multi-Line.xml -** uses OCR to acquire multiple lines of alpha/numeric text. 
+
+* **Unstructured Single Line.xml -** uses OCR to acquire a single line of alpha/numeric text. 
+
+--> 
 
 <hr>
 
@@ -360,16 +327,22 @@
 
 <li><strong>Identify regions</strong> of the Document and the data types (barcodes, text, etc.) of each.</li>
 
-<li><strong>Save, Release and Deploy</strong> the completed Template(s). </li>
+<li><strong>Validate Template</strong> to confirm that created fields are captured as intended. </li>
 
-<li><em>Download the Template(s)</em>* (.xml files) to the development host (local PC). </li>
+<li><strong>Save, Release and Deploy</strong> the completed Template(s), which can be downloaded to the development host (local PC). </li>
 
 <li><strong>Copy Template(s) to</strong> <code>/enterprise/device/settings/datawedge/templates</code> on the device. </li>
 
 <li><strong>Activate the Template</strong> from within DataWedge (see below) or other scanning app. </li>
 </ol>
 
-<p>See the <a href="../templatebuilder">Template Builder guide</a> for details and access information. </p>
+<p><strong>Related Links</strong>: </p>
+
+<ul>
+<li><a href="../templatebuilder">Template Builder guide</a> - access to online tools and details</li>
+
+<li><a href="https://developer.zebra.com/community/android/simulscan/template-builder">Tutorials</a> - visual aids for making Templates</li>
+</ul>
 
 <hr>
 
@@ -423,7 +396,7 @@
 
 <hr>
 
-<p>Related guides: </p>
+<p><strong>Related guides</strong>: </p>
 
 <ul>
 <li><a href="../../../../datawedge">DataWedge</a></li>

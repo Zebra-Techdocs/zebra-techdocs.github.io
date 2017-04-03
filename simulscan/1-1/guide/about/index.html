@@ -78,8 +78,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/simulscan/1-1/guide/templates">
-                                    Pre-built Templates
+                            <a href="/simulscan/1-1/guide/glossary">
+                                    Glossary
                             </a>
                         </li>
                         <li>
@@ -95,6 +95,16 @@
                         <li>
                             <a href="/simulscan/1-1/guide/license">
                                     Licensing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/playlist?list=PLce6-npz5dKf_5mTtakWU1ostOIaeGXzz">
+                                    <i class="fa fa-youtube-play"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.zebra.com/community/android/simulscan/discussions">
+                                    <i class="fa fa-comment"></i>
                             </a>
                         </li>
                         <li>
@@ -228,9 +238,16 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Zebra's SimulScan is a set of productivity tools that can optimize the efficiency of data-capture workflow by enabling workers to acquire multiple points of data in a single step. When integrated with SimulScan APIs, captured data can be parsed directly into an organization's native applications. </p>
+<p>Zebra's SimulScan is a set of productivity tools that can optimize the efficiency of data-capture workflow by enabling workers to acquire multiple points of data in a single step. When integrated with SimulScan APIs, captured data can be parsed directly into an organization's native Android applications. </p>
 
-<p><strong>SimulScan Can Help Optimize Workflows If...</strong> </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PQ8gPtY7Z3M" frameborder="0" allowfullscreen=""></iframe>
+
+<p><a href="https://www.youtube.com/playlist?list=PLce6-npz5dKf_5mTtakWU1ostOIaeGXzz">More SimulScan videos</a>
+<br></p>
+
+<hr>
+
+<p><strong>SimulScan Can Help Optimize Work-flows If...</strong> </p>
 
 <ul>
 <li><strong>Scanning is frequent</strong> in the organization, and...</li>
@@ -238,12 +255,14 @@
 <li><strong>Forms have one or more barcodes of the same of differing symbologies</strong>.</li>
 </ul>
 
-<p>Such scenarios are perfect for SimulScan <a href="../setup/#unstructuredtemplates">Multi-barcoding</a>.  </p>
+<p>Such scenarios are well-suited to SimulScan <a href="../templatebuilder/#unstructuredtemplates">Multi-barcode mode</a>.</p>
 
-<p>Alternatively, SimulScan <a href="../setup/#structuredtemplates">Mixed Data-type</a> is ideal for data capture when...</p>
+<p>Alternatively, SimulScan <a href="../templatebuilder/#structuredtemplates">Document Capture</a> mode is suited to data-capture scenarios in which...</p>
 
 <ul>
-<li><strong>Scanned forms are of a <a href="../templatebuilder/#glossary">fixed layout</a></strong>, and...</li>
+<li><strong>Multiple data types are to be acquired</strong>, and... </li>
+
+<li><strong>Scanned forms are of a</strong> <a href="../glossary">fixed layout</a>, and...</li>
 
 <li><strong>Forms have well-defined borders</strong>.</li>
 </ul>
@@ -253,60 +272,55 @@
 <h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
 
 <ul>
-<li><p><strong>Hardware</strong>:</p>
+<li>A Zebra TC55, TC70, TC75, TC8000 device running Android</li>
 
-<ul>
-<li>A Zebra TC55, TC70, TC75, TC8000 device running Android.</li>
+<li>Camera or supported 2D imager (<a href="#supporteddevices">see table</a>, below)</li>
 
-<li>Camera or 2D imager (<a href="#supporteddevices">see table</a>, below).</li></ul></li>
+<li>An app (or <a href="../../../../datawedge">DataWedge</a>) configured to access SimulScan</li>
 
-<li><p><strong>Development</strong>:</p>
-
-<ul>
-<li>An app (or <a href="../../../../datawedge">DataWedge</a>) set to access SimulScan on the device.</li>
-
-<li>A per-device <a href="../license">license</a> if using OCR or OMR.</li></ul></li>
+<li>A per-device <a href="../license">license</a> if using <a href="../license">advanced features</a></li>
 </ul>
 
-<p><strong>Demo App</strong>: SimulScan features also can be explored using the <a href="../demo">SimulScan Demo App</a>, which exposes all features and functions except the ability to save acquired data. The Demo App is included on all supported devices.  </p>
-
-<hr>
-
-<h4 id="simulscanoperationmodes" class="anchor"><a class="heading-anchor" href="#simulscanoperationmodes"><span></span></a>SimulScan Operation Modes</h4>
-
-<!-- <img style="height:100px" src="barcode-multibarcode.png"/> -->
-
-<p><a href="../setup/#unstructuredtemplates">Multi-barcode</a> allows workers to capture one or more 1D/2D barcodes of the same or differing symbologies from a single scan target. The target layout can be fixed or can vary from one scan to another. 
-<br></p>
-
-<p><img src="mixed-data.png" alt="img">
-<a href="../setup/#structuredtemplates">Mixed Data-type</a> includes the features of Multi-barcode and can capture alphanumeric characters and images, and determine the presence of check marks and signatures from a snapshot of the document. This mode requires scan targets with a fixed layout.
-<br></p>
+<p><strong>Note</strong>: SimulScan features also can be explored using the <a href="../demo">SimulScan Demo App</a>, which exposes all features and functions except the ability to save acquired data. The Demo App is included on all supported devices.  </p>
 
 <hr>
 
 <h2 id="howitworks" class="anchor"><a class="heading-anchor" href="#howitworks"><span></span></a>How it Works</h2>
 
-<p>SimulScan Multi-barcode and Mixed Data-type modes both work through Templates, which define "Form Regions of interest" on Documents to be scanned, "Field Regions of interest" within forms, the types of data (barcode, text, etc.) to be extracted from each Field and how to process it. </p>
+<p>Most acquisition tasks involve capturing data from printed documents. These "target" documents often vary in size, shape and layout, and present a challenge for accurate data acquisition. Templates solve this problem by "teaching" SimulScan about the documents it will encounter, and defining how to scan and process data for each instance of that target document. </p>
 
-<p><img src="regions_of_interest.png" alt="img">
-<br></p>
+<h3 id="documentcapturemode" class="anchor"><a class="heading-anchor" href="#documentcapturemode"><span></span></a>Document Capture Mode</h3>
 
-<h3 id="activatingsimulscan" class="anchor"><a class="heading-anchor" href="#activatingsimulscan"><span></span></a>Activating SimulScan</h3>
+<p><a href="../templatebuilder/#structuredtemplates">Document Capture mode</a> captures a snapshot of the document and extracts 1D/2D barcode data, alpha/numeric characters and images, and can detect the presence of check marks and signatures as defined in the document's Template. </p>
 
-<p><strong>SimulScan is free</strong> when used with DataWedge or from a custom app to scan only barcodes. A per-device license is required access to OCR or OMR features. For licensing details, please see the <a href="../license">Licensing guide</a>. </p>
+<p>These so-called "Structured" Templates define "Form Regions* of interest" on Documents to be scanned, "Field Regions of interest" within those forms, the types of data (barcode, text, etc.) to be extracted, and how it will be processed. <strong>Scan targets must be of a fixed layout and a Template must be created for each target encountered by the organization</strong>. <br>
+<img src="regions_of_interest.png" alt="img">
+<em>A sample document on which Document Capture would be employed</em>.</p>
 
-<p>SimulScan can be accessed either by: </p>
+<h3 id="multibarcodemode" class="anchor"><a class="heading-anchor" href="#multibarcodemode"><span></span></a>Multi-barcode Mode</h3>
+
+<p><a href="../templatebuilder/#unstructuredtemplates">Multi-barcode mode</a> is designed to capture one or more 1D/2D barcodes of the same or differing symbologies from a single scan target. The target layout can be fixed or varied from one scan to another, and the Templates when used here are referred to as "Unstructured." Templates are optional for Multi-barcode mode, and are generally required only when it's necessary to specifically include certain barcodes and ignore others. <strong>This mode also supports barcode prefixes, which can be parsed to provide processing information for the data being acquired from each barcode</strong>. </p>
+
+<p><img style="height:300px" src="msi_reader_captions.png">
+<em>A Multi-barcode mode Template can specify barcodes to include and which to ignore</em>.</p>
+
+<hr>
+
+<h3 id="usingsimulscan" class="anchor"><a class="heading-anchor" href="#usingsimulscan"><span></span></a>Using SimulScan</h3>
+
+<p><strong>SimulScan is free for many scanning scenarios</strong>, including when used with DataWedge and its default Templates or from a custom app to scan only barcodes and/or for certain types of OCR acquisition. A per-device license is required for advanced SimulScan features. For licensing details, please see the <a href="../license">Licensing guide</a>. </p>
+
+<p><strong>SimulScan can be accessed either by</strong>: </p>
 
 <ol>
-<li>Selecting it as an Input Plug-in using Zebra's free <a href="../../../../datawedge">DataWedge</a> service, or </li>
+<li>Selecting SimulScan as an Input Plug-in using Zebra's free <a href="../../../../datawedge">DataWedge</a> service, <strong>or</strong> </li>
 
 <li>Calling it directly from within an Android app using the <a href="../../api">SimulScan APIs</a></li>
 </ol>
 
 <p>SimulScan features also can be explored using the <a href="../demo">SimulScan Demo App</a>, which exposes all features and functions except the ability to save acquired data. The Demo App also can be used to test custom Templates.</p>
 
-<p>See the <a href="../templatebuilder/#glossary">SimulScan Glossary</a> for a complete list of terms. </p>
+<p>See the <a href="../glossary">SimulScan Glossary</a> for a complete list of terms. </p>
 
 <!--
 ![img](regions_of_interest.png)
@@ -318,43 +332,69 @@ In addition, some Fields are designated as "Anchor Elements," which help SimulSc
 
 <h2 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h2>
 
+<p>SimulScan works with all device cameras, and <strong>on devices with a supported 2D imager; 1D imagers are not supported</strong>. To identify the imager installed on a device, see <strong>About Device &gt; Hardware Configuration</strong> in the device Settings panel or refer to the table below for a supported device model code in place of the "?" character as indicated.</p>
+
 <table cellspacing="0" cellpadding="0" class="table table-striped">
  <tbody><tr>
-  <th width="25%" align="center" valign="middle" class="clsSyntaxHeadings">------------Device----------</th>
-  <th width="25%" align="center" valign="middle" class="clsSyntaxHeadings">------------Model---------</th>
-  <th width="25%" align="center" valign="middle" class="clsSyntaxHeadings">-----------Camera---------</th>
-  <th width="25%" align="center" valign="middle" class="clsSyntaxHeadings">-----------2D Imager--------</th>
+  <th width="15%" align="left" valign="middle" class="clsSyntaxHeadings">Zebra Device</th>
+  <th width="15%" align="left" valign="middle" class="clsSyntaxHeadings">Model</th>
+  <th width="15%" align="left" valign="middle" class="clsSyntaxHeadings">Camera</th>
+  <th width="55%" align="left" valign="middle" class="clsSyntaxHeadings">Model code(s) with 2D imager support</th>
  </tr>
  <tr>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow"><img id="tc55Pic" src="tc55.png" height="10px"></td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow"><b>TC55</b></td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow">√</td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow">√</td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><img id="tc55Pic" src="tc55.png" height="10px"></td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><b>TC55 KK</b></td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow">  √</td>
+  <td width="55%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><img style="height:83px" src="TC55_models.png">•<i>SE4710 2D imager supported ("J" in code)</i><br>•<i>SE655 1D imager not supported ("C" in code)</i></td>
  </tr>
  <tr>
-  <td width="25%" valign="middle" class="clsSyntaxCells clsOddRow"><img id="tc70Pic" src="tc70.png" height="25px"></td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow"><b>TC70</b></td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow">√</td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow">GA2 devices only</td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><img id="tc70Pic" src="tc70.png" height="25px"></td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><b>TC70 KK, L</b></td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow">  √</td>
+  <td width="55%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><img style="height:67px" src="TC70_models.png">•<i>SimulScan supported on GA2 devices only</i><br>•<i>Model code must contain an "A" where indicated</i><br>•<i>Decoded imagers not supported</i></td>
  </tr>
  <tr>
-  <td width="25%" valign="middle" class="clsSyntaxCells clsOddRow"><img id="tc75Pic" src="tc75.png" height="75"></td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow"><b>TC75</b></td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow">√</td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow">√</td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><img id="tc75Pic" src="tc75.png" height="75"></td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><b>TC75 KK, L</b></td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow">  √</td>
+  <td width="55%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><br>•<i>All models support SimulScan</i></td>
  </tr>
  <tr>
-  <td width="25%" valign="middle" class="clsSyntaxCells clsOddRow"><img id="tc8000Pic" src="tc8000.png" height="75"></td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow"><b>TC8000</b></td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow">√</td>
-  <td width="25%" align="center" valign="middle" class="clsSyntaxCells clsOddRow">√ *</td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><img id="tc8000Pic" src="tc8000.png" height="75"></td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><b>TC8000 L</b></td>
+  <td width="15%" align="left" valign="middle" class="clsSyntaxCells clsOddRow">  √</td>
+  <td width="55%" align="left" valign="middle" class="clsSyntaxCells clsOddRow"><img style="height:105px" src="TC8000_models.png">•<i>Only codes "1" and "2" are supported</i>
+</td>
  </tr>
  <tr>
 </tr></tbody></table>
 
-<p><em>*The TC8000 Extended Range Imager (ERI) configuration is not supported</em>. </p>
+<!-- 
+<img style="height:100px" src="TC55_models.png"/>
+• Model code must contain an 'J'
 
-<!--
+<img style="height:100px" src="TC70_models.png"/>
+• SimulScan supported on GA2 devices only
+• Model code must contain an 'A'
+• Decoded imagers not supported
+
+<img style="height:100px" src="TC8000_models.png"/>
+• Model code suffix must be '-1' or '-2' (i.e. TC8000<b>-2</b>)<br>
+• Devices with a suffix of '-3' or '-A' are not supported<br>
+• The Extended Range Imager (ERI) is not supported for use with SimulScan
+
+### Device Support Notes
+If support issues arise, check the model code of the device in use. The following codes indicate devices that contain a scanner or imager that supports SimulScan.
+
+**TC55** 
+
+**TC70**
+
+**TC75**
+
+**TC8000**
+
+
 ### SimulScan Benefits
 
 * **Decodes multiple barcodes** with a single scan, even those of differing symbologies

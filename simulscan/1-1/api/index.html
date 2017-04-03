@@ -78,8 +78,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/simulscan/1-1/guide/templates">
-                                    Pre-built Templates
+                            <a href="/simulscan/1-1/guide/glossary">
+                                    Glossary
                             </a>
                         </li>
                         <li>
@@ -95,6 +95,16 @@
                         <li>
                             <a href="/simulscan/1-1/guide/license">
                                     Licensing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/playlist?list=PLce6-npz5dKf_5mTtakWU1ostOIaeGXzz">
+                                    <i class="fa fa-youtube-play"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.zebra.com/community/android/simulscan/discussions">
+                                    <i class="fa fa-comment"></i>
                             </a>
                         </li>
                         <li>
@@ -226,12 +236,27 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+                                        <p></p><h2 id="important" class="anchor"><a class="heading-anchor" href="#important"><span></span></a>Important</h2>
 
-<p>SimulScan APIs (depicted below) are accessed from within <a href="../../../../emdk-for-android">EMDK for Android</a>, Zebra's development environment for building Android applications. <strong>Click on the image below to <u>leave SimulScan docs</u> and</strong> <a href="http://zebra-stage.github.io/emdk-for-android/6-0/api/reference/com/symbol/emdk/simulscan/package-summary.html">open EMDK's SimulScan APIs</a>.</p>
+<p>When acquiring data with a custom enterprise app, SimulScan features can be accessed directly through API calls or indirectly through <a href="../../../../datawedge">DataWedge</a>, a free app preinstalled on all Zebra Android devices. For organizations without an existing custom app that accesses device hardware, <strong>DataWedge might be the easier and faster method</strong> of using SimulScan. To further simplify implementation, SimulScan includes a number of <a href="../guide/setup/#usewithdatawedge">default Templates</a> designed to cover most common scanning scenarios. For more advanced use-cases, custom Templates can be created <a href="../guide/templatebuilder/#usingtemplatebuilder">Using Template Builder</a><!--or downloaded from Zebra's library of <a href="../templates">Pre-built Templates</a>. Downloaded Templates can be modified as needed using Template Builder-->. </p>
 
-<p><a href="http://zebra-stage.github.io/emdk-for-android/6-0/api/reference/com/symbol/emdk/simulscan/package-summary.html"><img src="apis.png" alt="img"></a>
-<em><a href="../guide/license">Licensing</a> is required for each device using one or more apps that access SimulScan through its APIs</em>. </p><p></p>
+<h3 id="usewithdatawedge" class="anchor"><a class="heading-anchor" href="#usewithdatawedge"><span></span></a>Use with DataWedge</h3>
+
+<p>DataWedge can acquire barcodes and other textual data using the device camera or 2D scanner; all API calls are handled internally. DataWedge can apply powerful processing capabilities to manipulate acquired data according to an infinite set of custom rules, and then pass that data in various ways to virtually any app. <strong>DataWedge is designed to cover most scanning use cases</strong>, and <a href="../guide/setup">setting up SimulScan with DataWedge</a> takes just a few minutes. </p>
+
+<p><strong>Zebra recommends testing the DataWedge method first</strong>, and to begin an API integration project only if DataWedge does not meet application requirements.</p>
+
+<h3 id="usewithsimulscanapis" class="anchor"><a class="heading-anchor" href="#usewithsimulscanapis"><span></span></a>Use with SimulScan APIs</h3>
+
+<p><strong>For applications that already interface with device hardware and/or are performing image capture or other complex acquisitions</strong>, it can sometimes be necessary or preferable to access SimulScan through its APIs. And while DataWedge also can capture images, it delivers images with an intent, which requires custom program code to process. </p>
+
+<p><strong>The SimulScan APIs (depicted below) are accessed from within</strong> <a href="../../../../emdk-for-android">EMDK for Android</a>, Zebra's development environment for building Android applications. <strong>Click on the image below to <u>leave SimulScan docs</u> and</strong> <a href="http://techdocs.zebra.com//emdk-for-android/6-0/api/reference/com/symbol/emdk/simulscan/package-summary.html">open EMDK's SimulScan API documentation</a>.</p>
+
+<p><a href="http://techdocs.zebra.com//emdk-for-android/6-0/api/reference/com/symbol/emdk/simulscan/package-summary.html"><img src="apis.png" alt="img"></a></p>
+
+<!-- 
+*[Licensing](../guide/license) is required for each device using one or more apps that access SimulScan through its APIs*. 
+--><p></p>
                                         
 
 
