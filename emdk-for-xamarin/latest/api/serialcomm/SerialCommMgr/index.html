@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             EMDK For Xamarin
-                                            2.2
+                                            2.3
                         </p>
 
                     </ul>
@@ -63,42 +63,42 @@
 
 
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/guide/about">
+                            <a href="/emdk-for-xamarin/2-3/guide/about">
                                     Home
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/guide/gettingstarted">
+                            <a href="/emdk-for-xamarin/2-3/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/tutorial/">
+                            <a href="/emdk-for-xamarin/2-3/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/samples">
+                            <a href="/emdk-for-xamarin/2-3/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/guide/programming-guides">
+                            <a href="/emdk-for-xamarin/2-3/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/guide/profile-manager-guides">
+                            <a href="/emdk-for-xamarin/2-3/guide/profile-manager-guides">
                                     Profile Manager
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/api">
+                            <a href="/emdk-for-xamarin/2-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/search">
+                            <a href="/emdk-for-xamarin/2-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="serialcommmgr" class="anchor"><a class="heading-anchor" href="#serialcommmgr"><span></span></a>SerialCommMgr</h1>
                                     <p>
                                             EMDK For Xamarin
-                                            2.2
+                                            2.3
                                     </p>
                                 </div>
                             </section>                    
@@ -248,6 +248,20 @@
 
 <p><strong>Returns</strong> - System.Void</p>
 
+<h3 id="getsignalstate" class="anchor"><a class="heading-anchor" href="#getsignalstate"><span></span></a>GetSignalState</h3>
+
+<p><strong>public virtual bool GetSignalState (Symbol.XamarinEMDK.SerialComm.SerialCommMgr.ControlSignal p0);</strong></p>
+
+<p>This method can be used to query the signal status of DTR, DCD, DSR, RI, RTS, CTS.</p>
+
+<p><strong>Parameters:</strong> </p>
+
+<ul>
+<li>Symbol.XamarinEMDK.SerialComm.SerialCommMgr.ControlSignal <strong>p0</strong> - </li>
+</ul>
+
+<p><strong>Returns</strong> - System.Boolean</p>
+
 <h3 id="read" class="anchor"><a class="heading-anchor" href="#read"><span></span></a>Read</h3>
 
 <p><strong>public virtual byte[] Read (int p0);</strong></p>
@@ -261,6 +275,22 @@
 </ul>
 
 <p><strong>Returns</strong> - System.Byte[]</p>
+
+<h3 id="setsignalstate" class="anchor"><a class="heading-anchor" href="#setsignalstate"><span></span></a>SetSignalState</h3>
+
+<p><strong>public virtual void SetSignalState (Symbol.XamarinEMDK.SerialComm.SerialCommMgr.ControlSignal p0, bool p1);</strong></p>
+
+<p>This method allows the application to set the status of control signal. Only the RTS, DTR are allowed set. For other it should return error as read only.</p>
+
+<p><strong>Parameters:</strong> </p>
+
+<ul>
+<li>Symbol.XamarinEMDK.SerialComm.SerialCommMgr.ControlSignal <strong>p0</strong> - Control Signal Type</li>
+
+<li>System.Boolean <strong>p1</strong> - Status of the control signal</li>
+</ul>
+
+<p><strong>Returns</strong> - System.Void</p>
 
 <h3 id="write" class="anchor"><a class="heading-anchor" href="#write"><span></span></a>Write</h3>
 
@@ -280,11 +310,23 @@
 
 <h2 id="properties" class="anchor"><a class="heading-anchor" href="#properties"><span></span></a>Properties</h2>
 
+<h3 id="config" class="anchor"><a class="heading-anchor" href="#config"><span></span></a>Config</h3>
+
+<p>Gets the current configuration settings of serial comm channel.</p>
+
+<p><strong>Type</strong> - Symbol.XamarinEMDK.SerialComm.SerialCommConfig</p>
+
 <h3 id="isenabled" class="anchor"><a class="heading-anchor" href="#isenabled"><span></span></a>IsEnabled</h3>
 
 <p>Gets whether the communication port is enabled or not.</p>
 
-<p><strong>Type</strong> - System.Boolean</p><p></p>
+<p><strong>Type</strong> - System.Boolean</p>
+
+<h3 id="portinfo" class="anchor"><a class="heading-anchor" href="#portinfo"><span></span></a>PortInfo</h3>
+
+<p>Returns the serial port info used for communication.</p>
+
+<p><strong>Type</strong> - Symbol.XamarinEMDK.SerialComm.SerialPortInfo</p><p></p>
                                         
 
 
