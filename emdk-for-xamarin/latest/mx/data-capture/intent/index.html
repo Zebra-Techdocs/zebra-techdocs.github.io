@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             EMDK For Xamarin
-                                            2.2
+                                            2.3
                         </p>
 
                     </ul>
@@ -63,42 +63,42 @@
 
 
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/guide/about">
+                            <a href="/emdk-for-xamarin/2-3/guide/about">
                                     Home
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/guide/gettingstarted">
+                            <a href="/emdk-for-xamarin/2-3/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/tutorial/">
+                            <a href="/emdk-for-xamarin/2-3/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/samples">
+                            <a href="/emdk-for-xamarin/2-3/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/guide/programming-guides">
+                            <a href="/emdk-for-xamarin/2-3/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/guide/profile-manager-guides">
+                            <a href="/emdk-for-xamarin/2-3/guide/profile-manager-guides">
                                     Profile Manager
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/api">
+                            <a href="/emdk-for-xamarin/2-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-2/search">
+                            <a href="/emdk-for-xamarin/2-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="intent-profile-feature-reference" class="anchor"><a class="heading-anchor" href="#intent-profile-feature-reference"><span></span></a>Intent Profile Feature Reference</h1>
                                     <p>
                                             EMDK For Xamarin
-                                            2.2
+                                            2.3
                                     </p>
                                 </div>
                             </section>                    
@@ -298,6 +298,8 @@ android.intent.category.DEFAULT
 
 <li>Broadcast intent</li></ul>
 </li>
+
+<li>Receiver Foreground Flag - When Intent delivery is sent via Broadcast Intent, DataCapture sets the <strong>Receiver foreground flag</strong> <code>Intent.FLAG_RECEIVER_FOREGROUND</code> in the broadcast Intent, giving the broadcast recipient permission to run at foreground priority with a shorter timeout interval. This flag is set only when Intent delivery is set to Broadcast Intent. <strong>Note: Use this flag only if delays are seen in delivery of Intents immediately following device boot-up</strong>.</li>
 </ul>
 
 <blockquote>
@@ -329,45 +331,45 @@ android.intent.category.DEFAULT
 <p>The decode related data added to the Intent's bundle can be retrieved using the Intent.getStringtExtra() and Intent.getSerializableExtra() calls, using the following String tags:</p>
 
 <ul>
-<li><code>com.motorolasolutions.emdk.datawedge.label_type</code>: String contains the label type of the bar code.</li>
+<li><code>com.symbol.emdk.datawedge.label_type</code>: String contains the label type of the bar code.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.data_string</code>:
+<li><code>com.symbol.emdk.datawedge.data_string</code>:
 String contains the output data as a String. In the case of concatenated bar codes, the decode data is concatenated and sent out as a single string. In the case of MSR output, the data from the MSR tracks is concatenated and sent out as a single string.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.decode_data</code>:
+<li><code>com.symbol.emdk.datawedge.decode_data</code>:
 Decode data is returned as a list of byte arrays. In most cases there will be one byte array per decode. For barcode symbologies that support concatenation e.g. Codabar, Code128, MicroPDF, etc., the decoded data is stored in multiple byte arrays (one byte array per bar code). Clients can get data in each byte array by passing an index.</li>
 </ul>
 
 <p>The MSR related data added to the Intent's bundle can be retrieved using the Intent.getStringtExtra() and Intent.getSerializableExtra() calls, using the following String tags:</p>
 
 <ul>
-<li><code>com.motorolasolutions.emdk.datawedge.msr_data</code>:
+<li><code>com.symbol.emdk.datawedge.msr_data</code>:
 The data from the MSR tracks is concatenated and sent out as a byte array. The Start/end sentinels and
 track separators are included as configured.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track1</code>: MSR track 1 data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track1</code>: MSR track 1 data is returned as a byte array.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track2</code>: MSR track 2 data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track2</code>: MSR track 2 data is returned as a byte array.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track3</code>: MSR track 3 data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track3</code>: MSR track 3 data is returned as a byte array.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track1_status</code>: MSR track 1 decode status as an Integer where 0 indicates a successful decode.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track1_status</code>: MSR track 1 decode status as an Integer where 0 indicates a successful decode.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track2_status</code>: MSR track 2 decode status as an Integer where 0 indicates a successful decode.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track2_status</code>: MSR track 2 decode status as an Integer where 0 indicates a successful decode.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track3_status</code>: MSR track 3 decode status as an Integer where 0 indicates a successful decode.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track3_status</code>: MSR track 3 decode status as an Integer where 0 indicates a successful decode.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track1_encrypted</code>: MSR track 1 encrypted data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track1_encrypted</code>: MSR track 1 encrypted data is returned as a byte array.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track2_encrypted</code>: MSR track 2 encrypted data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track2_encrypted</code>: MSR track 2 encrypted data is returned as a byte array.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track3_encrypted</code>: MSR track 3 encrypted data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track3_encrypted</code>: MSR track 3 encrypted data is returned as a byte array.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track1_hashed</code>: MSR track 1 hashed data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track1_hashed</code>: MSR track 1 hashed data is returned as a byte array.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track2_hashed</code>: MSR track 2 hashed data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track2_hashed</code>: MSR track 2 hashed data is returned as a byte array.</li>
 
-<li><code>com.motorolasolutions.emdk.datawedge.msr_track3_hashed</code>: MSR track 3 hashed data is returned as a byte array.</li>
+<li><code>com.symbol.emdk.datawedge.msr_track3_hashed</code>: MSR track 3 hashed data is returned as a byte array.</li>
 </ul><p></p>
                                         
 
