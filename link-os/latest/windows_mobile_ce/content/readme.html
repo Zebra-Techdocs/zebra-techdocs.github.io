@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>ZebraLink SDK and ZebraLink Smart Phone Utility</title>
+</head>
+<body>
+<h1>ZebraLink SDK and ZebraLink Smart Phone Utility</h1>
+
+<h2>Build v1.1.123</h2>
+
+<h3>1. Installation</h3>
+
+The SDK and Utility are supported on the following devices:
+<ul>
+<li>Motorola®/Symbol MC70xx </li>
+<li>Motorola/Symbol MC75 </li>
+<li>Motorola/Symbol MC9090 </li>
+<li>Motorola/Symbol MK4000 </li>
+<li>Hand Held Products® IK8570 </li>
+<li>HTC® Touch </li>
+<li>HTC Diamond </li>
+<li>HTC Pure ST6356 </li>
+<li>HP® iPAQ® 910 Business Messenger </li>
+<li>Samsung® Jack</li>
+</ul>
+
+The SDK and Utility are supported on the following printers:
+
+<ul>
+<li>Mobile - MZ™, QL Plus™, RW™ series, P4T™/RP4T™</li>
+<li>Desktop - G-Series™, HC100™, TLP/LP 2824 Plus™</li>
+<li>High-Performance/Midrange - Xi4™ and XiIIIPlus™, PAX4™ series, ZM400™/ZM600™, S4M™, 105SL™</li>
+<li>RFID - RXi™, R110PAX4™, RZ400™/RZ600™</li>
+<li>Kiosk - KR403™</li>
+</ul>
+
+<h3>2. Requirements</h3>
+<ol>
+<li>Microsoft® Visual Studio 2008 with the Microsoft Windows Mobile 6 Professional SDK / Standard SDK for Windows CE 5.0 installed to run the ZebraLink Multiplatform SDK developer demos</li>
+<li>Windows Mobile OS v5.0 or higher or Windows CE v5.0 or higher</li>
+<li>Microsoft® .NET Compact Framework v3.5 or higher: <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=E3821449-3C6B-42F1-9FD9-0041345B3385&displaylang=en">Installer for the .NET Compact Framework 3.5 Redistributable</a></li>
+<li>The ZebraBluetoothAdapter.dll, ZebraPlatformUtil.dll, and ZebraUsb.dll libraries must be present in the same directory as the ZSDK_API.dll on the device. These three libraries are located in the windows_mobile_ce/<version>/lib directory located within the ZebraLink Multiplatform SDK installation directory</li>
+<li>Stonestreet One® BTExplorer version 1.2.5 build 19090 or higher (for Motorola/Symbol devices using the Stonestreet One Bluetooth stack) </li>
+<li>When deploying the developer demos (or any application that references the ZebraLink Multiplatform SDK) to Motorola/Symbol devices that have the Stonestreet One Bluetooth stack enabled, the Motorola Enterprise Mobility Developer Kit (EMDK) v2.3 must be installed on the development PC and the following libraries must be copied to the devices (before deployment of the application)
+<ul>
+<li>Symbol.dll</li>
+<li>Symbol.WPAN.dll</li>
+<li>Symbol.Barcode.dll</li>
+</ul>
+</li>
+<li>The ZebraLink Multiplatform SDK currently supports the Stonestreet One and the Microsoft Bluetooth stack. For information on how to use the API with other Bluetooth stacks see the Known Issues list below</li>
+</ol>
+
+<h3>3. Tips and Advice</h3>
+
+<ol>
+<li>You can manually override the ZebraLink Multiplatform SDK's Bluetooth stack selection by passing the respective stack descriptor instance to the BluetoothPrinterConnection constructor (see the ZebraLink Multiplatform SDK documentation for more information) </li>
+<li>You can manually override the ZebraLink Multiplatform SDK's Stonestreet One Bluetooth communication port selection by passing the port number via the BluetoothStackDescriptorStonestreetOne constructor (see the ZebraLink Multiplatform SDK documentation for more information) </li>
+<li>Review the Requirements section above before deploying the developer demos to a Motorola/Symbol device that has the Stonestreet One Bluetooth stack enabled</li>
+<li>Review the Programmer's Guide and README supplied with the Motorola EMDK v2.3 for any other known issues with the Bluetooth stack and scanning library </li>
+<li>If issues arise while pairing to Bluetooth devices in the ZebraLink Utilities application, one can work around the issue by manually pairing with the device outside of the application, assigning a communications port to the connection, and connecting via the serial port </li>
+<li>To run the Zebra Utilities application, or any other application using the ZebraLink Multiplatform SDK, the Microsoft .NET Compact Framework v3.5 must be installed on the mobile device. If the correct version is not installed on the mobile device the user will be presented with a message indicating that the application requires a newer version that is installed on the device. This is also true if no Compact Framework is present</li>
+<li>The ZebraLink Multiplatform SDK supports printing from Windows CE devices via a USB connection to ZPL-based Tabletop, Desktop and Kiosk printers</li>
+</ol>
+
+
+<h3>4. Known Issues</h3>
+<ol>
+<li>The ZebraLink Multiplatform SDK installer will sometimes not open the SDK folder after the installer is finished. Navigate the START menu to reach the folders.</li>
+<li>Printing from the ‘Photo Id Badge’ demo within ZebraLink Smart Phone Utility after printing from the other demos within Zebra Utilities results in a printed photo id badge that is too narrow. Reset the printer to resolve this issue.</li>
+<li>Attempting to print in rapid succession from the Demos within ZebraLink Smart Phone Utility results in images that are interleaved and in some cases the respective CPCL is printed instead of the rendered label. Reset the printer to resolve this issue.</li>
+<li>Bluetooth Issues with Stonestreet One Stack (e.g. BTExplorer) on Motorola/Symbol devices
+<ul>
+<li>When connecting to a remote Bluetooth device the 'Favorites' screen may appear after entering the pin and allow the user to choose a different device than was originally specified </li>
+<li>Bluetooth discovery results may contain devices that are no longer powered on or within range. These devices must be cleared manually in the BTExplorer </li>
+<li>The first attempt to enable the Bluetooth object after a clean boot on the Windows Mobile device or cold boot on the Windows CE device will throw an exception. As a work around, manually enable the BTExplorer. The Enable method in the class library can be used in the subsequent attempts (taken from the Motorola EMDK v2.3 README) </li>
+<li>Review the Programmer's Guide and README supplied with the Motorola EMDK v2.3 for any other known issues with the Bluetooth Stack </li>
+</ul>
+</li>
+<li>The developer demos (VB.NET and C#) will not run on any Windows Standard device (devices without a touch screen) such as the Samsung Jack </li>
+<li>The ZebraLink Multiplatform SDK currently supports the Stonestreet One and the Microsoft Bluetooth stack. Some mobile devices support stacks from other vendors and will not natively work with the ZebraLink Multiplatform SDK. To use the ZebraLink Multiplatform SDK with unsupported stacks, manually pair with the device outside of the application, assign a communications port to the connection, and connect via the serial port using the API</li>
+<li>Physically connecting and disconnecting, or repeatedly power-cycling, a USB printer can yield unpredictable connectivity results. </li>
+</ol>
+
+
+
+<h3>5. Change Log</h3>
+
+<table border=1 cellspacing=0 cellpadding=5>
+<tr>
+<td>v1.0.118</td>
+<td>03/23/2010</td>
+<td>Initial release of Windows Mobile platform</td>
+<tr>
+<tr>
+<td>v1.0.121</td>
+<td>12/01/2010</td>
+<td>Adding support for Windows CE devices</td>
+<tr>
+<tr>
+<td>v1.0.122</td>
+<td>02/01/2011</td>
+<td>Bug fixes</td>
+<tr>
+<tr>
+<td>v1.1.123</td>
+<td>10/23/2015</td>
+<td>Updated the InTheHand Bluetooth library to the latest available version.</td>
+<tr>
+</table>
+
+<br>
+<h2>Getting Updates</h2>
+
+The ZebraLink SDK and Smart Phone Utility is regularly updated and modified to take advantage of new developments. Updated content will be available on our web site:  <a href="http://www.zebra.com/sdk">http://www.zebra.com/sdk</a>
+
+<p>
+Zebra Technologies Corporation<br />
+(C) 2015 ZIH Corp. All rights reserved.
+</p>
+
+</body>
+</html>
