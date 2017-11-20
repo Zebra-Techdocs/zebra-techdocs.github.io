@@ -62,12 +62,12 @@
 
                         <li>
                             <a href="/mx/overview">
-                                    About
+                                    About MX
                             </a>
                         </li>
                         <li>
                             <a href="/mx/compatibility">
-                                    Compatibility
+                                    Feature Matrix
                             </a>
                         </li>
                         <li>
@@ -77,7 +77,7 @@
                         </li>
                         <li>
                             <a href="/mx/mx-version-on-device">
-                                    Show Device's MX Version
+                                    Show Device MX Version
                             </a>
                         </li>
                         <li>
@@ -281,13 +281,13 @@
                                 <li class="smartdocs-api" data-value="10"><a>2.3.3-2.3.4 Gingerbread</a></li>
                                   </ul>
                                 </li>
-                                <li class="dropdown">
-                                  <a href="#" class="dropdown-toggle" id="smartdocs-devicetype-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Group: All <span class="caret"></span></a>
+                        <!--         <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" id="smartdocs-devicetype-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Model: All <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
-                                <li class="smartdocs-devicetype" data-value=""><a>All Devices</a></li>
-                                <li class="smartdocs-devicetype" data-value="B"><a>TC20/TC25</a></li>
+                                <li class="smartdocs-devicetype" data-value="" ><a>All Devices</a></li>
+                                <li class="smartdocs-devicetype" data-value="B"><a>TC20/TC25</a></li> 
                                   </ul>
-                                </li>
+                                </li>-->
                               </ul>
                             </div>
                           </div>
@@ -302,16 +302,16 @@
                               <div class="modal-body">
                               <p><br><b>The "SmartDocs" bar can customize this page to show only the features present on a particular Zebra device.</b> 
                               </p><ol>
-                               <li><b>Use drop-downs to select the OSX, MX and/or Android version</b> on the device, and/or the device Type, which determines an MX feature subset. <b>Unsupported features will turn gray based on selection(s)</b>.</li> 
-                               <li>With at least one version selected when viewing a CSP (i.e. "App Manager"), <b>click forward and back buttons to scroll to the next and previous supported feature</b> of that CSP (SmartNav is supported only on CSP pages, not on the feature matrix).</li>
+                               <li><b>Use drop-downs to select the OSX, MX and/or Android version</b> on the device, and/or the device Model, which highlights features supported in the device. <b>Unsupported features turn gray based on selection(s)</b>.</li> 
+                               <li><b>SmartDocs Nav works when viewing features of an individual CSP</b>. To use, click on a CSP (i.e. "App Manager") and make at least one selection in the SmartDocs bar. <b> <u>Unsupported features turn grey</u>. Click the forward and back SmartNav buttons to scroll to the next and previous supported feature</b> of that CSP (SmartNav is not supported on the feature matrix).</li>
                                <li><b>To clear all selections</b> press the SmartDocs button.</li> 
                                </ol>
-                              <p></p><p><b>OSX, MX and Android version information</b> for a device can be found in the Android Settings panel or by querying the device through ADB, EMDK or the MX CSP.<a href="/mx/mx-version-on-device/"> More info</a></p>
+                              <p></p><p><b>OSX, MX and Android version information</b> for a device can be found in the Android Settings panel or by querying the device through ADB, EMDK or the MX CSP.<a href="/mx/mx-version-on-device/"> More info</a>.</p>
                               <ul>
-                                <li><b>The OSX layer</b> provides extensions to the base operating system to implement functionality not offered by Android. The root OSX version number always matches the root number of the Android version that it extends.<a href="/mx/overview/"> More info</a></li>
-                                <li><b>The MX Management System</b> provides a uniform interface into privileged and unprivileged Android APIs on the device. Some features require a specific pairing of MX and OSX versions. <a href="/mx/overview/">More info</a></li>
+                                <li><b>The OSX layer</b> provides extensions to the base operating system to implement functionality not offered by Android. The root OSX version number always matches the root number of the Android version that it extends.<a href="/mx/overview/"> More info</a>.</li>
+                                <li><b>The MX Management System</b> provides a uniform interface into privileged and unprivileged Android APIs on the device. Some features require a specific pairing of MX and OSX versions. <a href="/mx/overview/">More info</a>.</li>
                                 <li><b>The Android version</b> is sometimes enough to determine a feature set. Others require a specific MX version plus a minimum version of Android.</li>
-                                <li><b>The Device Group</b> indicates which subset of MX features is present in the device.</li>
+                                <li><b>The Device Model</b> indicates which subset of MX features is present in the device.</li>
                               </ul>       
                               </div>
                           </div>
@@ -580,6 +580,10 @@
                         
                             $(document).ready(function() {
                         
+                            //PRE_SELECT AN ITEM (0, 1, 2...) FROM SMARTDOCS BAR 
+                            //$(".smartdocs-mx")[2].click();
+                            //REPORT THE SELECTION IN THE JAVASCRIPT CONSOLE 
+                            //console.log('pre-selecting an mx item');
                             //
                             $( "#smartdocs-help" ).click(function() {
                                 console.log('Show SmartDocs help');
@@ -613,12 +617,12 @@
                                   mx: "",
                                   osx: "",
                                   api: "",
-                                  devicetype: "B"
+                                  devicetype: ""
                                 };
                                   $("#smartdocs-mx-selected").html("MX: All" + '<span class="caret"></span>');
                                   $("#smartdocs-osx-selected").html("OSX: All" + '<span class="caret"></span>');
                                   $("#smartdocs-api-selected").html("Android: All" + '<span class="caret"></span>');
-                                  $("#smartdocs-devicetype-selected").html("Group: All" + '<span class="caret"></span>');
+                                  $("#smartdocs-devicetype-selected").html("Model: All" + '<span class="caret"></span>');
                                   clear('all');       
                                   
                                 }
@@ -670,11 +674,11 @@
                                 }
                             });
                         
-                        // NEED TO CHANGE OTHER SETTINGS TO 'ALL' BELOW
+                        // WHEN SELECTING DEVICETYPE, CLEAR ALL OTHER SETTINGS 
                         
                             $( ".smartdocs-devicetype" ).click(function() {
                               var devicetype=$(this).attr("data-value");
-                                $("#smartdocs-devicetype-selected").html("Group: " + $(this).text() + '<span class="caret"></span>');
+                                $("#smartdocs-devicetype-selected").html("Model: " + $(this).text() + '<span class="caret"></span>');
                                 console.log('Setting device type');
                                 if(devicetype ==""){
                                   clear('devicetype')
@@ -700,13 +704,6 @@
                                 <div class="">
                                 <!-- Start of content list -->
                                 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
@@ -951,6 +948,64 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="bug-report-handling"><a class="heading-anchor" href="#bug-report-handling"><span></span></a>Bug Report Handling</h2>
@@ -970,7 +1025,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="23" data-smartdoc="">
@@ -980,15 +1035,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1001,15 +1057,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1022,15 +1079,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1041,19 +1099,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1211,7 +1256,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="23" data-smartdoc="">
@@ -1221,15 +1266,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1242,15 +1288,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1263,15 +1310,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1282,6 +1330,19 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1372,7 +1433,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="23" data-smartdoc="">
@@ -1382,15 +1443,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1403,15 +1465,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1424,15 +1487,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1443,6 +1507,8 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -1473,7 +1539,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -1484,6 +1550,12 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1523,7 +1595,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="23" data-smartdoc="">
@@ -1533,15 +1605,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1554,15 +1627,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1575,15 +1649,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1594,9 +1669,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1624,7 +1696,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -1635,12 +1707,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1664,7 +1730,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -1675,6 +1741,9 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-api="23" data-smartdoc="">
 
@@ -1693,7 +1762,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -1704,10 +1773,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1731,7 +1796,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -1742,8 +1807,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -1770,7 +1833,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -1781,6 +1844,16 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1809,7 +1882,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.0" data-devicetype="A" data-api="24" data-smartdoc="">
@@ -1819,15 +1892,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 7.0+ </p>
-                                                        <p>Android API Level: 24+ </p>
+                                                        <p>Android API: 24+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1840,15 +1914,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 7.0+ </p>
-                                                        <p>Android API Level: 24+ </p>
+                                                        <p>Android API: 24+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1861,15 +1936,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 7.0+ </p>
-                                                        <p>Android API Level: 24+ </p>
+                                                        <p>Android API: 24+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1880,12 +1956,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                         <div class="">
@@ -1907,7 +1977,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.0" data-devicetype="A" data-api="24" data-smartdoc="">
@@ -1917,15 +1987,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 7.0+ </p>
-                                                        <p>Android API Level: 24+ </p>
+                                                        <p>Android API: 24+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1938,15 +2009,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 7.0+ </p>
-                                                        <p>Android API Level: 24+ </p>
+                                                        <p>Android API: 24+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1959,15 +2031,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 7.0+ </p>
-                                                        <p>Android API Level: 24+ </p>
+                                                        <p>Android API: 24+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1978,7 +2051,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -2013,7 +2085,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="23" data-smartdoc="">
@@ -2023,15 +2095,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2044,15 +2117,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2065,15 +2139,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2084,6 +2159,14 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2148,7 +2231,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="23" data-smartdoc="">
@@ -2158,15 +2241,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2179,15 +2263,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2200,15 +2285,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2221,15 +2307,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2242,15 +2329,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2263,15 +2351,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2284,15 +2373,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2303,12 +2393,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2330,7 +2414,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -2341,8 +2425,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -2363,7 +2445,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -2374,6 +2456,12 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-api="23" data-smartdoc="">
 
@@ -2392,7 +2480,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -2449,7 +2537,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="23" data-smartdoc="">
@@ -2459,15 +2547,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2480,15 +2569,16 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
                                                         <p>MX: 6.3+ </p>
-                                                        <p>Android API Level: 23+ </p>
+                                                        <p>Android API: 23+ </p>
                                                     
                                                 </td> 
                                                 
@@ -2499,6 +2589,7 @@
                                     </div>	
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -2519,7 +2610,7 @@
                                         <p><b>Requires:</b> 
                                             </p><ul>
                                                 <li>MX: 6.3+ </li>
-                                                <li>Android API Level: 23+ </li>
+                                                <li>Android API: 23+ </li>
                                            </ul>
                                         <p></p>
                                         
@@ -2530,6 +2621,12 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2810,10 +2907,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -2830,6 +2923,57 @@
         csp: "bugreportmgr",
         name: "Bug Report Manager",
         parms: [
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3178,19 +3322,6 @@
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "EnableBRInPwrMenu",
@@ -3251,6 +3382,19 @@
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3394,6 +3538,8 @@
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -3413,6 +3559,12 @@
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3503,9 +3655,6 @@
                     
                     
                     
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -3525,12 +3674,6 @@
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3557,6 +3700,9 @@
                         
                     },
                     
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -3576,10 +3722,6 @@
                         
                         
                     },
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3614,8 +3756,6 @@
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -3635,6 +3775,16 @@
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3704,12 +3854,6 @@
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     {
@@ -3787,7 +3931,6 @@
                     
                     
                     
-                    
                     {
                             presentif: "",
                             name: "CloudEnable",
@@ -3848,6 +3991,14 @@
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4023,12 +4174,6 @@
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -4051,8 +4196,6 @@
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -4072,6 +4215,12 @@
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     {
                         requires: {
@@ -4165,6 +4314,7 @@
                     
                     
                     
+                    
                     {
                         requires: {
                             osx: "",
@@ -4184,6 +4334,8 @@
                         
                         
                     },
+                    
+                    
                     
                     
                     
