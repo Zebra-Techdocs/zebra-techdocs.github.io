@@ -51,13 +51,13 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Stagenow 2.8
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 2.8
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-8','2-2','/stagenow/2-2/about')">Stagenow 2.2</a></li>
-                                <li><a onclick="changeVersion('2-8','2-3','/stagenow/2-3/about')">Stagenow 2.3</a></li>
-                                <li><a onclick="changeVersion('2-8','2-4','/stagenow/2-4/about')">Stagenow 2.4</a></li>
-                                <li><a onclick="changeVersion('2-8','2-5','/stagenow/2-5/about')">Stagenow 2.5</a></li>
+                                <li><a onclick="changeVersion('2-8','2-2','/stagenow/2-2/about')">StageNow 2.2</a></li>
+                                <li><a onclick="changeVersion('2-8','2-3','/stagenow/2-3/about')">StageNow 2.3</a></li>
+                                <li><a onclick="changeVersion('2-8','2-4','/stagenow/2-4/about')">StageNow 2.4</a></li>
+                                <li><a onclick="changeVersion('2-8','2-5','/stagenow/2-5/about')">StageNow 2.5</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -231,10 +231,11 @@
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
                                     <h1 id="status-manager" class="anchor"><a class="heading-anchor" href="#status-manager"><span></span></a>Status Manager</h1>
-                                    <p>
-                                    Stagenow
+                                    <p><b>Note</b>: To display <u>only</u> the features present on a particular device, select one or more filters from the SmartDocs bar below.  
+                                    <a id="smartdocs-help"><i class="fa fa-question-circle fa-lg"></i></a></p> 
+                                    StageNow
                                      - 2.8
-                                    </p>
+                                    <p></p>
                                 </div>
                             </section>                    
                         </div>
@@ -248,7 +249,7 @@
                             </div>
                             <div class="collapse navbar-collapse" id="navbar-collapse-main">
                               <ul class="nav navbar-nav">
-                              <li class="navbar-right"><a id="smartdocs-help"><i class="fa fa-question-circle fa-lg fa-inverse"></i></a></li>
+                              <!-- <li class="navbar-right"><a id="smartdocs-help"><i class="fa fa-question-circle fa-lg fa-inverse"></i></a></li> -->
                               <li>
                                 <div class="btn-group" role="group" aria-label="...">
                                   <button type="button" style="display:none" id="smartdocs-prev" class="btn btn-default navbar-btn"><i class="fa fa-chevron-left"></i></button>
@@ -258,6 +259,8 @@
                                 </div>
                               </li>
                               <li><p class="navbar-text"> Your Device:</p></li>
+                        
+                        <!-- OSX VERSION FILTER-->
                               <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" id="smartdocs-osx-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OSX: All <span class="caret"></span></a>
                                   <ul class="dropdown-menu">
@@ -280,12 +283,16 @@
                                 <li class="smartdocs-osx" data-value="6.3"><a>6.3</a></li>
                                 <li class="smartdocs-osx" data-value="7.0"><a>7.0</a></li>
                                 <li class="smartdocs-osx" data-value="7.1"><a>7.1</a></li>
+                                <li class="smartdocs-osx" data-value="7.2"><a>7.2</a></li>
+                                <li class="smartdocs-osx" data-value="7.3"><a>7.3</a></li>
+                                <li class="smartdocs-osx" data-value="7.4"><a>7.4</a></li>
+                              </ul>
+                              </li>
                         
-                                  </ul>
-                                </li>
+                        <!-- MX VERSION FILTER-->
                               <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" id="smartdocs-mx-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MX: All <span class="caret"></span></a>
-                                  <ul class="dropdown-menu">
+                              <ul class="dropdown-menu">
                                 <li class="smartdocs-mx" data-value=""><a>All</a></li>
                                 <li class="smartdocs-mx" data-value="4.0"><a>4.0</a></li>
                                 <li class="smartdocs-mx" data-value="4.1"><a>4.1</a></li>
@@ -301,32 +308,36 @@
                                 <li class="smartdocs-mx" data-value="6.3"><a>6.3</a></li>
                                 <li class="smartdocs-mx" data-value="7.0"><a>7.0</a></li>
                                 <li class="smartdocs-mx" data-value="7.1"><a>7.1</a></li>
-                                  </ul>
-                                </li>
+                                <li class="smartdocs-mx" data-value="7.2"><a>7.2</a></li>
+                              </ul>
+                              </li>
+                        
+                        <!-- ANDROID VERSION FILTER-->
                               <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" id="smartdocs-api-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Android: All <span class="caret"></span></a>
-                                  <ul class="dropdown-menu">
+                              <ul class="dropdown-menu">
                                 <li class="smartdocs-api" data-value=""><a>All</a></li>
-                                <li class="smartdocs-api" data-value="24"><a>7.0 Nougat</a></li>
-                                <li class="smartdocs-api" data-value="23"><a>6.0 Marshmallow</a></li>
-                                <li class="smartdocs-api" data-value="22"><a>5.1 Lollipop</a></li>
-                                <li class="smartdocs-api" data-value="21"><a>5.0 Lollipop</a></li>
-                                <li class="smartdocs-api" data-value="19"><a>4.4 KitKat</a></li>
-                                <li class="smartdocs-api" data-value="18"><a>4.3 Jelly Bean</a></li>
-                                <li class="smartdocs-api" data-value="17"><a>4.2.x Jelly Bean</a></li>
-                                <li class="smartdocs-api" data-value="16"><a>4.1.x Jelly Bean</a></li>
-                                <li class="smartdocs-api" data-value="15"><a>4.0.3-4.0.4 Ice Cream Sandwich
-                                </a></li><li class="smartdocs-api" data-value="14"><a>4.0-4.0.2 Ice Cream Sandwich</a></li>
-                                <li class="smartdocs-api" data-value="10"><a>2.3.3-2.3.4 Gingerbread</a></li>
-                                  </ul>
-                                </li>
+                                <li class="smartdocs-api" data-value="25"><a>7.1 Nougat (API 25)</a></li>
+                                <li class="smartdocs-api" data-value="24"><a>7.0 Nougat (API 24)</a></li>
+                                <li class="smartdocs-api" data-value="23"><a>6.0 Marshmallow (API 23)</a></li>
+                                <li class="smartdocs-api" data-value="22"><a>5.1 Lollipop (API 22)</a></li>
+                                <li class="smartdocs-api" data-value="21"><a>5.0 Lollipop (API 21)</a></li>
+                                <li class="smartdocs-api" data-value="19"><a>4.4 KitKat (API 19)</a></li>
+                                <li class="smartdocs-api" data-value="18"><a>4.3 Jelly Bean (API 18)</a></li>
+                                <li class="smartdocs-api" data-value="17"><a>4.2.x Jelly Bean (API 17)</a></li>
+                                <li class="smartdocs-api" data-value="16"><a>4.1.x Jelly Bean (API 16)</a></li>
+                              </ul>
+                              </li>
+                        
+                        <!-- DEVICE FILTER-->
                                 <li class="dropdown">
-                                  <a href="#" class="dropdown-toggle" id="smartdocs-devicetype-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Group: All <span class="caret"></span></a>
-                                  <ul class="dropdown-menu">
+                                  <a href="#" class="dropdown-toggle" id="smartdocs-devicetype-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Model: All <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
                                 <li class="smartdocs-devicetype" data-value=""><a>All Devices</a></li>
-                                <li class="smartdocs-devicetype" data-value="B"><a>TC20/TC25</a></li>
-                                  </ul>
-                                </li>
+                                <li class="smartdocs-devicetype" data-value="B"><a>TC20/TC25</a></li> 
+                              </ul>
+                              </li>
+                              
                               </ul>
                             </div>
                           </div>
@@ -341,16 +352,16 @@
                               <div class="modal-body">
                               <p><br><b>The "SmartDocs" bar can customize this page to show only the features present on a particular Zebra device.</b> 
                               </p><ol>
-                               <li><b>Use drop-downs to select the OSX, MX and/or Android version</b> on the device, and/or the device Type, which determines an MX feature subset. <b>Unsupported features will turn gray based on selection(s)</b>.</li> 
-                               <li>With at least one version selected when viewing a CSP (i.e. "App Manager"), <b>click forward and back buttons to scroll to the next and previous supported feature</b> of that CSP (SmartNav is supported only on CSP pages, not on the feature matrix).</li>
+                               <li><b>Use drop-downs to select the OSX, MX and/or Android version</b> on the device, and/or the device Model, which highlights features supported in the device. <b>Unsupported features turn gray based on selection(s)</b>.</li> 
+                               <li><b>SmartDocs Nav works when viewing features of an individual CSP</b>. To use, click on a CSP (i.e. "App Manager") and make at least one selection in the SmartDocs bar. <b> <u>Unsupported features turn grey</u>. Click the forward and back SmartNav buttons to scroll to the next and previous supported feature</b> of that CSP (SmartNav is not supported on the feature matrix).</li>
                                <li><b>To clear all selections</b> press the SmartDocs button.</li> 
                                </ol>
-                              <p></p><p><b>OSX, MX and Android version information</b> for a device can be found in the Android Settings panel or by querying the device through ADB, EMDK or the MX CSP.<a href="/mx/mx-version-on-device/"> More info</a></p>
+                              <p></p><p><b>OSX, MX and Android version information</b> for a device can be found in the Android Settings panel or by querying the device through ADB, EMDK or the MX CSP.<a href="/mx/mx-version-on-device/"> More info</a>.</p>
                               <ul>
-                                <li><b>The OSX layer</b> provides extensions to the base operating system to implement functionality not offered by Android. The root OSX version number always matches the root number of the Android version that it extends.<a href="/mx/overview/"> More info</a></li>
-                                <li><b>The MX Management System</b> provides a uniform interface into privileged and unprivileged Android APIs on the device. Some features require a specific pairing of MX and OSX versions. <a href="/mx/overview/">More info</a></li>
+                                <li><b>The OSX layer</b> provides extensions to the base operating system to implement functionality not offered by Android. The root OSX version number always matches the root number of the Android version that it extends.<a href="/mx/overview/"> More info</a>.</li>
+                                <li><b>The MX Management System</b> provides a uniform interface into privileged and unprivileged Android APIs on the device. Some features require a specific pairing of MX and OSX versions. <a href="/mx/overview/">More info</a>.</li>
                                 <li><b>The Android version</b> is sometimes enough to determine a feature set. Others require a specific MX version plus a minimum version of Android.</li>
-                                <li><b>The Device Group</b> indicates which subset of MX features is present in the device.</li>
+                                <li><b>The Device Model</b> indicates which subset of MX features is present in the device.</li>
                               </ul>       
                               </div>
                           </div>
@@ -619,6 +630,10 @@
                         
                             $(document).ready(function() {
                         
+                            //PRE_SELECT AN ITEM (0, 1, 2...) FROM SMARTDOCS BAR 
+                            //$(".smartdocs-mx")[2].click();
+                            //REPORT THE SELECTION IN THE JAVASCRIPT CONSOLE 
+                            //console.log('pre-selecting an mx item');
                             //
                             $( "#smartdocs-help" ).click(function() {
                                 console.log('Show SmartDocs help');
@@ -652,12 +667,12 @@
                                   mx: "",
                                   osx: "",
                                   api: "",
-                                  devicetype: "B"
+                                  devicetype: ""
                                 };
                                   $("#smartdocs-mx-selected").html("MX: All" + '<span class="caret"></span>');
                                   $("#smartdocs-osx-selected").html("OSX: All" + '<span class="caret"></span>');
                                   $("#smartdocs-api-selected").html("Android: All" + '<span class="caret"></span>');
-                                  $("#smartdocs-devicetype-selected").html("Group: All" + '<span class="caret"></span>');
+                                  $("#smartdocs-devicetype-selected").html("Model: All" + '<span class="caret"></span>');
                                   clear('all');       
                                   
                                 }
@@ -709,11 +724,11 @@
                                 }
                             });
                         
-                        // NEED TO CHANGE OTHER SETTINGS TO 'ALL' BELOW
+                        // WHEN SELECTING DEVICETYPE, CLEAR ALL OTHER SETTINGS 
                         
                             $( ".smartdocs-devicetype" ).click(function() {
                               var devicetype=$(this).attr("data-value");
-                                $("#smartdocs-devicetype-selected").html("Group: " + $(this).text() + '<span class="caret"></span>');
+                                $("#smartdocs-devicetype-selected").html("Model: " + $(this).text() + '<span class="caret"></span>');
                                 console.log('Setting device type');
                                 if(devicetype ==""){
                                   clear('devicetype')
@@ -758,12 +773,44 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
                                     <p class="">
 
-        </p><p>The Status Manager allows you to set notification options while MX is processing the XML stream.</p>
+        </p><p>The Status Manager (StatusMgr) offers a mechanism for setting notifications to be displayed while MX is processing the XML stream.</p>
+
+<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
+
+<ul>
+<li>Add, remove or replace a notification</li>
+
+<li>Specify a header, footer and/or body for a notification</li>
+
+<li>Specify the Android Action and/or Class about which to send a notification</li>
+
+<li>Specify the MIME type relating to a notification</li>
+
+<li>Specify a string to identify the source of a notification</li>
+
+<li>Apply a filter and/or ID to narrow the display of notifications</li>
+
+<li>Display a notification when: 
+
+
+<ul>
+<li>A process has completed</li>
+
+<li>A process has reached a specified percentage of completion</li></ul>
+</li>
+</ul>
 
 
 <p></p>
@@ -808,12 +855,20 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
-                                    <h2 class="anchor" id="status-request-action"><a class="heading-anchor" href="#status-request-action"><span></span></a>Status Request Action</h2>
+                                    <h2 class="anchor" id="request-action"><a class="heading-anchor" href="#request-action"><span></span></a>Request Action</h2>
                                     <p class="">
 
-        </p><p>This parm allows you to specify the action to take for status requests.</p>
+        </p><p>Used to specify the action to take for status requests.</p>
 
 
 <p></p>
@@ -832,20 +887,20 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-devicetype="A" data-api="" data-smartdoc="">
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>1</td>
                                                 <td>Add/Replace Status Request</td>
-                                                <td>Add or replace the a status request</td>
+                                                <td>Adds a new (or replaces an existing) status request with the current one.</td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+                                                    All
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
@@ -855,17 +910,17 @@
                                                 
                                             </tr>
                                             
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-devicetype="A" data-api="" data-smartdoc="">
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>2</td>
                                                 <td>Remove Status Request</td>
-                                                <td>Remove a status request</td>
+                                                <td>Removes the specified status request.</td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+                                                    All
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
@@ -875,17 +930,17 @@
                                                 
                                             </tr>
                                             
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-devicetype="A" data-api="" data-smartdoc="">
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>3</td>
                                                 <td>Notify Status</td>
-                                                <td>Set the notification state</td>
+                                                <td>Causes the notification status to be displayed.</td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
-                                                    A
+<!--                                                <td> 
+                                                    All
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
@@ -905,64 +960,18 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
-                                    <h2 class="anchor" id="request-status-filter"><a class="heading-anchor" href="#request-status-filter"><span></span></a>Request Status Filter</h2>
+                                    <h2 class="anchor" id="notify-action"><a class="heading-anchor" href="#notify-action"><span></span></a>Notify Action</h2>
                                     <p class="">
 
-        
+        </p><p>Used to specify the nofitication action to take for status requests.</p>
 
 
-</p>
+<p></p>
                                         <blockquote>
-                                        <p><b>Shown if:</b> The Status Request Action is "Add/Replace Status Request"</p>
-                                        <p><b>Parm Name:</b> RequestFilter</p>
-                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Parm Name:</b> NotifyAction</p>
+                                        <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
                                         
 
                                         
@@ -975,44 +984,44 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>0</td>
-                                                <td>Request ALL Status</td>
-                                                <td></td>
+                                                <td>Do nothing</td>
+                                                <td>This value (or the absence of this parm from the XML) will cause no change to the setting; any previously selected setting will be retained.</td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
+<!--                                                <td> 
                                                     All
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
-                                                        <p>MX: + </p>
+                                                        <p>MX: 5.0+ </p>
                                                     
                                                 </td> 
                                                 
                                             </tr>
                                             
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>1</td>
-                                                <td>Request Completion Status</td>
-                                                <td></td>
+                                                <td>Notify Status</td>
+                                                <td>Performs a notification action.</td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
+<!--                                                <td> 
                                                     All
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
-                                                        <p>MX: + </p>
+                                                        <p>MX: 5.0+ </p>
                                                     
                                                 </td> 
                                                 
@@ -1023,6 +1032,45 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1060,22 +1108,196 @@
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
 
-                                    <h2 class="anchor" id="android-action-name"><a class="heading-anchor" href="#android-action-name"><span></span></a>Android Action Name</h2>
+                                    <h2 class="anchor" id="request-status-filter"><a class="heading-anchor" href="#request-status-filter"><span></span></a>Request Status Filter</h2>
                                     <p class="">
 
-        </p><p>Used to specify the Action Name of the Android package that this status notification pertains to.</p>
+        </p><p>Used to specify an optional ID number for the status being requested. </p>
 
-<p>Parm value input rules: </p>
+<p><strong>Parm value input rules</strong>: </p>
 
 <ul>
-<li>String with a minimum size of 1</li>
+<li>Integer with at least 1 digit</li>
 </ul>
 
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Shown if:</b> The Status Request Action is "Add/Replace Status Request"</p>
+                                        <p><b>Shown if:</b> The Request Action is neither "Do Nothing" nor "Notify Status"</p>
+                                        <p><b>Parm Name:</b> RequestFilter</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 5.0+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    
+                                </div> 
+                                    
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="request-status-filter-1"><a class="heading-anchor" href="#request-status-filter-1"><span></span></a>Request Status Filter</h2>
+                                    <p class="">
+
+        </p><p>Used to specify an optional filter for the status being requested. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> The Request Action is not "Do Nothing"</p>
+                                        <p><b>Parm Name:</b> RequestFilter</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Request ALL Status</td>
+                                                <td></td>
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: + </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>Request Completion Status</td>
+                                                <td></td>
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: + </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="action-name"><a class="heading-anchor" href="#action-name"><span></span></a>Action Name</h2>
+                                    <p class="">
+
+        </p><p>Used to specify the Action Name of the Android package about which to send the status notification.</p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>String with at least 1 character</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> The Request Action is "Add/Replace Status Request" or "Remove State Request"</p>
                                         <p><b>Parm Name:</b> ActionName</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 5.0+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    
+                                </div> 
+                                    
+                                    
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="mime-type"><a class="heading-anchor" href="#mime-type"><span></span></a>MIME Type</h2>
+                                    <p class="">
+
+        </p><p>Used to specify an optional MIME type, which signals the format of a document. </p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>String with at least 1 character</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> The Request Action is "Add/Replace Status Request" or "Remove State Request"</p>
+                                        <p><b>Parm Name:</b> MimeType</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         <p><b>Requires:</b> 
                                             </p><ul>
@@ -1106,39 +1328,23 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="package-name"><a class="heading-anchor" href="#package-name"><span></span></a>Package Name</h2>
                                     <p class="">
 
-        </p><p>This parm allows you to specify the package name of the Android package that this status notification pertains to.</p>
+        </p><p>Used to specify the package name of the Android package about which to send the status notification.</p>
 
-<p>Parm value input rules: </p>
+<p><strong>Parm value input rules</strong>: </p>
 
 <ul>
-<li>String with a minimum size of 1</li>
+<li>String with at least 1 character</li>
 </ul>
 
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Shown if:</b> The Status Request Action is "Add/Replace Status Request" or "Remove State Request"</p>
+                                        <p><b>Shown if:</b> The Request Action is "Add/Replace Status Request" or "Remove State Request"</p>
                                         <p><b>Parm Name:</b> PackageName</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         <p><b>Requires:</b> 
@@ -1172,23 +1378,49 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="class-name"><a class="heading-anchor" href="#class-name"><span></span></a>Class Name</h2>
                                     <p class="">
 
-        </p><p>This parm allows you to specify the class name of the Android package that this status notification pertains to.</p>
+        </p><p>Used to specify the class name of the Android package about which to send the status notification.</p>
 
-<p>Parm value input rules: </p>
+<p><strong>Parm value input rules</strong>: </p>
 
 <ul>
-<li>String with a minimum size of 1</li>
+<li>String with a minimum of 1 character</li>
 </ul>
 
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Shown if:</b> The Status Request Action is "Add/Replace Status Request" or "Remove State Request"</p>
+                                        <p><b>Shown if:</b> The Request Action is "Add/Replace Status Request" or "Remove State Request"</p>
                                         <p><b>Parm Name:</b> ClassName</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         <p><b>Requires:</b> 
@@ -1226,37 +1458,17 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="source-id"><a class="heading-anchor" href="#source-id"><span></span></a>Source ID</h2>
                                     <p class="">
 
-        </p><p>This parm allows you to specify identifier string of the status notification.</p>
+        </p><p>Used to specify an identifier string of a status notification.</p>
 
-<p>Parm value input rules: </p>
+<p><strong>Parm value input rules</strong>: </p>
 
 <ul>
-<li>String with a minimum size of 1</li>
+<li>String with at least 1 character</li>
 </ul>
 
 
@@ -1295,16 +1507,18 @@
                                     
                                     
                                     
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="notify-state"><a class="heading-anchor" href="#notify-state"><span></span></a>Notify State</h2>
                                     <p class="">
 
-        </p><p>This parm allows you to specify the action to take for status requests.</p>
+        </p><p>Used to specify the action to take for status requests.</p>
 
 
 <p></p>
                                         <blockquote>
+                                        <p><b>Shown if:</b> The Status Request Action is "Notify Status"</p>
                                         <p><b>Parm Name:</b> NotifyState</p>
                                         <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
                                         
@@ -1319,7 +1533,7 @@
                                                 <th>Option</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Device Group</th>
+                                           <!-- <th>Model</th> -->
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-devicetype="A,B" data-api="" data-smartdoc="">
@@ -1329,10 +1543,10 @@
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
+<!--                                                <td> 
                                                     All
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
@@ -1344,15 +1558,15 @@
                                             
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>1</td>
-                                                <td>In progress</td>
-                                                <td>Notify the percent of progress</td>
+                                                <td>Inprogress</td>
+                                                <td>Returns the progress as a percentage.</td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
+<!--                                                <td> 
                                                     All
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
@@ -1365,14 +1579,14 @@
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>3</td>
                                                 <td>Complete</td>
-                                                <td>Notify when complete</td>
+                                                <td>Sends a notification when complete.</td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
-                                            <td> 
+<!--                                                <td> 
                                                     All
                                                 </td>
-                                                
+ -->                                                
                                                 <td>
                                                     
 
@@ -1400,17 +1614,60 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="notify-footer"><a class="heading-anchor" href="#notify-footer"><span></span></a>Notify Footer</h2>
+                                    <p class="">
+
+        </p><p>Used to specify optional text to send as the footer of the status notification.</p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>String with at least 1 character, if used</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> The Status Request Action is "Notify Status"</p>
+                                        <p><b>Parm Name:</b> NotifyFooter</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 5.0+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    
+                                </div> 
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notify-body"><a class="heading-anchor" href="#notify-body"><span></span></a>Notify Body</h2>
                                     <p class="">
 
-        </p><p>This parm allows you to specify text to send in the status notification.</p>
+        </p><p>Used to specify text to send in the status notification.</p>
 
-<p>Parm value input rules: </p>
+<p><strong>Parm value input rules</strong>: </p>
 
 <ul>
-<li>String with a minimum size of 1</li>
+<li>String from 1-100 characters</li>
 </ul>
 
 
@@ -1432,6 +1689,91 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="notify-percent"><a class="heading-anchor" href="#notify-percent"><span></span></a>Notify Percent</h2>
+                                    <p class="">
+
+        </p><p>Used to specify an optional value to send in the status notification that indicates the "percentage complete" of the action.</p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>Integer from -1 to 100</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> The Status Request Action is "Notify Status"</p>
+                                        <p><b>Parm Name:</b> NotifyPercent</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 5.0+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    
+                                </div> 
+                                    
+                                    
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="notify-header"><a class="heading-anchor" href="#notify-header"><span></span></a>Notify Header</h2>
+                                    <p class="">
+
+        </p><p>Used to specify optional text to send as the header of the status notification.</p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>String with at least 1 character, if used</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> The Status Request Action is "Notify Status"</p>
+                                        <p><b>Parm Name:</b> NotifyHeader</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 5.0+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1902,6 +2244,21 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "RequestAction",
@@ -1912,7 +2269,7 @@
                                 {
                                     code: "1",
                                     name: "Add/Replace Status Request",
-                                    description: "Add or replace the a status request",
+                                    description: "Adds a new (or replaces an existing) status request with the current one.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -1929,7 +2286,7 @@
                                 {
                                     code: "2",
                                     name: "Remove Status Request",
-                                    description: "Remove a status request",
+                                    description: "Removes the specified status request.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -1946,7 +2303,55 @@
                                 {
                                     code: "3",
                                     name: "Notify Status",
-                                    description: "Set the notification state",
+                                    description: "Causes the notification status to be displayed.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "5.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
+                    
+                    
+                    
+                    
+                    
+                    {
+                            presentif: "",
+                            name: "NotifyAction",
+                            pivotal: "Yes",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do nothing",
+                                    description: "This value (or the absence of this parm from the XML) will cause no change to the setting; any previously selected setting will be retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "5.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "Notify Status",
+                                    description: "Performs a notification action.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -2012,8 +2417,52 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
-                            presentif: "The Status Request Action is &quot;Add/Replace Status Request&quot;",
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "5.0",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A,B"
+                        },
+
+                            presentif: "The Request Action is neither &quot;Do Nothing&quot; nor &quot;Notify Status&quot;",
+                            name: "RequestFilter",
+                            pivotal: "No",
+                        
+                        
+                    },
+                    
+                    {
+                            presentif: "The Request Action is not &quot;Do Nothing&quot;",
                             name: "RequestFilter",
                             pivotal: "No",
                         
@@ -2089,6 +2538,26 @@
                     
                     
                     
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "5.0",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A"
+                        },
+
+                            presentif: "The Request Action is &quot;Add/Replace Status Request&quot; or &quot;Remove State Request&quot;",
+                            name: "ActionName",
+                            pivotal: "No",
+                        
+                        
+                    },
+                    
                     
                     {
                         requires: {
@@ -2103,28 +2572,12 @@
                             devicetype: "A"
                         },
 
-                            presentif: "The Status Request Action is &quot;Add/Replace Status Request&quot;",
-                            name: "ActionName",
+                            presentif: "The Request Action is &quot;Add/Replace Status Request&quot; or &quot;Remove State Request&quot;",
+                            name: "MimeType",
                             pivotal: "No",
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -2154,7 +2607,7 @@
                             devicetype: "A,B"
                         },
 
-                            presentif: "The Status Request Action is &quot;Add/Replace Status Request&quot; or &quot;Remove State Request&quot;",
+                            presentif: "The Request Action is &quot;Add/Replace Status Request&quot; or &quot;Remove State Request&quot;",
                             name: "PackageName",
                             pivotal: "No",
                         
@@ -2178,6 +2631,32 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -2191,32 +2670,12 @@
                             devicetype: "A,B"
                         },
 
-                            presentif: "The Status Request Action is &quot;Add/Replace Status Request&quot; or &quot;Remove State Request&quot;",
+                            presentif: "The Request Action is &quot;Add/Replace Status Request&quot; or &quot;Remove State Request&quot;",
                             name: "ClassName",
                             pivotal: "No",
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -2275,8 +2734,9 @@
                     
                     
                     
+                    
                     {
-                            presentif: "",
+                            presentif: "The Status Request Action is &quot;Notify Status&quot;",
                             name: "NotifyState",
                             pivotal: "Yes",
                         
@@ -2301,8 +2761,8 @@
                         
                                 {
                                     code: "1",
-                                    name: "In progress",
-                                    description: "Notify the percent of progress",
+                                    name: "Inprogress",
+                                    description: "Returns the progress as a percentage.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -2319,7 +2779,7 @@
                                 {
                                     code: "3",
                                     name: "Complete",
-                                    description: "Notify when complete",
+                                    description: "Sends a notification when complete.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -2348,6 +2808,36 @@
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "5.0",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A,B"
+                        },
+
+                            presentif: "The Status Request Action is &quot;Notify Status&quot;",
+                            name: "NotifyFooter",
+                            pivotal: "No",
+                        
+                        
+                    },
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -2367,6 +2857,65 @@
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "5.0",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A,B"
+                        },
+
+                            presentif: "The Status Request Action is &quot;Notify Status&quot;",
+                            name: "NotifyPercent",
+                            pivotal: "No",
+                        
+                        
+                    },
+                    
+                    
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "5.0",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A,B"
+                        },
+
+                            presentif: "The Status Request Action is &quot;Notify Status&quot;",
+                            name: "NotifyHeader",
+                            pivotal: "No",
+                        
+                        
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
