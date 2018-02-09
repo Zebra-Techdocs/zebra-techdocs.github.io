@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Using ActiveEdge">
-    <title>Using ActiveEdge - Zebra Technologies TechDocs</title>
+    <meta title="About ActiveEdge">
+    <title>About ActiveEdge - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
                                             ActiveEdge
-                                            1.0
+                                            2.5
                         </p>
 
                     </ul>
@@ -63,22 +63,22 @@
 
 
                         <li>
-                            <a href="/activeedge/1-0/guide/about">
+                            <a href="/activeedge/2-5/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/activeedge/1-0/guide/setup">
-                                    Setup
+                            <a href="/activeedge/2-5/guide/setup">
+                                    Setup &amp; Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/activeedge/1-0/guide/usage">
+                            <a href="/activeedge/2-5/guide/usage">
                                     Using ActiveEdge
                             </a>
                         </li>
                         <li>
-                            <a href="/activeedge/1-0/search">
+                            <a href="/activeedge/2-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -104,7 +104,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Using ActiveEdge</strong></li>
+                            <li><strong>About ActiveEdge</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -190,10 +190,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="using-activeedge" class="anchor"><a class="heading-anchor" href="#using-activeedge"><span></span></a>Using ActiveEdge</h1>
+                                    <h1 id="about-activeedge" class="anchor"><a class="heading-anchor" href="#about-activeedge"><span></span></a>About ActiveEdge</h1>
                                     <p>
                                             ActiveEdge
-                                            1.0
+                                            2.5
                                     </p>
                                 </div>
                             </section>                    
@@ -208,112 +208,26 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Zebra devices that ship with ActiveEdge “easy activation points” built into the right and left side of the device allows the user to quickly access applications or perform tasks like barcode scanning very quickly. Typically, a user would be holding the device with one hand and then move either their thumb or finger to the "activation points” that have been strategically placed within easy reach.
-The Active Edge service will detect when one of the activation points are touched and then perform the action that has been configured:</p>
+<p>The ActiveEdge Touch Zone application provides configurable settings which enables quick and convenient one-touch access to key features or applications while users are in the middle of other applications or tasks. Once configured, soft keys near the perimeter of the display provide access to those frequently used applications or functions. </p>
 
-<p><img alt="" style="height:350px" src="img1.jpg"></p>
+<h3 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h3>
 
-<ul>
-<li>Barcode scanning</li>
-
-<li>Open a “drawer” of applications to launch</li>
-
-<li>Launch a specific application or Android intent</li>
-</ul>
-
-<hr>
-
-<h3 id="activeedgezones" class="anchor"><a class="heading-anchor" href="#activeedgezones"><span></span></a>ActiveEdge Zones</h3>
-
-<p>The Active Edge zones are two discreet “soft” tap areas that users would touch to perform the associated actions. To use the ActiveEdge Zones, the simply touch or tap the area of the zone and the associated action will be triggered. </p>
-
-<p>Each Active Edge Zone can be configured to perform the following actions</p>
+<p>ActiveEdge comes shipped with the device's operating system and may not be available on all devices. Some</p>
 
 <ul>
-<li>Barcode Scanning</li>
+<li>TC51 Health Care SKU </li>
 
-<li>Open a Drawer</li>
-
-<li>Launch an Application</li>
-
-<li>Launch an Intent</li>
+<li>TC56 Health Care SKU </li>
 </ul>
-
-<p><strong>NOTE</strong>: The following are invalid combinations (left/right zones):
-Drawer / Drawer</p>
-
-<blockquote>
-  <p>There is no “Double-tap” or “Press and Hold” functionality at this time. The “Left” and “Right” Active Edge Zone will always remain the “Left” and “Right” zone whether the device is in Portrait Standard or Portrait Inversed mode. However, the zones will become inactive if the device is rotated to Landscape mode</p>
-</blockquote>
-
-<hr>
-
-<h3 id="barcodescanning" class="anchor"><a class="heading-anchor" href="#barcodescanning"><span></span></a>Barcode Scanning</h3>
-
-<p><img alt="" src="img2.jpg"></p>
-
-<p>When the ActiveEdge Zone is configured for barcode scanning, a 'Soft Scann Trigger" intent is sent to DataWedge. DataWedge then activates the default scanner for scanning. The user must be continue to press the Active Edge zone to keep the scanner active until a barcode is read or the user wishes to cancel this action. After a barcode is read, DataWedge handles the processing based on the way DataWedge profiles are configured.</p>
-
-<p>Typically, this means that the barcode data will be sent as keystrokes to the current application that is in the foreground. However an application can have a DataWedge profile configured to do something else with the data. If no foreground application is running, the “Launcher” DataWedge profile will be used if it is enabled. </p>
-
-<p><strong>Note</strong>: Standard device rules apply with applications “competing” for the scanner. If an application currently has the scanner "locked", Active Edge scanning will not function (just as other applications would). In this case, pressing the Active Edge zone that has been configured for barcode scanning will result in no operation.</p>
-
-<p>Equally, the Active Edge service shall not lock use of the scanner. When a button that is configured for barcode scanning is pressed, Active Edge will immediately release the scanner either after the barcode is read or the user releases the Active Edge zone.</p>
-
-<hr>
-
-<h3 id="applicationdrawer" class="anchor"><a class="heading-anchor" href="#applicationdrawer"><span></span></a>Application Drawer</h3>
-
-<p><img alt="" src="img3.jpg"></p>
-
-<p>When the ActiveEdge Zone is configured to open a drawer, a drawer will slide out and up to three applications will be accessible for launching.</p>
-
-<ul>
-<li><strong>Opening the drawer</strong>: Tap the ActiveEdge zone to open the drawer. The drawer will always appear on top of any application that is running, including a "full-screen" application. The drawer will always be accessible when in the “open” state.</li>
-
-<li><strong>Closing the drawer</strong>: Tapping on the "handle" of the drawer will close the drawer. Tapping elsewhere on the display while the drawer is open will not close the drawer.</li>
-</ul>
-
-<hr>
-
-<h3 id="launchinganapplication" class="anchor"><a class="heading-anchor" href="#launchinganapplication"><span></span></a>Launching an Application</h3>
-
-<p>When the Active Edge Zone is configured to launch an application, the following will happen:</p>
-
-<ul>
-<li>The application icon of the associated application will be shown on tap-down and the application will be opened.</li>
-
-<li>The icon will be removed on tap-up when the Active Edge Zone is released. This is similar to how the Scanning option works: The barcode icon is shown for as long as the Active Edge Zone is pressed.</li>
-</ul>
-
-<blockquote>
-  <p>Pressing the Active Edge Zone for a second time while the associated application is already in the foreground shall have no effect</p>
-</blockquote>
-
-<hr>
-
-<h3 id="launchingintents" class="anchor"><a class="heading-anchor" href="#launchingintents"><span></span></a>Launching Intents</h3>
-
-<p>When the ActiveEdge Zone is configured to launch an intent, the following will happen:</p>
-
-<ul>
-<li>An Android icon will be shown on tap-down and the Intent will be sent.</li>
-
-<li>The icon will be removed on tap-up when the Active Edge Zone is released. This is similar to how the Scanning option works: The barcode icon is shown for as long as the Active Edge Zone is pressed.</li>
-</ul>
-
-<blockquote>
-  <p>Each press of the Active Edge Zone will cause the Intent to be sent.</p>
-</blockquote>
 
 <hr>
 
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
 <ul>
-<li><a href="../about">About ActiveEdge</a></li>
-
 <li><a href="../setup">Administrative Guide</a></li>
+
+<li><a href="../usage">ActiveEdge Usage Guide</a></li>
 </ul><p></p>
                                         
 
