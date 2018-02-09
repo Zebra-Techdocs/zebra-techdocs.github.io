@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Using ActiveEdge">
-    <title>Using ActiveEdge - Zebra Technologies TechDocs</title>
+    <meta title="ActiveEdge Setup &amp; Configuration">
+    <title>ActiveEdge Setup &amp; Configuration - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
                                             ActiveEdge
-                                            1.0
+                                            2.5
                         </p>
 
                     </ul>
@@ -63,22 +63,22 @@
 
 
                         <li>
-                            <a href="/activeedge/1-0/guide/about">
+                            <a href="/activeedge/2-5/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/activeedge/1-0/guide/setup">
-                                    Setup
+                            <a href="/activeedge/2-5/guide/setup">
+                                    Setup &amp; Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/activeedge/1-0/guide/usage">
+                            <a href="/activeedge/2-5/guide/usage">
                                     Using ActiveEdge
                             </a>
                         </li>
                         <li>
-                            <a href="/activeedge/1-0/search">
+                            <a href="/activeedge/2-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -104,7 +104,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Using ActiveEdge</strong></li>
+                            <li><strong>ActiveEdge Setup &amp; Configuration</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -190,10 +190,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="using-activeedge" class="anchor"><a class="heading-anchor" href="#using-activeedge"><span></span></a>Using ActiveEdge</h1>
+                                    <h1 id="activeedge-setup--configuration" class="anchor"><a class="heading-anchor" href="#activeedge-setup--configuration"><span></span></a>ActiveEdge Setup &amp; Configuration</h1>
                                     <p>
                                             ActiveEdge
-                                            1.0
+                                            2.5
                                     </p>
                                 </div>
                             </section>                    
@@ -208,103 +208,278 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Zebra devices that ship with ActiveEdge “easy activation points” built into the right and left side of the device allows the user to quickly access applications or perform tasks like barcode scanning very quickly. Typically, a user would be holding the device with one hand and then move either their thumb or finger to the "activation points” that have been strategically placed within easy reach.
-The Active Edge service will detect when one of the activation points are touched and then perform the action that has been configured:</p>
+<p>ActiveEdge can be configured through:</p>
+
+<ul>
+<li>An ActiveEdge settings app that is built into the device </li>
+
+<li>XML file configured by a system admin or MDM solution</li>
+</ul>
+
+<blockquote>
+  <p>Note: once an admin deploys an XML based configuration, the local settings app will be in read-only mode. Also, the local settings app may not display all available settings that the administrator has configured.</p>
+</blockquote>
+
+<hr>
+
+<h3 id="activeedgesettingsapp" class="anchor"><a class="heading-anchor" href="#activeedgesettingsapp"><span></span></a>ActiveEdge Settings App</h3>
 
 <p><img alt="" style="height:350px" src="img1.jpg"></p>
 
-<ul>
-<li>Barcode scanning</li>
+<p>After launching the ActiveEdge settings application, you will be able to configure the behavior of ActiveEdge and whether it is running or not.</p>
 
-<li>Open a “drawer” of applications to launch</li>
-
-<li>Launch a specific application or Android intent</li>
-</ul>
-
-<hr>
-
-<h3 id="activeedgezones" class="anchor"><a class="heading-anchor" href="#activeedgezones"><span></span></a>ActiveEdge Zones</h3>
-
-<p>The Active Edge zones are two discreet “soft” tap areas that users would touch to perform the associated actions. To use the ActiveEdge Zones, the simply touch or tap the area of the zone and the associated action will be triggered. </p>
-
-<p>Each Active Edge Zone can be configured to perform the following actions</p>
+<p>The following options are available through the ActiveEdge settings application:</p>
 
 <ul>
-<li>Barcode Scanning</li>
+<li>Start or Stop ActiveEdge Service - Touch to start/stop the ActiveEdge Service to enable/disable the
+ActiveEdge Zone.</li>
 
-<li>Open a Drawer</li>
+<li>Start ActiveEdge Service on Boot Up - Automatically start the ActiveEdge Service when the device boots
+up. the Service is always running and always available.</li>
 
-<li>Launch an Application</li>
+<li>Left ActiveEdge Zone - Configure the left ActiveEdge Zone to Scanner, Drawer, or None.</li>
 
-<li>Launch an Intent</li>
+<li>Right ActiveEdge Zone - Configure the right ActiveEdge Zone to Scanner, Drawer, or None.</li>
+
+<li>Select Apps for Drawer - Select up to three applications to appear on the Drawer.</li>
+
+<li>Restore - Restore the settings to the factory defaults.</li>
 </ul>
-
-<p><strong>NOTE</strong>: The following are invalid combinations (left/right zones):
-Drawer / Drawer</p>
 
 <blockquote>
-  <p>There is no “Double-tap” or “Press and Hold” functionality at this time. The “Left” and “Right” Active Edge Zone will always remain the “Left” and “Right” zone whether the device is in Portrait Standard or Portrait Inversed mode. However, the zones will become inactive if the device is rotated to Landscape mode</p>
+  <p>Select the Settings menu : About to open the About ActiveEdge window, which displays the version number.</p>
 </blockquote>
 
 <hr>
 
-<h3 id="barcodescanning" class="anchor"><a class="heading-anchor" href="#barcodescanning"><span></span></a>Barcode Scanning</h3>
+<h3 id="activeedgeconfigurationbyxml" class="anchor"><a class="heading-anchor" href="#activeedgeconfigurationbyxml"><span></span></a>ActiveEdge Configuration By XML</h3>
 
-<p><img alt="" src="img2.jpg"></p>
+<p>When configuring multiple devices, using an XML based approach may be preferred. In this scenario, an admin would</p>
 
-<p>When the ActiveEdge Zone is configured for barcode scanning, a 'Soft Scann Trigger" intent is sent to DataWedge. DataWedge then activates the default scanner for scanning. The user must be continue to press the Active Edge zone to keep the scanner active until a barcode is read or the user wishes to cancel this action. After a barcode is read, DataWedge handles the processing based on the way DataWedge profiles are configured.</p>
+<ol>
+<li>Create XML with the ActiveEdge configuration settings</li>
 
-<p>Typically, this means that the barcode data will be sent as keystrokes to the current application that is in the foreground. However an application can have a DataWedge profile configured to do something else with the data. If no foreground application is running, the “Launcher” DataWedge profile will be used if it is enabled. </p>
+<li>Deploy the XML file to a device using MDM methods</li>
 
-<p><strong>Note</strong>: Standard device rules apply with applications “competing” for the scanner. If an application currently has the scanner "locked", Active Edge scanning will not function (just as other applications would). In this case, pressing the Active Edge zone that has been configured for barcode scanning will result in no operation.</p>
-
-<p>Equally, the Active Edge service shall not lock use of the scanner. When a button that is configured for barcode scanning is pressed, Active Edge will immediately release the scanner either after the barcode is read or the user releases the Active Edge zone.</p>
-
-<hr>
-
-<h3 id="applicationdrawer" class="anchor"><a class="heading-anchor" href="#applicationdrawer"><span></span></a>Application Drawer</h3>
-
-<p><img alt="" src="img3.jpg"></p>
-
-<p>When the ActiveEdge Zone is configured to open a drawer, a drawer will slide out and up to three applications will be accessible for launching.</p>
-
-<ul>
-<li><strong>Opening the drawer</strong>: Tap the ActiveEdge zone to open the drawer. The drawer will always appear on top of any application that is running, including a "full-screen" application. The drawer will always be accessible when in the “open” state.</li>
-
-<li><strong>Closing the drawer</strong>: Tapping on the "handle" of the drawer will close the drawer. Tapping elsewhere on the display while the drawer is open will not close the drawer.</li>
-</ul>
+<li>Trigger an intent to the ActiveEdge Service</li>
+</ol>
 
 <hr>
 
-<h3 id="launchinganapplication" class="anchor"><a class="heading-anchor" href="#launchinganapplication"><span></span></a>Launching an Application</h3>
+<h4 id="1creatingthexml" class="anchor"><a class="heading-anchor" href="#1creatingthexml"><span></span></a>1) Creating the XML</h4>
 
-<p>When the Active Edge Zone is configured to launch an application, the following will happen:</p>
+<p>Use a text or XML editor to create a file using the options and settings to control the behavior of ActiveEdge. </p>
 
-<ul>
-<li>The application icon of the associated application will be shown on tap-down and the application will be opened.</li>
+<p>The following is an example of ActiveEdgeConfig.xml : </p>
 
-<li>The icon will be removed on tap-up when the Active Edge Zone is released. This is similar to how the Scanning option works: The barcode icon is shown for as long as the Active Edge Zone is pressed.</li>
-</ul>
+<pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wap-provisioningdoc&gt;
+  &lt;characteristic type="Profile"&gt;
+    &lt;characteristic type="ActiveEdge" version="0.1"&gt;
+      &lt;parm name="ServiceAction" value="StartService"/&gt;
+      &lt;parm name="RunAtStartup" value="True"/&gt;
+      &lt;parm name="OperationMode" value="White"/&gt;
+      &lt;parm name="LeftZone" value="Scanner"/&gt;
+      &lt;parm name="RightZone" value="Drawer"/&gt;
+      &lt;parm name="DrawerPackageNames" value=" com.symbol.datawedge/com.symbol.datawedge.DWDemoActivity,com.android.dialer"/&gt;
+      &lt;parm name="WhiteListPackageNames" value="com.android.launcher3/.Launcher,com.zebra.hotswap/.MainActivity,com.symbol.datawedge"/&gt;
+      &lt;parm name="BlackListPackageNames" value="com.android.launcher3/.Launcher,com.zebra.hotswap/.MainActivity,com.symbol.datawedge"/&gt;
+      &lt;parm name="LaunchAppLeft" value="com.android.browser"/&gt;
+      &lt;parm name="LaunchAppRight" value="com.android.calculator2"/&gt;
+
+    &lt;/characteristic&gt;
+  &lt;/characteristic&gt;
+
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
 
 <blockquote>
-  <p>Pressing the Active Edge Zone for a second time while the associated application is already in the foreground shall have no effect</p>
+  <p>Note: There may be more options available through XML than what is presented in the ActiveEdge Settings app.</p>
+</blockquote>
+
+<h5 id="serviceaction" class="anchor"><a class="heading-anchor" href="#serviceaction"><span></span></a>ServiceAction</h5>
+
+<p>This parameter controls if the ActiveEdge service is running or if you need to reset the configuration back to default.</p>
+
+<p>The following are valid values:</p>
+
+<ul>
+<li>StopService: This will Stop the service</li>
+
+<li>StartService: This will Start the ActiveEdge Service </li>
+
+<li>Restore: This will reset the configuration to factory defaults (not running, Scan/Drawer, Default Apps on Drawer)</li>
+</ul>
+
+<h5 id="runatstartup" class="anchor"><a class="heading-anchor" href="#runatstartup"><span></span></a>RunAtStartup</h5>
+
+<p>This parameter configures whether ActiveEdge is running at device startup.</p>
+
+<p>The following are valid values:</p>
+
+<ul>
+<li>True: This will cause ActiveEdge to start at device boot</li>
+
+<li>False: This will cause ActiveEdge to not start at device boot</li>
+</ul>
+
+<h5 id="operationmode" class="anchor"><a class="heading-anchor" href="#operationmode"><span></span></a>OperationMode</h5>
+
+<p>This parameter determines the mode that ActiveEdge is using while running.</p>
+
+<p>The following are valid values:</p>
+
+<ul>
+<li>Open: This will put ActiveEdge into a mode where it functions for all applications</li>
+
+<li>White: This will put ActiveEdge into a mode where it is only enabled for applications on the White List</li>
+
+<li>Black: This will put ActiveEdge into a mode where it will be enabled for ALL applications and be disabled for applications on the BlackList</li>
+</ul>
+
+<h5 id="whitelistpackagenamesblacklistpackagenames" class="anchor"><a class="heading-anchor" href="#whitelistpackagenamesblacklistpackagenames"><span></span></a>WhiteListPackageNames/ BlackListPackageNames</h5>
+
+<p>This is a comma separated string that contains the package names/activity of applications that should be placed on the White/BlackList. The ActiveEdge Mode will determine what list to be used for WhiteListing or BlackListing. The values will also be saved even if the mode is <code>All</code></p>
+
+<p>Format of string: <code>[package name]/.[activity name]</code></p>
+
+<p>Ex: <code>com.android.launcher3/.Launcher,com.zebra.hotswap/.MainActivity, com.symbol.datawedge/.DWDemoActivity</code></p>
+
+<p>The package name can also be supplied without an Activity to have all activities covered:
+Ex: <code>com.symbol.datawedge</code></p>
+
+<h5 id="leftzonerightzone" class="anchor"><a class="heading-anchor" href="#leftzonerightzone"><span></span></a>LeftZone / RightZone</h5>
+
+<p>These parameters control the behavior of either the Left or Right ActiveEdge Zone (respectively). </p>
+
+<p>The following are valid values:</p>
+
+<ul>
+<li>Scanner: The zone will be configured for barcode scanning</li>
+
+<li>Drawer: The zone will be configured for an application drawer</li>
+
+<li>LaunchApp: The zone will be configured to launch an application</li>
+
+<li>LaunchIntent: The zone will be configured to launch an Intent </li>
+</ul>
+
+<h5 id="drawerpackagenames" class="anchor"><a class="heading-anchor" href="#drawerpackagenames"><span></span></a>DrawerPackageNames</h5>
+
+<p>This paremeter is a comma separated string that contains the package names of applications that should be placed on the ActiveEdge Drawer. </p>
+
+<p>The format can be package name only (in which case it will launch the default activity):
+Ex: <code>com.android.dialer</code></p>
+
+<p>Or it can include a specific activity:
+Ex: <code>com.symbol.datawedge/com.symbol.datawedge.DWDemoActivity</code></p>
+
+<blockquote>
+  <p>Note: A zone does not have to be configured for a drawer for this setting to be saved. The setting will always be saved regardless if the current configuration is for a drawer. A maximum of 3 applications are accepted. Anything beyond (3) will be ignored.</p>
+</blockquote>
+
+<h5 id="launchappleftlaunchappright" class="anchor"><a class="heading-anchor" href="#launchappleftlaunchappright"><span></span></a>LaunchAppLeft / LaunchAppRight</h5>
+
+<p>This parameter may contain an application name of (1) application that should be launched when a ActiveEdge Zone is configured for launching an application for that particular zone. </p>
+
+<p>Format of string: <code>[package name]</code>
+Ex: <code>com.android.browser</code></p>
+
+<blockquote>
+  <p>Note: this setting can be saved even if the current Active Edge Zone is not configured for Launching an Application.</p>
 </blockquote>
 
 <hr>
 
-<h3 id="launchingintents" class="anchor"><a class="heading-anchor" href="#launchingintents"><span></span></a>Launching Intents</h3>
+<h4 id="2deployingthexml" class="anchor"><a class="heading-anchor" href="#2deployingthexml"><span></span></a>2) Deploying the XML</h4>
 
-<p>When the ActiveEdge Zone is configured to launch an intent, the following will happen:</p>
+<p>The XML file that was created above can be deployed by any means, but will typically be deployed by standard MDM tools. The location of the XML file should be on the device file system, and accessible by the application (usually the MDM client). It should not be included in the client application as an embedded resource.</p>
+
+<hr>
+
+<h4 id="3triggeringtheintent" class="anchor"><a class="heading-anchor" href="#3triggeringtheintent"><span></span></a>3) Triggering the Intent</h4>
+
+<p>An admin or MDM solution can trigger the ActiveEdge Service to process a new configuration file by sending an Intent with the following values:</p>
 
 <ul>
-<li>An Android icon will be shown on tap-down and the Intent will be sent.</li>
+<li><strong>Intent Type:</strong> StartService </li>
 
-<li>The icon will be removed on tap-up when the Active Edge Zone is released. This is similar to how the Scanning option works: The barcode icon is shown for as long as the Active Edge Zone is pressed.</li>
+<li><strong>Package Name:</strong> com.symbol.activeedge</li>
+
+<li><strong>Class Name:</strong> ConfigParserService</li>
+
+<li><strong>Extras:</strong>
+
+
+<ul>
+<li><code>SET_CONFIG_FILE</code> : fully qualified path to the ActiveEdgeConfig.XML file</li></ul>
+</li>
 </ul>
 
-<blockquote>
-  <p>Each press of the Active Edge Zone will cause the Intent to be sent.</p>
-</blockquote>
+<p>Ex: 
+        adb shell am startservice -a com.symbol.activeedge.ConfigParserService -e SET_CONFIG_FILE "/sdcard/ActiveEdgeConfig.xml”</p>
+
+<h5 id="xmlprocessing" class="anchor"><a class="heading-anchor" href="#xmlprocessing"><span></span></a>XML Processing</h5>
+
+<p>When ActiveEdge receives the intent it will:</p>
+
+<ol>
+<li>Open the File
+
+
+<ul>
+<li>The XML file will be opened and validated to be valid XML. If the XML is not valid then a message will be logged to the system log and the Active Edge Result Intent will be broadcasted (see below for details on Active Edge Result Intent)</li></ul>
+</li>
+
+<li>Parse the File
+
+
+<ul>
+<li>If any elements are present that are not expected, then an error will be reported via the Active Edge Result Intent. The processing will then be stopped and no effects on the AE Service will occur.</li>
+
+<li>If the file passes both the XML validity test and AE XML config test, then the settings will be saved.
+Besides malformed XML parameters the following conditions will result in “invalid XML”:
+
+
+<ul>
+<li>LeftZone and Right Zone both set to Drawer (the end result of the settings will be used to verify, not what is in the XML file)</li></ul>
+</li></ul>
+</li>
+
+<li>Save the settings from the XML File
+
+
+<ul>
+<li>The settings will only be saved if all XML is valid. The XML can contain partial settings and only the settings that are included will be effected. Each XML parameter has a corresponding Android Shared Preferences reference that both the AE Service and AE Settings app uses.</li></ul>
+</li>
+
+<li>Change the Active Edge behavior as needed
+
+
+<ul>
+<li>After an XML is processed successfully, the ActiveEdge Settings UI will be locked and not editable from an end user. It can only be unlocked if an admin sends a Restore to factory defaults.</li></ul>
+</li>
+
+<li>Send the Active Edge Result Intent
+
+
+<ul>
+<li>When the processing is complete (or an error occurs during processing), an Broadcast Intent will be sent so that any MDM application can be notified of the results:</li>
+
+<li><strong>Intent Type:</strong> Broadcast </li>
+
+<li><strong>Action Name:</strong> com.symbol.activeedge</li>
+
+<li><strong>Extras:</strong>
+
+
+<ul>
+<li><code>STATUS</code> : Pass or Fail</li>
+
+<li><code>ERROR_MESSAGE</code>: Error Message</li></ul>
+</li></ul>
+</li>
+</ol>
 
 <hr>
 
@@ -313,7 +488,7 @@ Drawer / Drawer</p>
 <ul>
 <li><a href="../about">About ActiveEdge</a></li>
 
-<li><a href="../setup">Administrative Guide</a></li>
+<li><a href="../usage">ActiveEdge Usage Guide</a></li>
 </ul><p></p>
                                         
 
