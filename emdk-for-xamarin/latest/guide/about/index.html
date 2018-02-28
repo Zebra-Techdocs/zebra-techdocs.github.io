@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
                                             EMDK For Xamarin
-                                            2.6
+                                            2.7
                         </p>
 
                     </ul>
@@ -63,42 +63,42 @@
 
 
                         <li>
-                            <a href="/emdk-for-xamarin/2-6/guide/about">
+                            <a href="/emdk-for-xamarin/2-7/guide/about">
                                     Home
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-6/guide/gettingstarted">
+                            <a href="/emdk-for-xamarin/2-7/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-6/tutorial/">
+                            <a href="/emdk-for-xamarin/2-7/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-6/samples">
+                            <a href="/emdk-for-xamarin/2-7/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-6/guide/programming-guides">
+                            <a href="/emdk-for-xamarin/2-7/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-6/guide/profile-manager-guides">
+                            <a href="/emdk-for-xamarin/2-7/guide/profile-manager-guides">
                                     Profile Manager
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-6/api">
+                            <a href="/emdk-for-xamarin/2-7/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/2-6/search">
+                            <a href="/emdk-for-xamarin/2-7/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="emdk-for-xamarin" class="anchor"><a class="heading-anchor" href="#emdk-for-xamarin"><span></span></a>EMDK For Xamarin</h1>
                                     <p>
                                             EMDK For Xamarin
-                                            2.6
+                                            2.7
                                     </p>
                                 </div>
                             </section>                    
@@ -226,26 +226,114 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><p>The EMDK for Xamarin provides developers with a comprehensive set of tools to easily create powerful line of business applications for Android enterprise mobile computing devices using their C# skills and tools. The EMDK for Xamarin includes class libraries, sample applications with source code, and all of the associated documentation for building applications take full advantage of what Zebra devices have to offer.</p>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<h2 id="importantnews" class="anchor"><a class="heading-anchor" href="#importantnews"><span></span></a>Important News</h2>
+<p>EMDK for Xamarin is an IDE extension that provides developers with a comprehensive set of tools to easily create powerful line-of-business applications for Zebra Android devices using C# skills and tools. EMDK for Xamarin includes class libraries, sample applications and source code, and all associated documentation for building applications that take full advantage of the power of Zebra devices.</p>
+
+<p>EMDK for Xamarin inserts the Zebra-exclusive Profile Manager technology within the IDE, providing a GUI-based development tool for configuring Zebra devices. This allows developers to write fewer lines of code, produce fewer errors, and reduce overall development time and effort.</p>
+
+<hr>
+
+<h2 id="newinv27" class="anchor"><a class="heading-anchor" href="#newinv27"><span></span></a>New in v2.7</h2>
+
+<p><strong>Enhanced Barcode Manager API</strong>:</p>
 
 <ul>
-<li>When upgrading to a new version of EMDK for Xamarin IDE extension, <code>previous versions must be uninstalled</code>. Failure to remove previous versions will result in an incomplete install of the new EMDK for Xamarin IDE extension. </li>
+<li>Supports Multi-barcode decoding</li>
 
-<li>EMDK for Xamarin support for all KitKat (Android 4.4.3 or higher) devices has been dropped. - The EMDK for Xamarin v2.5 was the final version distributing EMDK OS update package with the PC/MAC installations for KitKat devices. For all Lollipop or higher devices, the EMDK update for a specific device will be distributed with the latest BSP or security incremental patch.</li>
+<li>New <code>MULTI_BARCODE</code> value in <code>enum</code> ScanMode enables simultaneous decoding of multiple barcodes</li>
+
+<li>New <code>MultiBarcodeParams</code> class in <code>ScannerConfig</code> adds <code>barcodeCount</code> parameter to set the barcode count to be scanned</li>
+
+<li>New <code>PRESS_AND_SUSTAIN</code> AimType avoids canceling a read by subsequently pressing the trigger button (TC20/TC25 devices only)</li>
 </ul>
 
-<h2 id="devicessupported" class="anchor"><a class="heading-anchor" href="#devicessupported"><span></span></a>Devices Supported</h2>
+<p><strong>Enhanced SerialComm API</strong>:</p>
+
+<ul>
+<li><code>flowControlMode</code> under Serial Config takes <code>RTS_CTS</code>, <code>XON_XOFF</code> and <code>NONE</code> values</li>
+</ul>
+
+<p><strong>Enhanced Profile Manager DataCapture</strong>: </p>
+
+<ul>
+<li>Supports Serial Input plug-in</li>
+
+<li>Support Zebra DS-3608 scanner</li>
+
+<li><strong>Support for Multi-barcode decoding</strong>:
+
+
+<ul>
+<li>New <code>Multi Barcode</code> Scanning Mode option in Reader parameters enables simultaneous decoding of multiple barcodes</li>
+
+<li>New <code>Barcode count</code> field under Multi-barcode parameters allows a barcode count to be set</li></ul>
+</li>
+
+<li>Supports sending ENTER command as a string</li>
+
+<li>Enhanced support for Inter-character delay</li>
+
+<li>New <code>PRESS_AND_SUSTAIN</code> AimType avoids canceling a read by subsequently pressing the trigger button (TC20/TC25 devices only)</li>
+</ul>
+
+<p><strong>Beta support for Visual Studio on Mac OS X</strong></p>
+
+<hr>
+
+<p><strong>Support for MX 7.2</strong> adds the following Setting Types and features:</p>
+
+<ul>
+<li><strong>Enhanced <a href="../../mx/displaymgr">Display Manager</a> CSP</strong>:
+
+
+<ul>
+<li>On VC80 devices, adds the ability to force the display to “Stay Awake” and remain on.</li></ul>
+</li>
+
+<li><strong>Enhanced <a href="../../mx/powermgr">Power Manager</a> CSP</strong>:
+
+
+<ul>
+<li>Turn ON/OFF “Doze Mode” energy saving features on the device. When enabled, only specially designated apps can prevent the device from entering a low-power state to preserve battery life. </li></ul>
+</li>
+
+<li><strong>Enhanced <a href="../../mx/remotescannermgr">Remote Scanner Manager</a> CSP</strong>:
+
+
+<ul>
+<li>Supports RS-507 and DS-3608 scanners</li></ul>
+</li>
+
+<li><strong>Enhanced <a href="../../mx/settingsmgr">Settings Manager</a> CSP</strong>:
+
+
+<ul>
+<li>Enable/Disable application notification control on devices running Android Nougat</li></ul>
+</li>
+</ul>
+
+<!-- 2/6/18- removed per eng. 
+* **New [Audio Manager](../../mx/audio) CSP**:
+ * Controls whether audio on a device plays only through a connected handset or through the handset and the built-in device speaker (supported on the Zebra VC80x only).
+ -->
+
+<hr>
+
+<h3 id="devicessupported" class="anchor"><a class="heading-anchor" href="#devicessupported"><span></span></a>Devices Supported</h3>
 
 <p>EMDK for Xamarin has been designed to work with all Zebra mobile computers running Android. </p>
 
 <p><strong>The following devices have been tested and validated</strong>:</p>
 
+<h3 id="mobiledevices" class="anchor"><a class="heading-anchor" href="#mobiledevices"><span></span></a>Mobile devices</h3>
+
 <ul>
 <li>ET5X   - Lollipop</li>
 
 <li>MC33   - Nougat</li>
+
+<li>TC20   - Nougat</li>
 
 <li>TC25   - Nougat</li>
 
@@ -263,10 +351,28 @@
 
 <li>TC8000 - Lollipop</li>
 
+<li>VC80x  - Nougat</li>
+
 <li>WT6000 - Lollipop</li>
 </ul>
 
-<h2 id="developmenttoolssupported" class="anchor"><a class="heading-anchor" href="#developmenttoolssupported"><span></span></a>Development Tools Supported</h2>
+<h3 id="scannersandimagers" class="anchor"><a class="heading-anchor" href="#scannersandimagers"><span></span></a>Scanners and imagers</h3>
+
+<ul>
+<li>RS507</li>
+
+<li>RS6000</li>
+
+<li>RS5000</li>
+
+<li>RS4000</li>
+
+<li>DS3678</li>
+
+<li>DS3608</li>
+</ul>
+
+<h3 id="developmenttoolssupported" class="anchor"><a class="heading-anchor" href="#developmenttoolssupported"><span></span></a>Development Tools Supported</h3>
 
 <ul>
 <li><strong>Windows</strong>
@@ -285,11 +391,13 @@
 </li></ul>
 </li>
 
-<li><strong>Mac</strong>
+<li><strong>Mac OS X</strong>
 
 
 <ul>
-<li>Xamarin Studio
+<li>Visual Studio (beta)</li>
+
+<li>Xamarin Studio (deprecated)
 
 
 <ul>
@@ -298,73 +406,37 @@
 </li>
 </ul>
 
-<h2 id="whatsnewinversion26" class="anchor"><a class="heading-anchor" href="#whatsnewinversion26"><span></span></a>What's New in Version 2.6</h2>
+<blockquote>
+  <p><strong>This version cannot target devices running KitKat</strong>. </p>
+</blockquote>
+
+<hr>
+
+<h3 id="deprecations" class="anchor"><a class="heading-anchor" href="#deprecations"><span></span></a>Deprecations</h3>
 
 <ul>
-<li>Added support for Nougat devices</li>
+<li><p><strong>Support for configuring DataWedge using EMDK Profile Manager is deprecated</strong>. Profile Manager capabilities categorized under Data Capture are still supported but will no longer be advanced. Zebra recommends using <a href="/datawedge">DataWedge intent-based APIs</a> to configure DataWedge profiles going forward.</p></li>
 
-<li>Added support to scan barcode using Camera on TC51, TC56, TC70x and TC75x Nougat (Android 7.1.2) devices. This is supported if the system has Scanner Framework 19.0.8.0 or above.</li>
+<li><p><strong>Support for the</strong> <code>ContinuousRead</code> <strong>class is deprecated</strong>. This class, which can be used to enable continuous scanning, is still supported but will no longer be advanced. Zebra recommends using the <code>aimType</code>, <code>sameSymbolTimeout</code>, <code>differentSymbolTimeout</code> reader parameters for the device camera, imager or laser.</p></li>
 
-<li>Added support for MX v7.1 in Profile Manager:
+<li><p><strong>Support for the</strong> <code>picklist</code> <strong>field is deprecated</strong>. This field, which is used for enabling the <code>picklist</code> mode, is still support but will ultimately be replaced by the <code>picklistEx</code> field. </p></li>
 
+<li><p><strong>Xamarin Studio on Mac OS X</strong> remains supported but will no longer be advanced. </p></li>
+</ul>
 
-<ul>
-<li>License Manager – Added new feature to perform license management operations such as configure license source, license activation etc.</li>
+<hr>
 
-<li>Display Manager – Added ability to control display blanking.</li>
-
-<li>Key Mapping Manager – Added macro keys, brightness keys and keyboard as options</li>
-
-<li>Wireless Manager – Added ability to select antenna to use for both WiFi and Bluetooth.</li>
-
-<li>Power Manager
-
+<h3 id="compatibilitynotes" class="anchor"><a class="heading-anchor" href="#compatibilitynotes"><span></span></a>Compatibility Notes</h3>
 
 <ul>
-<li>Added ability to select ports and specify port action.</li>
+<li>When upgrading to a new version of EMDK for Xamarin, <strong>previous versions must be uninstalled</strong>. Failure to remove previous versions will result in an incomplete installation of the new extension. </li>
 
-<li>Added ability to select the Heater and specify heater action</li>
+<li>Support for KitKat (Android 4.4.3 or higher) devices has been dropped. </li>
 
-<li>Added ability to configure auto power options</li>
+<li>For devices running Android Lollipop or higher, a device-specific update is distributed with the latest BSP or security incremental patch for that device.</li>
+</ul>
 
-<li>Added ability to disable GMS Welcome Screen on Enterprise Reset</li>
-
-<li>Added ability to specify the temperature at which the heater should turn ON or OFF</li></ul>
-</li>
-
-<li>UI Manager
-
-
-<ul>
-<li>Added ability to enable/disable Navigation Bar.</li>
-
-<li>Added ability to enable/disable Recent App button.</li></ul>
-</li>
-
-<li>Wi-Fi
-
-
-<ul>
-<li>Added ability to enable/disable Wireless Network Management (802.11v).</li></ul>
-</li></ul>
-</li>
-
-<li>Enhanced SerialComm API:
-
-
-<ul>
-<li>Added a feature to concurrently communicate with the multiple connected serial devices on VC80x</li></ul>
-</li>
-
-<li>Enhanced Barcode Manager API with the following features:
-
-
-<ul>
-<li>Added support for new USB Scanner DS3608: This scanner is supported with VC80x and ET5X devices.</li></ul>
-</li>
-
-<li>Terminated EMDK for Android support for all KitKat (Android 4.4.x) devices. - The Xamarin EMDK v2.5 was the final version supporting KitKat (Android 4.4.x) devices. Starting from Xamarin EMDK v2.5, only the Lollipop or higher devices are supported.</li>
-</ul><p></p>
+<hr><p></p>
                                         
 
 
