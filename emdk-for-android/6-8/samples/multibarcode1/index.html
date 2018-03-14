@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Data Capture">
-    <title>Data Capture - Zebra Technologies TechDocs</title>
+    <meta title="Multi-barcode Scanning">
+    <title>Multi-barcode Scanning - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -78,8 +78,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h1 id="data-capture" class="anchor"><a class="heading-anchor" href="#data-capture"><span></span></a>Data Capture</h1>
-                    <p>Shows how to use the EMDK for Android Profile APIs to manage Data Capture profiles.
+                    <h1 id="multi-barcode-scanning" class="anchor"><a class="heading-anchor" href="#multi-barcode-scanning"><span></span></a>Multi-barcode Scanning</h1>
+                    <p>This sample application scans multiple barcodes simultaneously based on selected scanner device, trigger type and a few decoder Decoder Parameters.
                     </p>
                 </div>
                 <div class="col-sm-3 text-right">
@@ -131,16 +131,8 @@
 	                        <div class="">
 	                            <h2 class="anchor" id="devices"><a class="heading-anchor" href="#devices"><span></span></a>Devices</h2>
 	                            <p>
-	                            	MC18KK
-	                            	MC32N0JB
-	                            	MC40JB
-	                            	MC40KK
-	                            	MC67JB
-	                            	MC92KK
-	                            	TC55JB
-	                            	TC55KK
-	                            	TC70KK
-	                            	TC75KK
+	                            	TC20N
+	                            	TC25N
 	                            	
 	                            </p>
 	                        </div>
@@ -150,7 +142,25 @@
 	                            <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
 	                            <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>One of the features of the EMDK is the ability to create Barcode scanning profiles. This application allows you to modify a Barcode profile to select which times of Barcodes should be interpreted.  </p>
+<p>This sample demonstrates simultaneous scanning of multiple barcodes using new capabilities in the Barcode API <a href="/emdk-for-android/6-8/api">Barcode/Scanning APIs</a> introduced with EMDK for Android 6.8. These APIs work independently of any <a href="/emdk-for-android/6-8/mx/data-capture/barcode">Data Capture profiles</a>.  </p>
+
+<p>The available actions in the <a href="/emdk-for-android/6-8/api">Barcode/Scanning API</a> are:</p>
+
+<ul>
+<li>Set <a href="/emdk-for-android/6-8/api/barcode/BarcodeManager-DeviceIdentifier/">Scanner Device</a>  </li>
+
+<li>Set <a href="/emdk-for-android/6-8/api/barcode/Scanner">TriggerType</a></li>
+
+<li>Set <a href="/emdk-for-android/6-8/api/barcode/ScannerConfig-DecoderParams">Decoder Params</a></li>
+
+<li>Set <a href="/emdk-for-android/6-8/api/barcode/ScannerConfig-ReaderParams">Reader Params</a></li>
+
+<li>Set <a href="/emdk-for-android/6-8/api/barcode/ScannerConfig-ScanParams">Scan Params</a></li>
+
+<li>Scan barcodes based on selected features   </li>
+</ul>
+
+<p>This sample application permits barcode scanning based on selected scanner, trigger type and few <a href="/emdk-for-android/6-8/api/barcode/ScannerConfig-DecoderParams">Decoder Params</a>.</p>
 
 <blockquote>
   <p>Note: Although this sample may work with previous versions of the EMDK, it is advised to <a href="../../guide/setupDevice/">update the EMDK runtime</a> on your device before loading this sample.</p>
@@ -170,85 +180,37 @@
 
 <h2 id="usingthissample" class="anchor"><a class="heading-anchor" href="#usingthissample"><span></span></a>Using This Sample</h2>
 
-<p>1) When the application first loads you will see:</p>
+<ol>
+<li><p>When the application starts it should look like the following.</p>
 
-<ul>
-<li>Checkboxes for changing Barcode options</li>
+<p><img src="barcode_1.png" alt="img"></p></li>
 
-<li>A text area where Barcode data will be displayed</li>
+<li><p>Set scanner to "Serial SSI Scanner", which is the default one". </p>
 
-<li>A Status area where status will be shown</li>
-</ul>
+<p><img src="../../images/samples/barcode_2.png" alt="img"></p></li>
 
-<p><img src="9.png" alt="img"></p>
+<li><p>Set Trigger Type to "HARD".</p>
 
-<p>2) Select which Barcode types you would like to enable. <br>
-3) click "Set". <br>
-4) San a Barcode of one of the selected Barcode types. <br>
-5) The data from the Barcode should populate on the screen. <br>
-  <img src="new.png" alt="img"></p>
-
-<h2 id="applicationstartup" class="anchor"><a class="heading-anchor" href="#applicationstartup"><span></span></a>Application Startup</h2>
-
-<p>Using the Profile Manager Wizard, a profile called 'DataCaptureprofile-1' was created. You can inspect the parameters it has by launching the EMDK Profile Manager.</p>
-
-<p><img src="10.jpg" alt="img"></p>
-
-<p>You will see that the MainActivity for the application has been selected to indicate when this profile will be used. As you can see in EMDK for Android V 2.1, the existing features of V 2.0 are categorized based on their operations such as Activity Selection, Data Input (Barcode, MSR) and Data Delivery (Intent, Keystroke and IP). Moreover it has introduced several new MX (Mobility Extension) features (Ex. Clock, App Manager, Power Manager etc). These MX features are used for configuring Symbol Android devices.</p>
+<p><img src="barcode_3.png" alt="img"></p></li>
+</ol>
 
 <blockquote>
-  <p>Note: The field "Name" contains user defined name to identify a particular feature. This is required when editing any specific feature programmatically, which is outside the scope of this tutorial. So we will keep the "Name" field empty.</p>
+  <p>Note: Trigger Type "HARD" lets you scan the barcode using device's hard scan key whereas "SOFT" allows you to scan without using devic's hard scan key.</p>
 </blockquote>
 
-<p><img src="11.jpg" alt="img"></p>
+<ol>
+<li><p>Keep all checkboxes checked for decoder params and this is how it should look after setting all fields.</p>
 
-<blockquote>
-  <p>Note: The field "Name" contains user defined name to identify a particular Barcode Scanner Input feature. This is required when editing any specific Barcode Scanner Input feature programmatically, which is outside the scope of this tutorial. So we will keep the "Name" field empty.</p>
-</blockquote>
+<p><img src="barcode_4.png" alt="img">    </p></li>
 
-<p>The profile feature parameters that have been chosen can be inspected to see that certain barcode decoders have been enabled and the output will be using the Keystroke feature. This profile has MSR and Intent output disabled.</p>
+<li><p>Click "Start" button and the status will be updated.</p>
 
-<p><img src="12.jpg" alt="img"></p>
+<p><img src="../../images/samples/barcode_5.png" alt="img"> </p></li>
 
-<p><img src="13.jpg" alt="img"></p>
+<li><p>Since we selected Trigger Type as "HARD", press the hard scan key of Symbol device and scan a particular barcode. It will get the scanned barcode data in "Data" field of UI.</p>
 
-<p><img src="14.jpg" alt="img"></p>
-
-<p>When the application starts up, the onOpened method is executed and the profile is processed.</p>
-
-<p><img src="15.jpg" alt="img"></p>
-
-<p><img src="16.jpg" alt="img"></p>
-
-<p>It if was successful, you will see "Profile initialization Success" on the application's status area.</p>
-
-<p><img src="17.png" alt="img"></p>
-
-<h2 id="scanningabarcode" class="anchor"><a class="heading-anchor" href="#scanningabarcode"><span></span></a>Scanning a Barcode</h2>
-
-<p>After the application has been loaded, you can begin scanning barcodes. Notice that only Code128, EAN8, UPCA types have been chosen. When you press the scan trigger on the device, you should see the default scanner become activated and a barcode is attempted to be read. If the barcode you have chosen is not one of the ones listed above, it will not decode and display in the text area. </p>
-
-<blockquote>
-  <p>NOTE: Most everyday items you may have in your home use the UPCA type barcode. You may also Google these types of barcode to see what they look like and print one out for testing</p>
-</blockquote>
-
-<p>Upon successful Barcode scanning, the barcode data will be output into the text field.</p>
-
-<p><img src="18.png" alt="img"></p>
-
-<h2 id="changingbarcodesettings" class="anchor"><a class="heading-anchor" href="#changingbarcodesettings"><span></span></a>Changing Barcode Settings</h2>
-
-<p>When you uncheck the checkboxes in the application, the DataCaptureProfile-1 is modified on the fly using the ProfileConfig API. </p>
-
-<ul>
-<li>Uncheck the barcode type you just scanned in </li>
-
-<li>tap 'Set' and you should see 'Profile update success' in the status area</li>
-</ul>
-
-<p><img src="19.png" alt="img"></p>
-
-<p>Now when you scan the same Barcode, you will still see the barcode aimer but the data will not be decoded and you will not see the data displayed in the text area.</p><p></p>
+<p><img src="barcode_6.png" alt="img">  </p></li>
+</ol><p></p>
 	                        </div>
 	                    </div>
 
@@ -260,15 +222,27 @@
 						    <section id="main-slider">
 						        <div class="owl-carousel">
 						            <div class="item">
-						            	<img src="/emdk-for-android/6-8/samples/data-capture/1.png">
+						            	<img src="/emdk-for-android/6-8/samples/multibarcode1/1.png">
 						                
 						            </div><!--/.item-->
 						            <div class="item">
-						            	<img src="/emdk-for-android/6-8/samples/data-capture/2.png">
+						            	<img src="/emdk-for-android/6-8/samples/multibarcode1/2.png">
 						                
 						            </div><!--/.item-->
 						            <div class="item">
-						            	<img src="/emdk-for-android/6-8/samples/data-capture/3.png">
+						            	<img src="/emdk-for-android/6-8/samples/multibarcode1/3.png">
+						                
+						            </div><!--/.item-->
+						            <div class="item">
+						            	<img src="/emdk-for-android/6-8/samples/multibarcode1/4.png">
+						                
+						            </div><!--/.item-->
+						            <div class="item">
+						            	<img src="/emdk-for-android/6-8/samples/multibarcode1/5.png">
+						                
+						            </div><!--/.item-->
+						            <div class="item">
+						            	<img src="/emdk-for-android/6-8/samples/multibarcode1/6.png">
 						                
 						            </div><!--/.item-->
 						        </div><!--/.owl-carousel-->
