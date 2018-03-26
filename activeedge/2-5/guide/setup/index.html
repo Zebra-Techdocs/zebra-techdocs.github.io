@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="ActiveEdge Setup &amp; Configuration">
-    <title>ActiveEdge Setup &amp; Configuration - Zebra Technologies TechDocs</title>
+    <meta title="Setup and Configuration">
+    <title>Setup and Configuration - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -69,7 +69,7 @@
                         </li>
                         <li>
                             <a href="/activeedge/2-5/guide/setup">
-                                    Setup &amp; Configuration
+                                    Setup and Configuration
                             </a>
                         </li>
                         <li>
@@ -104,7 +104,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>ActiveEdge Setup &amp; Configuration</strong></li>
+                            <li><strong>Setup and Configuration</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -190,7 +190,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="activeedge-setup--configuration" class="anchor"><a class="heading-anchor" href="#activeedge-setup--configuration"><span></span></a>ActiveEdge Setup &amp; Configuration</h1>
+                                    <h1 id="setup-and-configuration" class="anchor"><a class="heading-anchor" href="#setup-and-configuration"><span></span></a>Setup and Configuration</h1>
                                     <p>
                                             ActiveEdge
                                             2.5
@@ -211,68 +211,93 @@
 <p>ActiveEdge can be configured through:</p>
 
 <ul>
-<li>An ActiveEdge settings app that is built into the device </li>
+<li>The ActiveEdge <strong>settings panel</strong>  </li>
 
-<li>XML file configured by a system admin or MDM solution</li>
+<li><strong>An XML file</strong> pushed to the device</li>
 </ul>
 
-<blockquote>
-  <p>Note: once an admin deploys an XML based configuration, the local settings app will be in read-only mode. Also, the local settings app may not display all available settings that the administrator has configured.</p>
-</blockquote>
+<p><strong>IMPORTANT: Once an XML configuration file is deployed to a device, the ActiveEdge settings panel can no longer be used to change settings on that device, only to display them</strong>. </p>
 
 <hr>
 
-<h3 id="activeedgesettingsapp" class="anchor"><a class="heading-anchor" href="#activeedgesettingsapp"><span></span></a>ActiveEdge Settings App</h3>
+<h3 id="settingspanel" class="anchor"><a class="heading-anchor" href="#settingspanel"><span></span></a>Settings Panel</h3>
 
-<p><img alt="" style="height:350px" src="img1.jpg"></p>
+<p>The ActiveEdge settings panel presents a UI on the device to allow the device user to make changes to Touch Zone settings as needed or desired. <strong>This panel becomes "read-only" and cannot be used to change settings if the device is configured remotely using an XML configuration file</strong>.</p>
 
-<p>After launching the ActiveEdge settings application, you will be able to configure the behavior of ActiveEdge and whether it is running or not.</p>
+<p><img alt="" style="height:350px" src="img1.jpg">
+<em>The ActiveEdge settings panel</em>
+<br></p>
 
-<p>The following options are available through the ActiveEdge settings application:</p>
+<p><strong>Settings configured through this panel</strong>:</p>
 
 <ul>
-<li>Start or Stop ActiveEdge Service - Touch to start/stop the ActiveEdge Service to enable/disable the
-ActiveEdge Zone.</li>
+<li><strong>Start or Stop ActiveEdge Service -</strong> toggles the ActiveEdge service on and off, which enables and disables the ActiveEdge Touch Zones. <strong>Service must be stopped before changing other settings</strong>. </li>
 
-<li>Start ActiveEdge Service on Boot Up - Automatically start the ActiveEdge Service when the device boots
-up. the Service is always running and always available.</li>
+<li><strong>Start ActiveEdge Service on Boot Up -</strong> determines whether ActiveEdge runs when the device boots up (<strong>enabled by default</strong>).</li>
 
-<li>Left ActiveEdge Zone - Configure the left ActiveEdge Zone to Scanner, Drawer, or None.</li>
+<li><strong>Left ActiveEdge Zone -</strong> configures the left-hand Touch Zone for Scanner, App Drawer or None.</li>
 
-<li>Right ActiveEdge Zone - Configure the right ActiveEdge Zone to Scanner, Drawer, or None.</li>
+<li><strong>Right ActiveEdge Zone -</strong> configures the right-hand Touch Zone for Scanner, App Drawer or None.</li>
 
-<li>Select Apps for Drawer - Select up to three applications to appear on the Drawer.</li>
+<li><strong>Select Apps for Drawer -</strong> permits selection of as many as three applications to appear in the Drawer. Apps must already be installed on the device. </li>
 
-<li>Restore - Restore the settings to the factory defaults.</li>
+<li><strong>Restore -</strong> returns all settings to factory defaults.</li>
 </ul>
 
-<blockquote>
-  <p>Select the Settings menu : About to open the About ActiveEdge window, which displays the version number.</p>
-</blockquote>
+<p><strong>NOTES</strong>: </p>
+
+<ul>
+<li><strong>The ActiveEdge service must be stopped</strong> before making changes through the settings panel.</li>
+
+<li><strong>The settings panel is read-only</strong> if the app has been configured remotely (via XML file).</li>
+
+<li><strong>The settings panel <u>cannot</u> be used to configure</strong>: 
+
+
+<ul>
+<li><strong>ActiveEdge Operation Mode</strong> (open, black, white) </li>
+
+<li><strong>Apps on the Op Mode's black or white lists</strong></li>
+
+<li><strong>LaunchAppLeft or LaunchAppRight settings</strong></li></ul>
+</li>
+
+<li><strong>Only one Touch Zone can contain an App Drawer</strong> at a time. </li>
+
+<li><strong>To display the ActiveEdge version number</strong>, tap the Settings (dots) menu-&gt;About.</li>
+</ul>
 
 <hr>
 
-<h3 id="activeedgeconfigurationbyxml" class="anchor"><a class="heading-anchor" href="#activeedgeconfigurationbyxml"><span></span></a>ActiveEdge Configuration By XML</h3>
+<h2 id="xmlconfiguration" class="anchor"><a class="heading-anchor" href="#xmlconfiguration"><span></span></a>XML Configuration</h2>
 
-<p>When configuring multiple devices, using an XML based approach may be preferred. In this scenario, an admin would</p>
+<p>Zebra recommends using the file-based approach when configuring multiple devices. The administrative process involves three basic steps:</p>
 
 <ol>
-<li>Create XML with the ActiveEdge configuration settings</li>
+<li><strong>Create an XML file</strong> containing the desired ActiveEdge settings</li>
 
-<li>Deploy the XML file to a device using MDM methods</li>
+<li><strong>Deploy the XML file to device(s)</strong> using an enterprise mobile management (EMM) system</li>
 
-<li>Trigger an intent to the ActiveEdge Service</li>
+<li><strong>Trigger an intent</strong> to run the ActiveEdge Service and activate settings in the file</li>
 </ol>
+
+<p>Each of these steps is detailed below. </p>
 
 <hr>
 
-<h4 id="1creatingthexml" class="anchor"><a class="heading-anchor" href="#1creatingthexml"><span></span></a>1) Creating the XML</h4>
+<h3 id="1createxmlfile" class="anchor"><a class="heading-anchor" href="#1createxmlfile"><span></span></a>1. Create XML File</h3>
 
-<p>Use a text or XML editor to create a file using the options and settings to control the behavior of ActiveEdge. </p>
+<p>Use a text or XML editor to create an XML file and configure it for the desired ActiveEdge behavior based on the settings described below. </p>
 
-<p>The following is an example of ActiveEdgeConfig.xml : </p>
+<ol>
+<li><p>As a starting point, copy the sample <code>ActiveEdgeConfig.xml</code> file below.</p></li>
 
-<pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<li><p>Paste it into the editor and change settings as desired.</p></li>
+
+<li><p>Save the file on the host computer as "<code>ActiveEdgeConfig.xml</code>" (note spelling and letter case).</p>
+
+<pre class="prettyprint"><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;wap-provisioningdoc&gt;
   &lt;characteristic type="Profile"&gt;
     &lt;characteristic type="ActiveEdge" version="0.1"&gt;
@@ -286,185 +311,169 @@ up. the Service is always running and always available.</li>
       &lt;parm name="BlackListPackageNames" value="com.android.launcher3/.Launcher,com.zebra.hotswap/.MainActivity,com.symbol.datawedge"/&gt;
       &lt;parm name="LaunchAppLeft" value="com.android.browser"/&gt;
       &lt;parm name="LaunchAppRight" value="com.android.calculator2"/&gt;
-
     &lt;/characteristic&gt;
   &lt;/characteristic&gt;
-
 &lt;/wap-provisioningdoc&gt;
-</code></pre>
-
-<blockquote>
-  <p>Note: There may be more options available through XML than what is presented in the ActiveEdge Settings app.</p>
-</blockquote>
-
-<h5 id="serviceaction" class="anchor"><a class="heading-anchor" href="#serviceaction"><span></span></a>ServiceAction</h5>
-
-<p>This parameter controls if the ActiveEdge service is running or if you need to reset the configuration back to default.</p>
-
-<p>The following are valid values:</p>
-
-<ul>
-<li>StopService: This will Stop the service</li>
-
-<li>StartService: This will Start the ActiveEdge Service </li>
-
-<li>Restore: This will reset the configuration to factory defaults (not running, Scan/Drawer, Default Apps on Drawer)</li>
-</ul>
-
-<h5 id="runatstartup" class="anchor"><a class="heading-anchor" href="#runatstartup"><span></span></a>RunAtStartup</h5>
-
-<p>This parameter configures whether ActiveEdge is running at device startup.</p>
-
-<p>The following are valid values:</p>
-
-<ul>
-<li>True: This will cause ActiveEdge to start at device boot</li>
-
-<li>False: This will cause ActiveEdge to not start at device boot</li>
-</ul>
-
-<h5 id="operationmode" class="anchor"><a class="heading-anchor" href="#operationmode"><span></span></a>OperationMode</h5>
-
-<p>This parameter determines the mode that ActiveEdge is using while running.</p>
-
-<p>The following are valid values:</p>
-
-<ul>
-<li>Open: This will put ActiveEdge into a mode where it functions for all applications</li>
-
-<li>White: This will put ActiveEdge into a mode where it is only enabled for applications on the White List</li>
-
-<li>Black: This will put ActiveEdge into a mode where it will be enabled for ALL applications and be disabled for applications on the BlackList</li>
-</ul>
-
-<h5 id="whitelistpackagenamesblacklistpackagenames" class="anchor"><a class="heading-anchor" href="#whitelistpackagenamesblacklistpackagenames"><span></span></a>WhiteListPackageNames/ BlackListPackageNames</h5>
-
-<p>This is a comma separated string that contains the package names/activity of applications that should be placed on the White/BlackList. The ActiveEdge Mode will determine what list to be used for WhiteListing or BlackListing. The values will also be saved even if the mode is <code>All</code></p>
-
-<p>Format of string: <code>[package name]/.[activity name]</code></p>
-
-<p>Ex: <code>com.android.launcher3/.Launcher,com.zebra.hotswap/.MainActivity, com.symbol.datawedge/.DWDemoActivity</code></p>
-
-<p>The package name can also be supplied without an Activity to have all activities covered:
-Ex: <code>com.symbol.datawedge</code></p>
-
-<h5 id="leftzonerightzone" class="anchor"><a class="heading-anchor" href="#leftzonerightzone"><span></span></a>LeftZone / RightZone</h5>
-
-<p>These parameters control the behavior of either the Left or Right ActiveEdge Zone (respectively). </p>
-
-<p>The following are valid values:</p>
-
-<ul>
-<li>Scanner: The zone will be configured for barcode scanning</li>
-
-<li>Drawer: The zone will be configured for an application drawer</li>
-
-<li>LaunchApp: The zone will be configured to launch an application</li>
-
-<li>LaunchIntent: The zone will be configured to launch an Intent </li>
-</ul>
-
-<h5 id="drawerpackagenames" class="anchor"><a class="heading-anchor" href="#drawerpackagenames"><span></span></a>DrawerPackageNames</h5>
-
-<p>This paremeter is a comma separated string that contains the package names of applications that should be placed on the ActiveEdge Drawer. </p>
-
-<p>The format can be package name only (in which case it will launch the default activity):
-Ex: <code>com.android.dialer</code></p>
-
-<p>Or it can include a specific activity:
-Ex: <code>com.symbol.datawedge/com.symbol.datawedge.DWDemoActivity</code></p>
-
-<blockquote>
-  <p>Note: A zone does not have to be configured for a drawer for this setting to be saved. The setting will always be saved regardless if the current configuration is for a drawer. A maximum of 3 applications are accepted. Anything beyond (3) will be ignored.</p>
-</blockquote>
-
-<h5 id="launchappleftlaunchappright" class="anchor"><a class="heading-anchor" href="#launchappleftlaunchappright"><span></span></a>LaunchAppLeft / LaunchAppRight</h5>
-
-<p>This parameter may contain an application name of (1) application that should be launched when a ActiveEdge Zone is configured for launching an application for that particular zone. </p>
-
-<p>Format of string: <code>[package name]</code>
-Ex: <code>com.android.browser</code></p>
-
-<blockquote>
-  <p>Note: this setting can be saved even if the current Active Edge Zone is not configured for Launching an Application.</p>
-</blockquote>
+</code></pre></li>
+</ol>
 
 <hr>
 
-<h4 id="2deployingthexml" class="anchor"><a class="heading-anchor" href="#2deployingthexml"><span></span></a>2) Deploying the XML</h4>
+<h4 id="activeedgexmlconfigurationfilesettings" class="anchor"><a class="heading-anchor" href="#activeedgexmlconfigurationfilesettings"><span></span></a>ActiveEdge XML configuration file settings:</h4>
 
-<p>The XML file that was created above can be deployed by any means, but will typically be deployed by standard MDM tools. The location of the XML file should be on the device file system, and accessible by the application (usually the MDM client). It should not be included in the client application as an embedded resource.</p>
+<p><strong>ServiceAction -</strong> controls whether the ActiveEdge service is running. Disable the service to change settings or reset all to default settings. <strong>Possible values</strong>:</p>
+
+<ul>
+<li><strong>StopService -</strong> stops the ActiveEdge service on the device</li>
+
+<li><strong>StartService -</strong> starts the ActiveEdge service on the device</li>
+
+<li><strong>Restore -</strong> reset the configuration to factory defaults:
+
+
+<ul>
+<li><strong>Service not running</strong></li>
+
+<li><strong>Left ActiveEdge Zone configured with scan button</strong></li>
+
+<li><strong>Right ActiveEdge Zone configured as App Drawer</strong> </li>
+
+<li><strong>App Drawer populated with three default apps</strong></li></ul>
+</li>
+</ul>
+
+<p><strong>RunAtStartup -</strong> determines whether ActiveEdge is runs at boot-up: </p>
+
+<ul>
+<li>True</li>
+
+<li>False</li>
+</ul>
+
+<p><strong>OperationMode -</strong> determines the ActiveEdge mode:</p>
+
+<ul>
+<li><strong>Open -</strong> ActiveEdge Touch Zone available in all applications</li>
+
+<li><strong>White -</strong> ActiveEdge is enabled only for pre-specified apps (whitelist)</li>
+
+<li><strong>Black -</strong> ActiveEdge is enabled for all <strong><em>except</em></strong> specified apps (blacklist)</li>
+</ul>
+
+<p><strong>WhiteListPackageNames / BlackListPackageNames -</strong> a comma-separated string containing the package name/activity of each app specified as white (enable) or black (disable). The ActiveEdge Mode parameter determines which list is used for WhiteListing or BlackListing. The values are saved even if mode "All" is specified. </p>
+
+<ul>
+<li><strong>String format</strong>: <code>[package name]/.[activity name]</code></li>
+
+<li><strong>Example</strong>: <code>com.android.launcher3/.Launcher,com.zebra.hotswap/.MainActivity, com.symbol.datawedge/.DWDemoActivity</code></li>
+
+<li><strong>To activate all app activities</strong>, specify package name without an Activity (i.e. <code>com.symbol.datawedge</code>).</li>
+</ul>
+
+<p><strong>LeftZone / RightZone -</strong> controls the behavior of the Left and Right ActiveEdge Touch Zones using the following possible values:</p>
+
+<ul>
+<li><strong>Scanner -</strong> configures the zone for barcode scanning</li>
+
+<li><strong>Drawer -</strong> configures the zone as an App Drawer</li>
+
+<li><strong>LaunchApp -</strong> configures the zone to launch an application</li>
+
+<li><strong>LaunchIntent -</strong> configures the zone to launch an intent </li>
+
+<li><strong>DrawerPackageNames -</strong> configures the list of apps in the App Drawer through a comma-separated string containing the package name(s) of app(s) to be placed in the drawer. The maximum number of apps in a drawer is three. Listed apps beyond the first three are ignored. Specify package name only (i.e. <code>com.android.dialer</code>) to launch the default activity. Specify a specific activity (i.e. <code>com.symbol.datawedge/com.symbol.datawedge.DWDemoActivity</code>) to launch app with that activity. <strong>Note</strong>: The list of drawer package names is saved regardless of whether an App Drawer is enabled.</li>
+
+<li><strong>LaunchAppLeft / LaunchAppRight-</strong> allows an application package name to be specified (i.e. <code>com.android.browser</code>) for launch if/when the LaunchApp parameter is enabled for the Touch Zone. <strong>Note</strong>: The specified package name is saved regardless of whether a Touch Zone is configured to launch an app.</li>
+</ul>
 
 <hr>
 
-<h4 id="3triggeringtheintent" class="anchor"><a class="heading-anchor" href="#3triggeringtheintent"><span></span></a>3) Triggering the Intent</h4>
+<h3 id="2deployxmlfile" class="anchor"><a class="heading-anchor" href="#2deployxmlfile"><span></span></a>2. Deploy XML File</h3>
 
-<p>An admin or MDM solution can trigger the ActiveEdge Service to process a new configuration file by sending an Intent with the following values:</p>
+<p>The XML file is typically deployed by an organization's EMM system, but can be pushed to devices by any available means. Deployment is governed by the rules below. </p>
+
+<h4 id="deploymentrules" class="anchor"><a class="heading-anchor" href="#deploymentrules"><span></span></a>Deployment Rules:</h4>
 
 <ul>
-<li><strong>Intent Type:</strong> StartService </li>
+<li>The XML file must be deployed to the device file system </li>
 
-<li><strong>Package Name:</strong> com.symbol.activeedge</li>
+<li>File must be accessible by the the EMM client and ActiveEdge apps </li>
 
-<li><strong>Class Name:</strong> ConfigParserService</li>
+<li>File should not be included in any client application as an embedded resource</li>
+
+<li><strong>File names are case sensitive; all references to the file (i.e. from EMM commands or intents) must match exactly</strong>.  </li>
+</ul>
+
+<hr>
+
+<h3 id="3triggertheintent" class="anchor"><a class="heading-anchor" href="#3triggertheintent"><span></span></a>3. Trigger the Intent</h3>
+
+<p>An admin or EMM system can trigger the ActiveEdge Service to process a new configuration file by sending an intent with the following values:</p>
+
+<ul>
+<li><strong>Intent Type:</strong> <code>StartService</code> </li>
+
+<li><strong>Package Name:</strong> <code>com.symbol.activeedge</code></li>
+
+<li><strong>Class Name:</strong> <code>ConfigParserService</code></li>
 
 <li><strong>Extras:</strong>
 
 
 <ul>
-<li><code>SET_CONFIG_FILE</code> : fully qualified path to the ActiveEdgeConfig.XML file</li></ul>
+<li><code>SET_CONFIG_FILE</code>: fully qualified path to the <code>ActiveEdgeConfig.xml</code> file (case sensitive)</li></ul>
 </li>
 </ul>
 
-<p>Ex: 
-        adb shell am startservice -a com.symbol.activeedge.ConfigParserService -e SET_CONFIG_FILE "/sdcard/ActiveEdgeConfig.xml”</p>
+<h4 id="example" class="anchor"><a class="heading-anchor" href="#example"><span></span></a>Example:</h4>
 
-<h5 id="xmlprocessing" class="anchor"><a class="heading-anchor" href="#xmlprocessing"><span></span></a>XML Processing</h5>
+<pre class="prettyprint"><code>    
+    adb shell am startservice -a com.symbol.activeedge.ConfigParserService -e SET_CONFIG_FILE "/sdcard/ActiveEdgeConfig.xml”
+</code></pre>
 
-<p>When ActiveEdge receives the intent it will:</p>
+<p><br></p>
+
+<h4 id="xmlprocessing" class="anchor"><a class="heading-anchor" href="#xmlprocessing"><span></span></a>XML Processing</h4>
+
+<p><strong>When ActiveEdge receives an intent</strong>, it performs the following:</p>
 
 <ol>
-<li>Open the File
+<li><strong>Open the file</strong>:
 
 
 <ul>
-<li>The XML file will be opened and validated to be valid XML. If the XML is not valid then a message will be logged to the system log and the Active Edge Result Intent will be broadcasted (see below for details on Active Edge Result Intent)</li></ul>
+<li>The XML file is opened and its XML validated. If the XML is invalid, processing stops, a message is appended to the system log, and an ActiveEdge result intent is broadcast (see below for details).</li></ul>
 </li>
 
-<li>Parse the File
+<li><strong>Parse the file</strong>:
 
 
 <ul>
-<li>If any elements are present that are not expected, then an error will be reported via the Active Edge Result Intent. The processing will then be stopped and no effects on the AE Service will occur.</li>
+<li>If unexpected or erroneous elements are present, an error is reported via the ActiveEdge result intent, processing is stopped and no ActiveEdge Service changes occur. </li>
 
-<li>If the file passes both the XML validity test and AE XML config test, then the settings will be saved.
-Besides malformed XML parameters the following conditions will result in “invalid XML”:
-
-
-<ul>
-<li>LeftZone and Right Zone both set to Drawer (the end result of the settings will be used to verify, not what is in the XML file)</li></ul>
-</li></ul>
+<li>If the file is valid, the settings are saved.
+Aside from malformed XML parameters, an “invalid XML” message results if left and right ActiveEdge Zones are both set to "Drawer" (check settings panel for the end result). </li></ul>
 </li>
 
-<li>Save the settings from the XML File
+<li><strong>Save the settings from the XML file</strong>:
 
 
 <ul>
-<li>The settings will only be saved if all XML is valid. The XML can contain partial settings and only the settings that are included will be effected. Each XML parameter has a corresponding Android Shared Preferences reference that both the AE Service and AE Settings app uses.</li></ul>
+<li>Settings are saved only if all XML is valid. If valid XML contains only some settings, the included settings are changed. Each XML parameter has a corresponding Android Shared Preferences reference used by both the AE Service and AE setting panel.</li></ul>
 </li>
 
-<li>Change the Active Edge behavior as needed
+<li><strong>Change the ActiveEdge behavior as needed</strong>:
 
 
 <ul>
-<li>After an XML is processed successfully, the ActiveEdge Settings UI will be locked and not editable from an end user. It can only be unlocked if an admin sends a Restore to factory defaults.</li></ul>
+<li>After XML is processed successfully, the ActiveEdge settings panel UI is locked; settings can be read but no longer changed by the user. <strong>Note</strong>: To restore the settings panel UI to user control, push an <code>ActiveEdgeConfig.xml</code> file containing a "Restore" Service Action to the device. This action returns ActiveEdge to its factory default settings.</li></ul>
 </li>
 
-<li>Send the Active Edge Result Intent
+<li><strong>Send the ActiveEdge result intent</strong>:
 
 
 <ul>
-<li>When the processing is complete (or an error occurs during processing), an Broadcast Intent will be sent so that any MDM application can be notified of the results:</li>
+<li>When processing is complete (or an error occurs during processing), an intent is broadcast to notify the EMM system of the results:</li>
 
 <li><strong>Intent Type:</strong> Broadcast </li>
 
@@ -474,9 +483,9 @@ Besides malformed XML parameters the following conditions will result in “inva
 
 
 <ul>
-<li><code>STATUS</code> : Pass or Fail</li>
+<li><code>STATUS</code>: Pass or Fail</li>
 
-<li><code>ERROR_MESSAGE</code>: Error Message</li></ul>
+<li><code>ERROR_MESSAGE</code>: "[error description]"</li></ul>
 </li></ul>
 </li>
 </ol>
