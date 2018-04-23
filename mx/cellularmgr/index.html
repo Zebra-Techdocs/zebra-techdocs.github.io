@@ -85,6 +85,7 @@
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
+                        
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -718,31 +719,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -982,11 +958,20 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="sim-socket-selection-enabledisable"><a class="heading-anchor" href="#sim-socket-selection-enabledisable"><span></span></a>SIM Socket Selection Enable/Disable</h2>
                                     <p class=""></p><p>Controls whether the device user can change the selected SIM Socket using the Select SIM Socket parameter. When Disabled, the SIM Socket cannot be selected by the device user. <strong>Supported on specific Zebra devices only</strong>.</p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> Supported only on WWAN-enabled devices with more than one SIM socket</p>
                                         <p><b>Parm Name:</b> SimSocketUsage</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -1002,12 +987,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to user control over SIM Socket selection; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1028,6 +1015,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Enable</td>
                                                 <td>Enables the device user to control which SIM Socket is used.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1048,6 +1036,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Disable</td>
                                                 <td>Prevents the user from changing the selected SIM Socket.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1069,7 +1058,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     </div>	
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -1104,6 +1092,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     <h2 class="anchor" id="select-sim-socket"><a class="heading-anchor" href="#select-sim-socket"><span></span></a>Select SIM Socket</h2>
                                     <p class=""></p><p>Used to select which SIM card will be used to connect the device to the carrier network. <strong>Supported on specific Zebra devices only</strong>. </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> Supported only on WWAN-enabled devices with more than one SIM socket</p>
                                         <p><b>Parm Name:</b> SimSocketSelect</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -1119,12 +1108,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change; the previously selected SIM socket will be used.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1145,6 +1136,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>SIM1</td>
                                                 <td>Uses SIM1 to connect the device to the carrier network.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1165,6 +1157,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>SIM2</td>
                                                 <td>Uses SIM2 to connect the device to the carrier network.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1185,6 +1178,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>3</td>
                                                 <td>SIM3</td>
                                                 <td>Uses SIM3 to connect the device to the carrier network.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1205,6 +1199,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>4</td>
                                                 <td>SIM4</td>
                                                 <td>Uses SIM4 to connect the device to the carrier network.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1226,6 +1221,31 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1314,6 +1334,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
 
 <p>The Data Roaming Option determines whether a device can communicate over cellular data networks other than the "home" network provided by the mobile operator with which the active SIM card is affiliated. <strong>The convenience of communicating over "foreign" networks while roaming must be weighed against the roaming charges imposed by foreign carriers, which can be significant</strong>.  </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Parm Name:</b> DataRoamingUsage</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -1329,12 +1350,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to usage of the Data Roaming Option; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1357,6 +1380,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Enable</td>
                                                 <td>Enables Data Roaming to be used on the device and its state (active/inactive) to be controlled programmatically or by the device user.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1379,6 +1403,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Disable</td>
                                                 <td>Disables Data Roaming on the device, preventing its state (active/inactive) from being controlled programmatically or by the device user.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1402,7 +1427,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     </div>	
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -1447,6 +1471,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     <h2 class="anchor" id="data-roaming-onoff"><a class="heading-anchor" href="#data-roaming-onoff"><span></span></a>Data Roaming On/Off</h2>
                                     <p class=""></p><p>This is the On/Off switch for Data Roaming, which gives a device user the option of allowing cellular data connections to be established while a device is outside its "home" network. </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Parm Name:</b> DataRoamingState</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -1462,12 +1487,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-devicetype="A,B" data-api="17" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to the current state of the Data Roaming; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1489,6 +1516,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Turn On</td>
                                                 <td>Turns On Data Roaming, allowing cellular data connections while a device is outside the carrier's home network.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1510,6 +1538,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Turn Off</td>
                                                 <td>Turns Off Data Roaming, preventing cellular data connections while a device is outside the carrier's home network.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1532,6 +1561,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1632,6 +1669,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
 
 <p></p><p>Controls whether the cellular connection on the device can be used to transmit data. When Enabled, the state (active/inactive) of the cellular data connection can be controlled programmatically or by the user. When Disabled, the device is prevented from establishing a data connection using the cellular network and the state cannot be changed. <strong>This parameter controls only cellular <em>data</em>; voice and SMS messaging apps are uneffected by this setting</strong>. </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Parm Name:</b> CellularDataUsage</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -1647,12 +1685,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to CellularMgr settings; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1674,6 +1714,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Enable</td>
                                                 <td>Enables cellular data to be used on the device and its state (active/inactive) to be controlled programmatically or by the device user.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1695,6 +1736,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Disable</td>
                                                 <td>Disables cellular data on the device, preventing the establishment of a data connection using the cellular network.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1732,16 +1774,12 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="cellular-data-onoff"><a class="heading-anchor" href="#cellular-data-onoff"><span></span></a>Cellular Data On/Off</h2>
                                     <p class=""></p><p>This is the On/Off switch for device users or apps to control the ability to establish a cellular data connection on the device. <strong>This parameter controls only cellular <em>data</em>; voice and SMS messaging apps are uneffected by this setting</strong>. </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Parm Name:</b> CellularDataState</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -1757,12 +1795,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to CellularMgr settings; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1783,6 +1823,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Turn On</td>
                                                 <td>Allows a cellular data connection to be established on the device.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1803,6 +1844,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Turn Off</td>
                                                 <td>Prevents a cellular data connection from being established on the device.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1824,11 +1866,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1860,6 +1897,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
 
 <p></p><p>Controls whether a limit can be placed on cellular data usage on the device. When Enabled, the device user or an app running on the device can access other parameters that turn data limiting on and off and that control the limit value (in MB per month) and the warning message displayed when the limit is reached. <strong>If this parameter is Disabled and cellular data is Enabled on the device, there will be no means of limiting data usage over the cellular network, and all related parameters will be inaccessible by apps or the device user</strong>.   </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Parm Name:</b> CellularDataLimitUsage</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -1875,12 +1913,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to CellularMgr settings; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1902,6 +1942,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Enable</td>
                                                 <td>Enables a limit to be set on cellular data usage and the state (active/inactive) of the limit to be controlled programmatically or by the device user.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1923,6 +1964,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Disable</td>
                                                 <td>Prevents a limit on cellular data usage from being set on the device.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1953,11 +1995,16 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="cellular-data-limit-onoff"><a class="heading-anchor" href="#cellular-data-limit-onoff"><span></span></a>Cellular Data Limit On/Off</h2>
                                     <p class=""></p><p>This is the On/Off switch for limiting cellular data (in MB per month) on the device, and the selector for applying the Android-default or a custom limitation. When Enabled using the Android default limit, the limit will be the greater of 5GB or 1.2 times the value specified in the Cellular Data Warning Value parameter, to a maximum of 1TB. If the custom limit is selected, the limit will be the value specified in the Cellular Data Limit Value parameter. <strong>Once the limit is reached, the cellular data connection is terminated until a new month begins or the restriction is lifted</strong>. If no value is specified with the Cellular Data Limit Value parameter, this parameter is ignored and the previously selected Cellular Data Limit State is retained. </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Shown if:</b> Cellular Data State is set to "Enable"</p>
                                         <p><b>Parm Name:</b> CellularDataLimitState</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -1974,12 +2021,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to CellularMgr settings; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2001,6 +2050,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Enable and set default limit</td>
                                                 <td>Limits cellular data usage to the Android default value.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2022,6 +2072,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Enable and set custom limit</td>
                                                 <td>Limits cellular data usage to the amount set in the Cellular Data Limit Value parameter.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2043,6 +2094,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>3</td>
                                                 <td>Disable</td>
                                                 <td>Prevents a limit on cellular data usage from being imposed on the device.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2074,7 +2126,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="cellular-data-limit-value"><a class="heading-anchor" href="#cellular-data-limit-value"><span></span></a>Cellular Data Limit Value</h2>
@@ -2086,6 +2137,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
 <li>Integer from 5-1048576 (5MB-1TB) corresponding to the data usage monthly limit</li>
 </ul><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Shown if:</b> Cellular Data State is set to "Enable" and Cellular Data Limit State is set to "Enable and set custom limit"</p>
                                         <p><b>Parm Name:</b> CellularDataLimitValue</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -2111,6 +2163,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     <h2 class="anchor" id="cellular-data-warning"><a class="heading-anchor" href="#cellular-data-warning"><span></span></a>Cellular Data Warning</h2>
                                     <p class=""></p><p>Controls whether the device user or an app running on the device can specify a threshold for cellular data usage that triggers a warning. </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Shown if:</b> Cellular Data State is set to "Turn On"</p>
                                         <p><b>Parm Name:</b> CellularDataWarning</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -2127,12 +2180,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to CellularMgr settings; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2153,6 +2208,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Set new warning</td>
                                                 <td>Enables a data limit warning threshold (in MB) to be specified.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2177,7 +2233,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-cellular-data-warning"><a class="heading-anchor" href="#set-cellular-data-warning"><span></span></a>Set Cellular Data Warning</h2>
@@ -2189,6 +2244,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
 <li>Integer from 5-1048576 (5MB-1TB) corresponding to the data usage limit</li>
 </ul><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Shown if:</b> Cellular Data State is set to "Turn On" and Cellular Data Warning is set to "Set new warning"</p>
                                         <p><b>Parm Name:</b> CellularDataWarningValue</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -2258,6 +2314,9 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="background-data-enabledisable"><a class="heading-anchor" href="#background-data-enabledisable"><span></span></a>Background Data Enable/Disable</h2>
@@ -2265,6 +2324,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
 
 <p>The Background Data Option determines whether applications that are not in the foreground should be permitted to maintain a data connection over the cellular network (if they are capable of doing so). For example, some email applications continue to download messages while other apps are active or when the device's screen is turned off. <strong>The convenience of having data ready "when it's asked for" must be considered when planning for cellular bandwidth utilization and weighed against the potential for data overage and roaming costs</strong>. </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Parm Name:</b> BackgroundDataUsage</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -2280,12 +2340,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to CellularMgr settings; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2308,6 +2370,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Enable</td>
                                                 <td>Enables Background Data to be used on the device and its state (active/inactive) to be controlled programmatically or by the device user.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2330,6 +2393,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Disable</td>
                                                 <td>Disables Background Data from being used on the device and prevents its state (active/inactive) from being controlled programmatically or by the device user.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2361,11 +2425,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="background-data-blocking-onoff"><a class="heading-anchor" href="#background-data-blocking-onoff"><span></span></a>Background Data Blocking On/Off</h2>
                                     <p class=""></p><p>This is the On/Off switch for blocking background data communication. When On, apps will be allowed to use the cellular data connection only when in the foreground, and blocked at all other times. When Off, all background-capable apps will be allowed to maintain a data connection whenever they're running, even if they're not in the foreground. </p><p></p>
                                         <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
                                         <p><b>Shown if:</b> Background Data Usage is set to "Enable"</p>
                                         <p><b>Parm Name:</b> BackgroundDataState</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -2382,12 +2449,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <th>Name</th>
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
+                                                <th>Note</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="1.3" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>0</td>
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to CellularMgr settings; any previously selected setting will be retained.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2410,6 +2479,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>1</td>
                                                 <td>Turn On</td>
                                                 <td>Prevents background-capable apps from using the cellular data connection when the app is not in the foreground.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2432,6 +2502,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                                 <td>2</td>
                                                 <td>Turn Off</td>
                                                 <td>Allows background-capable apps to use the cellular data connection when in the background or the foreground.</td>
+                                                <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2455,6 +2526,23 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2591,22 +2679,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -2618,28 +2690,12 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
         </div>
     </section>   
 
+// filtering 
 <script type="text/javascript">
     var mxJSON = {
         csp: "cellularmgr",
         name: "Cellular Manager",
         parms: [
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -2931,7 +2987,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                     
                     
                     
-                    
                     {
                             presentif: "",
                             name: "SimSocketSelect",
@@ -3107,6 +3162,31 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "DataRoamingUsage",
@@ -3167,7 +3247,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                         
                         ]
                     },
-                    
                     
                     
                     
@@ -3358,6 +3437,14 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "CellularDataUsage",
@@ -3418,11 +3505,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3520,11 +3602,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "CellularDataLimitUsage",
@@ -3585,6 +3662,10 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                         
                         ]
                     },
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3679,7 +3760,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "",
@@ -3749,7 +3829,6 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "",
@@ -3769,6 +3848,9 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -3890,6 +3972,8 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                     
                     
                     
+                    
+                    
                     {
                             presentif: "Background Data Usage is set to &quot;Enable&quot;",
                             name: "BackgroundDataState",
@@ -3950,6 +4034,7 @@ Present in DSD but not implemented in the CSP (with MX 6.3):
                         
                         ]
                     },
+                    
                     
                     
                     
