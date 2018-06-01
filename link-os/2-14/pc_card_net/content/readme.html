@@ -309,8 +309,38 @@
             <div class="supported-platform-section">
 
                 <h3 class="supported-platform-heading"><a class="a-navigation" name="pc">PC (.NET) - Card</a></h3>
+				
+				<p><strong>Build: 2.14.1989</strong></p>
 
-                <p><strong>Build: 2.14.1869</strong></p>
+                <p><strong>1. Installation</strong><br/>
+                    <br/>
+                    The SDK is supported on the following devices:</p>
+                <ul>
+                    <li>Zebra&trade; ET5 (Windows&trade;)
+					<li>Lenovo&trade; Windows&trade; 10 Tablet</li>
+					<li>Various Windows&trade; 10 Desktop Machines</li>
+                </ul>
+                <p>The SDK is supported on the following
+                    printers:</p>
+                <ul>
+                    <li><span>Card - ZC&trade; Series Printers</span></li>
+                </ul>
+				<p><strong>2. Requirements</strong></p>
+                <ul>
+                    <li>
+						Microsoft&trade; .NET Framework 4.7 (or higher)
+                    </li>
+                    <li>
+						Microsoft&trade; Visual Studio 2017 (or higher)
+                    </li>					
+                </ul>
+                <p><strong>3. Known Issues</strong></p>
+                <ol>
+                    <li>When connected via a DriverPrinterConnection, the Open() call will not immediately fail if the printer is offline/unreachable.  An error will be thrown when attempting to read/write data.</li>
+					<li>DriverPrinterConnection performance/throughput may be poor.  Zebra recommends using a UsbConnection where possible to avoid this issue.</li>
+					<li>Card template files are not guaranteed to be portable from platform to platform.  Parameters may need adjustment to produce the same output between platforms.</li>
+                </ol>
+                <p><strong>4. Change Log</strong></p>
 
                
                 <div class="table-container">
@@ -326,10 +356,10 @@
                         </thead>
                         <tr>
                             <td valign=top style="width: 123px">
-                                03/22/2018
+                                05/21/2018
                             </td>
                             <td valign=top style="width: 108px">
-                                2.14.1869
+                                2.14.1989
                             </td>
                             <td>
                             <ul>
@@ -337,6 +367,7 @@
                                 SDK release of the PC-.NET-Card platform.</span> </li>
 							</ul>
                             </td>
+						<span style="visibility:hidden">f315b0b6aeb3ed940eb5c5a78eb46128ec7b2df2</span>
                         </tr>
                         
 						
