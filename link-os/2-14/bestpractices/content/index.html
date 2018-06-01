@@ -41,7 +41,7 @@
   <header>
     <div class="container px-5 py-2" style="background-color:#e5e8e8;">
       <h1 id="top"><a id="Best_Practices_for_Printing_0"></a>Best Practices for Printing</h1>
-      <p>Version 2.2</p>
+      <p>Version 2.3</p>
     </div>
   </header>
   <main role="main" class="container">
@@ -100,8 +100,8 @@
     </ol>
     <h2><a id="How_This_Document_Is_Organized_36"></a>How This Document Is Organized</h2>
     <p>Each section has a name and description of the best practice. This is followed by a ‘How to Do It’ section for developers and a ‘How to Test It’ section for testers. Either section may have code snippets or other notes to elaborate on how to implement each portion.</p>
-    <p>Anything with the validation logo <img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation"> must be implemented if possible for Zebra <a href="https://www.zebra.com/content/dam/zebra_new_ia/en-us/Partners/ISVs/partnerconnect-zebra-validation-program-en-us.pdf">Validated Program</a>.</p>
-    <p>The code samples in this document are in Java for Android, assuming the use of the Link-OS Multiplatform SDK and working with ZPL print language.  You can implement these best practices in nearly any programming language for almost any OS, with any Zebra printer, any print page description language, with or without the SDK.  The SDK makes it easier.  The sample code herein is meant to be an example and may need to adjust to fit your use case.  More examples of implementing Best Practices can be found on the Zebra <a href="https://github.com/Zebra">Github</a> repo.  If you have implementation questions, ask at the Zebra <a href="https://developer.zebra.com/print">Developer Portal</a>.<br>
+    <p>Anything with the validation logo <img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation"> must be implemented if possible for Zebra <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra_new_ia/en-us/Partners/ISVs/partnerconnect-zebra-validation-program-en-us.pdf">Validated Program</a>.</p>
+    <p>The code samples in this document are in Java for Android, assuming the use of the Link-OS Multiplatform SDK and working with ZPL print language.  You can implement these best practices in nearly any programming language for almost any OS, with any Zebra printer, any print page description language, with or without the SDK.  The SDK makes it easier.  The sample code herein is meant to be an example and may need to adjust to fit your use case.  More examples of implementing Best Practices can be found on the Zebra <a  rel="noopener noreferrer" target="_blank" href="https://github.com/Zebra">Github</a> repo.  If you have implementation questions, ask at the Zebra <a  rel="noopener noreferrer" target="_blank" href="https://developer.zebra.com/print">Developer Portal</a>.<br>
     </p>
     <hr>  <!--     1. Out Of Box Behavior    -->
     <h2><a id="outOfBox"></a>1. Out Of Box Behavior</h2>
@@ -110,7 +110,7 @@
     <ul>
     <li>Set up correct connectivity (TCP, Cloud Connect, BT, BTLE, USB, etc)
     <blockquote>
-    <p><strong>Note:</strong> Examples of different connection types can be found in the <a href="http://techdocs.zebra.com/link-os/">API Documentation</a>.</p>
+    <p><strong>Note:</strong> Examples of different connection types can be found in the <a  rel="noopener noreferrer" target="_blank" href="http://techdocs.zebra.com/link-os/">API Documentation</a>.</p>
     </blockquote>
     </li>
     <li>Set up correct Zebra Print Page Description Language (ZPL, CPCL, line_print, PDF, etc.) <img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation">
@@ -129,12 +129,12 @@
     SGD.SET(<span class="hljs-string">"ezpl.print_width"</span>, <span class="hljs-string">"812"</span>, statusConnection);
     </code></pre>
     <blockquote>
-    <p><strong>Note:</strong> For a full list of SGD (Set-Get-Do) settings, see the <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf">ZPL Programming Guide</a>.  It is recommended that you give your users an interface to adjust these settings for their printers in your app. You may want to adjust your printout based on these settings. To set them in the printer, you can use the preceding code.  Also see Blogs on <a href="https://developer.zebra.com/print">Developer Portal</a>.</p>
+    <p><strong>Note:</strong> For a full list of SGD (Set-Get-Do) settings, see the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf">ZPL Programming Guide</a>.  It is recommended that you give your users an interface to adjust these settings for their printers in your app. You may want to adjust your printout based on these settings. To set them in the printer, you can use the preceding code.  Also see Blogs on <a  rel="noopener noreferrer" target="_blank" href="https://developer.zebra.com/print">Developer Portal</a>.</p>
     </blockquote>
     </li>
     <li>(optional- if required) Set up Remote Management settings (connectors, mirror, profile manager)
     <blockquote>
-    <p><strong>Note:</strong> See the <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=1429">ZPL Programming Guide</a> on Weblink commands for information on setting up Cloud Connect, Connectors, and Profile Manager in the printer. See the section on <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=1393">Mirror</a> for information on setting printer management through FTP on the printer.</p>
+    <p><strong>Note:</strong> See the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=1429">ZPL Programming Guide</a> on Weblink commands for information on setting up Cloud Connect, Connectors, and Profile Manager in the printer. See the section on <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=1393">Mirror</a> for information on setting printer management through FTP on the printer.</p>
     </blockquote>
     </li>
     <li>(optional- if required) Set up Special features (ZBI, virtual devices, etc.)</li>
@@ -151,7 +151,7 @@
     <li>Get a new printer or default a printer to factory specifications.  Test your app thoroughly to the best practices on the following pages.</li>
     <li>There are several methods for defaulting Zebra printers, but a common one is to use the Setup Utility software.
       <ol>
-      <li>Install the <a href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a> software</li>
+      <li>Install the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a> software</li>
       <li>Connect to the printer</li>
       <li>Select Printer Tools</li>
       <li>Under &lsquo;Actions&rsquo;, select &lsquo;Load Factory Defaults&rsquo;</li>
@@ -211,18 +211,19 @@
     <li>Do not include personal information as part of a stored format or stored image</li>
     </ul>
     <blockquote>
-    <p><strong>Note:</strong> A more complete set of security best practices will be published soon</p>
+    <p><strong>Note:</strong> A more complete set of security best practices can be found <a href="https://www.zebra.com/us/en/products/software/barcode-printers/link-os/printsecure.html" rel="noopener noreferrer" target="_blank">here</a>. 
+      Zebra security alerts and information about our security services is on the <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html" rel="noopener noreferrer" target="_blank">Lifeguard for Android</a> page.</p>
     </blockquote>
     <h4><a id="How_To_Test_It_150"></a>How to Test It:</h4>
     <ul>
-    <li>Assume communication to a printer is a potential security risk and test accordingly.
+    <li>Test according to the published <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra_new_ia/en-us/solutions-verticals/product/Software/Printer%20Software/Link-OS/printsecure/guides/printsecure-administration-guide-en-us.pdf" >PrintSecure Administration Guide</a>.
     <blockquote>
-    <p>See SGD Communication commands starting <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=1009">here</a>.</p>
+    <p>See SGD Communication commands starting <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=1009">here</a>.</p>
     </blockquote>
     </li>
     <li>Assume all data (Except passwords, certs, and other known security files and settings) being stored in the printer is extract-able and test accordingly.
     <blockquote>
-    <p>See ZPL commands <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=193">^HF</a>, <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=194">^HG</a>, and SGD <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=732">file.type</a></p>
+    <p>See ZPL commands <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=193">^HF</a>, <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=194">^HG</a>, and SGD <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=732">file.type</a></p>
     </blockquote>
     </li>
     </ul>
@@ -237,9 +238,9 @@
     </blockquote>
     </li>
     <li>Images should be used at a minimum, especially those that contain a barcode. Images use a lot of data so are slower to print.  Barcodes are sometimes distorted when converted to images. If you have to use images, verify the DPI is the same as the printer.</li>
-    <li>Use a design tool to help create label formats. <em>See the<a href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-designer.html">Zebra Designer</a> application or <a href="https://www.zebra.com/us/en/partners/partner-application-locator.html">contact</a> one of our design partners</em></li>
-    <li>Select media (paper or label stock) based on customer feedback. We recommend <a href="https://www.zebra.com/us/en/products/supplies.html">Zebra Certified Supplies</a> for best print quality and printer life.</li>
-    <li>Use the <a href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a> app to set your printer’s print quality and set the same settings in your app.</li>
+    <li>Use a design tool to help create label formats. <em>See the<a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-designer.html">Zebra Designer</a> application or <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/partners/partner-application-locator.html">contact</a> one of our design partners</em></li>
+    <li>Select media (paper or label stock) based on customer feedback. We recommend <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/products/supplies.html">Zebra Certified Supplies</a> for best print quality and printer life.</li>
+    <li>Use the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a> app to set your printer’s print quality and set the same settings in your app.</li>
     <li>Set print darkness appropriately. If barcodes are the most important data to read, set the darkness lighter than optimal for reading text. Consider a bold font for lighter text.</li>
     </ul>
     <h4><a id="How_To_Test_It_170"></a>How to Test It:</h4>
@@ -261,7 +262,7 @@
     ZebraPrinter zPrinter = ZebraPrinterFactory.getInstance(PrinterLanguage.ZPL, connection);
     </code></pre>
     </li>
-    <li>Set the page description language you intend to use in the printer.   These are two different steps.  See the <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=657">ZPL Guide</a> for options. <img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation">
+    <li>Set the page description language you intend to use in the printer.   These are two different steps.  See the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=657">ZPL Guide</a> for options. <img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation">
     <button class="link-btn" data-toggle="collapse" data-target="#cprintlang">Code</button>
     <pre id="cprintlang" class="collapse"><code class="language-java">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">setPrintLanguage</span><span class="hljs-params">(Connection connection)</span>
     </span>{
@@ -295,10 +296,10 @@
     <li>Test with different printer models you intend to support.  <img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation"></li>
     <li>Change the page description language and confirm the app still works. Verify printer accepted the change. <img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation">
     <blockquote>
-    <p>Use Setup Utility to set and verify page description language.  See the <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=657">ZPL Guide</a> for options.</p>
+    <p>Use Setup Utility to set and verify page description language.  See the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=657">ZPL Guide</a> for options.</p>
     </blockquote>
     <ol>
-    <li>Install the <a href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a> software</li>
+    <li>Install the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a> software</li>
     <li>Connect to the printer</li>
     <li>Set the page description language</li>
     <ul>
@@ -460,7 +461,7 @@
     <p>Printer performance is measured on several factors. Time to print (the time between user activating the print action and the printer starting to print) and mobile printer battery life are some of the most important performance issues that are affected by software interaction</p>
     <h4><a id="How_To_Do_It_349"></a>How to Do It:</h4>
     <ul>
-    <li>Use printing page description language to optimize performance, if possible avoid using graphics, we recommend using templates or formats. <em>See <a href="http://techdocs.zebra.com/link-os/latest/android/content/com/zebra/sdk/printer/FormatUtil.html">API Reference</a> for details on format printing.</em></li>
+    <li>Use printing page description language to optimize performance, if possible avoid using graphics, we recommend using templates or formats. <em>See <a  rel="noopener noreferrer" target="_blank" href="http://techdocs.zebra.com/link-os/latest/android/content/com/zebra/sdk/printer/FormatUtil.html">API Reference</a> for details on format printing.</em></li>
     <li>RFID encoding or BTLE connections -
     <ul>
     <li>Do not send graphics inline in each format.</li>
@@ -487,7 +488,7 @@
     <li>
     <p>Battery lifetime health is measured by the charge cycle count.</p>
     <blockquote>
-    <p>To check your battery health,  Use the <a href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a> software. Check with the command:<br>
+    <p>To check your battery health,  Use the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a> software. Check with the command:<br>
     <code>! U1 getvar "power.health"</code> Followed by Enter<br>
     • Health is “good” if the power.cycle_count &lt; 300 and capacity ratio (the ratio of actual capacity to the<br>
     design capacity) is greater or equal to 0.80.<br>
@@ -506,7 +507,7 @@
     <p>If present, usage of Zebra branding (logo, model number, etc.) must meet Zebra Technologies Global Brand Standards.</p>
     <h4><a id="How_To_Do_It_386"></a>How to Do It:</h4>
     <ul>
-    <li>Follow the <a href="https://www.zebra.com/content/dam/zebra_new_ia/en-us/corporate-and-brand/brand/brand-guidelines/zebra-master-brand-guidelines-en-us.pdf">Master Brand Guidelines</a><img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation"></li>
+    <li>Follow the <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra_new_ia/en-us/corporate-and-brand/brand/brand-guidelines/zebra-master-brand-guidelines-en-us.pdf">Master Brand Guidelines</a><img src="https://developer.zebra.com/resources/statics/40533/Validation.jpg" width="30px" alt="Zebra Validation Program" title="Zebra Validation"></li>
     <li>Email <a href="mailto://brand@zebra.com">brand@zebra.com</a> for current  creative images. </li>
     </ul>
     <h4><a id="How_To_Test_It_390"></a>How to Test It:</h4>
@@ -551,7 +552,7 @@
     }
     </code></pre>
     </li>
-    <li>Verify you have the proper permissions to communicate <em>(see <a href="http://techdocs.zebra.com/link-os/">documentation</a>)</em></li>
+    <li>Verify you have the proper permissions to communicate <em>(see <a  rel="noopener noreferrer" target="_blank" href="http://techdocs.zebra.com/link-os/">documentation</a>)</em></li>
     <li>Communicating to the printer can sometimes take time, sometimes seconds.  Handle it as a long running task. Always communicate to the printer on a thread other than the UI. <em>(see code above)</em></li>
     </ul>
     <h5><a id="If_you_are_concerned_the_print_jobs_were_not_printed_75"></a>If you are concerned the print jobs were not printed:</h5>
@@ -668,12 +669,12 @@
     <li>Verify you have the proper permissions in your app to communicate <em>(<a href="/link-os/latest/android">see documentation</a>)</em></li>
     <li>Verify your ZPL is correct
     <ul>
-    <li>Preview with the printer web page <em>(see <a href="https://developer.zebra.com/community/technologies/printers/label-printers/blog/2017/01/31/printer-web-page">this article</a> for details)</em></li>
-    <li>Design your label with Label Design tools such as <a href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-designer.html">ZebraDesigner </a>.</li>
+    <li>Preview with the printer web page <em>(see <a  rel="noopener noreferrer" target="_blank" href="https://developer.zebra.com/community/technologies/printers/label-printers/blog/2017/01/31/printer-web-page">this article</a> for details)</em></li>
+    <li>Design your label with Label Design tools such as <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-designer.html">ZebraDesigner </a>.</li>
     </ul>
     </li>
-    <li>Calibrate the printer <em>(ZPL command <a href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=223">^JC</a>, or see your specific printer <a href="https://www.zebra.com/us/en/support-downloads/printers.html">User Guide</a>)</em></li>
-    <li>Verify the darkness, label size and other settings are correct <em>(see <a href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a>)</em></li>
+    <li>Calibrate the printer <em>(ZPL command <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/content/dam/zebra/manuals/en-us/software/zpl-zbi2-pm-en.pdf#page=223">^JC</a>, or see your specific printer <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/support-downloads/printers.html">User Guide</a>)</em></li>
+    <li>Verify the darkness, label size and other settings are correct <em>(see <a  rel="noopener noreferrer" target="_blank" href="https://www.zebra.com/us/en/products/software/barcode-printers/zebralink/zebra-setup-utility.html">Setup Utility</a>)</em></li>
     </ul>
     <p><a href="#top">Top</a></p>
     <hr>
@@ -684,7 +685,7 @@
     <ul>
     <li>Use a page description language</li>
     <li>Avoid the use of graphics and confirm necessary graphics are small</li>
-    <li>Use templates or stored formats <em>(See code on <a href="https://github.com/Zebra/LinkOS-Android-Samples/tree/ZSDK_DevDemos_Combined/ZSDK_DevDemos_Combined/app/src/main/java/com/zebra/android/devdemo/storedformat">Github</a>)</em></li>
+    <li>Use templates or stored formats <em>(See code on <a  rel="noopener noreferrer" target="_blank" href="https://github.com/Zebra/LinkOS-Android-Samples/tree/ZSDK_DevDemos_Combined/ZSDK_DevDemos_Combined/app/src/main/java/com/zebra/android/devdemo/storedformat">Github</a>)</em></li>
     </ul>
     </li>
     <li>Use the status channel to check status and settings
@@ -702,7 +703,7 @@
     </ul>
     <p><a href="#top">Top</a></p>
     <hr>
-    <h4>We hope you found this helpful and let us know on the <a href="https://developer.zebra.com/community/technologies/printers">Developer Portal</a> if you have suggestions on how to improve this document.</h4>
+    <h4>We hope you found this helpful and let us know on the <a  rel="noopener noreferrer" target="_blank" href="https://developer.zebra.com/community/technologies/printers">Developer Portal</a> if you have suggestions on how to improve this document.</h4>
 
   </div> <!-- main body -->
 </div> <!-- row -->
