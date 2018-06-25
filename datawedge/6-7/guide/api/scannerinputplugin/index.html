@@ -234,6 +234,8 @@
   <p><strong>Functional only when Barcode Input is enabled in the active Profile</strong>. </p>
 </blockquote>
 
+<p><strong><u>Important</u></strong>: To avoid the unnecessary use of enable/disable scanner API calls, Zebra recommends that apps register to be notified of changes in scanner status (using the <a href="../registerfornotification/#parameters">SCANNER_STATUS parameter</a> of the REGISTER_FOR_NOTIFICATION API). This enables apps to receive scanner status changes immediately rather than having to query and wait for the result. Status-change notifications include the active Profile name, which permits an app to use the enable/disable scanner API calls only when status changes effect a relevant Profile.</p>
+
 <h3 id="functionprototype" class="anchor"><a class="heading-anchor" href="#functionprototype"><span></span></a>Function Prototype</h3>
 
 <pre class="prettyprint"><code>Intent i = new Intent();
