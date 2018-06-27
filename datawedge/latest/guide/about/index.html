@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
                                             DataWedge
-                                            6.7
+                                            6.8
                         </p>
 
                     </ul>
@@ -63,32 +63,32 @@
 
 
                         <li>
-                            <a href="/datawedge/6-7/guide/about">
+                            <a href="/datawedge/6-8/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/setup">
+                            <a href="/datawedge/6-8/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/profiles">
+                            <a href="/datawedge/6-8/guide/profiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/settings">
+                            <a href="/datawedge/6-8/guide/settings">
                                     DataWedge Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/api">
+                            <a href="/datawedge/6-8/guide/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/demo">
+                            <a href="/datawedge/6-8/guide/demo">
                                     Demo Apps
                             </a>
                         </li>
@@ -98,7 +98,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/search">
+                            <a href="/datawedge/6-8/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="about-datawedge" class="anchor"><a class="heading-anchor" href="#about-datawedge"><span></span></a>About DataWedge</h1>
                                     <p>
                                             DataWedge
-                                            6.7
+                                            6.8
                                     </p>
                                 </div>
                             </section>                    
@@ -228,7 +228,78 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>DataWedge provides barcode scanning and processing services for Zebra devices running Android. Included with every Zebra device, DataWedge enables all apps on the device (whether stock or added later) to acquire scanned data without using scanner APIs directly. DataWedge can be easily configured to automatically provide scanning services whenever a particular app is launched; to use a particular scanner, reader or other sensor; and to manipulate acquired data according to simple options or complex rules. </p>
+<p>DataWedge provides “zero-code” barcode scanning and processing services for Zebra devices running Android. Included with every Zebra device, DataWedge enables all apps on the device (whether stock or added later) to acquire scanned data without using scanner APIs directly. DataWedge can be easily configured to automatically provide scanning services whenever a particular app is launched; to use a particular scanner, reader or other sensor; and to manipulate acquired data according to simple options or complex rules. </p>
+
+<p>When programmatic control is required, <a href="../api">DataWedge APIs</a> provide the ability to control, modify and query the DataWedge configuration settings and operations through Android intents. This allows new or existing Android apps to be easily modified with an organization's current development resources to acquire data using Zebra devices. </p>
+
+<p>To learn more about DataWedge APIs, read <a href="https://developer.zebra.com/community/home/blog/2017/06/27/datawedge-apis-benefits-challenges">DataWedge APIs - Benefits &amp; Usage Scenarios</a> by Zebra engineer Darryn Campbell. </p>
+
+<hr>
+
+<p><strong><a href="#newindatawedge68">What's new in DataWedge 6.8</a></strong></p>
+
+<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
+
+<p>The version of DataWedge documented in this guide provides the following primary functions and options: </p>
+
+<h4 id="datacapture" class="anchor"><a class="heading-anchor" href="#datacapture"><span></span></a>Data Capture</h4>
+
+<ul>
+<li>Scan and process all <a href="../input/barcode/#decoderselection">major barcode symbologies</a></li>
+
+<li>Use existing apps to <a href="../input/barcode">acquire barcodes</a>, images, text, phone numbers, mag-stripe and other data</li>
+
+<li>Set DataWedge to <a href="../setup">acquire scanned data for one or multiple apps</a></li>
+
+<li>Acquire multiple types of data in a single scan <a href="../input/simulscan">using SimulScan</a> </li>
+
+<li>Designate device screen areas as scan triggers using <a href="../input/dcp">Data Capture Plus</a></li>
+
+<li><a href="../overview">Create Profiles</a> to implement DataWedge features for individual apps </li>
+
+<li>Configure DataWedge to <a href="../input/barcode/#autoswitchtodefaultonevent">automatically scan with external Zebra peripherals</a>: 
+
+
+<ul>
+<li><a href="../input/barcode/#usbssiscanners">USB SSI scanners</a></li>
+
+<li><a href="../input/barcode/#bluetoothscanners">Bluetooth scanners</a></li>
+
+<li><a href="../input/serial">Serial scanners</a></li></ul>
+</li>
+</ul>
+
+<h4 id="dataprocessing" class="anchor"><a class="heading-anchor" href="#dataprocessing"><span></span></a>Data Processing</h4>
+
+<ul>
+<li><a href="../input/barcode/#decoderselection">Enable/Disable decoding</a> of individual symbologies to improve speed</li>
+
+<li><a href="../input/barcode">Set parameters</a> for individual barcodes, scanners and readers</li>
+
+<li>Format output according to <a href="../process/bdf/">simple</a> or <a href="../process/adf/">custom</a> rules</li>
+
+<li>Use <a href="../profiles">Plug-ins</a> for data input, output and processing</li>
+
+<li><a href="../process/adf/#settingcriteria">Create custom string handling</a> and other processing criteria</li>
+</ul>
+
+<h4 id="deployment" class="anchor"><a class="heading-anchor" href="#deployment"><span></span></a>Deployment</h4>
+
+<ul>
+<li><a href="../settings">Import and export settings</a> </li>
+
+<li>Remotely configure and <a href="../settings/#massdeployment">mass-deploy settings</a> via MDM  </li>
+
+<li><a href="../settings/#restoredefaults">Restore settings</a> to factory defaults</li>
+
+<li><a href="../settings/#autoimport">Apply changes remotely</a> to update devices in the field </li>
+
+<li><a href="../settings/#reporting">Generate reports</a></li>
+</ul>
+
+<p><strong>Note</strong>: Availability and operation of DataWedge features varies by device and operating system (which determine the DataWedge version installed on the device). </p>
+
+<hr>
 
 <h3 id="languagesupport" class="anchor"><a class="heading-anchor" href="#languagesupport"><span></span></a>Language Support</h3>
 
@@ -252,18 +323,46 @@
 
 <p>For more information about approved languages or to download a localized operating system, please <a href="https://www.zebra.com/us/en/about-zebra/contact-zebra/contact-tech-support.html">contact Zebra Technical Support</a>.</p>
 
-<!-- 2/9/18- Section removed at suggestion of engineering (TUT-22170)
-#### This document applies to:
-* **DataWedge 6.7.x**, which requires:
-* **Scanner Framework 18.0.9.0** or higher, and
-* **SimulScan 1.9 or higher** (on [devices that support SimulScan](../../../../simulscan))
- -->
+<hr>
 
-<p>To learn more about DataWedge APIs, read <a href="https://developer.zebra.com/community/home/blog/2017/06/27/datawedge-apis-benefits-challenges">DataWedge APIs - Benefits &amp; Usage Scenarios</a> by Zebra engineer Darryn Campbell. </p>
+<h2 id="newindatawedge68" class="anchor"><a class="heading-anchor" href="#newindatawedge68"><span></span></a>New in DataWedge 6.8</h2>
+
+<ul>
+<li><strong><a href="../input/barcode/#autoswitchtodefaultonevent">Scanner auto-switching</a> behavior is now controllable</strong> after connecting and disconnecting external scanners</li>
+
+<li><strong><a href="../settings/#datawedgesettings">DataWedge Settings</a> allows disabled Profiles to be ignored</strong> to help maintain full functionality at all times </li>
+
+<li>New <strong><a href="../api/setignoredisabledprofiles">SET_IGNORE_DISABLED_PROFILES API</a></strong> configures DataWedge to avoid switching to Profiles are are not enabled. </li>
+
+<li>New <strong><a href="../api/getignoredisabledprofiles">GET_IGNORE_DISABLED_PROFILES API</a></strong> returns the status of the IGNORE_DISABLED_PROFILES flag. </li>
+
+<li>Updated <strong><a href="../api/setconfig">SET_CONFIG API</a></strong> now supports: 
+
+
+<ul>
+<li>Advanced Data Formatting</li>
+
+<li>Digimarc decoding</li></ul>
+</li>
+
+<li>New <strong><a href="../api/switchsimulscanparams">SWITCH_SIMULSCAN_PARAMS API</a></strong> enables runtime changes to SimulScan parameters </li>
+
+<li><strong>Automatic Profile importing is enhanced</strong> to improve reliability and reduce extra coding </li>
+</ul>
+
+<h4 id="otherchanges" class="anchor"><a class="heading-anchor" href="#otherchanges"><span></span></a>Other changes</h4>
+
+<p>The SimulScan Input Plug-in default template is now "Default - Barcode4.xml" </p>
+
+<blockquote>
+  <p>Ready to get started? Go to the <a href="../setup">DataWedge Setup guide</a>.</p>
+</blockquote>
 
 <hr>
 
-<h3 id="newindatawedge67" class="anchor"><a class="heading-anchor" href="#newindatawedge67"><span></span></a>New in DataWedge 6.7</h3>
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="addedinv67" class="anchor"><a class="heading-anchor" href="#addedinv67"><span></span></a>Added in v6.7</h3>
 
 <ul>
 <li><p><strong>This version supports devices running Android Lollipop and higher only</strong>. </p></li>
@@ -281,8 +380,6 @@
 
 <hr>
 
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
-
 <h3 id="addedinv66" class="anchor"><a class="heading-anchor" href="#addedinv66"><span></span></a>Added in v6.6</h3>
 
 <ul>
@@ -298,46 +395,6 @@
 </ul>
 
 <hr>
-
-<h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
-
-<p>The version of DataWedge documented in this guide provides the following primary functions and options: </p>
-
-<ul>
-<li>Scan and process all <a href="../input/barcode/#decoderselection">major barcode symbologies</a></li>
-
-<li>Acquire barcodes, images, text, phone numbers, mag-stripe and other data</li>
-
-<li>Set DataWedge to acquire scanned data for one or more apps</li>
-
-<li>Create Profiles to implement specific DataWedge features for individual apps </li>
-
-<li>Enable/Disable decoding of individual symbologies to improve speed</li>
-
-<li>Set parameters for individual barcodes, scanners and readers</li>
-
-<li>Format output according to simple or custom rules</li>
-
-<li>Use plug-ins for data input, output and processing</li>
-
-<li>Import and export settings </li>
-
-<li>Remotely configure and mass-deploy settings via MDM  </li>
-
-<li>Restore settings to factory defaults</li>
-
-<li>Apply remote settings changes immediately </li>
-
-<li>Handle escape characters with "string at" criteria in Advanced Data Formatting rules</li>
-</ul>
-
-<p>Availability and operation of DataWedge features varies by device and operating system (which determine the DataWedge version installed on the device). </p>
-
-<!-- _**This guide describes DataWedge for Android. Features and usage of Windows versions may vary slightly. Please refer to Windows documentation**_. 10/20/16- Windows reference removed per eng. --> 
-
-<blockquote>
-  <p>Ready to get started? Go to the <a href="../setup">DataWedge Setup guide</a>.</p>
-</blockquote>
 
 <h3 id="whichversionisinstalled" class="anchor"><a class="heading-anchor" href="#whichversionisinstalled"><span></span></a>Which Version is Installed?</h3>
 

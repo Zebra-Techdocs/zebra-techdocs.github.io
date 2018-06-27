@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Get Profiles List">
-    <title>Get Profiles List - Zebra Technologies TechDocs</title>
+    <meta title="Get Ignore Disabled Profiles">
+    <title>Get Ignore Disabled Profiles - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -124,7 +124,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Get Profiles List</strong></li>
+                            <li><strong>Get Ignore Disabled Profiles</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -210,7 +210,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="get-profiles-list" class="anchor"><a class="heading-anchor" href="#get-profiles-list"><span></span></a>Get Profiles List</h1>
+                                    <h1 id="get-ignore-disabled-profiles" class="anchor"><a class="heading-anchor" href="#get-ignore-disabled-profiles"><span></span></a>Get Ignore Disabled Profiles</h1>
                                     <p>
                                             DataWedge
                                             6.8
@@ -226,32 +226,32 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="get_profiles_list" class="anchor"><a class="heading-anchor" href="#get_profiles_list"><span></span></a>GET_PROFILES_LIST</h2>
+                                        <p></p><h2 id="get_ignore_disabled_profiles" class="anchor"><a class="heading-anchor" href="#get_ignore_disabled_profiles"><span></span></a>GET_IGNORE_DISABLED_PROFILES</h2>
 
-<p>Gets a list of DataWedge Profiles on the device. </p>
+<p>Introduced in DataWedge 6.8. </p>
+
+<p>Returns the status of the "Ignore Disabled Profiles" parameter of DataWedge. If set to true, DataWedge is prevented from switching to any Profile that is not enabled, including Profile0. </p>
 
 <h3 id="functionprototype" class="anchor"><a class="heading-anchor" href="#functionprototype"><span></span></a>Function Prototype</h3>
 
 <pre class="prettyprint"><code>Intent i = new Intent();
 i.setAction("com.symbol.datawedge.api.ACTION");
-i.putExtra("com.symbol.datawedge.api.GET_PROFILES_LIST", "");
+i.putExtra("com.symbol.datawedge.api.GET_IGNORE_DISABLED_PROFILES", "");
 </code></pre>
 
 <h3 id="parameters" class="anchor"><a class="heading-anchor" href="#parameters"><span></span></a>Parameters</h3>
 
 <p><strong>ACTION</strong> [String]: "com.symbol.datawedge.api.ACTION"</p>
 
-<p><strong>EXTRA_DATA</strong> [String]: "com.symbol.datawedge.api.GET_PROFILES_LIST"</p>
-
-<p><strong>EXTRA VALUE</strong>: Empty string</p>
+<p><strong>INTENT_EXTRA</strong> [String]: "com.symbol.datawedge.api.GET_IGNORE_DISABLED_PROFILES"</p>
 
 <h3 id="returnvalues" class="anchor"><a class="heading-anchor" href="#returnvalues"><span></span></a>Return Values</h3>
 
-<p>Returns a String array of Datawedge Profiles</p>
+<p>Returns a String indicating whether DataWedge ignores disabled Profiles</p>
 
-<p><strong>EXTRA NAME</strong>: "com.symbol.datawedge.api.RESULT_GET_PROFILES_LIST"</p>
+<p><strong>EXTRA NAME</strong>: "com.symbol.datawedge.api.GET_IGNORE_DISABLED_PROFILES" </p>
 
-<p><strong>EXTRA TYPE</strong> [String]: [ ]</p>
+<p><strong>POSSIBLE VALUES</strong>: [String]: ["true" , "false" ]</p>
 
 <p>Error and debug messages are logged to the Android logging system, which can be viewed and filtered by the logcat command. Use logcat from an ADB shell to view the log messages:</p>
 
@@ -263,21 +263,81 @@ $ adb logcat -s DWAPI
 
 <h2 id="examplecode" class="anchor"><a class="heading-anchor" href="#examplecode"><span></span></a>Example Code</h2>
 
-<pre class="prettyprint"><code>//SENDING THE INTENT
-Intent i = new Intent();
-i.setAction("com.symbol.datawedge.api.ACTION");
-i.putExtra("com.symbol.datawedge.api.GET_PROFILES_LIST", "");
-this.sendBroadcast(i);
+<pre class="prettyprint"><code>    //Sample code for sending the intent to GET the setting
+        Intent i = new Intent();
+        i.setAction("com.symbol.datawedge.api.ACTION");
+        i.putExtra("com.symbol.datawedge.api.GET_IGNORE_DISABLED_PROFILES","");
 
-//RECEIVING THE RESULT
-private BroadcastReceiver myBroadcastReceiver = new BroadcastReceiver(){
+    // request and identify the result code
+        i.putExtra("SEND_RESULT","true");
+        i.putExtra("COMMAND_IDENTIFIER","123456789");//user specified unique id
 
-    @Override
-    public void onReceive(Context context, Intent intent){
+        this.sendBroadcast(i);
 
-        Bundle extras = getIntent().getExtras();
-        if (intent.hasExtra("com.symbol.datawedge.api.RESULT_GET_PROFILES_LIST")){
-            String[] profilesList = intent.getStringArrayExtra("com.symbol.datawedge.api.RESULT_GET_PROFILES_LIST")
+// Register/unregister broadcast receiver and filter results
+
+    void registerReceivers() {
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.symbol.datawedge.api.RESULT_ACTION");
+        filter.addCategory("android.intent.category.DEFAULT");
+        registerReceiver(mybroadcastReceiver, filter);
+    }
+
+    void unRegisterReceivers(){
+        unregisterReceiver(mybroadcastReceiver);
+    }       
+</code></pre>
+
+<h3 id="receivingtheresultsofgetset" class="anchor"><a class="heading-anchor" href="#receivingtheresultsofgetset"><span></span></a>Receiving the results of GET/SET</h3>
+
+<pre class="prettyprint"><code>// Register/unregister broadcast receiver and filter results
+
+    void registerReceivers() {
+            IntentFilter filter = new IntentFilter();
+            filter.addAction("com.symbol.datawedge.api.RESULT_ACTION");
+            filter.addCategory("android.intent.category.DEFAULT");
+            registerReceiver(mybroadcastReceiver, filter);
+    }
+
+    void unRegisterReceivers(){
+            unregisterReceiver(mybroadcastReceiver);
+    }
+        //receiving the results
+            BroadcastReceiver resultReceiver =  new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    String command = intent.getStringExtra("COMMAND");
+                    String commandIdentifier = intent.getStringExtra("COMMAND_IDENTIFIER");
+                    String result = intent.getStringExtra("RESULT");
+
+        Bundle bundle;
+        String resultInfo = "";
+        if(intent.hasExtra("RESULT_INFO")){
+            bundle = intent.getBundleExtra("RESULT_INFO");
+            Set&lt;String&gt; keys = bundle.keySet();
+            for (String key: keys) {
+                Object object = bundle.get(key);
+                if(object instanceof String){
+                    resultInfo += key + ": "+object+ "\n";
+                }
+                else if(object instanceof String[]){
+                    String[] codes = (String[])object;
+                    for(String code : codes){
+                        resultInfo += key + ": "+code+ "\n";
+                    }
+                }
+            }
+        }
+
+        String text = "Command: "+command+"\n" +
+                "Result: " +result+"\n" +
+                "Result Info: " +resultInfo + "\n" +
+                "CID:"+commandIdentifier;
+
+        Log.d(TAG,text);
+
+    }
+};
 </code></pre>
 
 <hr>

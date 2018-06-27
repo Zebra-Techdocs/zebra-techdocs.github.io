@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
                                             DataWedge
-                                            6.7
+                                            6.8
                         </p>
 
                     </ul>
@@ -63,32 +63,32 @@
 
 
                         <li>
-                            <a href="/datawedge/6-7/guide/about">
+                            <a href="/datawedge/6-8/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/setup">
+                            <a href="/datawedge/6-8/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/profiles">
+                            <a href="/datawedge/6-8/guide/profiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/settings">
+                            <a href="/datawedge/6-8/guide/settings">
                                     DataWedge Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/api">
+                            <a href="/datawedge/6-8/guide/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/guide/demo">
+                            <a href="/datawedge/6-8/guide/demo">
                                     Demo Apps
                             </a>
                         </li>
@@ -98,7 +98,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-7/search">
+                            <a href="/datawedge/6-8/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="barcode-input" class="anchor"><a class="heading-anchor" href="#barcode-input"><span></span></a>Barcode Input</h1>
                                     <p>
                                             DataWedge
-                                            6.7
+                                            6.8
                                     </p>
                                 </div>
                             </section>                    
@@ -258,7 +258,7 @@
 
 <h2 id="scannerselection" class="anchor"><a class="heading-anchor" href="#scannerselection"><span></span></a>Scanner Selection</h2>
 
-<p>For Barcode Input, the Scanner selection panel determines which scanning device will be used for data capture. The list of available scanners will be based devices that are present on (or connected to) the unit being configured. 
+<p>For Barcode Input, the Scanner selection panel determines which scanning device will be used for data capture. The list of available scanners is based on devices present in (or connected to) the unit being configured. 
 <img style="height:350px" src="../11_select_input.png">
 <br></p>
 
@@ -267,13 +267,51 @@
 <p><strong>Auto Scanner Selection Rules</strong>:</p>
 
 <ul>
-<li>If a Zebra Scan Module or Scan/MSR Module is installed, the 2D imager will be selected. </li>
+<li>If a Zebra Scan Module or Scan/MSR Module is installed, the 2D imager is selected. </li>
 
-<li>If no Scan Module is installed, the camera will be selected. </li>
+<li>If no Scan Module is installed, the camera is selected. </li>
 
 <li>When the camera is selected, scanning is performed with the rear-facing camera.</li>
 
 <li>When 2D Imager is selected, scanning is performed using the installed Scan or Scan/MSR module.</li>
+</ul>
+
+<hr>
+
+<h3 id="autoswitchtodefaultonevent" class="anchor"><a class="heading-anchor" href="#autoswitchtodefaultonevent"><span></span></a>Auto Switch to Default on Event</h3>
+
+<p>This feature configures DataWedge to select an external scanner as the default scanning device immediately upon connection and revert to a built-in scanner when the external scanner is disconnected. External scanners include those connecting by Bluetooth, serial cable or snap-on module. <strong>Disabled by default</strong>. Available only when “Auto" is selected in the <a href="#scannerselection">Scanner selection panel</a>. </p>
+
+<p>This feature is intended to help reduce scanning workflow interruptions when a Bluetooth scanner is introduced and/or it becomes disconnected by losing power or moving out of range. </p>
+
+<p>For Bluetooth scanners, if the device was not previously paired, a pairing barcode is displayed prior to automatic connection. </p>
+
+<p><img style="height:350px" src="68_switch_on_event.png">
+<em>"Auto switch to default on event" is available only when "Auto" is selected</em>. 
+<br></p>
+
+<p><strong>Available Options</strong>:</p>
+
+<ul>
+<li><strong>Disabled -</strong> No scanner switching occurs when an external scanner is connected or disconnected (default).</li>
+
+<li><strong>On connect -</strong> Selects the external scanner as the default scanning device immediately upon connection. </li>
+
+<li><strong>On disconnect -</strong> Reverts to a built-in scanner based on its position in an internally managed scanner list (which varies by host device). This is usually the scanner most recently used prior to the external connection (see notes below). </li>
+
+<li><strong>On connect/disconnect -</strong> Selects an external scanner as the default scanning device immediately upon connection. Upon disconnection, reverts to the scanner set as the default prior to the external connection.</li>
+</ul>
+
+<!-- 5/30/18 replaced passage below with that above, per eng (TW). 
+* **On connect/disconnect -** Selects a Bluetooth scanner as the default scanning device immediately upon connection; reverts to a built-in scanner based on its position in an internally managed scanner list (which varies by host device). This is usually the scanner most recently used prior to the external connection (see notes below).
+-->
+
+<p><strong>Notes</strong>: </p>
+
+<ul>
+<li>The system selects the default scanner based on the connection state and the scanner's position in an internally managed scanner list. If the newly connected scanner is lower in the scanner list than the one currently selected as the default scanner, the newly connected scanner becomes the default scanner.</li>
+
+<li>On devices with only one built-in scanner or imager, "On disconnect" reverts to that built-in scanner or imager. </li>
 </ul>
 
 <h3 id="bluetoothscanners" class="anchor"><a class="heading-anchor" href="#bluetoothscanners"><span></span></a>Bluetooth Scanners</h3>
@@ -286,6 +324,8 @@
 <li><strong>RS6000</strong> Ring Scanner</li>
 
 <li><strong>DS3678</strong> Ultra-Rugged Scanner</li>
+
+<li><strong>LI3678</strong> Ultra-Rugged Laser Scanner</li>
 </ul>
 
 <p>Bluetooth scanners are supported according to the following rules:</p>
@@ -293,13 +333,13 @@
 <ul>
 <li><strong>To initially configure the RS507</strong> in a Profile, the scanner must be paired and connected.</li>
 
-<li><strong>After initial configuration</strong>, the Bluetooth scanner can be enabled and disabled in the Profile even if it is disconnected from the device. However, to configure reader parameters, decoders and other scanner settings, the Bluetooth scanner must be connected.</li>
+<li><strong>After initial configuration</strong>, a Bluetooth scanner can be enabled and disabled in the Profile, even if it is disconnected from the device. However, to configure decoders, reader parameters and other scanner settings, a Bluetooth scanner must be connected.</li>
 
-<li><strong>DataWedge will not automatically reconnect</strong> to a Bluetooth scanner if that scanner is connected while DataWedge is using a different auto-selected scanner. To re-enable a Bluetooth scanner, connect the scanner and select it in the Profile or re-choose the Auto select option.</li>
+<li><strong>DataWedge does not automatically reconnect</strong> to a Bluetooth scanner if that scanner is connected while DataWedge is using a different auto-selected scanner. To re-enable a Bluetooth scanner, connect the scanner and select it in the Profile or re-choose the "Auto" selection option.</li>
 
-<li><strong>Auto-selection and Battery Swap -</strong> If Scanner selection is set to Auto and the RS507 was enabled prior to a battery swap, DataWedge will continue working with that RS507 scanner upon reconnection after the battery is swapped. If the RS507 does not reconnect with after the swap, DataWedge will revert to the current default scanner.</li>
+<li><strong>Auto-selection and Battery Swap -</strong> If Scanner selection is set to Auto and an RS507 was enabled prior to a battery swap, DataWedge continues working with that RS507 scanner upon reconnection after a battery is swapped. If the RS507 does not reconnect after the swap, DataWedge reverts to the current default scanner.</li>
 
-<li><strong>Keep Enabled on Suspend -</strong> This mode is supported on Bluetooth and pluggable scanners, and might result in faster battery drain than would otherwise be expected while in suspend mode. <strong>Note: The Zebra computing device will wake from suspend mode after pressing the scan trigger of any supported scanner</strong>.</li>
+<li><strong>Keep Enabled on Suspend -</strong> This mode is supported on Bluetooth and pluggable scanners, and might result in faster battery drain than would otherwise be expected while in suspend mode. <strong>Note: The Zebra computing device wakes from suspend mode when pressing the scan trigger of any supported scanner</strong>.</li>
 </ul>
 
 <h3 id="usbssiscanners" class="anchor"><a class="heading-anchor" href="#usbssiscanners"><span></span></a>USB SSI Scanners</h3>
@@ -308,12 +348,14 @@
 
 <ul>
 <li><strong>DS3608</strong> USB SSI Scanner</li>
+
+<li><strong>LI3608</strong> Ultra-Rugged USB SSI Laser Scanner</li>
 </ul>
 
-<p>Support notes: </p>
+<p><strong>Support notes</strong>: </p>
 
 <ul>
-<li>The DS3608 scanner is supported only on VC80, ET50 and ET55 devices running Windows </li>
+<li>The DS3608 and LI3608 scanners are supported only on VC80, ET50 and ET55 devices running Android </li>
 
 <li>Scanner must be configured using Symbol Native API (SNAPI) with Imager Interface</li>
 
@@ -733,11 +775,15 @@ A list of Decoders appears similar to the image in Step 2, below.
 
 <h3 id="matrix2of5" class="anchor"><a class="heading-anchor" href="#matrix2of5"><span></span></a>Matrix 2of5</h3>
 
-<p><strong>Length1* -</strong> Used to set decode length.
-<strong>Length2* -</strong> Used to set decode length.
-<strong>Redundancy -</strong> Sets the reader to read the bar code twice before accepting data.
-<strong>Report Check Digit -</strong> Transmit Matrix 2of5 data with or without the check digit.
-<strong>Verify Check Digit -</strong> Enable this feature to check the integrity of all Matrix 2of5 symbols to verify that the data complies with a specified check digit algorithm.</p>
+<p><strong>Length1* -</strong> Used to set decode length.</p>
+
+<p><strong>Length2* -</strong> Used to set decode length.</p>
+
+<p><strong>Redundancy -</strong> Sets the reader to read the bar code twice before accepting data.</p>
+
+<p><strong>Report Check Digit -</strong> Transmit Matrix 2of5 data with or without the check digit.</p>
+
+<p><strong>Verify Check Digit -</strong> Enable this feature to check the integrity of all Matrix 2of5 symbols to verify that the data complies with a specified check digit algorithm.</p>
 
 <p><em>* See <strong><a href="#decodelengths">Decode Lengths section</a></strong>, below</em></p>
 
@@ -988,7 +1034,7 @@ A list of Decoders appears similar to the image in Step 2, below.
 
 <li><p><strong>Continuous Read -</strong> A press and hold of the scan trigger will continuously scan barcodes. <strong>Not supported with the Zebra RS507 Bluetooth Ring Scanner</strong>.</p></li>
 
-<li><p><strong>Press and Sustain -</strong> Starts the scan beam when the trigger is pressed and continues the decode session until the Beam Timer is expired, barcode is decoded or read is canceled. <strong>Scan beam is not stopped when the trigger is released</strong>. This avoids unexpected cancellations of a read by subsequently pressing the trigger button of the device; subsequent trigger presses while the beam is ON have no effect. </p></li>
+<li><p><strong>Press and Sustain -</strong> Starts the scan beam when the trigger is pressed and continues the decode session until the Beam Timer is expired, barcode is decoded or read is canceled. <strong>Scan beam is not stopped when the trigger is released</strong>. This avoids unexpected cancellations of a read by subsequently pressing the trigger button of the device; subsequent trigger presses while the beam is ON have no effect. <strong>Applies to internal imager on TC20/TC25 only</strong>. </p></li>
 </ul>
 
 <p><strong>Beam Timer -</strong> Sets the maximum amount of time (in ms) that the reader remains on. Supports a range from 0 - 60,000 ms in increments of 100 ms. A value of 0 sets the reader to stay on indefinitely.</p>
@@ -1005,7 +1051,7 @@ A list of Decoders appears similar to the image in Step 2, below.
 <li><p><strong>Image Capture Only -</strong> Only captures and image and no barcode data will be dispatched.</p></li>
 </ul>
 
-<p><strong>Note: Zebra does not recommend changing this parameter when barcode scanning is used with DataWedge. No image data will be processed by DataWedge</strong>.</p>
+<p><strong>Note: Zebra does not recommend changing the Image Capture Mode parameter when DataWedge is used to scan barcodes; DataWedge does not process image data</strong>.</p>
 
 <hr>
 
@@ -1051,6 +1097,10 @@ A list of Decoders appears similar to the image in Step 2, below.
 
 <hr>
 
+<p><strong>Digimarc Decoding -</strong> Used to enable/disable support for Digimarc, which encodes and invisibly integrates traditional barcode data onto product packaging. <strong>Supported with internal imager only</strong>. Enabled by default. <a href="https://www.digimarc.com/">More about Digimarc</a>. </p>
+
+<hr>
+
 <p><strong>Scanning Modes -</strong> Used to select between Single (normal), UDI and Multi-barcode modes. UDI mode acquires multiple simultaneous inputs as specified in the selected Universal Device Identifier UDI parameter(s). Multi-barcode mode acquires from 2-10 barcodes with each scan as specified in the Multi-barcode params panel. <strong>Default=5</strong>.</p>
 
 <blockquote>
@@ -1061,6 +1111,22 @@ A list of Decoders appears similar to the image in Step 2, below.
 
 <h3 id="udidecoding" class="anchor"><a class="heading-anchor" href="#udidecoding"><span></span></a>UDI Decoding</h3>
 
+<p>The Universal Device Identifier (UDI) parameter acquires multiple barcodes simultaneously. </p>
+
+<p><strong>This feature is supported using the imager on the following devices only</strong>:</p>
+
+<ul>
+<li><strong>TC51</strong></li>
+
+<li><strong>TC56</strong></li>
+
+<li><strong>TC70x</strong></li>
+
+<li><strong>TC75x</strong></li>
+</ul>
+
+<p><strong>Tap Scanning Modes to enable UDI decoding</strong>: </p>
+
 <p><img style="height:350px" src="scanning_modes.png">
 <em>When UDI scanning mode is enabled (as above)</em>... 
 <img style="height:350px" src="udi_params.png">
@@ -1069,7 +1135,9 @@ A list of Decoders appears similar to the image in Step 2, below.
 <p><strong>UDI Decoding Notes</strong> </p>
 
 <ul>
-<li>Output of collected UDI data might require settings adjustments of the token-separation character and/or output order. See the <a href="../../output/keystroke/#udidataoutput">Keystroke Output guide</a> guide for more information. </li>
+<li><strong>UDI decoding is supported only on the devices listed above</strong>. </li>
+
+<li><strong>Output of collected UDI data might require settings adjustments</strong> of the token-separation character and/or output order. See the <a href="../../output/keystroke/#udidataoutput">Keystroke Output guide</a> guide for more information. </li>
 
 <li>UDI settings can vary by geographic region. See the relevant sections of <a href="../../output/keystroke">Keystroke Output</a>, <a href="../../output/intent">Intent Output</a> and/or <a href="../../output/ip">IP Output</a> guides for more information.</li>
 </ul>
@@ -1086,17 +1154,17 @@ A list of Decoders appears similar to the image in Step 2, below.
 <p><strong>Multi-barcode Notes</strong></p>
 
 <ul>
-<li><p><strong>Supported on select devices only</strong>. See the <a href="../../about">About page</a> for details. </p></li>
+<li><strong>Supported with internal imager on TC20/TC25 devices only</strong>.  </li>
 
-<li><p><strong>Acquired data from all barcodes is delivered as a single string</strong> when output as keystrokes. To add separators and adjust output order, see the <a href="../../output/keystroke">Keystroke Output guide</a>. </p></li>
+<li><strong>Acquired data from all barcodes is delivered as a single string</strong> when output as keystrokes. To add separators and adjust output order, see the <a href="../../output/keystroke/#multibarcodedataoutput">Keystroke Output guide</a>. </li>
 
-<li><p><strong>Picklist behavior -</strong> If the Picklist parameter is set to “Disabled,” the device will attempt to scan the number of barcodes (from 2-10) specified in the Multi-barcode params panel. If the Picklist parameter is set to a value other than “Disabled," the user is expected to move the cross-hair to each barcode to be scanned. <strong>Data is returned only after the specified number of barcodes is read</strong>. </p></li>
+<li><strong>Picklist behavior -</strong> If the Picklist parameter is set to “Disabled,” the device will attempt to scan the number of barcodes (from 2-10) specified in the Multi-barcode params panel. If the Picklist parameter is set to a value other than “Disabled," the user is expected to move the cross-hair to each barcode to be scanned. <strong>Data is returned only after the specified number of barcodes is read</strong>. </li>
 
-<li><p><strong>Duplicate barcodes -</strong> If a label to be scanned contains multiple barcodes, some of which are duplicates (with the same label type and data), only one barcode from the duplicates is decoded; the remainder are ignored. If the label has two duplicate barcodes plus another two different barcodes, a maximum of three barcodes will be decoded from that form; one will be ignored as a duplicate.</p></li>
+<li><strong>Duplicate barcodes -</strong> If a label to be scanned contains multiple barcodes, some of which are duplicates (with the same label type and data), only one barcode from the duplicates is decoded; the remainder are ignored. If the label has two duplicate barcodes plus another two different barcodes, a maximum of three barcodes will be decoded from that form; one will be ignored as a duplicate.</li>
 
-<li><p><strong>Multiple barcode types -</strong> Barcodes can be of multiple label types and still be acquired together. For example, if the specified quantity for a Multi-barcode scan is four, two barcodes can be label type Code 128 and the other two can be type Code 39. </p></li>
+<li><strong>Multiple barcode types -</strong> Barcodes can be of multiple label types and still be acquired together. For example, if the specified quantity for a Multi-barcode scan is four, two barcodes can be label type Code 128 and the other two can be type Code 39. </li>
 
-<li><p><strong>Barcodes in view -</strong>If the specified number of barcodes is not initially in view of the scanner, the scanner will not decode any data. If the scanner's field of view contains a number of barcodes greater than the specified quantity, the scanner will randomly decode barcode(s) until the specified number is reached. For example, if the count is set to two and eight barcodes are in the field of view, the scanner will decode the first two barcodes it sees, returning the data in random order. <strong>Data is returned only after the specified number of barcodes is read</strong>. </p></li>
+<li><strong>Barcodes in view -</strong>If the specified number of barcodes is not initially in view of the scanner, the scanner will not decode any data. If the scanner's field of view contains a number of barcodes greater than the specified quantity, the scanner will randomly decode barcode(s) until the specified number is reached. For example, if the count is set to two and eight barcodes are in the field of view, the scanner will decode the first two barcodes it sees, returning the data in random order. <strong>Data is returned only after the specified number of barcodes is read</strong>. </li>
 </ul>
 
 <hr>
@@ -1167,6 +1235,8 @@ A list of Decoders appears similar to the image in Step 2, below.
 <li><p><strong>Static Reticle -</strong> Enables the viewfinder and a red reticle (cross-hairs) in the center of the screen to aid in positioning the barcode for scanning. <strong>This parameter is supported only when the Camera is used for scanning</strong>.</p></li>
 </ul>
 
+<hr>
+
 <h2 id="scanparams" class="anchor"><a class="heading-anchor" href="#scanparams"><span></span></a>Scan Params</h2>
 
 <p>Scan Parameters allow for configuration of Code ID and scanner-specific decoding feedback options for the scanner selected in the Profile being edited. </p>
@@ -1219,7 +1289,7 @@ A list of Decoders appears similar to the image in Step 2, below.
 <ul>
 <li><strong><a href="../msr">Mag-stripe Reader</a> -</strong> credit/debit and identity cards</li>
 
-<li><strong><a href="../simulscan">SimulScan</a> -</strong> document capture and muti-barcode scanning </li>
+<li><strong><a href="../simulscan">SimulScan</a> -</strong> document capture and multi-barcode scanning </li>
 </ul>
 
 <p><strong>Related guides</strong>:</p>
