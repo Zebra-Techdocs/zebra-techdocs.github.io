@@ -51,13 +51,13 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 2.10
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 3.0
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-10','2-2','/stagenow/2-2/about')">StageNow 2.2</a></li>
-                                <li><a onclick="changeVersion('2-10','2-3','/stagenow/2-3/about')">StageNow 2.3</a></li>
-                                <li><a onclick="changeVersion('2-10','2-4','/stagenow/2-4/about')">StageNow 2.4</a></li>
-                                <li><a onclick="changeVersion('2-10','2-5','/stagenow/2-5/about')">StageNow 2.5</a></li>
+                                <li><a onclick="changeVersion('3-0','2-2','/stagenow/2-2/about')">StageNow 2.2</a></li>
+                                <li><a onclick="changeVersion('3-0','2-3','/stagenow/2-3/about')">StageNow 2.3</a></li>
+                                <li><a onclick="changeVersion('3-0','2-4','/stagenow/2-4/about')">StageNow 2.4</a></li>
+                                <li><a onclick="changeVersion('3-0','2-5','/stagenow/2-5/about')">StageNow 2.5</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -68,60 +68,73 @@
 
 
                         <li>
-                            <a href="/stagenow/2-10/about">
+                            <a href="/stagenow/3-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/gettingstarted">
+                            <a href="/stagenow/3-0/gettingstarted">
                                     Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/installing">
+                            <a href="/stagenow/3-0/installing">
                                     Installation
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/stagingprofiles">
+                            <a href="/stagenow/3-0/stagingprofiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/ProfileWizards">
+                            <a href="/stagenow/3-0/ProfileWizards">
                                     Wizards
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/settingconfig">
+                            <a href="/stagenow/3-0/settingconfig">
                                     Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/settingtypes">
+                            <a href="/stagenow/3-0/settingtypes">
                                     Setting Types
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/stageclient">
+                            <a href="/stagenow/3-0/stageclient">
                                     Staging
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/troubleshooting">
+                            <a href="/stagenow/3-0/troubleshooting">
                                     Troubleshooting
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/download">
+                            <a href="/stagenow/3-0/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/2-10/search">
+                            <a href="https://supportcommunity.zebra.com/s/global-search/stagenow?language=en_US">
+                                    <i class="fa fa-graduation-cap"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/stagenow/3-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
+                        <li class="dropdown languagedropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                                <li><a onclick="changeLanguage('stagenow','stagenow-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
+                          </ul>
+                        </li>                    
+                        
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -233,7 +246,7 @@
                                     <h1 id="profiles" class="anchor"><a class="heading-anchor" href="#profiles"><span></span></a>Profiles</h1>
                                     <p>
                                             StageNow
-                                            2.10
+                                            3.0
                                     </p>
                                 </div>
                             </section>                    
@@ -462,7 +475,7 @@
 
 <li><p>To create a direct connection via hotspot instead of using the configured staging network, check the "Yes, use WiFi Hotspot" checkbox. This allows staging with a single staging barcode without requiring an external Wi-Fi network, and eliminates the need for reprinting barcodes if there is a profile change.</p></li>
 
-<li><p>To stage devices from content stored on a server, check the "Host the Deployment Package Outside of StageNow FTP Server" and enter the server address and fully qualified file name (including path, see image above) of server-based content using the Source URI syntax. For more information and examples of this syntax, see the <a href="../csp/file/#source-uri">Source URI</a> and <a href="../csp/file/#examples">Examples</a> sections of the <a href="../csp/file">File Manager guide</a>. This feature supports HTTP, HTTPS, FTP and FTPS (FTP over TLS or SSL) protocols and basic authentication of URL-embedded credentials (<strong>HTTP/HTTPS requires MX 7.0 or higher on device; FTPS requires MX 7.1 or higher</strong>). </p></li>
+<li><p>To stage devices from content stored on a server, check the "Host the Deployment Package Outside of StageNow FTP Server" and enter the server address and fully qualified file name (including path, see image above) of server-based content using the Source URI syntax. For more information and examples of this syntax, see the <a href="../csp/file/#source-uri">Source URI</a> and <a href="../csp/file/#examples">Examples</a> sections of the <a href="../csp/file">File Manager guide</a>. This feature supports HTTP, HTTPS, FTP and FTPS (FTP over TLS or SSL) protocols and basic authentication of URL-embedded credentials (Devices with MX 4.4+ support FTP only; <strong>HTTP/HTTPS requires MX 7.0 or higher on device</strong>; FTPS requires MX 7.1 or higher). </p></li>
 
 <li><p>Select the checkbox for PDF417 or Linear to specify the type of barcode for deployment, or choose Select All to select all barcode types.</p></li>
 
