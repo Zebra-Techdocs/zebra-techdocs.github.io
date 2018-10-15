@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Serial Input">
-    <title>Serial Input - Zebra Technologies TechDocs</title>
+    <meta title="About Device Central">
+    <title>About Device Central - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -51,8 +51,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
-                                            DataWedge
-                                            6.8
+                                            Device Central
+                                            2.0
                         </p>
 
                     </ul>
@@ -63,47 +63,17 @@
 
 
                         <li>
-                            <a href="/datawedge/6-8/guide/about">
+                            <a href="/devicecentral/2-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-8/guide/setup">
-                                    Setup
+                            <a href="/devicecentral/2-0/guide/usage">
+                                    Using Device Central
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/6-8/guide/profiles">
-                                    Profiles
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datawedge/6-8/guide/settings">
-                                    DataWedge Settings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datawedge/6-8/guide/api">
-                                    APIs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datawedge/6-8/guide/demo">
-                                    Demo Apps
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://developer.zebra.com/welcome">
-                                    <i class="fa fa-comments-o"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://supportcommunity.zebra.com/s/global-search/datawedge?language=en_US">
-                                    <i class="fa fa-graduation-cap"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datawedge/6-8/search">
+                            <a href="/devicecentral/2-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -129,7 +99,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Serial Input</strong></li>
+                            <li><strong>About Device Central</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -215,10 +185,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="serial-input" class="anchor"><a class="heading-anchor" href="#serial-input"><span></span></a>Serial Input</h1>
+                                    <h1 id="about-device-central" class="anchor"><a class="heading-anchor" href="#about-device-central"><span></span></a>About Device Central</h1>
                                     <p>
-                                            DataWedge
-                                            6.8
+                                            Device Central
+                                            2.0
                                     </p>
                                 </div>
                             </section>                    
@@ -233,79 +203,163 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Serial Input options are used to specify communications parameters for a scanner or other device connected to a serial port that will be used to acquire data. In the DataWedge UI, the number of serial ports availabile for selection varies according to the number of serial ports on the host device.</p>
+<p>Device Central provides a centralized way for an organization to connect and monitor supported Bluetooth peripherals.  Using the simple user interface, Device Central easily pairs and unpairs Bluetooth peripherals, monitors connection status, and provides details on supported peripherals. If supported by the peripheral, additional capabilities may exist such as paging the peripheral or updating the firmware. Device Central is pre-installed on all <a href="#supporteddevices">supported Zebra devices</a>.</p>
 
-<!-- 2/28/18- Removed per eng. 
-**Note: DataWedge provides audio and other feedback to alert the user of scanning results and barcode type. See the [Scanner Parameters](#scanparams) section for more information**. 
- -->
-
-<hr>
-
-<h3 id="serialportconfiguration" class="anchor"><a class="heading-anchor" href="#serialportconfiguration"><span></span></a>Serial Port Configuration</h3>
-
-<p><strong><em>Applies only to devices running Android N and higher</em></strong>. <em>Pre-N versions offer Enable/Disable function only</em>.</p>
-
-<p><img style="height:450px" src="DW_serial_02.png">
-<em>Input enabled on Serial port 1 of a Zebra VC80x; second serial port (disabled) also shown.</em>
-<br></p>
-
-<p><strong>Baud rate -</strong> specifies the modulation rate of the connected serial device. </p>
-
-<p><strong>Data bits -</strong> specifies the number of data bits in a serial frame (data bits per byte). </p>
-
-<p><strong>Parity -</strong> specifies the parity bits using one of the following values: </p>
+<p>Device Central features:</p>
 
 <ul>
-<li>None: No parity check</li>
+<li>Simple scan and pair to a <a href="#supporteddevices">supported Bluetooth peripheral</a></li>
 
-<li>Odd: Sets the parity bit so the count of bits set is an odd number</li>
+<li>Display pairing and connection status of paired Bluetooth peripherals</li>
 
-<li>Even: Sets the parity bit so the count of bits set is an even number</li>
+<li>Display peripheral details, such as device type, Bluetooth Mac address, firmware version, battery status, serial number, etc.</li>
 
-<li>Mark: Leaves the parity bit set to 1</li>
+<li>Unpair the paired Bluetooth peripheral </li>
 
-<li>Space: Leaves the parity bit set to 0</li>
+<li>Paging to locate a paired and connected peripheral (applies to supported Bluetooth scanners)</li>
+
+<li>Firmware update utility for supported peripherals (applies to supported Bluetooth scanners)</li>
 </ul>
 
-<p><strong>Stop bits -</strong> specifies the number of stop bits to use.  </p>
+<p><em>Note: Unpairing a Bluetooth Scanners peripheral is currently not supported. Zebra Bluetooth scanners act as a master device which controls the pairing and connection with mobile computers. These Bluetooth scanners have the re-connect feature which may be initiated on the scanner itself. Therefore, unpairing the Bluetooth scanner from a mobile computer will not remove the paired information completely. To address this, pressing the re-connect button on the Bluetooth scanner will re-establish the pairing and connection with mobile computers.</em></p>
 
-<p><img style="height:450px" src="DW_serial_04.png">
-<em>Tapping on a setting displays a dialog box for changing its value.</em>
-<br></p>
+<h3 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h3>
 
-<p><strong>Notes</strong>: </p>
+<p>Device Central is approved for use with the following Zebra Android devices:</p>
 
-<ul>
-<li><strong><u>Serial port configuration is available only on devices running Android N and higher</u></strong>. For prior versions, only the Enable/Disable options are available for serial ports.</li>
+<!--  ** Only TC56 N devices supported first **
 
-<li><strong>For more information about required serial communication settings</strong> of a specific device, please refer to documentation that accompanied the peripheral being connected. </li>
+<table class="facelift" style="width:100%" border="1" padding="5px">
+  <tr bgcolor="#dce8ef">
+    <th>Device</th>
+    <th style="text-align:center">Android 5.x <br>(Lollipop)</th> 
+    <th style="text-align:center">Android 6.x <br>(Marshmallow)</th>
+    <th style="text-align:center">Android 7.x <br>(Nougat)</th>
+    <th style="text-align:center">Android 8.x <br>(Oreo)</th>
+  </tr>
+  <tr>
+    <td>MC33</td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td style="text-align:center">&#x25cf;</td>
+  </tr>
+  <tr>
+    <td>TC51/TC56</td>
+    <td></td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td style="text-align:center">&#x25cf;</td>
+  </tr>
+  <tr>
+    <td>TC52/TC57</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center">&#x25cf;</td>
+  </tr>
+  <tr>
+    <td>TC70x/TC75x</td>
+    <td></td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td style="text-align:center">&#x25cf;</td>
+  </tr>
+  <tr>
+    <td>TC72/TC77</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center">&#x25cf;</td>
+  </tr>
+  <tr>
+    <td>TC97</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center">&#x25cf;</td>
+  </tr>
+  <tr>
+    <td>VC80x</td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td style="text-align:center">&#x25cf;</td>
+  </tr>
+  <tr>
+    <td>WT6000</td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td style="text-align:center">&#x25cf;</td>
+    <td></td>
+  </tr>
+</table>
 
-<li><strong>Serial-port settings also can be configured programmatically.</strong> See <a href="../../api/setconfig">SET_CONFIG API</a> section. </li>
-</ul>
-
-<!--  10/11/18 - remove per engineering
------
-
-### Output Using Intents
-
-For some scanning applications, it might be preferable to output acquired data directly to an app or app activity rather than displaying decoded data on the screen. **This is done using Android intents**:
-
-* **[SET_CONFIG API](../../api/setconfig)** and **[sample code](../../api/setconfig/#setserialinputconfiguration)** for setting serial parameters
-* **[GET_CONFIG API](../../api/getconfig)** and **[sample code](../../api/getconfig/#getserialinputconfig)** for getting serial parameter settings
 -->
 
+<table class="facelift" style="width:100%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Device</th>
+    <th style="text-align:center">Android 6.x <br>(Marshmallow)</th>
+    <th style="text-align:center">Android 7.x <br>(Nougat)</th>
+    <th style="text-align:center">Android 8.x <br>(Oreo)</th>
+  </tr>
+
+  <tr>
+    <td>TC56</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">●</td>
+    <td style="text-align:center"></td>
+  </tr>
+</tbody></table>
+
+<p>Additional devices will be supported in the future.</p>
+
+<p><br>
+Device Central is approved for use with the following Bluetooth peripherals:</p>
+
+<table class="facelift" style="width:100%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Device Category</th>
+    <th>Device Model</th>
+  </tr>
+  <tr>
+    <td rowspan="4">Bluetooth Scanner</td>
+    <td>Zebra RS6000 Bluetooth Ring Scanner</td>
+  </tr>
+  <tr>
+    <td>Zebra RS507/RS507x Ring Scanner</td>
+  </tr>
+  <tr>
+    <td>Zebra LI3678 Handheld Scanner</td>
+  </tr>
+  <tr>
+    <td>Zebra DS3678 Handheld Scanner</td>
+  </tr>
+  <tr>
+    <td>Bluetooth Headset</td>
+    <td>Zebra HS3100 Bluetooth Headset</td>
+  </tr>
+  <tr>
+    <td>Bluetooth Printer</td>
+    <td>Zebra Bluetooth Printers (for example iMZ320)</td>
+  </tr>
+  <!-- ** Payment Support removed **
+  <tr>
+    <td>Bluetooth Payment Terminal</td>
+    <td>Verifone Bluetooth Payment Terminals (for example e355)</td>
+  </tr>
+  -->
+</tbody></table>
+
+<p><br></p>
+
 <hr>
 
-<p><strong>Relates Gudies</strong>:</p>
+<h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
 <ul>
-<li><strong><a href="../../output/intent">Intent Output guide</a></strong> | Information and important warnings about intent usage</li>
-
-<li><strong><a href="../../api">DataWedge APIs</a></strong> | List of all DataWedge intent APIs</li>
-
-<li><strong><a href="../../profiles">DataWedge Profiles</a></strong> | List of dataWedge Plug-ins for input, output and data processing</li>
-
-<li><strong><a href="https://developer.android.com/guide/components/intents-filters.html">Android Developer site</a></strong> | General information about Android intents </li>
+<li><a href="../usage">Device Central Usage Guide</a></li>
 </ul><p></p>
                                         
 
