@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Home Screen 2.8
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Home Screen 3.0
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-4','2-3','/ehs/2-8/guide/about')">Enterprise Home Screen 2.8</a></li>
+                                <li><a onclick="changeVersion('2-4','2-3','/ehs/3-0/guide/about')">Enterprise Home Screen 3.0</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,32 +65,32 @@
 
 
                         <li>
-                            <a href="/ehs/2-8/guide/about">
+                            <a href="/ehs/3-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/2-8/guide/setup">
+                            <a href="/ehs/3-0/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/2-8/guide/settings">
+                            <a href="/ehs/3-0/guide/settings">
                                     Advanced Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/2-8/guide/features">
+                            <a href="/ehs/3-0/guide/features">
                                     Special Features
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/2-8/download">
+                            <a href="/ehs/3-0/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/2-8/search">
+                            <a href="/ehs/3-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -212,7 +212,7 @@
                                     <h1 id="enterprise-home-screen-setup" class="anchor"><a class="heading-anchor" href="#enterprise-home-screen-setup"><span></span></a>Enterprise Home Screen Setup</h1>
                                     <p>
                                             Enterprise Home Screen
-                                            2.8
+                                            3.0
                                     </p>
                                 </div>
                             </section>                    
@@ -227,9 +227,9 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>These instructions provide a basic understanding of the installation, configuration, usage and essential workings of Enterprise Home Screen, and are recommended for anyone unfamiliar with first-time EHS setup. Please note that everything detailed here also can be automated through a Mobile Device Management (MDM) system and with direct manipulation of the EHS config file, which is documented in the <a href="../settings">Advanced Settings</a> section. </p>
+<p>These instructions provide a basic understanding of the installation, configuration, usage and essential workings of Enterprise Home Screen, and are recommended for anyone unfamiliar with first-time EHS setup. Please note that everything detailed here also can be automated through a Enterprise Mobile Management (EMM) system and with direct manipulation of the EHS config file, which is documented in the <a href="../settings">Advanced Settings</a> section. </p>
 
-<p>Many of the capabilities of EHS can be accomplished manually on the device, programmatically through <a href="../../../../emdk-for-android">EMDK</a> or remotely using <a href="../../../../stagenow">StageNow</a> or a third-party mobile device management (MDM) system (if supported by that MDM system). EHS simply puts these capabilities into a single, convenient tool.</p>
+<p>Many of the capabilities of EHS can be accomplished manually on the device, programmatically through <a href="../../../../emdk-for-android">EMDK</a> or remotely using <a href="../../../../stagenow">StageNow</a> or a third-party EMM system (if supported by that EMM system). EHS simply puts these capabilities into a single, convenient tool.</p>
 
 <blockquote>
   <p><b>Note</b>: Installation and setup requires that the EHS .apk file be present on a PC or Mac that can communicate with the target device and write to all storage areas. If necessary, please <a href="../../download">download EHS</a> and establish connectivity between the computer and device. Then resume from here. </p>
@@ -239,21 +239,23 @@
 
 <h2 id="manualinstallation" class="anchor"><a class="heading-anchor" href="#manualinstallation"><span></span></a>Manual Installation</h2>
 
-<p>These instructions apply to direct installation (from a computer to a single device) using the EHS 2.8 installer (.apk) file. </p>
+<p>These instructions apply to direct installation (from a computer to a single device) using the EHS 3.0 installer (.apk) file. </p>
 
 <h3 id="installerapkfileinfo" class="anchor"><a class="heading-anchor" href="#installerapkfileinfo"><span></span></a>Installer (.apk) File Info</h3>
 
-<p>The EHS 2.8 download includes two separate .apk files: </p>
+<p>The EHS 3.0 download includes two separate .apk files: </p>
 
 <ul>
-<li><code>EHS_0207xx_A.apk</code> - for all devices <strong><em>except</em> TC20/TC25</strong></li>
+<li><code>EHS_xxxxxx_A.apk</code> - for all devices <strong><em>except</em> TC20/TC25 and devices running Oreo</strong></li>
 
-<li><code>EHS_0207xx_B.apk</code> - for TC20/TC25 devices</li>
+<li><code>EHS_xxxxxx_B.apk</code> - for <strong>TC20/TC25 and devices running Oreo</strong></li>
 </ul>
 
-<p>See the full list of <a href="../guide/about#supporteddevices">devices supported by EHS v2.8</a>. </p>
+<p>See the full list of <a href="../guide/about#supporteddevices">devices supported by EHS v3.0</a>. </p>
 
-<p>Read about how to <a href="#uninstallation">uninstall EHS</a> later in this guide. </p>
+<blockquote>
+  <p><strong>ABOUT OREO UPGRADES</strong>: If the operating system on a device (except TC20/TC25) is being upgraded to Android 8.1 Oreo from Marshmallow or Nougat, <strong><u>the previous EHS installation must be removed before EHS 3.0 is installed</u></strong>. Follow instructions to <a href="../guide/setup#uninstallation">uninstall EHS</a> before installing EHS on an Oreo device. <br><br><strong>Note</strong>: Prior configuration settings, if any, are re-applied automatically.</p>
+</blockquote>
 
 <p><strong>To install EHS manually</strong>: </p>
 
@@ -261,7 +263,7 @@
 
 <p>2. <b>Copy the .apk file</b> from the PC to any writable device folder.</p>
 
-<p>3. On the device, <b>launch File Browser</b> from the App Drawer:</p>
+<p>3. On the device, <b>launch "File Browser" or "Files" app</b> (Oreo) from the App Drawer:</p>
 
 <p><img alt="" style="height:500px" src="file_browser_in_drawer.png">
 <br></p>
@@ -348,19 +350,15 @@
 <p>In User Mode, the following features are disabled by default:</p>
 
 <ul>
-<li>Airplane mode</li>
-
 <li>USB debugging</li>
 
 <li>Access to the file system</li>
 
-<li>Keyguard (for unlocking the screen)</li>
-
 <li>Keyguard-screen camera and search functions</li>
 
-<li>The status-bar Settings icon  </li>
+<li>Full access to the System Settings panel</li>
 
-<li>Full access to the System Settings panel  </li>
+<li>Recent apps button</li>
 </ul>
 
 <p><strong>To select which settings will be available while the device is in User Mode and/or to modify other User Mode preferences</strong>:</p>
@@ -378,19 +376,21 @@
 
 <p><img alt="" style="height:350px" src="prefs_3.png"></p>
 
-<p>For scenarios that require even more security, EHS offers Secure and Kiosk modes, which are documented in the <a href="">Advanced Features</a> section. For a complete usage reference for the <code>enterprisehomescreen.xml</code> configuration file, please see the <a href="../settings">Advanced Settings</a> section. </p>
+<p>For scenarios that require even more security, EHS offers Kiosk mode, which is documented in the <a href="">Advanced Features</a> section. For a complete usage reference for the <code>enterprisehomescreen.xml</code> configuration file, please see the <a href="../settings">Advanced Settings</a> section. </p>
 
 <hr>
 
 <h2 id="automatedinstallation" class="anchor"><a class="heading-anchor" href="#automatedinstallation"><span></span></a>Automated Installation</h2>
 
-<p>These instructions apply to remote installation of EHS, an <code>enterprisehomescreen.xml</code> config file, or both, from an organization's own MDM server to multiple managed devices. Alternatively, remote deployment and management can be accomplished through Zebra's <a href="../../../../emdk-for-android">EMDK</a> or <a href="../../../../stagenow">StageNow</a> tools using its App Manager Setting Type service. </p>
+<p>These instructions apply to remote installation of EHS, an <code>enterprisehomescreen.xml</code> config file, or both, from an organization's own EMM server to multiple managed devices. Alternatively, remote deployment and management can be accomplished through Zebra's <a href="../../../../emdk-for-android">EMDK</a> or <a href="../../../../stagenow">StageNow</a> tools using its App Manager Setting Type service. </p>
 
 <blockquote>
   <p><strong>Important</strong>: To execute EHS in a device in which a managed profile is enabled, EHS must be installed <u>before</u> configuring the managed profile in the device.</p>
+  
+  <p><strong>ABOUT OREO UPGRADES</strong>: If the operating system on a device (except TC20/TC25) is being upgraded to Android 8.1 Oreo from Marshmallow or Nougat, <strong><u>the previous EHS installation must be removed before EHS 3.0 is installed</u></strong>. Follow instructions to <a href="../guide/setup#uninstallation">uninstall EHS</a> before installing EHS on an Oreo device. <br><br><strong>Note</strong>: Prior configuration settings, if any, are re-applied automatically.</p>
 </blockquote>
 
-<p><strong>To install EHS using an MDM, instruct the MDM to do the following, in this order</strong>:</p>
+<p><strong>To install EHS using an EMM, instruct the EMM to do the following, in this order</strong>:</p>
 
 <p>1. If desired, <b>create an</b> <code>enterprisehomescreen.xml</code><b> file</b> containing the desired user apps and settings. Otherwise, EHS will be installed with its default settings and apps. See the <a href="../settings">Advanced Settings</a> section for detailed instructions on the creation and editing of config files. </p>
 
@@ -415,7 +415,7 @@
 
 </tr><tr bgcolor="#ccffcc">
 <td style="width: 118.35pt;" width="158">
-<p class="MsoNormal" style="text-align: center;"><font color="#333399" size="2">EHS_020xxx.apk</font></p>
+<p class="MsoNormal" style="text-align: center;"><font color="#333399" size="2">EHS_xxxxxx.apk</font></p>
 </td>
 <td style="width: 96px;">
 <p class="MsoNormal" align="center"><font color="#333399" size="2">com.symbol.enterprisehomescreen</font></p>
@@ -433,7 +433,7 @@
 
 <p>5. <b>Reboot the device</b> to complete the installation. This is a <b>required step</b>. </p>
 
-<p>The capabilities of MDM systems vary. Please refer to the MDM documentation for specific information about how to configure these commands. </p>
+<p>The capabilities of EMM systems vary. Please refer to the EMM documentation for specific information about how to configure these commands. </p>
 
 <p><strong>Note: App installation, uninstallation, setting the default launcher and other operations are possible using the <a href="/mx/#app-manager">App Manager</a> through Zebra's <a href="/emdk-for-android/4-0/guide/about">EMDK</a> or <a href="/stagenow/2-2/about/">StageNow</a> tools</strong>. </p>
 
@@ -441,9 +441,10 @@
 
 <h2 id="uninstallation" class="anchor"><a class="heading-anchor" href="#uninstallation"><span></span></a>Uninstallation</h2>
 
-<h4 id="important" class="anchor"><a class="heading-anchor" href="#important"><span></span></a>Important</h4>
-
-<p><strong>On ET50/ET55 devices running Android 5.x Lollipop with GMS</strong>, <u>a permanent system UI crash could occur</u> if EHS is uninstalled while in User Mode. Before uninstalling EHS, Zebra recommends pushing to the device an EHS configuration file (<code>enterprisehomescreen.xml</code>) with the Search app enabled. See the <a href="../settings">Advanced Settings</a> section for configuration file usage. </p>
+<!-- 10/16/18- Lollipop not supported in EHS 3.0+.  
+#### Important
+**On ET50/ET55 devices running Android 5.x Lollipop with GMS**, <u>a permanent system UI crash could occur</u> if EHS is uninstalled while in User Mode. Before uninstalling EHS, Zebra recommends pushing to the device an EHS configuration file (`enterprisehomescreen.xml`) with the Search app enabled. See the [Advanced Settings](../settings) section for configuration file usage. 
+ -->
 
 <h3 id="manualuninstallation" class="anchor"><a class="heading-anchor" href="#manualuninstallation"><span></span></a>Manual Uninstallation</h3>
 
@@ -471,7 +472,7 @@
 <img alt="" style="height:350px" src="ehs_uninstall_confirm.png">
 <br></p>
 
-<h4 id="optional" class="anchor"><a class="heading-anchor" href="#optional"><span></span></a>OPTIONAL</h4>
+<h4 id="removeconfigfileoptional" class="anchor"><a class="heading-anchor" href="#removeconfigfileoptional"><span></span></a>Remove Config File (optional)</h4>
 
 <p>The steps above do not remove the <code>enterprisehomescreen.xml</code> configuration file from the <code>/enterprise/usr</code> folder, which could effect the behavior of EHS versions installed later.  </p>
 
@@ -485,21 +486,23 @@
 adb shell rm /enterprise/usr/enterprisehomescreen.xml
 </code></pre>
 
-<p>Manual uninstallation of EHS is now complete. </p>
+<h5 id="manualuninstallationofehsisnowcomplete" class="anchor"><a class="heading-anchor" href="#manualuninstallationofehsisnowcomplete"><span></span></a>Manual uninstallation of EHS is now complete.</h5>
+
+<hr>
 
 <h3 id="automateduninstallation" class="anchor"><a class="heading-anchor" href="#automateduninstallation"><span></span></a>Automated Uninstallation</h3>
 
-<p>These instructions apply to remote uninstallation using an organization's own MDM server to remove EHS from multiple managed devices. This task also can be accomplished through Zebra's <a href="/emdk-for-android/4-0/guide/about">EMDK</a> or <a href="/stagenow/2-2/about/">StageNow</a> tools using the <a href="/mx/#app-manager">App Manager</a> service. </p>
+<p>These instructions apply to remote uninstallation using an organization's own EMM server to remove EHS from multiple managed devices. This task also can be accomplished through Zebra's <a href="/emdk-for-android/4-0/guide/about">EMDK</a> or <a href="/stagenow/2-2/about/">StageNow</a> tools using the <a href="/mx/#app-manager">App Manager</a> service. </p>
 
-<h4 id="important-1" class="anchor"><a class="heading-anchor" href="#important-1"><span></span></a>Important</h4>
+<h4 id="important" class="anchor"><a class="heading-anchor" href="#important"><span></span></a>Important</h4>
 
 <ul>
-<li><p><strong>On ET50 and ET55 devices with GMS</strong>, <u>a permanent system UI crash could occur</u> if EHS is uninstalled remotely (i.e. via MDM) while in User Mode. Before uninstalling EHS, Zebra recommends pushing to the device an EHS configuration file (<code>enterprisehomescreen.xml</code>) with the Search app enabled. See the <a href="../settings">Advanced Settings</a> section for configuration file usage. </p></li>
+<li><p><strong>On ET50 and ET55 devices with GMS</strong>, <u>a permanent system UI crash could occur</u> if EHS is uninstalled remotely (i.e. via EMM) while in User Mode. Before uninstalling EHS, Zebra recommends pushing to the device an EHS configuration file (<code>enterprisehomescreen.xml</code>) with the Search app enabled. See the <a href="../settings">Advanced Settings</a> section for configuration file usage. </p></li>
 
 <li><p>Device settings configured by EHS such as USB Debugging, <a href="../settings#systemsettingsrestricted">System Settings Restricted</a>, and some others might not revert to the state they were in prior to EHS installation. Zebra recommends reconfiguring the device as required <u>prior to the removal of EHS</u>. </p></li>
 </ul>
 
-<p><strong>To uninstall EHS using an MDM, instruct the MDM to do the following</strong>:</p>
+<p><strong>To uninstall EHS using an EMM, instruct the EMM to do the following</strong>:</p>
 
 <p>1. <b> Uninstall (remove) the EHS app</b>, referencing the package and activity names as indicated in the table below. </p>
 
@@ -520,7 +523,7 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 </tr><tr bgcolor="#ccffcc">
 <td style="width: 118.35pt;" width="158">
-<p class="MsoNormal" style="text-align: center;"><font color="#333399" size="2">EHS_020xxx.apk</font></p>
+<p class="MsoNormal" style="text-align: center;"><font color="#333399" size="2">EHS_xxxxxx.apk</font></p>
 </td>
 <td style="width: 96px;">
 <p class="MsoNormal" align="center"><font color="#333399" size="2">com.symbol.enterprisehomescreen</font></p>
@@ -534,7 +537,7 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 <p><br></p>
 
-<p>2. <b>OPTIONAL</b>: If a new <code>enterprisehomescreen.xml</code> configuration file will be deployed with the new version of EHS, <strong>skip to Step 3</strong>. Otherwise, instruct the MDM to remove the file <code>/enterprise/usr/enterprisehomescreen.xml</code> from the device. This will clear configuration settings from the previously installed EHS app. </p>
+<p>2. <b>OPTIONAL</b>: If a new <code>enterprisehomescreen.xml</code> configuration file will be deployed with the new version of EHS, <strong>skip to Step 3</strong>. Otherwise, instruct the EMM to remove the file <code>/enterprise/usr/enterprisehomescreen.xml</code> from the device. This will clear configuration settings from the previously installed EHS app. </p>
 
 <blockquote>
   <p><strong>Warning</strong>: Do not remove the <code>/enterprise/usr</code> folder; it could effect the behavior of other apps. </p>
@@ -542,15 +545,15 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 <p>3. It is sometimes necessary to <b>reboot the device</b> to complete the uninstallation. </p>
 
-<p>Remote uninstallation of EHS is now complete. </p>
+<h5 id="remoteuninstallationofehsisnowcomplete" class="anchor"><a class="heading-anchor" href="#remoteuninstallationofehsisnowcomplete"><span></span></a>Remote uninstallation of EHS is now complete.</h5>
 
-<p><strong>Note: Capabilities of MDM systems vary. Please refer to the MDM documentation for specific information about command usage</strong>. </p>
+<p><strong>Note: Capabilities of EMM systems vary. Please refer to the EMM documentation for specific information about command usage</strong>. </p>
 
 <hr>
 
 <h2 id="changethedefaultlauncher" class="anchor"><a class="heading-anchor" href="#changethedefaultlauncher"><span></span></a>Change the Default Launcher</h2>
 
-<p>Removing EHS as the default launcher on a device can be done with a simple change in the Settings panel or by uninstalling EHS. Either of these scenarios can be accomplished manually on the device, programmatically through EMDK or remotely using StageNow or an MDM (if supported). </p>
+<p>Removing EHS as the default launcher on a device can be done with a simple change in the Settings panel or by uninstalling EHS. Either of these scenarios can be accomplished manually on the device, programmatically through EMDK or remotely using StageNow or an EMM (if supported). </p>
 
 <p>If EHS is removed from the device and the Android Launcher is the only remaining launcher on the device, it will become the default launcher. <strong>If more than one launcher will remain on the device after EHS is removed, a new default launcher should be selected to ensure desired operation</strong>.  </p>
 
@@ -611,22 +614,23 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 			</div>
 		  </div>
 		</div> </div>
-         <footer id="footer" class="navbar-fixed-bottom">
+         <footer id="footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                        © 2018 ZIH Corp. and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                     </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
                     <div class="col-sm-2">
                         <ul class="social-icons">
                             <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>
                     </div>
-                </div>
+     -->            </div>
             </div>
         </footer><!--/#footer-->
     <script src="/js/bootstrap.min.js"></script>
