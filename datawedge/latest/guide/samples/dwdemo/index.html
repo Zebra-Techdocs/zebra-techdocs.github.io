@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="utf-8">
@@ -8,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="DataWedge APIs">
-    <title>DataWedge APIs - Zebra Technologies TechDocs</title>
+    <meta title="DWDemo">
+    <title>DWDemo - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -120,149 +119,194 @@
         </nav><!--/nav-->
     </header><!--/header-->
 <div class="container-fluid">
+    <section id="cta" class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h1 id="dwdemo" class="anchor"><a class="heading-anchor" href="#dwdemo"><span></span></a>DWDemo</h1>
+                    <p>Built-in demonstration app that shows how data is acquired by using the DataWedge intent output.
+                    </p>
+                </div>
+                <div class="col-sm-3 text-right">
+
+					<div class="hidden" id="download">
+						<div class="popover-heading">
+						    Available Downloads
+						</div>
+
+						<div class="popover-body">
+						<ul class="nav nav-pills nav-stacked">
+						</ul>
+						</div>
+					</div>
+					<div class="hidden" id="source">
+						<div class="popover-heading">
+						    Available Source 
+						</div>
+
+						<div class="popover-body">
+						<ul class="nav nav-pills nav-stacked">
+						</ul>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#cta-->
 
     <section id="blog">
         <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+	                    <div class="service-box wow fadeInRight">
+	                        <div class="">
+	                            <h2 class="media-heading anchor" id="product"><a class="heading-anchor" href="#product"><span></span></a>Product</h2>
+	                            <p>DataWedge - 7.0</p>
+	                        </div>
+	                    </div>
+	                    <div class="service-box wow fadeInRight">
+	                        <div class="">
+	                            <h2 class="anchor" id="devices"><a class="heading-anchor" href="#devices"><span></span></a>Devices</h2>
+	                            <p>
+	                            	All supported Zebra Android devices
+	                            	
+	                            </p>
+	                        </div>
+	                    </div>
+	                    <div class="service-box wow fadeInRight">
+	                        <div class="">
+	                            <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
+	                            <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p>DWDemo provides barcode scanning capabilities, demonstrating how data is acquired by an application using the DataWedge intent output. It is provided by default on all Zebra Android devices.</p>
+
+<p><img src="dwdemo_icon_mini.png" alt="img"> 
+  <em>Figure 1: DWDemo in Apps screen</em></p>
+
+<h2 id="howitworks" class="anchor"><a class="heading-anchor" href="#howitworks"><span></span></a>How It Works</h2>
+
+<p>A DataWedge Profile called "DWDemo" is pre-configured in DataWedge and associated with the demo app. The DWDemo Profile must be enabled and can be modified as needed for testing or demo purposes. Once the demo Profile is enabled, tap the app's yellow Scan button or press the device hardware trigger to initiate a barcode scan.  Decoded data is displayed on the app screen. </p>
+
+<p>The DWDemo app supports scanning with the imager, camera, Bluetooth device or a magstripe reader (MSR), if one is connected.</p>
+
+<p>Available actions in this demo app: </p>
+
+<ul>
+<li>Capture barcode data and display decoded data</li>
+
+<li>Select input device for barcode scan, e.g. camera, scanner, Bluetooth device</li>
+
+<li>Toggle camera input type between image and barcode</li>
+
+<li>Toggle camera flash for camera barcode scan</li>
+
+<li>Access DWDemo profile</li>
+</ul>
+
+<h2 id="dwdemosettings" class="anchor"><a class="heading-anchor" href="#dwdemosettings"><span></span></a>DWDemo Settings</h2>
+
+<p><img src="dwdemo_main_mini.png" alt="img"> 
+  <em>Figure 2: DWDemo menu</em></p>
+
+<p>DWDemo menu settings (from left to right):</p>
+
+<ul>
+<li><strong>Lightning Bolt -</strong> toggle the Camera Flash on or off (active when Camera is selected); control illumination mode for other devices. </li>
+
+<li><strong>Input Device -</strong> permit selection of input devices such as Camera, Scanner or Bluetooth device (if no Bluetooth device is connected, it attempts to pair to a Bluetooth device). 
+<img src="dwdemo_scanner_selection_mini.png" alt="img"> 
+<em>Figure 3: DWDemo menu</em></li>
+
+<li><strong>Camera input type -</strong> toggle between image and barcode data capture (active when Camera is selected; varies by device).</li>
+
+<li><strong>DWDemo "hamburger" menu -</strong> access "About" screen and "Settings", which invokes DWDemo Profile screen in DataWedge.
+<img src="dwdemo_hamburger_menu_mini.png" alt="img"> 
+<em>Figure 4: DWDemo hamburger menu</em></li>
+</ul>
+
+<p>DataWedge settings and preferences can be configured in the DWDemo Profile, shown below. </p>
+
+<h2 id="usingdwdemo" class="anchor"><a class="heading-anchor" href="#usingdwdemo"><span></span></a>Using DWDemo</h2>
+
+<p>This guide requires a working knowledge of DataWedge Profiles. For more information about Profile settings, see the <a href="../../setup">DataWedge Setup Guide</a>. </p>
+
+<p><strong>To activate scanning in the DWDemo app, the "Profile enabled" checkbox must be checked</strong> (as shown) in the associated DWDemo Profile. Additional settings can be changed as required. 
+  <img src="dwdemo_profile.png" alt="img"> 
+  <em>Figure 5: Profile settings</em></p>
+
+<p><strong>To perform a test scan, tap the yellow Scan button</strong> or <strong>press the device Scan trigger</strong> while pointing at an object to be scanned. </p>
+
+<p>Acquired data appears in the window, as below.
+  <img src="dwdemo_sample_scanned_barcodes_mini.png" alt="img"> 
+  <em>Figure 6: Data captured with DWDemo</em></p>
+
+<p>By making changes in the DWDemo Profile, the associated DWDemo app can be used to test different decoders, rules for processing acquired data and other DataWedge configuration variations. For information about changing Profile settings, see <a href="../../createprofile">Managing Profiles</a>.  </p>
+
+<hr>
+
+<p><strong>Related guides</strong>:</p>
+
+<ul>
+<li><a href="../../setup">DataWedge Setup Guide</a> for profile settings</li>
+
+<li><a href="../../profiles">DataWedge Profiles</a> for information on DataWedge profiles </li>
+
+<li><a href="../../createprofile">Managing Profiles</a> to change profile settings</li>
+</ul><p></p>
+	                        </div>
+	                    </div>
+
+                    </div>
+                </div><!--/.col-sm-6-->
+                <div class="col-sm-4">
+                	<div class="row">
+                		<div class="col-sm-12">
+						    <section id="main-slider">
+						        <div class="owl-carousel">
+						            <div class="item">
+						            	<img src="/datawedge/7-0/guide/samples/dwdemo/dwdemo_main.png">
+						                
+						            </div><!--/.item-->
+						            <div class="item">
+						            	<img src="/datawedge/7-0/guide/samples/dwdemo/dwdemo_scanner_selection.png">
+						                
+						            </div><!--/.item-->
+						            <div class="item">
+						            	<img src="/datawedge/7-0/guide/samples/dwdemo/dwdemo_sample_scanned_barcodes.png">
+						                
+						            </div><!--/.item-->
+						            <div class="item">
+						            	<img src="/datawedge/7-0/guide/samples/dwdemo/dwdemo_hamburger_menu.png">
+						                
+						            </div><!--/.item-->
+						        </div><!--/.owl-carousel-->
+						    </section><!--/#main-slider-->
 
 
+            			</div>
+                	</div>
 
-<div class="row">
-    <div class="col-sm-12" id="guides">
-        <h1 id="datawedge-apis" class="anchor"><a class="heading-anchor" href="#datawedge-apis"><span></span></a>DataWedge APIs</h1>
-        <p>DataWedge APIs operate primarily through Android intents--specific commands that can be used by other applications to control data capture without the need to directly access the DataWedge UI.
-    </p></div>
-</div>
-
-<div class="row">
-    <div class="col-sm-12" id="guides">
-        <div class="waterfall columns" data-col-min-width="350" data-default-container-width="915" data-autoresize="true">
-              <div>
-                    <h5 id="-general-information-" class="anchor"><a class="heading-anchor" href="#-general-information-"><span></span></a>
-                        
-                            General Information
-                        
-                    </h5> 
-                        <ul style="display:block;">
-                            <li>
-                                <a href="../output/intent"><span>Using Intents</span></a>
-                            </li>
-                            <li>
-                                <a href="overview"><span>Using DataWedge APIs</span></a>
-                            </li>
-                            <li>
-                                <a href="resultinfo"><span>Using Intent Result Codes</span></a>
-                            </li>
-                            <li>
-                                <a href="https://developer.zebra.com/community/android/android-forums/android-blogs/blog/2017/06/27/datawedge-apis-benefits-challenges"><span>DataWedge API Benefits &amp; Usage (article)</span></a>
-                            </li>
-                            <li>
-                                <a href="tutorials"><span>DataWedge Intent Demo App</span></a>
-                            </li>
-                        </ul>
-                </div>
-              <div>
-                    <h5 id="-datawedge-apis-" class="anchor"><a class="heading-anchor" href="#-datawedge-apis-"><span></span></a>
-                        
-                            DataWedge APIs
-                        
-                    </h5> 
-                        <ul style="display:block;">
-                            <li>
-                                <a href="cloneprofile"><span>Clone Profile</span></a>
-                            </li>
-                            <li>
-                                <a href="createprofile"><span>Create Profile</span></a>
-                            </li>
-                            <li>
-                                <a href="deleteprofile"><span>Delete Profile</span></a>
-                            </li>
-                            <li>
-                                <a href="enabledatawedge"><span>Enable/Disable DataWedge</span></a>
-                            </li>
-                            <li>
-                                <a href="enumeratescanners"><span>Enumerate Scanners</span></a>
-                            </li>
-                            <li>
-                                <a href="getactiveprofile"><span>Get Active Profile</span></a>
-                            </li>
-                            <li>
-                                <a href="getconfig"><span>Get Config</span></a>
-                            </li>
-                            <li>
-                                <a href="getdatawedgestatus"><span>Get DataWedge Status</span></a>
-                            </li>
-                            <li>
-                                <a href="getdisabledapplist"><span>Get Disabled App List</span></a>
-                            </li>
-                            <li>
-                                <a href="getignoredisabledprofiles"><span>Get Ignore Disabled Profiles</span></a>
-                            </li>
-                            <li>
-                                <a href="getprofileslist"><span>Get Profiles List</span></a>
-                            </li>
-                            <li>
-                                <a href="getscannerstatus"><span>Get Scanner Status</span></a>
-                            </li>
-                            <li>
-                                <a href="getversioninfo"><span>Get Version Info</span></a>
-                            </li>
-                            <li>
-                                <a href="importconfig"><span>Import Config</span></a>
-                            </li>
-                            <li>
-                                <a href="registerfornotification"><span>Register/Unregister for Notification</span></a>
-                            </li>
-                            <li>
-                                <a href="renameprofile"><span>Rename Profile</span></a>
-                            </li>
-                            <li>
-                                <a href="resetdefaultprofile"><span>Reset Default Profile</span></a>
-                            </li>
-                            <li>
-                                <a href="restoreconfig"><span>Restore Config</span></a>
-                            </li>
-                            <li>
-                                <a href="scannerinputplugin"><span>Scanner Input Plug-in</span></a>
-                            </li>
-                            <li>
-                                <a href="setconfig"><span>Set Config</span></a>
-                            </li>
-                            <li>
-                                <a href="setdefaultprofile"><span>Set Default Profile</span></a>
-                            </li>
-                            <li>
-                                <a href="setdisabledapplist"><span>Set Disabled App List</span></a>
-                            </li>
-                            <li>
-                                <a href="setignoredisabledprofiles"><span>Set Ignore Disabled Profiles</span></a>
-                            </li>
-                            <li>
-                                <a href="setreportingoptions"><span>Set Reporting Options</span></a>
-                            </li>
-                            <li>
-                                <a href="softscantrigger"><span>Soft Scan Trigger</span></a>
-                            </li>
-                            <li>
-                                <a href="switchscanner"><span>Switch Scanner</span></a>
-                            </li>
-                            <li>
-                                <a href="switchscannerparams"><span>Switch Scanner Params</span></a>
-                            </li>
-                            <li>
-                                <a href="switchsimulscanparams"><span>Switch SimulScan Params</span></a>
-                            </li>
-                            <li>
-                                <a href="switchtoprofile"><span>Switch to Profile</span></a>
-                            </li>
-                        </ul>
-                </div>
-
+				</div>                
+            </div>
         </div>
-    </div>
-</div>
-
-        </div>
-    </section>
+    </section>    
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("[data-toggle=popover]").popover({
+	        html : true,
+	        content: function() {
+	          var content = $(this).attr("data-popover-content");
+	          return $(content).children(".popover-body").html();
+	        },
+	        title: function() {
+	          var title = $(this).attr("data-popover-content");
+	          return $(title).children(".popover-heading").html();
+	        }
+	    });
+	});
+</script>
  </div>
          <footer id="footer" class="navbar-fixed-bottom">
             <div class="container-fluid">
@@ -331,15 +375,4 @@
 </script>         
 
 
-
-
-       
- 
-
-       
-   
-     
-       
-     
-
-    </body></html>
+</body></html>
