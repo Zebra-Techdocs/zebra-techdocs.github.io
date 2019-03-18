@@ -8,8 +8,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Read Access Tutorial">
-    <title>Read Access Tutorial - Zebra Technologies Techdocs</title>
+    <meta title="FAQs">
+    <title>FAQs - Zebra Technologies Techdocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -104,13 +104,6 @@
                                 <i class="fa fa-search"></i>
                             </a>
                         </li>
-
-                        <!-- <li ><a href="/products">SDKs</a></li>
-                        <li ><a href="/samples">Samples</a></li>
-                        <li ><a href="/guides">Guides</a></li>
-                        <li ><a href="/tutorials">Tutorials</a></li>
-                        <li ><a href="/apis">APIs</a></li> -->
-                        <!-- <li><a href="#"><input type="text" class="st-default-search-input"></a></li> -->
                     </ul>
                 </div>
             </div>
@@ -130,7 +123,7 @@
                             <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
 
                                 <ul class="nav">
-                                    <li><strong>Read Access Tutorial</strong></li>
+                                    <li><strong>FAQs</strong></li>
                                 </ul>
                             </nav>
 
@@ -165,7 +158,7 @@
                                 <div class="col-sm-12">
                                     <section id="cta" class="wow fadeIn">
                                         <div class="">
-                                            <h1 id="access-tutorial" class="anchor"><a class="heading-anchor" href="#access-tutorial"><span></span></a>Read Access Operation Tutorial</h1>
+                                            <h1 id="attribute-tutorial" class="anchor"><a class="heading-anchor" href="#faqs-tutorial"><span></span></a>FAQs</h1>
                                             <p>
                                                 RFID SDK for Android
                                                 2.0.1.15
@@ -184,84 +177,57 @@
                                                 <p></p>
                                                 <h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-                                                <p>This Tutorial provides a walk-through of the steps to perform Read Access operation using <a href="../../apis">RFID API3</a></p>
+                                                <p>This Guide provides details about various Frequently Asked Questions about RFID operations or usage of <a href="../../apis">RFID API3</a></p>
 
 
-                                                <h3 id="createtheproject" class="anchor"><a class="heading-anchor" href="#createtheproject"><span></span></a>Create The Project</h3>
-                                                <ul>
-                                                    <li>Start by creating a new project in Android Studio. For help, see the <a href="../../tutorials/tutCreateProjectAndroidStudio">Android Studio tutorial</a>. </li>
-                                                    <li>Refer <a href="../../samples/hellorfid">Hello RFID</a> to prepare basic setup to work with RFID Reader and then follow this guide</li>
-                                                </ul>
-
-                                                <h3 id="tutorial1" class="anchor"><a class="heading-anchor" href="#tutorial1"><span></span></a>Details</h3>
-                                                <p>Tag Access operations are performed on a specific tag or applied on tags that match a specific Access-Filter. If no Access-Filter is specified, the Access Operation is performed on all tags in the field of view of chosen antennas.
-                                                    This section covers the Simple Tag Access operation on a specific tag which is in the field of view of any of the antennas of the connected RFID reader.<p>
-
-                                                        <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Setting it up</h2>
-                                                        <p>Create necessary fields like EPC ID as <code>String</code> tagId and access parameters <code>TagAccess.ReadAccessParams</code></p>
-                                                        <pre class="prettyprint"><code>
-// Read user memory bank for the given tag ID 
-String tagId = "1234ABCD00000000000025B1"; 
-TagAccess tagAccess = new TagAccess(); 
-TagAccess.ReadAccessParams readAccessParams = tagAccess.new ReadAccessParams();
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Get Version Information</h2>
+                                                <p><strong>Q. </strong>How to get SDK version information ?</p>
+                                                <p>Getting the Reader and SDK version information</p>
+                                                <pre class="prettyprint"><code>
+// version information
+HashMap<String, String> versionInfo = new HashMap<>(5);
+reader.Config.getDeviceVersionInfo(versionInfo);
+String readerVersion = versionInfo.get("RFID_DEVICE"); // use "GENX_DEVICE" key for RFD8500
+String radio_engine = versionInfo.get("NGE");
+String sdkVersion = reader.versionInfo().getVersion();
+Log.d(TAG, "Reader v" + readerVersion + " radio " + radio_engine + " SDK " + sdkVersion);
+                                                        
 </code></pre>
-                                                        <h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Performing operation</h2>
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Tag Write Operation</h2>
+                                                <p><strong>Q. </strong>What are the steps to perform TAG Write on memory bank user, reserved or epc?</p>
+                                                <p><strong>Q. </strong>How to handle partial writes?</p>
+                                                <p><strong>Q. </strong>How to select single tag before performing write?</p>
+                                                <p>Steps for performing TAG write operation and increasing write performace follow <a href="../tagwrite/">Big Guide to Tag Write</a></p>
 
-                                                        <p> Prepare <code>ReadAccesParams</code> as per requirement and pass it to <code>readWait</code> API</p>
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Attributes</h2>
+                                                <p><strong>Q. </strong>How to use attributes?</p>
+                                                <p>Attributes are reader parameters/configurations defined using number, to work with attributes follow <a href="../attribute/">Attributes</a></p>
 
-                                                        <pre class="prettyprint"><code>
-// Read user memory bank for the given tag ID 
-String tagId = "1234ABCD00000000000025B1"; 
-TagAccess tagAccess = new TagAccess(); 
-TagAccess.ReadAccessParams readAccessParams = tagAccess.new ReadAccessParams();
-TagData readAccessTag; readAccessParams.setAccessPassword(0); 
-// read 4 words 
-readAccessParams.setCount(4); 
-// user memory bank
-readAccessParams.setMemoryBank(MEMORY_BANK.MEMORY_BANK_USER); 
-// start reading from word offset 0
-readAccessParams.setOffset(0); 
-// read operation
-TagData tagData = reader.Actions.TagAccess.readWait(tagId, readAccessParams, null);
-</code></pre>
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Switching RFID and Barcode mode</h2>
+                                                <p><strong>Q. </strong>How to switch between barcode and RFID mode</p>
+                                                <p>Steps for performing to switch mode follow <a href="../../tutorials/trigger-mode/">Trigger Mode switching</a></p>
 
-                                                        <h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Grab the results</h2>
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Access filter \ criteria</h2>
+                                                <p><strong>Q. </strong>How to use access criteria or access filters</p>
+                                                <p>Developer guide section 5-22 has section on Access filters – ‘Using Access-Filters’</p>
 
-                                                        <p><code>readWait</code> returns result as <code>TagData</code></p>
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Prefilter</h2>
+                                                <p><strong>Q. </strong>How to read single tag using EPC ID </p>
+                                                <p>Please refer <a href="../../tutorials/prefilters/">PreFilter</a> to read only single tag</p>
 
-                                                        <pre class="prettyprint"><code>
-if (tagData != null) {
-    ACCESS_OPERATION_CODE readAccessOperation = tagData.getOpCode();
-    if (readAccessOperation != null) {
-        if (tagData.getOpStatus() != null && !tagData.getOpStatus().equals(ACCESS_OPERATION_STATUS.ACCESS_SUCCESS)) {
-            String strErr = tagData.getOpStatus().toString().replaceAll("_", " ");
-            Toast.makeText(getActivity(), strErr.toLowerCase(), Toast.LENGTH_SHORT).show();
-        } else {
-            if (tagData.getOpCode() == ACCESS_OPERATION_CODE.ACCESS_OPERATION_READ) {
-                Toast.makeText(getActivity(), R.string.msg_read_succeed + " "+tagData.getMemoryBankData(), Toast.LENGTH_SHORT).show();
-            } else {
-            }
-        }
-    } else {
-        Toast.makeText(getActivity(), R.string.err_access_op_failed, Toast.LENGTH_SHORT).show();
-        Constants.logAsMessage(Constants.TYPE_DEBUG, "ACCESS READ", "memoryBankData is null");
-    }
-} else {
-    Toast.makeText(getActivity(), R.string.err_access_op_failed, Toast.LENGTH_SHORT).show();
-}
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Unique tag reporting</h2>
+                                                <p><strong>Q. </strong>How to read each tag once only ?</p>
+                                                <p>Set Configuration to report unique tags only; so each tag is reported once only eventhough read happens. To clear Reader database call <code>reader.Actions.purgeTags()</code>to clear tags after inventory round finishes</p>
+                                                <pre class="prettyprint"><code>
+reader.Config.setUniqueTagReport(true);
 </code></pre>
 
-                                                        <h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Closer look</h2>
-                                                        <ul>
-                                                            <li>Configure required memory bank using <code>readAccessParams.setMemoryBank</code></li>
-                                                            <li><code>tagData.getOpStatus()</code> returns success or error code as <code>ACCESS_OPERATION_STATUS</code></li>
-                                                            <li><code>tagData.getOpCode()</code> provides type of access operation performed </li>
-                                                        </ul>
-                                                        <h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>What's Next</h2>
-                                                        <ul>
-                                                            <li>Change the <code>setCount</code> and <code>setOffset</code> as per requirement</li>
-                                                            <li>Use access password <code>setAccessPassword</code> to perform operation on protected memorybank</li>
-                                                        </ul>
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>RFID Results error codes</h2>
+                                                <p><strong>Q. </strong>What are the diffrent errors returned by API</p>
+                                                <p>Please refer <strong>RFIDResults</strong> class in <a href="../../apis/index.html">RFID API3</a></p>
+
+                                                <p></p>
+
                                             </div>
                                         </div>
 
