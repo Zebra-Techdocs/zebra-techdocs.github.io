@@ -90,6 +90,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/enterprise-browser/2-0/guide/licensing">
+                                    Licensing
+                            </a>
+                        </li>
+                        <li>
                             <a href="/enterprise-browser/2-0/guide/migration">
                                     Migration
                             </a>
@@ -306,6 +311,20 @@
 <li><strong>WT6000</strong> Android Nougat</li>
 </ul>
 
+<h4 id="march2019update" class="anchor"><a class="heading-anchor" href="#march2019update"><span></span></a><code>MARCH 2019 UPDATE:</code></h4>
+
+<p>Enterprise Browser 2.0.1 (and later) adds support for the following devices:  </p>
+
+<ul>
+<li><strong>MC9300</strong></li>
+
+<li><strong>TC8300</strong></li>
+
+<li><strong>CC600</strong> </li>
+
+<li><strong>CC6000</strong></li>
+</ul>
+
 <h3 id="scannersupport" class="anchor"><a class="heading-anchor" href="#scannersupport"><span></span></a>Scanner Support</h3>
 
 <p>EB 2.0 is now supported for use with the following scanners when connected to Zebra devices and operating systems listed:</p>
@@ -327,7 +346,7 @@
 
 <li>Android apps running on <strong>EB 2.0 (and higher) can use <a href="../configreference/#substitutionvariables">substitution variables</a></strong> to simplify file-path coding.</li>
 
-<li><strong>EB 2.0 and higher now supports <a href="../pageactions">page-based actions</a></strong>, which can execute JavaScript code and/or predefined commands based on the contents of a page. In some instances, this feature can be used as a substitute for DOM injection with similar effect. </li>
+<li><strong>Now supports <a href="../pageactions">page-based actions</a></strong>, which can execute JavaScript code and/or predefined commands based on the contents of a page. In some instances, this feature can be used as a substitute for DOM injection with similar effect. </li>
 
 <li><strong>An enhanced SAP support bundle</strong> includes ready-to-use config files for SAP ITSmobile apps, simplifying device set-up for SAP customers. SAP config files can be modified for specific use cases. <strong>SAP-specific features</strong>:
 
@@ -352,6 +371,39 @@
 <li>Orientation can be locked in portrait or landscape modes</li>
 
 <li>Option to hide the system/nav bar (HOME, BACK and RECENT buttons)</li></ul>
+</li>
+
+<li>Now supports <strong>Voice Input and Output</strong> controllable using the following new <code>Config.xml</code> file tags: 
+
+
+<ul>
+<li><strong><a href="../configreference#ttsenabled">&lt;TTSEnabled&gt;</a> -</strong> Controls whether text-to-speech capabilities are enabled in the app. </li>
+
+<li><strong><a href="../configreference#ttsvolume">&lt;TTSVolume&gt;</a> -</strong> Used to set the volume level for text-to-speech output.</li>
+
+<li><strong><a href="../configreference#ttspitch">&lt;TTSPitch&gt;</a> -</strong> Used to set the pitch for text-to-speech output. </li>
+
+<li><strong><a href="../configreference#ttsrate">&lt;TTSRate&gt;</a> -</strong> Used to set the speed for synthesized speech output.</li>
+
+<li><strong><a href="../configreference#ttslanguage">&lt;TTSLanguage&gt;</a> -</strong> Used to set the language for text-to-speech input and synthesized output. </li>
+
+<li><strong><a href="../configreference#ttsenginepreference">&lt;TTSEnginePreference&gt;</a> -</strong> Allows a third-party speech recognition engine to be selected if an engine other than the Google TTS engine is desired. </li>
+
+<li><strong><a href="../configreference#ttsengine">&lt;TTSEngine&gt;</a> -</strong> Used to specify the package name when a TTS engine other than Google TTS (<code>com.google.android.tts</code>) is used.</li>
+
+<li><strong><a href="../configreference#asrenabled">&lt;asrenabled&gt;</a> -</strong> Controls whether Android Speech Recognition (ASR) features are enabled in an app. </li>
+
+<li><strong><a href="../configreference#asrpackagename">&lt;asrpackagename&gt;</a> -</strong> Used to specify the package name of a third-party ASR engine is one other than Google ASR (default) used. </li>
+
+<li><strong><a href="../configreference#asrclassname">&lt;asrclassname&gt;</a> -</strong> Used to specify the class name of a third-party ASR engine is one other than Google ASR (default) used. </li>
+
+<li><strong><a href="../configreference#asrpreferoffline">&lt;asrpreferoffline&gt;</a> -</strong> Controls whether voice recognition service can be provided without an internet connection. </li>
+
+<li><strong><a href="../configreference#audionotificationenabled">&lt;audionotificationenabled&gt;</a> -</strong> Controls whether a beep sound is played to indicate the device is ready to accept voice input. </li>
+
+<li><strong><a href="../configreference#asrpartialmodeenabled">&lt;asrpartialmodeenabled&gt;</a> -</strong> Controls whether the speech engine displays recognized words in real time or all at once when speaking ends. </li>
+
+<li><strong><a href="../configreference#asrlanguage">&lt;asrlanguage&gt;</a> -</strong> Used to set the language for speech recognition input.</li></ul>
 </li>
 </ul>
 
@@ -396,7 +448,7 @@
 
 <li>RFD2000</li>
 
-<li>MC33 long- and mid-range RFID reader</li>
+<li>MC3300 long- and mid-range RFID reader</li>
 </ul>
 
 <p><strong>A new <a href="../../api/bluetooth">Bluetooth API</a></strong> allows Enterprise Browser apps to connect with disconnect from Bluetooth printers and scanners and to read from and write to them as applicable.</p>
@@ -436,6 +488,11 @@
 </li>
 </ul>
 
+<p>A **new <a href="../../api/re2x/buttonbarlayout">ButtonBarLayout API</a> includes: </p>
+
+<ul> * 
+</ul>
+
 <h3 id="newupdatedfeaturesguides" class="anchor"><a class="heading-anchor" href="#newupdatedfeaturesguides"><span></span></a>New/Updated Features/Guides</h3>
 
 <ul>
@@ -453,7 +510,7 @@
 
 <li><strong>Enhanced SAP support</strong> includes SAP applications running Warehouse Management or Extended Warehouse Management apps as well as apps built with SAP’s UI5 SDKs and Fiori UX tools.</li>
 
-<li><strong>Enhanced ButtonBar Features</strong> include: <br>
+<li><strong>Enhanced <a href="../buttonbar">ButtonBar Guide</a></strong> documents these new features: <br>
 
 
 <ul>
@@ -478,7 +535,7 @@
 
 <li>&lt;buttonFontSize&gt;</li>
 
-<li>&lt;buttonColor&gt;</li>
+<li>&lt;buttonColor&gt; - Sets the color for individual buttons.</li>
 
 <li>&lt;buttonColorPressed&gt;</li>
 
@@ -1271,6 +1328,13 @@ For more information, see the ButtonBar Usage Guide.
   <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit, Android Stock Webkit</td>
  </tr>
  <tr>
+  <td class="clsSyntaxCells clsOddRow"><img id="mc93Pic" src="../../images/mc9300.jpg" height="25"></td>
+  <td class="clsSyntaxCells clsOddRow"><b>MC9300</b></td>
+  <td class="clsSyntaxCells clsOddRow">MC9300</td>
+  <td class="clsSyntaxCells clsOddRow">Android 8.1 (Oreo)</td>
+  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
+ </tr>
+ <tr>
   <td class="clsSyntaxCells clsOddRow"><img id="mc95Pic" src="../../images/mc9500.gif" height="25"></td>
   <td class="clsSyntaxCells clsOddRow"><b>MC9500</b></td>
   <td class="clsSyntaxCells clsOddRow">MC9590, MC9596, MC9598, MC959B (WM6.1)</td>
@@ -1377,6 +1441,13 @@ For more information, see the ButtonBar Usage Guide.
   <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
  </tr>
  <tr>
+  <td class="clsSyntaxCells clsOddRow"><img id="tc8300Pic" src="../../images/tc8300.jpg" height="25"></td>
+  <td class="clsSyntaxCells clsOddRow"><b>TC8300</b></td>
+  <td class="clsSyntaxCells clsOddRow"><nobr>TC8300</nobr></td>
+  <td class="clsSyntaxCells clsOddRow">Android 8.1 (Oreo)</td>
+  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
+ </tr>
+  <tr>
   <td class="clsSyntaxCells clsOddRow"><img id="wap4Pic" src="../../images/wap4.png"></td>
   <td class="clsSyntaxCells clsOddRow"><b>Workabout Pro 4</b></td>
   <td class="clsSyntaxCells clsOddRow"><nobr>7528</nobr></td>
@@ -1450,6 +1521,20 @@ For more information, see the ButtonBar Usage Guide.
   <td class="clsSyntaxCells clsOddRow"><b>CC5000-10</b></td>
   <td class="clsSyntaxCells clsOddRow">Customer Concierge</td>
   <td class="clsSyntaxCells clsOddRow">Android 5.0 (Lollipop)</td>
+  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
+ </tr>
+  <tr>
+  <td class="clsSyntaxCells clsOddRow"><img id="cc600" src="../../images/cc600.jpg" height="25"></td>
+  <td class="clsSyntaxCells clsOddRow"><b>CC600</b></td>
+  <td class="clsSyntaxCells clsOddRow">Customer Concierge (5-inch display)</td>
+  <td class="clsSyntaxCells clsOddRow">Android 8.1 Oreo</td>
+  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
+ </tr>
+  <tr>
+  <td class="clsSyntaxCells clsOddRow"><img id="cc6000" src="../../images/cc6000.jpg" height="25"></td>
+  <td class="clsSyntaxCells clsOddRow"><b>CC6000</b></td>
+  <td class="clsSyntaxCells clsOddRow">Customer Concierge (10-inch display)</td>
+  <td class="clsSyntaxCells clsOddRow">Android 8.1 Oreo</td>
   <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
  </tr>
  <tr>
