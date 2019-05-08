@@ -504,7 +504,7 @@ Since this list is all-inclusive, there is a possibility a particular parameter 
 <tr>
 <td align="left" valign="top"><p class="table"><a href="#gs1qrcode">GS1 QR Code</a></p></td>
 <td align="left" valign="top"><p class="table"><a href="#hanxin">HAN XIN</a></p></td>
-<td align="left" valign="top"><p class="table"><a href="#interleaved2of5">Interleaved 2of5</a></p></td>
+<td align="left" valign="top"><p class="table"><a href="#interleaved2of5">Interleaved 2 of 5</a></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Japanese Postal</p></td>
@@ -760,23 +760,17 @@ A list of Decoders appears similar to the image in Step 2, below.
 
 <hr>
 
-<h3 id="interleaved2of5" class="anchor"><a class="heading-anchor" href="#interleaved2of5"><span></span></a>Interleaved 2of5</h3>
+<h3 id="interleaved2of5" class="anchor"><a class="heading-anchor" href="#interleaved2of5"><span></span></a>Interleaved 2 of 5</h3>
 
-<p><strong>Length1* -</strong> To decode an Interleaved 2of5 symbol with a specific length range, set this value to the lower limit. For example, to decode Interleaved 2of5 symbols containing between 4 and 12 characters, this value would be set to 4.</p>
+<p><strong>Length1* -</strong> To decode an Interleaved 2 of 5 symbol with a specific length range, set this value to the lower limit. For example, to decode Interleaved 2 of 5 symbols containing between 4 and 12 characters, this value would be set to 4.</p>
 
-<p><strong>Length2* -</strong> To decode an Interleaved 2of5 symbol with a specific length range, set this value to the upper limit. For example, to decode Interleaved 2of5 symbols containing between 4 and 12 characters, this value would be set to 12.</p>
+<p><strong>Length2* -</strong> To decode an Interleaved 2 of 5 symbol with a specific length range, set this value to the upper limit. For example, to decode Interleaved 2 of 5 symbols containing between 4 and 12 characters, this value would be set to 12.</p>
 
 <p><em>* See <strong><a href="#decodelengths">Decode Lengths section</a></strong>, below</em></p>
 
 <p><strong>Redundancy -</strong> Sets the reader to read the barcode twice before accepting data.</p>
 
-<p><strong>Febraban -</strong> To specify whether special check characters are inserted into the transmitted data stream of Interleaved 2of5 barcodes that meet the following requirements:</p>
-
-<ol>
-<li>Contain 14 characters in length.</li>
-
-<li>Meet specific Febraban criteria.</li>
-</ol>
+<p><strong>Febraban -</strong> Enable or disable insertion of special check characters into the transmitted data stream of Interleaved 2 of 5 barcodes that are of length 14 characters and meet specific Febraban criteria.</p>
 
 <hr>
 
@@ -784,13 +778,13 @@ A list of Decoders appears similar to the image in Step 2, below.
 
 <p><strong>No Check Digit -</strong> A check digit is not used.</p>
 
-<p><strong>USS Check Digit -</strong> Select to check the integrity of all Interleaved 2of5 symbols to verify the data complies with the Uniform Symbology Specification (USS) check digit algorithm.</p>
+<p><strong>USS Check Digit -</strong> Select to check the integrity of all Interleaved 2 of 5 symbols to verify the data complies with the Uniform Symbology Specification (USS) check digit algorithm.</p>
 
-<p><strong>OPCC Check Digit -</strong> Select to check the integrity of all Interleaved 2of5 symbols to verify the data complies with the Optical Product Code Council (OPCC) check digit algorithm.</p>
+<p><strong>OPCC Check Digit -</strong> Select to check the integrity of all Interleaved 2 of 5 symbols to verify the data complies with the Optical Product Code Council (OPCC) check digit algorithm.</p>
 
-<p><strong>Report Check Digit -</strong> Transmit Interleaved 2of5 data with or without the check digit. A check in the checkbox sends Interleaved 2of5 data with check digit.</p>
+<p><strong>Report Check Digit -</strong> Transmit Interleaved 2 of 5 data with or without the check digit. A check in the checkbox sends Interleaved 2 of 5 data with check digit.</p>
 
-<p><strong>Convert ITF-14 To EAN13 -</strong> Convert 14-character Interleaved 2of5 barcodes to EAN-13, and transmit as EAN-13. The Interleaved 2of5 barcode must be enabled and must have a leading zero and a valid EAN-13 check digit. </p>
+<p><strong>Convert ITF-14 To EAN13 -</strong> Convert 14-character Interleaved 2 of 5 barcodes to EAN-13, and transmit as EAN-13. The Interleaved 2 of 5 barcode must be enabled and must have a leading zero and a valid EAN-13 check digit. </p>
 
 <hr>
 
@@ -1533,9 +1527,9 @@ For help creating a Signature Capture barcode like the one above, refer to the <
 <li><strong>Auto Character Set Selection (Best Effort)</strong> - Decodes data in the preference order of character sets specified in the "Auto Character Set Preferred Order" list. If the data cannot be decoded based on the character sets listed, "Auto Character Set Failure Option" takes into effect. <em>See description for each respective option for more details.</em></li>
 </ul>
 
-<p><strong>Auto Character Set Preferred Order</strong> - If "Auto Character Set Selection (Best Effort)" is selected, decodes data in the specified preference order of listed character sets. This is useful in cases where data can be decoded from more than one character set. The first character set listed which can decode the data successfully is chosen to decode the data - any other character set located lower in the list is not considered, even if the data could be successfully decoded using that character set. If DataWedge cannot find a character set from the preferred list to decode the data successfully, the character set selected in "Auto Character Set Failure Option" is used to decode the data.</p>
+<p><strong>Auto Character Set Preferred Order</strong> - If "Auto Character Set Selection (Best Effort)" is selected, data is decoded in the specified preference order of listed character sets. This is useful in cases where data can be decoded from more than one character set. The first character set listed which can decode the data successfully is chosen to decode the data - any other character set located lower in the list is not considered, even if the data could be successfully decoded using that character set. If DataWedge cannot find a character set from the preferred list to decode the data successfully, the character set selected in "Auto Character Set Failure Option" is used to decode the data.</p>
 
-<p>Both the preferred character set list and its preference order is configurable. The order is rearranged by dragging the “hamburger-like” icon of the character set into the desired position. To delete a character set, long press on the item and the “Delete” option appears. To add a new character set, tap the “hamburger” menu at top right corner - an option to add characters sets, such as UTF-8 and GB2312, will appear.</p>
+<p>Both the preferred character set list and its preference order is configurable. The order is rearranged by dragging the “hamburger-like” icon of the character set into the desired position. To delete a character set, long press on the item and the “Delete” option appears. To add a new character set, tap the “hamburger” menu at the top right corner - an option to add a character set, such as UTF-8 and GB2312, appears.</p>
 
 <p><img src="charset_set_order.png" alt="img"></p>
 
