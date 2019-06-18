@@ -7,9 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta name="robots" content="noindex,follow">
-    <meta title="IPWedge">
-    <title>IPWedge - Zebra Technologies TechDocs</title>
+    <meta title="Admin View">
+    <title>Admin View - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -17,7 +16,7 @@
     <link href="/css/owl.carousel.css" rel="stylesheet">
     <link href="/css/owl.transitions.css" rel="stylesheet">
     <link href="/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/main.css?version=3.2" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/prettify.css" rel="stylesheet">
     <link href="/css/bootstrap-treenav.min.css" rel="stylesheet">
@@ -26,7 +25,9 @@
     <script src="js/respond.min.js"></script>
     <![endif]--> 
 
-    <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
+  <!-- 3/1/19 - comment out per Rob  
+      <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script> 
+    -->
     <link rel="shortcut icon" href="/favicon.ico">
 <script src="/js/jquery.js"></script></head><!--/head-->
 
@@ -52,8 +53,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
-                                            DataWedge
-                                            5.0
+                                            Device Tracker
+                                            2.1
                         </p>
 
                     </ul>
@@ -64,42 +65,32 @@
 
 
                         <li>
-                            <a href="/datawedge/5-0/guide/about">
+                            <a href="/devicetracker/2-1/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/setup">
-                                    Setup
+                            <a href="/devicetracker/2-1/guide/setup">
+                                    Install &amp; Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/advanced">
-                                    Advanced
+                            <a href="/devicetracker/2-1/guide/admin">
+                                    Admin View
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/decoders">
-                                    Decoders
+                            <a href="/devicetracker/2-1/guide/mgmt">
+                                    Device Tracking
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/ipwedge">
-                                    IPWedge
+                            <a href="/devicetracker/2-1/guide/config">
+                                    Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/api">
-                                    APIs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datawedge/5-0/guide/demo">
-                                    Demo
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datawedge/5-0/search">
+                            <a href="/devicetracker/2-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -125,7 +116,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>IPWedge</strong></li>
+                            <li><strong>Admin View</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -211,10 +202,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="ipwedge" class="anchor"><a class="heading-anchor" href="#ipwedge"><span></span></a>IPWedge</h1>
+                                    <h1 id="admin-view" class="anchor"><a class="heading-anchor" href="#admin-view"><span></span></a>Admin View</h1>
                                     <p>
-                                            DataWedge
-                                            5.0
+                                            Device Tracker
+                                            2.1
                                     </p>
                                 </div>
                             </section>                    
@@ -229,59 +220,194 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>IPWedge is a small Windows app that monitors a network port and receives scanned data sent by devices using the DataWedge IP Output Plug-in. The receiving PC inserts the data as keystrokes into the foreground application or the Windows Clipboard, essentially using the device as a wireless scanner. </p>
+<p>This section discusses the operations available for an administrator, providing a centralized view for device tracking when locating misplaced devices. </p>
 
-<h2 id="setup" class="anchor"><a class="heading-anchor" href="#setup"><span></span></a>Setup</h2>
+<p>As part of Zebra’s DNA Visibility Console, the server consists of multiple solution offerings. At the login screen, select “Device Tracker”, then sign in. To navigate to other solutions, click on the app menu icon at the top to the right of the "Device Tracker" title and select the desired app solution.</p>
 
-<h3 id="prerequisites" class="anchor"><a class="heading-anchor" href="#prerequisites"><span></span></a>Prerequisites</h3>
+<h2 id="usingthewebconsole" class="anchor"><a class="heading-anchor" href="#usingthewebconsole"><span></span></a>Using the Web Console</h2>
 
-<p>Using IPWedge requires the following: </p>
+<p>Device Tracker provides a centralized dashboard displaying an inventory of deployed Zebra devices, along with information on tracking status, connection state, connected AP friendly name, device friendly name, charging status, remaining battery percentage, and more.</p>
+
+<p>Below the tab bar, the top dashboard is lined with tiles that provide the total number of devices for each respective category and filter the devices based on that category with a click on the tile. The columns on the dashboard can be sorted by clicking on the double triangle to the right of the column name. Subsequent clicks sort the column in ascending order (triangle points upward) or descending order (triangle points downward). A tabbed menu is displayed at the top of the dashboard above the tiles providing access to different views: Active, Out of Service, and Settings. </p>
+
+<p><img src="DTRK_dashboard.jpg" alt="img">
+<em>Figure 1. Admin Dashboard</em></p>
+
+<p>Device Tracker tiles: </p>
 
 <ul>
-<li>A PC with Windows XP, Vista or 7</li>
+<li><p><strong>Total Tracked</strong> - Displays total number of devices registered with Device Tracker server.  </p></li>
 
-<li>Microsoft .NET Framework 3.5 Service Pack 1 (or later) installed</li>
+<li><p>Tracking status tiles:</p>
 
-<li>A Zebra device running Android 4.4 KitKat (or later)</li>
+<ul>
+<li><strong>To Be Found</strong> – Filters devices set with "To be found" status in the admin dashboard, in which action has not been taken yet to initiate the search for the target device. Designated by magnifying glass icon.</li>
 
-<li>DataWedge for Android 1.5 (or later)</li>
+<li><strong>Being Found</strong> – Filters devices that are actively being searched. Triggered when user initiates a device search with Device Tracker client. Designated by footprint icon.</li>
+
+<li><strong>Found</strong> – Filters devices that have been successfully found after a search. Triggered when user indicates device is found with Device Tracker client. Designated by icon with green circle and a check mark in the middle.</li>
+
+<li><strong>Cannot Find</strong> – Filters devices that could not be found after a search was conducted. Designated by icon with red circle and an "x" in the middle.</li></ul></li>
+
+<li><p>Connection state tiles:</p>
+
+<ul>
+<li><strong>Connected</strong> – Filters devices connected to the network.</li>
+
+<li><strong>Not Connected</strong> – Filters devices that have not reported to the server within the <a href="../config">Reporting Frequency</a> time specified in the <strong>Settings</strong> tab, designating those devices as disconnected from the network and therefore cannot be found. </li></ul></li>
+
+<li><p>Battery status tiles:</p>
+
+<p></p><ul>
+<li><strong>Low Battery</strong> – Filters devices that have surpassed the <a href="../config">Low Power Alert Threshold</a> value defined in the <strong>Settings</strong> tab and are therefore in low battery state. Low Battery devices require attention to be charged before the battery becomes depleted, preventing loss of device tracking.</li></ul><p></p>
+
+<p></p><ul>
+<li><strong>On Charge</strong> – Filters devices that are powered and in the charge state. </li></ul>
+<p></p></li></ul><p></p>
+
+
+<p>A search can be conducted based on device information from the table columns: Status, Connection State, AP Name, Battery State, Device Name, Device Model, Device Serial #, and Tags. In the Active tab, click the magnifying glass to produce a dropdown menu and select the data to search. Depending on the data being searched, additional options may be available for selection to refine the search. If required, enter in the text to search when prompted. When done with the search, select "Clear Search" from the dropdown menu.</p>
+
+<p>Notes: </p>
+
+<ul>
+<li>If no icon is displayed in the battery status column, it indicates that the device battery is not being charged and there is sufficient device battery charge.</li>
+
+<li>When the checkbox in the table header is ticked on the dashboard, it selects all devices listed in the page. </li>
+
+<li>At the bottom left of the dashboard, select the "rows per page" drop-down and choose the value to increase the number of devices displayed in the dashboard.</li>
+
+<li>If a device is in the "Never Connected" state, no action can be taken upon it since it has not registered with the server.</li>
+
+<li>If searching for devices based on "Connection State" then filtering by "Connected - Known AP", the .csv file includes both "Connected - Known AP" and "Connected - Unknown AP" data when exporting the results. The data can be further filtered within the .csv file.</li>
 </ul>
 
-<h3 id="setupipwedge" class="anchor"><a class="heading-anchor" href="#setupipwedge"><span></span></a>Set up IPWedge</h3>
+<h2 id="deviceaction" class="anchor"><a class="heading-anchor" href="#deviceaction"><span></span></a>Device Action</h2>
 
-<p>1. <a href="https://www.zebra.com/us/en/support-downloads.html">Visit the Zebra Support Portal</a>, enter "IPwedge" in the search box and <strong>download the appropriate version for the target device</strong>. </p>
+<p>Action can be taken on any selected device(s) in the Active tab.  Once the device is selected from the dashboard, the Action menu is accessible with the following options:</p>
 
-<p>2. <strong>Install the .zip file</strong> on the system to which the scanned data will be sent. </p>
+<ul>
+<li><strong>Set device: To be found</strong> – Marks the target device to be found.  This initiates the tracking process. The next time the target device reports to the server, it identifies it is marked "To be found" - the length of time this takes is based on both the defined <a href="../config/#applicationconfiguration">Reporting Frequency</a> and the elapsed time since the last report was received (seen in the Updated column on the admin dashboard). 
+Once the Device Tracker client detects this status change, it displays the marked device in the “Devices to be found” screen. A user can tap on the device listed then tap “Go” to begin searching for the marked device. </li>
 
-<p>3. <strong>Run the IPWedge app</strong>. A screen appears similar to the image below. <strong>Make a note of the IP address and port number</strong> (in the red box). 
-<img style="height:200px" src="04_ipwedge.jpg">
-<em>IPWedge System Tray menu</em>. 
+<li><strong>Set device to: Out of service</strong> – Removes the device from the active device pool and places it into the <strong>Out of Service</strong> tab. This can be used when a device is undergoing repair or is deprecated and no longer in use so must be removed from the device pool. Note: This does not apply to devices that never connected to the server.</li>
+
+<li><strong>Set device to: Active</strong> - Changes the device back to the Active state. This option is available if a device is Found, Cannot be Found, or Out of Service.</li>
+
+<li><strong>Manage Tags</strong> – Refer to <a href="./#organizedevices">Organize Devices</a> section below.  </li>
+
+<li><strong>Clear Selections</strong> – Unselects any selected devices in the dashboard.</li>
+</ul>
+
+<h2 id="organizedevices" class="anchor"><a class="heading-anchor" href="#organizedevices"><span></span></a>Organize Devices</h2>
+
+<p>Device tags provide the capability to identify and group devices for organizational purposes based on a common tag name. This name can be any desired form of identification such as location, department or job function. A tag name can be up to 65 characters in length. Device tagging is performed in the Active tab.</p>
+
+<p><strong>Add Tag</strong> – add or append a tag to any pre-existing list of tags for each device</p>
+
+<ol>
+<li>Select the device to tag. Tick the checkbox for the device row.</li>
+
+<li>In the <strong>Action</strong> menu at the top left of the table, select <strong>Manage Tags</strong>.</li>
+
+<li>Enter a tag name in the text field. Press Enter key.</li>
+
+<li>Click <strong>Save</strong> next to the entry field.</li>
+
+<li>Click <strong>Add</strong> in the pop-up message.</li>
+
+<li>Click <strong>OK</strong> in the confirmation message. The selected device is now tagged with the designated text and the tag name is displayed in the <strong>Tags</strong> column on the dashboard.</li>
+</ol>
+
+<p><strong>Override Tag</strong> - remove any pre-existing tag(s) and replace with the new tag</p>
+
+<ol>
+<li>Select the device with an existing tag. Tick the checkbox for the device row.</li>
+
+<li>In the Action menu at the top left of the table, select <strong>Manage Tags</strong>.</li>
+
+<li>Enter a tag name in the text field. Press Enter key.</li>
+
+<li>Click <strong>Save</strong> next to the entry field.</li>
+
+<li>Click <strong>Override</strong> in the pop-up message.</li>
+
+<li>Click <strong>OK</strong> in the confirmation message. 
+The selected device is now tagged only with the designated tag, replacing the original tag string. The tag name is displayed in the <strong>Tags</strong> column on the dashboard.</li>
+</ol>
+
+<p><strong>Delete Tag</strong> - delete the specified tag </p>
+
+<ol>
+<li>Select the device(s) with an existing tag. Tick the checkbox for the device row.</li>
+
+<li>In the <strong>Action</strong> menu at the top left of the table, select <strong>Manage Tags</strong>. </li>
+
+<li>Enter in the tag name to delete. Press Enter key.</li>
+
+<li>Click <strong>Save</strong> next to the entry field.</li>
+
+<li>A message appears asking which action to take. Click <strong>Delete</strong>.</li>
+
+<li>Click <strong>OK</strong> in the confirmation message. 
+The tag is removed from the selected device and the tag name is no longer displayed in the <strong>Tags</strong> column on the dashboard.</li>
+</ol>
+
+<p><strong>Search Tag</strong> - search for devices with the specified tag name</p>
+
+<ol>
+<li>Click on the magnifying glass at the top left above the table. Select Tags.</li>
+
+<li>Enter the tag to search in the field and click the <strong>Search</strong> button. While typing, auto-suggestions from existing tags appear – the desired tag can be selected. The web page may need to be refreshed for the auto-suggestion to appear.</li>
+</ol>
+
+<h2 id="exportdata" class="anchor"><a class="heading-anchor" href="#exportdata"><span></span></a>Export Data</h2>
+
+<p>A device report can be generated for inventory and tracking. In the <strong>Active</strong> tab, tap on the Export Data icon at the top right of the table and click on CSV to export the device information in .csv file format.</p>
+
+<h2 id="manageusers" class="anchor"><a class="heading-anchor" href="#manageusers"><span></span></a>Manage Users</h2>
+
+<p>Create additional users to access the server. After logging in as the administrator, click on the admin name at the top right of the Admin View and select <strong>Manage Users</strong>.</p>
+
+<p>To add a user:</p>
+
+<ol>
+<li>Click on the <strong>Action</strong> button.</li>
+
+<li>Select <strong>Add User</strong>.</li>
+
+<li>Enter in the required fields. Select the Access Type based on role:
+
+
+<ul>
+<li><strong>Admin</strong> - administrative privileges with ability to create user accounts, perform actions, and view data</li>
+
+<li><strong>Manager</strong> - ability to perform actions, but cannot create users nor perform any user management</li>
+
+<li><strong>User</strong> - ability to view data</li></ul>
+</li>
+
+<li>Click <strong>Save</strong>.</li>
+
+<li>Click <strong>OK</strong> when the confirmation message appears.</li>
+</ol>
+
+<p><br>
 <br></p>
 
-<blockquote>
-  <p><strong>Note: This default port number is the same as that of the IP Output Plug-in</strong> on the device.</p>
-</blockquote>
+<hr>
 
-<p>4. <strong>Open the IPWedge app</strong> from the Windows Start menu or tap on the IPWedge icon in the System Tray and select Options. </p>
+<h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
-<p>The IPWedge Options panel appears similar to the image(s) below. 
-<img style="height:250px" src="01_ipwedge.jpg">
-<em>General Options</em>. 
-<br></p>
+<ul>
+<li><a href="../about">About Device Tracker</a></li>
 
-<p><img style="height:250px" src="02_ipwedge.jpg">
-<em>Keystroke Options</em>. 
-<br></p>
+<li><a href="../setup">Install &amp; Setup</a></li>
 
-<p><img style="height:250px" src="03_ipwedge.jpg">
-<em>Clipboard Options</em>. 
-<br></p>
+<li><a href="../mgmt">Device Tracking</a></li>
 
-<p>5. <strong>Make any required changes</strong> to Options in the General, Keystroke and Clipboard tabs. <strong>Click OK on each tab</strong> to save settings. </p>
-
-<p>The PC is now ready to receive data from devices running DataWedge with the IP Output Plug-in (with IP address and port settings matching those of the PC). For device setup instructions, see "IP Output" in the <a href="../setup">DataWedge Setup Guide</a>. </p>
-
-<!-- **Note: Profile0 cannot be used with IPWedge**. 10/18/16- removed per Tharindu --><p></p>
+<li><a href="../config">Configuration</a></li>
+</ul><p></p>
                                         
 
 
@@ -311,20 +437,22 @@
 			</div>
 		  </div>
 		</div> </div>
-         <footer id="footer" class="navbar-fixed-bottom">
+         <footer id="footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                            ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
                     </div>
                     <div class="col-sm-2">
+                        <!--
                         <ul class="social-icons">
                             <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>
+                        -->
                     </div>
                 </div>
             </div>
@@ -362,6 +490,7 @@
 
 </script> 
 
+<!-- 3/1/19 - comment out per Rob
 <script>
     ChatraID = 'QDvZ76min4DhLW5vJ';
     (function(d, w, c) {
@@ -376,6 +505,7 @@
         n.parentNode.insertBefore(s, n);
     })(document, window, 'Chatra');
 </script>         
+-->
 
 
 </body></html>

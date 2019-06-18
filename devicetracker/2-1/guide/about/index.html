@@ -7,9 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta name="robots" content="noindex,follow">
-    <meta title="DataWedge Demo App">
-    <title>DataWedge Demo App - Zebra Technologies TechDocs</title>
+    <meta title="About Device Tracker">
+    <title>About Device Tracker - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -17,7 +16,7 @@
     <link href="/css/owl.carousel.css" rel="stylesheet">
     <link href="/css/owl.transitions.css" rel="stylesheet">
     <link href="/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/main.css?version=3.2" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/prettify.css" rel="stylesheet">
     <link href="/css/bootstrap-treenav.min.css" rel="stylesheet">
@@ -26,7 +25,9 @@
     <script src="js/respond.min.js"></script>
     <![endif]--> 
 
-    <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
+  <!-- 3/1/19 - comment out per Rob  
+      <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script> 
+    -->
     <link rel="shortcut icon" href="/favicon.ico">
 <script src="/js/jquery.js"></script></head><!--/head-->
 
@@ -52,8 +53,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
-                                            DataWedge
-                                            5.0
+                                            Device Tracker
+                                            2.1
                         </p>
 
                     </ul>
@@ -64,42 +65,32 @@
 
 
                         <li>
-                            <a href="/datawedge/5-0/guide/about">
+                            <a href="/devicetracker/2-1/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/setup">
-                                    Setup
+                            <a href="/devicetracker/2-1/guide/setup">
+                                    Install &amp; Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/advanced">
-                                    Advanced
+                            <a href="/devicetracker/2-1/guide/admin">
+                                    Admin View
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/decoders">
-                                    Decoders
+                            <a href="/devicetracker/2-1/guide/mgmt">
+                                    Device Tracking
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/ipwedge">
-                                    IPWedge
+                            <a href="/devicetracker/2-1/guide/config">
+                                    Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/5-0/guide/api">
-                                    APIs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datawedge/5-0/guide/demo">
-                                    Demo
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/datawedge/5-0/search">
+                            <a href="/devicetracker/2-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -125,7 +116,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>DataWedge Demo App</strong></li>
+                            <li><strong>About Device Tracker</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -211,10 +202,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="datawedge-demo-app" class="anchor"><a class="heading-anchor" href="#datawedge-demo-app"><span></span></a>DataWedge Demo App</h1>
+                                    <h1 id="about-device-tracker" class="anchor"><a class="heading-anchor" href="#about-device-tracker"><span></span></a>About Device Tracker</h1>
                                     <p>
-                                            DataWedge
-                                            5.0
+                                            Device Tracker
+                                            2.1
                                     </p>
                                 </div>
                             </section>                    
@@ -227,58 +218,122 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="dwdemoapp" class="anchor"><a class="heading-anchor" href="#dwdemoapp"><span></span></a>DWDemo App</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>DWDemo is an app that demonstrates how data is acquired by an application using the DataWedge service. A DataWedge Profile called "DWDemo" is installed along with DataWedge and associated with the demo app. Disabled by default, the Profile can be modified as needed for testing and demo purposes. Once the demo Profile is enabled (see below), pressing the app's Scan button or a device trigger initiates a barcode scan and decoded data is displayed on the screen. The DWDemo app supports scanning with the imager, camera, Bluetooth device or a magstripe reader (MSR), if one is connected. </p>
+<p>Device Tracker is a centralized solution that tracks and finds misplaced devices within a facility. As part of Zebra DNA Visibility Console, it leverages existing WiFi network infrastructure to locate devices, preventing device inventory shrinkage. When locating a device, Device Tracker identifies the general area where the device is located based on the Access Point (AP) the device is connected to within the facility. <!-- The Device Tracker client uses BLE (Bluetooth Low Energy) beacons transmitted from the misplaced device for proximity sensing based on its relative position to the device conducting the search. --> Audio can be played on the misplaced device to determine its location. Device Tracker centralized management system continuously monitors device presence, tracking status, connection state, and battery charge to ensure visibility of devices prior to reaching a disconnected or loss of battery state.</p>
 
-<p>This guide requires a working knowledge of DataWedge Profiles. For more information about Profile settings, see the <a href="../setup">DataWedge Setup Guide</a>.  </p>
-
-<p><img style="height:350px" src="01_demo_app.png">
-<em>The DWDemo app as it appears in the Android App Drawer</em>. 
-<br></p>
-
-<hr>
-
-<h4 id="deviceselector" class="anchor"><a class="heading-anchor" href="#deviceselector"><span></span></a>Device Selector</h4>
-
-<p>The DWDemo app provides a menu of available scanning input devices, making it easy to switch from one to another for testing purposes. This and other DataWedge settings and preferences also can be configured in the DWDemo Profile, shown below. For information about Profile settings, see the <a href="../setup">DataWedge Setup Guide</a>.  </p>
-
-<p><img style="height:350px" src="02_dwdemo_device_selector.png">
-<br>
-<strong>Device controls</strong> (from left to right):</p>
+<h2 id="newindevicetracker21" class="anchor"><a class="heading-anchor" href="#newindevicetracker21"><span></span></a>New in Device Tracker 2.1</h2>
 
 <ul>
-<li><strong>Lightning Bolt -</strong> toggles the Camera Flash on and off (active when Camera is selected); controls illumination mode for other devices. </li>
+<li><strong>Disconnect Threshold Time</strong> is removed from the Application Configuration screen and replaced with <a href="../config/#applicationconfiguration">Reporting Frequency</a>. </li>
 
-<li><strong>Input Device -</strong> permits selection of Camera, Scanner or Bluetooth device (if no Bluetooth device is connected, selecting Bluetooth will attempt to pair). </li>
+<li>New option to upgrade server.</li>
 
-<li><strong>Camera input type -</strong> toggles between image and barcode data capture (active when Camera is selected; varies by device).</li>
-
-<li><strong>DWDemo "hamburger" menu -</strong> invokes "About" panel and DWDemo Profile (see below).</li>
+<li>Updates to client notification messages. </li>
 </ul>
 
-<hr>
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
-<h4 id="dwdemosettings" class="anchor"><a class="heading-anchor" href="#dwdemosettings"><span></span></a>DWDemo Settings</h4>
+<table class="facelift" style="width:100%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th style="text-align:center">Solution<br>Release<br>Version</th>
+    <th style="text-align:center">Server/<br>Client</th>
+    <th style="text-align:center">Version</th>
+    <th style="text-align:center">New Features/Updates</th>
+  </tr>
+  <tr>
+    <td style="text-align:center" rowspan="2">2.1</td>
+    <td style="text-align:center">Server</td>
+    <td style="text-align:center">2.1</td>
+    <td style="text-align:left"><b>Disconnect Threshold Time</b> removed from Application Configuration screen and replaced with <b>Reporting Frequency</b>. <br>New option to upgrade server.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Client</td>
+    <td style="text-align:center">2.1</td>
+    <td style="text-align:left">Updates to notification messages.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center" rowspan="2">1.0</td>
+    <td style="text-align:center">Server</td>
+    <td style="text-align:center">2.0</td>
+    <td style="text-align:left">Initial release</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Client</td>
+    <td style="text-align:center">1.0</td>
+    <td style="text-align:left">Initial release</td>
+  </tr>
+  </tbody></table>
 
-<p><img style="height:350px" src="03_dwdemo_settings_menu.png">
-<br>
-DWDemo's "hamburger" menu (above) provides access to "Settings," which invoke the DWDemo Profile screen (below). </p>
+<h2 id="mainfeatures" class="anchor"><a class="heading-anchor" href="#mainfeatures"><span></span></a>Main Features</h2>
 
-<p><strong>To activate scanning in the DWDemo app, the "Profile enabled" checkbox must be checked</strong> (as shown). Additional settings can be changed as required. </p>
+<p>Device Tracker main features:</p>
 
-<p><img style="height:350px" src="04_dwdemo_profile.png">
-<br></p>
+<ul>
+<li>General location information for all supported WiFi devices based on connected AP</li>
 
-<p><strong>To perform a test scan, tap the orange Scan button</strong> or <strong>press the device Scan trigger</strong> while pointing at an object to be scanned. </p>
+<li>Misplaced device prevention by monitoring low power and disconnection state</li>
 
-<p>Acquired data appears in the window, as below.</p>
+<li>Centralized dashboard to easily view device information: WiFi connectivity (connection status, connected AP), tracking status (To Be Found, Being Found, Found, Cannot Find), battery information (percent battery remaining, charging status), and other information from deployed Zebra mobile computers. 
 
-<p><img style="height:350px" src="05_demo_screen.png">
-<em>The DWDemo app showing two acquired values</em>. 
-<br></p>
 
-<p>By making changes in the DWdemo Profile, the DWDemo app can be used to test different decoders, rules for processing acquired data and other DataWedge configuration variations. For information about changing Profile settings, see the Profiles section of the <a href="../setup">DataWedge Setup Guide</a> and the Advanced Data Formatting section of the <a href="../advanced">Advanced Settings Guide</a>.  </p><p></p>
+<ul>
+<li>Filter and sort data</li>
+
+<li>Search by status, AP name, device name, device model, device serial number, battery state, and tags</li>
+
+<li>Device tagging for easier organization, identification, and tracking</li>
+
+<li>Admin action to mark device "To be found", which adds the device to the search list on the associate's client app</li></ul>
+</li>
+
+<li>Find and retrieve misplaced devices with client app using audio sound</li>
+
+<li>Secure communications between the Device Tracker Client application and server</li>
+
+<li>Friendly name assignment for APs and devices for ease of identification and tracking</li>
+
+<li>Report generation to export data </li>
+
+<li>Capability for device staging with the use of an EMM such as Zebra's <a href="/stagenow/latest/about">StageNow</a> with <a href="/mx/batterymgr">Battery Manager CSP</a>.
+ <!-- * Visually with BLE based animated and color-coded proximity indicator  --></li>
+</ul>
+
+<h2 id="howitworks" class="anchor"><a class="heading-anchor" href="#howitworks"><span></span></a>How it works</h2>
+
+<p>Device Tracker consists of the following components:</p>
+
+<ul>
+<li>Client – Device app collects and sends device data to server.</li>
+
+<li>Server – Part of Zebra DNA Visibility Console, which also includes PowerPrecision Console. It collects and processes device data. </li>
+
+<li>Web portal - Part of Zebra DNA Visibility Console, which provides a centralized dashboard for monitoring device presence, tracking, and battery status. </li>
+</ul>
+
+<p>The Device Tracker client software registers the device with the server and reports device information based on the defined reporting frequency from the server settings. The Admin uploads a list of friendly names of Access Points within the facility, which identifies the general area or zone where the device is located when connected to the AP. From the web portal, the Admin marks the misplaced device "To be found".<!-- and the associate tasked to search for the missing device uses their own device as a proximity indicator to locate the misplaced device.--> On the associate’s device, the Device Tracker client provides a list of devices to be found. The associate selects the target device to find from the list and uses the AP friendly name (if configured) to identify the general area where the device is last seen. <!--To further pinpoint the device location, an animated BLE-based (Bluetooth Low Energy) proximity indicator displays a graphic showing how close the user is to the misplaced device. The indicator displays in red when "far" away from the device, orange when "near" the device, and green when "close" in proximity to the device. "Out of Bluetooth range" message appears if the user walks beyond the distance which the Bluetooth signal can be received from the target device. -->Audio can be played on the target device to locate it by sound. <!--, particularly if hidden from view. --></p>
+
+<p>The web portal provides a dashboard for administrators to monitor the status of all tracked devices, identifying any misplaced devices. The last known status is provided from devices so action can be taken to prevent lost or misplaced devices.</p>
+
+<h2 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h2>
+
+<p>See supported <a href="../setup/#devicerequirements">Zebra devices</a>.</p>
+
+<p><br></p>
+
+<h2 id="br" class="anchor"><a class="heading-anchor" href="#br"><span></span></a><br></h2>
+
+<h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
+
+<ul>
+<li><a href="../setup">Install &amp; Setup</a></li>
+
+<li><a href="../admin">Admin View</a></li>
+
+<li><a href="../mgmt">Device Tracking</a></li>
+
+<li><a href="../config">Configuration</a></li>
+</ul><p></p>
                                         
 
 
@@ -308,20 +363,22 @@ DWDemo's "hamburger" menu (above) provides access to "Settings," which invoke th
 			</div>
 		  </div>
 		</div> </div>
-         <footer id="footer" class="navbar-fixed-bottom">
+         <footer id="footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                            ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
                     </div>
                     <div class="col-sm-2">
+                        <!--
                         <ul class="social-icons">
                             <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>
+                        -->
                     </div>
                 </div>
             </div>
@@ -359,6 +416,7 @@ DWDemo's "hamburger" menu (above) provides access to "Settings," which invoke th
 
 </script> 
 
+<!-- 3/1/19 - comment out per Rob
 <script>
     ChatraID = 'QDvZ76min4DhLW5vJ';
     (function(d, w, c) {
@@ -373,6 +431,7 @@ DWDemo's "hamburger" menu (above) provides access to "Settings," which invoke th
         n.parentNode.insertBefore(s, n);
     })(document, window, 'Chatra');
 </script>         
+-->
 
 
 </body></html>
