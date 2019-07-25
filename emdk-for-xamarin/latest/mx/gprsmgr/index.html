@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
                                             EMDK For Xamarin
-                                            3.0
+                                            4.0
                         </p>
 
                     </ul>
@@ -63,37 +63,37 @@
 
 
                         <li>
-                            <a href="/emdk-for-xamarin/3-0/guide/about">
+                            <a href="/emdk-for-xamarin/4-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/3-0/guide/gettingstarted">
+                            <a href="/emdk-for-xamarin/4-0/guide/gettingstarted">
                                     Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/3-0/tutorial/">
+                            <a href="/emdk-for-xamarin/4-0/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/3-0/samples">
+                            <a href="/emdk-for-xamarin/4-0/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/3-0/guide/programming-guides">
+                            <a href="/emdk-for-xamarin/4-0/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/3-0/guide/profile-manager-guides">
+                            <a href="/emdk-for-xamarin/4-0/guide/profile-manager-guides">
                                     Profile Manager
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/3-0/api">
+                            <a href="/emdk-for-xamarin/4-0/api">
                                     APIs
                             </a>
                         </li>
@@ -103,7 +103,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/emdk-for-xamarin/3-0/search">
+                            <a href="/emdk-for-xamarin/4-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -220,7 +220,7 @@
                                     <p><b>Note</b>: To display <u>only</u> the features present on a particular device, select one or more filters from the SmartDocs bar below.  
                                     <a id="smartdocs-help"><i class="fa fa-question-circle fa-lg"></i></a></p> 
                                     EMDK For Xamarin
-                                     - 3.0
+                                     - 4.0
                                     <p></p>
                                 </div>
                             </section>                    
@@ -302,6 +302,7 @@
                                 <li class="smartdocs-mx" data-value="8.1"><a>8.1</a></li>
                                 <li class="smartdocs-mx" data-value="8.2"><a>8.2</a></li>
                                 <li class="smartdocs-mx" data-value="8.3"><a>8.3</a></li>
+                                <li class="smartdocs-mx" data-value="8.4"><a>8.4</a></li>
                                 <li class="smartdocs-mx" data-value="9.0"><a>9.0</a></li>
                               </ul>
                               </li>
@@ -788,13 +789,12 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
                                     <p class="">
 
-        </p><p>The GprsMgr administers Access Point Name (APN) settings for the General Packet Radio Service (GPRS) network used by the device. In general terms, an APN acts as a bridge between a device's carrier network and the internet or other packet data networks, and stores preferences for security, multimedia messaging (MMS) and other services to which the device might require access. </p>
+        </p><p>The GPRS Manager (GprsMgr) administers Access Point Name (APN) settings for the General Packet Radio Service (GPRS) network used by the device. In general terms, an APN acts as a bridge between a device's carrier network and the internet or other packet data networks, and stores preferences for security, multimedia messaging (MMS) and other services to which the device might require access. </p>
 
 <h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
 
@@ -806,6 +806,19 @@
 <li>Remove or replace old APNs</li>
 
 <li>Remove all APNs</li>
+
+<li>Select a Mobile Virtual Network Operator (MVNO) type:
+
+
+<ul>
+<li>SPN</li>
+
+<li>INMI</li>
+
+<li>GID</li>
+
+<li>ICCID</li></ul>
+</li>
 
 <li>Define Custom APN parameters, including: 
 
@@ -819,7 +832,9 @@
 
 <li>Custom Port, Proxy, Server and Type</li>
 
-<li>Authentication type (PAP, CHAP, both or none)</li></ul>
+<li>Authentication type (PAP, CHAP, both or none)</li>
+
+<li>MVNO match data</li></ul>
 </li>
 </ul>
 
@@ -883,12 +898,27 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="apn-action"><a class="heading-anchor" href="#apn-action"><span></span></a>APN Action</h2>
                                     <p class="">
 
-        </p><p>Contains the list of actions that can be performed on an APN.</p>
+        </p><p>Contains the list of actions that can be performed on an Access Point Name (APN).</p>
 
 
 <p></p>
@@ -1083,40 +1113,21 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.1.1" data-api="16" data-smartdoc="">
 
                                     <h2 class="anchor" id="apn-name"><a class="heading-anchor" href="#apn-name"><span></span></a>APN Name</h2>
                                     <p class="">
 
-        </p><p>Used to specify the name by which the APN will be known in the device. All APN names in a device must be unique. Once an APN with a given name has been added, that name can be used to Remove that APN definition from the device or to Replace the definition of that APN with a new definition.</p>
+        </p><p>Used to specify the name by which the Access Point Name (APN) will be known in the device. All APN names in a device must be unique. Once an APN with a given name has been added, that name can be used to Remove that APN definition from the device or to Replace the definition of that APN with a new definition.</p>
 
 <blockquote>
-  <p><strong>Note:</strong> This parm does not specify the Access Point Name on the network, it only specifies the name by which the APN will be known and referred to by the device. The network name of the APN is specified in the Access Point parameter elsewhere in this document.</p>
+  <p><strong>Note:</strong> This parameter does not specify the Access Point Name on the network, only the name by which the APN will be known and referenced by the device. The network name of the APN is specified in the Access Point parameter.</p>
 </blockquote>
 
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -1140,6 +1151,34 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1255,22 +1294,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="make-default-apn"><a class="heading-anchor" href="#make-default-apn"><span></span></a>Make Default APN</h2>
@@ -1351,18 +1374,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                         <div class="">
                                     
@@ -1547,10 +1558,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.1.1" data-api="16" data-smartdoc="">
 
                                     <h2 class="anchor" id="access-point"><a class="heading-anchor" href="#access-point"><span></span></a>Access Point</h2>
@@ -1561,7 +1568,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -1616,25 +1623,21 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.1.1" data-api="16" data-smartdoc="">
 
                                     <h2 class="anchor" id="user-name"><a class="heading-anchor" href="#user-name"><span></span></a>User Name</h2>
                                     <p class="">
 
-        </p><p>Used to specify a User Name to authenticate on the APN being added. The value is generally obtained from the GPRS carrier that provides the APN (for example,  "WAP.CINGULARGPRS.COM" is the User Name commonly used by AT&amp;T to authenticate on its APNs). This is relevant only when the value chosen for GPRS Carrier was "Custom" since otherwise the APN values for the predefined APN will be provided automatically based on the selected GPRS carrier.</p>
+        </p><p>Used to specify a User Name to authenticate on the APN being added. The value is generally obtained from the GPRS carrier that provides the APN (for example, "WAP.CINGULARGPRS.COM" is the User Name commonly used by AT&amp;T to authenticate on its APNs). This is relevant only when the value chosen for GPRS Carrier was "Custom" since otherwise the APN values for the predefined APN will be provided automatically based on the selected GPRS carrier.</p>
 
 <blockquote>
-  <p><strong>Note:</strong> If an empty (length of 0) value is specified, no User Name will be used. This should generally be done only if the GPRS carrier indicates that authentication with a user name is not required for a given APN.</p>
+  <p><strong>Note:</strong> If an empty (length of 0) value is specified, no User Name is used. This should generally be done only if the GPRS carrier indicates that authentication with a user name is not required for a given APN.</p>
 </blockquote>
 
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -1677,9 +1680,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.1.1" data-api="16" data-smartdoc="">
 
                                     <h2 class="anchor" id="password"><a class="heading-anchor" href="#password"><span></span></a>Password</h2>
@@ -1688,13 +1688,13 @@
         </p><p>Used to specify a Password that to authenticate on the APN being added. The value is generally obtained from the GPRS carrier that provides the APN (for example, "CINGULAR1" is the password commonly used by AT&amp;T to authenticate on its APNs). This is relevant only when the value chosen for GPRS Carrier was "Custom" since otherwise the APN values for the predefined APN will be provided automatically based on the selected GPRS carrier.</p>
 
 <blockquote>
-  <p><strong>Note:</strong> If an empty (length of 0) value is specified, no Password will be used. This should generally be done only if the GPRS carrier indicates that authentication with a password is not required for a given APN.</p>
+  <p><strong>Note:</strong> If an empty (length of 0) value is specified, no Password is used. This should generally be done only if the GPRS carrier indicates that authentication with a password is not required for a given APN.</p>
 </blockquote>
 
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -1742,6 +1742,60 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.4" data-api="23" data-smartdoc="">
+
+                                    <h2 class="anchor" id="custom-mvno-match-data"><a class="heading-anchor" href="#custom-mvno-match-data"><span></span></a>Custom MVNO Match Data</h2>
+                                    <p class="">
+
+        </p><p>Used to specify provider-specific data based on the selected mobile virtual network operator.</p>
+
+<p><strong>Zebra recommends testing carrier-specified MVNO settings on a working device and SIM card before deployment into a production environment</strong>. </p>
+
+<p>Parm value input rules: </p>
+
+<ul>
+<li>String from 0–255 characters</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
+                                        <p><b>Shown if:</b> The Custom MVNO Type is NOT "Do not change"</p>
+                                        <p><b>Parm Name:</b> CustomMvnoMatchData</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 8.4+ </li>
+                                                <li>Android API: 23+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    
+                                </div> 
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="19" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-mcc"><a class="heading-anchor" href="#custom-mcc"><span></span></a>Custom MCC</h2>
@@ -1754,7 +1808,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -1812,6 +1866,15 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="19" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-mmsc"><a class="heading-anchor" href="#custom-mmsc"><span></span></a>Custom MMSC</h2>
@@ -1824,7 +1887,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -1869,17 +1932,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="19" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-mms-port"><a class="heading-anchor" href="#custom-mms-port"><span></span></a>Custom MMS Port</h2>
@@ -1892,7 +1944,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -1943,6 +1995,7 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="19" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-mms-proxy"><a class="heading-anchor" href="#custom-mms-proxy"><span></span></a>Custom MMS Proxy</h2>
@@ -1955,7 +2008,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -1991,6 +2044,7 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="19" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-mnc"><a class="heading-anchor" href="#custom-mnc"><span></span></a>Custom MNC</h2>
@@ -2003,7 +2057,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -2031,16 +2085,172 @@
                                     
                                     
                                     
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="mvno-type"><a class="heading-anchor" href="#mvno-type"><span></span></a>MVNO Type</h2>
+                                    <p class="">
+
+        </p><p>Used to specify the type of mobile virtual network operator (MVNO) used by an APN. An MVNO is a wireless network service provider that does not own the infrastructure on which its services are provided. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Note:</b> WWAN-enabled devices only</p>
+                                        <p><b>Parm Name:</b> CustomMvnoType</p>
+                                        <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
+                                        
+
+                                        
+                                        </blockquote>
                                     
                                     
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.4" data-devicetype="A,B" data-api="23" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.4+ </p>
+                                                        <p>Android API: 23+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.4" data-devicetype="A,B" data-api="23" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>None</td>
+                                                <td>Selects no APN MVNO type.</td>
+                                                <td></td>
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.4+ </p>
+                                                        <p>Android API: 23+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.4" data-devicetype="A,B" data-api="23" data-smartdoc="">
+                                                <td>2</td>
+                                                <td>spn</td>
+                                                <td>Enables the Service Provider Name to be specified.</td>
+                                                <td></td>
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.4+ </p>
+                                                        <p>Android API: 23+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.4" data-devicetype="A,B" data-api="23" data-smartdoc="">
+                                                <td>3</td>
+                                                <td>imsi</td>
+                                                <td>Enables the IMSI to be specified.</td>
+                                                <td></td>
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.4+ </p>
+                                                        <p>Android API: 23+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.4" data-devicetype="A,B" data-api="23" data-smartdoc="">
+                                                <td>4</td>
+                                                <td>gid</td>
+                                                <td>Enables the Group Identifier to be specified.</td>
+                                                <td></td>
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.4+ </p>
+                                                        <p>Android API: 23+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.4" data-devicetype="A,B" data-api="23" data-smartdoc="">
+                                                <td>5</td>
+                                                <td>iccid</td>
+                                                <td>Enables the Integrated Circuit Card Identifier to be specified.</td>
+                                                <td></td>
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.4+ </p>
+                                                        <p>Android API: 23+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+                                </div> 
                                     
                                     
                                     
@@ -2056,7 +2266,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -2101,6 +2311,14 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="19" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-proxy"><a class="heading-anchor" href="#custom-proxy"><span></span></a>Custom Proxy</h2>
@@ -2113,7 +2331,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -2156,7 +2374,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="19" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-server"><a class="heading-anchor" href="#custom-server"><span></span></a>Custom Server</h2>
@@ -2169,7 +2386,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -2213,8 +2430,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.1" data-api="19" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-type"><a class="heading-anchor" href="#custom-type"><span></span></a>Custom Type</h2>
@@ -2227,7 +2442,7 @@
 <p>Parm value input rules: </p>
 
 <ul>
-<li>String from 0 - 255 characters</li>
+<li>String from 0–255 characters</li>
 </ul>
 
 
@@ -2250,6 +2465,7 @@
                                     
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -2635,6 +2851,13 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -2654,6 +2877,20 @@ filtering
         csp: "gprsmgr",
         name: "GPRS Manager",
         parms: [
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -2884,25 +3121,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -2922,6 +3140,34 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3000,22 +3246,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "The APN Action is &quot;Add/replace named APN&quot;",
                             name: "MakeDefault",
@@ -3059,18 +3289,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     {
                             presentif: "",
@@ -3205,10 +3423,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -3228,10 +3442,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3302,9 +3512,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -3349,6 +3556,43 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "8.4",
+                            api: "23",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A,B"
+                        },
+
+                            presentif: "The Custom MVNO Type is NOT &quot;Do not change&quot;",
+                            name: "CustomMvnoMatchData",
+                            pivotal: "No",
+                        
+                        
+                    },
+                    
                     {
                         requires: {
                             osx: "",
@@ -3368,6 +3612,15 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3444,17 +3697,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -3474,6 +3716,7 @@ filtering
                         
                         
                     },
+                    
                     
                     
                     
@@ -3534,6 +3777,7 @@ filtering
                     
                     
                     
+                    
                     {
                         requires: {
                             osx: "",
@@ -3558,16 +3802,117 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    {
+                            presentif: "",
+                            name: "CustomMvnoType",
+                            pivotal: "Yes",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.4",
+                                        api: "23",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "None",
+                                    description: "Selects no APN MVNO type.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.4",
+                                        api: "23",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "2",
+                                    name: "spn",
+                                    description: "Enables the Service Provider Name to be specified.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.4",
+                                        api: "23",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "3",
+                                    name: "imsi",
+                                    description: "Enables the IMSI to be specified.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.4",
+                                        api: "23",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "4",
+                                    name: "gid",
+                                    description: "Enables the Group Identifier to be specified.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.4",
+                                        api: "23",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "5",
+                                    name: "iccid",
+                                    description: "Enables the Integrated Circuit Card Identifier to be specified.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.4",
+                                        api: "23",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
                     
                     
                     
@@ -3590,6 +3935,14 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3651,7 +4004,6 @@ filtering
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "",
@@ -3692,8 +4044,6 @@ filtering
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -3713,6 +4063,14 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
