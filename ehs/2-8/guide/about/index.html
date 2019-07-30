@@ -231,7 +231,7 @@
 
 <p>EHS works by inserting itself in place of the stock Android app launcher and home screen. When first run, it presents a screen like the one below, offering a choice of which home app to open and whether to make the selection permanent. EHS also can be installed as the default launcher, bypassing the selector dialog. </p>
 
-<p><b>Note</b>: Many of the capabilities of EHS can be accomplished manually on the device, programmatically through <a href="../../../../emdk-for-android">EMDK</a> or remotely using <a href="../../../../stagenow">StageNow</a> or a third-party mobile device management (MDM) system (if supported by that MDM system). EHS simply puts the capabilities into a single tool.</p>
+<p><b>Note</b>: Many of the capabilities of EHS can be accomplished manually on the device, programmatically through <a href="../../../../emdk-for-android">EMDK</a> or remotely using <a href="../../../../stagenow">StageNow</a> or a third-party mobile device management (MDM) system (if supported by that MDM system). EHS simply puts the capabilities into a single tool, but does NOT provide a complete lockdown for securing devices. <strong>For maximum security, Zebra recommends using EHS with additional security options provided by Android and Zebra’s MX (via EMDK or StageNow)</strong>.</p>
 
 <p><strong>Enterprise Home Screen supports the following languages</strong>: </p>
 
@@ -260,8 +260,6 @@
 <li>Keyguard (for unlocking the screen)</li>
 
 <li>Keyguard-screen camera and search functions</li>
-
-<li>The status-bar Settings icon  </li>
 
 <li>Full access to the System Settings panel  </li>
 </ul>
@@ -554,6 +552,7 @@
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
 </tr>
+
 <tr>
 <td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">WT6000</font></p>
@@ -591,9 +590,9 @@
 
 <li><p><strong>Enhanced Device Identifier Options -</strong> Information to uniquely identify a device—its serial number, MAC address, network host name, Bluetooth address, Bluetooth name or IMEI number—can be displayed as the title bar text of the EHS home screen. </p></li>
 
-<li><p><strong>Custom EHS icon no longer limited to home screen -</strong> When a custom icon used to replace the stock EHS icon, it can optionally be set to display on screens for Battery Info, Wireless Info, Preferences and the Tools menu. </p></li>
+<li><p><strong>Custom EHS icon no longer limited to home screen -</strong> When a custom icon is used to replace the stock EHS icon, the icon can optionally be set to also display on other screens, including those for Battery Info, Wireless Info, Preferences and the Tools menu. </p></li>
 
-<li><p><strong>File browsing in Preferences panel -</strong> When selecting a title-bar icon or wallpaper image through the Preferences panel, tap-navigation is now possible to locate the image file and specify its path. </p></li>
+<li><p><strong>File browsing in Preferences panel -</strong> When selecting a title-bar icon or wallpaper image through the Preferences panel, tap-navigation is now possible to locate the image file and specify its path. File location is no longer limited to <code>/enterprise/usr</code> folder.</p></li>
 </ul>
 
 <h3 id="enhancementsfixes" class="anchor"><a class="heading-anchor" href="#enhancementsfixes"><span></span></a>Enhancements/Fixes</h3>
@@ -607,7 +606,7 @@
 
 <li><p><strong>A colored screen is displayed</strong> while EHS is starting up. </p></li>
 
-<li><p><strong>Wallpaper and Title Bar Icon</strong> features now support .bmp, .gif, .jpg, .png and .webp file formats. </p></li>
+<li><p><strong>Wallpaper and Title Bar Icon</strong> features now support .bmp, .gif, .jpg, .png and .webp file formats and file location is no longer limited to <code>/enterprise/usr</code> folder.</p></li>
 </ul>
 
 <h3 id="deprecations" class="anchor"><a class="heading-anchor" href="#deprecations"><span></span></a>Deprecations</h3>
@@ -655,6 +654,16 @@ ABOVE NOTE REPLICATED ON SETTINGS PAGE
 
 <hr>
 
+<h3 id="androidmarshmallowandnougatnotes" class="anchor"><a class="heading-anchor" href="#androidmarshmallowandnougatnotes"><span></span></a>Android Marshmallow and Nougat Notes</h3>
+
+<p><strong><em>Applies to devices running Android Marshmallow and Nougat</em></strong>:</p>
+
+<ul>
+<li><strong>When referencing a file stored on a removable SD Card in a device running Android M or N</strong>, references to that card must include its symbolic link rather than its direct path. For example, while the file path on pre-M devices might be visible as <code>/storage/sdcard1/image.png</code>, the same path on M and N devices might appear in the file browser something like <code>/storage/0097-B7BA/image.png</code>. The symbolic link (which in this case is "0097-B7BA") is <strong><u>unique to the device</u></strong>. Therefore, <strong>Zebra recommends avoiding the use of removable storage in mass-deployment scenarios</strong>. </li>
+</ul>
+
+<hr>
+
 <h3 id="androidmarshmallownotes" class="anchor"><a class="heading-anchor" href="#androidmarshmallownotes"><span></span></a>Android Marshmallow Notes</h3>
 
 <p><strong><em>Applies to devices running Android 6.x Marshmallow only</em></strong>:</p>
@@ -692,7 +701,7 @@ ABOVE NOTE REPLICATED ON SETTINGS PAGE
 -->
 
 <ul>
-<li><p><strong>Devices running Android L and higher retain the "Recent Apps" list after device reboot</strong>, posing a potential security risk. EHS 2.7 (and higher) disables the Recent Apps button on <u>Nougat devices only</u> to help address this risk. For all devices, the list can be cleared using <a href="/mx/appmgr">App Manager</a> through Zebra EMDK, StageNow or a third-party MDM system. For more information, see <a href="../features#securitynotes">Security Notes</a> in the Advanced Features section. </p></li>
+<li><p><strong>Some devices retain the "Recent Apps" list after device reboot</strong>, posing a potential security risk. EHS disables the Recent Apps button on <u>Nougat (and higher) devices</u> to help address this risk. For all devices, the list can be cleared using <a href="/mx/appmgr">App Manager</a> through Zebra EMDK, StageNow or a third-party MDM system. For more information, see <a href="../features#securitynotes">Security Notes</a> in the Special Features section. </p></li>
 
 <li><p><strong><a href="../features#kioskmode">Kiosk Mode</a> should not be used with Screen Pinning</strong>, a feature in Android L and higher that works in a similar way.</p></li>
 
@@ -891,22 +900,23 @@ _The User Mode screen with XXL icons_. -->
 			</div>
 		  </div>
 		</div> </div>
-         <footer id="footer" class="navbar-fixed-bottom">
+         <footer id="footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                     </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
                     <div class="col-sm-2">
                         <ul class="social-icons">
                             <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>
                     </div>
-                </div>
+     -->            </div>
             </div>
         </footer><!--/#footer-->
     <script src="/js/bootstrap.min.js"></script>

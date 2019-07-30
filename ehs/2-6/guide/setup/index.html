@@ -42,14 +42,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:42px;float: inherit;
+                    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:66px;float: inherit;
     padding-right: 3px;"></a> 
                     
                    
                 </div>
                 <div class="collapse navbar-collapse navbar-left">
                     <ul class="nav navbar-nav">
-                        <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
+                        <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <li class="dropdown">
                           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Home Screen 2.6
                           <span class="caret"></span></button>
@@ -94,6 +94,7 @@
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
+                        
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -105,8 +106,7 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
-<div class="container-fluid">
-    <section id="blog">
+<div class="container-fluid">    <section id="blog">
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
@@ -225,8 +225,10 @@
 <p>Many of the capabilities of EHS can be accomplished manually on the device, programmatically through <a href="../../../../emdk-for-android">EMDK</a> or remotely using <a href="../../../../stagenow">StageNow</a> or a third-party mobile device management (MDM) system (if supported by that MDM system). EHS simply puts these capabilities into a single, convenient tool.</p>
 
 <blockquote>
-  <p><b>Note</b>: Installation and setup requires that EHS be present on a PC or Mac that can communicate with the target device and write to all storage areas. If necessary, please <a href="../../download">download EHS</a> and establish connectivity between the computer and device. Then resume from here. </p>
+  <p><b>Note</b>: Installation and setup requires that the EHS .apk file be present on a PC or Mac that can communicate with the target device and write to all storage areas. If necessary, please <a href="../../download">download EHS</a> and establish connectivity between the computer and device. Then resume from here. </p>
 </blockquote>
+
+<hr>
 
 <h2 id="manualinstallation" class="anchor"><a class="heading-anchor" href="#manualinstallation"><span></span></a>Manual Installation</h2>
 
@@ -238,14 +240,14 @@
 
 <p>1. <b>Connect the device</b> via USB to a PC or Mac.</p>
 
-<p>2. <b>Copy the APK file</b> from the PC to any writable device folder.</p>
+<p>2. <b>Copy the .apk file</b> from the PC to any writable device folder.</p>
 
 <p>3. On the device, <b>launch File Browser</b> from the App Drawer:</p>
 
 <p><img alt="" style="height:500px" src="file_browser_in_drawer.png">
 <br></p>
 
-<p>4. <b>Locate and launch the APK file</b>:</p>
+<p>4. <b>Locate and launch the .apk file</b>:</p>
 
 <p><img alt="" style="height:350px" src="file_browser_search.png">
 <em>File name of the .apk will match that of the version number being installed</em>. 
@@ -359,6 +361,8 @@
 
 <p>For scenarios that require even more security, EHS offers Secure and Kiosk modes, which are documented in the <a href="">Advanced Features</a> section. For a complete usage reference for the <code>enterprisehomescreen.xml</code> configuration file, please see the <a href="../settings">Advanced Settings</a> section. </p>
 
+<hr>
+
 <h2 id="automatedinstallation" class="anchor"><a class="heading-anchor" href="#automatedinstallation"><span></span></a>Automated Installation</h2>
 
 <p>These instructions apply to remote installation of EHS, an <code>enterprisehomescreen.xml</code> config file, or both, from an organization's own MDM server to multiple managed devices. Alternatively, remote deployment and management can be accomplished through Zebra's <a href="../../../../emdk-for-android">EMDK</a> or <a href="../../../../stagenow">StageNow</a> tools using its App Manager Setting Type service. </p>
@@ -413,6 +417,8 @@
 <p>The capabilities of MDM systems vary. Please refer to the MDM documentation for specific information about how to configure these commands. </p>
 
 <p><strong>Note: App installation, uninstallation, setting the default launcher and other operations are possible using the <a href="/mx/#app-manager">App Manager</a> through Zebra's <a href="/emdk-for-android/4-0/guide/about">EMDK</a> or <a href="/stagenow/2-2/about/">StageNow</a> tools</strong>. </p>
+
+<hr>
 
 <h2 id="uninstallation" class="anchor"><a class="heading-anchor" href="#uninstallation"><span></span></a>Uninstallation</h2>
 
@@ -509,21 +515,27 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 <p><br></p>
 
-<p>2. <b>OPTIONAL</b>: If a new <code>enterprisehomescreen.xml</code> configuration file will be deployed with the new version of EHS, <strong>skip to Step 3</strong>. Otherwise, instruct the MDM to remove the <code>/enterprise/usr</code> folder. This will remove any previous config file. </p>
+<p>2. <b>OPTIONAL</b>: If a new <code>enterprisehomescreen.xml</code> configuration file will be deployed with the new version of EHS, <strong>skip to Step 3</strong>. Otherwise, instruct the MDM to remove the file <code>/enterprise/usr/enterprisehomescreen.xml</code> from the device. This will clear configuration settings from the previously installed EHS app. </p>
+
+<blockquote>
+  <p><strong>Warning</strong>: Do not remove the <code>/enterprise/usr</code> folder; it could effect the behavior of other apps. </p>
+</blockquote>
 
 <p>3. It is sometimes necessary to <b>reboot the device</b> to complete the uninstallation. </p>
 
 <p>Remote uninstallation of EHS is now complete. </p>
 
-<blockquote>
-  <p>The capabilities of MDM systems vary. Please refer to the MDM documentation for specific information about how to configure these commands. </p>
-</blockquote>
+<p><strong>Note: Capabilities of MDM systems vary. Please refer to the MDM documentation for specific information about command usage</strong>. </p>
+
+<hr>
 
 <h2 id="changethedefaultlauncher" class="anchor"><a class="heading-anchor" href="#changethedefaultlauncher"><span></span></a>Change the Default Launcher</h2>
 
-<p>Removing EHS as the default launcher on a device can be done with a simple change in the Settings panel or by uninstalling EHS. Either of these scenarios can be accomplished manually on the device, programmatically through EMDK or remotely using StageNow or an MDM (if supported). If EHS is removed from the device, the Android Launcher in most cases will be the only remaining launcher on the device, and therefore will become the default launcher. </p>
+<p>Removing EHS as the default launcher on a device can be done with a simple change in the Settings panel or by uninstalling EHS. Either of these scenarios can be accomplished manually on the device, programmatically through EMDK or remotely using StageNow or an MDM (if supported). </p>
 
-<p>The following process applies only to Android 4.4.3 and higher. to remove EHS as the default launcher on Android versions prior to 4.4.3, follow the instructions (above) for manually uninstalling EHS using Android App Manager. </p>
+<p>If EHS is removed from the device and the Android Launcher is the only remaining launcher on the device, it will become the default launcher. <strong>If more than one launcher will remain on the device after EHS is removed, a new default launcher should be selected to ensure desired operation</strong>.  </p>
+
+<p><strong>The following process applies only to Android 4.4.3 and higher</strong>. To remove EHS as the default launcher on Android versions prior to 4.4.3, follow the instructions (above) for manually uninstalling EHS using Android App Manager. </p>
 
 <p><strong>To manually change the default launcher on a device without removing EHS</strong>: 
 (Android 4.4.3 and higher)</p>
@@ -537,6 +549,8 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 <p><b>Note</b>: The trash can icon seen here offers an alternative means of uninstalling EHS and restoring the Android Launcher. </p>
 
+<hr>
+
 <h2 id="batteryandwifiquickview" class="anchor"><a class="heading-anchor" href="#batteryandwifiquickview"><span></span></a>Battery and Wi-Fi Quick View</h2>
 
 <p>In addition to the separate panels for viewing Battery and Wi-Fi status provided in the menus of Admin- and User-Mode Launcher screens, EHS provides Quick View, an alternate way of accessing real-time status of these critical devices from a single screen.</p>
@@ -547,7 +561,7 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 <img alt="" style="height:350px" src="2-4_info_icon.png"></p>
 
 <p>The Battery/Wi-Fi Quick View panels appears, displaying real-time status of both devices:
-<img alt="" style="height:350px" src="2-4_battery-wifi_status.png">
+<img alt="" style="height:450px" src="2-7_battery-wifi_status.png">
 <br></p><p></p>
                                         
 
@@ -578,22 +592,23 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 			</div>
 		  </div>
 		</div> </div>
-         <footer id="footer" class="navbar-fixed-bottom">
+         <footer id="footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                     </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
                     <div class="col-sm-2">
                         <ul class="social-icons">
                             <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>
                     </div>
-                </div>
+     -->            </div>
             </div>
         </footer><!--/#footer-->
     <script src="/js/bootstrap.min.js"></script>
