@@ -2,13 +2,16 @@
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Online Documentation for Zebra Technologies developer tools and utiltiescomp including EMDK for Android, EMDK for Xamarin, StageNow, Enterprise Browser.">
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Register for Notification">
-    <title>Register for Notification - Zebra Technologies TechDocs</title>
+    <meta title="Register/Unregister for Notification">
+    <title>Register/Unregister for Notification - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -54,7 +57,7 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
                                             DataWedge
-                                            7.3
+                                            7.4
                         </p>
 
                     </ul>
@@ -65,38 +68,38 @@
 
 
                         <li>
-                            <a href="/datawedge/7-3/guide/about">
+                            <a href="/datawedge/7-4/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/setup">
+                            <a href="/datawedge/7-4/guide/gettingstarted">
+                                    Getting Started
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/datawedge/7-4/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/profiles">
+                            <a href="/datawedge/7-4/guide/profiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/settings">
+                            <a href="/datawedge/7-4/guide/settings">
                                     DataWedge Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/api">
+                            <a href="/datawedge/7-4/guide/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/samples">
+                            <a href="/datawedge/7-4/guide/samples">
                                     Demo App &amp; Samples
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://developer.zebra.com/community/home/discussions/datawedge">
-                                    <i class="fa fa-comments-o"></i>
                             </a>
                         </li>
                         <li>
@@ -105,7 +108,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/search">
+                            <a href="/datawedge/7-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -131,7 +134,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Register for Notification</strong></li>
+                            <li><strong>Register/Unregister for Notification</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -217,10 +220,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="register-for-notification" class="anchor"><a class="heading-anchor" href="#register-for-notification"><span></span></a>Register for Notification</h1>
+                                    <h1 id="registerunregister-for-notification" class="anchor"><a class="heading-anchor" href="#registerunregister-for-notification"><span></span></a>Register/Unregister for Notification</h1>
                                     <p>
                                             DataWedge
-                                            7.3
+                                            7.4
                                     </p>
                                 </div>
                             </section>                    
@@ -237,7 +240,10 @@
 
 <p>Introduced in DataWedge 6.4. </p>
 
-<p>Used to register/unregister an app to receive a notification when the status of a DataWedge parameter changes by means of an intent. <strong>This function does not monitor changes made using the device UI</strong>. </p>
+<p>Enable apps to register or unregister to receive notifications for status changes related to configuration, scanner, and profile switching. These status changes can result from DataWedge API calls (such as <a href="../importconfig">IMPORT_CONFIG</a>, <a href="../switchtoprofile">SWITCH_TO_PROFILE</a>, and <a href="../scannerinputplugin">SCANNER_INPUT_PLUGIN</a>) or DataWedge profile changes (such as profile <a href="../../settings/#autoimport">Auto Import</a>).</p>
+
+<!--
+Used to register/unregister an app to receive a notification when the status of a DataWedge parameter changes by means of an intent. **This function does not monitor changes made using the device UI**. -->
 
 <h3 id="functionprototype" class="anchor"><a class="heading-anchor" href="#functionprototype"><span></span></a>Function Prototype</h3>
 
@@ -298,27 +304,23 @@
 
 <li><p><code>SCANNER_STATUS</code>: </p>
 
-<p></p><ul>
-<li><code>NOTIFICATION_TYPE</code>: "SCANNER_STATUS" </li></ul><p></p>
+<ul>
+<li><p><strong>WAITING</strong> – Scanner is enabled and ready to scan using a physical trigger or SOFT_SCAN_TRIGGER intent. </p></li>
 
-<p></p></li><li>SCANNER_STATUS: WAITING, SCANNING, CONNECTED, DISCONNECTED or DISABLED</li><p></p></ul><p></p>
+<li><p><strong>SCANNING</strong> - Scanner has emitted the scan beam and scanning is in progress. This event does not prevent the application from disabling other controls as necessary. </p></li>
 
+<li><p><strong>CONNECTED</strong> – A Bluetooth scanner has connected with the device and can now be enabled (or disabled) by the application. Scanner selection should be set to Auto in the currently active profile. </p></li>
+
+<li><p><strong>DISCONNECTED</strong> – A Bluetooth scanner has disconnected from the device. Sending an intent to enable or disable the scanner in this state will enable/disable the current default scanner. </p></li>
+
+<li><p><strong>IDLE</strong> - Scanner is in one of the following states: enabled but not yet in the waiting state, in the suspended state by an intent (e.g. <a href="../scannerinputplugin">SUSPEND_PLUGIN</a>) or disabled due to the hardware trigger. </p></li>
+
+<li><p><strong>DISABLED</strong> – Scanner is disabled. This is broadcasted by the scanner plug-in when the active profile becomes disabled manually or the scanner is disabled with an intent (e.g. <a href="../scannerinputplugin">DISABLE_PLUGIN</a>). </p></li></ul></li>
+</ul>
 
 <blockquote>
   <p><strong>Scanner status notifications are sent <u>only if the scanner in the active Profile is enabled</u></strong>. </p>
 </blockquote>
-
-<p><strong>WAITING</strong> – Scanner is enabled and ready to scan using a physical trigger or SOFT_SCAN_TRIGGER intent. </p>
-
-<p><strong>SCANNING</strong> - Scanner has emitted the scan beam and scanning is in progress. This event does not prevent the application from disabling other controls as necessary.</p>
-
-<p><strong>CONNECTED</strong> – A Bluetooth scanner has connected with the device and can now be enabled (or disabled) by the application. Scanner selection should be set to Auto in the currently active profile. </p>
-
-<p><strong>DISCONNECTED</strong> – A Bluetooth scanner has disconnected from the device. Sending an intent to enable or disable the scanner in this state will enable/disable the current default scanner. </p>
-
-<p><strong>IDLE</strong> - Scanner is in one of the following states: enabled but not yet in the waiting state, in the suspended state by the intent API call or disabled due to the hardware trigger.</p>
-
-<p><strong>DISABLED</strong> – Scanner is disabled. This will be broadcast by the scanner plug-in when the active Profile becomes disabled or the scanner is disabled with an intent.</p>
 
 <p><strong>Note</strong>: The <code>PROFILE_NAME</code> (of the currently active profile) is returned with <code>SCANNER_STATUS</code> to allow the developer to filter scanner events for the required Profile only. </p>
 
