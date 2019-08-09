@@ -57,7 +57,7 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <p class="navbar-text">
                                             DataWedge
-                                            7.3
+                                            7.4
                         </p>
 
                     </ul>
@@ -68,38 +68,38 @@
 
 
                         <li>
-                            <a href="/datawedge/7-3/guide/about">
+                            <a href="/datawedge/7-4/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/setup">
+                            <a href="/datawedge/7-4/guide/gettingstarted">
+                                    Getting Started
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/datawedge/7-4/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/profiles">
+                            <a href="/datawedge/7-4/guide/profiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/settings">
+                            <a href="/datawedge/7-4/guide/settings">
                                     DataWedge Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/api">
+                            <a href="/datawedge/7-4/guide/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/guide/samples">
+                            <a href="/datawedge/7-4/guide/samples">
                                     Demo App &amp; Samples
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://developer.zebra.com/community/home/discussions/datawedge">
-                                    <i class="fa fa-comments-o"></i>
                             </a>
                         </li>
                         <li>
@@ -108,7 +108,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/7-3/search">
+                            <a href="/datawedge/7-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -223,7 +223,7 @@
                                     <h1 id="barcode-input" class="anchor"><a class="heading-anchor" href="#barcode-input"><span></span></a>Barcode Input</h1>
                                     <p>
                                             DataWedge
-                                            7.3
+                                            7.4
                                     </p>
                                 </div>
                             </section>                    
@@ -269,7 +269,7 @@
 <h2 id="scannerselection" class="anchor"><a class="heading-anchor" href="#scannerselection"><span></span></a>Scanner Selection</h2>
 
 <p>For Barcode Input, the Scanner selection panel determines which scanning device will be used for data capture. The list of available scanners is based on devices present in (or connected to) the unit being configured. 
-<img style="height:350px" src="../11_select_input.png">
+<img style="height:350px" src="../select_input.png">
 <br></p>
 
 <p>The "Auto" option automatically determines the best scanning device from the list of available devices based on the rules below. </p>
@@ -328,6 +328,10 @@
 <li><strong>DS3608</strong> USB SSI Scanner</li>
 
 <li><strong>LI3608</strong> Ultra-Rugged USB SSI Laser Scanner</li>
+
+<li><strong>RS4000</strong> USB SSI Ring Scanner</li>
+
+<li><strong>RS5000</strong> USB SSI Ring Scanner</li>
 </ul>
 
 <p><strong>Support notes</strong>: </p>
@@ -1333,7 +1337,7 @@ For help creating a Signature Capture barcode like the one above, refer to the <
 
 <li><p><strong>Presentation -</strong> Automatically activates the scanner and starts scanning immediately when a barcode is presented in its field of view, without any trigger press. </p></li>
 
-<li><p><strong>Continuous Read -</strong> A press and hold of the scan trigger continuously scans barcodes. The same barcode can be scanned multiple times.  <strong>Not supported with the Zebra RS507 Bluetooth Ring Scanner</strong>.</p></li>
+<li><p><strong>Continuous Read -</strong> A press and hold of the scan trigger continuously scans barcodes. The same barcode can be scanned multiple times. <strong>Not supported with the Zebra RS507 Bluetooth Ring Scanner</strong>.</p></li>
 
 <li><p><strong>Press and Sustain -</strong> Starts the scan beam when the trigger is pressed and continues the decode session until the Beam Timer is expired, barcode is decoded or read is canceled. <strong>Scan beam is not stopped when the trigger is released</strong>. This avoids unexpected cancellations of a read by subsequently pressing the trigger button of the device; subsequent trigger presses while the beam is ON have no effect. <strong>Applies to internal imager on TC20/TC25 and RS6000/RS507 Bluetooth scanners connected to TC57/TC77 and PS20 devices</strong>. </p></li>
 </ul>
@@ -1344,6 +1348,34 @@ For help creating a Signature Capture barcode like the one above, refer to the <
  * **None**
  * **Proximity Sensor Input**
  -->
+
+<p><strong>DPM Illumination Control -</strong> Controls illumination for DPM barcodes: </p>
+
+<ul>
+<li><strong>Direct Illumination -</strong> Scanner uses only direct (white) illumination. Recommended for use with dot peen barcodes - tilt the part 30 degrees for optimal decoding.</li>
+
+<li><strong>Indirect Illumination -</strong> Scanner uses only red illumination. Recommended for use with laser etched barcodes on cylinders or curved, rough, grainy, highly reflective, or visibly machined surfaces.</li>
+
+<li><strong>Cycle Illumination -</strong> Scanner cycles alternately between direct and indirect illumination. The scanner starts with the illumination used during the last successful decode.</li>
+</ul>
+
+<p><strong>DPM Mode -</strong> Mode to optimize DPM barcode decoding performance based on barcode size (Default value is Mode 2): </p>
+
+<ul>
+<li><strong>Disabled -</strong> No special processing.</li>
+
+<li><strong>DPM Mode 1 -</strong> Optimizes decoding performance for smaller DPM barcodes, typically found on electronics and medical instruments, especially on smooth surfaces. These barcodes tend to be laser etched or direct printed.</li>
+
+<li><strong>DPM Mode 2 -</strong> Optimizes decoding performance for larger DPM barcodes, typically found on industrial parts, especially on rough, grainy or visibly machined surface. These barcodes tend to be dot peen or laser etched.</li>
+</ul>
+
+<p><strong>Illumination Brightness -</strong> Adjusts the brightness for the scanning session. Integer values: 1 - 10.</p>
+
+<ul>
+<li><strong>Low (1) -</strong> Low intensity illumination during scanning session.</li>
+
+<li><strong>High (10) -</strong> Maximum intensity illumination during scanning session (default).</li>
+</ul>
 
 <p><strong>Illumination mode -</strong>  Turns illumination on and off.</p>
 
@@ -1436,7 +1468,7 @@ For help creating a Signature Capture barcode like the one above, refer to the <
 <li><p><strong>Static Reticle -</strong> Enables the viewfinder and a red reticle (cross-hairs) in the center of the screen to aid in positioning the barcode for scanning. <strong>This parameter is supported only when the Camera is used for scanning</strong>.</p></li>
 </ul>
 
-<p><strong>Scanning Modes -</strong> Used to select between Single (normal), UDI and Basic MultiBarcode modes. <a href="./#udidecoding">UDI mode</a> acquires multiple simultaneous inputs as specified in the selected Universal Device Identifier UDI parameter(s). <a href="./#multibarcodedecoding">Basic MultiBarcode mode</a> acquires 2-10 barcodes with each scan as specified in the Basic MultiBarcode params panel. <strong>Default=5</strong>.</p>
+<p><strong>Scanning Modes -</strong> Used to select between Single (normal), UDI and Basic MultiBarcode modes. <a href="">UDI mode</a>./#udidecoding) acquires multiple simultaneous inputs as specified in the selected Universal Device Identifier UDI parameter(s). [Basic MultiBarcode mode] acquires 2-10 barcodes with each scan as specified in the Basic MultiBarcode params panel. <strong>Default=5</strong>.</p>
 
 <p><strong>Zoom -</strong> Required for decoding DotCode barcodes. User needs to set Camera Zoom value to 2 on the following devices: MC33, TC51/TC56, TC70x/TC75x, VC80x, TC52/TC57, TC72/TC77, PS20. If Camera Zoom is set to any value other than 2 on these devices, it can negatively impact the decoding of specific DotCode barcodes. Parameter values: 1 - 8. <strong>Default=1</strong>.</p>
 
@@ -1452,7 +1484,7 @@ For help creating a Signature Capture barcode like the one above, refer to the <
 
 <p>The Universal Device Identifier (UDI) parameter acquires multiple barcodes simultaneously. </p>
 
-<p><strong>This feature is supported using the imager on the following devices only</strong>:</p>
+<p><strong>This feature is supported using the imager on the following devices up to Android P (version 9.x) only</strong>:</p>
 
 <ul>
 <li><strong>TC51</strong></li>
@@ -1488,11 +1520,12 @@ For help creating a Signature Capture barcode like the one above, refer to the <
 <p>MultiBarcode acquires multiple, unique barcodes in a single scan session and can deliver the data either immediately or after the specified number of barcodes per scan is reached. <strong>Basic MultiBarcode</strong> is enabled through <strong>Scanning Modes</strong> within <strong>Reader Params</strong>, per above.</p>
 
 <table>
+
  <tbody><tr>
   <td>
   <img style="height:350px" src="multibarcode.png">
-  </td>    
-  <td> &nbsp; &nbsp; &nbsp;
+  </td>
+  <td> &nbsp; &nbsp; &nbsp; &nbsp;
   </td>
   <td>
   <img style="height:350px" src="multibarcode_params.png">
@@ -1520,7 +1553,7 @@ For help creating a Signature Capture barcode like the one above, refer to the <
 
 <li><strong>Duplicate barcodes -</strong> If a label to be scanned contains multiple barcodes, some of which are duplicates (with the same label type and data), only one barcode from the duplicates is decoded; the remainder are ignored. If the label has two duplicate barcodes plus another two different barcodes, a maximum of three barcodes will be decoded from that form; one will be ignored as a duplicate.</li>
 
-<li><strong>Multiple barcode types -</strong> Barcodes can be of multiple label types and still be acquired together. For example, if the specified quantity for a MultiBarcode scan is four, two barcodes can be label type Code 128 and the other two can be type Code 39. </li>
+<li><strong>Multiple barcode types -</strong> Barcodes can be of multiple label types and still be acquired together. For example, if the specified quantity for a Multi-barcode scan is four, two barcodes can be label type Code 128 and the other two can be type Code 39. </li>
 
 <li><strong>Barcodes in view -</strong>If the specified number of barcodes is not initially in view of the scanner, the scanner will not decode any data. If the scanner's field of view contains a number of barcodes greater than the specified quantity, the scanner will randomly decode barcode(s) until the specified number is reached. For example, if the count is set to two and eight barcodes are in the field of view, the scanner will decode the first two barcodes it sees, returning the data in random order. <strong>Data is returned only after the specified number of barcodes is read</strong>. </li>
 
