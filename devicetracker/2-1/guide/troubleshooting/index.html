@@ -2,13 +2,16 @@
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Online Documentation for Zebra Technologies developer tools and utiltiescomp including EMDK for Android, EMDK for Xamarin, StageNow, Enterprise Browser.">
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Download Enterprise Home Screen">
-    <title>Download Enterprise Home Screen - Zebra Technologies TechDocs</title>
+    <meta title="Troubleshooting &amp; FAQ">
+    <title>Troubleshooting &amp; FAQ - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -16,7 +19,7 @@
     <link href="/css/owl.carousel.css" rel="stylesheet">
     <link href="/css/owl.transitions.css" rel="stylesheet">
     <link href="/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/main.css?version=3.2" rel="stylesheet">
     <link href="/css/responsive.css" rel="stylesheet">
     <link href="/css/prettify.css" rel="stylesheet">
     <link href="/css/bootstrap-treenav.min.css" rel="stylesheet">
@@ -25,7 +28,9 @@
     <script src="js/respond.min.js"></script>
     <![endif]--> 
 
-    <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
+  <!-- 3/1/19 - comment out per Rob  
+      <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script> 
+    -->
     <link rel="shortcut icon" href="/favicon.ico">
 <script src="/js/jquery.js"></script></head><!--/head-->
 
@@ -50,13 +55,11 @@
                 <div class="collapse navbar-collapse navbar-left">
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
-                        <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Home Screen 3.2
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-4','2-3','/ehs/3-2/guide/about')">Enterprise Home Screen 3.0</a></li>
-                          </ul>
-                        </li>                    
+                        <p class="navbar-text">
+                                            Device Tracker
+                                            2.1
+                        </p>
+
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse navbar-right">
@@ -65,43 +68,40 @@
 
 
                         <li>
-                            <a href="/ehs/3-2/guide/about">
+                            <a href="/devicetracker/2-1/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/3-2/guide/setup">
-                                    Setup
+                            <a href="/devicetracker/2-1/guide/setup">
+                                    Install &amp; Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/3-2/guide/settings">
-                                    Advanced Settings
+                            <a href="/devicetracker/2-1/guide/admin">
+                                    Admin View
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/3-2/guide/features">
-                                    Special Features
+                            <a href="/devicetracker/2-1/guide/mgmt">
+                                    Device Tracking
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/3-2/download">
-                                    <i class="fa fa-download"></i>
+                            <a href="/devicetracker/2-1/guide/config">
+                                    Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/3-2/search">
+                            <a href="/devicetracker/2-1/guide/troubleshooting">
+                                    Troubleshooting &amp; FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/devicetracker/2-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
-                        <li class="dropdown languagedropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                                <li><a onclick="changeLanguage('ehs','ehs-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
-                          </ul>
-                        </li>                    
-                        
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -113,7 +113,8 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
-<div class="container-fluid">    <section id="blog">
+<div class="container-fluid">
+    <section id="blog">
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
@@ -123,7 +124,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Download Enterprise Home Screen</strong></li>
+                            <li><strong>Troubleshooting &amp; FAQ</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -209,10 +210,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="download-enterprise-home-screen" class="anchor"><a class="heading-anchor" href="#download-enterprise-home-screen"><span></span></a>Download Enterprise Home Screen</h1>
+                                    <h1 id="troubleshooting--faq" class="anchor"><a class="heading-anchor" href="#troubleshooting--faq"><span></span></a>Troubleshooting &amp; FAQ</h1>
                                     <p>
-                                            Enterprise Home Screen
-                                            3.2
+                                            Device Tracker
+                                            2.1
                                     </p>
                                 </div>
                             </section>                    
@@ -225,41 +226,72 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h3 id="ehs32compatibilitynotes" class="anchor"><a class="heading-anchor" href="#ehs32compatibilitynotes"><span></span></a>EHS 3.2 Compatibility Notes</h3>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p>This section covers troubleshooting steps as well as Frequently Asked Questions.</p>
+
+<h2 id="troubleshooting" class="anchor"><a class="heading-anchor" href="#troubleshooting"><span></span></a>Troubleshooting</h2>
+
+<p>This section discusses common issues that can occur with possible solutions.</p>
+
+<h3 id="cannotloginorconnecttoserver" class="anchor"><a class="heading-anchor" href="#cannotloginorconnecttoserver"><span></span></a>Cannot login or connect to server</h3>
+
+<p>Possible causes:</p>
 
 <ul>
-<li><strong>Supports Oreo and Pie on <a href="../guide/about#supporteddevices">supported devices</a> only</strong>. </li>
+<li><p><strong>No communication between the server and web portal.</strong> Verify there is communication between the server and web portal by checking whether an endpoint is accessible through the browser. This is accomplished by appending a single endpoint to the server URL. For example: <code>https://name.company.com:8081/zdvc/dtrk/admindevops/getDeviceStatisticsSummary</code>, where endpoint <code>/zdvc/dtrk/admindevops/getDeviceStatisticsSummary</code> is appended to server URL <code>https://name.company.com:8081</code>.
+Sample result string:
+<br>
+<br>
+<i>
+{"neverConnected":43,"outOfService":8,"connected":16,"disconnected":276,"normal":254,"toBeFound":6,"findInProgress":14,"deviceFound":14,
+"charging":84,"batteryLow":37,"devicesTracked":335,"cannotFindDevice":2}
+</i>
+<br>
+<br>
+If the endpoint is not accessible, there is no communication between the server and web portal.  Verify that the server is running. It is possible that the certificate is invalid. </p></li>
 
-<li><strong>No longer supports devices running Android 7.x Nougat</strong>. </li>
-
-<li>Download package includes a single .apk file: 
-
-
-<ul>
-<li><code>EHS_xxxxxx.apk</code> - for all devices running Oreo and Pie <strong><em>including</em> TC20/TC25</strong></li></ul>
-</li>
+<li><p><strong>Incorrect server ports.</strong> The ports specified during <a href="../setup#serverinstallation">server installation</a> must match the ports specified in files <strong>.env</strong> (from default folder: /Program Files/Zebra Technologies/ZDVC/WebUI) and <strong>application.properties</strong> (from default folder: /Program Files/Zebra Technologies/ZDVC/BackendServer/config). </p></li>
 </ul>
 
-<blockquote>
-  <p><strong>ABOUT OREO UPGRADES</strong>: If the operating system on a device (except TC20/TC25) is being upgraded to Android 8.1 Oreo from Marshmallow or Nougat, <strong><u>the previous EHS installation must be removed before the new version of EHS is installed</u></strong>. Follow instructions to <a href="../guide/setup#uninstallation">uninstall EHS</a> before installing EHS on an Oreo device. <br><br><strong>Note</strong>: Prior configuration settings, if any, are re-applied automatically.</p>
-</blockquote>
+<h3 id="cannotimportcsvfileforaccesspointordevicedata" class="anchor"><a class="heading-anchor" href="#cannotimportcsvfileforaccesspointordevicedata"><span></span></a>Cannot import .csv file for access point or device data</h3>
 
-<h3 id="downloadehs" class="anchor"><a class="heading-anchor" href="#downloadehs"><span></span></a>Download EHS</h3>
+<p>Make sure to have write permissions to the ZDVC folder and subfolders.
+<br>
+<br></p>
 
-<p>Visit the <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/enterprise-home-screen.html">Enterprise Home Screen download page</a> to select a version for download. </p>
+<h2 id="faq" class="anchor"><a class="heading-anchor" href="#faq"><span></span></a>FAQ</h2>
 
-<p>After download, proceed to the <a href="../guide/setup">EHS Setup page</a>. </p>
+<p>Frequently Asked Questions:</p>
 
-<h3 id="legacyandroidsupport" class="anchor"><a class="heading-anchor" href="#legacyandroidsupport"><span></span></a>Legacy Android Support</h3>
+<h3 id="howdoideleteentries" class="anchor"><a class="heading-anchor" href="#howdoideleteentries"><span></span></a>How do I delete entries?</h3>
+
+<p>Currently there is no ability to delete device entries from the <a href="../admin">admin view</a>. Device records can be set to <strong><a href="../admin">out of service</a></strong>, preventing them from being displayed the main dashboard. Alternatively, a <a href="../admin#organizedevices">tag can be added</a> to the device to aid in categorization.</p>
+
+<h3 id="caniuseaselfsignedcertificate" class="anchor"><a class="heading-anchor" href="#caniuseaselfsignedcertificate"><span></span></a>Can I use a self-signed certificate?</h3>
+
+<p>An SSL Certificate is required from a third-party certificate authority (CA), such as Verisign or Thawte. Any self-signed certificate or one issued by a non third-party CA will not work. The .pfx certificate must contain the complete certificate chain, including intermediate certificates.</p>
+
+<h3 id="whatarethelogincredentialsrequiredtousedevicetracker" class="anchor"><a class="heading-anchor" href="#whatarethelogincredentialsrequiredtousedevicetracker"><span></span></a>What are the login credentials required to use Device Tracker?</h3>
+
+<p><strong>Web portal:</strong> To access the web portal, enter the server URL in the browser based on your <a href="../setup#serverinstallation">installation</a>, for example: <code>https://name.company.com:8443/zdvc</code>, where "name.company.com:8443" is replaced with the appropriate domain and port number. The default super administrator user name is <strong>SAdmin</strong>. The password is the <strong>SuperAdmin and DB Password</strong> entered during <a href="../setup#serverinstallation">server installation</a>. <a href="../admin#manageusers">Additional users can be added</a> based on Admin, Manager, and User roles.</p>
+
+<p><strong>Client devices:</strong> Devices must be configured with the Server URL, Server Auth Key, and Server Auth Password set during <a href="../setup#serverinstallation">server installation</a>.</p>
+
+<h2 id="br" class="anchor"><a class="heading-anchor" href="#br"><span></span></a><br></h2>
+
+<h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
 <ul>
-<li><strong>For Nougat support</strong>, see the <a href="/ehs/3-1/download">EHS 3.1 download page</a>.</li>
+<li><a href="../about">About Device Tracker</a></li>
 
-<li><strong>For Marshmallow support</strong>, see the <a href="/ehs/3-0/download">EHS 3.0 download page</a>.</li>
+<li><a href="../setup">Install &amp; Setup</a></li>
 
-<li><strong>For Lollipop support</strong>, see the <a href="/ehs/2-8/download">EHS 2.8 download page</a>. </li>
+<li><a href="../admin">Admin View</a></li>
 
-<li><strong>For KitKat support</strong>, see the <a href="/ehs/2-6/download">EHS 2.6 download page</a>. </li>
+<li><a href="../mgmt">Device Tracking</a></li>
+
+<li><a href="../config">Configuration</a></li>
 </ul><p></p>
                                         
 
@@ -294,10 +326,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                            ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
                     </div>
-    <!-- 10/17/18- remove navbar fixed class, social icons
                     <div class="col-sm-2">
+                        <!--
                         <ul class="social-icons">
                             <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
@@ -305,8 +337,9 @@
                             <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>
+                        -->
                     </div>
-     -->            </div>
+                </div>
             </div>
         </footer><!--/#footer-->
     <script src="/js/bootstrap.min.js"></script>
@@ -342,6 +375,7 @@
 
 </script> 
 
+<!-- 3/1/19 - comment out per Rob
 <script>
     ChatraID = 'QDvZ76min4DhLW5vJ';
     (function(d, w, c) {
@@ -356,6 +390,7 @@
         n.parentNode.insertBefore(s, n);
     })(document, window, 'Chatra');
 </script>         
+-->
 
 
 </body></html>
