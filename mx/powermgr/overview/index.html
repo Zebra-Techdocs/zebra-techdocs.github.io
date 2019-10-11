@@ -2,7 +2,7 @@
 
         <p>The Power Manager (PowerMgr) allows an app to perform certain OS- and power-related actions on the device. These include rebooting or performing an OS update, resetting the device to a factory-fresh state or putting the device into Sleep mode. On some devices, such as the VC80x vehicle-mounted computer and similarly equipped Zebra devices, PowerMgr also can control device heaters and perform actions based on ignition status of vehicle-mounted computers and similarly equipped Zebra devices. PowerMgr performs only actions; it currently supports no queries other than to determine the version of the CSP that implements PowerMgr itself.</p>
 
-<p><strong>It's important to note that PowerMgr actions such as Reboot and Reset, once executed, prevent the execution of subsequent actions submitted by the Request XML document</strong>, including the submission of a Result XML to the application sending the original Request. Zebra therefore recommends using <a href="../conditionmgr">Condition Manager</a> in conjunction with PowerMgr to ensure that appropriate conditions exist on a device before attempting to perform "risky" operations such as OS updates, the failure of which can render a device unusable, severely limited or otherwise in need of service.</p>
+<p><strong>It's important to note that PowerMgr actions such as Reboot and Reset, once executed, prevent the execution of subsequent actions submitted by the Request XML document</strong>, including the submission of a Result XML to the application sending the original Request. Zebra therefore recommends using <a href="/mx/conditionmgr">Condition Manager</a> in conjunction with PowerMgr to ensure that appropriate conditions exist on a device before attempting to perform "risky" operations such as OS updates, the failure of which can render a device unusable, severely limited or otherwise in need of service.</p>
 
 <h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
 
@@ -11,7 +11,7 @@
 
 <li>Update, upgrade or downgrade the OS on a device</li>
 
-<li>Supress reboot following an OS upgrade or downgrade</li>
+<li>Suppress reboot following an OS upgrade or downgrade</li>
 
 <li>Put a device into Sleep Mode</li>
 
@@ -27,13 +27,22 @@
 
 <li>Perform multiple updates in a single step</li>
 
-<li>Enable/disable Doze Mode</li>
+<li>Enable/disable: 
 
-<li>Enable/disable Wake-up Sources</li>
 
-<li>Enable/disable keyboard heater on VC8300 devices. </li>
+<ul>
+<li>Doze Mode</li>
 
-<li>Enable/disable scanner-window heater on MC93 devices. </li>
+<li>Wake-up methods (hardware or software)</li>
+
+<li>Wake-up sources (device buttons)</li>
+
+<li>Individual buttons to wake device  </li>
+
+<li>Keyboard heater on VC8300 devices</li>
+
+<li>Scanner-window heater on MC93 devices. </li></ul>
+</li>
 
 <li><strong>On the VC80x vehicle-mounted computer and similarly equipped Zebra devices</strong>: 
 
@@ -45,7 +54,7 @@
 
 <li>Set temperature thresholds (in degrees Celsius) for turning heaters on and off</li>
 
-<li>Set the device to automatically turn on and/or off with the vehicle-mounted computer and similarly equipped Zebra devices ignition switch</li>
+<li>Set the device to automatically turn on and/or off vehicle-mounted computers along with vehicle ignition switch</li>
 
 <li>Set a delay (in minutes) for device auto-off</li></ul>
 </li>
