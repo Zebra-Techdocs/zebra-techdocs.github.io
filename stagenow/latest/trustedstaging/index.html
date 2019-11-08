@@ -54,13 +54,13 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 3.4
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 4.0
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-4','2-2','/stagenow/2-2/about')">StageNow 2.2</a></li>
-                                <li><a onclick="changeVersion('3-4','2-3','/stagenow/2-3/about')">StageNow 2.3</a></li>
-                                <li><a onclick="changeVersion('3-4','2-4','/stagenow/2-4/about')">StageNow 2.4</a></li>
-                                <li><a onclick="changeVersion('3-4','2-5','/stagenow/2-5/about')">StageNow 2.5</a></li>
+                                <li><a onclick="changeVersion('4-0','2-2','/stagenow/2-2/about')">StageNow 2.2</a></li>
+                                <li><a onclick="changeVersion('4-0','2-3','/stagenow/2-3/about')">StageNow 2.3</a></li>
+                                <li><a onclick="changeVersion('4-0','2-4','/stagenow/2-4/about')">StageNow 2.4</a></li>
+                                <li><a onclick="changeVersion('4-0','2-5','/stagenow/2-5/about')">StageNow 2.5</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -71,52 +71,52 @@
 
 
                         <li>
-                            <a href="/stagenow/3-4/about">
+                            <a href="/stagenow/4-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/gettingstarted">
+                            <a href="/stagenow/4-0/gettingstarted">
                                     Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/installing">
+                            <a href="/stagenow/4-0/installing">
                                     Install
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/stagingprofiles">
+                            <a href="/stagenow/4-0/stagingprofiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/ProfileWizards">
+                            <a href="/stagenow/4-0/ProfileWizards">
                                     Wizards
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/settingconfig">
+                            <a href="/stagenow/4-0/settingconfig">
                                     Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/settingtypes">
+                            <a href="/stagenow/4-0/settingtypes">
                                     Setting Types
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/stageclient">
+                            <a href="/stagenow/4-0/stageclient">
                                     Staging
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/troubleshooting">
+                            <a href="/stagenow/4-0/troubleshooting">
                                     Troubleshoot
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/download">
+                            <a href="/stagenow/4-0/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
@@ -126,7 +126,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/3-4/search">
+                            <a href="/stagenow/4-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -249,7 +249,7 @@
                                     <h1 id="trusted-staging" class="anchor"><a class="heading-anchor" href="#trusted-staging"><span></span></a>Trusted Staging</h1>
                                     <p>
                                             StageNow
-                                            3.4
+                                            4.0
                                     </p>
                                 </div>
                             </section>                    
@@ -262,314 +262,232 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="introduction" class="anchor"><a class="heading-anchor" href="#introduction"><span></span></a>Introduction</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>StageNow 3.4 (and higher) implements the concept of trusted staging, under which:</p>
+<p><strong>StageNow 4.0 (and higher) supports Trusted Staging</strong>, which can protect devices with MX 9.2 and higher from unauthorized staging. Trusted devices are created from a security certificate. Once a certificate is used to create a trusted device, the device can be staged only from barcodes created using the same security certificate.</p>
+
+<h4 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements:</h4>
 
 <ul>
-<li>Trusted devices are created from a security certificate</li>
+<li>StageNow 4.0 (or higher) installed</li>
 
-<li>Once a certificate is used to create a trusted device, the device can be staged only from barcodes created using the same security certificate. </li>
+<li>Zebra device(s) with MX 9.2 or higher</li>
+
+<li>Self-signed security "Trusted Certificate" (<code>.pfx</code> file)</li>
 </ul>
 
-<h2 id="underconstruction" class="anchor"><a class="heading-anchor" href="#underconstruction"><span></span></a><code>UNDER CONSTRUCTION</code></h2>
+<h4 id="processsnapshot" class="anchor"><a class="heading-anchor" href="#processsnapshot"><span></span></a>Process Snapshot:</h4>
 
-<!-- 
-This section describes how to use the StageNow desktop and client apps to select and process a StageNow barcode, audio file or NFC tag. This process configures target device(s) as desired for an organization and/or persists a settings Profile on the device(s) for later consumption (following an Enterprise Reset, for example). This guide is applicable **<u>after</u> one or more [Profiles](../Profiles) have been created**. 
+<ol>
+<li>Create a Trusted Certificate <code>.pfx</code> file </li>
 
-**NOTE**: Some older target devices come with the Rapid Deployment Client instead of StageNow. This client can be used to upgrade to StageNow, but older OS versions might provide reduced capabilities. For more information, see the [Rapid Deployment Client section](#rapiddeploymentclient) later in this guide. 
+<li>Import the Trusted Certificate into StageNow</li>
 
------
+<li>Deploy the Trusted Certificate to device(s) to make them Trusted Device(s)<br> 
+<code>NOTES:</code><br>
+•&nbsp;This activates Trusted Staging on target device(s)<br>
+•&nbsp;Such device(s) no longer accept standard ("untrusted") Profiles</li>
 
-## I. Select a Staging Profile
+<li>Create Trusted Profile(s) for use on Trusted Device(s)</li>
+</ol>
+
+<hr>
 
-**To select a profile with which to stage the device**:
+<h2 id="createatrusteddevice" class="anchor"><a class="heading-anchor" href="#createatrusteddevice"><span></span></a>Create a Trusted Device</h2>
+
+<h3 id="iimportcertificate" class="anchor"><a class="heading-anchor" href="#iimportcertificate"><span></span></a>I. Import Certificate</h3>
 
-1. On the host computer, select the StageNow icon from the Start menu to open the Workstation Tool. The Staging Operator home screen appears. See [Home Screen](../gettingstarted?Home%20Screen) for field descriptions.
+<blockquote>
+  <p><strong><em>This process requires StageNow to be running in admin mode</em></strong>. </p>
+</blockquote>
 
-  <img alt="image" style="height:350px" src="../images/operator_home2.jpg"/>
+<h4 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also see:</h4>
 
-2. Select a profile with which to stage the device(s).
+<p><a href="https://techdocs.zebra.com/enterprise-browser/latest/guide/certificates/">How to create a self-signed certificate</a></p>
 
------
+<ol>
+<li>From the StageNow Home screen, <strong>click the "Trusted Certificates" button</strong>: 
+<img alt="image" style="height:350px" src="SN4_01.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-## II. Select Staging Medium
+<li>From the Trusted Certificates page, <strong>select a previously imported certificate</strong> from the list and skip to Step 5.<br> <strong>To import a new certificate, click the "Import Certificate" button</strong>: <br>
+<img alt="image" style="height:350px" src="SN4_12.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-### Barcode, Audio or NFC Staging 
-This method of staging writes the configuration information from the selected profile into barcodes, audio files or NFC tags. Staging is initiated when the output is read (or heard) by the client device(s). 
+<li><strong>Navigate to the</strong> <code>.pfx</code> <strong>file being imported</strong>:
+<img alt="image" style="height:350px" src="SN4_03.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-1. Select the desired medium (Barcode, Audio or NFC) tab:
+<li><strong>Confirm that the imported file appears</strong> in the list of Trusted Certificates similar to the image below.<br>
+<strong>NOTE</strong>: When imported, the <code>.pfx</code> file is encrypted and given a <code>.cer</code> file extension.
+<img alt="image" style="height:350px" src="SN4_04.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-    <img alt="image" style="height:350px" src="../images/operator2.jpg"/>
+<li><strong>Create a staging profile that pushes the certificate to the device(s)</strong> to become Trusted (next section).</li>
+</ol>
+
+<hr>
 
-2. **Optional**: In the "My Comments" field, enter comments or special instructions to be displayed to the staging operator when staging begins. 
+<h3 id="iideploycertificatetodevices" class="anchor"><a class="heading-anchor" href="#iideploycertificatetodevices"><span></span></a>II. Deploy Certificate to Device(s)</h3>
 
-3. Select the desired output type (if applicable) or choose "Select All" to select all supported output types.
+<ol>
+<li>From the Home screen, <strong>click the Create new Profile button</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy01.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-4. Select Stage to generate a PDF of the staging material.
+<li><strong>Select "Xpert Mode" and the click "Create" button</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy02.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-        <img alt="image" style="height:350px" src=""/>
-    <img alt="image" style="height:350px" src="../images/operator3.jpg"/>
+<li><strong>Enter a name</strong> for the deployment profile and <strong>click the "Start" button</strong>: <br>
+<img alt="image" style="height:450px" src="SN4_deploy03.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-### Selecting an Audio File for Staging
-This method of staging writes the configuration information from the selected profile into an audio file. Play the audio file in the vicinity of the client devices in order to initiate staging on these devices. 
+<li><strong>Click the plus (+) sign</strong> on the "Batch" CSP line and <strong>click the "Add" button</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy04.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-1. Select the Audio tab. If this is the first time using this feature, a tour provides help screens that specify technical and environmental requirements for audio staging. 
+<li><strong>Select "Turn On Trusted Mode"</strong> from the drop-down menu:
+<img alt="image" style="height:450px" src="SN4_deploy06.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-2. Progress through the instruction screens and select DONE to dismiss the tour.
+<li><strong>Click the Navigation button</strong> to bring up an "Open" dialog (shown in Step 7):
+<img alt="image" style="height:450px" src="SN4_deploy07.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-    <img alt="image" style="height:350px" src="../images/operator2b.jpg"/>
+<li><strong>Navigate to and select the certificate file</strong> (imported in Section I, Step 4) and <strong>click the "Open" button</strong>:<br>
+<strong>NOTE</strong>: When imported, the <code>.pfx</code> file is encrypted and given a <code>.cer</code> file extension.
+<img alt="image" style="height:450px" src="SN4_deploy08.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-3. Select Play Audio to play the audio staging material in order to stage the devices. See [Audio Staging](../stageclient?Audio%20Staging) for information on preparing the client to receive the audio file.
+<li>Confirm that the <code>.cer</code> file appears and <strong>click the "Continue" button</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy07a.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-    <img alt="image" style="height:350px" src="../images/operator3b.jpg"/>
+<li><strong>Select "Encrypted" from the drop-down menu</strong> as shown and <strong>click the "Complete Profiles" button</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy09.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-If desired, select the Download icon to download the audio file to the host computer.
+<li><strong>Select the desired barcode type</strong> for the staging client and <strong>click the "Test" button</strong> to generate barcodes: 
+<img alt="image" style="height:450px" src="SN4_deploy10.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
+
+<li><strong><u>Use the device(s) to be made Trusted</u> to scan the barcodes and deploy the certificate</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy11.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
+</ol>
 
-    <img alt="image" style="height:350px" src="../images/operator4b.jpg"/>
+<blockquote>
+  <p><code>IMPORTANT:</code> All devices that scan barcodes generated this way become "Trusted Devices" and can no longer be staged with standard "untrusted" staging Profiles; <u>they can be staged ONLY with Trusted Profiles created using the same certificate as was deployed to the device(s)</u>. </p>
+</blockquote>
 
-Navigate to the folder in which to place the audio file and select Save.
+<hr>
 
------
+<h3 id="iiicreatetrustedstagingprofile" class="anchor"><a class="heading-anchor" href="#iiicreatetrustedstagingprofile"><span></span></a>III. Create Trusted Staging Profile</h3>
 
-## III. Stage the Device(s)
+<p><strong>Trusted Profiles are the same as standard ("untrusted") Profiles <u>with one important exception</u></strong>: The final step adds a "Trusted" designation and requires selection of a security certificate. </p>
 
-On the target device, tap on the StageNow icon to launch the StageNow Client.
+<h4 id="tocreateatrustedprofile" class="anchor"><a class="heading-anchor" href="#tocreateatrustedprofile"><span></span></a>To Create a Trusted Profile:</h4>
 
-**Note**: The StageNow Client requires the DataWedge profile to read barcode data. However restoring DataWedge discards the current StageNow configuration. If StageNow cannot scan barcodes after restoring DataWedge, exit and re-launch the StageNow Client on the device.
+<ol>
+<li>From the Home screen, <strong>click the "Create new Profile" button</strong>. Before selecting a Wizard, <strong>be sure that MX 9.2 (or higher) is selected from the drop-down menu</strong>: 
+<img alt="image" style="height:450px" src="SN4_trustedProfile00.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-<img alt="image" style="height:350px" src="../images/Client_SNicon.jpg"/>
+<li>When naming, <strong>Zebra recommends selecting names that make the Profile easy to identify later</strong>: 
+<img alt="image" style="height:450px" src="SN4_trustedProfile01.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-The application lists the available staging methods.
+<li>In the final step of Profile creation, <strong>select "Trusted" from the drop-down menu</strong>: 
+<img alt="image" style="height:550px" src="SN4_trustedProfile02.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-<img alt="image" style="height:350px" src="../images/Client_Staging_Menu.jpg"/>
+<li><strong>From the the drop-down menu of certificates previously imported, <u>select the certificate that matches the one deployed to target device(s)</u></strong>: 
+<img alt="image" style="height:550px" src="SN4_trustedProfile03.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
+</ol>
 
->**Note: MC40 devices do not support NFC**.
+<p><strong>Trusted Profiles are identified in Profile lists by a green lock icon</strong> as in the sample image below: 
+  <img alt="image" style="height:450px" src="SN4_trustedProfile04.png">
+  <em>Click image to enlarge; ESC to exit</em>.<br>
+<br></p>
 
------
+<h4 id="importanttrusteddevicescanbestagedonlywithatrustedprofilethatcontainsthesamecertificateaswasdeployedtothosedevices" class="anchor"><a class="heading-anchor" href="#importanttrusteddevicescanbestagedonlywithatrustedprofilethatcontainsthesamecertificateaswasdeployedtothosedevices"><span></span></a><code>IMPORTANT:</code> Trusted Devices can be staged ONLY with a Trusted Profile that contains the same certificate as was deployed to those devices.</h4>
 
-### Barcode Staging
-To deploy the selected profile to the device through staging barcodes:
+<h4 id="seethestagingprofilesguidestagingprofilesforfurtherdetails" class="anchor"><a class="heading-anchor" href="#seethestagingprofilesguidestagingprofilesforfurtherdetails"><span></span></a>See the <a href="../stagingprofiles">Staging Profiles Guide</a> for further details.</h4>
 
-1. The Barcode Staging option is always on. Scan the barcode(s) printed from the StageNow Workstation Tool.
+<hr>
 
-    <img alt="image" style="height:350px" src="../images/Client_StageBarcode2.jpg"/>
+<h2 id="turnofftrustedmode" class="anchor"><a class="heading-anchor" href="#turnofftrustedmode"><span></span></a>Turn Off Trusted Mode</h2>
 
-2. The screen indicates the barcodes scanned via a check mark, and the barcodes left to scan. Continue scanning all staging barcodes. Upon successful deployment, the device displays the following screen:
+<p>If it becomes necessary to remove a device from Trusted Mode, simply create a Trusted Profile and select "Turn Off Trusted Mode" using the Batch CSP. Details are below. </p>
 
-  <img alt="image" style="height:350px" src="../images/Client_StageBarcode_Success.jpg"/>
+<h4 id="tocreateatrustedprofileturningofftrustedmode" class="anchor"><a class="heading-anchor" href="#tocreateatrustedprofileturningofftrustedmode"><span></span></a>To create a Trusted Profile turning off Trusted Mode:</h4>
 
-3. If errors occur during deployment, the pop-up shown below is displayed. Select "Yes" to view logs for troubleshooting. 
+<ol>
+<li>From the Home screen, <strong>click the Create new Profile button</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy01.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-  <img alt="image" style="height:350px" src="../images/stagingfailed.png"/>
+<li><strong>Select "Xpert Mode" and the click "Create" button</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy02.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
------
+<li><strong>Enter a name</strong> for the deployment profile and <strong>click the "Start" button</strong>: <br>
+<img alt="image" style="height:450px" src="SN4_trustedModeOff01.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-### Audio Staging
+<li><strong>Click the plus (+) sign</strong> on the "Batch" CSP line and <strong>click the "Add" button</strong>: 
+<img alt="image" style="height:450px" src="SN4_deploy04.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-**NOTE: Audio staging is NOT supported on Zebra's SDM660-platform devices, which currently includes**:
-* PS20
-* TC52
-* TC57
-* TC72
-* TC77
+<li><strong>Select "Turn Off Trusted Mode"</strong> from the drop-down menu and <strong>click the "Continue" button</strong>:
+<img alt="image" style="height:450px" src="SN4_trustedModeOff02.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-**To deploy the selected profile to the device via an audio file**:
+<li><strong>Select "Trusted"</strong> from the drop-down menu, <br> select the same certificate file used to put the device into Trusted Mode from its drop-down menu and <br><strong>click the "Complete Profiles" button</strong>:
+<img alt="image" style="height:450px" src="SN4_trustedModeOff04.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-1. On the client devices being staged, set the Audio Staging option to On.
+<li><strong>Select the desired barcode type</strong> for the staging client and <strong>click the "Test" button</strong> to generate barcodes:
+<img alt="image" style="height:450px" src="SN4_trustedModeOff05.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-    <img alt="image" style="height:350px" src="../images/Client_Staging_Menu.jpg"/>
+<li><strong><u>Use the device(s) to be removed from Trusted Mode</u> to scan the barcodes</strong>:
+<img alt="image" style="height:450px" src="SN4_trustedModeOff06.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
+</ol>
 
-2. Place the devices near the speaker of the host computer that will play the audio .wav file. 
+<p><strong>The device is now removed from Trusted Mode and can be staged using ordinary staging Profiles</strong>. </p>
 
-**Note: For best results** use an external speaker in a quiet environment and ensure that there are no obstructions between the speaker and the devices.
-
-3. Play the audio `.wav` file to initiate staging on the devices.
-
-    <img alt="image" style="height:350px" src="../images/Client_Audio.jpg"/>
-
-The client attempts up to 5 times to stage. If staging does not occur after the fifth attempt, there is an error in audio transmission and the following error pop-up appears. Select Cancel to cancel staging, Try Again to continue the staging attempts, or Help for audio staging tips.
-
-  <img alt="image" style="height:350px" src="../images/Client_Audio_Failure.jpg"/>
-
-Upon successful deployment, the device displays the success screen.
-
-If errors occur during deployment, the following pop-up appears. Select Yes to view Logs for troubleshooting.
-
-  <img alt="image" style="height:350px" src="../images/Client_Audio_Error.jpg"/>
-
------
-
-### NFC Staging
-
-To set up for NFC staging, the StageNow Workstation tool is used to create a `.bin` file that contains the staging instructions. The file is written to an NFC tag using the StageNow Writer app for Android. Once created, the NFC tag can then be read by the StageNow Client app running on an Android device equipped with an NFC reader. 
-
-**Note**: The `.bin` file used for NFC staging also can be used to stage from a USB drive or SD card on devices that are not NFC-equipped. [Learn more](../stagingprofiles/#usbandsdcardprofilestaging). 
-
-#### Requirements
-* **To perform NFC staging**: 
- * Zebra device equipped with NFC reader
- * NFC tag containing staging instructions (`.bin` file)
-* **To create NFC tags**:
- * [StageNow Workstation](../download) (Windows app)
- * StageNow Client (Android app; pre-installed on Zebra devices)
- * [StageNow NFC Writer](https://play.google.com/store/apps/details?id=com.zebra.ses.nfcwriter&hl=en_US) 1.3.5 or later (Android app)
-
-#### **NFC tag support**
-The current version of StageNow supports the following NFC tag specifications: 
-* ISO 15693:
- * TI Tag-it HF-1 Plus
- * TI Tag-it TI2048
- * NXP ICode SLIX
-* ISO 14443:
- * MIFARE Classic 4K
-* ISO/IEC 18092:
- * FeliCa RC-S965
-
-#### To create an NFC tag: 
-
-1. **Copy the** `.bin` **file to the root of the internal SD card** on an NFC-equipped device:<br>
-    <img alt="image" style="height:350px" src="../images/NFC staging Image3.png"/>
-  _The sample `.bin` file is called "clockset" in the example above_.<br>  
-2. In the StageNow NFC Writer app on the device, **navigate to and tap the** `.bin` **file** copied in Step 1.<br>
-  A screen similar to the image below appears (the "clockset" sample file is shown):
-    <img alt="image" style="height:350px" src="../images/NFC staging Image4.png"/><br>
-3. When the app displays the “Approach Tag” prompt, **touch the device to the target tag**.<br>
-  Writing begins automatically, sometimes displaying a percentage of completion (depending on tag format):
-    <img alt="image" style="height:350px" src="../images/NFC staging Image5.png"/><br>
-5. **Writing is complete when "Tag written successfully" appears**: 
-    <img alt="image" style="height:350px" src="../images/NFC staging Image6.png"/><br>
-
-#### NFC tag writing is complete.  
-
-For more information about creating `.bin` files, see the [Staging Profiles guide](../stagingprofiles/#nfcprofilestaging). 
-
------
-
-#### To stage a device using an NFC tag:
-
-1. On the device to be staged, open the StageNow Client and confirm that NFC Staging is enabled:
-  <img alt="image" style="height:350px" src="../images/NFC staging Image8.png"/>
-
-2. Touch the device to the fully programmed NFC tag. After a moment, the following screens appear: 
-  <img alt="image" style="height:350px" src="../images/NFC staging 9, 10, 11.png"/>
-
-3. Follow prompts to complete staging deployment. 
-
-#### NFC Staging is complete. 
-
------
-
-#### NFC Errors
-
-* If the size of `.bin` file exceeds available tag storage or another error occurs, a failure message is displayed:
-    <img alt="image" style="height:350px" src="../images/NFC staging Image7.png"/>
-
-
-* If an error occurs during deployment, a pop-up like the image below appears. Select "Yes" to view the activity log for troubleshooting.
-
-  <img alt="image" style="height:350px" src="../images/Client_NFC_Error.jpg"/>
-
------
-
-### Staging Wait Conditions
-The following pop-up screens can appear during staging, indicating the device is performing an operation and that staging will complete when it is done.
-
-#### Initializing
-
-Following a device reboot, Zebra components such as the MX Framework can require as much as two minutes to initialize and prepare for staging. If staging is initiated during this time, the StageNow Client indicates displays a pop-up similar to the image below: 
-
-  <img alt="image" style="height:350px" src="../images/initializing_popup.png"/>
-
-#### Acquiring IP
-
-A delay can sometimes occur if staging requires an IP address, such as during "scan-and-dock," when the operator scans a barcode and places the device in an Ethernet cradle. Staging pauses until the device acquires the IP address and performs network operations such as downloading a file from the StageNow staging server. under such scenarios, a pop-up appears similar to the image below:
-
-  <img alt="image" style="height:350px" src="../images/acquiring_ip_popup.png"/>
-
-#### Downloading
-
-The pop-up shown below indicates that the client is processing a staging profile that contains a command to download content from a staging server. This often indicates an OS update package.
-
-  <img alt="image" style="height:350px" src="../images/file_download.png"/>
-
------
-
-## StageNow Client Menu
-In the StageNow application, select the three vertical dots at the top right of the window to open the StageNow menu.
-
-  <img alt="image" style="height:350px" src="../images/Client_Menu.jpg"/>
-
-### Last Staging Error
-If staging fails, a screen similar to the image below appears. To troubleshoot, review the log to determine the cause of the error by selecting "Yes" from the staging failure screen. To view the log later, select "Last Staging Error" from the StageNow Client menu. 
-
-  <img alt="image" style="height:350px" src="../images/Client_StageBarcode_LogSettings_View.jpg"/>
-
-**HINT**: To identify the error(s) in the log, refer to the characteristic-error or parm-error in the log contents.
-
->**Note**: The Last Staging Error screen displays content only if there are errors in the staging operation. If the staging operation is successful, this screen is empty.
-
-### Log Path
-
-To configure the log file path, select the menu icon and select Log Path. 
-
-  <img alt="image" style="height:350px" src="../images/Client_LogPath.jpg"/>
-
-The Log Path window opens.
-
-  <img alt="image" style="height:350px" src="../images/Client_LogPath_window.jpg"/>
-
-Enter the new path and select Done to update the path, or cancel to retain the existing path.
-
-### View Client Info
-Select View Client Info to view software version information for the device.
-
-  <img alt="image" style="height:350px" src="../images/viewclientinfo.jpg"/>
-
-Use this screen to determine whether your device has full or partial StageNow feature functionality.
-
-* Full Functionality - the OSx Version is the same as the MXMF Version.
-
-* Partial Functionality - the OSx Version is less than the MXMF Version. See the Feature Compatibility section of the specific [Setting Types](../CSPreference) to determine if your device supports that feature.
-
-* No Functionality - no OSx Version.
-
-### Audio Staging Help
-**NOTE: Audio staging is NOT supported on Zebra's "SD660-platform" devices, which currently includes**:
-* PS20
-* TC52
-* TC57
-* TC72
-* TC77
-
-Select Audio Staging Help for tips for successful audio staging.
-Select Dismiss on any screen to dismiss the help.
-
-  <img alt="image" style="height:350px" src="../images/AudioHelp1.jpg"/>
-
-  <img alt="image" style="height:350px" src="../images/AudioHelp2.jpg"/>
-
-  <img alt="image" style="height:350px" src="../images/AudioHelp3.jpg"/>
-
------
-
-## Rapid Deployment Client
-
-Devices running Jelly Bean and some running older versions of KitKat include the Rapid Deployment (RD) Client instead of StageNow. Such devices can scan a StageNow-generated barcode with the RD Client. This initiates a network connection for installing MX and the StageNow Client on the device and launches StageNow and the specified settings Profile. However, older OS versions might reduce available device functions and/or StageNow features.
-
-Specifically, to stage a device that includes RD Client:
-
-1. The administrator uses the StageNow Workstation Tool to generate RD or StageNow profile barcode(s).
-
-2. The operator uses the device to scan the barcode(s). This downloads and installs other device components, including the MX Framework and the StageNow Client.
-
-3. The device reboots, and the StageNow Client automatically launches and applies Profile settings to complete the staging process. 
-
->Note:  
->This SD Client staging process does not apply to re-branded devices.
-
-  <img alt="image" style="height:350px" src="../images/Client_RDclient.png"/>
- --><p></p>
+<hr><p></p>
                                         
 
 
