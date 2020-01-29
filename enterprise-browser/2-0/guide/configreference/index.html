@@ -71,7 +71,7 @@
                         </li>
                         <li>
                             <a href="/enterprise-browser/2-0/guide/gettingstarted/">
-                                    Getting Started
+                                    Start Here
                             </a>
                         </li>
                         <li>
@@ -91,12 +91,12 @@
                         </li>
                         <li>
                             <a href="/enterprise-browser/2-0/guide/licensing">
-                                    Licensing
+                                    License
                             </a>
                         </li>
                         <li>
                             <a href="/enterprise-browser/2-0/guide/migration">
-                                    Migration
+                                    Migrate
                             </a>
                         </li>
                         <li>
@@ -253,6 +253,26 @@
 <p>Runtime configuration settings of Enterprise Browser apps are managed through the <code>Config.xml</code> file, a required file that must accompany every EB app. The <code>Config.xml</code> determines features and behavior of the EB runtime, including its start-up page, keys that can be intercepted by an app, and whether to pre-load modules on startup. A default configuration file is provided as part of the Enterprise Browser installation, and contains some (though not all) of the most common settings. </p>
 
 <p>The default <code>Config.xml</code> file for Android devices is displayed below, followed by explanations of all tags and parameter settings for Android and Windows Mobile/CE. The EB <code>Config.xml</code> can be edited with an ordinary text editor or with the <a href="../ConfigEditor">Config Editor utility</a> included with the installation of Enterprise Browser 1.3 and higher. </p>
+
+<h3 id="important" class="anchor"><a class="heading-anchor" href="#important"><span></span></a><code>IMPORTANT:</code></h3>
+
+<blockquote>
+  <p>Some device EB settings parameters are executed through the <a href="https://techdocs.zebra.com/mx/overview/">MX Framework</a>, Zebra's device management layer. If an EB app containing such parameters is executed immediately after a device is booted, some or all of the instructions could fail if the MX Framework isn't ready in time to receive them. To prevent such failures, <strong><u>Zebra recommends waiting 20 seconds after a device starts up before launching any EB app</u></strong> that contains one or more of the configuration parameters listed below. </p>
+</blockquote>
+
+<h4 id="mxbasedconfigparameters" class="anchor"><a class="heading-anchor" href="#mxbasedconfigparameters"><span></span></a>MX-based Config Parameters:</h4>
+
+<ul>
+<li><a href="#hidesystembar">HideSystemBar</a></li>
+
+<li><a href="#sethomekeydisable">setHomeKeyDisable</a></li>
+
+<li><a href="#setstatusbardisable">setStatusBarDisable</a></li>
+
+<li><a href="#setbackkeydisable">setBackKeyDisable</a></li>
+
+<li><a href="#setrecentappdisable">setRecentAppDisable</a></li>
+</ul>
 
 <hr>
 
@@ -661,6 +681,10 @@ EnterpriseBrowser_v0.30.10.18 Configuration file
 <h3 id="hidesystembar" class="anchor"><a class="heading-anchor" href="#hidesystembar"><span></span></a>HideSystemBar</h3>
 
 <p><strong>On the Zebra MC18 devices, applies only when running Android Lollipop or later. On other devices, applies only when running MX 7.1 or later and OSX 6.2 or later</strong>. Controls whether the System bar (also known as the Navigation bar, which contains HOME, BACK and RECENT buttons) is displayed within the Enterprise Browser app. <strong>Disabled by default</strong> (System bar is displayed). <a href="http://techdocs.zebra.com/mx/mx-version-on-device/">Which MX/OSX is installed?</a></p>
+
+<blockquote>
+  <p><code>IMPORTANT:</code> Zebra recommends waiting 20 seconds after a device starts up before launching an EB app containing this parameter. <a href="#important">Why?</a></p>
+</blockquote>
 
 <p><strong>Possible values</strong>:</p>
 
@@ -1103,6 +1127,10 @@ from eng:
 
 <p><strong>Applies to Android devices with MX 4.3 and higher OSX 1.0 and higher.</strong> Designed as an enhancement to the Kiosk Mode feature of Lollipop, this parameter disables the HOME key, which could otherwise quit the kiosk application and bring up the Android Launcher. <strong>Disabled by default</strong> (HOME key is active). <a href="http://techdocs.zebra.com/mx/mx-version-on-device/">Which MX/OSX is installed?</a></p>
 
+<blockquote>
+  <p><code>IMPORTANT:</code> Zebra recommends waiting 20 seconds after a device starts up before launching an EB app containing this parameter. <a href="#important">Why?</a></p>
+</blockquote>
+
 <p><strong>Possible Values</strong>:</p>
 
 <ul>
@@ -1123,6 +1151,10 @@ from eng:
 
 <p><strong>Applies to Android devices with MX 5.1 and higher OSX 5.1 and higher.</strong> Designed as an enhancement to the Kiosk Mode feature of Lollipop, this parameter can disable the Android Status Bar, which could otherwise allow a user to launch another app or activity, effectively quitting the kiosk app. <strong>Disabled by default</strong> (Status Bar is active). <a href="http://techdocs.zebra.com/mx/mx-version-on-device/">Which MX/OSX is installed?</a></p>
 
+<blockquote>
+  <p><code>IMPORTANT:</code> Zebra recommends waiting 20 seconds after a device starts up before launching an EB app containing this parameter. <a href="#important">Why?</a></p>
+</blockquote>
+
 <p><strong>Possible Values</strong>:</p>
 
 <ul>
@@ -1142,6 +1174,10 @@ from eng:
 <h3 id="setbackkeydisable" class="anchor"><a class="heading-anchor" href="#setbackkeydisable"><span></span></a>setBackKeyDisable</h3>
 
 <p><strong>Applies to Android devices only.</strong> Designed as an enhancement to the Kiosk Mode feature of Lollipop, this parameter can disable the BACK key, which could otherwise invoke the previously active app, activity or Android Launcher; potentially quitting the kiosk app. <strong>Disabled by default</strong> (BACK key is active).</p>
+
+<blockquote>
+  <p><code>IMPORTANT:</code> Zebra recommends waiting 20 seconds after a device starts up before launching an EB app containing this parameter. <a href="#important">Why?</a></p>
+</blockquote>
 
 <p><strong>Possible Values</strong>:</p>
 
@@ -1182,6 +1218,10 @@ from eng:
 <h3 id="setrecentappdisable" class="anchor"><a class="heading-anchor" href="#setrecentappdisable"><span></span></a>setRecentAppDisable</h3>
 
 <p><strong>Applies to Android devices only.</strong> Designed as an enhancement to the Kiosk Mode feature of Lollipop, this parameter prevents display of the Recent Apps list when the "recents" button is pressed, which could otherwise allow the user exit the current app by selecting a different app from the "recents" list. <strong>Disabled by default</strong> (Recent Apps list is displayed).</p>
+
+<blockquote>
+  <p><code>IMPORTANT:</code> Zebra recommends waiting 20 seconds after a device starts up before launching an EB app containing this parameter. <a href="#important">Why?</a></p>
+</blockquote>
 
 <p><strong>Possible Values</strong>:</p>
 
@@ -2266,7 +2306,7 @@ Controls whether Enterprise Browser history is deleted when the app is launched.
 <p><strong>Notes</strong>: </p>
 
 <ul>
-<li>Overrides rotation setting in the Android System settings panel </li>
+<li>Overrides rotation setting in the Android System Settings panel </li>
 
 <li>If this tag is missing from <code>Config.xml</code> file, app uses Android System panel setting</li>
 
@@ -2523,9 +2563,7 @@ Controls whether Enterprise Browser history is deleted when the app is launched.
 
 <h3 id="npapidirectory" class="anchor"><a class="heading-anchor" href="#npapidirectory"><span></span></a>NPAPIDirectory</h3>
 
-<p>Not applicable to the Enterprise Tablet:<br></p>
-
-<p>Path to an existing directory containing the NPAPI Plug-ins. <strong>Not applicable to the Enterprise Tablet.</strong> Case sensitive. </p>
+<p><strong>Not applicable to the Zebra Enterprise Tablet.</strong> used to specify the path to an existing device directory containing the NPAPI Plug-ins. Case sensitive. </p>
 
 <p><strong>Possible Values</strong>:</p>
 
@@ -3387,7 +3425,7 @@ Whether or not to preload the NPAPI plugin to mimic the NoSIP ActiveX object in 
 
 <h3 id="resizeonsip" class="anchor"><a class="heading-anchor" href="#resizeonsip"><span></span></a>ResizeOnSIP</h3>
 
-<p><strong>Applies only to Android and Windows Mobile</strong>. Controls window resizing when the soft input panel (SIP, or on-screen keyboard) is displayed. When enabled, the browser window will resize to accommodate the SIP, when displayed. If the SIP has been moved to the top half of the screen, the browser window will reduce in size from the top. Requires SIP module pre-load. Not compatible with Windows CE or the IE rendering engine. Not compatible with Finger Scrolling. The SIP always appears at the bottom of the screen. See also <a href="#webviewlayout">WebViewLayout</a>.</p>
+<p><strong>Applies only to full-screen apps on Android and Windows Mobile</strong>. Controls window resizing when the soft input panel (SIP, or on-screen keyboard) is displayed. When enabled, the browser window will resize to accommodate the SIP, when displayed. If the SIP has been moved to the top half of the screen, the browser window will reduce in size from the top. Requires SIP module pre-load. Not compatible with Windows CE or the IE rendering engine. Not compatible with Finger Scrolling. The SIP always appears at the bottom of the screen. See also <a href="#webviewlayout">WebViewLayout</a>.</p>
 
 <p><strong>Note: On Windows Mobile devices</strong>, screen rotation from portrait to landscape mode can sometimes cause the SIP to be hidden from view, and/or on Windows Mobile/CE to behave abnormally. To avoid this issue, Zebra recommends that the <a href="../configreference/#autorotate">AutoRotate</a> parameter for screen orientation be disabled.  </p>
 
@@ -3782,7 +3820,7 @@ For Android - If alarm.ogg file is present under '/sdcard' directory in the devi
 
 <h3 id="saveformdata" class="anchor"><a class="heading-anchor" href="#saveformdata"><span></span></a>SaveFormData</h3>
 
-<p><strong>Applies only to Android devices running KitKat  Lollipop, Marshmallow and Nougat; <u>not supported on Oreo</u></strong>. Controls whether an app will retain data entered by a user into forms, checkboxes and other input elements. <strong>Disabled by default</strong>. See also: <a href="#cookies">Cookies</a>. </p>
+<p><strong>Applies only to Android devices running KitKat  Lollipop, Marshmallow and Nougat; <u>not supported on Oreo (or higher)</u></strong>. Controls whether an app will retain data entered by a user into forms, checkboxes and other input elements. <strong>Disabled by default</strong>. See also: <a href="#cookies">Cookies</a>. </p>
 
 <ul>
 <li><strong>0 - Do not save form data (default)</strong></li>
@@ -4138,14 +4176,14 @@ Specifies a fully qualified path to the directory containing CA certificates in 
 
 <h3 id="verifypeercertificate" class="anchor"><a class="heading-anchor" href="#verifypeercertificate"><span></span></a>VerifyPeerCertificate</h3>
 
-<p>Controls whether server certificates will be verified against the internal certificates. <strong>Enabled by default</strong>. Useful for debugging, a value of 0 (disabled) is equivalent to automatically clicking ‘OK’ on a web browser’s dialog when requesting approval for an untrusted certificate. <strong>Zebra strongly recommends that this feature be enabled for deployment</strong>. </p>
+<p>Controls whether server certificates are verified against internal certificate(s). <strong>Enabled by default</strong>. Entering a value of 0 (disabled) is equivalent to automatically clicking "OK" on a web browser’s dialog when requesting approval for an untrusted certificate. <strong>This attribute must be enabled to ensure maximum security in deployed devices</strong>. Leaving peer certificates unverified poses an extreme security risk when navigating pages.</p>
 
 <p><strong>Possible Values</strong>:</p>
 
 <ul>
 <li>0 - Disable peer certificate verification</li>
 
-<li>1 - Enable peer certificate verification</li>
+<li><strong>1 - Enable peer certificate verification</strong></li>
 </ul>
 
 <h4 id="example-140" class="anchor"><a class="heading-anchor" href="#example-140"><span></span></a>Example</h4>
