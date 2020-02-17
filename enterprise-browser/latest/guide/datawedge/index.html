@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 2.0
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 2.5
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-0','1-4','/enterprise-browser/2-0/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('2-5','1-4','/enterprise-browser/2-5/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,42 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/about">
+                            <a href="/enterprise-browser/2-5/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/gettingstarted/">
-                                    Getting Started
+                            <a href="/enterprise-browser/2-5/guide/gettingstarted/">
+                                    Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/tutorial/">
+                            <a href="/enterprise-browser/2-5/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/samples">
+                            <a href="/enterprise-browser/2-5/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide">
+                            <a href="/enterprise-browser/2-5/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/migration">
-                                    Migration
+                            <a href="/enterprise-browser/2-5/guide/licensing">
+                                    License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/configreference">
+                            <a href="/enterprise-browser/2-5/guide/migration">
+                                    Migrate
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/enterprise-browser/2-5/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/api">
+                            <a href="/enterprise-browser/2-5/api">
                                     APIs
                             </a>
                         </li>
@@ -110,17 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.zebra.com/community/technologies/enterprisebrowser">
-                                    <i class="fa fa-comment"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/enterprise-browser/2-0/download">
+                            <a href="/enterprise-browser/2-5/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/search">
+                            <a href="/enterprise-browser/2-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="using-datawedge-with-eb" class="anchor"><a class="heading-anchor" href="#using-datawedge-with-eb"><span></span></a>Using DataWedge with EB</h1>
                                     <p>
                                             Enterprise Browser
-                                            2.0
+                                            2.5
                                     </p>
                                 </div>
                             </section>                    
@@ -250,7 +250,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>The DataWedge app (included on every Zebra device) makes it possible to acquire barcode data from within an Enterprise Browser application without using the Enterprise Browser APIs. This guide explains how to configure an EB app to scan and process barcode data using DataWedge, which then enters the captured data as keystrokes into any EB input field. </p>
+<p>The DataWedge app (included on every Zebra device) makes it possible to acquire barcode data from within an Enterprise Browser app without using the EB APIs. This guide explains how to configure an EB app to scan and process barcode data using DataWedge, which then enters the captured data as keystrokes into any EB input field. </p>
 
 <p>The steps for enabling DataWedge for use with EB (and for disabling it so that apps can use the scanning APIs) vary slightly depending which DataWedge version is installed on the device. <strong>It's important to note that <u>control of barcode scanning hardware is exclusive</u>. When DataWedge is active, Enterprise Browser scanning APIs will be inoperable</strong>. Likewise, an Enterprise Browser app that uses those APIs will prevent other apps (including DataWedge) from accessing the scanner(s). This guide explains how to take control of a device's scanner hardware and to subsequently release it to other apps. From the sections below, select the instructions matching the DataWedge version installed on the target device. 
 <br></p>
@@ -258,18 +258,72 @@
 <h5 id="thisuandroidonlyguideucontainsinstructionsforconfiguringenterprisebrowsertouse" class="anchor"><a class="heading-anchor" href="#thisuandroidonlyguideucontainsinstructionsforconfiguringenterprisebrowsertouse"><span></span></a>This <u>Android-only guide</u> contains instructions for configuring Enterprise Browser to use:</h5>
 
 <ul>
-<li><a href="#dw601andhigher">DataWedge 6.0.1 and higher</a></li>
+<li><a href="#dw65andhigher">DataWedge 6.5 and higher</a></li>
+
+<li><a href="#dw601to64">DataWedge 6.0.1 and higher</a></li>
 
 <li><a href="#dw229to5113">DataWedge 2.2.9 to 5.1.13</a></li>
 
 <li><a href="#dw228andlower">DataWedge 2.2.8 and lower</a></li>
 </ul>
 
-<p><a href="../../../../datawedge/6-2/guide/about/#whichversionisinstalled">Which DataWedge version is installed?</a></p>
+<p><a href="../../../../datawedge/latest/guide/about/#whichversionisinstalled">Which DataWedge version is installed?</a></p>
 
 <hr>
 
-<h3 id="dw601andhigher" class="anchor"><a class="heading-anchor" href="#dw601andhigher"><span></span></a>DW 6.0.1 and higher</h3>
+<h3 id="dw65andhigher" class="anchor"><a class="heading-anchor" href="#dw65andhigher"><span></span></a>DW 6.5 and higher</h3>
+
+<p>EB 2.0 works directly with DataWedge 6.5 and later versions provided the <code>&lt;usedwforscanning&gt;</code> tag in the EB app's <code>Config.xml</code> file is configured correctly (see below). For help editing the <code>Config.xml</code> file, see the <strong><a href="../ConfigEditor/">Config Editor Utility guide</a></strong>. </p>
+
+<h4 id="prerequisites" class="anchor"><a class="heading-anchor" href="#prerequisites"><span></span></a>Prerequisites</h4>
+
+<ul>
+<li><strong>DataWedge 6.5</strong> or later in the device (<a href="../../../../datawedge/latest/guide/about/#whichversionisinstalled">more info</a>)</li>
+
+<li><strong>Enteprise Browser 2.0</strong> or later in the device </li>
+
+<li><strong>EB API module</strong> <code>ebapi-modules.js</code> on the device (<a href="../apioverview">more info</a>) </li>
+</ul>
+
+<p><strong>To enable DataWedge 6.5 (or higher) in an EB 2.0 (or higher) app</strong>: </p>
+
+<p>1. Confirm (or configure) a value of "1" in the <code>&lt;usedwforscanning&gt;</code> tag in the app's <code>Config.xml</code> file as below:</p>
+
+<pre class="prettyprint"><code>    
+    &lt;Applications&gt;
+        &lt;Application&gt;
+        ...
+            &lt;usedwforscanning &nbsp;value=”1” /&gt;
+        ...
+</code></pre>
+
+<p>2. Push the updated <code>Config.xml</code> file to the device and restart the EB app.  </p>
+
+<h5 id="theebappisnowreadytousedatawedgeforscanning" class="anchor"><a class="heading-anchor" href="#theebappisnowreadytousedatawedgeforscanning"><span></span></a>The EB app is now ready to use DataWedge for scanning.</h5>
+
+<blockquote>
+  <p>To change DataWedge settings from within an EB app, see the <a href="../dwintents">EB DataWedge Intents guide</a>.  </p>
+</blockquote>
+
+<hr>
+
+<h4 id="reenableebapis" class="anchor"><a class="heading-anchor" href="#reenableebapis"><span></span></a>Re-enable EB APIs</h4>
+
+<p><strong>To disable DataWedge and enable EB APIs for scanning</strong>: </p>
+
+<p><strong>Set a value of "0" in the &lt;usedwforscanning&gt; tag</strong>, as shown:  </p>
+
+<pre class="prettyprint"><code>    
+  &lt;Applications&gt;
+    &lt;Application&gt;
+    ...
+    &lt;usedwforscanning &nbsp;value=”0” /&gt;
+    ...
+</code></pre>
+
+<hr>
+
+<h3 id="dw601to64" class="anchor"><a class="heading-anchor" href="#dw601to64"><span></span></a>DW 6.0.1 to 6.4</h3>
 
 <p><strong>Important</strong>: Some versions of DataWedge 6.x automatically disable Enterprise Browser after every device reboot by adding it to the "Disabled apps list." If <code>com.symbol.enterprisebrowser</code> reappears in the Disabled apps list after reboot, it must be manually removed before EB can use DataWedge for scanning. The only alternative is to upgrade DataWedge, which for Android requires a new BSP (OS image). Such updates should be attempted only with the guidance of <a href="https://www.zebra.com/us/en/about-zebra/contact-zebra/contact-tech-support.html">Zebra Support</a>.  </p>
 
@@ -455,7 +509,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved.<a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                     </div>
                      <!--
                      <div class="col-sm-2">

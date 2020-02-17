@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Using DataWedge Intents">
-    <title>Using DataWedge Intents - Zebra Technologies TechDocs</title>
+    <meta title="Configure DataWedge from EB">
+    <title>Configure DataWedge from EB - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 2.0
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 2.5
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-0','1-4','/enterprise-browser/2-0/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('2-5','1-4','/enterprise-browser/2-5/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,42 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/about">
+                            <a href="/enterprise-browser/2-5/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/gettingstarted/">
-                                    Getting Started
+                            <a href="/enterprise-browser/2-5/guide/gettingstarted/">
+                                    Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/tutorial/">
+                            <a href="/enterprise-browser/2-5/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/samples">
+                            <a href="/enterprise-browser/2-5/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide">
+                            <a href="/enterprise-browser/2-5/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/migration">
-                                    Migration
+                            <a href="/enterprise-browser/2-5/guide/licensing">
+                                    License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/configreference">
+                            <a href="/enterprise-browser/2-5/guide/migration">
+                                    Migrate
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/enterprise-browser/2-5/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/api">
+                            <a href="/enterprise-browser/2-5/api">
                                     APIs
                             </a>
                         </li>
@@ -110,17 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.zebra.com/community/technologies/enterprisebrowser">
-                                    <i class="fa fa-comment"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/enterprise-browser/2-0/download">
+                            <a href="/enterprise-browser/2-5/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/search">
+                            <a href="/enterprise-browser/2-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -146,7 +146,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Using DataWedge Intents</strong></li>
+                            <li><strong>Configure DataWedge from EB</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -232,10 +232,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="using-datawedge-intents" class="anchor"><a class="heading-anchor" href="#using-datawedge-intents"><span></span></a>Using DataWedge Intents</h1>
+                                    <h1 id="configure-datawedge-from-eb" class="anchor"><a class="heading-anchor" href="#configure-datawedge-from-eb"><span></span></a>Configure DataWedge from EB</h1>
                                     <p>
                                             Enterprise Browser
-                                            2.0
+                                            2.5
                                     </p>
                                 </div>
                             </section>                    
@@ -250,98 +250,191 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Apps running on Enterprise Browser 2.0 (and higher) can control DataWedge–Zebra's built-in scanning engine–using Android intents. This makes it possible to acquire barcode data from within an EB app without using EB's scanning APIs. This guide explains how to configure an EB app to scan and process barcode data using DataWedge intents and enter the captured data as keystrokes into any EB input field. </p>
+<p>Apps running on Enterprise Browser 2.0 (and higher) can control DataWedge–Zebra's built-in scanning engine–using DataWedge intents. This makes it possible to adjust DataWedge settings from an EB app to adapt to changing data acquisition requirements without exiting the app. </p>
 
-<p><strong>It's important to note that <u>control of barcode scanning hardware is exclusive</u>. When DataWedge is active, Enterprise Browser scanning APIs will be inoperable</strong>. Likewise, an Enterprise Browser app that uses those APIs will prevent other apps (including DataWedge) from accessing the scanner(s). This guide explains how to take control of a device's scanner hardware and to subsequently release it to other apps. <br>
-<br></p>
+<p>This guide illustrates the feature using a real-world example. It explains how to configure an EB app to scan and process barcode data, enter the captured data as keystrokes into any EB input field, and reconfigure DataWedge to switch the input type&amp;nsdash; all using DataWedge intents from within the EB app. </p>
+
+<!-- 
+**Note: It's important to understand that <u>control of barcode scanning hardware is exclusive</u>. When DataWedge is active, Enterprise Browser <u>scanning APIs</u> are inoperable**. Likewise, an Enterprise Browser app that uses those APIs will prevent other apps (including DataWedge) from accessing the scanner(s). This guide explains how to take control of a device's scanner hardware and to subsequently release it to other apps when scanning is complete.  
+
+-->
 
 <h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
 
 <ul>
-<li>Enterprise Browser 2.0 (or higher)</li>
+<li>Zebra device that supports EB and SimulScan</li>
 
-<li>DataWedge 6.5 (or higher)</li>
-</ul>
+<li>Enterprise Browser 2.0 (or higher) installed on the device and on a Windows PC</li>
 
-<p><a href="../../../../datawedge/6-2/guide/about/#whichversionisinstalled">Which DataWedge version is installed?</a></p>
+<li>DataWedge 6.5 (or higher) on the device. <a href="../../../../datawedge/latest/guide/about/#whichversionisinstalled">Which version is installed?</a></li>
 
-<hr>
+<li>EB API module <code>ebapi-modules.js</code> on the device. (<a href="../apioverview">More about EB APIs</a>). </li>
 
-<h3 id="dw601andhigher" class="anchor"><a class="heading-anchor" href="#dw601andhigher"><span></span></a>DW 6.0.1 and higher</h3>
-
-<p><strong>Important</strong>: Some versions of DataWedge 6.x automatically disable Enterprise Browser after every device reboot by adding it to the "Disabled apps list." If <code>com.symbol.enterprisebrowser</code> reappears in the Disabled apps list after reboot, it must be manually removed before EB can use DataWedge for scanning. The only alternative is to upgrade DataWedge, which for Android requires a new BSP (OS image). Such updates should be attempted only with the guidance of <a href="https://www.zebra.com/us/en/about-zebra/contact-zebra/contact-tech-support.html">Zebra Support</a>.  </p>
-
-<h4 id="usedatawedgeforscanning" class="anchor"><a class="heading-anchor" href="#usedatawedgeforscanning"><span></span></a>Use DataWedge for Scanning</h4>
-
-<p><strong>To enable an EB app to scan with DataWedge 6.0.1 and higher</strong>: </p>
-
-<p>1. Confirm that no association with <code>com.symbol.enterprisebrowser</code> exists in the "Disabled app list" in the DataWedge Settings panel:</p>
-
-<ul>
-<li><p>In <strong>DataWedge</strong>, select <strong>Menu-&gt;Settings-&gt;Disabled app list</strong>. The list of disabled apps appears.</p></li>
-
-<li><p><strong>Remove</strong> <code>com.symbol.enterprisebrowser</code> <strong>from the list</strong>, if present (see note, above). </p></li>
-</ul>
-
-<p>2. In the EB app's <code>config.xml</code> file, set a value of "1" in the <a href="../configreference/#usedwforscanning">&lt;usedwforscanning&gt;</a> tag.</p>
-
-<h4 id="useenterprisebrowserapisforscanning" class="anchor"><a class="heading-anchor" href="#useenterprisebrowserapisforscanning"><span></span></a>Use Enterprise Browser APIs for Scanning</h4>
-
-<p><strong>To use a device scanner through an Enterprise Browser API</strong>:</p>
-
-<ul>
-<li>Set the value in the <a href="../configreference/#usedwforscanning">&lt;usedwforscanning&gt;</a> tag of the EB app's <code>config.xml</code> file to "0"</li>
+<li>Knowledge of <code>Config.xml</code> file editing. (<a href="../ConfigEditor">About config-file editing</a>).</li>
 </ul>
 
 <hr>
 
-<h5 id="option1disabledatawedgeonthedevice" class="anchor"><a class="heading-anchor" href="#option1disabledatawedgeonthedevice"><span></span></a>Option 1: Disable DataWedge on the device</h5>
+<h3 id="usingdatawedge" class="anchor"><a class="heading-anchor" href="#usingdatawedge"><span></span></a>Using DataWedge</h3>
 
-<ol>
-<li><strong>Start DataWedge</strong> on the device.</li>
+<p>DataWedge settings are stored in Profiles, each of which contains parameters for acquiring data (input), processing the acquired data, and sending it to an app (output). This example solution walks through the process of configuring EB to use DataWedge and to receive the data it acquires, to create two DataWedge Profiles on the device and to switch from one to the other from an EB app. One Profile is configured for <strong>Barcode input</strong>, the other for <strong>SimulScan input</strong>, and both are set to <strong>output as an Intent Broadcast</strong>. </p>
 
-<li>In DataWedge, select <strong>Menu-&gt;Settings</strong>.</li>
+<h4 id="ienabledatawedgeineb" class="anchor"><a class="heading-anchor" href="#ienabledatawedgeineb"><span></span></a>I. Enable DataWedge in EB</h4>
 
-<li><strong>Uncheck the "DataWedge enabled"</strong> checkbox.</li>
+<p>1. <strong>Confirm (or configure) the following</strong> <code>Config.xml</code> <strong>file settings</strong>:<br>  </p>
 
-<li>In the EB app's <code>config.xml</code> file, set a value of "0" in the <a href="../configreference/#usedwforscanning">&lt;usedwforscanning&gt;</a> tag.</li>
-</ol>
+<ul>
+<li><strong>Set a value of "1" in</strong> <code>&lt;usedwforscanning&gt;</code> tag.</li>
 
-<p>DataWedge is now disabled and unavailable to any app on the device.  </p>
+<li><strong>Set a value of "1" in</strong> <code>&lt;EnableReceiver&gt;</code> tag.</li>
 
-<p><strong>Note: DataWedge also can be disabled (or re-enabled) programmatically using <a href="../../../../datawedge">DataWedge APIs</a></strong>.</p>
+<li><strong>Set a value of</strong> "<code>com.symbol.dw.action</code>" <strong>in a</strong> <code>&lt;IntentAction&gt;</code> tag.</li>
 
-<h5 id="option2disabledatawedgeonlyforenterprisebrowser" class="anchor"><a class="heading-anchor" href="#option2disabledatawedgeonlyforenterprisebrowser"><span></span></a>Option 2: Disable DataWedge only for Enterprise Browser</h5>
+<li><strong>Set a value of</strong> "<code>com.symbol.dwss.action</code>" <strong>in another</strong> <code>&lt;IntentAction&gt;</code> tag.</li>
 
-<p><strong>To create and disable an Enterprise Browser Profile in DataWedge</strong>: </p>
+<li><strong>Set a value of</strong> "<code>com.symbol.datawedge.api.RESULT_ACTION</code>" <strong>in another</strong> <code>&lt;IntentAction&gt;</code> tag.</li>
 
-<ol>
-<li><strong>Install the Enterprise Browser app</strong> that will use DataWedge.</li>
+<li><strong>Set a value of</strong> "<code>android.intent.category.DEFAULT</code>" <strong>in the</strong> <code>&lt;IntentCategory&gt;</code> tag.</li>
 
-<li><strong>Start DataWedge</strong>.</li>
+<li><strong>Set a value of</strong> "<code>file://%INSTALLDIR%/DataWedgeIntent.html</code>" in <code>&lt;StartPage&gt;</code> tag.</li>
+</ul>
 
-<li>In DataWedge, select <strong>Menu-&gt;New Profile</strong>, <strong>Enter a Profile name</strong> and tap <strong>OK</strong>. The list of Profiles appears.</li>
+<p>The settings described above are shown in context of a <code>Config.xml</code> file below. Settings in the IntentReceiver section allow EB app to retrieve scanned data through a JavaScript callback.</p>
 
-<li>Tap on the newly created profile.</li>
+<pre class="prettyprint"><code>    
+    &lt;Applications&gt;
+        &lt;Application&gt;
+        ...
+            &lt;usedwforscanning &nbsp;value=”1” /&gt;
+        ...
+            &lt;IntentReceiver&gt;
+                ...
+                &lt;EnableReceiver  value="1"/&gt;
+                &lt;IntentAction  value="com.symbol.dw.action"/&gt;
+                &lt;IntentAction  value="com.symbol.dwss.action"/&gt;
+                &lt;IntentAction  value="com.symbol.datawedge.api.RESULT_ACTION"/&gt;
+                   &lt;IntentCategory  value="android.intent.category.DEFAULT"/&gt;
+                ...
+            &lt;General&gt;
+                &lt;Name value="Menu"/&gt;
+                &lt;StartPage value="file://%INSTALLDIR%/DataWedgeIntent.html" name="Menu"/&gt; 
+        ...
+</code></pre>
 
-<li>In the <strong>Applications section</strong>, <strong>tap Associated apps</strong>.</li>
+<h4 id="iiconfiguredatawedge" class="anchor"><a class="heading-anchor" href="#iiconfiguredatawedge"><span></span></a>II. Configure DataWedge</h4>
 
-<li>Tap <strong>Menu-&gt;New app/activity</strong>. A list of apps/activities appears. </li>
+<p>2. <strong>In DataWedge</strong> on the device, <strong>select Profiles -&gt; Profile0 (default)</strong> and:</p>
 
-<li>From the list, <strong>select the package name of the EB app</strong> (i.e. <code>com.symbol.enterprisebrowser</code>) that will use DataWedge. The app activities list appears. </li>
+<ul>
+<li><strong>Confirm that "Profile 0" is enabled</strong>.</li>
 
-<li>From the app activities list, <strong>tap the asterisk (*) to associate all app activities</strong> with the Profile, or tap on an indvidual activity to use DataWedge only for that specific activity. </li>
+<li><strong>Confirm that Barcode Input is enabled</strong>.</li>
+</ul>
 
-<li><strong>Tap BACK</strong> to return to the Profile screen.</li>
+<p>3. <strong>Scroll down to the Intent Output</strong> section and set the following:<br></p>
 
-<li>Confirm that the Profile's <strong>"Profile enabled" box is <u>checked</u></strong>.</li>
+<ul>
+<li><strong>Confirm that Intent Output is Enabled</strong>.</li>
 
-<li>In the new Profile, <strong><u>uncheck</u> the "Enabled" box</strong> for these three sections: <strong>Barcode input, Keystroke output and Intent output</strong>.</li>
+<li><strong>Tap Intent action</strong> and enter <code>com.symbol.dw.action</code> and <strong>Tap OK</strong>.</li>
 
-<li>In the EB app's <code>config.xml</code> file, set a value of "0" in the <a href="../configreference/#usedwforscanning">&lt;usedwforscanning&gt;</a> tag.</li>
-</ol>
+<li><strong>Tap Intent delivery</strong> and select (or confirm) “Broadcast Intent” and <strong>Tap OK</strong>.</li>
+</ul>
 
-<p>DataWedge will now be disabled whenever an Enterprise Browser app is running. </p>
+<p>Settings should appear as in the image below: 
+<img alt="" style="height:350px" src="eb20_and_dw65.png">
+<em>Profile0 settings for using DataWedge from EB apps</em>.</p>
+
+<h4 id="iiideployjavascript" class="anchor"><a class="heading-anchor" href="#iiideployjavascript"><span></span></a>III. Deploy JavaScript</h4>
+
+<p>4. Create or modify a web page to include JavaScript logic like the example below, which sends a <a href="/techdocs.zebra.com/datawedge/latest/guide/api/">DataWedge intent</a> using the <a href="../../api/intent">EB Intent API</a> to switch to the DataWedge “barcode” Profile:</p>
+
+<pre class="prettyprint"><code>    var params = {
+        intentType: EB.Intent.BROADCAST,
+        action: 'com.symbol.datawedge.api.ACTION',
+        appName: 'com.symbol.datawedge',
+        data: {"com.symbol.datawedge.api.SWITCH_TO_PROFILE":"barcode"}
+    EB.Intent.send(params);
+</code></pre>
+
+<p><code>IMPORTANT:</code> The name of the file containing the JavaScript must match the file the specified in the <code>&lt;StartPage&gt;</code> tag referenced in Step 1. </p>
+
+<p>5. Copy the modified <code>Config.xml</code> and <code>.HTML</code> files to the EB install directory on the device: </p>
+
+<ul>
+<li><code>/Android/data/com.symbol.enterprisebrowser</code></li>
+</ul>
+
+<p>6. If not already present, also copy the <code>ebapi-modules.js</code> EB API module to the same location as the <code>.HTML</code> file. </p>
+
+<p><img alt="" style="height:350px" src="eb-dw_sample.png">
+<em>Sample <code>.HTML</code> page easily switches between DataWedge Profiles</em>.</p>
+
+<h4 id="samplefiles" class="anchor"><a class="heading-anchor" href="#samplefiles"><span></span></a>Sample files</h4>
+
+<p><code>dw_profilebarcode.db</code> - Barcode Profile for import to DataWedge (do not edit manually) 
+<code>dw_profilesimulscan.db</code> - SimulScan Profile for import to DataWedge (do not edit manually)
+<code>Config.xml</code> - Sample EB configuration file can be edited or copied as needed <br>
+<code>DataWedgeIntent.html</code> - Sample EB start page</p>
+
+<p><a href="EB_SwitchDWProfile.zip">Download the sample files (.zip)</a>
+<a href="/datawedge/latest/guide/settings/#importaprofile">Importing a DataWedge Profile</a></p>
+
+<h5 id="theebappcannowsenddatawedgeintents" class="anchor"><a class="heading-anchor" href="#theebappcannowsenddatawedgeintents"><span></span></a>The EB app can now send DataWedge intents.</h5>
+
+<!--  WE'LL PROBABLY TAKE ALL THIS OUT: 
+### DW 6.0.1 - 6.4
+**Important**: Some versions of DataWedge 6.x automatically disable Enterprise Browser after every device reboot by adding it to the "Disabled apps list." If `com.symbol.enterprisebrowser` reappears in the Disabled apps list after reboot, it must be manually removed before EB can use DataWedge for scanning. The only alternative is to upgrade DataWedge, which for Android requires a new BSP (OS image). Such updates should be attempted only with the guidance of [Zebra Support](https://www.zebra.com/us/en/about-zebra/contact-zebra/contact-tech-support.html).  
+
+#### Use DataWedge for Scanning
+
+**To enable an EB app to scan with DataWedge 6.0.1 and higher**: 
+
+&#49;. Confirm that no association with `com.symbol.enterprisebrowser` exists in the "Disabled app list" in the DataWedge Settings panel:
+  * In **DataWedge**, select **Menu->Settings->Disabled app list**. The list of disabled apps appears.
+
+  * **Remove** `com.symbol.enterprisebrowser` **from the list**, if present (see note, above). 
+
+&#50;. In the EB app's `config.xml` file, set a value of "1" in the [&lt;usedwforscanning&gt;](../configreference/#usedwforscanning) tag.
+
+#### Use Enterprise Browser APIs for Scanning
+
+**To use a device scanner through an Enterprise Browser API**:
+
+  * Set the value in the [&lt;usedwforscanning&gt;](../configreference/#usedwforscanning) tag of the EB app's `config.xml` file to "0"
+
+-----
+
+##### Option 1: Disable DataWedge on the device
+
+1. **Start DataWedge** on the device.
+2. In DataWedge, select **Menu->Settings**.
+3. **Uncheck the "DataWedge enabled"** checkbox.
+4. In the EB app's `config.xml` file, set a value of "0" in the [&lt;usedwforscanning&gt;](../configreference/#usedwforscanning) tag.
+
+DataWedge is now disabled and unavailable to any app on the device.  
+
+**Note: DataWedge also can be disabled (or re-enabled) programmatically using [DataWedge APIs](../../../../datawedge)**.
+
+##### Option 2: Disable DataWedge only for Enterprise Browser
+
+**To create and disable an Enterprise Browser Profile in DataWedge**: 
+
+1. **Install the Enterprise Browser app** that will use DataWedge.
+2. **Start DataWedge**.
+3. In DataWedge, select **Menu->New Profile**, **Enter a Profile name** and tap **OK**. The list of Profiles appears.
+4. Tap on the newly created profile.
+5. In the **Applications section**, **tap Associated apps**.
+6. Tap **Menu->New app/activity**. A list of apps/activities appears. 
+7. From the list, **select the package name of the EB app** (i.e. `com.symbol.enterprisebrowser`) that will use DataWedge. The app activities list appears. 
+8. From the app activities list, **tap the asterisk (*) to associate all app activities** with the Profile, or tap on an indvidual activity to use DataWedge only for that specific activity. 
+9. **Tap BACK** to return to the Profile screen.
+10. Confirm that the Profile's **"Profile enabled" box is <u>checked</u>**.
+11. In the new Profile, **<u>uncheck</u> the "Enabled" box** for these three sections: **Barcode input, Keystroke output and Intent output**.
+12. In the EB app's `config.xml` file, set a value of "0" in the [&lt;usedwforscanning&gt;](../configreference/#usedwforscanning) tag.
+
+DataWedge will now be disabled whenever an Enterprise Browser app is running. 
+ -->
 
 <hr>
 
@@ -387,7 +480,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved.<a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                     </div>
                      <!--
                      <div class="col-sm-2">

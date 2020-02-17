@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 2.0
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 2.5
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-0','1-4','/enterprise-browser/2-0/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('2-5','1-4','/enterprise-browser/2-5/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,42 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/about">
+                            <a href="/enterprise-browser/2-5/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/gettingstarted/">
-                                    Getting Started
+                            <a href="/enterprise-browser/2-5/guide/gettingstarted/">
+                                    Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/tutorial/">
+                            <a href="/enterprise-browser/2-5/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/samples">
+                            <a href="/enterprise-browser/2-5/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide">
+                            <a href="/enterprise-browser/2-5/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/migration">
-                                    Migration
+                            <a href="/enterprise-browser/2-5/guide/licensing">
+                                    License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/guide/configreference">
+                            <a href="/enterprise-browser/2-5/guide/migration">
+                                    Migrate
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/enterprise-browser/2-5/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/api">
+                            <a href="/enterprise-browser/2-5/api">
                                     APIs
                             </a>
                         </li>
@@ -110,17 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.zebra.com/community/technologies/enterprisebrowser">
-                                    <i class="fa fa-comment"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/enterprise-browser/2-0/download">
+                            <a href="/enterprise-browser/2-5/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/2-0/search">
+                            <a href="/enterprise-browser/2-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="about-enterprise-browser" class="anchor"><a class="heading-anchor" href="#about-enterprise-browser"><span></span></a>About Enterprise Browser</h1>
                                     <p>
                                             Enterprise Browser
-                                            2.0
+                                            2.5
                                     </p>
                                 </div>
                             </section>                    
@@ -250,7 +250,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Enterprise Browser is a powerful, industrial browser that provides everything needed to quickly build device apps for <strong>barcode scanning, signature capture, payment processing, printing</strong> and most other enterprise applications for a long list of <a href="../about#mobile">supported Zebra devices</a> running Android and Windows Mobile/CE. EB includes a runtime environment inside which a company's application logic can be executed and controlled using HTML5 and CSS3 for presentation and JavaScript to access EB APIs for scanners, cameras, card readers and other device peripherals. </p>
+<p>Enterprise Browser is a powerful, industrial browser that provides everything needed to quickly build device apps for <strong>barcode scanning, signature capture, payment processing, printing</strong> and most other enterprise applications for a long list of <a href="#supporteddevices">supported Zebra devices</a> running Android and Windows Mobile/CE. EB includes a runtime environment inside which a company's application logic can be executed and controlled using HTML5 and CSS3 for presentation and JavaScript to access EB APIs for scanners, cameras, card readers and other device peripherals. </p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4RMP9wSL1nY?list=PLce6-npz5dKcUY98npViY6QbuL3yhAXCx" frameborder="0" allowfullscreen=""></iframe>
 
@@ -262,13 +262,178 @@
 
 <hr>
 
-<h2 id="newinv20" class="anchor"><a class="heading-anchor" href="#newinv20"><span></span></a>New in v2.0</h2>
+<h2 id="newinv25" class="anchor"><a class="heading-anchor" href="#newinv25"><span></span></a>New in v2.5</h2>
+
+<h3 id="endofsupport" class="anchor"><a class="heading-anchor" href="#endofsupport"><span></span></a>End of Support</h3>
+
+<ul>
+<li><p><strong>The Database API is no longer supported in EB 2.5</strong>. Calls to this API will result in error. </p></li>
+
+<li><p><strong>The</strong> <code>remove()</code> <strong>method of the NativeTabbar API is no longer supported</strong>.  </p></li>
+
+<li><p><strong>Support ends for devices running Android 6.x Marshmallow, 5.x Lollipop or 4.x KitKat</strong>  </p></li>
+
+<li><p><strong>Support for Unique Device Identification (UDI) barcodes is deprecated</strong>. GS1, HIBCC and ICCBBA barcode standards will no longer be advanced in the Barcode API, and will be discontinued when Android 10 Q support begins. </p></li>
+</ul>
+
+<h3 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h3>
+
+<h4 id="mobiledevices" class="anchor"><a class="heading-anchor" href="#mobiledevices"><span></span></a>Mobile Devices</h4>
+
+<p><strong><u>Android 9.x Pie</u></strong> newly supported devices: </p>
+
+<ul>
+<li><strong>PS20</strong></li>
+
+<li><strong>TC52</strong></li>
+
+<li><strong>TC72</strong></li>
+</ul>
+
+<p><strong><u>Android 8.x Oreo</u></strong> newly supported devices: </p>
+
+<ul>
+<li><strong>EC30</strong></li>
+
+<li><strong>ET51</strong></li>
+
+<li><strong>ET56</strong></li>
+
+<li><strong>L10</strong></li>
+
+<li><strong>VC83</strong></li>
+</ul>
+
+<h4 id="scanners" class="anchor"><a class="heading-anchor" href="#scanners"><span></span></a>Scanners</h4>
+
+<ul>
+<li><strong>RS5100</strong> connected to devices running Android 7.x Nougat and higher </li>
+
+<li><strong>SE4750DPW</strong> connected to devices running Android 7.x Nougat and higher </li>
+
+<li><strong>SE4770</strong> connected to MC33xx devices running Android 8.x Oreo and higher</li>
+</ul>
+
+<h4 id="accessories" class="anchor"><a class="heading-anchor" href="#accessories"><span></span></a>Accessories</h4>
+
+<p>External Vibrator Cable (CBL-NGWT- HDVBAP-01) </p>
+
+<h4 id="nolongersupported" class="anchor"><a class="heading-anchor" href="#nolongersupported"><span></span></a>No longer supported</h4>
+
+<p>Devices running Android 6.x Marshmallow, 5.x Lollipop and 4.x KitKat  </p>
+
+<p><strong><u>Visit the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal EB page</a></u></strong> for the full list of supported devices.</p>
+
+<h3 id="newfeaturesguides" class="anchor"><a class="heading-anchor" href="#newfeaturesguides"><span></span></a>New Features/Guides</h3>
+
+<h4 id="newforallapps" class="anchor"><a class="heading-anchor" href="#newforallapps"><span></span></a>New for All Apps</h4>
+
+<ul>
+<li><strong>Supports <a href="../configreference/#shortcutcreation">Pinned Shortcuts</a> on Android 8.x Oreo and later</strong>. </li>
+
+<li><strong>A new <a href="../multisession">Multi-session Guide</a></strong> describes the all-new process for deploying multiple EB apps as browser tabs using Pinned Shortcuts or an XML file. Multi-session support allows EB to run multiple apps at the same time, each with different <code>Config.xml</code> files and configuration settings. </li>
+
+<li><strong>The <a href="../configreference/#showlicenseconfirmation">&lt;ShowLicenseConfirmation&gt; tag</a> is now supported on Android</strong> devices (formerly Windows Mobile/CE-only), which toggles display of the “Licensed to…” dialog at launch. </li>
+
+<li><strong>Supports <a href="../configreference/#metatagfiltering">meta tag filtering</a> on Android targets</strong>, which permits one or more meta tags or sets of meta tag properties to be allowed ("WhiteListed") or blocked ("BlackListing" tag) from use by an EB app. This feature can be useful when <strong>migrating EB apps from Windows Mobile to Android</strong> by blocking meta tags or meta-tag properties not supported on Android devices.</li>
+
+<li><strong>A new <a href="../configreference/#disablettsduringnavigation">&lt;DisableTTSduringNavigation&gt; tag</a></strong> allows the text-to-speech engine to be temporarily disabled while EB switches or navigates pages. </li>
+
+<li>The new TTS disablement feature is configurable using the <strong>new <a href="../configreference/#delayfortts">&lt;DelayforTTS&gt; tag</a></strong>.</li>
+
+<li><strong>A new <a href="../configreference/#disableasrduringnavigation">&lt;DisableASRduringNavigation&gt; tag</a></strong> allows the Android Speech Recognition engine to be temporarily disabled while EB switches or navigates pages. </li>
+</ul>
+
+<h4 id="newforsapapps" class="anchor"><a class="heading-anchor" href="#newforsapapps"><span></span></a>New for SAP Apps</h4>
+
+<ul>
+<li><strong>Supports <a href="../sapandroid/#customcssfile">custom CSS files</a> for SAP apps running on Android targets</strong>, allowing modification of certain styles within the SAP app at runtime.</li>
+
+<li><strong>Supports a <a href="../sapandroid/#configurationparameters">Keyboard Type parameter</a></strong>, which allows SAP apps to select a keyboard, button bar, custom Enterprise Keyboard layout or default IME. </li>
+</ul>
+
+<h3 id="newenhancedapis" class="anchor"><a class="heading-anchor" href="#newenhancedapis"><span></span></a>New/Enhanced APIs</h3>
+
+<p><strong><u>A new <a href="../../api/serialcomm">SerialComm API</a></u></strong> extends Enterprise Browser to allow apps to communicate with serial devices for: </p>
+
+<ul>
+<li>Read operations</li>
+
+<li>Write operations</li>
+
+<li>Setting serial port parameters such as speed, parity, data bits, etc.  </li>
+</ul>
+
+<p><strong><u>An updated <a href="../../api/barcode">Barcode API</a></u></strong> adds the following new properties:</p>
+
+<ul>
+<li>barcodeCount </li>
+
+<li>instantReporting </li>
+
+<li>SceneDetectionQualifier  </li>
+
+<li>dotCode 
+
+
+<ul>
+<li>dotCodeInverse </li>
+
+<li>dotCodeMirror</li></ul>
+</li>
+
+<li>gridmatrix
+
+
+<ul>
+<li>gridmatrixinverse</li>
+
+<li>gridmatrixmirror</li></ul>
+</li>
+
+<li>i2of5febraban </li>
+
+<li>gs1qrcode </li>
+
+<li>gs1datamatrix </li>
+
+<li>decodeScreenNotification </li>
+
+<li>decodeScreenNotificationTime </li>
+
+<li>decodeScreenTranslucencyLevel </li>
+
+<li>zoom </li>
+
+<li>signatureImageBitsPerPixel </li>
+
+<li>signatureImageFormat </li>
+
+<li>illuminationBrightness </li>
+
+<li>aimType
+
+
+<ul>
+<li>PRESENTATION</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="addedinv20" class="anchor"><a class="heading-anchor" href="#addedinv20"><span></span></a>Added in v2.0</h3>
 
 <blockquote>
   <p><strong>NOTICE</strong>: Android 8.x Oreo has changed the way application shortcuts are implemented. Therefore, <u><strong>app shortcuts are no longer supported on devices running Android Oreo and higher</strong></u>. Documentation relating to shortcuts remains visible for devices running earlier versions of Android. </p>
 </blockquote>
 
-<h3 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h3>
+<h4 id="november2019update" class="anchor"><a class="heading-anchor" href="#november2019update"><span></span></a><code>NOVEMBER 2019 UPDATE:</code></h4>
+
+<p><strong>The Database API is deprecated in EB 2.0 and is no longer being advanced</strong>. Support for the Database API will end with the release of EB 2.5. </p>
+
+<h4 id="devicesupport-1" class="anchor"><a class="heading-anchor" href="#devicesupport-1"><span></span></a>Device Support</h4>
 
 <p>EB 2.0 now supports the following mobile computing devices and operating systems: </p>
 
@@ -306,7 +471,21 @@
 <li><strong>WT6000</strong> Android Nougat</li>
 </ul>
 
-<h3 id="scannersupport" class="anchor"><a class="heading-anchor" href="#scannersupport"><span></span></a>Scanner Support</h3>
+<h4 id="march2019update" class="anchor"><a class="heading-anchor" href="#march2019update"><span></span></a><code>MARCH 2019 UPDATE:</code></h4>
+
+<p>Enterprise Browser 2.0.1 (and later) adds support for the following devices:  </p>
+
+<ul>
+<li><strong>MC9300</strong></li>
+
+<li><strong>TC8300</strong></li>
+
+<li><strong>CC600</strong> </li>
+
+<li><strong>CC6000</strong></li>
+</ul>
+
+<h4 id="scannersupport" class="anchor"><a class="heading-anchor" href="#scannersupport"><span></span></a>Scanner Support</h4>
 
 <p>EB 2.0 is now supported for use with the following scanners when connected to Zebra devices and operating systems listed:</p>
 
@@ -318,16 +497,16 @@
 <li><strong>LI3678</strong> support added for use with Android Nougat devices</li>
 </ul>
 
-<p>See all <a href="../about#mobile">supported Zebra devices</a>. </p>
+<p>See all <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">supported Zebra devices</a>. </p>
 
-<h3 id="newfeatures" class="anchor"><a class="heading-anchor" href="#newfeatures"><span></span></a>New Features</h3>
+<h4 id="newfeatures" class="anchor"><a class="heading-anchor" href="#newfeatures"><span></span></a>New Features</h4>
 
 <ul>
-<li><strong>Now supports <a href="../keycapture/#mappinghardwarekeys">Hardware Key Remapping</a> -</strong> to allow hardware keys of certain Zebra devices to be remapped to perform predefined actions or execute JavaScript code blocks residing on the device or on a server. </li>
+<li><strong>Now supports <a href="../keycapture/#mappinghardwarekeys">Hardware Key Remapping</a> -</strong> to allow hardware keys of Zebra devices to be remapped to perform predefined actions or execute JavaScript code blocks residing on the device or on a server. </li>
 
 <li>Android apps running on <strong>EB 2.0 (and higher) can use <a href="../configreference/#substitutionvariables">substitution variables</a></strong> to simplify file-path coding.</li>
 
-<li><strong>EB 2.0 and higher now supports <a href="../pageactions">page-based actions</a></strong>, which can execute JavaScript code and/or predefined commands based on the contents of a page. In some instances, this feature can be used as a substitute for DOM injection with similar effect. </li>
+<li><strong>Now supports <a href="../pageactions">page-based actions</a></strong>, which can execute JavaScript code and/or predefined commands based on the contents of a page. In some instances, this feature can be used as a substitute for DOM injection with similar effect. </li>
 
 <li><strong>An enhanced SAP support bundle</strong> includes ready-to-use config files for SAP ITSmobile apps, simplifying device set-up for SAP customers. SAP config files can be modified for specific use cases. <strong>SAP-specific features</strong>:
 
@@ -353,9 +532,42 @@
 
 <li>Option to hide the system/nav bar (HOME, BACK and RECENT buttons)</li></ul>
 </li>
+
+<li>Now supports <strong>Voice Input and Output</strong> controllable using the following new <code>Config.xml</code> file tags: 
+
+
+<ul>
+<li><strong><a href="../configreference#ttsenabled">&lt;TTSEnabled&gt;</a> -</strong> Controls whether text-to-speech capabilities are enabled in the app. </li>
+
+<li><strong><a href="../configreference#ttsvolume">&lt;TTSVolume&gt;</a> -</strong> Used to set the volume level for text-to-speech output.</li>
+
+<li><strong><a href="../configreference#ttspitch">&lt;TTSPitch&gt;</a> -</strong> Used to set the pitch for text-to-speech output. </li>
+
+<li><strong><a href="../configreference#ttsrate">&lt;TTSRate&gt;</a> -</strong> Used to set the speed for synthesized speech output.</li>
+
+<li><strong><a href="../configreference#ttslanguage">&lt;TTSLanguage&gt;</a> -</strong> Used to set the language for text-to-speech input and synthesized output. </li>
+
+<li><strong><a href="../configreference#ttsenginepreference">&lt;TTSEnginePreference&gt;</a> -</strong> Allows a third-party speech recognition engine to be selected if an engine other than the Google TTS engine is desired. </li>
+
+<li><strong><a href="../configreference#ttsengine">&lt;TTSEngine&gt;</a> -</strong> Used to specify the package name when a TTS engine other than Google TTS (<code>com.google.android.tts</code>) is used.</li>
+
+<li><strong><a href="../configreference#asrenabled">&lt;asrenabled&gt;</a> -</strong> Controls whether Android Speech Recognition (ASR) features are enabled in an app. </li>
+
+<li><strong><a href="../configreference#asrpackagenameasrclassname">&lt;asrpackagename&gt;</a> -</strong> Used to specify the package name of a third-party ASR engine is one other than Google ASR (default) used. </li>
+
+<li><strong><a href="../configreference#asrpackagenameasrclassname">&lt;asrclassname&gt;</a> -</strong> Used to specify the class name of a third-party ASR engine is one other than Google ASR (default) used. </li>
+
+<li><strong><a href="../configreference#asrpreferoffline">&lt;asrpreferoffline&gt;</a> -</strong> Controls whether voice recognition service can be provided without an internet connection. </li>
+
+<li><strong><a href="../configreference#audionotificationenabled">&lt;audionotificationenabled&gt;</a> -</strong> Controls whether a beep sound is played to indicate the device is ready to accept voice input. </li>
+
+<li><strong><a href="../configreference#asrpartialmodeenabled">&lt;asrpartialmodeenabled&gt;</a> -</strong> Controls whether the speech engine displays recognized words in real time or all at once when speaking ends. </li>
+
+<li><strong><a href="../configreference#asrlanguage">&lt;asrlanguage&gt;</a> -</strong> Used to set the language for speech recognition input.</li></ul>
+</li>
 </ul>
 
-<h3 id="newenhancedapis" class="anchor"><a class="heading-anchor" href="#newenhancedapis"><span></span></a>New/Enhanced APIs</h3>
+<h4 id="newenhancedapis-1" class="anchor"><a class="heading-anchor" href="#newenhancedapis-1"><span></span></a>New/Enhanced APIs</h4>
 
 <p>The following new methods, properties and/or callbacks were added to Android APIs:</p>
 
@@ -396,7 +608,7 @@
 
 <li>RFD2000</li>
 
-<li>MC33 long- and mid-range RFID reader</li>
+<li>MC3300 long- and mid-range RFID reader</li>
 </ul>
 
 <p><strong>A new <a href="../../api/bluetooth">Bluetooth API</a></strong> allows Enterprise Browser apps to connect with disconnect from Bluetooth printers and scanners and to read from and write to them as applicable.</p>
@@ -436,7 +648,9 @@
 </li>
 </ul>
 
-<h3 id="newupdatedfeaturesguides" class="anchor"><a class="heading-anchor" href="#newupdatedfeaturesguides"><span></span></a>New/Updated Features/Guides</h3>
+<p><strong>New layouts for the <a href="../../api/re2x/ButtonBar">ButtonBarLayout API</a></strong></p>
+
+<h4 id="newupdatedfeaturesguides" class="anchor"><a class="heading-anchor" href="#newupdatedfeaturesguides"><span></span></a>New/Updated Features/Guides</h4>
 
 <ul>
 <li><strong>An updated <a href="../licensing">Licensing Guide</a></strong> describes the all-new processes for licensing EB apps on a device and across an organization. </li>
@@ -449,11 +663,11 @@
 
 <li>A new <strong><a href="../voice">Voice Input/Output Guide</a></strong> describes how to use Page-based actions to enable voice input in an app. </li>
 
-<li><strong>Enhanced <a href="../keycapture/#mappinghardwarekeys">Key Remapping Guide</a></strong> describes how to map hardware keys on the MX33xx, MC92N0 and VC80x devices running Android. </li>
+<li><strong>Enhanced <a href="../keycapture/#mappinghardwarekeys">Key Remapping Guide</a></strong> describes how to map hardware keys on Zebra devices running Android. </li>
 
 <li><strong>Enhanced SAP support</strong> includes SAP applications running Warehouse Management or Extended Warehouse Management apps as well as apps built with SAP’s UI5 SDKs and Fiori UX tools.</li>
 
-<li><strong>Enhanced ButtonBar Features</strong> include: <br>
+<li><strong>Enhanced <a href="../buttonbar">ButtonBar Guide</a></strong> documents these new features: <br>
 
 
 <ul>
@@ -478,7 +692,7 @@
 
 <li>&lt;buttonFontSize&gt;</li>
 
-<li>&lt;buttonColor&gt;</li>
+<li>&lt;buttonColor&gt; - Sets the color for individual buttons.</li>
 
 <li>&lt;buttonColorPressed&gt;</li>
 
@@ -535,11 +749,9 @@ For more information, see the ButtonBar Usage Guide.
 
 <hr>
 
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
-
 <h3 id="addedinv18" class="anchor"><a class="heading-anchor" href="#addedinv18"><span></span></a>Added in v1.8</h3>
 
-<h4 id="devicesupport-1" class="anchor"><a class="heading-anchor" href="#devicesupport-1"><span></span></a>Device Support</h4>
+<h4 id="devicesupport-2" class="anchor"><a class="heading-anchor" href="#devicesupport-2"><span></span></a>Device Support</h4>
 
 <p>EB 1.8 now supports the following mobile computing devices and operating systems: </p>
 
@@ -595,7 +807,7 @@ For more information, see the ButtonBar Usage Guide.
 </li>
 </ul>
 
-<p>See all <a href="../about#mobile">supported Zebra devices</a>. </p>
+<p>See all <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">supported Zebra devices</a>. </p>
 
 <hr>
 
@@ -811,7 +1023,7 @@ For more information, see the ButtonBar Usage Guide.
 
 <hr>
 
-<h4 id="devicesupport-2" class="anchor"><a class="heading-anchor" href="#devicesupport-2"><span></span></a>Device Support</h4>
+<h4 id="devicesupport-3" class="anchor"><a class="heading-anchor" href="#devicesupport-3"><span></span></a>Device Support</h4>
 
 <p>EB 1.7 now supports the following <strong>new devices</strong> (shown in <strong>bold</strong>) and/or existing devices running Android 5.0 Lollipop and Android 6.0 Marshmallow: </p>
 
@@ -846,7 +1058,7 @@ For more information, see the ButtonBar Usage Guide.
 </li>
 </ul>
 
-<p><a href="#mobile">See all supported devices</a></p>
+<p><a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">See all supported devices</a></p>
 
 <hr>
 
@@ -967,7 +1179,7 @@ For more information, see the ButtonBar Usage Guide.
 
 <li>An <strong>updated <a href="../../api/device">Device API</a> -</strong> adds a <strong>reboot</strong> method for Android. </li>
 
-<li>An <strong>updated <a href="../../api/sip">SIP API</a> -</strong> adds <strong>disableAIIIME</strong> and <strong>resetToDefault</strong> methods for Android. </li>
+<li>An <strong>updated <a href="../../api/Sip">SIP API</a> -</strong> adds <strong>disableAIIIME</strong> and <strong>resetToDefault</strong> methods for Android. </li>
 
 <li>An <strong>updated <a href="../../api/remotenotification">RemoteNotification API</a> -</strong> introduces a <strong>cancelNotification</strong> method and <strong>isLEDSupported, isBeepSupported and isVibrateSupported</strong> properties for Android. </li>
 
@@ -994,7 +1206,7 @@ For more information, see the ButtonBar Usage Guide.
 
 <p>Enterprise Browser 1.6 and higher will no longer support devices running Android Jelly Bean. For Jelly Bean support, please use <a href="../../../../enterprise-browser/1-5/guide/about">Enterprise Browser 1.5</a> or lower.</p>
 
-<h4 id="devicesupport-3" class="anchor"><a class="heading-anchor" href="#devicesupport-3"><span></span></a>Device Support</h4>
+<h4 id="devicesupport-4" class="anchor"><a class="heading-anchor" href="#devicesupport-4"><span></span></a>Device Support</h4>
 
 <p>EB 1.6 now supports the following new devices and/or existing devices running Android 5.0 Lollipop and Android 6.0 Marshmallow: </p>
 
@@ -1014,7 +1226,7 @@ For more information, see the ButtonBar Usage Guide.
 <li><strong>TC8000</strong> with Android Lollipop</li>
 </ul>
 
-<p><a href="#mobile">See all supported devices</a></p>
+<p><a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">See all supported devices</a></p>
 
 <p>This release also adds a range of additional new features for all supported Android devices.</p>
 
@@ -1033,7 +1245,7 @@ For more information, see the ButtonBar Usage Guide.
 <h5 id="ringscannersupport" class="anchor"><a class="heading-anchor" href="#ringscannersupport"><span></span></a>Ring Scanner Support</h5>
 
 <ul>
-<li><strong><a href="#wearable">RS6000 Ring Scanner</a> -</strong> is now supported on TC75x devices running Android Marshmallow.</li>
+<li><strong>RS6000 Ring Scanner</strong> is now supported on TC75x devices running Android Marshmallow.</li>
 </ul>
 
 <h4 id="enterprisebrowserkioskmode" class="anchor"><a class="heading-anchor" href="#enterprisebrowserkioskmode"><span></span></a>Enterprise Browser Kiosk Mode</h4>
@@ -1112,538 +1324,7 @@ For more information, see the ButtonBar Usage Guide.
 
 <h2 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h2>
 
-<h3 id="mobile" class="anchor"><a class="heading-anchor" href="#mobile"><span></span></a>Mobile</h3>
-
-<table cellspacing="0" cellpadding="0" class="table table-striped">
- <tbody><tr>
-  <th width="15%" class="clsSyntaxHeadings"></th>
-  <th width="10%" class="clsSyntaxHeadings">Device family</th>
-  <th width="25%" class="clsSyntaxHeadings">Device</th>
-  <th width="25%" class="clsSyntaxHeadings">Operating System(s)</th>
-  <th width="25%" class="clsSyntaxHeadings">Supported WebView(s)</th>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="es400Pic" src="../../images/es400.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>ES400</b></td>
-  <td class="clsSyntaxCells clsOddRow">ES400</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
-  <tr>
-  </tr><tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="et5xPic" src="../../images/et5x.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>ET5X</b></td>
-  <td class="clsSyntaxCells clsOddRow">ET50, ET55</td>
-  <td class="clsSyntaxCells clsOddRow">Android 5.0 (Lollipop)<br>Android 6.0 (Marshmallow)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc18Pic" src="../../images/mc18.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC18</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC18</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 7.0<br>Android 4.4 (KitKat)<br>Android 5.0 (Lollipop)</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit, Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc3000Pic" src="../../images/mc3090.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC3090</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC3000, MC3090</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 5.0<br>Windows Mobile 6.1</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc3100Pic" src="../../images/mc3100.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC3100</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC3100R, MC3100S, MC3190G, MC3190R, MC3190S, MC3190Z</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 6.0 Professional<br>Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc32Pic" src="../../images/mc3200.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC32N0</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC32N0</td>
-  <td class="clsSyntaxCells clsOddRow">Android 5.0 (Lollipop)<br>Windows CE 7.0</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit, Android Stock Webkit</td>
- </tr>
-<tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc33Pic" src="../../images/mc33x.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC33X</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC3300</td>
-  <td class="clsSyntaxCells clsOddRow">Android 7.0 (Nougat)<br>Android 8.0 (Oreo)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc40Pic" src="../../images/mc40.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC40</b></td>
-  <td class="clsSyntaxCells clsOddRow"><nobr>MC40</nobr></td>
-  <td class="clsSyntaxCells clsOddRow">Android 4.4 (KitKat)<br>Android 5.0 (Lollipop)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc45Pic" src="../../images/mc45.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC45</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC45</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc55Pic" src="../../images/mc55.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC55</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC5574, MC5590</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc55a0Pic" src="../../images/mc55.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC55A0</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC55A0</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc55n0Pic" src="../../images/mc55.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC55N0</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC55N0</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc55xPic" src="../../images/mc55x.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC55X</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC55-HC Healthcare</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc65Pic" src="../../images/mc65.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC65</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC659B</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc67Pic" src="../../images/mc67.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC67</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC67</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5<br>Android 4.4 (KitKat)</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit, Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc70Pic" src="../../images/mc70.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC70</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC7004, MC7090, MC7094, MC7095</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Mobile 6.1</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc75Pic" src="../../images/mc75.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC75</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC7506, MC7508, MC7596, MC7598</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc75aPic" src="../../images/mc75a.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC75a</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC75A0, MC75A6, MC75A8</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc9000Pic" src="../../images/mc9000.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC9000</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC9090, MC9097, MC9094</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 5.0<br>Windows Mobile 6.1</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc9190Pic" src="../../images/mc9100.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC9100</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC9190-G, MC9190Z</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 6.0 Professional<br>Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc92Pic" src="../../images/mc9100.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC9200</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC92N0</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 7.0<br>Windows Embedded Handheld 6.5<br>Android 4.4 KitKat</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit, Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mc95Pic" src="../../images/mc9500.gif" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MC9500</b></td>
-  <td class="clsSyntaxCells clsOddRow">MC9590, MC9596, MC9598, MC959B (WM6.1)</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Mobile 6.1<br>Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="xt15pic" src="../../images/xt15.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>Omnii XT15</b></td>
-  <td class="clsSyntaxCells clsOddRow">XT15</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 6.0 (Omnii CE-12.2.44149 BSP or higher)<br>Windows Embedded Handheld 6.5 (Omnii CE-12.2.44149 BSP or higher)</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="ps20J.jpg" src="../../images/ps20J.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>PS20</b></td>
-  <td class="clsSyntaxCells clsOddRow">PS20J</td>
-  <td class="clsSyntaxCells clsOddRow">Android 8.0 (Oreo)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
-<tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc2x" src="../../images/tc2x.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC2X</b></td>
-  <td class="clsSyntaxCells clsOddRow">TC20, TC25</td>
-  <td class="clsSyntaxCells clsOddRow">Android 7.0 (Nougat)<br>Android 8.x (Oreo)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
-<tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc51IronmanPic" src="../../images/tc51Ironman.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC5X</b></td>
-  <td class="clsSyntaxCells clsOddRow">TC51, TC51HC, TC52, TC56, TC57, TC57HC</td>
-  <td class="clsSyntaxCells clsOddRow">Android 6.0 (Marshmallow)<br>Android 7.0 (Nougat)<br>Android 8.x (Oreo)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc55Pic" src="../../images/tc55.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC55</b></td>
-  <td class="clsSyntaxCells clsOddRow">TC55</td>
-  <td class="clsSyntaxCells clsOddRow">Android 4.4 (KitKat)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc70Pic" src="../../images/tc70.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC70</b></td>
-  <td class="clsSyntaxCells clsOddRow">TC70 GA1, TC70 GA2</td>
-  <td class="clsSyntaxCells clsOddRow">Android 4.4 (KitKat)<br>Android 5.0 (Lollipop)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc70xPic" src="../../images/tc75Falcon.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC70x</b></td>
-  <td class="clsSyntaxCells clsOddRow">TC70x</td>
-  <td class="clsSyntaxCells clsOddRow">Android 6.0 (Marshamallow)<br>Android 7.0 (Nougat)<br>Android 8.x (Oreo)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc75Pic" src="../../images/tc75.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC75</b></td>
-  <td class="clsSyntaxCells clsOddRow"><nobr>TC75, TC75x</nobr></td>
-  <td class="clsSyntaxCells clsOddRow">Android 4.4 (KitKat)<br>Android 5.0 (Lollipop)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
- </tr><tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc75FalconPic" src="../../images/tc75Falcon.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC75x</b></td>
-  <td class="clsSyntaxCells clsOddRow">TC75x</td>
-  <td class="clsSyntaxCells clsOddRow">Android 6.0 (Marshmallow)<br>Android 7.0 (Nougat)<br>Android 8.x (Oreo)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc77" src="../../images/TC77.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC77</b></td>
-  <td class="clsSyntaxCells clsOddRow">TC77</td>
-  <td class="clsSyntaxCells clsOddRow">Android 7.0 (Nougat)<br>Android 8.x (Oreo)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="tc8000Pic" src="../../images/tc8000.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>TC8000</b></td>
-  <td class="clsSyntaxCells clsOddRow"><nobr>TC8000</nobr></td>
-  <td class="clsSyntaxCells clsOddRow">Android 4.4 (KitKat)<br>Android 5.0 (Lollipop)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="wap4Pic" src="../../images/wap4.png"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>Workabout Pro 4</b></td>
-  <td class="clsSyntaxCells clsOddRow"><nobr>7528</nobr></td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 6.0 (WAP4 CE-2.4 BSP or higher)<br>Windows Embedded Handheld 6.5 (WAP4 WEH-3.0.1 BSP or higher)</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
-</tbody>
-</table>
-
-<h3 id="vehicle" class="anchor"><a class="heading-anchor" href="#vehicle"><span></span></a>Vehicle</h3>
-
-<table cellspacing="0" cellpadding="0" class="table table-striped">
- <tbody><tr>
-  <th width="15%" class="clsSyntaxHeadings"></th>
-  <th width="10%" class="clsSyntaxHeadings">Device family</th>
-  <th width="25%" class="clsSyntaxHeadings">Device</th>
-  <th width="25%" class="clsSyntaxHeadings">Operating System(s)</th>
-  <th width="25%" class="clsSyntaxHeadings">Supported WebView(s)</th>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="vh10pic" src="../../images/vh10.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>VH10</b></td>
-  <td class="clsSyntaxCells clsOddRow">VH10</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 6.0 (Omnii CE-12.2.44149 BSP or higher)</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="vc5090Pic" src="../../images/vc5090.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>VC5090</b></td>
-  <td class="clsSyntaxCells clsOddRow">VC5090</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 5.0</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="vc6090Pic" src="../../images/vc6000.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>VC6000</b></td>
-  <td class="clsSyntaxCells clsOddRow">VC6000, VC6096</td>
-  <td class="clsSyntaxCells clsOddRow">Windows Embedded Handheld 6.5</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="vc70Pic" src="../../images/vc70N0.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>VC70</b></td>
-  <td class="clsSyntaxCells clsOddRow">VC70</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 7.0</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
-<tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="vc80xPic" src="../../images/vc80x.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>VC80X</b></td>
-  <td class="clsSyntaxCells clsOddRow">VC80C</td>
-  <td class="clsSyntaxCells clsOddRow">Android 7.0 (Nougat)<br>Android 8.x (Oreo)</td>
-  <td class="clsSyntaxCells clsOddRow">Stock Android Webkit</td>
- </tr>
-</tbody>
-</table>
-
-<h3 id="microkiosk" class="anchor"><a class="heading-anchor" href="#microkiosk"><span></span></a>Micro-Kiosk</h3>
-
-<table cellspacing="0" cellpadding="0" class="table table-striped">
- <tbody>
- <tr>
-  <th width="15%" class="clsSyntaxHeadings"></th>
-  <th width="10%" class="clsSyntaxHeadings">Device family</th>
-  <th width="25%" class="clsSyntaxHeadings">Device</th>
-  <th width="25%" class="clsSyntaxHeadings">Operating System(s)</th>
-  <th width="25%" class="clsSyntaxHeadings">Supported WebView(s)</th>
- </tr>
-  <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="cc5000" src="../../images/cc5000.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>CC5000-10</b></td>
-  <td class="clsSyntaxCells clsOddRow">Customer Concierge</td>
-  <td class="clsSyntaxCells clsOddRow">Android 5.0 (Lollipop)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mk3000Pic" src="../../images/mk3000.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MK3000</b></td>
-  <td class="clsSyntaxCells clsOddRow">MK3000, MK3090</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 5.0</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mk3100Pic" src="../../images/mk3100.jpeg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MK3100</b></td>
-  <td class="clsSyntaxCells clsOddRow">MK3100, MK3190</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 7.0</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="mk4000Pic" src="../../images/mk4000.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>MK4000</b></td>
-  <td class="clsSyntaxCells clsOddRow">MK4000, MK4090</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 5.0</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
-</tbody>
-</table>
-
-<h3 id="wearable" class="anchor"><a class="heading-anchor" href="#wearable"><span></span></a>Wearable</h3>
-
-<table cellspacing="0" cellpadding="0" class="table table-striped">
- <tbody>
- <tr>
-  <th width="15%" class="clsSyntaxHeadings"></th>
-  <th width="10%" class="clsSyntaxHeadings">Device family</th>
-  <th width="25%" class="clsSyntaxHeadings">Device</th>
-  <th width="25%" class="clsSyntaxHeadings">Operating System(s)</th>
-  <th width="25%" class="clsSyntaxHeadings">Supported WebView(s)</th>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="wt4000Pic" src="../../images/wt4090.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>WT4090</b></td>
-  <td class="clsSyntaxCells clsOddRow">WT4070, WT4090</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 5.0</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="wt41n0Pic" src="../../images/wt41N0.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>WT41N0</b></td>
-  <td class="clsSyntaxCells clsOddRow">WT41N0</td>
-  <td class="clsSyntaxCells clsOddRow">Windows CE 7.0</td>
-  <td class="clsSyntaxCells clsOddRow">Internet Explorer, Webkit</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="wt6000Pic" src="../../images/wt6000.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>WT6000</b></td>
-  <td class="clsSyntaxCells clsOddRow"><nobr>WT6000</nobr></td>
-  <td class="clsSyntaxCells clsOddRow">Android 5.0 (Lollipop)<br>Android 7.x (Nougat)</td>
-  <td class="clsSyntaxCells clsOddRow">Android Stock Webkit</td>
- </tr>
- </tbody>
- </table>
-
-<h3 id="ring-scanners" class="anchor"><a class="heading-anchor" href="#ring-scanners"><span></span></a>Ring Scanners</h3>
-<table cellspacing="0" cellpadding="0" class="table table-striped">
- <tbody>
- <tr>
-  <th width="15%" class="clsSyntaxHeadings"></th>
-  <th width="10%" class="clsSyntaxHeadings">Device family</th>
-  <th width="25%" class="clsSyntaxHeadings">Device</th>
-  <th width="25%" class="clsSyntaxHeadings">Device type</th>
-  <th width="25%" class="clsSyntaxHeadings">Supported for use with:</th>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="rs5000Pic" src="../../images/rs5000.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>RS5000</b></td>
-  <td class="clsSyntaxCells clsOddRow">Bluetooth Ring Scanner</td>
-  <td class="clsSyntaxCells clsOddRow">Accessory</td>
-  <td class="clsSyntaxCells clsOddRow">WT6000 Android 5.0 (Lollipop)</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="rs6000Pic" src="../../images/rs6000.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>RS6000</b></td>
-  <td class="clsSyntaxCells clsOddRow">Bluetooth Ring Scanner</td>
-  <td class="clsSyntaxCells clsOddRow">Accessory</td>
-  <td class="clsSyntaxCells clsOddRow">TC75, TC8000 Android 5.0 (Lollipop)<br>TC51, TC56, TC70X Android 6.0 (Marshmallow)<br>MC33X, TC51, TC51-HC, TC56, TC70X, TC75X, VC80X Android 7.0 (Nougat)</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="rs4000Pic" src="../../images/rs4000.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>RS4000</b></td>
-  <td class="clsSyntaxCells clsOddRow">1D Corded Ring Scanner</td>
-  <td class="clsSyntaxCells clsOddRow">Accessory</td>
-  <td class="clsSyntaxCells clsOddRow">WT6000 Android 5.0 (Lollipop)</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="rs507Pic" src="../../images/rs507.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>RS507</b></td>
-  <td class="clsSyntaxCells clsOddRow">Cordless Ring Imager</td>
-  <td class="clsSyntaxCells clsOddRow">Accessory</td>
-  <td class="clsSyntaxCells clsOddRow">TC70 Android 4.4 (KitKat)<br>TC75, TC8000 Android 5.0 (Lollipop)<br>TC51, TC51-HC, TC56, TC70X Android 6.0 (Marshmallow)<br>MC33X, TC51, TC51-HC, TC56, TC70X, TC75X, VC80X Android 7.0 (Nougat)<br>See RS507 Support Notes below.</td>
- </tr>
-</tbody>
-</table>
-
-<p><strong>RS507 Support Notes</strong>: </p>
-
-<ul>
-<li><p>Works with the Enterprise Browser Barcode API on all supported devices running KitKat or higher (relies on the EMDK service, which is standard on such devices).</p></li>
-
-<li><p>Works with RhoElements 2.x and PocketBrowser 2.x/3.x APIs on all supported devices running KitKat or higher <strong>except the TC70-GA1</strong>. </p></li>
-</ul>
-
-<h3 id="handheld-scanners" class="anchor"><a class="heading-anchor" href="#handheld-scanners"><span></span></a>Handheld Scanners</h3>
-
-<table cellspacing="0" cellpadding="0" class="table table-striped">
- <tbody>
- <tr>
-  <th width="15%" class="clsSyntaxHeadings"></th>
-  <th width="10%" class="clsSyntaxHeadings">Device family</th>
-  <th width="25%" class="clsSyntaxHeadings">Device</th>
-  <th width="25%" class="clsSyntaxHeadings">Device type</th>
-  <th width="25%" class="clsSyntaxHeadings">Supported for use with:</th>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="ds3678" src="../../images/ds3678.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>DS3678</b></td>
-  <td class="clsSyntaxCells clsOddRow">Ultra-Rugged Scanner</td>
-  <td class="clsSyntaxCells clsOddRow">Accessory</td>
-  <td class="clsSyntaxCells clsOddRow">TC51, TC51-HC, TC56 and TC70X devices running Android 6.0 (Marshmallow)<br>
-MC33X, TC51, TC51-HC, TC56, TC70X, TC75X and VC80X devices running Android 7.0 (Nougat) and 8.0 (Oreo)</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="li3678" src="../../images/li3678_2.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>LI3678</b></td>
-  <td class="clsSyntaxCells clsOddRow">Ultra-Rugged Scanner</td>
-  <td class="clsSyntaxCells clsOddRow">Accessory</td>
-  <td class="clsSyntaxCells clsOddRow">MC33X, TC51, TC51-HC, TC56, TC70X, TC75X and VC80X devices running Android 7.0 (Nougat)</td>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="ds2278" src="../../images/ds2278_2.png" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>DS2278</b></td>
-  <td class="clsSyntaxCells clsOddRow">Handheld Scanner</td>
-  <td class="clsSyntaxCells clsOddRow">Accessory</td>
-  <td class="clsSyntaxCells clsOddRow">MC33X, TC51, TC51-HC, TC56, TC70X, TC75X and VC80X devices running Android 7.0 (Nougat)</td>
- </tr>
-</tbody>
-</table>
-
-<h3 id="misc-accessories" class="anchor"><a class="heading-anchor" href="#misc-accessories"><span></span></a>Misc. Accessories</h3>
-
-<table cellspacing="0" cellpadding="0" class="table table-striped">
- <tbody>
- <tr>
-  <th width="15%" class="clsSyntaxHeadings"></th>
-  <th width="10%" class="clsSyntaxHeadings">Device family</th>
-  <th width="25%" class="clsSyntaxHeadings">Device</th>
-  <th width="25%" class="clsSyntaxHeadings">Operating System(s)</th>
-  <th width="25%" class="clsSyntaxHeadings">Supported WebView(s)</th>
- </tr>
- <tr>
-  <td class="clsSyntaxCells clsOddRow"><img id="CBL-NGWT-HDVBAP-01pic" src="../../images/CBL-NGWT-HDVBAP-01.jpg" height="25"></td>
-  <td class="clsSyntaxCells clsOddRow"><b>Vibrator CBL-NGWT-HDVBAP-01</b></td>
-  <td class="clsSyntaxCells clsOddRow">Vibrating Cable</td>
-  <td class="clsSyntaxCells clsOddRow">Accessory</td>
-  <td class="clsSyntaxCells clsOddRow">Supported for use with WT6000 (Lollipop)</td>
- </tr>
-</tbody>
-</table>
-
-<h3 id="printers" class="anchor"><a class="heading-anchor" href="#printers"><span></span></a>Printers</h3>
-
-<p>The printers shown below have been tested for compatibility with USB printing from Enterprise Browser. Printing wirelessly from EB apps is supported on many other Zebra printer models. <strong>NOTE</strong>: Zebra's QL Plus and QLn series printers do not support USB printing.</p>
-
-<table cellspacing="0" cellpadding="0" class="table table-striped">
- <tbody><tr>
-  <th width="15%" class="clsSyntaxHeadings"></th>
-  <th width="10%" class="clsSyntaxHeadings">Device family</th>
-  <th width="25%" class="clsSyntaxHeadings">Device models</th>
-  <th width="25%" class="clsSyntaxHeadings">Operating System(s)</th>
-  <th width="25%" class="text-centered">Interface(s)</th>
- </tr>
-<tr>
-<td class="clsSyntaxCells clsOddRow"><img id="mz220pic" src="https://raw.githubusercontent.com/EBZebra/docs/d05601dc71f2531672f39c00238de2ea250d851f/edge/images/zebra-mz220.jpg"></td>
-<td class="clsSyntaxCells clsOddRow"><b>MZ</b></td>
-<td class="clsSyntaxCells clsOddRow">MZ 220, MZ 320</td>
-<td class="clsSyntaxCells clsOddRow">Android, Windows Mobile/CE</td>
-<td class="clsSyntaxCells clsOddRow">Bluetooth, USB, Wi-Fi</td>
-</tr>
-<tr>
-<td class="clsSyntaxCells clsOddRow"><img id="imz220pic" src="../../images/imz320.jpg"></td>
-<td class="clsSyntaxCells clsOddRow"><b>iMZ</b></td>
-<td class="clsSyntaxCells clsOddRow">iMZ 220, iMZ 320</td>
-<td class="clsSyntaxCells clsOddRow">Android, Windows Mobile/CE</td>
-<td class="clsSyntaxCells clsOddRow">Bluetooth, USB, Wi-Fi</td>
-</tr>
-<tr>
-<td class="clsSyntaxCells clsOddRow"><img id="rw420pic" src="../../images/rw420_inCradle.jpg"></td>
-<td class="clsSyntaxCells clsOddRow"><b>RW</b></td>
-<td class="clsSyntaxCells clsOddRow">RW 220, RW 420, RW 420 Print Station</td>
-<td class="clsSyntaxCells usb comp">Android, Windows Mobile/CE</td>
-<td class="clsSyntaxCells clsOddRow">Bluetooth, USB, Wi-Fi</td>
-</tr>
-<tr>
-<td class="clsSyntaxCells clsOddRow"><img id="rp4tpic" src="https://raw.githubusercontent.com/EBZebra/docs/d05601dc71f2531672f39c00238de2ea250d851f/edge/images/zebra-p4t.jpg"></td>
-<td class="clsSyntaxCells clsOddRow"><b>P4T</b></td>
-<td class="clsSyntaxCells clsOddRow">P4T, RP4T Passive RFID Printer</td>
-<td class="clsSyntaxCells clsOddRow">Android, Windows Mobile/CE</td>
-<td class="clsSyntaxCells clsOddRow">Bluetooth, USB, Wi-Fi</td>
-</tr>
-<tr>
-<td class="clsSyntaxCells clsOddRow"><img id="zd500rpic" src="../../images/zd500r.jpg"></td>
-<td class="clsSyntaxCells clsOddRow"><b>ZD500R</b></td>
-<td class="clsSyntaxCells clsOddRow">ZD500R RFID Printer</td>
-<td class="clsSyntaxCells clsOddRow">Android, Windows Mobile/CE</td>
-<td class="clsSyntaxCells clsOddRow">Bluetooth, USB, Wi-Fi</td>
-</tr></tbody>
-</table><p></p>
+<h4 id="devicesupporttableshavebeenmovedtotheebdownloadpagehttpswwwzebracomusensupportdownloadssoftwaredevelopertoolsenterprisebrowserhtmlonthezebrasupportportal" class="anchor"><a class="heading-anchor" href="#devicesupporttableshavebeenmovedtotheebdownloadpagehttpswwwzebracomusensupportdownloadssoftwaredevelopertoolsenterprisebrowserhtmlonthezebrasupportportal"><span></span></a>Device support tables have been moved to the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">EB download page</a> on the Zebra Support Portal.</h4><p></p>
                                         
 
 
@@ -1677,7 +1358,7 @@ MC33X, TC51, TC51-HC, TC56, TC70X, TC75X and VC80X devices running Android 7.0 (
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        © 2015 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved.<a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                     </div>
                      <!--
                      <div class="col-sm-2">
