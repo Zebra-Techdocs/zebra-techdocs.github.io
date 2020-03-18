@@ -338,7 +338,7 @@ adb push enterprisehomescreen.xml /enterprise/usr/enterprisehomescreen.xml
 
 <p>For device troubleshooting and certain other scenarios, it is sometimes useful to make the config file (<code>enterprisehomescreen.xml</code>) visible or to look inside the file and check its settings. The file can be made visible from Admin Mode by exporting it to a visible area of the file system. Alternatively, the config file can be viewed, copied, moved and shared via email or other means using the Android File Browser. </p>
 
-<h5 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes</h5>
+<h5 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>NOTES:</h5>
 
 <ul>
 <li>A config file exported to a visible area of the device file system might remain invisible to the PC until after the device is rebooted. </li>
@@ -481,14 +481,22 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <p>When specifying links, the package and activity parameters can be used to launch the URL with a specific app, such as Mozilla Mobile browser. If no activity is specified, EHS will open the link using the default browser.</p>
 
-<p><b>Notes</b>:</p>
+<h5 id="notes-1" class="anchor"><a class="heading-anchor" href="#notes-1"><span></span></a>NOTES:</h5>
 
 <ul>
 <li>Package names might vary from one Android version to another. </li>
 
 <li><strong>EHS 3.0 and higher supports VectorDrawable app icons</strong>, which scale to different sizes without loss of image quality. <a href="https://developer.android.com/guide/topics/graphics/vector-drawable-resources">Learn more</a>.</li>
 
-<li><strong>EHS can launch links that reference local files</strong> though a “URL” tag (i.e. "file://*.html") on devices running Android 8.x Oreo (and later) if files reside on external storage (i.e. SD card).</li>
+<li><strong>EHS can launch links that reference local files</strong> though a “URL” tag (i.e. "file://*.html") on devices running Android 8.x Oreo (and later) if files reside on internal or external storage (i.e. SD card).</li>
+
+<li><strong>Applications and links appear in the User Mode Launcher</strong> in the same order as listed in the &lt;applications&gt; node.</li>
+
+<li><strong>When apps <em><u>and</u></em> links are present in the &lt;applications&gt; node</strong>, links are displayed first, then apps, regardless of their order in the node (see image, below). 
+<img alt="" style="height:350px" src="ehs_32_apps_links_list.png">
+<em>Links are displayed before apps regardless of their order in the node</em>.<br>
+<em>Click image to enlarge; ESC to exit</em>. 
+<br> </li>
 </ul>
 
 <hr>
@@ -567,10 +575,10 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 &lt;/applications&gt;
 </code></pre>
 
-<p><strong>Wildcard rules</strong>:</p>
+<h5 id="wildcardrules" class="anchor"><a class="heading-anchor" href="#wildcardrules"><span></span></a>Wildcard rules:</h5>
 
 <ul>
-<li><p>Individual apps and wildcard sets will appear in the User Mode Launcher in the same order as they are listed in the &lt;applications&gt; node. </p></li>
+<li><p>Individual apps and wildcard sets appear in the User Mode Launcher in the same order as listed in the &lt;applications&gt; node. </p></li>
 
 <li><p>Apps within each wildcard set are listed alphabetically by label relative to other apps in that set. </p></li>
 
@@ -728,7 +736,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <p>Permits the size of application icons to be set to Small, Medium, Large, Extra Large and Extra Extra Large . Icon size can be controlled through the <code>enterprisehomescreen.xml</code> file or through the device UI while in Admin or User Modes. </p>
 
-<p><strong>Notes</strong>: </p>
+<h5 id="notes-2" class="anchor"><a class="heading-anchor" href="#notes-2"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>EHS 3.0 and higher supports VectorDrawable app icons</strong>, which scale to different sizes without loss of image quality. <a href="https://developer.android.com/guide/topics/graphics/vector-drawable-resources">Learn more</a>.</li>
@@ -833,7 +841,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 </li>
 </ul>
 
-<p><strong>NOTES</strong>: </p>
+<h5 id="notes-3" class="anchor"><a class="heading-anchor" href="#notes-3"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>If the IMEI number is specified</strong> in a non-WWAN device, the default EHS title is displayed.</li>
@@ -854,7 +862,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 &lt;/preferences&gt;
 </code></pre>
 
-<p><strong>Notes</strong>:</p>
+<h5 id="notes-4" class="anchor"><a class="heading-anchor" href="#notes-4"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>The &lt;title&gt; tags must contain either a static title or the &lt;value&gt; tags</strong>; never both.</li>
@@ -908,7 +916,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>fully qualified local (on-device) path to a .bmp, .gif, .jpg, .png or .webp image file</li>
 </ul>
 
-<p><strong>Notes</strong>: </p>
+<h5 id="notes-5" class="anchor"><a class="heading-anchor" href="#notes-5"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>Use of this tag requires addition of &lt;title_bar_icon&gt; node</strong> to <code>enterprisehomescreen.xml</code> file; not included by default.</li>
@@ -921,7 +929,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <li><strong>The SD card slot is disabled when a device is in <a href="../features/#multiusermode">Multi-user Mode</a></strong>; files on removable storage are not accessible in this mode.</li>
 
-<li>In EHS 3.2 and higher, <strong>folder access with the file browser UI is limited to:</strong>
+<li><strong>For Android Pie devices with EHS 3.2 or higher, folder access with the file browser UI is limited</strong> to:
 
 
 <ul>
@@ -1053,9 +1061,19 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <h3 id="orientation" class="anchor"><a class="heading-anchor" href="#orientation"><span></span></a>Orientation</h3>
 
-<p>Allows the screen orientation to be fixed in landscape or portrait mode. Omitting or leaving this setting blank (default) allows Android system settings to control screen orientation.  </p>
+<p>Allows the screen orientation to be fixed in landscape or portrait mode. Omitting or leaving this setting blank (default) allows the Android-System orientation setting to control screen orientation.  </p>
 
 <p>Screen orientation can be changed through the Quick Settings panel only when EHS is set to accept the System orientation setting (the EHS default). If an EHS administrator sets the orientation to landscape or portrait mode, the device user will no longer be able to change the orientation setting.</p>
+
+<h5 id="notes-6" class="anchor"><a class="heading-anchor" href="#notes-6"><span></span></a>NOTES:</h5>
+
+<ul>
+<li><strong>Zebra recommends leaving this setting blank</strong> (default) if app- and system-control of screen orientation are desired.</li>
+
+<li><strong>The orientation set using this parameter applies ONLY to EHS screens</strong>, such as the EHS Home screen, info and preferences screens.</li>
+
+<li><strong>Android orientation (auto-rotate/portrait/landscape) settings remain effective on non-EHS apps</strong> regardless of this parameter setting.</li>
+</ul>
 
 <p><img alt="" style="height:350px" src="orientation.png"></p>
 
@@ -1161,14 +1179,14 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>fully qualified local (on-device) path to .bmp, .gif, .jpg, .png or .webp file</li>
 </ul>
 
-<p><strong>Notes</strong>: </p>
+<h5 id="notes-7" class="anchor"><a class="heading-anchor" href="#notes-7"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>Only files in the</strong> <code>/enterprise</code> <strong>directory are persistent</strong>, and remain on the device following an <a href="/mx/powermgr/#enterprisereset">Enterprise Reset</a>. </li>
 
 <li><strong>Zebra recommends avoiding the use of removable storage for wallpaper and icon image files</strong>.</li>
 
-<li>In EHS 3.2 and higher, <strong>folder access with the file browser UI is limited to:</strong>
+<li><strong>For Android Pie devices with EHS 3.2 or higher, folder access with the file browser UI is limited</strong> to:
 
 
 <ul>
@@ -1362,7 +1380,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <p>Unless <strong><em>all four</em></strong> of the above conditions are true, the value in this tag is ignored. </p>
 
-<p><strong>Notes</strong>: </p>
+<h5 id="notes-8" class="anchor"><a class="heading-anchor" href="#notes-8"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>To prevent use of the camera</strong>, Zebra recommends using this tag <em>and</em> removing the camera app from the User Mode screen.  </li>
@@ -1461,7 +1479,11 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <h3 id="systemsettingsrestricted" class="anchor"><a class="heading-anchor" href="#systemsettingsrestricted"><span></span></a>System Settings Restricted</h3>
 
-<p>Controls whether full or limited settings are available when the device is in Admin or User Mode. A setting of 1 (default) or if left unspecified limits user access to Display and Sound settings and the "About phone" panel. <b>A setting of 0 permits user access to all device settings</b>.</p>
+<p>Controls whether full or limited settings are available when the device is in Admin or User Mode. A setting of 1 (default) or if left unspecified limits user access to Display and Sound settings and the "About phone" panel. <b>A setting of 0 permits user access to all device settings</b>. </p>
+
+<blockquote>
+  <p><strong>IMPORTANT</strong>: See NOTES section below.  </p>
+</blockquote>
 
 <p><img alt="" style="height:350px" src="settings_restricted_panels.png"></p>
 
@@ -1478,7 +1500,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <pre class="prettyprint"><code>&lt;system_settings_restricted&gt;1&lt;/system_settings_restricted&gt;
 </code></pre>
 
-<p><strong>Notes and Warnings</strong>: </p>
+<h5 id="notes-9" class="anchor"><a class="heading-anchor" href="#notes-9"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>The System settings app must be explicitly enabled in advance</strong> to make use of this setting. See the <a href="#enabledisableapps">Enable/Disable Apps</a> feature for more information. </li>
@@ -1488,6 +1510,15 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><strong>It is still possible to add shortcuts to restricted System-settings components</strong> (i.e. apps) using a third-party shortcut creator. However, such shortcuts also are available in User Mode. If a system setting component should be accessible only to administrators, it should not be mapped using a shortcut.</li>
 
 <li><strong>Uninstalling EHS does not revert Restricted System Settings to its original state</strong>. If required, this must be done manually before uninstalling EHS.</li>
+
+<li><strong>Reduced system settings in the default EHS configuration might prevent some MX features from working as expected</strong>. See the <a href="/mx/accessmgr/#system-settings-access">Access Manager guide</a> System Settings Access section and the guides below for more information.
+
+
+<ul>
+<li><a href="/mx/devadmin/#screen-lock-type">DevAdmin guide</a> - Set Screen Lock Type</li>
+
+<li><a href="/mx/uimgr/#two-finger-quick-settings-enabledisable">UI Manager guide</a> - Two-finger Quick Settings Enable/Disable</li></ul>
+</li>
 </ul>
 
 <hr>
@@ -1830,7 +1861,7 @@ action="com.sample.androidserviceexample.MyService.downloadfile"/&gt;
 
 <p><img alt="" style="height:350px" src="disable_apps.png"></p>
 
-<p><b>Notes</b>: </p>
+<h5 id="notes-10" class="anchor"><a class="heading-anchor" href="#notes-10"><span></span></a>NOTES:</h5>
 
 <ul>
 <li>Settings defined by <strong>these tags override EHS defaults</strong> and any settings applied with other tags.</li>
@@ -1852,7 +1883,7 @@ action="com.sample.androidserviceexample.MyService.downloadfile"/&gt;
 
 <p>On GMS devices running Android 8.x Oreo and higher, Zebra implements a mode called <a href="/mx/gmsmgr">GMS Restricted</a>, an optional state that disables all or select sets of GMS applications and services (i.e. Gmail, Google Maps, etc.) on the device and removes their icons from the Android Launcher.</p>
 
-<p><b>Notes</b>: </p>
+<h5 id="notes-11" class="anchor"><a class="heading-anchor" href="#notes-11"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>While apps and services disabled through GMS Restricted mode also are disabled on devices running EHS, <u>their names remain visible in the EHS Preferences -&gt; Disable Applications</u></strong> panel.</li>
@@ -1930,7 +1961,7 @@ action="com.sample.androidserviceexample.MyService.downloadfile"/&gt;
 <li>integer (in seconds) </li>
 </ul>
 
-<p>Notes: </p>
+<h5 id="notes-12" class="anchor"><a class="heading-anchor" href="#notes-12"><span></span></a>NOTES:</h5>
 
 <ul>
 <li>15 is the minimum value; lower values are ignored</li>
@@ -2095,7 +2126,7 @@ Refer to the examples below to see this the context of the `enterprisehomescreen
 
  -->
 
-<p>Notes:</p>
+<h5 id="notes-13" class="anchor"><a class="heading-anchor" href="#notes-13"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><p><strong>When shortcuts that link to local apps or websites are added using the method described above</strong>, EHS adds a link tag to the config file as in the sample below:</p>
@@ -2292,7 +2323,7 @@ Refer to the examples below to see this the context of the `enterprisehomescreen
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2019 Zebra Technologies Corporation and/or its affiliates. All rights reserved. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                     </div>
     <!-- 10/17/18- remove navbar fixed class, social icons
                     <div class="col-sm-2">
