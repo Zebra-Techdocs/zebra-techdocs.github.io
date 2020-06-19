@@ -108,6 +108,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/datawedge/8-0/guide/licensing">
+                                    Licensing
+                            </a>
+                        </li>
+                        <li>
                             <a href="/datawedge/8-0/guide/faq">
                                     FAQ
                             </a>
@@ -299,7 +304,7 @@ This API implements [nested bundles](../overview/#nestedbundles), which contain 
 
 <li><strong>DataWedge 7.6 -</strong> Added new Dutch Postal 3S parameter.</li>
 
-<li><strong>DataWedge 8.0 -</strong> New secure intent delivery with intent_component_info.</li>
+<li><strong>DataWedge 8.0 -</strong> New secure intent delivery with intent_component_info, new unlicensed error code.</li>
 </ul>
 
 <h3 id="functionprototype" class="anchor"><a class="heading-anchor" href="#functionprototype"><span></span></a>Function Prototype</h3>
@@ -525,6 +530,8 @@ If set to "false", the configuration will be saved for the individual selected s
 <li><strong>OPERATION_NOT_ALLOWED -</strong> An attempt was made to rename or delete a protected Profile or to associate an app with Profile0</li>
 
 <li><strong>RESULT_ACTION_RESULT_CODE_EMPTY_RULE_NAME -</strong> Rule name empty or undefined in <code>ADF_RULE</code> bundle</li>
+
+<li><strong>UNLICENSED_FEATURE -</strong> An attempt was made to call SetConfig or Switch Scanner Params API to change the scanning mode to MultiBarcode or NextGen SimulScan on an unlicensed <a href="../../licensing">Zebra Professional-series device</a>.</li>
 </ul>
 
 <p>Also see the <a href="../resultinfo">Result Codes guide</a> for more information.  </p>
@@ -4080,7 +4087,7 @@ this.sendBroadcast(iSetConfig);
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                            ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corporation and/or its affiliates. All rights reserved.
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--
