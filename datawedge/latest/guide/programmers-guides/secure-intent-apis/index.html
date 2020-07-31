@@ -253,13 +253,17 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Previously, any application on the device could configure DataWedge parameters and receive information such as configurations and status notifications via DataWedge APIs. This led to a potential security risk where a malicious application can configure DataWedge profiles used by other applications and leverage it for its own advantage. For example, a malicious app could modify the destination URI of IP Output plugin to divert the data delivery to a different address.</p>
+<p>DataWedge provides an option for admins to secure access to DataWedge intent APIs, allowing only approved apps to configure DataWedge. DataWedge intent APIs are categorized, allowing the administrator to grant DataWedge API access to specific apps based on category. By default, DataWedge accepts any intent API to avoid impact to existing applications.</p>
 
-<p>Now DataWedge provides an option for admins to secure access to DataWedge Intent APIs, allowing only approved apps to configure DataWedge. DataWedge Intent APIs are categorized, allowing the administrator to grant DataWedge API access to specific apps based on category. By default, DataWedge accepts any intent API to avoid impact to existing applications.</p>
+<p>Previously, any application on the device could configure DataWedge parameters and receive information such as configurations and status notifications via DataWedge APIs. This led to a potential security risk where a malicious application can configure DataWedge profiles used by other applications and leverage it for its own advantage, for example a malicious app could modify the destination URI of IP Output plugin to divert data delivery to a different address.</p>
 
 <blockquote>
   <p>MX version 10.1.1 or above is required on the device.</p>
 </blockquote>
+
+<p>Video demonstration about securing access to DataWedge intent APIs:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y7smCqmYB7E" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <h2 id="secureaccess" class="anchor"><a class="heading-anchor" href="#secureaccess"><span></span></a>Secure Access</h2>
 
@@ -704,8 +708,6 @@ The applications must use EMDK ProfileManager APIs to acquire a token from Acces
 </li>
 
 <li>If intent APIs are placed in protected mode, existing Zebra apps that use DataWedge may not work as expected. E.g. If Runtime APIs are placed in protected mode, the scan button of the Enterprise Keyboard does not work on Enterprise Keyboard versions 4.0 or lower.</li>
-
-<li>If DataWedge is blocked from accessing MX framework and DataWedge Intent APIs are in protected mode, all intent API calls to DataWedge fail. To use DataWedge Secure Intent APIs, do not to block DataWedge from accessing the MX framework.</li>
 </ul>
 
 <hr>
