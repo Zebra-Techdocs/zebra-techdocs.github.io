@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Configuration">
-    <title>Configuration - Zebra Technologies TechDocs</title>
+    <meta title="Using Device Diagnostic Tool">
+    <title>Using Device Diagnostic Tool - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -111,7 +111,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Configuration</strong></li>
+                            <li><strong>Using Device Diagnostic Tool</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -197,7 +197,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
+                                    <h1 id="using-device-diagnostic-tool" class="anchor"><a class="heading-anchor" href="#using-device-diagnostic-tool"><span></span></a>Using Device Diagnostic Tool</h1>
                                     <p>
                                             Device Diagnostic Tool
                                             2.2
@@ -214,97 +214,131 @@
                                     <div class="">
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-<p>This section discusses configuration settings and reporting options for Device Diagnostic Tool.</p>
-<h2 id="settings" class="anchor"><a class="heading-anchor" href="#settings"><span></span></a>Settings</h2>
-<p>The <strong>Settings</strong> screen provides the file path to import/export the configuration file and allows for configuration of the history and status log files. Access settings by tapping on the options menu at the top right of the main screen, then select <strong>Settings</strong>:
-<img style="height:400px" src="settings.png">
-<em>Application settings</em>
-<br></p>
-<ul>
-<li><strong>File path:</strong><ul>
-<li><strong>Configuration import path -</strong> specifies the file path for the configuration file: <code>/enterprise/usr/deviceselftest/configuration.xml</code></li>
-<li><strong>Log output and configuration export path -</strong> specifies the folder path for the log files and exported configuration file: <code>/storage/emulated/0/Android/data/com.symbol.selfdiagnostics/files</code></li></ul></li>
-<li><strong>Status log -</strong> editable text field for the file name of the status log. Contains information about the tests conducted with any associated parameters and configuration changes from the <strong>Configure Tests</strong> screen. Located in <code>/storage/emulated/0/Android/data/com.symbol.selfdiagnostics/files</code>.  </li>
-<li><strong>History log -</strong> editable text field for the history log, containing information about the test results. Generated when performing a full test from the main screen. Located in <code>/storage/emulated/0/Android/data/com.symbol.selfdiagnostics/files</code>.</li>
-<li><strong>Log File Max Size (MB) -</strong> editable text field to specify the maximum file size for the log files.</li>
-<li><strong>Import -</strong> imports a configuration file located in the configuration import path <code>/enterprise/usr/deviceselftest/configuration.xml</code>.</li>
-<li><strong>Export -</strong> exports <code>configuration.xml</code> from configurations set in the <strong>Configure Tests</strong> screen located in <code>/storage/emulated/0/Android/data/com.symbol.selfdiagnostics/files</code>. Once exported, deploy the configuration to other devices by copying the .xml file to the import path <code>/enterprise/usr/deviceselftest</code> then tap the <strong>Import</strong> button in the <strong>Settings</strong> screen.</li>
-</ul>
-<h2 id="configurationfile" class="anchor"><a class="heading-anchor" href="#configurationfile"><span></span></a>Configuration File</h2>
-<p><code>Configuration.xml</code> can be modified manually using any text editor. The existing tag format must be maintained. Options are configurable through <strong>Settings</strong> or <strong>Configure Tests</strong> in the user interface, except for the options specified below:</p>
-<ul>
-<li><strong>admin_mode –</strong> If set to <em>true</em>, sets the app to admin mode allowing access to the app settings and test configurations. Default value = <em>true</em>.</li>
-<li><strong>continue_testing_on_failure -</strong> If set to <em>true</em>, the test automatically proceeds to the next section test until all tests are completed, even if the previous section test fails. Default value = <em>false</em>.</li>
-<li><strong>show_extra_data -</strong> If set to <em>true</em>, informational data is displayed in the test results page. Refer to Test Criteria section to see the affected informational data. Default value = <em>true</em>.</li>
-<li><strong>debug –</strong> If set to <em>true</em>, application logging is displayed in logcat for debugging purposes.  Default value = <em>true</em>.</li>
-<li><strong>close_on_result_acknowledge -</strong> If set to <em>true</em>, the application closes when all tests have passed. If any test fails, the app does not close. Default value = <em>false</em>.
-Sample settings content in configuration.xml:
-<settings>
-<admin_mode>true</admin_mode>
-<continue_testing_on_failure>true</continue_testing_on_failure>
-<show_extra_data>true</show_extra_data>
-<debug>true</debug>
-<close_on_result_acknowledge>false</close_on_result_acknowledge>
-<status_log_name>status.log</status_log_name>
-<history_log_name>history.log</history_log_name>
-<log_file_max_size_mb>25</log_file_max_size_mb>
-</settings></li>
-</ul>
-<h2 id="configuretests" class="anchor"><a class="heading-anchor" href="#configuretests"><span></span></a>Configure Tests</h2>
-<p>Select the tests to be conducted and configure the test parameters. Access <strong>Configure Tests</strong> by tapping on the options menu at the top right of the main screen, then select <strong>Configure Tests</strong>:</p>
-<table>
-<tbody><tr>
-    <td><img style="height:400px" src="configure-1.jpg"></td>
-    <td>&nbsp;&nbsp;&nbsp;</td>
-    <td><img style="height:400px" src="configure-2.jpg"></td>
-    <td>&nbsp;&nbsp;&nbsp;</td>
-    <td><img style="height:400px" src="configure-3.jpg"></td>
-</tr>
-</tbody></table>
-<p><em>Configure Tests</em>
+<p>Device Diagnostic Tool supports two modes of operation:</p>
+<ol>
+<li><strong>Admin mode -</strong> The administrator can access app settings, modify test configurations and run each individual test. This is the default mode.</li>
+<li><strong>User mode -</strong> The user is restricted to only run tests; there is no access to app settings nor test configurations. To set user mode, disable <i>admin_mode</i> as referenced in the <a href="../configuration#configurationfile">Configuration</a> section.
+<br> </li>
+</ol>
+<h2 id="launchtheapp" class="anchor"><a class="heading-anchor" href="#launchtheapp"><span></span></a>Launch the App</h2>
+<p>Run Device Diagnostic Tool using one of the following methods: </p>
+<ol>
+<li><strong>Manually using the User Interface</strong> - The user launches Device Diagnostic Tool and runs the tests manually. See <a href="#userinterface">User Interface</a> section below. </li>
+<li><strong>Remotely with an EMM (Enterprise Mobility Management) system</strong> - Launch Device Diagnostic Tool in the background and generate a log using command: <br><code>adb shell am broadcast -n "com.symbol.selfdiagnostics/com.symbol.selfdiagnostics.SESReceiver"</code>
+<br></li>
+</ol>
+<p>Only one of the methods should be used to run Device Diagnostic Tool.  If both methods are used simultaneously, unexpected behavior can occur.</p>
+<h2 id="userinterface" class="anchor"><a class="heading-anchor" href="#userinterface"><span></span></a>User Interface</h2>
+<p>When launching the app for the first time, the main screen displays the tests available to run:
+<img style="height:400px" src="mainscreen.png">
+<em>Main screen</em>
+<br>
+If tests have already been conducted, the test name is followed by the date when the last test was conducted.
 <br>
 <br>
-Timeout values can be specified for tests that require user intervention.  Once the specified time elapses (in seconds), execution moves to the next test selected if configured in the configuration.xml file.
-Configuration parameters:</p>
+Tap <strong>Run Tests</strong> from the main screen to execute all the tests. Test execution is based on the tests selected in the <strong>Configure Tests</strong> screen. Once the test is initiated, the user is prompted to perform additional actions during test execution of the following: Scanner Test, Button Test, Touch Screen Test, and Audio Test.  It is recommended for all tests to be performed while the device is in normal use, i.e. not docked in a cradle or connected via USB to a computer. Once testing is complete, the results are displayed:
+<br>
+&nbsp;&nbsp;&nbsp;<img align="left" style="height:25px" src="testpassed.png"><b>Pass -</b> Test executed and passed. Result passed test criteria.<br>
+&nbsp;&nbsp;&nbsp;<img align="left" style="height:25px" src="testfailed.png"><b>Fail -</b>Test executed and did not meet the test criteria.  </p>
+<p>&nbsp;&nbsp;&nbsp;<img align="left" style="height:20px" src="testinfo.png"><b>Information -</b>Data retrieved and displayed.
+<br><br>
+Alternatively, in admin mode individual tests can be performed by tapping on the individual test category and then tapping <b>Run Tests</b>.
+<br>
+<strong>Test failed</strong> and <strong>test timed-out</strong> result to the same red hazard icon.</p>
+<h3 id="scannertest" class="anchor"><a class="heading-anchor" href="#scannertest"><span></span></a>Scanner Test</h3>
+<p>The user is prompted to scan a barcode. Results:</p>
 <ul>
-<li><strong>Scanner Test –</strong> checks whether the scanner is functioning<ul>
-<li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul></li>
-<li><strong>Button Test –</strong> checks for the operation of push-to-talk, left or right scan trigger, volume up and volume down hard buttons on the device.<ul>
-<li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul></li>
-<li><strong>Touch Screen Test –</strong> checks for operation of the device display screen<ul>
-<li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul></li>
-<li><strong>Bluetooth Tests –</strong> tests the Bluetooth radio and returns Bluetooth related information<ul>
-<li><strong>Name –</strong> returns the Bluetooth name</li>
-<li><strong>Radio Power Cycle –</strong> checks for operability when turning the Bluetooth radio on/off</li>
-<li><strong>Functional/Non-functional –</strong> determines whether the Bluetooth radio can be enabled/disabled within a specified period of time.  Returns functional if the Bluetooth radio is functional. </li>
-<li><strong>Discoverable/Connectable –</strong> checks if connectable or discoverable</li></ul></li>
-<li><strong>WiFi Tests –</strong> tests operation of the WiFi radio and returns WiFi related information<ul>
-<li><strong>MAC address –</strong> checks whether the MAC address is valid based on its format</li>
-<li><strong>Ping Address –</strong> specifies the domain name to perform the ping test</li>
-<li><strong>Network Test –</strong> pings the web address specified in the Ping Address field via WiFi and returns the amount of time it takes to receive a response</li>
-<li><strong>Radio Power Cycle –</strong> checks for operability when turning the WiFi radio on/off</li></ul></li>
-<li><strong>Battery Tests –</strong> checks the battery status and returns battery related information <ul>
-<li><strong>Part Number –</strong> returns the battery part number</li>
-<li><strong>Serial Number –</strong> returns the battery serial number</li>
-<li><strong>Manufacture Date –</strong> returns the battery date of manufacture</li>
-<li><strong>Decommission Status –</strong> returns the health of the battery, whether it needs to be decommissioned</li></ul></li>
-<li><strong>WWAN Tests –</strong> tests operation of the WWAN radio and returns related WWAN information<ul>
-<li><strong>Sim State –</strong> checks whether the sim card is present</li>
-<li><strong>Voice State –</strong> checks the voice state of the sim card</li>
-<li><strong>Data State –</strong> checks the data state of the sim card</li></ul></li>
-<li><strong>Audio Test –</strong> tests operation of the device microphone and speaker<ul>
-<li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input
-<br></li></ul></li>
+<li><strong>Scanner Test –</strong> displays barcode data</li>
+<li><strong>Label Type –</strong> displays barcode type or decoder scanned
+<br></li>
 </ul>
-<p>When text values are modified, such as <b>Test Timeout</b> or <b>Ping Address</b>, these values take effect as long as the app is running. When the app is closed and relaunched, the values retrieved from the configuration file take into effect.</p>
-<p>Refer to <a href="../criteria">Test Criteria</a> section for more information.</p>
+<p><b>Note:</b> When performing the Scanner Test on TC55, the user must long press the scanner button for it to be detected.</p>
+<h3 id="buttontest" class="anchor"><a class="heading-anchor" href="#buttontest"><span></span></a>Button Test</h3>
+<p>The user is prompted to press the hard buttons on the device: scan trigger (left or right), push-to-talk, volume up, and volume down. Results:</p>
+<ul>
+<li><strong>Button Test –</strong> <em>test successful</em>, <em>test failed</em>, or <em>test timed-out</em>
+<br></li>
+</ul>
+<p><b>Note:</b> If hard key buttons are remapped, the Button test does not work as expected.</p>
+<h3 id="touchscreentest" class="anchor"><a class="heading-anchor" href="#touchscreentest"><span></span></a>Touch Screen Test</h3>
+<p>The user is prompted to touch each grid box on the screen</p>
+<ul>
+<li><strong>Touch Screen Test –</strong> <em>test successful</em>, <em>test failed</em>, or <em>test timed-out</em></li>
+</ul>
+<h3 id="bluetoothtests" class="anchor"><a class="heading-anchor" href="#bluetoothtests"><span></span></a>Bluetooth Tests</h3>
+<p>Checks whether the Bluetooth radio is operable and returns Bluetooth related information.  Results:</p>
+<ul>
+<li><strong>Name –</strong> displays the Bluetooth name</li>
+<li><strong>Radio Power Cycle –</strong> <em>test successful</em> or <em>test failed</em>. The state of the radio is preserved prior to this test.</li>
+<li><strong>Functional/Non-functional –</strong> <em>functional</em> or <em>non-functional</em></li>
+<li><strong>Discoverable/Connectable -</strong> <em>connectable</em>, <em>discoverable</em>, or <em>none</em></li>
+</ul>
+<h3 id="wifitests" class="anchor"><a class="heading-anchor" href="#wifitests"><span></span></a>Wifi Tests</h3>
+<p>Checks for operation of the WiFi radio and returns WiFi related information.  Results:</p>
+<ul>
+<li><strong>MAC Address –</strong> <em>valid</em> or <em>invalid</em></li>
+<li><strong>Network Test –</strong> displays <em>connected</em> or <em>not connected</em><!-- _ping failed_ or the time (in ms or sec) it takes to ping the specified address if successful.--> Failure occurs if the WiFi is not connected to any network. The state of the radio is preserved prior to this test. If test is successful, the following values are displayed:<ul>
+<li><strong>strength –</strong> displays signal strength</li>
+<li><strong>essid –</strong> displays ESSID; <strong>On Android O and above,</strong> the location is required to be enabled in device settings due to Android restrictions. If the device location is not enabled, the value is returned as <em>unknown ssid</em>.</li>
+<li><strong>ip –</strong> displays IP address</li>
+<li><strong>bssid –</strong> <em>valid</em> or <em>invalid</em></li>
+<li><strong>speed –</strong> displays connection speed</li></ul></li>
+<li><strong>Radio Power Cycle –</strong> <em>test successful</em> or <em>test failed</em></li>
+</ul>
+<h3 id="batterytests" class="anchor"><a class="heading-anchor" href="#batterytests"><span></span></a>Battery Tests</h3>
+<p>Checks the battery status and returns battery related information.  Results:</p>
+<ul>
+<li><strong>Part number –</strong> displays the part number</li>
+<li><strong>Serial number –</strong> displays the serial number</li>
+<li><strong>Manufacture date –</strong> displays the battery date of manufacture</li>
+<li><strong>Decommission status –</strong> displays the health of the battery as:<ul>
+<li><strong>Good –</strong> the battery is in a healthy state</li>
+<li><strong>Decommissioned –</strong> the battery has reached the threshold designated, currently 400 charge cycles, indicating that the battery should be replaced with a new one soon.</li>
+<li><strong>Unknown –</strong> indicates a problem retrieving the battery health information</li></ul></li>
+<li><strong>Voltage –</strong> displays the voltage</li>
+<li><strong>Current –</strong> displays the current</li>
+<li><strong>Temperature –</strong> displays the temperature</li>
+</ul>
+<h3 id="wwantests" class="anchor"><a class="heading-anchor" href="#wwantests"><span></span></a>WWAN Tests</h3>
+<p>Checks the operation of the WWAN radio and returns related WWAN information.  Results:</p>
+<ul>
+<li><strong>Sim State –</strong> Airplane mode must be disabled.  Displays one of the following values:<ul>
+<li><strong>Present –</strong> sim card is present</li>
+<li><strong>Absent –</strong> sim card is not present</li></ul></li>
+<li><strong>Voice State -</strong> displays one of the following values:<ul>
+<li><strong>Voice in service</strong></li>
+<li><strong>Voice out of service</strong></li>
+<li><strong>Voice Emergency only</strong></li>
+<li><strong>Voice power off</strong></li>
+<li><strong>Unknown voice</strong></li></ul></li>
+<li><strong>Data State –</strong> displays one of the following values:<ul>
+<li><strong>Data connected</strong></li>
+<li><strong>Data disconnected</strong></li>
+<li><strong>Data connecting</strong></li>
+<li><strong>Data suspended</strong></li>
+<li><strong>Unknown data</strong></li></ul></li>
+<li><strong>WAN Type –</strong> displays the network type, such as: <em>LTE, 2G, 3G, 4G,</em> or <em>Not Available</em></li>
+<li><strong>Signal Strength –</strong> displays one of the following:<ul>
+<li><strong>Not applicable -</strong> SIM card absent</li>
+<li><strong>Unknown –</strong> device could be in airplane mode</li>
+<li><strong>Signal strength -</strong> in dBm</li></ul></li>
+<li><strong>Phone Number –</strong> <em>valid</em> or <em>invalid</em>, depending on whether or not the phone number is exposed by the service provider.</li>
+<li><strong>Device ID –</strong> <em>valid</em> or <em>invalid</em>, depending on whether or not the device ID is exposed</li>
+</ul>
+<h3 id="audiotest" class="anchor"><a class="heading-anchor" href="#audiotest"><span></span></a>Audio Test</h3>
+<p>Checks for operation of the device microphone and speaker.  Results:</p>
+<ul>
+<li><strong>Audio Test –</strong> <em>test successful</em> or <em>test failed</em>
+<br>
+<br></li>
+</ul>
 <!-- -->
 <hr>
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 <ul>
 <li><a href="../about">About Device Diagnostic Tool</a></li>
-<li><a href="../usage">Usage Guide</a></li>
 <li><a href="../criteria">Test Criteria</a></li>
+<li><a href="../configuration">Configuration</a></li>
 </ul><p></p>
                                         
 
