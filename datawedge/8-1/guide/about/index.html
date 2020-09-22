@@ -268,11 +268,11 @@
 <p>Follow the <a href="../gettingstarted">Get Started</a> guide, which discusses both approaches and includes a programmer's guide on common use cases and best practices.</p>
 
 <div class="alert alert-danger alert-dismissible fade in" role="alert"><b>Important information about NextGen SimulScan:</b> <br>Major SimulScan capabilities are being migrated to the internal scanning framework accessible through DataWedge and <b><a href="../api">DataWedge intent APIs.</a></b> These capabilities formerly available only through SimulScan will be accessible without licensing. They are supported on <a href="../input/barcode#bluetoothscanners">certain Bluetooth scanners</a> and all Zebra devices with built-in imager and/or camera running Android 8.x Oreo and higher. Major SimulScan features being transitioned are:<br>
-&nbsp;&nbsp;&nbsp;<b>• Multibarcode -</b> Options currently available are <b><a href="../input/barcode#basicmultibarcodeparams">Number of barcodes per scan</a></b> (setting a fixed quantity of barcodes to scan), <b><a href="../input/barcode#basicmultibarcodeparams">Instant Reporting</a></b> (instantaneously reporting unique barcodes within a scanning session) and <b><a href="../input/barcode#basicmultibarcodeparams">Report decoded barcodes</a></b> (reporting decoded barcodes in a single scan session). Multibarcode is enabled through the <b>Scanning Modes</b> option in <b><a href="../input/barcode#scanningmodes">NextGen SimulScan configuration</a></b>.<br>
+&nbsp;&nbsp;&nbsp;<b>• Multibarcode -</b> Options currently available are <b><a href="../input/barcode#multibarcodeparams">Number of barcodes per scan</a></b> (setting a fixed quantity of barcodes to scan), <b><a href="../input/barcode#multibarcodeparams">Instant Reporting</a></b> (instantaneously reporting unique barcodes within a scanning session) and <b><a href="../input/barcode#multibarcodeparams">Report decoded barcodes</a></b> (reporting decoded barcodes in a single scan session). Multibarcode is enabled through the <b>Scanning Modes</b> option in <b><a href="../input/barcode#scanningmodes">NextGen SimulScan configuration</a></b>.<br>
 <!--  // **TUT-40275 - OCR and Signature Capture not part of NGSS**
 &nbsp;&nbsp;&nbsp;<b>• OCR A/B -</b> <a href="../input/barcode#ocra">OCR A</a> and <a href="../input/barcode#ocrb">OCR B</a> decoder support added since DataWedge 7.5.<br>
 &nbsp;&nbsp;&nbsp;<b>• Image Capture -</b> <a href="../input/barcode#decodersignature">Decoder Signature</a> (aka Signature Capture) support added since DataWedge 7.3. Other Image Capture features to be transitioned later in 2020.<br>-->
-&nbsp;&nbsp;&nbsp;<b>• Document Capture -</b> Scan a document based on a custom <a href="../input/barcode#documentcapturetemplate">document capture template</a>.<br>
+&nbsp;&nbsp;&nbsp;<b>• Document Capture -</b> Scan a document based on a custom <a href="../input/barcode#documentcapture">document capture template</a>.<br>
 See <a href="/simulscan/1-1/guide/alert">Simulscan Migration Alert</a> for more information.
 </div>
 
@@ -470,7 +470,7 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 <ol>
 <li>When the device is suspended, it takes a few milliseconds to release all the resources. DataWedge releases the resources once it receives the Screen Off notification. Until this notification is received, DataWedge continues to function (e.g. scanning) for a short period of time despite the device being suspended. </li>
 
-<li>Selecting DataWedge as a keyboard from the device virtual keyboard settings does not display any graphical keyboard. DataWedge keyboard is for internal use of DataWedge only.</li>
+<li>Selecting DataWedge as a keyboard or IME (Input Method Editor) from the Virtual Keyboard settings on the device does not display any graphical keyboard. DataWedge keyboard is only for internal use of DataWedge. DataWedge should not be selected as the default IME, otherwise unexpected behavior can occur.</li>
 
 <li>After a device reboot, DataWedge starts after receiving the LOCKED_BOOT_COMPLETED intent. Calling DataWedge intent APIs before the LOCKED_BOOT_COMPLETED intent may cause unexpected behavior as DataWedge is still not started yet. Calling DataWedge intent APIs soon after receiving the LOCKED_BOOT_COMPLETED intent may also cause unexpected behavior as DataWedge may still be in the initialization process. It is recommended to wait for a few seconds after receiving the LOCKED_BOOT_COMPLETED intent before calling any DataWedge intent APIs. </li>
 
@@ -482,11 +482,24 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 <h2 id="newindatawedge81" class="anchor"><a class="heading-anchor" href="#newindatawedge81"><span></span></a>New in DataWedge 8.1</h2>
 
 <ul>
-<li><a href="../programmers-guides/secure-intent-apis">Secure access to DataWedge Intent APIs</a> to prevent unauthorized use of the APIs.</li>
+<li><a href="../programmers-guides/secure-intent-apis">Control access to DataWedge Intent APIs</a> to prevent unauthorized use of the APIs.</li>
 
 <li>New <a href="../input/barcode#readerparams">Trigger Wakeup and Scan</a> Reader Parameter to trigger scanning when device is in a suspended/screen-off state. New corresponding <a href="../api/setconfig/#otherscannerinputparameters">SetConfig API parameter</a>.</li>
 
 <li>Updated licensing screen.</li>
+
+<li>For DataWedge 8.1.45:
+
+
+<ul>
+<li>New <a href="../input/barcode/#configurescannersettings">Scanning Modes</a> option available in the Configure Scanner Settings section of Barcode Input.</li>
+
+<li>Renamed SimulScan to <a href="../input/barcode/#nextgensimulscanconfiguration">Document Capture</a>.</li>
+
+<li>Renamed Basic MultiBarcode to <a href="../input/barcode/#nextgensimulscanconfiguration">MultiBarcode</a>.</li>
+
+<li>Renamed Document Capture Template to <a href="../input/barcode/#documentcapture">Document Selection</a> in UI.</li></ul>
+</li>
 </ul>
 
 <hr>
@@ -535,7 +548,7 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 <h3 id="addedindatawedge75" class="anchor"><a class="heading-anchor" href="#addedindatawedge75"><span></span></a>Added in DataWedge 7.5</h3>
 
 <ul>
-<li>Increased supported data size and maximum number of supported barcodes for <strong><a href="../input/barcode#multibarcodeparams">MultiBarcode</a>.</strong></li>
+<li>Increased supported data size and maximum number of supported barcodes for <strong><a href="../input/barcode/#multibarcodeparams">MultiBarcode</a>.</strong></li>
 
 <li>New <strong><a href="../input/rfid">RFID Input parameters</a></strong> that include Link Profile, Dynamic Power, Pre filters, and Post filters.</li>
 

@@ -421,10 +421,47 @@ Note: When the hardware trigger is disabled, it cannot be used to trigger the sc
 
 <p>Tap <strong>Configure scanner settings</strong>. A list of scanner configuration settings appears.</p>
 
-<p><img style="height:350px" src="configure_scanner_settings_options.png">
+<p><img style="height:350px" src="scanner_configuration.png">
 <em>Scanner configuration</em></p>
 
 <p><strong>Note:</strong> The <strong>Configure scanner settings</strong> option is still accessible even when the selected scanner in <strong>Scanner Selection</strong> is disconnected. <em>In previous DataWedge versions prior to 6.8, all the scanner parameters (decoders, decoder params, etc.) are grayed-out and inaccessible.</em></p>
+
+<h3 id="scanningmodes" class="anchor"><a class="heading-anchor" href="#scanningmodes"><span></span></a>Scanning Modes</h3>
+
+<p><strong>Scanning Modes</strong> is used to select the mode to scan barcodes starting with DataWedge 8.1.45: </p>
+
+<ul>
+<li><strong>Single -</strong> normal mode to scan an individual barcode</li>
+
+<li><strong>UDI -</strong> scan Unique Device Identification (UDI) barcodes such as GS1, HIBCC and ICCBBA</li>
+
+<li><strong>Disabled –</strong> when a scanning mode, such as MultiBarcode or Document Capture, is selected in the <strong>NG SimulScan Configuration</strong> screen, scanning mode in this section is automatically disabled, preventing any other selection. </li>
+</ul>
+
+<p><strong>Scanning Modes</strong> exists within both <strong>Scanner Configuration</strong> and <strong>NG SimulScan Configuration</strong> sections. The availability of <strong>Scanning Modes</strong> options is interdependent on the option selected within each section:</p>
+
+<ul>
+<li>If <strong>Single</strong> or <strong>UDI</strong> is selected as the <strong>Scanning Mode</strong> within <strong>Scanner Configuration,</strong> then <strong>Scanning Modes</strong> is disabled within <strong>NG SimulScan Configuration.</strong>  </li>
+
+<li>If <strong>Document Capture</strong> or <strong>Multibarcode</strong> is selected for <strong>Scanning Modes</strong> within <strong>NG SimulScan Configuration,</strong> then <strong>Scanning Modes</strong> is disabled within <strong>Scanner Configuration.</strong></li>
+</ul>
+
+<table>
+
+ <tbody><tr>
+  <td>
+  <img style="height:350px" src="scanner_config_scanning_modes.png">
+  </td>
+  <td> &nbsp; &nbsp; &nbsp; &nbsp;
+  </td>
+  <td>
+  <img style="height:350px" src="scanning_modes_sc.png">
+  </td>
+ </tr>
+
+</tbody></table>
+
+<p><i>Scanner Configuration - Scanning Modes</i></p>
 
 <hr>
 
@@ -435,7 +472,7 @@ Note: When the hardware trigger is disabled, it cannot be used to trigger the sc
 <ul>
 <li><strong>MultiBarcode -</strong> supported since DataWedge 8.0</li>
 
-<li><strong>Document capture -</strong> supported since DataWedge 8.0, only available on select devices and scanners
+<li><strong>Document Capture -</strong> supported since DataWedge 8.0, only available on select devices and scanners
 <!-- [Removed per TUT-40275]
 * **Signature capture -** supported since DataWedge 7.3
 * **OCR A/B -** supported since DataWedge 7.5 --></li>
@@ -460,30 +497,45 @@ Note: When the hardware trigger is disabled, it cannot be used to trigger the sc
 <em>NextGen (NG) SimulScan configuration</em></p></li>
 </ol>
 
-<p>Aside from <strong><a href="#scanningmodes">Scanning Modes</a></strong>, <strong><a href="#documentcapturetemplate">Document Capture Template</a></strong> and <strong><a href="#basicmultibarcodeparams">Basic MultiBarcode Params</a></strong>, all other options are common to those displayed under <strong>Configure scanner settings</strong>. Refer to the corresponding sections below on each option for further information.</p>
+<p>Aside from <strong><a href="#scanningmodes">Scanning Modes</a></strong>, <strong><a href="#documentcapture">Document Capture</a></strong> and <strong><a href="#multibarcodeparams">MultiBarcode Params</a></strong>, all other options are common to those displayed under <strong>Configure scanner settings</strong>. Refer to the corresponding sections below on each option for further information.</p>
 
-<h3 id="scanningmodes" class="anchor"><a class="heading-anchor" href="#scanningmodes"><span></span></a>Scanning Modes</h3>
+<h3 id="scanningmodes-1" class="anchor"><a class="heading-anchor" href="#scanningmodes-1"><span></span></a>Scanning Modes</h3>
 
 <p><strong>Scanning Modes</strong> is used to select the mode to scan barcodes: </p>
 
 <ul>
-<li><strong>Single -</strong> normal mode to scan an individual barcode </li>
+<li><strong>Single -</strong> normal mode to scan an individual barcode; this does not exist starting with DataWedge 8.1.45.</li>
 
-<li><strong><a href="#basicmultibarcodeparams">Basic MultiBarcode</a> -</strong> multiple barcodes read in a single scan </li>
+<li><strong><a href="#multibarcodeparams">Basic MultiBarcode</a></strong> / <strong><a href="#multibarcodeparams">MultiBarcode</a> -</strong> multiple barcodes read in a single scan.  In DataWedge 8.1.45 or higher, this option is displayed as <strong>MultiBarcode.</strong></li>
 
-<li><strong><a href="#documentcapturetemplate">SimulScan</a> -</strong> document capture based on a specified custom template</li>
+<li><strong><a href="#documentcapturetemplate">SimulScan</a></strong> / <strong><a href="#documentcapturetemplate">Document Capture</a> -</strong> document capture based on a specified custom template.  In DataWedge 8.1.45 or higher, this option is displayed as <strong>Document Capture.</strong> </li>
+
+<li><strong>Disabled –</strong> when a scanning mode, such as <strong>Single</strong> or <strong>UDI,</strong> is selected in the <strong>Scanner Configuration</strong> section, scanning mode is automatically disabled in <strong>NG SimulScan Configuration,</strong> preventing any other selection.</li>
+</ul>
+
+<p><strong>Scanning Modes</strong> exists within both <strong>Scanner Configuration</strong> and <strong>NG SimulScan Configuration</strong> sections. The availability of <strong>Scanning Modes</strong> options is interdependent on the option selected within each section:</p>
+
+<ul>
+<li>If <strong>Single</strong> or <strong>UDI</strong> is selected as the <strong>Scanning Mode</strong> within <strong>Scanner Configuration,</strong> then <strong>Scanning Modes</strong> is disabled within <strong>NG SimulScan Configuration.</strong>  </li>
+
+<li>If <strong>Document Capture</strong> or <strong>Multibarcode</strong> is selected for <strong>Scanning Modes</strong> within <strong>NG SimulScan Configuration,</strong> then <strong>Scanning Modes</strong> is disabled within <strong>Scanner Configuration.</strong></li>
 </ul>
 
 <table>
 
  <tbody><tr>
   <td>
-  <img style="height:350px" src="ng_simulscan_scanning_modes.png">
+    <img style="height:350px" src="ng_simulscan_scanning_modes.png">
   </td>
   <td> &nbsp; &nbsp; &nbsp; &nbsp;
   </td>
   <td>
-  <img style="height:350px" src="scanning_modes_ngss.png">
+    <img style="height:350px" src="scanning_modes_ngss.png">
+  </td>
+  <td> &nbsp; &nbsp; &nbsp; &nbsp;
+  </td>
+  <td>
+    <img style="height:350px" src="scanning_modes_ngss_8.1.45.png">
   </td>
  </tr>
 
@@ -491,41 +543,41 @@ Note: When the hardware trigger is disabled, it cannot be used to trigger the sc
 
 <p><i>NextGen (NG) SimulScan - Scanning Modes</i></p>
 
-<h3 id="documentcapturetemplate" class="anchor"><a class="heading-anchor" href="#documentcapturetemplate"><span></span></a>Document Capture Template</h3>
+<h3 id="documentcapture" class="anchor"><a class="heading-anchor" href="#documentcapture"><span></span></a>Document Capture</h3>
 
-<p><strong>Document Capture</strong> requires a custom template designed with an anchor barcode and designated with the areas to capture as an image, such as text fields in the document. <strong>Document Capture Template</strong> specifies the template to be used for document capture with <strong>SimulScan</strong> scanning mode. Once properly configured, scan the anchor barcode to capture the area as an image. Different fields in the document can be captured in separate images. This is useful in situations such as delivery operations, to capture the address and signature in delivery forms as separate images for proof of delivery.   </p>
+<p><strong>Document Capture</strong> requires a custom template designed with an anchor barcode and designated with the areas to capture as an image, such as text fields in the document. <strong>Document Capture Template</strong> (in DataWedge v8.1 or earlier) or <strong>Document Capture Selection</strong> (in DataWedge 8.1.45 or later) specifies the template to be used for document capture with <strong>SimulScan</strong> or <strong>Document Capture</strong> scanning mode. Once properly configured, scan the anchor barcode to capture the area as an image. Different fields in the document can be captured in separate images. This is useful in situations such as delivery operations, to capture the address and signature in delivery forms as separate images for proof of delivery.   </p>
 
-<p>To configure, in the <strong>NG SimulScan configuration</strong> screen tap on <strong>Document Capture Template</strong> and select a template for the document to be captured. It is required to enable <strong><a href="../../output/intent/#intentoutputsetup">Use content providers</a></strong> option in Intent Output to retrieve scanned data. Refer to <strong><a href="../../admin">Import NextGen SimulScan Templates</a></strong> and <strong><a href="/mx/datawedgemgr">SimulScan template</a></strong> section of DataWedge Manager CSP on how to add a template to this selection. </p>
+<p>To configure, in the <strong>NG SimulScan configuration</strong> screen tap on <strong>Document Capture Template</strong> (in DataWedge v8.1 or earlier) or <strong>Document Capture Selection</strong> (in DataWedge 8.1.45 or later) and select a template for the document to be captured. It is required to enable <strong><a href="../../output/intent/#intentoutputsetup">Use content providers</a></strong> option in Intent Output to retrieve scanned data. Refer to <strong><a href="../../admin">Import NextGen SimulScan Templates</a></strong> and <strong><a href="/mx/datawedgemgr">SimulScan template</a></strong> section of DataWedge Manager CSP on how to add a template to this selection. </p>
 
-<p><img style="height:350px" src="document_capture_ngss.png">
-<em>SimulScan - Document Capture</em></p>
+<p><img style="height:350px" src="document_selection.png">
+<em>Document Capture template selection</em></p>
 
 <p>Video demonstration about document capture:</p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MnsS16CnbCY" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
-<h3 id="basicmultibarcodeparams" class="anchor"><a class="heading-anchor" href="#basicmultibarcodeparams"><span></span></a>Basic MultiBarcode Params</h3>
+<h3 id="multibarcodeparams" class="anchor"><a class="heading-anchor" href="#multibarcodeparams"><span></span></a>MultiBarcode Params</h3>
 
-<p><strong>MultiBarcode</strong> acquires multiple, unique barcodes in a single scan session and delivers the data either immediately or after the specified number of barcodes per scan is reached. </p>
+<p><strong>MultiBarcode</strong> acquires multiple, unique barcodes in a single scan session and delivers the data either immediately or after the specified number of barcodes per scan is reached. In DataWedge 8.1 and earlier, this section is displayed as <strong>Basic MultiBarcode params</strong>.</p>
 
 <table>
 
  <tbody><tr>
   <td>
-  <img style="height:350px" src="basic_multibarcode_params.png">
+  <img style="height:350px" src="multibarcode.png">
   </td>
   <td> &nbsp; &nbsp; &nbsp; &nbsp;
   </td>
   <td>
-  <img style="height:350px" src="multibarcode_params.jpg">
+  <img style="height:350px" src="multibarcode_params.png">
   </td>
  </tr>
 
 </tbody></table>
 
-<p><i>Basic MultiBarcode params</i></p>
+<p><i>MultiBarcode params</i></p>
 
-<p>Basic MultiBarcode params options:</p>
+<p>MultiBarcode params options:</p>
 
 <ul>
 <li><strong>Instant Reporting -</strong> Enable/Disable instantaneous reporting of unique barcodes within a scanning session (duplicates are ignored). If enabled, it ignores the value of <strong>Number of barcodes per scan</strong> and immediately reports the scanned data. If disabled <em>(default)</em>, the decoded data is returned as a single entity after reaching the specified <strong>Number of barcodes per scan</strong>.</li>
@@ -549,7 +601,7 @@ Note: When the hardware trigger is disabled, it cannot be used to trigger the sc
 
 <li>MultiBarcode supports a <strong>maximum data size of 64 KB.</strong> </li>
 
-<li><strong>Picklist behavior -</strong> If the Picklist parameter is set to “Disabled,” the device will attempt to scan the number of barcodes specified in the Basic MultiBarcode params screen. If the Picklist parameter is set to a value other than “Disabled," the user is expected to move the cross-hair to each barcode to be scanned. <strong>Data is returned only after the specified number of barcodes is read</strong>. </li>
+<li><strong>Picklist behavior -</strong> If the Picklist parameter is set to “Disabled,” the device will attempt to scan the number of barcodes specified in the MultiBarcode params screen. If the Picklist parameter is set to a value other than “Disabled," the user is expected to move the cross-hair to each barcode to be scanned. <strong>Data is returned only after the specified number of barcodes is read</strong>. </li>
 
 <li><strong>Duplicate barcodes -</strong> If a label to be scanned contains multiple barcodes, some of which are duplicates (with the same label type and data), only one barcode from the duplicates is decoded; the remainder are ignored. If the label has two duplicate barcodes plus another two different barcodes, a maximum of three barcodes will be decoded from that form; one will be ignored as a duplicate.</li>
 
@@ -1711,8 +1763,6 @@ _**Note:** Zebra does not recommend changing the Image Capture Mode parameter wh
 <li><p><strong>Static Reticle -</strong> Enables the viewfinder and a red reticle (cross-hairs) in the center of the screen to aid in positioning the barcode for scanning. <strong>This parameter is supported only when the Camera is used for scanning</strong>.</p></li>
 </ul>
 
-<p><strong>Scanning Modes -</strong> Used to select between Single (normal), <a href="#udiparams">UDI</a> and <a href="#multibarcodeparams">Basic MultiBarcode</a> modes. <!--<a href="#udiparams">UDI mode</a> acquires multiple simultaneous inputs as specified in the selected Universal Device Identifier UDI parameter(s). <a href="#multibarcodeparams">Basic MultiBarcode mode</a> acquires 2-10 barcodes with each scan as specified in <a href="#multibarcodeparams">Basic MultiBarcode params</a>. **Default=5**.--></p>
-
 <p><strong>Zoom -</strong> Required for decoding DotCode barcodes. User needs to set Camera Zoom value to 2 on the following devices: MC33, TC51/TC56, TC70x/TC75x, VC80x, TC52/TC57, TC72/TC77, PS20. If Camera Zoom is set to any value other than 2 on these devices, it can negatively impact the decoding of specific DotCode barcodes. Parameter values: 1 - 8. <strong>Default=1</strong>.</p>
 
 <p><strong>Keep Pairing Info After Reboot -</strong> Enable/disable automatic re-connection to the connected Bluetooth scanner after device reboot. Applies only to connected Bluetooth scanners.</p>
@@ -1776,6 +1826,8 @@ _**Note:** Zebra does not recommend changing the Image Capture Mode parameter wh
 <li><p><strong>Code ID Type Symbol -</strong> Inserts a Zebra-defined single-character prefix.</p></li>
 </ul>
 
+<p><strong>Connection Idle Time -</strong> Specifies the length of time (in seconds) for a peripheral Bluetooth scanner to remain connected until transitioning to standby mode to conserve battery power.</p>
+
 <p><strong>Decode Haptic Feedback -</strong> Enable the mobile computer to vibrate to indicate a successful decode.</p>
 
 <p><strong>Decode Audio Feedback -</strong> Select an audio tone to play to indicate a successful decode.</p>
@@ -1828,14 +1880,14 @@ _**Note:** Zebra does not recommend changing the Image Capture Mode parameter wh
 <li><strong>TC75x</strong></li>
 </ul>
 
-<p><strong>Tap Scanning Modes to enable UDI decoding</strong>: </p>
+<p>Tap <strong>Scanning Modes</strong> within <strong>Scanner Configuration</strong> to enable UDI decoding: </p>
 
-<p><img style="height:350px" src="scanning_modes.png">
+<p><img style="height:350px" src="scanning_modes_sc.png">
 <em>When UDI scanning mode is enabled (as above)</em>... 
 <img style="height:350px" src="udi_params.png">
 ...<em>the selected UDI input parameter(s) will be used</em>.  </p>
 
-<p><strong>UDI Decoding Notes</strong> </p>
+<p><strong>UDI Decoding Notes:</strong> </p>
 
 <ul>
 <li><strong>UDI decoding is supported only on the devices listed above</strong>. </li>
@@ -1850,6 +1902,8 @@ _**Note:** Zebra does not recommend changing the Image Capture Mode parameter wh
 <h2 id="ocrparams" class="anchor"><a class="heading-anchor" href="#ocrparams"><span></span></a>OCR Params</h2>
 
 <p>Optical character recognition (OCR) decoding is not as secure as barcode. To decrease OCR misdecodes and speed OCR reading, set an accurate OCR template and character subset, and use a check digit. Enabling OCR can slow barcode decoding. Enabling more than one OCR font could also slow OCR decoding and impact OCR decoding accuracy.</p>
+
+<p><strong>OCR is supported on all Zebra SDM660 platform devices with built-in imagers</strong> (such as TC52, TC57, TC72, and TC77). OCR is not supported on camera-only devices, Bluetooth scanners, SE965-based devices, nor Zebra Scanner Expansion Back (ZBack).</p>
 
 <p><strong>Inverse OCR -</strong> White or light words on a black or dark background. Select an option for decoding inverse OCR: </p>
 
