@@ -7,8 +7,8 @@
         <meta name="author" content="Zebra Technologies">
         <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
         <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-        <meta title="About Scanner SDK for Chrome OS">
-        <title>Scanner SDK for Chrome OS - About - Zebra Technologies</title>
+        <meta title="Logging Agent for Windows">
+        <title>Scanner JPOS Driver for Windows - About - Zebra Technologies</title>
         <!-- core CSS -->
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -20,6 +20,7 @@
         <link href="/css/responsive.css" rel="stylesheet">
         <link href="/css/prettify.css" rel="stylesheet">
         <link href="/css/bootstrap-treenav.min.css" rel="stylesheet">
+        <link href="../../dcs_styles.css" rel="stylesheet">
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
@@ -49,19 +50,28 @@
                             <li>
                                 <a href="/dcs/scanners">Barcode Scanner Tools</a>
                             </li>
-                            <p class="navbar-text">Scanner SDK for Chrome OS</p>
+                            <p class="navbar-text">Scanner JPOS Driver for Windows</p>
                         </ul>
                     </div>
                     <div class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="/dcs/scanners/chromeos/about">About</a>
+                                <a href="/dcs/scanners/jpos-windows/about">About</a>
                             </li>
                             <li>
-                                <a href="/dcs/scanners/chromeos/sample-apps">Sample Apps</a>
+                                <a href="/dcs/scanners/jpos-windows/setup">Setup</a>
                             </li>
                             <li>
-                                <a href="/dcs/scanners/chromeos/api">APIs</a>
+                                <a href="/dcs/scanners/jpos-windows/features">Properties, Methods and Events</a>
+                            </li>
+                            <li>
+                                <a href="/dcs/scanners/jpos-windows/sample-apps">Sample Apps</a>
+                            </li>
+                            <li>
+                                <a href="/dcs/scanners/jpos-windows/direct-io/">DirectIO</a>
+                            </li>
+                            <li>
+                                <a href="/dcs/scanners/jpos-windows/appendix/">Appendix</a>
                             </li>
                         </ul>
                     </div>
@@ -76,7 +86,7 @@
                             <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
                                 <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                                     <ul class="nav">
-                                        <li><strong>About Scanner SDK for Chrome OS</strong></li>
+                                        <li><strong>Scanner JPOS Driver for Windows</strong></li>
                                     </ul>
                                 </nav>                    
                                 <script type="text/javascript">
@@ -103,8 +113,8 @@
                                     <div class="col-sm-12">
                                         <section id="cta" class="wow fadeIn">
                                             <div class="">
-                                                <h1 id="aboutscannersdkforchromeos" class="anchor">
-                                                    <a class="heading-anchor" href="#aboutscannersdkforchromeos"><span></span></a>About Scanner SDK for Chrome OS
+                                                <h1 id="jpos-windows-about" class="anchor">
+                                                    <a class="heading-anchor" href="#jpos-windows-about"><span></span></a>About Scanner JPOS Driver for Windows
                                                 </h1>
                                             </div>
                                         </section>                    
@@ -117,43 +127,36 @@
                                             <div class="service-box wow fadeInRight">
                                                 <div class="">
                                                     <h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+                                                    
+                                                    <p>The POS application is either a Java application or an applet that uses one or more JavaPOS devices. An application accesses the JavaPOS device through the JavaPOS Device Interface, which is specified by Java interfaces.</p>
 
-                                                    <p>The Barcode Scanner Control App for Chrome demonstrates the capabilities of Zebra Scanner SDK for Chrome OS.</p>
-
-                                                    <p>Features:</p>
+                                                    <p>Each JavaPOS device is a combination of these components:</p>
 
                                                     <ul>
-                                                        <li>Discover direct and cascaded barcode scanners</li>
-                                                        <li>Connect to barcode scanners</li>
-                                                        <li>Disconnect from barcode scanners</li>
-                                                        <li>Disable barcode scanners</li>
-                                                        <li>Enable barcode scanners</li>
-                                                        <li>Read barcode data</li>
-                                                        <li>Read weight from the scale integrated barcode scanners</li>
-                                                        <li>Zero scale</li>
-                                                        <li>Reset scale</li>
-                                                        <li>Read asset information (Communication Interface, Vendor ID, Product ID, Serial number, Serial number, Firmware version)</li>
-                                                        <li>Aim control</li>
-                                                        <li>Pull trigger</li>
-                                                        <li>Release trigger</li>
-                                                        <li>Beeper control</li>
-                                                        <li>LED control</li>
-                                                        <li>Get device topology</li>
+                                                        <li>JavaPOS Device Control is a Java class that provides the interface between the application and the device category. It contains no graphical component and is therefore invisible at runtime and conforms to the JavaBeans API. The Device Control was designed so that all implementations of a device category's control are compatible. The Device Control can be developed independently of a Device Service for the same device category. They may even be developed by different companies.</li>
+
+                                                        <li>JavaPOS Device Service is a Java class that is called by the Device Control through the JavaPOS Device Service Interface. The Device Service is used by the Device Control to implement JavaPOS-prescribed functionality for a physical device. It can also call special event methods provided by the Device Control to deliver events to the application.</li>
+
+                                                        <li>The JPOS driver included with the Zebra Scanner SDK for Windows provides JNI (Java Native Interface) mechanisms to scanner and scale devices (csjposscanner.dll and csjposscale.dll) for the JavaPOS Device Service layer to interface with the CoreScanner driver.</li>
                                                     </ul>
 
-                                                    <p><strong>NOTE</strong> In order to perform all these operations, Chrome developer mode should be enabled on the host device.</p>
-                                                    
                                                     <hr>
 
-                                                    <h2 id="supportedchromeosversion" class="anchor"><a class="heading-anchor" href="#supportedchromeosversion"><span></span></a>Supported Chrome OS Version</h2>
+                                                    <h2 id="jpos-windows-architecture" class="anchor"><a class="heading-anchor" href="#jpos-windows-architecture"><span></span></a>Zebra Scanner JPOS Driver Architecture</h2>
 
-                                                    <p>Chrome version 69 or higher is required by this application.</p>
+                                                    <div style="display: block; margin: 0 auto; text-align: center;">
+                                                        <img src="../../images/jpos-windows/jpos-windows-001-architecture.png" style="display: block; margin: 0 auto;"><strong>Figure 1: </strong>Zebra Scanner JPOS Driver Architecture
+                                                    </div><br />
 
-                                                    <hr>
+                                                    <p>For more information about JavaPOS, JavaPOS architecture, terminology and programmer's guides, refer to:</p>
 
-                                                    <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
-                                                    <p>Click the link below.</p>
-                                                    <a href="https://www.zebra.com/content/dam/zebra_new_ia/en-us/software/developer-tools/scanner-sdk-chrome/release-notes-chrome-os-sdk.pdf"  target="_blank">https://www.zebra.com/content/dam/zebra_new_ia/en-us/software/developer-tools/scanner-sdk-chrome/release-notes-chrome-os-sdk.pdf</a></p>
+                                                    <ul>
+                                                        <li>JavaPOS home page at <a href="http://www.javapos.com/" target="_blank">http://www.javapos.com/</a></li>
+                                                        <li>UPOS home page at <a href="http://www.nrf-arts.org/" target="_blank">http://www.nrf-arts.org/</a></li>
+                                                    </ul>
+
+                                                    <p><strong>NOTE:</strong> The terms JavaPOS and JPOS are used interchangeably in this document.</p>
+
                                                 </div>
                                             </div>
                                         </div>
