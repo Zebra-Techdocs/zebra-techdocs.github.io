@@ -10,8 +10,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="About Device Central">
-    <title>About Device Central - Zebra Technologies TechDocs</title>
+    <meta title="Admin View">
+    <title>Admin View - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -56,8 +56,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            Device Central
-                                            3.0
+                                            Device Tracker On-Prem
+                                            2.3.1
                         </p>
 
                     </ul>
@@ -65,27 +65,37 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicecentral/3-0/guide/about">
+                            <a href="/devicetracker-onprem/2-3/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-0/guide/setup">
-                                        Install
+                            <a href="/devicetracker-onprem/2-3/guide/setup">
+                                        Install &amp; Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-0/guide/usage">
-                                        Using Device Central
+                            <a href="/devicetracker-onprem/2-3/guide/admin">
+                                        Admin View
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-central.html">
-                                    <i class="fa fa-download"></i>
+                            <a href="/devicetracker-onprem/2-3/guide/mgmt">
+                                        Device Tracking
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-0/search">
+                            <a href="/devicetracker-onprem/2-3/guide/config">
+                                        Configuration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/devicetracker-onprem/2-3/guide/troubleshooting">
+                                        Troubleshooting &amp; FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/devicetracker-onprem/2-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -106,7 +116,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>About Device Central</strong></li>
+                            <li><strong>Admin View</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -192,10 +202,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="about-device-central" class="anchor"><a class="heading-anchor" href="#about-device-central"><span></span></a>About Device Central</h1>
+                                    <h1 id="admin-view" class="anchor"><a class="heading-anchor" href="#admin-view"><span></span></a>Admin View</h1>
                                     <p>
-                                            Device Central
-                                            3.0
+                                            Device Tracker On-Prem
+                                            2.3.1
                                     </p>
                                 </div>
                             </section>                    
@@ -209,70 +219,108 @@
                                     <div class="">
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-<p><strong>Device Central</strong> provides a centralized way for an organization to connect and monitor supported Bluetooth peripherals.  Using the simple user interface, Device Central easily pairs and unpairs Bluetooth peripherals, monitors connection status, and provides details on supported peripherals. If supported by the peripheral, additional capabilities may exist such as paging the peripheral or updating the firmware. 
-Device Central features:</p>
-<ul>
-<li>Simple scan and pair to a <a href="#supporteddevices">supported Bluetooth peripheral</a></li>
-<li>Display pairing and connection status of paired Bluetooth peripherals</li>
-<li>Display peripheral details, such as device type, Bluetooth Mac address, firmware version, battery status, serial number, etc.</li>
-<li>Unpair the paired Bluetooth peripheral </li>
-<li>Paging to locate a paired and connected peripheral (applies to supported Bluetooth scanners)</li>
-<li>Firmware update utility for supported peripherals (applies to supported Bluetooth scanners)</li>
-</ul>
-<blockquote>
-  <p>Starting with Android 10, <b>Device Central is no longer built-in the device.</b> It is required to be downloaded through the <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-central.html">Zebra support portal</a>. <br></p>
-</blockquote>
-<p><i>Note: Unpairing a Bluetooth Scanner peripheral is currently not supported. Zebra Bluetooth scanners act as a master device which controls the pairing and connection with mobile computers. These Bluetooth scanners have the re-connect feature which may be initiated on the scanner itself. Therefore, unpairing the Bluetooth scanner from a mobile computer will not remove the paired information completely. To address this, pressing the re-connect button on the Bluetooth scanner will re-establish the pairing and connection with mobile computers.</i></p>
-<h2 id="newindevicecentral30" class="anchor"><a class="heading-anchor" href="#newindevicecentral30"><span></span></a>New in Device Central 3.0</h2>
-<ul>
-<li><strong>Important:</strong> <br>The <strong>Enable/Disable Single Pairing of the Same Device Class</strong> feature is deprecated from Device Central Manager CSP. Starting from MX version 10.2, Zebra recommends to use <a href="/mx/bluetoothmgr">Bluetooth Manager CSP</a> to configure the same functionality.</li>
-<li><strong>Install via downloaded .APK -</strong> On Android 10 or higher, Device Central is released via Zebra support portal. Android 9 devices or lower are no longer supported.</li>
-<li><strong>Connection management for any Bluetooth peripheral -</strong> Device Central now supports Pairing/Unpairing of <strong>all Bluetooth peripherals</strong> that follow the Bluetooth standards, whereas previously a restricted list of peripheral devices were supported. </li>
-<li><strong>Fixed issue with inability to pair with printers and other accessories if authentication is set with user PIN entry.</strong> Previously, only devices with a default PIN value of "0000" were supported. </li>
-<li><strong>Fixed issue with improper reporting of the connection state if multiple RS5100 devices are paired.</strong></li>
-<li>Newly supported devices in this release: TC21 Android 10</li>
-<li>Known Issues: <ul>
-<li>The serial number for HS3100 Bluetooth headset may report incorrectly.</li>
-<li>When connecting a Bluetooth peripheral device that provides battery information, such as RS6000 scanner or HS3100 headset, it may take 10-15 seconds for the battery information to appear.</li>
-<li>Intermittently, a pop-up message "Failed to scan Bluetooth peripheral address. Please try again…" appears even though the BT peripheral MAC address barcode is scanned successfully.</li></ul></li>
-</ul>
-<h3 id="mobilitydnaenterpriselicense" class="anchor"><a class="heading-anchor" href="#mobilitydnaenterpriselicense"><span></span></a>Mobility DNA Enterprise License</h3>
-<p>Beginning with Device Central 3.0, a <strong><a href="/licensing">Mobility DNA Enterprise license</a> is now required</strong> to use Device Central on Zebra Professional-series devices, including TC21 and TC26. When unlicensed, the app displays a “Mobility DNA Enterprise license required” prompt (see below) when a user attempts to open Device Central.  <strong>Learn more about <a href="/licensing/process">purchasing an MDNA Enterprise license</a>.</strong> 
-<img style="height:400px" src="device-central-licensing.png">
-<em>MDNA Enterprise license required prompt</em></p>
+<p>This section discusses the operations available for an administrator, providing a centralized view for device tracking when locating misplaced devices.
+As part of Zebra’s DNA Visibility Console, the server consists of multiple solution offerings. At the login screen, select “Device Tracker On-Prem”, then sign in. To navigate to other solutions, click on the app menu icon at the top to the right of the "Device Tracker On-Prem" title and select the desired app solution.</p>
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
-<p><strong>New in Device Central 2.1:</strong></p>
 <ul>
-<li><strong>Hardware scan trigger support</strong> added in the main app screen for <a href="../usage/#scanandpair">Scan and Pair</a>, utilizing DataWedge profile. </li>
-<li><strong>New supported devices:</strong> <ul>
-<li>Android Devices: CC600/CC6000, EC30, L10A, VC83</li>
-<li>Bluetooth Scanners: DS2278, DS8178</li>
-<li>Bluetooth Mobile Payment Modules: Verifone</li></ul></li>
+<li><strong>Device Tracker On-Prem 2.3.1 -</strong> Delete "Never connected" devices in the web portal.</li>
 </ul>
-<h2 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h2>
-<p>See the device compatibility table for Device Central on <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-central.html">Zebra support portal</a>.</p>
-<!--
-<table class="facelift" style="width:25%" border="1" padding="5px">
- <tr bgcolor="#dce8ef">
-   <th>Device</th>
-   <th style="text-align:center">Android 10.x <br>(Q)</th>
- </tr>
- <tr>
-   <td>TC21</td>
-   <td style="text-align:center">&#x25cf;</td>
- </tr>
-</table>
--->
-<p>Device Central supports Pairing/Unpairing of all Bluetooth peripherals that follow the Bluetooth standards.
-<br><br><br></p>
-<!-- -->
-<hr>
+<h2 id="usingthewebconsole" class="anchor"><a class="heading-anchor" href="#usingthewebconsole"><span></span></a>Using the Web Console</h2>
+<p>Device Tracker On-Prem provides a centralized dashboard displaying an inventory of deployed Zebra devices, along with information on tracking status, connection state, connected AP friendly name, device friendly name, charging status, remaining battery percentage, and more.
+Below the tab bar, the top dashboard is lined with tiles that provide the total number of devices for each respective category and filter the devices based on that category with a click on the tile. The columns on the dashboard can be sorted by clicking on the double triangle to the right of the column name. Subsequent clicks sort the column in ascending order (triangle points upward) or descending order (triangle points downward). A tabbed menu is displayed at the top of the dashboard above the tiles providing access to different views: Active, Out of Service, and Settings.
+<img src="DTRK_dashboard.jpg" alt="img">
+<em>Figure 1. Admin Dashboard</em>
+Device Tracker On-Prem tiles:</p>
+<ul>
+<li><strong>Total Tracked</strong> - Displays total number of devices registered with Device Tracker On-Prem server.</li>
+<li>Tracking status tiles:</li>
+<li><strong>To Be Found</strong> – Filters devices set with "To be found" status in the admin dashboard, in which action has not been taken yet to initiate the search for the target device. Designated by magnifying glass icon.</li>
+<li><strong>Being Found</strong> – Filters devices that are actively being searched. Triggered when user initiates a device search with Device Tracker On-Prem client. Designated by footprint icon.</li>
+<li><strong>Found</strong> – Filters devices that have been successfully found after a search. Triggered when user indicates device is found with Device Tracker On-Prem client. Designated by icon with green circle and a check mark in the middle.</li>
+<li><strong>Cannot Find</strong> – Filters devices that could not be found after a search was conducted. Designated by icon with red circle and an "x" in the middle.</li>
+<li>Connection state tiles:</li>
+<li><strong>Connected</strong> – Filters devices connected to the network.</li>
+<li><strong>Not Connected</strong> – Filters devices that have not reported to the server within the <a href="../config">Reporting Frequency</a> time specified in the <strong>Settings</strong> tab, designating those devices as disconnected from the network and therefore cannot be found.</li>
+<li>Battery status tiles:</li>
+<li><strong>Low Battery</strong> – Filters devices that have surpassed the <a href="../config">Low Power Alert Threshold</a> value defined in the <strong>Settings</strong> tab and are therefore in low battery state. Low Battery devices require attention to be charged before the battery becomes depleted, preventing loss of device tracking.</li>
+<li><strong>On Charge</strong> – Filters devices that are powered and in the charge state.
+A search can be conducted based on device information from the table columns: Status, Connection State, AP Name, Battery State, Device Name, Device Model, Device Serial #, and Tags. In the Active tab, click the magnifying glass to produce a dropdown menu and select the data to search. Depending on the data being searched, additional options may be available for selection to refine the search. If required, enter in the text to search when prompted. When done with the search, select "Clear Search" from the dropdown menu.
+Notes:</li>
+<li>If no icon is displayed in the battery status column, it indicates that the device battery is not being charged and there is sufficient device battery charge.</li>
+<li>When the checkbox in the table header is ticked on the dashboard, it selects all devices listed in the page.</li>
+<li>At the bottom left of the dashboard, select the "rows per page" drop-down and choose the value to increase the number of devices displayed in the dashboard.</li>
+<li>If a device is in the "Never Connected" state, no action can be taken upon it since it has not registered with the server.</li>
+<li>If searching for devices based on "Connection State" then filtering by "Connected - Known AP", the .csv file includes both "Connected - Known AP" and "Connected - Unknown AP" data when exporting the results. The data can be further filtered within the CSV file.</li>
+</ul>
+<h2 id="deviceaction" class="anchor"><a class="heading-anchor" href="#deviceaction"><span></span></a>Device Action</h2>
+<p>Action can be taken on any selected device(s) in the Active tab. Once the device is selected from the dashboard, the Action menu is accessible with the following options:</p>
+<ul>
+<li><strong>Set device: 'To be found'</strong> – Marks the target device to be found. This initiates the tracking process. The next time the target device reports to the server, it identifies it is marked "To be found" - the length of time this takes is based on both the defined <a href="../config/#applicationconfiguration">Reporting Frequency</a> and the elapsed time since the last report was received (seen in the Updated column on the admin dashboard).
+Once the Device Tracker On-Prem client detects this status change, it displays the marked device in the “Devices to be found” screen. A user can tap on the device listed then tap “Go” to begin searching for the marked device.</li>
+<li><strong>Set device to: 'Out of service'</strong> – Removes the device from the active device pool and places it into the <strong>Out of Service</strong> tab. This can be used when a device is undergoing repair or is deprecated and no longer in use so must be removed from the device pool. Note: This does not apply to devices that never connected to the server.</li>
+<li><strong>Set device to: 'Active'</strong> - Changes the device back to the Active state. This option is available if a device is Found, Cannot be Found, or Out of Service.</li>
+<li><strong>Delete 'Never connected' device</strong> - Remove 'Never connected' devices from the web portal. This can include devices with invalid data uploaded from a device CSV file.</li>
+<li><strong>Manage Tags</strong> – Refer to <a href="./#organizedevices">Organize Devices</a> section below.</li>
+<li><strong>Clear Selections</strong> – Unselects any selected devices in the dashboard.</li>
+</ul>
+<h2 id="organizedevices" class="anchor"><a class="heading-anchor" href="#organizedevices"><span></span></a>Organize Devices</h2>
+<p>Device tags provide the capability to identify and group devices for organizational purposes based on a common tag name. This name can be any desired form of identification such as location, department or job function. A tag name can be up to 65 characters in length. Device tagging is performed in the Active tab.
+<strong>Add Tag</strong> – add or append a tag to any pre-existing list of tags for each device</p>
+<ol>
+<li>Select the device to tag. Tick the checkbox for the device row.</li>
+<li>In the <strong>Action</strong> menu at the top left of the table, select <strong>Manage Tags</strong>.</li>
+<li>Enter a tag name in the text field. Press Enter key.</li>
+<li>Click <strong>Save</strong> next to the entry field.</li>
+<li>Click <strong>Add</strong> in the pop-up message.</li>
+<li>Click <strong>OK</strong> in the confirmation message. The selected device is now tagged with the designated text and the tag name is displayed in the <strong>Tags</strong> column on the dashboard.
+<strong>Override Tag</strong> - remove any pre-existing tag(s) and replace with the new tag</li>
+<li>Select the device with an existing tag. Tick the checkbox for the device row.</li>
+<li>In the Action menu at the top left of the table, select <strong>Manage Tags</strong>.</li>
+<li>Enter a tag name in the text field. Press Enter key.</li>
+<li>Click <strong>Save</strong> next to the entry field.</li>
+<li>Click <strong>Override</strong> in the pop-up message.</li>
+<li>Click <strong>OK</strong> in the confirmation message.
+The selected device is now tagged only with the designated tag, replacing the original tag string. The tag name is displayed in the <strong>Tags</strong> column on the dashboard.
+<strong>Delete Tag</strong> - delete the specified tag</li>
+<li>Select the device(s) with an existing tag. Tick the checkbox for the device row.</li>
+<li>In the <strong>Action</strong> menu at the top left of the table, select <strong>Manage Tags</strong>.</li>
+<li>Enter in the tag name to delete. Press Enter key.</li>
+<li>Click <strong>Save</strong> next to the entry field.</li>
+<li>A message appears asking which action to take. Click <strong>Delete</strong>.</li>
+<li>Click <strong>OK</strong> in the confirmation message.
+The tag is removed from the selected device and the tag name is no longer displayed in the <strong>Tags</strong> column on the dashboard.
+<strong>Search Tag</strong> - search for devices with the specified tag name</li>
+<li>Click on the magnifying glass at the top left above the table. Select Tags.</li>
+<li>Enter the tag to search in the field and click the <strong>Search</strong> button. While typing, auto-suggestions from existing tags appear – the desired tag can be selected. The web page may need to be refreshed for the auto-suggestion to appear.</li>
+</ol>
+<h2 id="exportdata" class="anchor"><a class="heading-anchor" href="#exportdata"><span></span></a>Export Data</h2>
+<p>A device report can be generated for inventory and tracking. In the <strong>Active</strong> tab, tap on the Export Data icon at the top right of the table and click on CSV to export the device information in .csv file format.</p>
+<h2 id="manageusers" class="anchor"><a class="heading-anchor" href="#manageusers"><span></span></a>Manage Users</h2>
+<p>Create additional users to access the server. After logging in as the administrator, click on the admin name at the top right of the Admin View and select <strong>Manage Users</strong>.
+To add a user:</p>
+<ol>
+<li>Click on the <strong>Action</strong> button.</li>
+<li>Select <strong>Add User</strong>.</li>
+<li>Enter in the required fields. Select the Access Type based on role:</li>
+</ol>
+<ul>
+<li><strong>Admin</strong> - administrative privileges with ability to create user accounts, perform actions, and view data</li>
+<li><strong>Manager</strong> - ability to perform actions, but cannot create users nor perform any user management</li>
+<li><strong>User</strong> - ability to view data</li>
+</ul>
+<ol>
+<li>Click <strong>Save</strong>.</li>
+<li>Click <strong>OK</strong> when the confirmation message appears.
+<br></li>
+</ol>
+<h2 id="br" class="anchor"><a class="heading-anchor" href="#br"><span></span></a><br></h2>
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 <ul>
-<li><a href="../setup">Install</a></li>
-<li><a href="../usage">Usage Guide</a></li>
-<li><a href="/mx/devicecentralmgr">Device Central Manager CSP</a> - configures Device Central settings</li>
-<li><a href="/mx/bluetoothmgr">Bluetooth Manager CSP</a> - controls whether a device can pair with other Bluetooth devices</li>
+<li><a href="../about">About Device Tracker On-Prem</a></li>
+<li><a href="../setup">Install &amp; Setup</a></li>
+<li><a href="../mgmt">Device Tracking</a></li>
+<li><a href="../config">Configuration</a></li>
+<li><a href="../troubleshooting">Troubleshooting &amp; FAQ</a></li>
 </ul><p></p>
                                         
 

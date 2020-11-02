@@ -10,8 +10,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="About Device Central">
-    <title>About Device Central - Zebra Technologies TechDocs</title>
+    <meta title="Troubleshooting &amp; FAQ">
+    <title>Troubleshooting &amp; FAQ - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -56,8 +56,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            Device Central
-                                            3.0
+                                            Device Tracker On-Prem
+                                            2.3.1
                         </p>
 
                     </ul>
@@ -65,27 +65,37 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicecentral/3-0/guide/about">
+                            <a href="/devicetracker-onprem/2-3/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-0/guide/setup">
-                                        Install
+                            <a href="/devicetracker-onprem/2-3/guide/setup">
+                                        Install &amp; Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-0/guide/usage">
-                                        Using Device Central
+                            <a href="/devicetracker-onprem/2-3/guide/admin">
+                                        Admin View
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-central.html">
-                                    <i class="fa fa-download"></i>
+                            <a href="/devicetracker-onprem/2-3/guide/mgmt">
+                                        Device Tracking
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-0/search">
+                            <a href="/devicetracker-onprem/2-3/guide/config">
+                                        Configuration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/devicetracker-onprem/2-3/guide/troubleshooting">
+                                        Troubleshooting &amp; FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/devicetracker-onprem/2-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -106,7 +116,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>About Device Central</strong></li>
+                            <li><strong>Troubleshooting &amp; FAQ</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -192,10 +202,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="about-device-central" class="anchor"><a class="heading-anchor" href="#about-device-central"><span></span></a>About Device Central</h1>
+                                    <h1 id="troubleshooting--faq" class="anchor"><a class="heading-anchor" href="#troubleshooting--faq"><span></span></a>Troubleshooting &amp; FAQ</h1>
                                     <p>
-                                            Device Central
-                                            3.0
+                                            Device Tracker On-Prem
+                                            2.3.1
                                     </p>
                                 </div>
                             </section>                    
@@ -209,70 +219,87 @@
                                     <div class="">
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-<p><strong>Device Central</strong> provides a centralized way for an organization to connect and monitor supported Bluetooth peripherals.  Using the simple user interface, Device Central easily pairs and unpairs Bluetooth peripherals, monitors connection status, and provides details on supported peripherals. If supported by the peripheral, additional capabilities may exist such as paging the peripheral or updating the firmware. 
-Device Central features:</p>
+<p>This section covers troubleshooting steps and Frequently Asked Questions.</p>
+<h2 id="troubleshooting" class="anchor"><a class="heading-anchor" href="#troubleshooting"><span></span></a>Troubleshooting</h2>
+<p>This section discusses common issues that can occur and possible solutions. Common issues include being unable to connect to the server, invalid certificate, or incorrect login credentials entered. Server log files, located in default folder <code>\Program Files (x86)\Zebra Technologies\ZDVC\Backend Server\log</code>, can help diagnose issues encountered.</p>
+<h3 id="issuesrelatedtoservercertificate" class="anchor"><a class="heading-anchor" href="#issuesrelatedtoservercertificate"><span></span></a>Issues related to server certificate</h3>
+<p>With SSL certificates, verify the connection is secure by clicking on the padlock icon next to the URL field in the browser.
+Possible issues or causes related to server certificates:</p>
 <ul>
-<li>Simple scan and pair to a <a href="#supporteddevices">supported Bluetooth peripheral</a></li>
-<li>Display pairing and connection status of paired Bluetooth peripherals</li>
-<li>Display peripheral details, such as device type, Bluetooth Mac address, firmware version, battery status, serial number, etc.</li>
-<li>Unpair the paired Bluetooth peripheral </li>
-<li>Paging to locate a paired and connected peripheral (applies to supported Bluetooth scanners)</li>
-<li>Firmware update utility for supported peripherals (applies to supported Bluetooth scanners)</li>
+<li><strong>Error “Unable to communicate with the server” occurs after the server certificate is renewed.</strong> After applying the new certificate, open the certificate manager and check the expiration date of the new certificate to verify the certficate is updated.</li>
+<li><strong>If the certificate password changed, the new password needs to be encrypted.</strong> Run the ZDVC installer and select <strong>Modify.</strong> Enter the information prompted and proceed to complete the process.</li>
+<li><strong>If the certificate password did not change,</strong> ensure the .env (from default folder: <code>/Program Files/Zebra Technologies/ZDVC/WebUI</code>) and application.properties (from default folder: <code>/Program Files/Zebra Technologies/ZDVC/BackendServer/config</code>) files reflect the proper certificate folder path and file name.</li>
+<li><strong>Error "Unable to write 'random state'" occurs when generating the SSL certificate with OpenSSL.</strong> The command prompt may need to be launched in "Run As Administrator" mode.</li>
+<li><strong>"Warning: Can't open config file [folder_path]/openssl.cnf" occurs when generating the SSL certificate with OpenSSL.</strong> An OpenSSL variable may need to be set in the Windows system with the following command:
+<code>set OPENSSL_CONF=c:\[folder_path]\openssl.cnf</code><br>
+where [folder_path] is the path to the OpenSSL directory.</li>
+<li><strong>Error related to passphrase or certificate password.</strong> Verify the certificate password is entered correctly during installation. Perform the server installation again to enter the correct certificate password.</li>
 </ul>
-<blockquote>
-  <p>Starting with Android 10, <b>Device Central is no longer built-in the device.</b> It is required to be downloaded through the <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-central.html">Zebra support portal</a>. <br></p>
-</blockquote>
-<p><i>Note: Unpairing a Bluetooth Scanner peripheral is currently not supported. Zebra Bluetooth scanners act as a master device which controls the pairing and connection with mobile computers. These Bluetooth scanners have the re-connect feature which may be initiated on the scanner itself. Therefore, unpairing the Bluetooth scanner from a mobile computer will not remove the paired information completely. To address this, pressing the re-connect button on the Bluetooth scanner will re-establish the pairing and connection with mobile computers.</i></p>
-<h2 id="newindevicecentral30" class="anchor"><a class="heading-anchor" href="#newindevicecentral30"><span></span></a>New in Device Central 3.0</h2>
+<h3 id="cannotstartserver" class="anchor"><a class="heading-anchor" href="#cannotstartserver"><span></span></a>Cannot start server</h3>
+<p>It is possible the certificate password entered during server installation does not match the actual certificate. Perform the server installation again to enter the correct certificate password.</p>
+<h3 id="cannotloginorconnecttoserver" class="anchor"><a class="heading-anchor" href="#cannotloginorconnecttoserver"><span></span></a>Cannot login or connect to server</h3>
+<p>Possible causes:</p>
 <ul>
-<li><strong>Important:</strong> <br>The <strong>Enable/Disable Single Pairing of the Same Device Class</strong> feature is deprecated from Device Central Manager CSP. Starting from MX version 10.2, Zebra recommends to use <a href="/mx/bluetoothmgr">Bluetooth Manager CSP</a> to configure the same functionality.</li>
-<li><strong>Install via downloaded .APK -</strong> On Android 10 or higher, Device Central is released via Zebra support portal. Android 9 devices or lower are no longer supported.</li>
-<li><strong>Connection management for any Bluetooth peripheral -</strong> Device Central now supports Pairing/Unpairing of <strong>all Bluetooth peripherals</strong> that follow the Bluetooth standards, whereas previously a restricted list of peripheral devices were supported. </li>
-<li><strong>Fixed issue with inability to pair with printers and other accessories if authentication is set with user PIN entry.</strong> Previously, only devices with a default PIN value of "0000" were supported. </li>
-<li><strong>Fixed issue with improper reporting of the connection state if multiple RS5100 devices are paired.</strong></li>
-<li>Newly supported devices in this release: TC21 Android 10</li>
-<li>Known Issues: <ul>
-<li>The serial number for HS3100 Bluetooth headset may report incorrectly.</li>
-<li>When connecting a Bluetooth peripheral device that provides battery information, such as RS6000 scanner or HS3100 headset, it may take 10-15 seconds for the battery information to appear.</li>
-<li>Intermittently, a pop-up message "Failed to scan Bluetooth peripheral address. Please try again…" appears even though the BT peripheral MAC address barcode is scanned successfully.</li></ul></li>
+<li><strong>No communication between the server and web portal.</strong> Verify there is communication between the server and web portal by checking whether an endpoint is accessible through the browser. This is accomplished by appending a single endpoint to the server URL. For example: <code>https://hostname.company.com:8080/zdvc/dtrk/admindevops/getDeviceStatisticsSummary</code>, where endpoint <code>/zdvc/dtrk/admindevops/getDeviceStatisticsSummary</code> is appended to server URL <code>https://hostname.company.com:8080</code>.<br>
+Sample result string:
+<br>
+<br>
+<i>
+{"neverConnected":43,"outOfService":8,"connected":16,"disconnected":276,"normal":254,"toBeFound":6,"findInProgress":14,"deviceFound":14,
+"charging":84,"batteryLow":37,"devicesTracked":335,"cannotFindDevice":2}
+</i>
+<br>
+<br>
+If the endpoint is not accessible, there is no communication between the server and web portal. Verify that the server is running. It is possible that the certificate is invalid.</li>
+<li><strong>Incorrect server ports.</strong> Check if the proper port is in the listening state on the server. For example, from the command prompt enter:
+   netstat -aon | find /I “xxxx”
+ where "xxxx" is the designated backend server port (e.g. 8080) or web portal (UI) port (e.g. 8443). These same ports specified during <a href="../setup#serverinstallation">server installation</a> must match the ports specified in files <strong>.env</strong> (from default folder: <code>/Program Files/Zebra Technologies/ZDVC/WebUI</code>) and <strong>application.properties</strong> (from default folder: <code>/Program Files/Zebra Technologies/ZDVC/BackendServer/config</code>).</li>
 </ul>
-<h3 id="mobilitydnaenterpriselicense" class="anchor"><a class="heading-anchor" href="#mobilitydnaenterpriselicense"><span></span></a>Mobility DNA Enterprise License</h3>
-<p>Beginning with Device Central 3.0, a <strong><a href="/licensing">Mobility DNA Enterprise license</a> is now required</strong> to use Device Central on Zebra Professional-series devices, including TC21 and TC26. When unlicensed, the app displays a “Mobility DNA Enterprise license required” prompt (see below) when a user attempts to open Device Central.  <strong>Learn more about <a href="/licensing/process">purchasing an MDNA Enterprise license</a>.</strong> 
-<img style="height:400px" src="device-central-licensing.png">
-<em>MDNA Enterprise license required prompt</em></p>
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
-<p><strong>New in Device Central 2.1:</strong></p>
+<h3 id="cannotimportcsvfilecontainingaccesspointordevicedata" class="anchor"><a class="heading-anchor" href="#cannotimportcsvfilecontainingaccesspointordevicedata"><span></span></a>Cannot import .CSV file containing access point or device data</h3>
+<p>Make sure to have write permissions to the ZDVC folder and subfolders.</p>
+<h3 id="serverinformationisoutdated" class="anchor"><a class="heading-anchor" href="#serverinformationisoutdated"><span></span></a>Server information is outdated</h3>
+<p>If updated information is not seen in the server <a href="../admin">Admin View</a>, refresh the web page in the browser.</p>
+<h3 id="devicedoesnotconnecttoserver" class="anchor"><a class="heading-anchor" href="#devicedoesnotconnecttoserver"><span></span></a>Device does not connect to server</h3>
+<p>Possible causes:</p>
 <ul>
-<li><strong>Hardware scan trigger support</strong> added in the main app screen for <a href="../usage/#scanandpair">Scan and Pair</a>, utilizing DataWedge profile. </li>
-<li><strong>New supported devices:</strong> <ul>
-<li>Android Devices: CC600/CC6000, EC30, L10A, VC83</li>
-<li>Bluetooth Scanners: DS2278, DS8178</li>
-<li>Bluetooth Mobile Payment Modules: Verifone</li></ul></li>
+<li>Ensure the the <strong>Server URL, Server Auth UserName</strong> and <strong>Server Auth Password</strong> are entered correctly. The <strong>Server URL</strong> can be obtained from the <strong>Settings</strong> tab in the <a href="../admin">admin view</a> in the format: <code>hostname.company.com:8080/zdvc/dtrk</code>, where "hostname.company.com" and the port number "8080" is replaced with the appropriate information.</li>
+<li>Network issues could be preventing communication from the device to the server. Verify network connectivity.</li>
 </ul>
-<h2 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h2>
-<p>See the device compatibility table for Device Central on <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-central.html">Zebra support portal</a>.</p>
-<!--
-<table class="facelift" style="width:25%" border="1" padding="5px">
- <tr bgcolor="#dce8ef">
-   <th>Device</th>
-   <th style="text-align:center">Android 10.x <br>(Q)</th>
- </tr>
- <tr>
-   <td>TC21</td>
-   <td style="text-align:center">&#x25cf;</td>
- </tr>
-</table>
--->
-<p>Device Central supports Pairing/Unpairing of all Bluetooth peripherals that follow the Bluetooth standards.
-<br><br><br></p>
+<h3 id="devicedoesnotplaysoundorthereisadelay" class="anchor"><a class="heading-anchor" href="#devicedoesnotplaysoundorthereisadelay"><span></span></a>Device does not play sound or there is a delay</h3>
+<p>Possible causes:</p>
+<ul>
+<li>The target device is in <strong>Do Not Disturb</strong> mode, preventing any sound from being emitted.</li>
+<li>If "Could not refresh lost device details" is seen at the bottom of the device tracking screen, this could be caused by the target device not reporting back to the server yet since initiating the device tracking. Wait for the <a href="../config">Reporting Frequency</a> time interval to elapse.</li>
+<li>There could be network issues that need to be diagnosed.</li>
+</ul>
+<h3 id="deviceclientappisunresponsive" class="anchor"><a class="heading-anchor" href="#deviceclientappisunresponsive"><span></span></a>Device client app is unresponsive</h3>
+<p>There could be a network delay in contacting the server. Wait for some time to elapse and then retry. Otherwise check for network issues.
+<br>
+<br></p>
+<h2 id="faq" class="anchor"><a class="heading-anchor" href="#faq"><span></span></a>FAQ</h2>
+<p>Frequently Asked Questions:</p>
+<h3 id="howdoideletedeviceentries" class="anchor"><a class="heading-anchor" href="#howdoideletedeviceentries"><span></span></a>How do I delete device entries?</h3>
+<p>The ability to delete "Never connected" devices in the web portal was added starting with Device Tracker On-Prem 2.3.1. This allows devices that have been uploaded (via .CSV file) but never connected to the server to be deleted.</p>
+<h3 id="caniuseaselfsignedcertificate" class="anchor"><a class="heading-anchor" href="#caniuseaselfsignedcertificate"><span></span></a>Can I use a self-signed certificate?</h3>
+<p>Starting with Device Tracker On-Prem 2.3.1, support for self-signed certificates was added to help simplify deployment of product demos and trials. An SSL certificate is still required for secure communications.
+<br></p>
+<h3 id="whatarethelogincredentialsrequiredtousedevicetrackeronprem" class="anchor"><a class="heading-anchor" href="#whatarethelogincredentialsrequiredtousedevicetrackeronprem"><span></span></a>What are the login credentials required to use Device Tracker On-Prem?</h3>
+<p><strong>Web portal:</strong> To access the web portal, enter the server URL in the browser based on your <a href="../setup#serverinstallation">installation</a>, for example: <code>https://hostname.company.com:8443/zdvc</code>, where "hostname.company.com:8443" is replaced with the appropriate domain and port number. The default super administrator user name is <strong>SAdmin</strong>. The password is the <strong>SuperAdmin and DB Password</strong> entered during <a href="../setup#serverinstallation">server installation</a>. <a href="../admin#manageusers">Additional users can be added</a> based on Admin, Manager, and User roles.
+<strong>Client devices:</strong> Devices must be configured with the Server URL, Server Auth Key, and Server Auth Password set during <a href="../setup#serverinstallation">server installation</a>.</p>
+<h3 id="whyisadevicenotappearingonthedevicestobefoundlist" class="anchor"><a class="heading-anchor" href="#whyisadevicenotappearingonthedevicestobefoundlist"><span></span></a>Why is a device not appearing on the "Devices to be found" list?</h3>
+<p>Another device/associate may have already initiated the search for the same device. In the <a href="../admin">Admin View</a>, refresh the page and filter by "Being Found" to check if the device is listed.</p>
+<h3 id="mysslcertificatepasswordchangedandiamnolongerabletoaccessthewebportalwhatcanido" class="anchor"><a class="heading-anchor" href="#mysslcertificatepasswordchangedandiamnolongerabletoaccessthewebportalwhatcanido"><span></span></a>My SSL certificate password changed and I am no longer able to access the web portal. What can I do?</h3>
+<p>Passwords are encrypted during installation. If any password needs to be changed after installation, re-launch the installer and click <strong>Modify.</strong> Enter the information prompted and proceed to complete the process.
+<br></p>
 <!-- -->
 <hr>
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 <ul>
-<li><a href="../setup">Install</a></li>
-<li><a href="../usage">Usage Guide</a></li>
-<li><a href="/mx/devicecentralmgr">Device Central Manager CSP</a> - configures Device Central settings</li>
-<li><a href="/mx/bluetoothmgr">Bluetooth Manager CSP</a> - controls whether a device can pair with other Bluetooth devices</li>
+<li><a href="../about">About Device Tracker On-Prem</a></li>
+<li><a href="../setup">Install &amp; Setup</a></li>
+<li><a href="../admin">Admin View</a></li>
+<li><a href="../mgmt">Device Tracking</a></li>
+<li><a href="../config">Configuration</a></li>
 </ul><p></p>
                                         
 
