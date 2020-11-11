@@ -54,7 +54,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.2
+                                            2.3
                         </p>
 
                     </ul>
@@ -65,27 +65,27 @@
 
 
                         <li>
-                            <a href="/ddt/2-2/guide/about">
+                            <a href="/ddt/2-3/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-2/guide/usage">
+                            <a href="/ddt/2-3/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-2/guide/configuration">
+                            <a href="/ddt/2-3/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-2/guide/criteria">
+                            <a href="/ddt/2-3/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-2/search">
+                            <a href="/ddt/2-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -215,7 +215,7 @@
                                     <h1 id="about-device-diagnostic-tool" class="anchor"><a class="heading-anchor" href="#about-device-diagnostic-tool"><span></span></a>About Device Diagnostic Tool</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.2
+                                            2.3
                                     </p>
                                 </div>
                             </section>                    
@@ -229,21 +229,39 @@
                                     <div class="">
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-<p>Device Diagnostic Tool instantly tests and diagnoses the hardware operability on Zebra mobile devices to determine system health and functionality. Where appropriate, Zebra Help Desk uses this tool for troubleshooting device issues, relying on the results to provide optimum steps to reach a resolution.  It is useful for quickly troubleshooting device issues, resulting to increased worker productivity, limited device downtime, and unnecessary returns to the Zebra Repair Center. 
+<p>Device Diagnostic Tool instantly tests and diagnoses the hardware operability on Zebra mobile devices to determine system health and functionality. Where appropriate, Zebra Help Desk uses this tool for troubleshooting device issues, relying on the results to provide optimum steps to reach a resolution. It is useful for quickly troubleshooting device issues, resulting to increased worker productivity, limited device downtime, and unnecessary returns to the Zebra Repair Center.
 Hardware features tested:</p>
 <ul>
 <li><strong>Scanner Test</strong> – checks whether the scanner is operable</li>
 <li><strong>Button Test</strong> – checks the operation of push-to-talk, left or right scan trigger, volume up and volume down device buttons</li>
 <li><strong>Touch Screen Test</strong> – checks for operation of the device touch display</li>
 <li><strong>Bluetooth Tests</strong> – checks whether the Bluetooth radio is operable and returns Bluetooth related information: Bluetooth name, radio power cycle result, radio functional/non-functional, and discoverable/connectable.</li>
-<li><strong>WiFi Tests</strong> – checks for operation of the WiFi radio and returns WiFi related information: MAC address, network test results from specified address, radio power cycle result, signal strength, ESSID, IP address, BSSID, and speed</li>
-<li><strong>Battery Tests</strong> – checks the battery status and returns battery related information: part number, serial number, manufacture date, decommission status, voltage, current, and temperature</li>
+<li><strong>WiFi Tests</strong> – checks for operation of the WiFi radio and returns WiFi related information: MAC address, network test results from specified address, signal strength, ESSID, IP address, BSSID, and speed</li>
+<li><strong>Battery Tests</strong> – checks the battery status and returns battery related information: part number, serial number, manufacture date, decommission status, voltage, current, temperature, battery level and current capacity</li>
 <li><strong>WWAN Tests</strong> – checks for operation of the WWAN radio and returns related WWAN information: SIM state, voice state, data state, WAN type, signal strength, phone number, and device ID</li>
 <li><strong>Audio Test</strong> – checks for operation of the device microphone and speaker
 <br></li>
 </ul>
 <p>For more information on each test, refer to <a href="../criteria">Test Criteria.</a></p>
-<h2 id="newindevicediagnostictool22" class="anchor"><a class="heading-anchor" href="#newindevicediagnostictool22"><span></span></a>New in Device Diagnostic Tool 2.2</h2>
+<!-- -->
+<hr>
+<h2 id="newindevicediagnostictool23" class="anchor"><a class="heading-anchor" href="#newindevicediagnostictool23"><span></span></a>New in Device Diagnostic Tool 2.3</h2>
+<ul>
+<li>New <a href="../usage/#userinterface">Help</a> option available which links to the Device Diagnostic Tool support portal.</li>
+<li>New data fields captured for <a href="../usage/#batterytest">Battery test</a>: battery level and battery current capacity.</li>
+<li>New features configurable through the configuration file:<ul>
+<li><a href="../configuration/#configurationfile">perform tests individually</a> </li>
+<li><a href="../configuration/#configurationfile">capture logs individually</a> for each test performed</li></ul></li>
+<li>Fixed an issue where DDT does not revert the device back to its original device orientation, landscape or portrait mode, after application exit. </li>
+<li><a href="../usage/#userinterface">Enhancements:</a><ul>
+<li>For the WLAN test, the radio power cycle is replaced by a check to determine if the WiFi radio is enabled. If the WiFi radio is not enabled when initiating the WLAN test, the user is prompted to enable the radio.</li>
+<li>To display the ESSID from a WLAN test on Android O or higher, <em>Location</em> service is required to be enabled on the device due to Android restrictions. If <em>Location</em> service is not enabled, the user is prompted to enable it. If the test proceeds without <em>Location</em> service enabled, <em>ESSID</em> returns "Location not enabled" instead of "Unknown SSID." </li>
+<li>For the WWAN test, if a sim card is not present in the device, the test no longer fails and now shows <em>Absent</em> for the <em>Sim State</em> along with the appropriate status for the rest of the WWAN parameters.</li></ul></li>
+</ul>
+<!-- -->
+<hr>
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+<h3 id="newindevicediagnostictool22" class="anchor"><a class="heading-anchor" href="#newindevicediagnostictool22"><span></span></a>New in Device Diagnostic Tool 2.2</h3>
 <ul>
 <li>New devices supported - see supported devices for <strong>Device Diagnostic Tool</strong> on <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Downloads</a>.</li>
 <li>Android 10 limitations due to security restrictions:<ul>
@@ -258,7 +276,6 @@ Hardware features tested:</p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Devices that require AC Power to operate (no battery exists), such as CC605 and CC610<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• ET50 devices - the part number, serial number and manufactured date may display improperly</li></ul></li>
 </ul>
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 <h3 id="devicediagnostictool21" class="anchor"><a class="heading-anchor" href="#devicediagnostictool21"><span></span></a>Device Diagnostic Tool 2.1</h3>
 <ul>
 <li>Introduced 2 modes of operation: <a href="../usage">admin mode and user mode</a>.</li>
@@ -275,9 +292,11 @@ Hardware features tested:</p>
 <li>On TC75x Android Marshmallow, Data State in WWAN test may display “Data Disconnected” even though mobile data is enabled on the device. </li>
 <li>When the app is running and the EMM command is executed to run the test remotely, if the user tries to launch the app manually after the test completes, the app may encounter unexpected behavior. In this case the user must manually restart Device Diagnostic Tool to recover.</li></ul></li>
 </ul>
+<!-- -->
+<hr>
 <h2 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h2>
 <p>See supported devices for <strong>Device Diagnostic Tool</strong> on <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Downloads</a>.</p>
-<!-- 
+<!--
 The following table lists the supported GMS devices, except for MC33 which only supports non-GMS: </p>
 <table class="facelift" align="center" style="width:90%" border="1" padding="5px">
  <tr bgcolor="#dce8ef">
@@ -325,7 +344,6 @@ The following table lists the supported GMS devices, except for MC33 which only 
    <td></td>
    <td></td>
  </tr>
-
  <tr>
    <td>TC20</td>
    <td></td>
@@ -436,16 +454,17 @@ The following table lists the supported GMS devices, except for MC33 which only 
  </tr>
 </table>
 -->
-<p><strong>Installation Notes:</strong> </p>
+<p><strong>Installation Notes:</strong></p>
 <ul>
-<li><strong>Multiple instances of app -</strong> If Device Diagnostic Tool v1.0 is already present on the device and Device Diagnostic Tool v2.1 is then installed on the same device, there will be 2 versions of the app that exist. To avoid this scenario, the administrator can disable Device Diagnostic Tool v1.0 using <a href="/mx/appmgr">AppManager CSP</a> for the device to run a single version of the app.</li>
+<li><strong>Multiple instances of app -</strong> If Device Diagnostic Tool v1.0 is already present on the device and Device Diagnostic Tool v2.1 or higher is then installed on the same device, there will be 2 versions of the app that exist. To avoid this scenario, the administrator can disable Device Diagnostic Tool v1.0 using <a href="/mx/appmgr">AppManager CSP</a> for the device to run a single version of the app.</li>
 <li><strong>Setting persistence -</strong> Upon initial app install, any setting changes made through the UI persist since configuration.xml does not exist. However, after exporting the .xml file, any changes in the UI no longer persist until the .xml file is imported into the device.</li>
 </ul>
+<!-- -->
+<hr>
 <h2 id="importantusagenotes" class="anchor"><a class="heading-anchor" href="#importantusagenotes"><span></span></a>Important Usage Notes</h2>
 <ol>
 <li><strong>Multiple Android user accounts -</strong> When using multiple Android user accounts on a single device, Device Diagnostic Tool use and functionality only applies to the active primary user.</li>
 <li><strong>Limitation due to low memory on the device -</strong> Once the available device memory is less than 3 MB, a message appears indicating there is no space on the device and logging will no longer take place. Additionally the Audio Test cannot be executed.</li>
-<li><strong>Device orientation -</strong> Device Diagnostic Tool is only supported in the default orientation of the device. It does not support switching between both portrait and landscape modes.</li>
 <li><strong>Split screen support -</strong> On Android N and above, Device Diagnostic Tool does not support split screen mode.
 <br></li>
 </ol>

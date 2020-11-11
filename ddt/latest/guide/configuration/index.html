@@ -51,10 +51,10 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-left">
                     <ul class="nav navbar-nav">
-                        <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
+                        <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.2
+                                            2.3
                         </p>
 
                     </ul>
@@ -65,30 +65,45 @@
 
 
                         <li>
-                            <a href="/ddt/2-2/guide/about">
+                            <a href="/ddt/2-3/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-2/guide/usage">
+                            <a href="/ddt/2-3/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-2/guide/configuration">
+                            <a href="/ddt/2-3/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-2/guide/criteria">
+                            <a href="/ddt/2-3/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-2/search">
+                            <a href="/ddt/2-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
+
+                        <li class="dropdown languagedropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                                <li><a onclick="changeLanguage('ddt','ddt-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
+                                <li><a onclick="changeLanguage('ddt','ddt-de')"><img src="/images/flags/img-flag-germany.png" style="display:inline!important;" alt="DE - Deutsche"> DE - Deutsche</a></li>
+                                <li><a onclick="changeLanguage('ddt','ddt-es')"><img src="/images/flags/img-flag-spain.png" style="display:inline!important;" alt="ES - Español"> ES - Español</a></li>
+                                <li><a onclick="changeLanguage('ddt','ddt-fr')"><img src="/images/flags/img-flag-france.png" style="display:inline!important;" alt="FR - Français"> FR - Français</a></li>
+                                <li><a onclick="changeLanguage('ddt','ddt-it')"><img src="/images/flags/img-flag-italy.png" style="display:inline!important;" alt="IT - Italiano"> IT - Italiano</a></li>
+                                <li><a onclick="changeLanguage('ddt','ddt-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
+                                <li><a onclick="changeLanguage('ddt','ddt-pt')"><img src="/images/flags/img-flag-portugal.png" style="display:inline!important;" alt="PT - Português"> PT - Português</a></li>
+                          </ul>
+                        </li>                    
+                        
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -200,7 +215,7 @@
                                     <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.2
+                                            2.3
                                     </p>
                                 </div>
                             </section>                    
@@ -215,6 +230,8 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 <p>This section discusses configuration settings and reporting options for Device Diagnostic Tool.</p>
+<!-- -->
+<hr>
 <h2 id="settings" class="anchor"><a class="heading-anchor" href="#settings"><span></span></a>Settings</h2>
 <p>The <strong>Settings</strong> screen provides the file path to import/export the configuration file and allows for configuration of the history and status log files. Access settings by tapping on the options menu at the top right of the main screen, then select <strong>Settings</strong>:
 <img style="height:400px" src="settings.png">
@@ -230,33 +247,43 @@
 <li><strong>Import -</strong> imports a configuration file located in the configuration import path <code>/enterprise/usr/deviceselftest/configuration.xml</code>.</li>
 <li><strong>Export -</strong> exports <code>configuration.xml</code> from configurations set in the <strong>Configure Tests</strong> screen located in <code>/storage/emulated/0/Android/data/com.symbol.selfdiagnostics/files</code>. Once exported, deploy the configuration to other devices by copying the .xml file to the import path <code>/enterprise/usr/deviceselftest</code> then tap the <strong>Import</strong> button in the <strong>Settings</strong> screen.</li>
 </ul>
+<!-- -->
+<hr>
 <h2 id="configurationfile" class="anchor"><a class="heading-anchor" href="#configurationfile"><span></span></a>Configuration File</h2>
 <p><code>Configuration.xml</code> can be modified manually using any text editor. The existing tag format must be maintained. Options are configurable through <strong>Settings</strong> or <strong>Configure Tests</strong> in the user interface, except for the options specified below:</p>
 <ul>
 <li><strong>admin_mode –</strong> If set to <em>true</em>, sets the app to admin mode allowing access to the app settings and test configurations. Default value = <em>true</em>.</li>
+<li><strong>allow_individual_test_for_user -</strong> If set to <em>true</em>, the non-admin user can run the tests individually instead of running all tests at once.</li>
+<li><strong>allow_individual_log_for_user -</strong> If set to <em>true</em>, the non-admin user can generate an individual result log file for each test instead of a single log file containing all test results.</li>
 <li><strong>continue_testing_on_failure -</strong> If set to <em>true</em>, the test automatically proceeds to the next section test until all tests are completed, even if the previous section test fails. Default value = <em>false</em>.</li>
 <li><strong>show_extra_data -</strong> If set to <em>true</em>, informational data is displayed in the test results page. Refer to Test Criteria section to see the affected informational data. Default value = <em>true</em>.</li>
 <li><strong>debug –</strong> If set to <em>true</em>, application logging is displayed in logcat for debugging purposes.  Default value = <em>true</em>.</li>
 <li><strong>close_on_result_acknowledge -</strong> If set to <em>true</em>, the application closes when all tests have passed. If any test fails, the app does not close. Default value = <em>false</em>.
-Sample settings content in configuration.xml:
-<settings>
-<admin_mode>true</admin_mode>
-<continue_testing_on_failure>true</continue_testing_on_failure>
-<show_extra_data>true</show_extra_data>
-<debug>true</debug>
-<close_on_result_acknowledge>false</close_on_result_acknowledge>
-<status_log_name>status.log</status_log_name>
-<history_log_name>history.log</history_log_name>
-<log_file_max_size_mb>25</log_file_max_size_mb>
-</settings></li>
+<br><br>
+Sample settings content in configuration.xml:</li>
 </ul>
+<pre class="prettify prettyprint"><code>
+ &lt;settings&gt;
+   &lt;admin_mode&gt;true&lt;/admin_mode&gt;
+   &lt;continue_testing_on_failure&gt;true&lt;/continue_testing_on_failure&gt;
+   &lt;show_extra_data&gt;true&lt;/show_extra_data&gt;
+   &lt;debug&gt;true&lt;/debug&gt;
+   &lt;close_on_result_acknowledge&gt;false&lt;/close_on_result_acknowledge&gt;
+   &lt;status_log_name&gt;status.log&lt;/status_log_name&gt;
+   &lt;history_log_name&gt;history.log&lt;/history_log_name&gt;
+   &lt;log_file_max_size_mb&gt;25&lt;/log_file_max_size_mb&gt;
+ &lt;/settings&gt;
+</code>
+</pre>
+<!-- -->
+<hr>
 <h2 id="configuretests" class="anchor"><a class="heading-anchor" href="#configuretests"><span></span></a>Configure Tests</h2>
 <p>Select the tests to be conducted and configure the test parameters. Access <strong>Configure Tests</strong> by tapping on the options menu at the top right of the main screen, then select <strong>Configure Tests</strong>:</p>
 <table>
 <tbody><tr>
     <td><img style="height:400px" src="configure-1.jpg"></td>
     <td>&nbsp;&nbsp;&nbsp;</td>
-    <td><img style="height:400px" src="configure-2.jpg"></td>
+    <td><img style="height:400px" src="configure-2.png"></td>
     <td>&nbsp;&nbsp;&nbsp;</td>
     <td><img style="height:400px" src="configure-3.jpg"></td>
 </tr>
@@ -264,7 +291,7 @@ Sample settings content in configuration.xml:
 <p><em>Configure Tests</em>
 <br>
 <br>
-Timeout values can be specified for tests that require user intervention.  Once the specified time elapses (in seconds), execution moves to the next test selected if configured in the configuration.xml file.
+Timeout values can be specified for tests that require user intervention. Once the specified time elapses (in seconds), execution moves to the next test selected if configured in the configuration.xml file.
 Configuration parameters:</p>
 <ul>
 <li><strong>Scanner Test –</strong> checks whether the scanner is functioning<ul>
@@ -278,17 +305,16 @@ Configuration parameters:</p>
 <li><strong>Radio Power Cycle –</strong> checks for operability when turning the Bluetooth radio on/off</li>
 <li><strong>Functional/Non-functional –</strong> determines whether the Bluetooth radio can be enabled/disabled within a specified period of time.  Returns functional if the Bluetooth radio is functional. </li>
 <li><strong>Discoverable/Connectable –</strong> checks if connectable or discoverable</li></ul></li>
-<li><strong>WiFi Tests –</strong> tests operation of the WiFi radio and returns WiFi related information<ul>
+<li><strong>WiFi Test –</strong> tests operation of the WiFi radio and returns WiFi related information<ul>
 <li><strong>MAC address –</strong> checks whether the MAC address is valid based on its format</li>
 <li><strong>Ping Address –</strong> specifies the domain name to perform the ping test</li>
-<li><strong>Network Test –</strong> pings the web address specified in the Ping Address field via WiFi and returns the amount of time it takes to receive a response</li>
-<li><strong>Radio Power Cycle –</strong> checks for operability when turning the WiFi radio on/off</li></ul></li>
-<li><strong>Battery Tests –</strong> checks the battery status and returns battery related information <ul>
+<li><strong>Network Test –</strong> pings the web address specified in the Ping Address field via WiFi and returns the amount of time it takes to receive a response</li></ul></li>
+<li><strong>Battery Test –</strong> checks the battery status and returns battery related information <ul>
 <li><strong>Part Number –</strong> returns the battery part number</li>
 <li><strong>Serial Number –</strong> returns the battery serial number</li>
 <li><strong>Manufacture Date –</strong> returns the battery date of manufacture</li>
 <li><strong>Decommission Status –</strong> returns the health of the battery, whether it needs to be decommissioned</li></ul></li>
-<li><strong>WWAN Tests –</strong> tests operation of the WWAN radio and returns related WWAN information<ul>
+<li><strong>WWAN Test –</strong> tests operation of the WWAN radio and returns related WWAN information<ul>
 <li><strong>Sim State –</strong> checks whether the sim card is present</li>
 <li><strong>Voice State –</strong> checks the voice state of the sim card</li>
 <li><strong>Data State –</strong> checks the data state of the sim card</li></ul></li>
