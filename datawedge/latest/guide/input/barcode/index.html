@@ -528,9 +528,9 @@ Note: When the hardware trigger is disabled, it cannot be used to trigger the sc
 <p><strong>NextGen (NG) SimulScan Configuration</strong> is configuration transferred from legacy SimulScan Input of DataWedge previously deprecated. Not all legacy SimulScan features are available - migration of these features into NextGen SimulScan is a continuous effort. Currently, the following features are part of NextGen SimulScan:</p>
 
 <ul>
-<li><strong><a href="#multibarcodeparams">MultiBarcode</a> -</strong> supported since DataWedge 8.0</li>
+<li><strong><a href="#multibarcodeparams">MultiBarcode</a> -</strong> supported since DataWedge 8.0. Unlike legacy SimulScan, a template is not required for MultiBarcode features and parameters.</li>
 
-<li><strong><a href="#documentselection">Document Capture</a> -</strong> supported since DataWedge 8.0, only available on select devices and scanners
+<li><strong><a href="#documentselection">Document Capture</a> -</strong> supported since DataWedge 8.0 and only available on select devices and scanners. Document Capture requires a template. Contact Zebra to create a custom Document Capture template.
 <!-- [Removed per TUT-40275]
 * **Signature capture -** supported since DataWedge 7.3
 * **OCR A/B -** supported since DataWedge 7.5 --></li>
@@ -1959,17 +1959,7 @@ _**Note:** Zebra does not recommend changing the Image Capture Mode parameter wh
 
 <p>The Universal Device Identifier (UDI) parameter acquires multiple barcodes simultaneously. </p>
 
-<p><strong>Support for UDI barcodes, such as GS1, HIBCC and ICCBBA, is being terminated. This feature is supported using the imager on the following devices up to Android P (version 9.x) only</strong>:</p>
-
-<ul>
-<li><strong>TC51</strong></li>
-
-<li><strong>TC56</strong></li>
-
-<li><strong>TC70x</strong></li>
-
-<li><strong>TC75x</strong></li>
-</ul>
+<p><strong>Support for UDI barcodes has been restored to Zebra devices running Android 10</strong> with <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">BSP 10.12.13 "Update 17"</a> (or later).</p>
 
 <p>Tap <strong>Scanning Modes</strong> within <strong>Scanner Configuration</strong> to enable UDI decoding: </p>
 
@@ -1986,6 +1976,8 @@ _**Note:** Zebra does not recommend changing the Image Capture Mode parameter wh
 <li><strong>Output of collected UDI data might require settings adjustments</strong> of the token-separation character and/or output order. See the <a href="../../output/keystroke/#udidataoutput">Keystroke Output guide</a> guide for more information. </li>
 
 <li>UDI settings can vary by geographic region. See the relevant sections of <a href="../../output/keystroke">Keystroke Output</a>, <a href="../../output/intent">Intent Output</a> and/or <a href="../../output/ip">IP Output</a> guides for more information.</li>
+
+<li><strong>Blood bags with barcodes that follow the ICCBBA standard</strong> can be decoded with UDI.</li>
 </ul>
 
 <hr>
