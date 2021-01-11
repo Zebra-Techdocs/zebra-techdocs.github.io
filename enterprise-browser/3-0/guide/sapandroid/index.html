@@ -303,29 +303,49 @@ metaReceiver.resizeWebviewOnButtonbarShown();
 &lt;buttonxmlfile value="file://%INSTALLDIR%/android_sap/ EKBCustomLayouts.encrypted" /&gt;
 </code></pre></li>
 
-<li><p><strong>EnterpriseKeyBoard</strong> enables the custom layouts made for Zebra's Enterprise Keyboard to input data. For this setting to work properly, the <code>*.encrypted</code> file containing layouts must be present in the <code>/enterprise/device/settings/ekb/config/</code> device folder.               </p></li>
+<li><p><strong>EnterpriseKeyBoard</strong> (EKB) enables the custom layouts made for Zebra's Enterprise Keyboard to input data. For this setting to work properly, the <code>*.encrypted</code> file containing layouts must be present in the <code>/enterprise/device/settings/ekb/config/</code> device folder on the device (see EKB Layouts, below).</p></li>
 
 <li><p><strong>Default</strong> activates the default IME in the device for data input.</p></li>
 </ul>
 
-<h4 id="example" class="anchor"><a class="heading-anchor" href="#example"><span></span></a>Example</h4>
+<h4 id="examples" class="anchor"><a class="heading-anchor" href="#examples"><span></span></a>Examples:</h4>
 
 <pre class="prettyprint"><code>
 &lt;KeyboardType value="ButtonBar"/&gt;
   // OR
 &lt;KeyboardType value="EnterpriseKeyBoard"/&gt;
-   // OR
+  // OR
 &lt;KeyboardType value="default"/&gt;
 </code></pre>
 
-<p>Enterprise Browser 2.0 (and later) supports configuration parameters that provide more control over the behavior of SAP apps. Keyboard visibility and custom key layouts are controlled through parameters in the <code>Config.xml</code> file. For more information about using the file, see the <a href="../configreference">Config.xml reference</a>. </p>
+<h4 id="ekblayouts" class="anchor"><a class="heading-anchor" href="#ekblayouts"><span></span></a>EKB Layouts</h4>
+
+<ul>
+<li><strong><a href="https://techdocs.zebra.com/ekd/latest/samples/">Download sample EKB layouts</a></strong> for a variety of devices and modify as needed for any application.</li>
+
+<li><strong><a href="https://techdocs.zebra.com/enterprise-keyboard/latest/guide/deploy/">Learn how to deploy</a></strong> existing EKB layout(s).  </li>
+
+<li><strong>Create custom layouts from scratch using Zebra <a href="/ekd">Enterprise Keyboard Designer</a></strong>. </li>
+</ul>
+
+<h3 id="keyboardbehavior" class="anchor"><a class="heading-anchor" href="#keyboardbehavior"><span></span></a>Keyboard Behavior</h3>
+
+<p>Enterprise Browser 2.0 (and later) supports configuration parameters that provide more control over the behavior of SAP apps. Keyboard visibility and custom key layouts are controlled through parameters in the <code>Config.xml</code> file. For more information about using the file, see the <a href="../configreference">Config.xml reference</a>. 
+<br></p>
 
 <h4 id="toshowthesapkeyboardoneverypage" class="anchor"><a class="heading-anchor" href="#toshowthesapkeyboardoneverypage"><span></span></a>To show the SAP keyboard on every page:</h4>
 
 <pre class="prettyprint"><code>&lt;KeyboardVisibility value="alwaysOn"/&gt;
 </code></pre>
 
-<p><br></p>
+<h4 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes:</h4>
+
+<ul>
+<li>When <code>KeyboardType</code> is set to "EnterpriseKeyboard," the selected EKB layout shows on every displayed EB page. The layout is hidden when the screen is touched.</li>
+
+<li>When <code>KeyboardType</code> is set to "ButtonBar," the buttonbar layout is displayed until quitting Enterprise Browser.
+<br></li>
+</ul>
 
 <h4 id="toshowkeyboardondemandwhenaninputfieldisinfocus" class="anchor"><a class="heading-anchor" href="#toshowkeyboardondemandwhenaninputfieldisinfocus"><span></span></a>To show keyboard on demand when an input field is in focus:</h4>
 
@@ -388,9 +408,7 @@ metaReceiver.resizeWebviewOnButtonbarShown();
 &lt;/SIP&gt;
 </code></pre>
 
-<p><br></p>
-
-<h4 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes</h4>
+<h4 id="notes-1" class="anchor"><a class="heading-anchor" href="#notes-1"><span></span></a>Notes:</h4>
 
 <ul>
 <li><p><strong>If the default SAP keyboard layout is preferred, Zebra recommends using the "default" value for the</strong> <code>ButtonBarMaxHeight</code> <strong>parameter</strong> (as shown immediately above). If a custom layout is to be used, the value should be specified (in pixels) to match the layout height.</p></li>
@@ -413,7 +431,7 @@ if(-1 != deviceModel.indexOf("mc92") || -1 != deviceModel.indexOf("mc33") || -1 
 
 <p>Like all pixel-based UI elements, SAP ITSmobile UI elements look smaller on high-resolution displays than on low-res ones. A page designed to fill the screen of a 640x480 display will occupy only a portion of a modern high-res display. To compensate, apps running on Enterprise Browser 2.0 (and later) can use the ViewPort parameter, which reads device-specific display settings into the app at runtime. </p>
 
-<h4 id="example-1" class="anchor"><a class="heading-anchor" href="#example-1"><span></span></a>Example</h4>
+<h4 id="example" class="anchor"><a class="heading-anchor" href="#example"><span></span></a>Example:</h4>
 
 <pre class="prettyprint"><code>
 &lt;ViewPort&gt;
@@ -1103,9 +1121,17 @@ To know more about PageAction based on page contents, please visit {eddy to add 
 
 <h2 id="androidkeyboardanddatawedge" class="anchor"><a class="heading-anchor" href="#androidkeyboardanddatawedge"><span></span></a>Android Keyboard and DataWedge</h2>
 
-<p>The SAP package disables the Android keyboard by default, which also might prevent DataWedge from outputting acquired data as keystrokes. If DataWedge keystroke output is desired, <a href="/enterprise-keyboard/latest/guide/setup/#manualactivation">enable Enterprise Keyboard</a> on the device instead.  </p>
+<p>The SAP package disables keyboard input by default. Enterprise Browser supports disabling the Enterprise Keyboard layout selected as the default in the Android settings panel. Disable it by setting the <code>Config.xml</code> file parameter as shown below: </p>
 
-<p>Enterprise Browser supports disabling default SIP provided by Android platforms. Disable it by setting the <code>Config.xml</code> file attribute as below: </p>
+<!-- 1/6/21- description changed to above per eng. [TUT-43505]. 
+
+Formerly:
+The SAP package disables the Android keyboard by default, which also might prevent DataWedge from outputting acquired data as keystrokes. If DataWedge keystroke output is desired, [enable Enterprise Keyboard](/enterprise-keyboard/latest/guide/setup/#manualactivation) on the device instead.  
+
+Enterprise Browser supports disabling default SIP provided by Android platforms. Disable it by setting the `Config.xml` file attribute as below: 
+
+
+-->
 
 <pre class="prettyprint"><code>
 &lt;IME&gt;
@@ -1123,7 +1149,6 @@ To know more about PageAction based on page contents, please visit {eddy to add 
   &lt;ResizeOnButtonbar value="1"/&gt;        
 &lt;/SIP&gt;
 
-:::xml
 &lt;KeyboardConfiguration&gt;
 &lt;KeyboardVisibility value="onDemand"/&gt;
   &lt;ondemand&gt;
@@ -1133,7 +1158,7 @@ To know more about PageAction based on page contents, please visit {eddy to add 
 &lt;/KeyboardConfiguration&gt;
 </code></pre>
 
-<p>The first section of the <code>Config.xml</code> code above prevents the keyboard from automatically popping up when the focus moves to an input field and sets the page as "resizable" so it can adapt when a keyboard pops up. The second section causes the keyboard to appear when the F10 key is pressed (on certain devices). </p>
+<p>The first section of the <code>Config.xml</code> code above prevents the keyboard from automatically popping up when the focus moves to an input field, and sets the page as "resizable" so it can adapt if a keyboard does appear. The second section causes the keyboard to appear when the F10 key is pressed (on certain devices). </p>
 
 <p><strong>More information</strong>: </p>
 
