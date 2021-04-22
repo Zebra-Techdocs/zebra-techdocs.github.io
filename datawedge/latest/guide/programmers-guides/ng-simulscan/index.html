@@ -10,8 +10,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="DataWedge Programmer's Guide">
-    <title>DataWedge Programmer's Guide - Zebra Technologies TechDocs</title>
+    <meta title="Document Capture Programmer's Guide">
+    <title>Document Capture Programmer's Guide - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -117,7 +117,6 @@
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
-                        <!--
                         <li class="dropdown languagedropdown">
                           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
                           <span class="caret"></span></button>
@@ -126,7 +125,6 @@
                                 <li><a onclick="changeLanguage('datawedge','datawedge/dw-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
                           </ul>
                         </li>                    
-                        -->
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -149,7 +147,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>DataWedge Programmer's Guide</strong></li>
+                            <li><strong>Document Capture Programmer's Guide</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -235,7 +233,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="datawedge-programmers-guide" class="anchor"><a class="heading-anchor" href="#datawedge-programmers-guide"><span></span></a>DataWedge Programmer's Guide</h1>
+                                    <h1 id="document-capture-programmers-guide" class="anchor"><a class="heading-anchor" href="#document-capture-programmers-guide"><span></span></a>Document Capture Programmer's Guide</h1>
                                     <p>
                                             DataWedge
                                             8.2
@@ -253,127 +251,89 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>This section provides guidance on how to use <a href="../../api">DataWedge Intent APIs</a> to capture, process, and deliver data to an application. An application accesses the DataWedge API by sending an intent to query or modify a configuration. Changes can take place at runtime if supported by the API. The action and data of the intent specifies which DataWedge API function to perform. Multiple API calls can be sent as extras using a single intent action.Function prototype: </p>
+<p><a href="../../input/barcode/#documentselectiondocumentcapture">Document Capture</a>, as part of <a href="../../input/barcode/#nextgensimulscanconfiguration">NextGen (NG) SimulScan</a>, is a data capture solution for retrieving data from documents, forms, and labels by scanning barcodes or capturing partial or entire documents as images. It relies on <!--<a href="../../templatebuilder">templates</a>-->templates to capture and process the data to be consumed by an application. </p>
 
-<pre class="prettyprint"><code>Intent i = new Intent(); 
-i.setAction("com.symbol.datawedge.api.ACTION"); 
-i.putExtra(EXTRA_DATA, "&lt;parameter&gt;"); 
-</code></pre>
+<hr>
 
-<p>A query is made to the DataWedge API by sending a broadcast intent and a reply is received via broadcast intent.  </p>
-
-<h2 id="datawedgeapibasics" class="anchor"><a class="heading-anchor" href="#datawedgeapibasics"><span></span></a>DataWedge API Basics</h2>
-
-<p>Basic DataWedge API usage:</p>
+<h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
 
 <ul>
-<li><strong>Create profile / update existing profile / configure multiple plugins with a single intent action:</strong> Customize data capture with a DataWedge profile using <a href="../../api/setconfig">Set Config API</a> to create a profile, update a profile, or configure multiple plugins (input, processing, output, utilities) with a single intent. Sample use cases: 
+<li>See supported devices for Document Capture in the <a href="../../matrix">Feature Matrtix</a>.</li>
 
+<li>Camera or supported 2D imager</li>
 
-<ul>
-<li>Modify the active profile to only enable certain decoders within particular screens in your application workflow to improve scan performance. </li>
+<li>DataWedge v8.0.28 or higher configured to access <a href="../../input/barcode/#nextgensimulscanconfiguration">NG SimulScan</a></li>
 
-<li>Update a profile based on user preferences when the application is running in the foreground. </li>
-
-<li>Use pre-configured profiles to capture data depending on the app running in the foreground. </li>
-
-<li>Modify scanner parameters to perform certain actions, such as emit a continuous scan beam with a single trigger press.  </li></ul>
-</li>
-
-<li><strong>Enable/Disable data capture:</strong> Enable/disable DataWedge scanner and foreground activity monitoring with <a href="../../api/enabledatawedge">Enable DataWedge API</a>. This can be used to allow other application, such as Enterprise Browser, to use the device scanner exclusively.  </li>
-
-<li><strong>Support multiple scanner types across different Zebra devices:</strong> To retrieve the available scanner types on the device (such as internal imager, internal camera, connected Bluetooth, etc.), use <a href="../../api/enumeratescanners">Enumerate Scanners API</a>. This is useful if the application is used across different Zebra devices that support different types of scanner hardware. </li>
-
-<li><strong>Initiate barcode scanning in the app UI:</strong> Trigger barcode scanning with a button tap in the app by using <a href="../../api/softscantrigger">Soft Scan Trigger API</a>. Refer to <a href="../samples/barcode1">barcode sample app</a>. </li>
-
-<li><strong>Check version information to ensure feature support:</strong> Retrieve the DataWedge version on the device with <a href="../../api/getversioninfo">Get Version Info API</a>. This can be used to identify whether the device supports a particular feature in use and take action by enabling/disabling the feature based on availability.  </li>
-
-<li><strong>Modify barcode scanner parameters at runtime:</strong> When barcode scanner parameters need to be modified dynamically at runtime but not persist within the profile, use <a href="../../api/switchscannerparams">Switch Scanner Params API</a>. For example, an application can have a button to allow the user to set the trigger to continuous mode on demand without setting this in the profile as it is not desired to be set as the default behavior. This is a temporary update - once the “switch” happens, the setting is not persisted if the profile changes.  </li>
-
-<li><strong>Enable/disable or temporarily suspend/resume barcode scanning during runtime:</strong> Dynamically control the integrated barcode scanner (laser, imager, internal camera) to enable/disable the trigger in certain areas of the application workflow or suspend/resume scanning to temporarily activate/de-activate the scanner using <a href="../../api/scannerinputplugin">Scanner Input Plugin</a>. Status change notifications include the active profile name, which permits an app to use the enable/disable scanner calls only when status changes affect a relevant profile. This can be useful to change the scanner state in quick succession, for example when there are multiple text fields and it is desired for scanning to suspend when a particular text field is in focus, use Scanner Input Plugin to suspend the scanner in that particular text field. </li>
-
-<li><strong>Monitor configuration, scanner, and profile switch changes:</strong> Register/unregister to receive notifications for changes related to configuration, scanner and profile switches using <a href="../../api/registerfornotification">Register for Notification API</a>. These changes can result from DataWedge API calls (such as Import Config, Switch to Profile, and Scanner Input Plugin) or DataWedge profile changes (such as profile Auto Import).   </li>
-
-<li><strong>Import profile or configuration:</strong> After a profile or configuration file, which can contain multiple profiles, has been exported and placed onto a device, the settings can be imported programmatically with <a href="../../api/importconfig">Import Config API</a> or <a href="../../settings/#importaprofile">manually</a>.   </li>
-
-<li><strong>Remove profile:</strong> When a profile is no longer needed, it can be removed with <a href="../../api/deleteprofile">Delete Profile API</a>. This can be useful if there is an app that utilizes a profile for a one-time task or a profile needs to be removed when exiting the app. </li>
-
-<li><strong>Duplicate an existing profile:</strong> Create a copy of an existing profile with <a href="../../api/cloneprofile">Clone Profile API</a>. This can be useful if an app requires multiple profiles with common configuration parameters yet each profile may vary with minor differences – after duplication the cloned profile can be passed to Set Config to set the differing configuration. </li>
-
-<li><strong>Retrieve profile list:</strong> Retrieve all the DataWedge profiles using <a href="../../api/getprofileslist">Get Profiles List API</a>. This is useful if an app needs to query the profile list to find a particular profile or if it needs to present a list to the user for a profile to be selected. In cases where an app creates a DataWedge profile upon app launch – a check can be included to determine if the profile exists by retrieving the profile list to improve performance and avoid unnecessary file input/output operations. </li>
-
-<li><strong>Use different profiles based on application workflow:</strong> For flexibility in using profiles that are not associated with another application, to switch profiles during runtime, and to overcome the restriction of associating an app activity with only one profile, use <a href="../../api/switchtoprofile">Switch to Profile API</a> to activate profiles that are not already associated with another app. This can be helpful to use different profiles within the same app activity, for example if an area of the activity requires PDF417 barcodes to be scanned and another area of the activity requires MSR card data to be read. When focus is on scanning PDF417 barcodes, use SWITCH_TO_PROFILE to activate the profile with the barcode configurations. Similarly, when focus is on reading the MSR data, use SWITCH_TO_PROFILE to activate the profile with the MSR configurations. Both profiles must not already have an app associated. </li>
+<li>Device with <a href="/licensing">Mobility DNA license</a>, required for NG SimulScan's Document Capture feature</li>
 </ul>
 
 <hr>
 
-<h2 id="bestpractices" class="anchor"><a class="heading-anchor" href="#bestpractices"><span></span></a>Best Practices</h2>
+<h2 id="documentcapture" class="anchor"><a class="heading-anchor" href="#documentcapture"><span></span></a>Document Capture</h2>
 
-<p>The following information provides guidance and best practices for DataWedge application development.</p>
-
-<h3 id="general" class="anchor"><a class="heading-anchor" href="#general"><span></span></a>General</h3>
-
-<ul>
-<li><strong>Scanning performance optimization:</strong> To improve scanning performance, Zebra recommends disabling all Decoders not required by the app(s) associated with a given Profile. </li>
-
-<li><strong>Profile configuration across multiple apps:</strong>  DataWedge is a global service and any application on the device can interact with it to configure any profile.  Therefore, care should be taken if multiple applications are trying to modify the same set of profiles. </li>
-</ul>
-
-<h3 id="datacapture" class="anchor"><a class="heading-anchor" href="#datacapture"><span></span></a>Data Capture</h3>
-
-<ul>
-<li><strong>Temporarily suspend or de-activate scanning in app:</strong> Use Scanner Input Plugin API with SUSPEND_PLUGIN/RESUME_PLUGIN parameters.  </li>
-
-<li>For situations that require <strong>rapid changes between suspend/resume status,</strong> use Scanner Input Plugin and register for SCANNER_STATUS notifications. When the scanner is activated (for example from a profile configuration or from RESUME_PLUGIN or ENABLE_PLUGIN intent API), SCANNER_STATUS broadcasts the WAITING and SCANNING states, rotating between each depending on whether scanning is taking place. For the app to suspend scanning, act only when in the SCANNING and WAITING states - when these states are broadcasted, use SUSPEND_PLUGIN parameter to remain in the suspended state and keep the scanner unusable. Once scanning is suspended, SCANNER_STATUS broadcasts the IDLE state. Use RESUME_PLUGIN to re-activate the scanner.  </li>
-
-<li><strong>Capture data and photos in a single app:</strong> It is possible to take pictures and capture barcode data using the same application if the application was designed with this in mind. 
-
+<p>In summary, the steps to use Document Capture are:</p>
 
 <ol>
-<li>Add separate Activities in the app: one for barcode scanning and another for picture taking. </li>
+<li><strong>Generate the template</strong> to identify the data to acquire.</li>
 
-<li>Create a DataWedge Profile with the following settings: 
+<li><strong>Deploy template to device</strong> so it can be used by DataWedge.</li>
 
+<li><strong>Create DataWedge profile</strong> and associate it to the application receiving the data.</li>
 
-<ul>
-<li>Associate the Profile with the picture-taking Activity </li>
+<li><strong>Configure the profile</strong> with the Document Capture settings.</li>
 
-<li>Disable scanning in the Profile </li></ul>
-</li>
+<li><strong>Use Content Provider</strong> to acquire, process, and output the data.</li>
+</ol>
 
-<li>Use the standard Android SDK APIs to control the camera </li>
+<p>These steps are explained in detail in the following subsections.</p>
 
-<li>When the app is used for scanning, the default DataWedge profile will come into effect. </li>
+<hr>
 
-<li>For accessing specific decoders, processing rules or other special scanning needs, a second DataWedge Profile can be created and associated with the barcode scanning activity of the app. </li></ol>
-</li>
+<h3 id="1generatethetemplate" class="anchor"><a class="heading-anchor" href="#1generatethetemplate"><span></span></a>1. Generate the Template</h3>
 
-<li><strong>Data dispatched too quickly:</strong> If data is being dispatched too quickly for the application to accept, such as when using terminal emulation apps, this can be addressed by adding a delay between each character sent to the app with the use of <code>keystroke_character_delay</code> in <a href="../../api/setconfig">Set Config</a>. Refer to Keystroke Output Parameters section and example code provided in section “Configure an inter-character delay”.  This parameter should be used with caution as it can negatively affect application performance. </li>
+<p>Templates are an important component of Document Capture, identifying the data to be acquired and processed so it can be consumed by an application. Each template is associated with a target document, such as a shipping or manufacturing label. The template specifies the form region of interest (encompasses all data in the entire form) and the Field region of interest (specific regions, such as barcode, text, picture, etc.) of the data to be captured.</p>
 
-<li>When using <a href="../../api/overview">DataWedge intent APIs</a> to <strong>query DataWedge for information</strong> (such as Get Active Profile), the app must register to receive the result with a filter that identifies the action and category of the result intent. </li>
-</ul>
+<p><strong>Contact your local Zebra sales representative for assistance to create a Document Capture/NextGen SimulScan template.</strong></p>
 
-<h3 id="profiles" class="anchor"><a class="heading-anchor" href="#profiles"><span></span></a>Profiles</h3>
+<!--See [Template Builder](../../templatebuilder/#usingtemplatebuilder) for instructions to generate the template as an .XML file. -->
 
-<ul>
-<li><strong>Existence of duplicate Associated Apps when importing profiles:</strong> If a duplicate <a href="../../gettingstarted">Associated App</a> exists between a current profile and a profile being imported, the profile being imported will not take into effect. For example, if current profile A is configured with an associated app and that same app is associated with profile B, when importing profile B the import does not take into effect due to the duplication. This similarly applies if an app is listed in the <a href="../../settings">Disabled App List</a> and that same app is an Associated App in a profile being imported - the import does not take into effect and the app remains on the Disabled App List. </li>
+<h3 id="2deploytemplatetodevice" class="anchor"><a class="heading-anchor" href="#2deploytemplatetodevice"><span></span></a>2. Deploy Template to Device</h3>
 
-<li><strong>Activity/app association with profiles:</strong> A single profile can be associated with one or more activities or apps.  However, an activity or app can be associated with only one profile. If there is a requirement to associate an activity or app to more than one profile, this can be addressed with SWITCH_TO_PROFILE, which does not specify any associated apps. <br>
-The following example discusses the use of SWITCH_TO_PROFILE with SCANNER_INPUT_PLUGIN with two activities: Activity A launches and uses Switch to Profile API to switch to ProfileA, which SCANNER_INPUT_PLUGIN is enabled, then at some point it disables the scanner plug-in. Activity B is launched, associated with ProfileB. DataWedge switches to ProfileB. When activity A comes back to the foreground from the onResume method, activity A needs to use Switch to Profile to switch back to ProfileA, then use the same API intent again to disable the scanner plug-in, to return back to the state it was in. Reminder: Use of this API changes only the runtime status of the scanner; it does not make persistent changes to the Profile. The above assumes that ProfileA is not associated with any applications/activities, therefore when focus switches back to activity A, DataWedge will not automatically switch to ProfileA - therefore activity A must switch back to ProfileA in its onResume method. Because DataWedge will automatically switch Profile when an activity is paused, it is recommended that this API function be called from the onResume method of the activity.</li>
-</ul>
+<p>After the template is created, deploy the template to the device so it can be used by DataWedge. Use <a href="/stagenow">StageNow</a>, which leverages <a href="/mx/datawedgemgr">DataWedge Mgr CSP</a>, to generate the barcode to scan and deploy the template to the device. Alternatively, an .XML file can be created through StageNow to deploy the template through an EMM (Enterprise Mobile Management) system.</p>
+
+<p>Refer to <a href="../../admin/#importnextgensimulscantemplates">Import NextGen SimulScan Templates</a> for step-by-step instructions.</p>
+
+<h3 id="3createthedatawedgeprofile" class="anchor"><a class="heading-anchor" href="#3createthedatawedgeprofile"><span></span></a>3. Create the DataWedge Profile</h3>
+
+<p>Follow steps to <a href="../../createprofile/#createanewprofile">create the DataWedge profile</a> and associate it to the application that is receiving the acquired data.</p>
+
+<h3 id="4configuretheprofile" class="anchor"><a class="heading-anchor" href="#4configuretheprofile"><span></span></a>4. Configure the Profile</h3>
+
+<p>Configure the DataWedge profile for Document Capture as follows:</p>
+
+<ol>
+<li>Under <strong>NG SimulScan Configuration</strong>, set the <strong><a href="../../input/barcode/#scanningmodes-1">Scanning mode</a></strong> to <strong>Document Capture</strong>.</li>
+
+<li>Select the imported template in <a href="../../input/barcode/#documentselectiondocumentcapture">Document Selection</a>. The selection is populated after template deployment from step 2.</li>
+</ol>
+
+<h3 id="5usecontentprovider" class="anchor"><a class="heading-anchor" href="#5usecontentprovider"><span></span></a>5. Use Content Provider</h3>
+
+<p>It is required to use DataWedge's content provider to acquire, process, and output the data from document capture. Within the DataWedge profile, enable <strong>Use Content Providers</strong> option under Intent Output. Follow the <a href="../../programmers-guides/content-provider/">Content Provider Programmer's Guide</a> to retrieve and process the acquired data so it can be output to the application.</p>
+
+<p><br></p>
 
 <hr>
 
 <p>Related Guides: </p>
 
 <ul>
-<li><a href="../../api">DataWedge APIs and sample code</a> </li>
+<li><a href="../../input/barcode/#nextgensimulscanconfiguration">NextGen SimulScan</a></li>
 
-<li><a href="../../programmers-guides/articles">DataWedge developer articles and blog posts</a></li>
+<li><a href="../../programmers-guides/content-provider/">Use Content Provider</a></li>
 
-<li><a href="../../programmers-guides/usage-notes">DataWedge Usage Notes and Behavior</a></li>
-
-<li><a href="../../samples">DataWedge Sample apps</a></li>
+<li><a href="/mx/datawedgemgr">DataWedgeMgr CSP</a>
+<!-- * [Template Builder](../../templatebuilder) --></li>
 </ul><p></p>
                                         
 

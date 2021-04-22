@@ -10,8 +10,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Tutorial - How to Receive Scanned Barcode Data in Java">
-    <title>Tutorial - How to Receive Scanned Barcode Data in Java - Zebra Technologies TechDocs</title>
+    <meta title="Document Capture in Java">
+    <title>Document Capture in Java - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -117,15 +117,14 @@
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
-                        <!--
                         <li class="dropdown languagedropdown">
                           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
+                                <li><a onclick="changeLanguage('datawedge','datawedge/dw-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
                                 <li><a onclick="changeLanguage('datawedge','datawedge/dw-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
                           </ul>
                         </li>                    
-                        -->
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -142,8 +141,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h1 id="tutorial---how-to-receive-scanned-barcode-data-in-java" class="anchor"><a class="heading-anchor" href="#tutorial---how-to-receive-scanned-barcode-data-in-java"><span></span></a>Tutorial - How to Receive Scanned Barcode Data in Java</h1>
-                    <p>A walk-through on how to receive scanned barcode data through an Android intent.
+                    <h1 id="document-capture-in-java" class="anchor"><a class="heading-anchor" href="#document-capture-in-java"><span></span></a>Document Capture in Java</h1>
+                    <p>Demonstrates how to scan a document or form and acquire specific data from that printed material based on a defined template.
                     </p>
                 </div>
                 <div class="col-sm-3 text-right">
@@ -195,7 +194,7 @@
 	                        <div class="">
 	                            <h2 class="anchor" id="devices"><a class="heading-anchor" href="#devices"><span></span></a>Devices</h2>
 	                            <p>
-	                            	All supported Zebra Android devices
+	                            	All supported Zebra Android Nougat (v7.0) or above devices
 	                            	
 	                            </p>
 	                        </div>
@@ -205,151 +204,121 @@
 	                            <h4 class="anchor" id=""><a class="heading-anchor" href="#"><span></span></a></h4>
 	                            <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>This tutorial demonstrates how to use DataWedge to receive scanned barcode data through an Android intent with the sample application <a href="../basicintent1">BasicIntent1</a>. The high level steps are:</p>
+<p>Document Capture provides the capability to scan a document or form and acquire specific data from that printed material based on a defined template. It is part of <a href="../../input/barcode/#nextgensimulscanconfiguration">NextGen SimulScan</a> in DataWedge. This sample demonstrates how to use <a href="../../input/barcode/#documentselectiondocumentcapture">Document Capture</a> with Anchor Barcode to capture an address and signature from a document or form based on the barcode scanned. The address and signature are captured as separate images. This is useful in situations such as delivery operations for proof of delivery.</p>
+
+<p>This sample performs the following:</p>
 
 <ol>
-<li>Configure DataWedge.  Set the input (barcode scanner) and output (intent).</li>
+<li>Register a broadcast receiver to listen for DataWedge intents.</li>
 
-<li>Create a profile and associate the app with the profile.</li>
+<li>Create DataWedge profile "DocumentCaptureProfile" if it does not exist. The result is retrieved from the broadcast receiver. If the profile does not exist, it creates the profile with the following NextGen SimulScan configurations:
 
-<li>Run the app and scan a barcode.</li>
+
+<ul>
+<li>Set scanning mode to <strong>Document Capture</strong>.</li>
+
+<li>Set the Intent Output action, category and delivery mechanism (broadcast). </li>
+
+<li>Enable content provider.</li>
+
+<li>Associate this sample application to the profile.</li></ul>
+</li>
+
+<li>When scanning, the address and signature fields from the document "AnchorBarcodeTemplate.pdf" are captured as separate images based on specifications in the "SignatureAndAddressSeparately.xml" template. The height and width of the image output is adjusted.</li>
+
+<li>Display the captured data (address and signature) as separate images. </li>
 </ol>
 
 <blockquote>
   <p>This sample application is only intended for educational purposes, demonstrating the use of DataWedge intent API(s). </p>
 </blockquote>
 
-<p>This is the minimal code approach using a generic Android intent rather than DataWedge APIs.  To develop an app with finer control of DataWedge settings and data capture, refer to the <a href="../../api">DataWedge API</a> guide and best practices in the <a href="../../gettingstarted">Get Started</a> guide.</p>
-
-<h2 id="steps" class="anchor"><a class="heading-anchor" href="#steps"><span></span></a>Steps</h2>
-
-<ol>
-<li>Launch DataWedge.  From the apps menu tap DataWedge.</li>
-
-<li>Create a new profile and associate the app with the profile.  Follow steps <a href="../../createprofile">Create a New Profile</a>.  Alternatively, Profile0 (the default profile used by all apps not explicitly assigned a profile) can be used.  If using the sample app to associate to a specific profile, select the app name “com.zebra.basicintent1”.</li>
-
-<li>Confirm the following settings are enabled in the profile:
-
+<h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
 
 <ul>
-<li>Profile</li>
+<li>DataWedge 8.0 for <a href="../../input/barcode/#nextgensimulscanconfiguration">NextGen SimulScan</a> support</li>
 
-<li>Barcode input</li>
+<li>For&nbsp;<a href="/licensing/about/#zebraprofessionalseriesdevices">Zebra Professional series devices</a>,&nbsp;such as TC21 and TC26, NextGen SimulScan requires a&nbsp;<a href="/licensing">Mobility DNA Enterprise license</a></li>
 
-<li>Intent output
-<img style="height:350px" src="profile_settings_1.png"></li></ul>
-</li>
+<li>NextGen SimulScan template "SignatureAndAddressSeparately.xml", supplied with the sample app</li>
 
-<li>Configure Intent output as follows:
+<li>Sample document to scan, "AnchorBarcodeTemplate.pdf", supplied with the sample app</li>
+</ul>
 
+<h2 id="apisused" class="anchor"><a class="heading-anchor" href="#apisused"><span></span></a>APIs Used</h2>
 
-<ul>
-<li><strong>Intent action:</strong> com.basicintent1.ACTION <br>
-This is an implicit intent that is sent by DataWedge. The application must register a broadcast receiver with the given action in order to receive the intent. For this tutorial in conjunction with BasicIntent1 sample, use: com.basicintent1.ACTION</li>
+<table class="facelift" style="width:100%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>DataWedge API</th>
+    <th>App Functionality</th>
+  </tr>
 
-<li><strong>Intent category:</strong> (leave blank)</li>
+  <tr>
+    <td><a href="../../api/createprofile/">Create Profile</a></td>
+    <td>Create the profile with specific parameters for Document Capture (see step 2 above).</td>
+  </tr>
 
-<li><strong>Intent delivery:</strong> Broadcast intent
-<img style="height:350px" src="profile_settings_2.png">
-Refer to the <a href="../../output/intent/">DataWedge Intent Output</a> guide for more information about these settings.</li></ul>
-</li>
+  <tr>
+    <td><a href="../../api/deleteprofile/">Create Profile</a></td>
+    <td>Delete the profile if profile creation fails.</td>
+  </tr>
 
-<li>Download, build and launch the sample app <a href="../basicintent1">BasicIntent1</a>.</li>
+  <tr>
+    <td><a href="../../api/getprofileslist/">Get Profiles List</a></td>
+    <td>Get the list of DataWedge profiles on the device to check if a profile exists.</td>
+  </tr>
 
-<li>Scan a barcode.</li>
+  <tr>
+    <td><a href="../../api/setconfig/">Set Config</a></td>
+    <td>Set the appropriate configurations specified.</td>
+  </tr>
 
-<li>The scanned data is displayed.</li>
-</ol>
+  <tr>
+    <td><a href="../../api/softscantrigger/">Soft Scan Trigger</a></td>
+    <td>Start/stop or toggle the software scan trigger.</td>
+  </tr>
 
-<h2 id="samplecodewalkthrough" class="anchor"><a class="heading-anchor" href="#samplecodewalkthrough"><span></span></a>Sample code walk-through</h2>
+</tbody></table>
 
-<p>Refer to <a href="https://github.com/Zebra/samples-datawedge">BasicIntent1 sample app source code</a>.</p>
-
-<p>There are several important points to ensure that the app receives the intent data sent from DataWedge:</p>
+<h2 id="usingthissample" class="anchor"><a class="heading-anchor" href="#usingthissample"><span></span></a>Using This Sample</h2>
 
 <ol>
-<li><b>Pre-define some of the strings in the application project</b> for ease of use when extracting the scanned data. The intent action is defined as `activity_intent_filter_action` in the sample app.  When received, the intent’s action contains extras with the scanned data for source, type, and data as described in the <a href="../../output/intent/">DataWedge Intent Output</a> guide. Content from Strings.xml in the sample app:
-<!-- -->
+<li><a href="https://github.com/Zebra/samples-datawedge">Download</a> and build the sample app.</li>
 
-<pre class="prettyprint"><code>&lt;resources&gt;
-    &lt;string name="app_name"&gt;DW BasicIntent1&lt;/string&gt;
-    &lt;string name="activity_intent_filter_action"&gt;com.dwbasicintent1.ACTION&lt;/string&gt;
-    &lt;string name="datawedge_intent_key_source"&gt;com.symbol.datawedge.source&lt;/string&gt;
-    &lt;string name="datawedge_intent_key_label_type"&gt;com.symbol.datawedge.label_type&lt;/string&gt;
-    &lt;string name="datawedge_intent_key_data"&gt;com.symbol.datawedge.data_string&lt;/string&gt;
-&lt;/resources&gt;
-</code></pre></li>
+<li>Copy and install the sample app to the device.</li>
 
-<li><b>Register a broadcast receiver.</b> Since DataWedge is configured to send a broadcast intent, the application must register a broadcast receiver. This is done in the onCreate() method in the sample app:
-<!-- -->
+<li>Follow instructions to <a href="../../admin/#importnextgensimulscantemplates">import template</a> "SignatureAndAddressSeparately.xml" to the device.</li>
 
-<pre class="prettyprint"><code>protected void onCreate(Bundle savedInstanceState) {
-    IntentFilter filter = new IntentFilter();
-    filter.addCategory(Intent.CATEGORY_DEFAULT);
-    filter.addAction(getResources().getString(R.string.activity_intent_filter_action));
-    registerReceiver(myBroadcastReceiver, filter);
-}
-</code></pre>
-
-<p>Note that the action being filtered matches the action configured in the DataWedge profile. In a production application, for efficiency the register/unregister would likely be done in the onResume()/onPause() methods.</p></li>
-
-<li><b>Define the broadcast receiver.</b> This is done in MainActivity.java in the sample app:
-<!-- -->
-
-<pre class="prettyprint"><code>private BroadcastReceiver myBroadcastReceiver = new BroadcastReceiver() {
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        String action = intent.getAction();
-        Bundle b = intent.getExtras();
-
-<pre><code>    if (action.equals(getResources().getString(R.string.activity_intent_filter_action))) {
-        //  Received a barcode scan
-        try {
-            displayScanResult(intent, "via Broadcast");
-        } catch (Exception e) {
-            //  Catch if the UI does not exist when we receive the broadcast
-        }
-    }
-}
-</code></pre>
-
-};
-</code></pre></li>
-
-<li><b>Extract the scanned data and display it on the screen.</b>  This is done in method displayScanResult() in the sample app:
-<!-- -->
-
-<pre class="prettyprint"><code>private void displayScanResult(Intent initiatingIntent, String howDataReceived)
-{
-    String decodedSource = initiatingIntent.getStringExtra(getResources().getString(R.string.datawedge_intent_key_source));
-    String decodedData = initiatingIntent.getStringExtra(getResources().getString(R.string.datawedge_intent_key_data));
-    String decodedLabelType = initiatingIntent.getStringExtra(getResources().getString(R.string.datawedge_intent_key_label_type));
-
-<pre><code>final TextView lblScanSource = (TextView) findViewById(R.id.lblScanSource);
-final TextView lblScanData = (TextView) findViewById(R.id.lblScanData);
-final TextView lblScanLabelType = (TextView) findViewById(R.id.lblScanDecoder);
-
-lblScanSource.setText(decodedSource + " " + howDataReceived);
-lblScanData.setText(decodedData);
-lblScanLabelType.setText(decodedLabelType);
-</code></pre>
-
-}
-</code></pre></li>
+<li>Launch the sample app. </li>
 </ol>
 
-<p>Note that the extra keys were defined earlier in the strings.xml file.  This code assumes a UI exists in which to place the data, as performed in the sample app.</p>
+<ul>
+<li>DataWedge profile “DocumentCaptureProfile” is created if it does not exist. </li>
+
+<li>If profile creation fails, the profile is deleted. Tap <strong>Re-create profile</strong> to attempt to recreate the profile.
+<img style="height:350px" src="ScreenShot1.png"> </li>
+</ul>
+
+<ol>
+<li><p>Tap <strong>Start/Stop Scanning</strong> to start the scan. </p></li>
+
+<li><p>Scan the document "AnchorBarcodeTemplate.pdf". If successful, decoded data is received by the broadcast receiver and processed based on the action given in the Intent Output, in this case Broadcast intent. A message appears indicating the data processed successfully.
+<img style="height:350px" src="ScreenShot2.png"> </p></li>
+
+<li><p>Based on the sample template, the address and signature are captured and displayed as separate images.
+<img style="height:350px" src="ScreenShot3.png"> </p></li>
+
+<li><p>Tap <strong>Clear Scan Data</strong> to clear the data displayed.</p></li>
+</ol>
 
 <hr>
 
 <p><strong>Related guides</strong>:</p>
 
 <ul>
-<li><a href="http://www.darryncampbell.co.uk/2017/12/13/tutorial-scan-with-datawedge-intent-output-on-zebra-devices/">The original tutorial</a> by Zebra engineer Darryn Campbell </li>
+<li><a href="../../api">DataWedge Intent APIs</a> </li>
 
-<li><a href="../../output/intent/">DataWedge Intent Output</a> guide for profile settings and details </li>
-
-<li><a href="../../api">DataWedge APIs</a> for intent-based functions</li>
+<li><a href="../../admin/#importnextgensimulscantemplates">Import Template</a></li>
 </ul><p></p>
 	                        </div>
 	                    </div>
@@ -362,11 +331,15 @@ lblScanLabelType.setText(decodedLabelType);
 						    <section id="main-slider">
 						        <div class="owl-carousel">
 						            <div class="item">
-						            	<img src="/datawedge/8-2/guide/samples/tutorial-ReceiveScannedData/basicintent1-1.png">
+						            	<img src="/datawedge/8-2/guide/samples/documentcapture1/ScreenShot1.png">
 						                
 						            </div><!--/.item-->
 						            <div class="item">
-						            	<img src="/datawedge/8-2/guide/samples/tutorial-ReceiveScannedData/basicintent1-2.png">
+						            	<img src="/datawedge/8-2/guide/samples/documentcapture1/ScreenShot2.png">
+						                
+						            </div><!--/.item-->
+						            <div class="item">
+						            	<img src="/datawedge/8-2/guide/samples/documentcapture1/ScreenShot3.png">
 						                
 						            </div><!--/.item-->
 						        </div><!--/.owl-carousel-->
