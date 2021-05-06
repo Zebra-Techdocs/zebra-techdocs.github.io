@@ -117,6 +117,7 @@
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
+                                      
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -287,9 +288,7 @@
 
 <p><strong>Support for UDI barcodes has been restored to Zebra devices running Android 10</strong> with <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">BSP 10.12.13 "Update 17"</a> (or later).</p>
 
-<!-- 5/5/21 - removed per TUT46063: 
-**Support for UDI barcodes, such as GS1, HIBCC and ICCBBA, is being terminated. This feature is supported using the imager on [selected Zebra devices](../../input/barcode/#udidecoding) up to Android P (version 9.x) only** -->
-
+<!-- 5/5/21 - removed per TUT46063: **Support for UDI barcodes, such as GS1, HIBCC and ICCBBA, is being terminated. This feature is supported using the imager on [selected Zebra devices](../../input/barcode/#udidecoding) up to Android P (version 9.x) only** -->
 
 <!-- 2/8/18- removed pre-DW 6.7 panel 
 <img style="height:350px" src="../token_selection_highlighted.png"/>
@@ -340,7 +339,7 @@
 <p><strong>1. Tap "Data formatting and ordering" to specify a separator character</strong> to be inserted between the data from each barcode. 
 <img style="height:350px" src="../dw_6.7_data_formatting_and_ordering.png">
 <br>
-<strong>2. Tap "Barcode separator" to specify the desired insertion character</strong> (CR, LF or TAB).<br>Data from each barcode is otherwise concatenated and delivered as a single string of keystrokes.
+<strong>2. Tap "Barcode separator" to specify the desired insertion character</strong> (CR, LF or TAB).<br>This adds a separator in between each barcode and appends a separator after the last barcode. To remove the extra separator after the last barcode, use the "Remove characters" action from <a href="../../process/adf/#supportedadfactions">Advanced Data Formatting</a> rules.<br>Data from each barcode is otherwise concatenated and delivered as a single string of keystrokes.
 <img style="height:350px" src="../dw_6.7_data_separating.png"></p>
 
 <hr>
