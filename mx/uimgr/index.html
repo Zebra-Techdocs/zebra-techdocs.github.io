@@ -783,6 +783,20 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -840,7 +854,9 @@
 <ul>
 <li>Set the Current Locale for a desired language and region</li>
 
-<li>Set the Default Input Method to enhance entry of localized data</li></ul>
+<li>Set the Default Input Method to enhance entry of localized data</li>
+
+<li>Manage layouts (languages) for external physical keyboard(s)</li></ul>
 </li>
 
 <li>Clear the Clipboard, which discards any prior data that might have been copied</li>
@@ -851,6 +867,10 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1142,29 +1162,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="clear-clipboard"><a class="heading-anchor" href="#clear-clipboard"><span></span></a>Clear Clipboard</h2>
@@ -1332,28 +1329,12 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="external-keyboard-action"><a class="heading-anchor" href="#external-keyboard-action"><span></span></a>External Keyboard Action</h2>
-                                    <p class=""></p><p>Used to select an Action to perform on the keyboard layout specified in the External Keyboard Name or External Optional Keyboard Name parameter.</p><p></p>
+                                    <p class=""></p><p>Used to select an Action to perform on a connected external keyboard specified in the External Keyboard Name parameter. </p><p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> This is an experimental feature and is NOT covered by Zebra Technical Support.</p>
+                                        <p><b>Note:</b> An external keyboard MUST be connected when applying these parameter Actions. This is an experimental feature and is NOT covered by Zebra Technical Support.</p>
                                         <p><b>Parm Name:</b> ExternalKeyboard</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -1507,15 +1488,44 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.5" data-api="30" data-smartdoc="">
 
                                     <h2 class="anchor" id="external-keyboard-name"><a class="heading-anchor" href="#external-keyboard-name"><span></span></a>External Keyboard Name</h2>
-                                    <p class=""></p><p>Used to enter a keyboard name to add or replace a keyboard layout on the device. <strong>Note: If a layout exists on the device with the same name as one being added, the existing layout is replaced by the layout being added</strong>.</p>
+                                    <p class=""></p><p>Used to enter a keyboard name to add or replace a keyboard layout (language) on the device. <strong>Note: If a layout exists on the device with the same name as one being added, the existing layout is replaced by the layout being added</strong>. Keyboard names are <u>NOT</u> case sensitive.</p>
 
 <p><strong>Parm value input rules</strong>: </p>
 
 <ul>
 <li>String of at least one alphanumeric character</li>
+</ul>
+
+<p><strong>Notes</strong>:</p>
+
+<ul>
+<li>To view the name of the connected external keyboard, go to the <strong>Android Settings panel</strong> and select <strong>System &gt; Languages &amp; input &gt; Physical keyboard</strong>.</li>
+
+<li>This field is optional. If no Keyboard Name is entered, selected layouts are applied to all keyboards connected to the device.</li>
 </ul><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> External Keyboard Action is "Add/Replace Keyboard Layout Mapping"</p>
@@ -1569,31 +1579,10 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.5" data-api="30" data-smartdoc="">
 
                                     <h2 class="anchor" id="external-optional-keyboard-name"><a class="heading-anchor" href="#external-optional-keyboard-name"><span></span></a>External Optional Keyboard Name</h2>
-                                    <p class=""></p><p>Used to enter a keyboard layout name to remove from the device. Layout name must be among those listed in the Input Settings panel on the device.</p>
+                                    <p class=""></p><p>Used to enter a keyboard layout name to remove from the device. Layout name must be among those listed in the Input Settings panel on the device. These names are <strong>NOT case sensitive</strong>.</p>
 
 <p><strong>Parm value input rules</strong>: </p>
 
@@ -1641,10 +1630,46 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.5" data-api="30" data-smartdoc="">
 
-                                    <h2 class="anchor" id="external-keyboard-language"><a class="heading-anchor" href="#external-keyboard-language"><span></span></a>External Keyboard Language</h2>
-                                    <p class=""></p><p>Used to enter the name of an external keyboard to which to apply language configuration settings. <strong>Note: External keyboard MUST be connected when applying this parameter</strong>. </p>
+                                    <h2 class="anchor" id="external-keyboard-layout"><a class="heading-anchor" href="#external-keyboard-layout"><span></span></a>External Keyboard Layout</h2>
+                                    <p class=""></p><p>Used to enter the name of the keyboard layout being configured. <strong>This is a required field and must contain the name of a layout listed in the "Keyboard layouts" panel on the device. <u>NOTE: Layout names are case sensitive</u></strong>. </p>
+
+<p><strong>To view a list of Keyboard Layouts</strong>: </p>
+
+<ol>
+<li>Go to the <strong>Android Settings panel</strong>. </li>
+
+<li>Select <strong>System &gt; Languages &amp; input &gt; Physical keyboard</strong>. </li>
+
+<li>Tap the name of the connected external keyboard. The name of the currently selected layout is displayed. </li>
+
+<li>Tap "SET UP KEYBOARD LAYOUTS" to display a list of alternalive layouts (languages).</li>
+</ol>
 
 <p><strong>Parm value input rules</strong>: </p>
 
@@ -1652,7 +1677,7 @@
 <li>String of at least one alphanumeric character</li>
 </ul><p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> External keyboard MUST be connected when applying this parameter.</p>
+                                        <p><b>Note:</b> External keyboard MUST be connected when applying this parameter. If multiple StageNow Profiles containing different layout names are created, the layout in the last applied Profile becomes the default.</p>
                                         <p><b>Shown if:</b> External Keyboard Action is "Add/Replace Keyboard Layout Mapping"</p>
                                         <p><b>Parm Name:</b> ExternalKeyboardLayout</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -1670,6 +1695,12 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1804,10 +1835,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2010,6 +2037,13 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="long-press-home-key-enabledisable"><a class="heading-anchor" href="#long-press-home-key-enabledisable"><span></span></a>Long-Press HOME Key Enable/Disable</h2>
@@ -2139,21 +2173,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="date-launches-clock-app-enabledisable"><a class="heading-anchor" href="#date-launches-clock-app-enabledisable"><span></span></a>Date Launches Clock App Enable/Disable</h2>
@@ -2254,7 +2273,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -2415,13 +2433,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="multi-user-enabledisable"><a class="heading-anchor" href="#multi-user-enabledisable"><span></span></a>Multi-user Enable/Disable</h2>
@@ -2537,6 +2548,25 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3273,11 +3303,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="battery-percentage-showhide"><a class="heading-anchor" href="#battery-percentage-showhide"><span></span></a>Battery Percentage Show/Hide</h2>
@@ -3369,8 +3394,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -3634,9 +3657,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="bluetooth-pairing-pop-up-enabledisable"><a class="heading-anchor" href="#bluetooth-pairing-pop-up-enabledisable"><span></span></a>Bluetooth Pairing Pop-up Enable/Disable</h2>
@@ -3749,15 +3769,16 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="app-info-icon-enabledisable"><a class="heading-anchor" href="#app-info-icon-enabledisable"><span></span></a>App Info Icon Enable/Disable</h2>
-                                    <p class="">
-
-        </p><p>This is the On/Off switch for device response to a "long-press" of an app icon in the Recent Apps Header. When enabled, long-pressing an app icon allows the device user to access application information and to potentially perform undesireable actions, such as stopping the app.</p>
-
-
-<p></p>
+                                    <p class=""></p><p>This is the On/Off switch for device response to a "long-press" of an app icon in the Recent Apps Header. When enabled, long-pressing an app icon allows the device user to access application information and to potentially perform undesireable actions, such as stopping the app.</p><p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> AppInfoIconOnRecentAppHeader</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -3860,12 +3881,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-a-custom-locale"><a class="heading-anchor" href="#set-a-custom-locale"><span></span></a>Set a Custom Locale</h2>
@@ -3901,8 +3916,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -4092,6 +4105,10 @@
                                 </div> 
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="set-default-input-method"><a class="heading-anchor" href="#set-default-input-method"><span></span></a>Set Default Input Method</h2>
@@ -4164,7 +4181,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -4361,7 +4377,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="gear-icon-showhide"><a class="heading-anchor" href="#gear-icon-showhide"><span></span></a>Gear Icon Show/Hide</h2>
@@ -4466,6 +4481,7 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="16" data-smartdoc="">
 
                                     <h2 class="anchor" id="input-method-package-name"><a class="heading-anchor" href="#input-method-package-name"><span></span></a>Input Method Package Name</h2>
@@ -4500,6 +4516,8 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                         <div class="">
@@ -4599,8 +4617,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
                                     
                                         <div class="">
                                     
@@ -4705,6 +4721,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="navigation-bar-enabledisable"><a class="heading-anchor" href="#navigation-bar-enabledisable"><span></span></a>Navigation Bar Enable/Disable</h2>
@@ -4804,9 +4822,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                         <div class="">
@@ -4909,6 +4924,7 @@
                                     
                                     
                                     
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="magnification-gesture"><a class="heading-anchor" href="#magnification-gesture"><span></span></a>Magnification Gesture</h2>
@@ -5003,6 +5019,9 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                         <div class="">
                                     
@@ -5101,7 +5120,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="virtual-keyboard-showhide"><a class="heading-anchor" href="#virtual-keyboard-showhide"><span></span></a>Virtual Keyboard Show/Hide</h2>
@@ -5196,8 +5214,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
                                     
                                         <div class="">
                                     
@@ -5414,6 +5430,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="status-bar-enabledisable"><a class="heading-anchor" href="#status-bar-enabledisable"><span></span></a>Status Bar Enable/Disable</h2>
@@ -5532,9 +5550,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -5662,6 +5677,8 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -6315,6 +6332,24 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "ClipBoardUsage",
@@ -6399,29 +6434,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "ClipBoardClear",
@@ -6465,22 +6477,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6687,6 +6683,27 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -6706,27 +6723,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6803,6 +6799,30 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -6822,6 +6842,12 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -6917,10 +6943,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -7081,6 +7103,13 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "LongPressHomeKeyUsage",
@@ -7170,21 +7199,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "NotificationDate",
@@ -7245,7 +7259,6 @@ filtering
                         
                         ]
                     },
-                    
                     
                     
                     
@@ -7366,13 +7379,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "MultiUser",
@@ -7433,6 +7439,25 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -7972,11 +7997,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "ShowBatteryPercentage",
@@ -8037,8 +8057,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
                     
                     
                     
@@ -8210,9 +8228,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "BluetoothPairingPopupUsage",
@@ -8273,6 +8288,12 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -8351,12 +8372,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -8376,8 +8391,6 @@ filtering
                         
                         
                     },
-                    
-                    
                     
                     
                     
@@ -8497,6 +8510,10 @@ filtering
                     },
                     
                     
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "InputMethodAction",
@@ -8540,7 +8557,6 @@ filtering
                         
                         ]
                     },
-                    
                     
                     
                     
@@ -8684,7 +8700,6 @@ filtering
                     
                     
                     
-                    
                     {
                             presentif: "",
                             name: "NotificationSettings",
@@ -8749,6 +8764,7 @@ filtering
                     
                     
                     
+                    
                     {
                         requires: {
                             osx: "",
@@ -8768,6 +8784,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     
                     {
@@ -8831,8 +8849,6 @@ filtering
                         ]
                     },
                     
-                    
-                    
                     {
                             presentif: "",
                             name: "QuickSettings",
@@ -8893,6 +8909,8 @@ filtering
                         
                         ]
                     },
+                    
+                    
                     
                     
                     
@@ -8958,9 +8976,6 @@ filtering
                     },
                     
                     
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "RecentAppButtonUsage",
@@ -9021,6 +9036,7 @@ filtering
                         
                         ]
                     },
+                    
                     
                     
                     
@@ -9085,6 +9101,9 @@ filtering
                         ]
                     },
                     
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "ShowPasswords",
@@ -9148,7 +9167,6 @@ filtering
                     
                     
                     
-                    
                     {
                             presentif: "",
                             name: "ShowVirtualKeyBoard",
@@ -9209,8 +9227,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
                     
                     {
                             presentif: "",
@@ -9339,6 +9355,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                             presentif: "",
                             name: "StatusBarUsage",
@@ -9402,9 +9420,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "OnScreenPowerButton",
@@ -9465,6 +9480,8 @@ filtering
                         
                         ]
                     },
+                    
+                    
                     
                     
                     
