@@ -117,7 +117,6 @@
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
-                        <!--
                         <li class="dropdown languagedropdown">
                           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
                           <span class="caret"></span></button>
@@ -126,7 +125,6 @@
                                 <li><a onclick="changeLanguage('datawedge','datawedge/dw-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
                           </ul>
                         </li>                    
-                        -->
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -567,7 +565,7 @@ Note: When the hardware trigger is disabled, it cannot be used to trigger the sc
 <ul>
 <li><strong><a href="#multibarcodeparams">MultiBarcode</a> -</strong> multiple barcodes read in a single scan. A template is not required.<br></li>
 
-<li><b><a href="#documentselectiondocumentcapture">Document Capture</a> -</b> capture fields within a document or capture the entire document as an image based on a specified template. <span style="color:red">Contact your local Zebra sales representative for assistance to create a Document Capture/NextGen SimulScan template.</span></li>
+<li><b><a href="#documentselectiondocumentcapture">Document Capture</a> -</b> capture fields within a document or capture the entire document as an image based on a specified template. Support for this feature depends on the hardware and operating system version. Refer to the <a href="../../matrix">Feature Matrix</a> table for more information. <span style="color:red">Contact your local Zebra sales representative for assistance to create a Document Capture/NextGen SimulScan template.</span></li>
 
 <li><strong>Disabled –</strong> when a scanning mode, such as <strong>Single</strong> or <strong>UDI,</strong> is selected in the <strong>Scanner Configuration</strong> section, scanning mode is automatically disabled in <strong>NG SimulScan Configuration,</strong> preventing any other selection.</li>
 </ul>
@@ -644,9 +642,9 @@ Video on how to deploy a Document Capture/NextGen SimulScan template to a device
 
 <p><br></p>
 
-<h4 id="bwholepage" class="anchor"><a class="heading-anchor" href="#bwholepage"><span></span></a>B) Whole Page</h4>
+<h4 id="bwholedocument" class="anchor"><a class="heading-anchor" href="#bwholedocument"><span></span></a>B) Whole Document</h4>
 
-<p>Whole Page Document Capture acquires the entire document, or form, as an image based on the surrounding borders of the content defined in the NextGen SimulScan Template<!-- <a href="../../templatebuilder">NextGen SimulScan Template</a>-->. Applies to Image Capture<!--<a href="../../templatebuilder/#imagecapture">Image Capture</a>--> template type. The entire document can be captured with or without scanning a barcode. The document must have black borders surrounding all four sides or be bordered by a contrasting background, otherwise the document cannot be captured.</p>
+<p>Whole Document Capture acquires the entire document, or form, as an image based on the surrounding borders of the content defined in the NextGen SimulScan Template<!-- <a href="../../templatebuilder">NextGen SimulScan Template</a>-->. Applies to Image Capture<!--<a href="../../templatebuilder/#imagecapture">Image Capture</a>--> template type. The entire document can be captured with or without scanning a barcode. The document must have black borders surrounding all four sides or be bordered by a contrasting background, otherwise the document cannot be captured.</p>
 
 <!--
 After the NextGen SimulScan template is imported for Document Capture, the **Document Selection** is populated with the imported template name. Based on the template request, the template is customized with one of the following options:
@@ -662,7 +660,7 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
   _Document Capture whole page templates_
   -->
 
-<p>Video demonstration of whole page document capture: </p>
+<p>Video demonstration of whole document capture: </p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DI8pxsTJdtI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe> 
 
@@ -780,7 +778,7 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 <p>MultiBarcode params options:</p>
 
 <ul>
-<li><strong>Instant Reporting -</strong> Enable/Disable instantaneous reporting of unique barcodes within a scanning session (duplicates are ignored). If enabled, it ignores the value of <strong>Number of barcodes per scan</strong> and immediately reports the scanned data. If disabled <em>(default)</em>, the decoded data is returned as a single entity after reaching the specified <strong>Number of barcodes per scan</strong>.</li>
+<li><strong>Instant Reporting -</strong> Enable/Disable instantaneous reporting of unique barcodes within a scanning session (duplicates are ignored). If enabled, it ignores the value of <strong>Number of barcodes per scan</strong> and immediately reports the scanned data. If disabled <em>(default)</em>, the decoded data is returned as a single entity after reaching the specified <strong>Number of barcodes per scan</strong>. If barcode separators are designated to be output (using <a href="../../output/ip">IP Output</a> or <a href="../../output/keystroke">Keystroke Output</a>) for multibarcodes, these separators are not added - by design, the barcodes are output one at a time with Instant Reporting.</li>
 
 <li><strong>Number of barcodes per scan-</strong> Specify the number of unique barcodes to be decoded with each scan session before sending the scanned data. This setting does not take effect if <strong>Instant Reporting</strong> is enabled. For example, if 5 is specified, the scanner does not send the data until 5 barcodes are scanned. <em>Default value: 5; value range: 2 to 100.</em></li>
 
@@ -1192,9 +1190,9 @@ If a decoder has no parameters, a checkbox is displayed to enable/disable the de
 
 <li><strong>Auto (2) -</strong> To decode both mirrored and non-mirrored DotCode barcodes (default).</li>
 </ul>
-<!--
+
 <p><strong>Erasures -</strong> To increase the decoding speed of Dotcode barcodes. The higher the value, the faster it can decode with a higher risk of misdecodes. Value range is 4 to 20; default value is 10. </p>
--->
+
 <hr>
 
 <h3 id="dutchpostal" class="anchor"><a class="heading-anchor" href="#dutchpostal"><span></span></a>Dutch Postal</h3>
