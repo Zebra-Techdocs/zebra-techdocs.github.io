@@ -10,8 +10,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Data Capture Plus Profile Feature Reference">
-    <title>Data Capture Plus Profile Feature Reference - TechDocs</title>
+    <meta title="Scanner Parameter Config API Guide">
+    <title>Scanner Parameter Config API Guide - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -141,7 +141,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Data Capture Plus Profile Feature Reference</strong></li>
+                            <li><strong>Scanner Parameter Config API Guide</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -227,7 +227,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="data-capture-plus-profile-feature-reference" class="anchor"><a class="heading-anchor" href="#data-capture-plus-profile-feature-reference"><span></span></a>Data Capture Plus Profile Feature Reference</h1>
+                                    <h1 id="scanner-parameter-config-api-guide" class="anchor"><a class="heading-anchor" href="#scanner-parameter-config-api-guide"><span></span></a>Scanner Parameter Config API Guide</h1>
                                     <p>
                                             EMDK For Android
                                             9.1
@@ -245,79 +245,157 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Data Capture Plus (formerly known as the "Data Capture Panel") enables areas of the device screen to be designated as scan triggers. By tapping on a designated screen area, DataWedge will respond as it would to a scanner button-press or other hardware trigger.</p>
-
-<p>DCP is disabled by default. The DataWedge Profile configuration screen allows an app user to configure the appearance of DCP on the screen once a particular Profile is loaded. If the user checks the option to enable the DCP, the five parameters shown below appear on the preference screen and can be configured as desired.</p>
-
-<p><strong>Note: The DCP will not appear if the scanner is disabled in the current Profile</strong>.</p>
-
-<h2 id="name" class="anchor"><a class="heading-anchor" href="#name"><span></span></a>Name</h2>
-
-<p>The name field is used by the EMDK to identify this particular feature parameter set when you want to manage just part of the profile programmatically using the EMDK <a href="/emdk-for-android/9-1/api/core/ProfileManager">ProfileManager</a> API. This can be useful if you have multiple types of the same feature and want to update only one of them without having to update the whole profile. See <a href="/emdk-for-android/9-1/guide/profile-manager">EMDK Profiles Overview</a> for more information.</p>
+<p><strong>This guide explains the use of scanner parameter configuration APIs</strong>, interfaces introduced with EMDK-A 9.1 that allow for the setting and retrieval of scanning parameters using <code>Scanner.setParams()</code> and <code>Scanner.getParams()</code> methods. <strong>Introduced with EMDK for Android 9.1</strong>, these pass-through APIs can be used to set and get scanner parameter configurations in scanning applications. </p>
 
 <blockquote>
-  <p><strong>Note</strong>: As of EMDK 6.8, DataWedge can no longer be configured for data capture through Profile Manager. Zebra recommends using the <a href="/datawedge/latest/guide/api/">DataWedge APIs</a> instead. </p>
+  <p><strong>Zebra strongly recommends using these APIs in favor of the <a href="../../api">ScannerConfig class</a>, which is deprecated and scheduled to be discontinued in 2022</strong>. Zebra will continue to add to the parameters supported by the new APIs.</p>
 </blockquote>
 
-<h2 id="dockbuttonon" class="anchor"><a class="heading-anchor" href="#dockbuttonon"><span></span></a>Dock button on</h2>
-
-<p>Sets the initial docking location of the floating DCP button. Changes by the user at runtime are saved to the active Profile. Docking options:  </p>
+<p><strong>NOTE: This guide requires a basic knowledge of the use of EMDK-A scanning APIs</strong>. If necessary, please become familiar with the guides below before proceeding. </p>
 
 <ul>
-<li>Right side only</li>
+<li><strong><a href="https://techdocs.zebra.com/emdk-for-android/latest/tutorial/tutBasicScanningAPI/">EMDK Basic Scanning Tutorial</a></strong></li>
 
-<li>Left side only</li>
-
-<li>Either side</li>
+<li><strong><a href="https://techdocs.zebra.com/emdk-for-android/latest/guide/barcode_scanning_guide/">EMDK Barcode Scanning API Programmer's Guide</a></strong></li>
 </ul>
 
-<h2 id="startin" class="anchor"><a class="heading-anchor" href="#startin"><span></span></a>Start in</h2>
+<hr>
 
-<p>Sets the mode that DCP will startup with. If configured to launch as a button, the DCP mode can be changed at runtime by dragging, but the launch state will not be changed in the Profile. Start-in options: </p>
+<h2 id="supportedparameters" class="anchor"><a class="heading-anchor" href="#supportedparameters"><span></span></a>Supported Parameters</h2>
+
+<h3 id="remotetriggerstatus" class="anchor"><a class="heading-anchor" href="#remotetriggerstatus"><span></span></a>Remote Trigger Status</h3>
 
 <ul>
-<li>Button mode (floating button)</li>
+<li><strong>Parameter</strong>: remote_trigger_status</li>
 
-<li>Full-screen mode</li>
+<li><strong>Description</strong>: Notifies an app through the Android KeyEvents mechanism of remote trigger presses of a connected Bluetooth scanner as KeyUp and KeyDown events. <strong>Scanner must be Enabled to receive the trigger press notifications</strong>. </li>
 
-<li>Button-only mode</li>
+<li><strong>Supported values</strong>: 0 – Disable, 1 – Enable</li>
+
+<li><strong>Supported device(s)</strong>: WT6300</li>
 </ul>
 
-<h2 id="buttonhighestposition" class="anchor"><a class="heading-anchor" href="#buttonhighestposition"><span></span></a>Button highest position</h2>
+<hr>
 
-<p>Sets a ceiling for button position expressed as a percent of screen height. For example, on a screen measuring four inches vertically, a setting of 75 (%) would prevent the upper edge of the DCP button from being positioned less than one inch from the top of the screen. </p>
+<!-- BELOW BASICLY REPEATS ABOVE:  
 
-<h2 id="bottomlowestposition" class="anchor"><a class="heading-anchor" href="#bottomlowestposition"><span></span></a>Bottom lowest position</h2>
+Extended scanner parameter configuration APIs are used for configuring and reading scanner parameters and values that are not supported through the [EMDK basic scanning APIs](../../apimenu). Developers currently can use the existing class structure and IntelliSense with a `ScannerConfig` object such as `config.scanParams.decodeHapticFeedback`, but are unable to use that method to read or set new scanning parameters that are now supported by extended scanner parameter configuration APIs. 
 
-<p>Sets a floor for button position expressed as a percent of screen height. For example, on a screen measuring four inches vertically, a setting of 25 (%) would prevent the lower edge of the DCP button from being positioned less than one inch from the bottom of the screen.</p>
+WHAT ARE THOSE PARAMERERS? 
+New parameters not supported by existing class structure are listed in here >>> `link to a new page with latest params`<<<. Developers need to refer those parameters and supported values from above document and pass the parameter information to extended APIs.
 
-<h2 id="dragdetecttime" class="anchor"><a class="heading-anchor" href="#dragdetecttime"><span></span></a>Drag Detect Time</h2>
+-----
+ -->
 
-<p>The wait time (in ms) that DCP should wait after a screen tap before triggering a scanner action. This can help prevent accidental triggers when dragging the DCP button to a new location.</p>
+<h2 id="apiusage" class="anchor"><a class="heading-anchor" href="#apiusage"><span></span></a>API Usage</h2>
 
-<p><strong>Note</strong>: A quick touch and release of the DCP can sometimes start the viewfinder when using camera as a scanner. To exit, press the back button.</p>
+<h3 id="bundlegetparamsbundleparameters" class="anchor"><a class="heading-anchor" href="#bundlegetparamsbundleparameters"><span></span></a>Bundle getParams(Bundle parameters)</h3>
 
-<p><img style="height:350px" src="dcp_minimized.png">
-<em>Data Capture Plus shown in minimized mode</em>. 
-<br></p>
+<h5 id="description" class="anchor"><a class="heading-anchor" href="#description"><span></span></a>Description:</h5>
 
-<p><strong>Note</strong>: If configured to launch as a button, the DCP mode can be changed at runtime by dragging, but the launch state will not be changed in the Profile. However, runtime changes to the vertical position and the docking side of device screen <em><strong>will</strong></em> be saved to the active Profile.</p>
+<p>Gets the current value of the specified parameter available at the scanner.</p>
 
-<p><img style="height:350px" src="dcp_maximized.png">
-<em>Data Capture Plus shown in maximized mode</em>. 
-<br></p>
+<h5 id="inputparameters" class="anchor"><a class="heading-anchor" href="#inputparameters"><span></span></a>Input parameters:</h5>
 
-<h2 id="scanningwithdcp" class="anchor"><a class="heading-anchor" href="#scanningwithdcp"><span></span></a>Scanning with DCP</h2>
+<p>parameters: Bundle with parameter names</p>
 
-<p><strong>To scan a barcode with DCP</strong>: </p>
+<h5 id="returntype" class="anchor"><a class="heading-anchor" href="#returntype"><span></span></a>Return type:</h5>
 
-<p>1. With DCP enabled, <strong>tap and hold the area of the screen designated for DCP</strong>. The scan beam (or camera viewfinder) will be active while the tap is held. </p>
+<p>Bundle</p>
 
-<p>2. <strong>Aim the scan beam or camera reticle at the barcode</strong> to be scanned. DCP will use the preferences configured in the Barcode Input Plug-in for the current Profile.</p>
+<h5 id="returnvalue" class="anchor"><a class="heading-anchor" href="#returnvalue"><span></span></a>Return value:</h5>
 
-<p>3. * <strong>Release finger to stop scanning</strong> or to close the camera viewfinder.</p>
+<p>Current value of parameters</p>
 
-<p><strong>Note</strong>: A quick touch and release of the DCP control sometimes will start the viewfinder when using camera as a scanner. To exit, press the BACK button.</p><p></p>
+<hr>
+
+<h3 id="voidsetparamsbundleparameters" class="anchor"><a class="heading-anchor" href="#voidsetparamsbundleparameters"><span></span></a>Void setParams(Bundle parameters)</h3>
+
+<h5 id="description-1" class="anchor"><a class="heading-anchor" href="#description-1"><span></span></a>Description:</h5>
+
+<p>Sets the given values to the specified parameters.</p>
+
+<h5 id="inputparameters-1" class="anchor"><a class="heading-anchor" href="#inputparameters-1"><span></span></a>Input parameters:</h5>
+
+<p>parameters: Bundle with parameter names and values</p>
+
+<hr>
+
+<h2 id="samplecode" class="anchor"><a class="heading-anchor" href="#samplecode"><span></span></a>Sample Code</h2>
+
+<!-- 
+Supported extended scanner parameter list
+Please refer this >>> link to a new page with latest params<<<  section of EMDK documentation for get all the extended scanner parameter configurations and supported values.
+
+HUH? 
+This is in line with previous scanner configuration APIs. It needs to get the object of `ScannerConfig` to load the current settings before using extended scanning parameter APIs. 
+ -->
+
+<h3 id="setremotetriggerstatus" class="anchor"><a class="heading-anchor" href="#setremotetriggerstatus"><span></span></a>Set Remote Trigger Status</h3>
+
+<p>The following code segment shows how to set the value of the <code>remote_trigger_status</code> parameter using the scanner parameter configuration APIs. </p>
+
+<pre class="prettyprint"><code>    
+    try {
+        // Get scanner config
+        Bundle requiredParams = new Bundle();
+        requiredParams.putString("remote_trigger_status","");
+        Bundle params = scanner.getParams(requiredParams);
+
+        if(params.containsKey("remote_trigger_status")) {
+            params.putString("remote_trigger_status", "0");
+        }
+
+        scanner.setParams(params);
+    } catch (ScannerException e) {
+        updateStatus(e.getMessage());
+    }
+</code></pre>
+
+<blockquote>
+  <p>Note: Parameter names should match those from the supported param list. </p>
+</blockquote>
+
+<hr>
+
+<h3 id="getnewlyconnectedscanner" class="anchor"><a class="heading-anchor" href="#getnewlyconnectedscanner"><span></span></a>Get Newly Connected Scanner</h3>
+
+<p>Newly connected scanners are sometimes unavailable for selection using device identifiers, making acquisition of scanner parameters impossible. The following code segment shows how to access a newly available scanner using device enumeration. </p>
+
+<p>Use the <code>BarcodeManager.getSupportedDevicesInfo()</code> method first. Then pass one of the received <code>ScannerInfo</code> objects to <code>BarcodeManager.getDevice(ScannerInfo scnInfo)</code> as follows:</p>
+
+<pre class="prettyprint"><code>    
+    List&lt;ScannerInfo&gt; supportedDevList = barcodeManager.getSupportedDevicesInfo();
+    Scanner scanner = null;
+
+    Iterator&lt;ScannerInfo&gt; it = deviceList.iterator();
+    while(it.hasNext()) {
+        ScannerInfo scnInfo = it.next();
+        if(scnInfo.getDeviceIdentifier()==DeviceIdentifier.BLUETOOTH_IMAGER_RS6000)
+        {        
+            scanner = barcodeManager.getDevice(scnInfo);
+            break;
+        }
+    }
+</code></pre>
+
+<h3 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes:</h3>
+
+<ul>
+<li><strong>If a scanner is connected to a device but does not appear when using an EMDK library</strong>, it can be accessed using the device enumeration APIs. Refer to the <a href="https://techdocs.zebra.com/emdk-for-android/latest/guide/barcode_scanning_guide/">EMDK Barcode Scanning API Programmer's Guide</a> and <a href="https://techdocs.zebra.com/emdk-for-android/latest/tutorial/tutBasicScanningAPI/">EMDK Basic Scanning Tutorial</a> for help enumerating available scanners.</li>
+
+<li><strong>If the required scanner is not available under device identifier</strong>, try filtering by friendly name or class and scanner type. Alternatively, the device index also can be passed to the <code>getDevice</code> method to get the scanner.</li>
+</ul>
+
+<hr>
+
+<h3 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See:</h3>
+
+<ul>
+<li><strong><a href="https://techdocs.zebra.com/emdk-for-android/latest/tutorial/tutBasicScanningAPI/">EMDK Basic Scanning Tutorial</a></strong></li>
+
+<li><strong><a href="https://techdocs.zebra.com/emdk-for-android/latest/guide/barcode_scanning_guide/">EMDK Barcode Scanning API Programmer's Guide</a></strong></li>
+</ul><p></p>
                                         
 
 
