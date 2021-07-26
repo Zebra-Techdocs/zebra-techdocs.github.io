@@ -230,6 +230,9 @@
                                     <h1 id="license-manager" class="anchor"><a class="heading-anchor" href="#license-manager"><span></span></a>License Manager</h1>
                                     <p><b>Note</b>: To display <u>only</u> the features present on a particular device, select one or more filters from the SmartDocs bar below.  
                                     <a id="smartdocs-help"><i class="fa fa-question-circle fa-lg"></i></a></p> 
+                                    <p><b>Language Note</b>: Input fields accept <b><u>ENGLISH ONLY</u></b>.</p>
+
+
                                     EMDK For Android
                                      - 7.6
                                     <p></p>
@@ -239,7 +242,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                        <nav class="navbar  navbar-inverse" role="navigation" id="smartdocs">
+                        <nav class="navbar  navbar-inverse" role="navigation" id="smartdocs" style="position: static">
                           <div class="container-fluid">
                             <div class="navbar-header">
                               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
@@ -289,6 +292,7 @@
                                 <li class="smartdocs-osx" data-value="9.1"><a>9.1</a></li>
                                 <li class="smartdocs-osx" data-value="9.2"><a>9.2</a></li>
                                 <li class="smartdocs-osx" data-value="10.0"><a>10.0</a></li>
+                                <li class="smartdocs-osx" data-value="10.5"><a>10.5</a></li>
                               </ul>
                               </li>
                         
@@ -324,6 +328,9 @@
                                 <li class="smartdocs-mx" data-value="10.0"><a>10.0</a></li>
                                 <li class="smartdocs-mx" data-value="10.1"><a>10.1</a></li>
                                 <li class="smartdocs-mx" data-value="10.2"><a>10.2</a></li>
+                                <li class="smartdocs-mx" data-value="10.3"><a>10.3</a></li>
+                                <li class="smartdocs-mx" data-value="10.4"><a>10.4</a></li>
+                                <li class="smartdocs-mx" data-value="10.5"><a>10.5</a></li>
                               </ul>
                               </li>
                         
@@ -332,6 +339,7 @@
                                   <a href="#" class="dropdown-toggle" id="smartdocs-api-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Android: All <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li class="smartdocs-api" data-value=""><a>All</a></li>
+                                <li class="smartdocs-api" data-value="30"><a>Android 11 (API 30)</a></li>
                                 <li class="smartdocs-api" data-value="29"><a>Android 10 (API 29)</a></li>
                                 <li class="smartdocs-api" data-value="28"><a>9.0 Pie (API 28)</a></li>
                                 <li class="smartdocs-api" data-value="27"><a>8.1 Oreo (API 27)</a></li>
@@ -788,34 +796,23 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
                                     <p class="">
 
-        </p><p>The License Manager (LicenseMgr) CSP administers the software licenses on a device, allowing an administrator or app running on the device to control the usability of software features that require licensing. Software components can be made usable, unusable or feature-limited based on the license. If a component requires licensing, the absence of a valid license will limit or prevent its functionality. Software components that to not require licensing are not effected by this CSP. </p>
+        </p><p>The License Manager (LicenseMgr) CSP administers the software licenses on a device, allowing an administrator or app running on the device to control the usability of software features that require licensing. Software components can be made usable, unusable or feature-limited based on the license. If a component requires licensing, the absence of a valid license will limit or prevent its functionality. Software components that do not require licensing are not effected by this CSP. </p>
 
 <h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
 
-<h5 id="zebralicensing" class="anchor"><a class="heading-anchor" href="#zebralicensing"><span></span></a>Zebra Licensing</h5>
+<h4 id="zebralicensing" class="anchor"><a class="heading-anchor" href="#zebralicensing"><span></span></a>Zebra Licensing</h4>
 
 <ul>
 <li>Perform licensing actions using Zebra or (legacy) Symbol methods</li>
 
-<li>Activate / Return / Return All / Refresh Software License(s) </li>
+<li>Activate / Return / Return All / Refresh Software License(s) by Activation ID</li>
 
-<li>Enter an Activation ID</li>
+<li>Activate / Return / Refresh Licensed apps by "feature" name and/or version</li>
 
 <li>Select license source:
 
@@ -832,12 +829,16 @@
 
 <li>Remove license source</li>
 
-<li>Enter URL and friendly name for on-premise license server</li>
+<li>Enter URL and friendly name for on-premise license AID server</li>
 
-<li>Enter URL and friendly name for cloud server via proxy</li>
+<li>Enter URL and friendly name for cloud-based AID server via proxy</li>
+
+<li>Enter URL and optional port number for an on-premise feature licensing server </li>
+
+<li>Enter URL and optional port number for a cloud-based feature licensing server </li>
 </ul>
 
-<h5 id="symbollicensing" class="anchor"><a class="heading-anchor" href="#symbollicensing"><span></span></a>Symbol Licensing</h5>
+<h4 id="symbollicensing" class="anchor"><a class="heading-anchor" href="#symbollicensing"><span></span></a>Symbol Licensing</h4>
 
 <ul>
 <li>Apply software license(s) on a device</li>
@@ -904,6 +905,25 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1182,20 +1202,14 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="zebra-license-action"><a class="heading-anchor" href="#zebra-license-action"><span></span></a>Zebra License Action</h2>
                                     <p class="">
 
-        </p><p>Used to select the Action to perform on an Activation ID (AID) on the device. <strong>For Zebra-branded devices only</strong>. For Symbol-branded devices, use the License Action parameter. To use Option 6, enter the 39-character Activation ID using the Activation ID Refresh parameter. <strong>Note: Options 4, 5 and 8 are used programmatically on the device and are not intended for human interaction</strong>. </p>
+        </p><p>Used to select the Action to perform on an Activation ID (AID) or feature name and version on a device. <strong>For Zebra-branded devices only</strong>. For Symbol-branded devices, use the License Action parameter. To use Option 6, enter the 39-character Activation ID using the Activation ID Refresh parameter. <strong>Note: Options 4, 5, 8, 9 and 10 are used programmatically on the device and are not intended for human interaction</strong>. </p>
 
-<p><code>IMPORTANT PREACTIVATED LICENSE RESTRICTIONS:</code></p>
+<p><strong><u>IMPORTANT PREACTIVATED LICENSE RESTRICTIONS</u></strong>:</p>
 
 <ul>
 <li><strong>Preactivated Licenses are <u>valid only on the day they are generated</u></strong>. </li>
@@ -1379,7 +1393,7 @@
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>8</td>
                                                 <td>activatefeature</td>
-                                                <td>Used programmatically on the device to activate the named feature on the device; no human interaction.</td>
+                                                <td>Used programmatically on the device to activate a license based on feature name and version on the device; no human interaction.</td>
                                                 <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
@@ -1400,7 +1414,7 @@
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>9</td>
                                                 <td>returnfeature</td>
-                                                <td>Reclaims the named feature from the device and returns it to the licensing server for assignment elsewhere.</td>
+                                                <td>Reclaims the license from the device for a named feature and returns it to the licensing server for assignment elsewhere.</td>
                                                 <td></td>
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
@@ -1444,26 +1458,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1606,28 +1600,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1827,11 +1799,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="license-server-url"><a class="heading-anchor" href="#license-server-url"><span></span></a>License Server URL</h2>
@@ -1869,6 +1836,8 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="feature-based-source-url-friendly-name"><a class="heading-anchor" href="#feature-based-source-url-friendly-name"><span></span></a>Feature-based Source URL Friendly Name</h2>
@@ -1901,6 +1870,18 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="" data-smartdoc="">
@@ -1946,12 +1927,27 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="feature-name"><a class="heading-anchor" href="#feature-name"><span></span></a>Feature Name</h2>
                                     <p class="">
 
-        </p><p>Used to enter the feature name for Action by the Zebra License Action parameter. </p>
+        </p><p>Used to enter the Feature Name (in place of an Activation ID) on which to perform an Action selected in the Zebra License Action parameter. </p>
 
 <p><strong>Parm value input rules</strong>: </p>
 
@@ -1978,37 +1974,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2048,6 +2013,9 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2199,6 +2167,11 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="activation-quantity"><a class="heading-anchor" href="#activation-quantity"><span></span></a>Activation Quantity</h2>
@@ -2231,6 +2204,10 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2383,6 +2360,11 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="preactivated-license-method"><a class="heading-anchor" href="#preactivated-license-method"><span></span></a>Preactivated License Method</h2>
@@ -2459,12 +2441,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2687,12 +2663,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="return-all-license-source"><a class="heading-anchor" href="#return-all-license-source"><span></span></a>Return All License Source</h2>
@@ -2798,6 +2768,16 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="activation-id-return"><a class="heading-anchor" href="#activation-id-return"><span></span></a>Activation ID Return</h2>
@@ -2832,16 +2812,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2891,8 +2861,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="activation-quantity-return"><a class="heading-anchor" href="#activation-quantity-return"><span></span></a>Activation Quantity Return</h2>
@@ -2922,42 +2890,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.2" data-api="" data-smartdoc="">
-
-                                    <h2 class="anchor" id="refresh-activation-id"><a class="heading-anchor" href="#refresh-activation-id"><span></span></a>Refresh Activation ID</h2>
-                                    <p class="">
-
-        </p><p>Used to enter a license code to refresh on a device. This parameter works in conjunction with the RefreshID Zebra License Action, which causes the device to contact the licensing server to renew a device license following a license renewal purchase. </p>
-
-<p><strong>Parm value input rules</strong>: </p>
-
-<ul>
-<li>Must be a 39-character string containing a valid Activation ID code </li>
-</ul>
-
-
-<p></p>
-                                        <blockquote>
-                                        <p><b>Shown if:</b> License Action Zebra is "Refresh AID" and License Choice is "Zebra"</p>
-                                        <p><b>Parm Name:</b> ActivationIDRefresh</p>
-                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
-                                        <p><b>Requires:</b> 
-                                            </p><ul>
-                                                <li>MX: 7.2+ </li>
-                                           </ul>
-                                        <p></p>
-                                        
-
-                                        
-                                        </blockquote>
-                                    
-                                    
-                                    
-                                </div> 
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="" data-smartdoc="">
 
@@ -2992,8 +2924,38 @@
                                     
                                 </div> 
                                     
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.2" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="refresh-activation-id"><a class="heading-anchor" href="#refresh-activation-id"><span></span></a>Refresh Activation ID</h2>
+                                    <p class="">
+
+        </p><p>Used to enter a license code to refresh on a device. This parameter works in conjunction with the RefreshID Zebra License Action, which causes the device to contact the licensing server to renew a device license following a license renewal purchase. </p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>Must be a 39-character string containing a valid Activation ID code </li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> License Action Zebra is "Refresh AID" and License Choice is "Zebra"</p>
+                                        <p><b>Parm Name:</b> ActivationIDRefresh</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 7.2+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
                                     
                                     
+                                    
+                                </div> 
                                     
                                     
                                     
@@ -3070,8 +3032,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="acquire-feature-version"><a class="heading-anchor" href="#acquire-feature-version"><span></span></a>Acquire Feature Version</h2>
@@ -3108,6 +3068,13 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3173,6 +3140,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="license-action"><a class="heading-anchor" href="#license-action"><span></span></a>License Action</h2>
@@ -3180,7 +3149,7 @@
 
         </p><p>Used to apply or remove a Software License on a legacy Symbol device. <strong>For Zebra-branded devices, use the License Action Zebra parameter</strong>. </p>
 
-<p>Applying a Software License on a device makes the specific capabilities of that Software Component usable on that device. Removing a license makes the controlled capability unusable or limits its features. <strong>Note: The license removal action deletes the licence only from the private license store; the license <em>file</em> still exists on the device and must be deleted separately</strong>.</p>
+<p>Applying a Software License on a device makes the specific capabilities of that Software Component usable on that device. Removing a license makes the controlled capability unusable or limits its features. <strong><u>NOTE</u></strong>: The license removal action deletes the licence <strong>only from the private license <u>store</u></strong>; the license <em>file</em> still exists on the device and must be deleted separately.</p>
 
 
 <p></p>
@@ -3251,14 +3220,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3388,6 +3349,9 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="standard-feature-name"><a class="heading-anchor" href="#standard-feature-name"><span></span></a>Standard Feature Name</h2>
@@ -3395,7 +3359,7 @@
 
         </p><p>Used to enter the Standard Licensed Feature Name against which to verify the Software License File.</p>
 
-<p><strong>Note:</strong> Currently, there exists a single defined Standard Licensed Feature Name, that of the SimulScan OCR/OMR feature. Selecting it avoids the need to enter the exact (custom) value of the Licensed Feature Name. To verify other features, use the "Verify Custom Name" and enter the Licensed Feature Name to match the Software License File being used.</p>
+<p><strong><u>NOTE</u></strong>: Currently, there exists a single defined Standard Licensed Feature Name, that of the SimulScan OCR/OMR feature. Selecting it avoids the need to enter the exact (custom) value of the Licensed Feature Name. To verify other features, use the "Verify Custom Name" and enter the Licensed Feature Name to match the Software License File being used.</p>
 
 
 <p></p>
@@ -3454,10 +3418,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-feature-name"><a class="heading-anchor" href="#custom-feature-name"><span></span></a>Custom Feature Name</h2>
@@ -3465,7 +3425,7 @@
 
         </p><p>Used to enter a Custom Licensed Feature Name, which must match exactly the Licensed Feature Name contained within the Software License File acquired from Zebra Software License Server.</p>
 
-<p><strong>Note:</strong> This option must be used to verify any Licensed Feature Name other than those contained in the list of Standard Licensed Feature Names. <strong>The Licensed Feature Name must be entered exactly</strong> as acquired from the Zebra Software License Server with identical case and without any additional whitespace or other characters.</p>
+<p><strong><u>NOTE</u></strong>: This option must be used to verify any Licensed Feature Name other than those contained in the list of Standard Licensed Feature Names. <strong>The Licensed Feature Name must be entered exactly</strong> as acquired from the Zebra Software License Server with identical case and without any additional whitespace or other characters.</p>
 
 <p><strong>Parm value input rules</strong>: </p>
 
@@ -3495,11 +3455,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="license-method"><a class="heading-anchor" href="#license-method"><span></span></a>License Method</h2>
@@ -3507,12 +3462,12 @@
 
         </p><p>Used to enter the method of supplying the Software License. </p>
 
-<p><strong>The Embed value</strong> (option 1) indicates that the contents of the Software License File is embedded into the Request XML. To use this option, the Base64-encoded contents of the Software License File acquired from the Zebra Software License Server must be Base64-encoded a second time by the MDM Agent before being embedded this Request XML document. <strong>Note: Although it increases the data size, this option offers the advantage of a self-contained Request XML</strong>.</p>
+<p><strong>The Embed value</strong> (option 1) indicates that the contents of the Software License File is embedded into the Request XML. To use this option, the Base64-encoded contents of the Software License File acquired from the Zebra Software License Server must be Base64-encoded a second time by the MDM Agent before being embedded this Request XML document. <strong><u>NOTE</u></strong>: Although it increases the data size, this option offers the advantage of a self-contained Request XML.</p>
 
-<p><strong>The Reference value</strong> indicates that a Software License File, which must be present in the device file system, is referenced by its path and file name. <strong>Note</strong>: This option requires that the Software License File be transferred to the device file system before the Request XML is submitted, and requires specification of the exact path and file name of the Software License File in the device. If the license should be applied after an Enterprise Reset, the license file must be stored in a persistent location such as the <code>/enterprise</code> directory.</p>
+<p><strong>The Reference value</strong> (option 2) indicates that a Software License File, which must be present in the device file system, is referenced by its path and file name. <strong>Note</strong>: This option requires that the Software License File be transferred to the device file system before the Request XML is submitted, and requires specification of the exact path and file name of the Software License File in the device. If the license should be applied after an Enterprise Reset, the license file must be stored in a persistent location such as the <code>/enterprise</code> directory.</p>
 
 <blockquote>
-  <p><strong>Note:</strong> Regardless of the method used to supply the Software License File (Embed or Reference), the supplied Software License File must contain valid contents acquired from the Zebra Software License Server. An attempt to apply a Software License File that contains invalid contents will result in an error in the Result XML. In addition, if the Software License File was an Individual Device License, the device serial number embedded in the Software License File must match the serial number of the device onto which it is being applied. Any attempt to apply a mismatched license will generate an error in the Result XML. </p>
+  <p><strong><u>NOTE</u></strong>: Regardless of the method used to supply the Software License File (Embed or Reference), the supplied Software License File must contain valid contents acquired from the Zebra Software License Server. An attempt to apply a Software License File that contains invalid contents will result in an error in the Result XML. In addition, if the Software License File was an Individual Device License, the device serial number embedded in the Software License File must match the serial number of the device onto which it is being applied. Any attempt to apply a mismatched license will generate an error in the Result XML. </p>
 </blockquote>
 
 
@@ -3635,9 +3590,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="license-file-and-path"><a class="heading-anchor" href="#license-file-and-path"><span></span></a>License File and Path</h2>
@@ -3672,6 +3624,9 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3773,9 +3728,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="remove-standard-feature"><a class="heading-anchor" href="#remove-standard-feature"><span></span></a>Remove Standard Feature</h2>
@@ -3837,11 +3789,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="remove-custom-feature"><a class="heading-anchor" href="#remove-custom-feature"><span></span></a>Remove Custom Feature</h2>
@@ -3874,6 +3821,8 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -4249,6 +4198,106 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -4268,6 +4317,14 @@ filtering
         csp: "licensemgr",
         name: "License Manager",
         parms: [
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4536,12 +4593,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "The License Source is &quot;Zebra Cloud&quot; and License Action Zebra is &quot;Activate AID&quot; and License Choice is &quot;Perform Zebra license action&quot; and License Choice is &quot;Use a local license server option&quot;",
                             name: "LicenseActionZebra",
@@ -4671,7 +4722,7 @@ filtering
                                 {
                                     code: "8",
                                     name: "activatefeature",
-                                    description: "Used programmatically on the device to activate the named feature on the device; no human interaction.",
+                                    description: "Used programmatically on the device to activate a license based on feature name and version on the device; no human interaction.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -4688,7 +4739,7 @@ filtering
                                 {
                                     code: "9",
                                     name: "returnfeature",
-                                    description: "Reclaims the named feature from the device and returns it to the licensing server for assignment elsewhere.",
+                                    description: "Reclaims the license from the device for a named feature and returns it to the licensing server for assignment elsewhere.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -4721,26 +4772,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4846,28 +4877,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5022,11 +5031,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -5046,6 +5050,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     {
                         requires: {
@@ -5068,6 +5074,18 @@ filtering
                     },
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -5087,6 +5105,21 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     {
                         requires: {
@@ -5114,37 +5147,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -5164,6 +5166,9 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -5300,6 +5305,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -5319,6 +5329,10 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -5438,6 +5452,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "The License Action Zebra is &quot;Activate&quot; and License Choice is &quot;Zebra&quot; and License Source is &quot;Preactivated&quot;",
                             name: "PreactivatedLicenseMethod",
@@ -5481,12 +5500,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5646,12 +5659,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "The License Action Zebra is &quot;Reset&quot; and License Choice is &quot;Zebra&quot;",
                             name: "ReturnAllLicenseSource",
@@ -5720,6 +5727,16 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -5739,16 +5756,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5785,8 +5792,6 @@ filtering
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -5810,29 +5815,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    {
-                        requires: {
-                            osx: "",
-                            osxEnd: "",
-                            mx: "7.2",
-                            api: "",
-                            osxSpecific: "",
-                            osxSpecificList: "",
-                            osxExclude: "",
-                            osxExcludeEnd: "",
-                            devicetype: "A,B"
-                        },
-
-                            presentif: "License Action Zebra is &quot;Refresh AID&quot; and License Choice is &quot;Zebra&quot;",
-                            name: "ActivationIDRefresh",
-                            pivotal: "No",
-                        
-                        
-                    },
-                    
                     {
                         requires: {
                             osx: "",
@@ -5853,8 +5835,25 @@ filtering
                         
                     },
                     
-                    
-                    
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "7.2",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A,B"
+                        },
+
+                            presentif: "License Action Zebra is &quot;Refresh AID&quot; and License Choice is &quot;Zebra&quot;",
+                            name: "ActivationIDRefresh",
+                            pivotal: "No",
+                        
+                        
+                    },
                     
                     
                     
@@ -5914,8 +5913,6 @@ filtering
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -5952,6 +5949,13 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -5971,6 +5975,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     
                     
@@ -6030,14 +6036,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6128,6 +6126,9 @@ filtering
                     
                     
                     
+                    
+                    
+                    
                     {
                             presentif: "The License Action is &quot;Symbol&quot; and License Choice is &quot;Symbol&quot;",
                             name: "VerifyStandardFeatureName",
@@ -6163,10 +6164,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -6186,11 +6183,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6273,9 +6265,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -6295,6 +6284,9 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -6363,9 +6355,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
                     {
                             presentif: "The Select Method is &quot;Standard&quot; and the License Choice &quot;Symbol&quot;",
                             name: "SelectStandardFeatureName",
@@ -6398,11 +6387,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -6422,6 +6406,108 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
