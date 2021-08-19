@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Zebra EHS 4.0
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Zebra EHS 4.1
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-4','2-3','/ehs/4-0/guide/about')">Zebra EHS 3.0</a></li>
+                                <li><a onclick="changeVersion('2-4','2-3','/ehs/4-1/guide/about')">Zebra EHS 3.0</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,32 +65,32 @@
 
 
                         <li>
-                            <a href="/ehs/4-0/guide/about">
+                            <a href="/ehs/4-1/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-0/guide/setup">
+                            <a href="/ehs/4-1/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-0/guide/settings">
+                            <a href="/ehs/4-1/guide/settings">
                                     Advanced Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-0/guide/features">
+                            <a href="/ehs/4-1/guide/features">
                                     Special Features
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-0/download">
+                            <a href="/ehs/4-1/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-0/search">
+                            <a href="/ehs/4-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -98,7 +98,8 @@
                           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeLanguage('ehs','ehs-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
+                                <li><a onclick="changeLanguage('ehs','ehs/ehs-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
+                                <li><a onclick="changeLanguage('ehs','ehs/ehs-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
                           </ul>
                         </li>                    
                         
@@ -212,7 +213,7 @@
                                     <h1 id="zebra-ehs-setup" class="anchor"><a class="heading-anchor" href="#zebra-ehs-setup"><span></span></a>Zebra EHS Setup</h1>
                                     <p>
                                             Zebra EHS
-                                            4.0
+                                            4.1
                                     </p>
                                 </div>
                             </section>                    
@@ -240,27 +241,28 @@
 
 <h2 id="manualinstallation" class="anchor"><a class="heading-anchor" href="#manualinstallation"><span></span></a>Manual Installation</h2>
 
-<p>These instructions apply to direct installation (from a computer to a single device) using the EHS 3.x installer (.apk) file. </p>
+<p>These instructions apply to direct installation (from a computer to a single device) using the EHS 4.x installer (.apk) file. </p>
 
-<h3 id="ehs32compatibilitynotes" class="anchor"><a class="heading-anchor" href="#ehs32compatibilitynotes"><span></span></a>EHS 3.2 Compatibility Notes</h3>
-
-<ul>
-<li><strong>Supports Oreo and Pie on <a href="../about/#supporteddevices">supported devices</a> only</strong>. </li>
-
-<li><strong>No longer supports devices running Android 7.x Nougat</strong>. </li>
-
-<li>Download package includes a single .apk file: 
-
+<h3 id="ehs41compatibilitynotes" class="anchor"><a class="heading-anchor" href="#ehs41compatibilitynotes"><span></span></a>EHS 4.1 Compatibility Notes</h3>
 
 <ul>
-<li><code>EHS_xxxxxx.apk</code> - for all devices running Oreo and Pie <strong><em>including</em> TC20/TC25</strong></li></ul>
-</li>
+<li><strong>Supports Android 10 and Android 11 on <a href="../about/#supporteddevices">supported devices</a> only</strong>. </li>
+
+<li><strong>No longer supports devices running Android versions prior to Android 10</strong>. </li>
+
+<li>Download package includes a single <code>.apk</code> file <code>EHS_xxxxxx.apk</code> for all supported devices <strong><em>including</em> TC20/TC25</strong></li>
 </ul>
 
 <blockquote>
-  <p><strong>ABOUT OREO UPGRADES</strong>: If the operating system on a device (except TC20/TC25) is being upgraded to Android 8.1 Oreo from Marshmallow or Nougat, <strong><u>the previous EHS installation must be removed before the new version of EHS is installed</u></strong>. Follow instructions to <a href="../setup/#uninstallation">uninstall EHS</a> before installing EHS on an Oreo device. <br><br><strong>Note</strong>: Prior configuration settings, if any, are re-applied automatically.</p>
+  <p><strong>ABOUT UPGRADES</strong>: </p>
   
-  <p><strong>EHS 3.2 DOES NOT support Android 7.x Nougat</strong>. </p>
+  <ul>
+  <li><strong>Any <u>previous EHS installation must be removed</u> before EHS 4.1 is installed</strong>. Versions prior to EHS 4.1 were signed with a different key, and cannot be upgraded. Follow instructions to <a href="../setup/#uninstallation">uninstall EHS</a> before installing EHS 4.1 on any device. <br></li>
+  
+  <li>Prior configuration settings, if any, are re-applied automatically.<br></li>
+  
+  <li><strong>A Factory Reset erases all device data</strong>, including any saved EHS configurations.</li>
+  </ul>
 </blockquote>
 
 <hr>
@@ -304,7 +306,7 @@
 <p>9. <b>A restart is required</b> to complete the installation (for first-time EHS installations). Again, a screen like the one above will appear. <b>Select Enterprise Home Screen</b> and <b>tap "Just once"</b> to continue or select "Always" to make the selection permanent. To undo this choice, see <a href="#changethedefaultlauncher">Change the Default Launcher</a> section below. </p>
 
 <blockquote>
-  <p><strong>Note: After selecting "Always," wait 10 seconds before restarting to ensure the change remains persistent.</strong>. </p>
+  <p><strong>Note: After selecting "Always," wait 10 seconds before restarting to ensure the change remains persistent</strong>. </p>
 </blockquote>
 
 <h3 id="selectappsforusermode" class="anchor"><a class="heading-anchor" href="#selectappsforusermode"><span></span></a>Select Apps for User Mode</h3>
@@ -395,7 +397,15 @@
 <blockquote>
   <p><strong>Important</strong>: To execute EHS in a device in which a managed profile is enabled, EHS must be installed <u>before</u> configuring the managed profile in the device.</p>
   
-  <p><strong>ABOUT OREO UPGRADES</strong>: If the operating system on a device (except TC20/TC25) is being upgraded to Android 8.1 Oreo from Marshmallow or Nougat, <strong><u>the previous EHS installation must be removed before EHS 3.x is installed</u></strong>. Follow instructions to <a href="../guide/setup#uninstallation">uninstall EHS</a> before installing EHS on an Oreo device. <strong>Prior configuration settings, if any, are re-applied automatically</strong>.</p>
+  <p><strong>ABOUT UPGRADES</strong>: </p>
+  
+  <ul>
+  <li><strong>Any <u>previous EHS installation must be removed</u> before EHS 4.1 is installed</strong>. Versions prior to EHS 4.1 were signed with a different key, and cannot be upgraded. Follow instructions to <a href="../setup/#uninstallation">uninstall EHS</a> before installing EHS 4.1 on any device. <br></li>
+  
+  <li>Prior configuration settings, if any, are re-applied automatically.<br></li>
+  
+  <li><strong>A Factory Reset erases all device data</strong>, including any saved EHS configurations.</li>
+  </ul>
 </blockquote>
 
 <hr>
@@ -453,7 +463,7 @@
 
 <p>The capabilities of EMM systems vary. Please refer to the EMM documentation for specific information about how to configure these commands. </p>
 
-<p><strong>Note: App installation, uninstallation, setting the default launcher and other operations are possible using the <a href="/mx/#app-manager">App Manager</a> through Zebra's <a href="/emdk-for-android/4-0/guide/about">EMDK</a> or <a href="/stagenow/2-2/about/">StageNow</a> tools</strong>. </p>
+<p><strong>Note: App installation, uninstallation, setting the default launcher and other operations are possible using the <a href="/mx/#app-manager">App Manager</a> through Zebra's <a href="/emdk-for-android/latest/guide/about">EMDK</a> or <a href="/stagenow/latest/about/">StageNow</a> tools</strong>. </p>
 
 <hr>
 
@@ -486,7 +496,7 @@
 
 <p>4. <b>Tap the Uninstall button</b>:
 <img alt="" style="height:350px" src="ehs_uninstall.png">
-<strong><code>NOTE:</code></strong>: If the Uninstall button is grey, first <a href="#changethedefaultlauncher">remove EHS as the default launcher</a>. 
+<strong><u>NOTE</u></strong>:**: If the Uninstall button is grey, first <a href="#changethedefaultlauncher">remove EHS as the default launcher</a>. 
 <br></p>
 
 <p>5. <b>Click OK</b> to confirm:
@@ -513,10 +523,10 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 <h3 id="automateduninstallation" class="anchor"><a class="heading-anchor" href="#automateduninstallation"><span></span></a>Automated Uninstallation</h3>
 
-<p>These instructions apply to remote uninstallation using an organization's own EMM server to remove EHS from multiple managed devices. This task also can be accomplished through Zebra's <a href="/emdk-for-android/4-0/guide/about">EMDK</a> or <a href="/stagenow/2-2/about/">StageNow</a> tools using the <a href="/mx/#app-manager">App Manager</a> service. </p>
+<p>These instructions apply to remote uninstallation using an organization's own EMM server to remove EHS from multiple managed devices. This task also can be accomplished through Zebra's <a href="/emdk-for-android/latest/guide/about">EMDK</a> or <a href="/stagenow/latest/about/">StageNow</a> tools using the <a href="/mx/#app-manager">App Manager</a> service. </p>
 
 <blockquote>
-  <p><strong><code>IMPORTANT</code></strong>: Device settings configured by EHS such as USB debugging, <a href="../settings#systemsettingsrestricted">System Settings Restricted</a> (restricting user access to Display and Sound settings, and the "About phone" panel only), disabling apps and recent apps button and so on, DO NOT revert to their former state when EHS is uninstalled. <u>To restore a device to its former state, <strong>all such settings MUST BE REVERSED</strong> prior to the removal of EHS</u>. This can be done prior to uninstalling EHS by pushing to the device an <code>enterprisehomescreen.xml</code> file properly configured to unrestrict the settings.</p>
+  <p><strong><u>IMPORTANT</u></strong>: Device settings configured by EHS such as USB debugging, <a href="../settings#systemsettingsrestricted">System Settings Restricted</a> (restricting user access to Display and Sound settings, and the "About phone" panel only), disabling apps and recent apps button and so on, DO NOT revert to their former state when EHS is uninstalled. <u>To restore a device to its former state, <strong>all such settings MUST BE REVERSED</strong> prior to the removal of EHS</u>. This can be done prior to uninstalling EHS by pushing to the device an <code>enterprisehomescreen.xml</code> file properly configured to unrestrict the settings.</p>
 </blockquote>
 
 <!-- 7/30/19- also removed (though not per eng) b/c of ET50/55 support drop

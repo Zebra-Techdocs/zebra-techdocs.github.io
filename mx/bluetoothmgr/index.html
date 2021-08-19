@@ -205,6 +205,9 @@
                                     <h1 id="bluetooth-manager" class="anchor"><a class="heading-anchor" href="#bluetooth-manager"><span></span></a>Bluetooth Manager</h1>
                                     <p><b>Note</b>: To display <u>only</u> the features present on a particular device, select one or more filters from the SmartDocs bar below.  
                                     <a id="smartdocs-help"><i class="fa fa-question-circle fa-lg"></i></a></p> 
+                                    <p><b>Language Note</b>: Input fields accept <b><u>ENGLISH ONLY</u></b>.</p>
+
+
                                     <p></p>
                                 </div>
                             </section>                    
@@ -778,14 +781,19 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-                                    <p class=""></p><p>The Bluetooth Manager (BluetoothMgr) controls whether a device can pair with Bluetooth peripherals such as headsets, printers and scanners that come into range, and whether the device can be "discoverable," which would enable other Bluetooth devices to initiate pairing requests with it. </p>
+                                    <p class="">
+
+        </p><p>The Bluetooth Manager (BluetoothMgr) controls whether a device can pair with Bluetooth peripherals such as headsets, printers and scanners that come into range, and whether the device can be "discoverable," which would enable other Bluetooth devices to initiate pairing requests with it. </p>
 
 <p>Bluetooth is a short-range wireless technology operating in the 2.4 GHz ISM band that was originally intended as a replacement for serial communications cables. It has since been adopted as a standard for hands-free headsets, stereo audio, networking to PCs and connections for barcode scanners, medical equipment and other devices formerly using RS-232. </p>
 
-<p><strong><code>IMPORTANT:</code></strong> For <a href="/licensing/about/#professional">Zebra Professional-series devices</a>, the following Bluetooth Manager parameters require purchase of a Mobility DNA Enterprise License: </p>
+<p><strong><u>IMPORTANT</u>:</strong> For <a href="/licensing/about/#professional">Zebra Professional-series devices</a>, the following Bluetooth Manager parameters require purchase of a Mobility DNA Enterprise License: </p>
 
 <ul>
 <li>AllowDiscoverability</li>
@@ -797,6 +805,8 @@
 <li>SilentPairingAction</li>
 
 <li>SinglePairing</li>
+
+<li><strong>Scanner NFC Tap-to-Pair</strong> </li>
 </ul>
 
 <h5 id="aboutmdnalicensinglicensing" class="anchor"><a class="heading-anchor" href="#aboutmdnalicensinglicensing"><span></span></a><a href="/licensing">About MDNA licensing</a></h5>
@@ -867,37 +877,14 @@
 * Use Bluetooth MAC address as a mandatory identifier
 * Set a PIN for a remote device
 
---><p></p>
+-->
+
+
+<p></p>
                                     
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1167,10 +1154,18 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="pairing-enabledisable"><a class="heading-anchor" href="#pairing-enabledisable"><span></span></a>Pairing Enable/Disable</h2>
-                                    <p class=""></p><p>Controls whether the device will be permitted to pair with newly discovered Bluetooth peripherals that come into range or only with known ("trusted") peripherals. The settings of this parameter do not effect existing device pairings.</p><p></p>
+                                    <p class="">
+
+        </p><p>Controls whether the device will be permitted to pair with newly discovered Bluetooth peripherals that come into range or only with known ("trusted") peripherals. The settings of this parameter do not effect existing device pairings.</p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Note:</b> For Zebra Professional-series devices, this feature requires purchase of a Mobility DNA Enterprise License. See techdocs.zebra.com/licensing.</p>
                                         <p><b>Parm Name:</b> AllowPairing</p>
@@ -1335,10 +1330,36 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="silent-pairing-enabledisable"><a class="heading-anchor" href="#silent-pairing-enabledisable"><span></span></a>Silent Pairing Enable/Disable</h2>
-                                    <p class=""></p><p>Controls whether the device will be permitted to pair with remote Bluetooth devices without requiring user confirmation. This feature is not the same as auto-pairing; it simply removes the confirmation step after device pairing has been initiated by the device user. The settings of this parameter do not effect existing device pairings.</p>
+                                    <p class="">
+
+        </p><p>Controls whether the device will be permitted to pair with remote Bluetooth devices without requiring user confirmation. This feature is not the same as auto-pairing; it simply removes the confirmation step after device pairing has been initiated by the device user. The settings of this parameter do not effect existing device pairings.</p>
 
 <p>By default, Silent Pairing Rules are in place to allow some Zebra device models to pair without user confirmation (after pairing is initiated by the user). <strong>Note</strong>: Default pairing rules for the devices listed below match by device Name only. For improved security, <strong><u>Zebra recommends that default rules be replaced</u> with rules matching by device Name, Upper Address Part and/or, if supported, Remote Device PIN and/or Remote Device MAC</strong>.</p>
 
@@ -1366,7 +1387,10 @@
 <li>RS6000</li>
 </ul>
 
-<p><i><font size="1" color="black">*Silent pairing with the RS5100 is supported on SDM660-platform devices running Android 8.x Oreo (and later) and 8956-platform devices with the Android 7.x N (or later) LifeGuard patch.</font></i></p><p></p>
+<p><i><font size="1" color="black">*Silent pairing with the RS5100 is supported on SDM660-platform devices running Android 8.x Oreo (and later) and 8956-platform devices with the Android 7.x N (or later) LifeGuard patch.</font></i></p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Note:</b> For Zebra Professional-series devices, this feature requires purchase of a Mobility DNA Enterprise License. See techdocs.zebra.com/licensing.</p>
                                         <p><b>Parm Name:</b> AllowSilentPairing</p>
@@ -1673,15 +1697,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="remote-device-action"><a class="heading-anchor" href="#remote-device-action"><span></span></a>Remote Device Action</h2>
@@ -1832,7 +1847,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="mandatory-identifier"><a class="heading-anchor" href="#mandatory-identifier"><span></span></a>Mandatory Identifier</h2>
@@ -1924,15 +1938,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.0" data-api="24" data-smartdoc="">
 
                                     <h2 class="anchor" id="device-name"><a class="heading-anchor" href="#device-name"><span></span></a>Device Name</h2>
@@ -1961,6 +1966,17 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2092,17 +2108,21 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.3" data-api="28" data-smartdoc="">
 
                                     <h2 class="anchor" id="bluetooth-mac-address"><a class="heading-anchor" href="#bluetooth-mac-address"><span></span></a>Bluetooth MAC Address</h2>
-                                    <p class=""></p><p>Used to enter the Bluetooth MAC address for identifying the device. <strong>NOTE</strong>: Only the MAC address is required to create a Silent Pairing Rule. </p>
+                                    <p class="">
+
+        </p><p>Used to enter the Bluetooth MAC address for identifying the device. <strong>NOTE</strong>: Only the MAC address is required to create a Silent Pairing Rule. </p>
 
 <p><strong>Input value rules</strong>: </p>
 
 <ul>
 <li>String of exactly 17 characters in the format: "XX:XX:XX:XX:XX:XX" </li>
-</ul><p></p>
+</ul>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Mandatory Identifier is "Bluetooth MAC Address" AND Silent Pairing Action is "Add/Replace Remote Device Rule" OR "Remove Remote Device Rule"</p>
                                         <p><b>Parm Name:</b> RemoteDeviceMAC</p>
@@ -2156,13 +2176,15 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="trusted-device-rule-checkbox"><a class="heading-anchor" href="#trusted-device-rule-checkbox"><span></span></a>Trusted Device Rule (checkbox)</h2>
-                                    <p class=""></p><p>Controls whether the rule allows a device to pair only with devices designated as "trusted" by the AllowPairing parameter. </p><p></p>
+                                    <p class="">
+
+        </p><p>Controls whether the rule allows a device to pair only with devices designated as "trusted" by the AllowPairing parameter. </p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Silent Pairing Action is set to "Enable"</p>
                                         <p><b>Parm Name:</b> IsTrustedDeviceRule</p>
@@ -2232,6 +2254,17 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2405,19 +2438,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.3" data-api="28" data-smartdoc="">
 
                                     <h2 class="anchor" id="pairing-pin-code"><a class="heading-anchor" href="#pairing-pin-code"><span></span></a>Pairing PIN Code</h2>
@@ -2446,6 +2466,20 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2554,10 +2588,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2865,16 +2895,15 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="paired-device-action"><a class="heading-anchor" href="#paired-device-action"><span></span></a>Paired Device Action</h2>
-                                    <p class=""></p><p>Used to select an action to perform relating to information on the device about Bluetooth peripherals previously paired with the device. </p><p></p>
+                                    <p class="">
+
+        </p><p>Used to select an action to perform relating to information on the device about Bluetooth peripherals previously paired with the device. </p>
+
+
+<p></p>
                                         <blockquote>
                                         <p><b>Note:</b> Not supported on devices running Android 9.x (Pie).</p>
                                         <p><b>Parm Name:</b> PairedDeviceAction</p>
@@ -3064,26 +3093,12 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="examples"><a class="heading-anchor" href="#examples"><span></span></a>Examples</h2>
-                                    <p class=""></p><h3 id="setrulewithmandatoryidentifierbluetoothmac" class="anchor"><a class="heading-anchor" href="#setrulewithmandatoryidentifierbluetoothmac"><span></span></a>Set Rule with Mandatory Identifier Bluetooth MAC</h3>
+                                    <p class="">
+
+        </p><h3 id="setrulewithmandatoryidentifierbluetoothmac" class="anchor"><a class="heading-anchor" href="#setrulewithmandatoryidentifierbluetoothmac"><span></span></a>Set Rule with Mandatory Identifier Bluetooth MAC</h3>
 
 <p>Add a silent pairing rule with a PIN when the Mandatory Identifier is Bluetooth MAC address:</p>
 
@@ -3286,11 +3301,37 @@
         &lt;/characteristic&gt;
     &lt;/characteristic&gt;
     &lt;/wap-provisioningdoc&gt;
-</code></pre><p></p>
+</code></pre>
+
+
+<p></p>
                                     
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3575,29 +3616,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "AllowDiscoverability",
@@ -3658,6 +3676,9 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -3839,6 +3860,30 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4120,15 +4165,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "SilentPairingAction",
@@ -4227,7 +4263,6 @@ filtering
                     
                     
                     
-                    
                     {
                             presentif: "Silent Pairing Action is &quot;Add Remote Device Rule&quot; OR &quot;Remove Remote Device Rule&quot;",
                             name: "MandatoryIdentifier",
@@ -4282,15 +4317,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -4310,6 +4336,17 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4428,7 +4465,6 @@ filtering
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "",
@@ -4448,9 +4484,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
                     
                     
                     
@@ -4608,6 +4641,17 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "Silent Pairing Action is set to &quot;Enable&quot;",
                             name: "IsSilentPairingRule",
@@ -4672,19 +4716,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -4704,6 +4735,20 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4782,10 +4827,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5023,12 +5064,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "PairedDeviceAction",
@@ -5072,6 +5107,13 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
