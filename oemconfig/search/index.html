@@ -66,27 +66,27 @@
 
 
                         <li>
-                            <a href="/oemconfig/10-5/about">
+                            <a href="/oemconfig/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/10-5/setup">
+                            <a href="/oemconfig/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/10-5/faq">
+                            <a href="/oemconfig/faq">
                                     FAQs
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/10-5/mc">
+                            <a href="/oemconfig/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/10-5/search">
+                            <a href="/oemconfig/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -164,7 +164,7 @@
             last: false
         }
         var results = [];
-        $.getJSON( "/oemconfig/10-5/index.json", function( data ) {
+        $.getJSON( "/oemconfig/index.json", function( data ) {
           json_data = data;
           console.log("got data");
           fuse = new Fuse(json_data, { keys: ["title", "keywords"] });
@@ -187,7 +187,7 @@
               $("#btn-loading").show()
               $("#btn-search").hide();
               
-              var product_version = "/oemconfig/10-5/index.json".replace("/index.json","");
+              var product_version = "/oemconfig/index.json".replace("/index.json","");
                 var q = $("#query").val();
                 var url="https://www.google.com/search?q=site:techdocs.zebra.com" + product_version + "+"+q;
                 window.open(url);
