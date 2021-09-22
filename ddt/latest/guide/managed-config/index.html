@@ -54,7 +54,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.5
+                                            2.6
                         </p>
 
                     </ul>
@@ -65,32 +65,32 @@
 
 
                         <li>
-                            <a href="/ddt/2-5/guide/about">
+                            <a href="/ddt/2-6/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/usage">
+                            <a href="/ddt/2-6/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/configuration">
+                            <a href="/ddt/2-6/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/criteria">
+                            <a href="/ddt/2-6/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/managed-config">
+                            <a href="/ddt/2-6/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/search">
+                            <a href="/ddt/2-6/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -220,7 +220,7 @@
                                     <h1 id="managed-configurations" class="anchor"><a class="heading-anchor" href="#managed-configurations"><span></span></a>Managed Configurations</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.5
+                                            2.6
                                     </p>
                                 </div>
                             </section>                    
@@ -235,7 +235,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Device Diagnostic Tool (DDT) can be remotely configured through Managed Configurations, specifications developed by Google and the Android community to configure installed applications and deploy these configurations through an EMM (Enterprise Mobility Management). A schema defines the DDT features available for consumption by the EMM, providing the information necessary to present to the EMM's corresponding data-driven UI. This mechanism integrates DDT remote configuration within the EMM for seamless operation and allows Zebra to release a new schema as soon as new features are available for use. DDT and the Zebra schema are available from the Google Play Store and must be used together to leverage DDT with its managed configurations to perform diagnostic operations. </p>
+<p>Device Diagnostic Tool (DDT) can be remotely configured through Managed Configurations, specifications developed by Google and the Android community to configure installed applications and deploy these configurations through an EMM (Enterprise Mobility Management). A schema defines the DDT features available for consumption by the EMM, providing the information necessary to present to the EMM's corresponding data-driven UI. This mechanism integrates DDT remote configuration within the EMM for seamless operation and allows Zebra to release a new schema as soon as new features are available for use. DDT and the Zebra schema are available from the Google Play Store and must be used together to leverage DDT with its managed configurations to perform diagnostic operations.</p>
 
 <h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
 
@@ -251,7 +251,7 @@
 <li>An EMM for device deployment</li>
 
 <li>FTP Server to upload DDT test data<br>
-<em>Recommended: To minimize security risks from disclosure of login credentials, Zebra recommends uploading test data to a dedicated server.</em> </li>
+<em>Recommended: To minimize security risks from disclosure of login credentials, Zebra recommends uploading test data to a dedicated server.</em></li>
 </ul>
 
 <h2 id="usemanagedconfigurations" class="anchor"><a class="heading-anchor" href="#usemanagedconfigurations"><span></span></a>Use Managed Configurations</h2>
@@ -261,7 +261,7 @@
 <p>General instructions to use Managed Configurations:</p>
 
 <ol>
-<li><p><strong>Add Device Diagnostic Tool to the application catalog.</strong> In the EMM, browse or search for Device Diagnostic Tool 2.5 or higher from the Google Play Store and add it to the app catalog. This automatically retrieves the corresponding schema for the app and makes the app available for deployment to the device(s) through the EMM.</p></li>
+<li><p><strong>Add Device Diagnostic Tool to the application catalog.</strong> In the EMM, browse or search for Device Diagnostic Tool 2.6 or higher from the Google Play Store and add it to the app catalog. This automatically retrieves the corresponding schema for the app and makes the app available for deployment to the device(s) through the EMM.</p></li>
 
 <li><p><strong>Configure app restrictions using Managed Configurations</strong> as described in the schema. See <a href="#apprestrictions">App Restrictions</a> section that follows, which describes the available options.</p></li>
 
@@ -278,19 +278,19 @@
 
 <li><p>In the input field for <strong>Submit XML</strong>, enter the text below to launch DDT:</p>
 
-<pre class="prettyprint"><code>&lt;wap-provisioningdoc&gt;
-&lt;characteristic type="Intent"&gt;
-&lt;parm name="Action" value="StartActivity"/&gt;
-&lt;parm name="ActionName" value="android.intent.action.MAIN"/&gt;
-&lt;parm name="Package" value="com.symbol.selfdiagnostics"/&gt;
-&lt;parm name="Class" value="com.symbol.selfdiagnostics.activities.MainActivity"/&gt;
-&lt;characteristic type="Extra"&gt;
-&lt;parm name="ExtraType" value="string"/&gt;
-&lt;parm name="ExtraName" value="LAUNCH_DDT"/&gt;
-&lt;parm name="ExtraValue" value="1"/&gt;
-&lt;/characteristic&gt;
-&lt;/characteristic&gt;
-&lt;/wap-provisioningdoc&gt;
+<pre class="prettyprint"><code>  &lt;wap-provisioningdoc&gt;
+  &lt;characteristic type="Intent"&gt;
+  &lt;parm name="Action" value="StartActivity"/&gt;
+  &lt;parm name="ActionName" value="android.intent.action.MAIN"/&gt;
+  &lt;parm name="Package" value="com.symbol.selfdiagnostics"/&gt;
+  &lt;parm name="Class" value="com.symbol.selfdiagnostics.activities.MainActivity"/&gt;
+  &lt;characteristic type="Extra"&gt;
+  &lt;parm name="ExtraType" value="string"/&gt;
+  &lt;parm name="ExtraName" value="LAUNCH_DDT"/&gt;
+  &lt;parm name="ExtraValue" value="1"/&gt;
+  &lt;/characteristic&gt;
+  &lt;/characteristic&gt;
+  &lt;/wap-provisioningdoc&gt;
 </code></pre>
 
 <p>Note: Line breaks should be removed.</p></li>

@@ -54,7 +54,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.5
+                                            2.6
                         </p>
 
                     </ul>
@@ -65,32 +65,32 @@
 
 
                         <li>
-                            <a href="/ddt/2-5/guide/about">
+                            <a href="/ddt/2-6/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/usage">
+                            <a href="/ddt/2-6/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/configuration">
+                            <a href="/ddt/2-6/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/criteria">
+                            <a href="/ddt/2-6/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/managed-config">
+                            <a href="/ddt/2-6/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/search">
+                            <a href="/ddt/2-6/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -220,7 +220,7 @@
                                     <h1 id="about-device-diagnostic-tool" class="anchor"><a class="heading-anchor" href="#about-device-diagnostic-tool"><span></span></a>About Device Diagnostic Tool</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.5
+                                            2.6
                                     </p>
                                 </div>
                             </section>                    
@@ -235,7 +235,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Device Diagnostic Tool instantly tests and diagnoses the hardware operability on Zebra mobile devices to determine system health and functionality. Where appropriate, Zebra Help Desk uses this tool for troubleshooting device issues, relying on the results to provide optimum steps to reach a resolution. It is useful for quickly troubleshooting device issues, resulting to increased worker productivity, limited device downtime, and unnecessary returns to the Zebra Repair Center.</p>
+<p>Device Diagnostic Tool (DDT) instantly tests and diagnoses the hardware operability on Zebra mobile devices to determine system health and functionality. Where appropriate, Zebra Help Desk uses this tool for troubleshooting device issues, relying on the results to provide optimum steps to reach a resolution. It is useful for quickly troubleshooting device issues, resulting to increased worker productivity, limited device downtime, and unnecessary returns to the Zebra Repair Center.</p>
 
 <p>Hardware features tested:</p>
 
@@ -263,7 +263,23 @@
 
 <p>Download DDT from the <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Support Portal</a>.</p>
 
-<h2 id="newin25" class="anchor"><a class="heading-anchor" href="#newin25"><span></span></a>New in 2.5</h2>
+<h2 id="newin26" class="anchor"><a class="heading-anchor" href="#newin26"><span></span></a>New in 2.6</h2>
+
+<ul>
+<li>New <strong>About</strong> screen added, containing version information. To access <strong>About</strong>, tap the menu on the top right of the main screen and select <strong>About</strong>.</li>
+
+<li><strong><a href="../usage/#scannertest">Scanner Test</a></strong> now supports all barcode symbologies. Previously, a restricted set of symbologies were supported, which resulted to a failed test if an unsupported barcode was scanned.</li>
+
+<li>DDT now sends test result data to <a href="/zds">Zebra Data Service</a> for integration with <a href="https://www.zebra.com/us/en/services/visibilityiq.html">VisibilityIQ</a>.</li>
+
+<li>Added test completion (end) time to the log files, in addition to the test start time. </li>
+
+<li>Known issue: When running more than one test and viewing the results in the <a href="https://www.zebra.com/us/en/services/visibilityiq.html">VisibilityIQ</a> dashboard, the start times are the same across the different tests. Similarly, the end times are also the same across the different tests. </li>
+</ul>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin25" class="anchor"><a class="heading-anchor" href="#newin25"><span></span></a>New in 2.5</h3>
 
 <ul>
 <li>New <a href="../usage/#devicetests">SD Card Test</a> to check for external SD card presence, total/free space and read/write status.</li>
@@ -273,13 +289,11 @@
 <li>New automated remote test scheduling and remote log file export with <a href="../managed-config">Managed Configuration</a>.</li>
 
 <li>Resolved issue: Test result is not logged properly when test is cancelled.
-<!-- - Android 11 limitations due to security restrictions: 
-    - In the WWAN test details screen, "Device ID" is not visible. 
+<!-- - Android 11 limitations due to security restrictions:
+    - In the WWAN test details screen, "Device ID" is not visible.
     - In the History.log file, "Device ID" and "Device Serial#" is not visible.
 --></li>
 </ul>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="newin24" class="anchor"><a class="heading-anchor" href="#newin24"><span></span></a>New in 2.4</h3>
 
@@ -328,29 +342,29 @@
 <ul>
 <li>New devices supported - see supported devices for <strong>Device Diagnostic Tool</strong> on <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Downloads</a>.</li>
 
-<li>Android 10 limitations due to security restrictions: 
+<li>Android 10 limitations due to security restrictions:
 
 
 <ul>
-<li>In the WWAN test details screen, "Device ID" is not visible. </li>
+<li>In the WWAN test details screen, "Device ID" is not visible.</li>
 
 <li>In the History.log file, "Device ID" and "Device Serial#" is not visible.</li></ul>
 </li>
 
-<li>Fixed Issues: 
+<li>Fixed Issues:
 
 
 <ul>
-<li>On TC20 and TC25 Android Oreo, when performing the Button test the scan trigger press fails. </li>
+<li>On TC20 and TC25 Android Oreo, when performing the Button test the scan trigger press fails.</li>
 
 <li>On TC25 Android Nougat, when performing the Button test the Time Remaining value for the parameter timeout does not take into effect for PTT or scan buttons.</li></ul>
 </li>
 
-<li>Known Issues: 
+<li>Known Issues:
 
 
 <ul>
-<li>On Android 10 WWAN devices, if a sim card is not inserted and a WWAN test is performed, improper values may be returned for Voice state. </li>
+<li>On Android 10 WWAN devices, if a sim card is not inserted and a WWAN test is performed, improper values may be returned for Voice state.</li>
 
 <li>When a battery test is performed, improper values may be displayed on the following devices:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Devices that require AC Power to operate (no battery exists), such as CC605 and CC610<br>
@@ -371,17 +385,17 @@
 
 <li>Added and removed device support. See <strong>Supported Devices</strong> table below.</li>
 
-<li>Known Issues: 
+<li>Known Issues:
 
 
 <ul>
-<li>On TC20 and TC25 Android Oreo, when performing the Button test the scan trigger press fails. </li>
+<li>On TC20 and TC25 Android Oreo, when performing the Button test the scan trigger press fails.</li>
 
-<li>On TC20 and TC25 Android Nougat, when performing the Battery test the Battery Health may return incorrect information. </li>
+<li>On TC20 and TC25 Android Nougat, when performing the Battery test the Battery Health may return incorrect information.</li>
 
-<li>On TC25 Android Nougat, when performing the Button test the Time Remaining value for the parameter timeout does not take into effect for PTT or scan buttons. </li>
+<li>On TC25 Android Nougat, when performing the Button test the Time Remaining value for the parameter timeout does not take into effect for PTT or scan buttons.</li>
 
-<li>On TC75x Android Marshmallow, Data State in WWAN test may display “Data Disconnected” even though mobile data is enabled on the device. </li>
+<li>On TC75x Android Marshmallow, Data State in WWAN test may display “Data Disconnected” even though mobile data is enabled on the device.</li>
 
 <li>When the app is running and the EMM command is executed to run the test remotely, if the user tries to launch the app manually after the test completes, the app may encounter unexpected behavior. In this case the user must manually restart Device Diagnostic Tool to recover.</li></ul>
 </li>

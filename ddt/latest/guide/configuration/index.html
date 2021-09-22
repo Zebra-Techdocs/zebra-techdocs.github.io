@@ -54,7 +54,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.5
+                                            2.6
                         </p>
 
                     </ul>
@@ -65,32 +65,32 @@
 
 
                         <li>
-                            <a href="/ddt/2-5/guide/about">
+                            <a href="/ddt/2-6/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/usage">
+                            <a href="/ddt/2-6/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/configuration">
+                            <a href="/ddt/2-6/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/criteria">
+                            <a href="/ddt/2-6/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/guide/managed-config">
+                            <a href="/ddt/2-6/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-5/search">
+                            <a href="/ddt/2-6/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -220,7 +220,7 @@
                                     <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.5
+                                            2.6
                                     </p>
                                 </div>
                             </section>                    
@@ -237,8 +237,6 @@
 
 <p>This section discusses configuration settings and reporting options for Device Diagnostic Tool.</p>
 
-<h2 id="" class="anchor"><a class="heading-anchor" href="#"><span></span></a><!-- --></h2>
-
 <h2 id="settings" class="anchor"><a class="heading-anchor" href="#settings"><span></span></a>Settings</h2>
 
 <p>The <strong>Settings</strong> screen provides the file path to import/export the configuration file and allows for configuration of the history and status log files. Access settings by tapping on the options menu at the top right of the main screen, then select <strong>Settings</strong>:</p>
@@ -249,22 +247,22 @@
 <br></p>
 
 <ul>
-<li><strong>File path:</strong> 
+<li><strong>File path:</strong>
 
 
 <ul>
-<li><strong>Configuration import path -</strong> specifies the file path for the configuration file: <code>/enterprise/usr/deviceselftest/configuration.xml</code> </li>
+<li><strong>Configuration import path -</strong> specifies the file path for the configuration file: <code>/enterprise/usr/deviceselftest/configuration.xml</code></li>
 
 <li><strong>Log output and configuration export path -</strong> specifies the folder path for the log files and exported configuration file: <code>/storage/emulated/0/Android/data/com.symbol.selfdiagnostics/files</code></li></ul>
 </li>
 
-<li><strong>Server Details:</strong> 
+<li><strong>Server Details:</strong>
 
 
 <ul>
-<li><strong>Protocol -</strong> specifies the server protocol </li>
+<li><strong>Protocol -</strong> specifies the server protocol</li>
 
-<li><strong>IP Address -</strong> specifies the IP address of the server </li>
+<li><strong>IP Address -</strong> specifies the IP address of the server</li>
 
 <li><strong>UserName -</strong> specifies the user name to login to the server</li></ul>
 </li>
@@ -280,7 +278,7 @@
 <li><strong>Export -</strong> exports <code>configuration.xml</code> from configurations set in the <strong>Configure Tests</strong> screen located in <code>/storage/emulated/0/Android/data/com.symbol.selfdiagnostics/files</code>. Once exported, deploy the configuration to other devices by copying the .xml file to the import path <code>/enterprise/usr/deviceselftest</code> then tap the <strong>Import</strong> button in the <strong>Settings</strong> screen. Copy the file by using Android Debug Bridge (adb) or <a href="/stagenow">StageNow</a> with <a href="/mx/filemgr">File Manager</a>.</li>
 </ul>
 
-<h2 id="-1" class="anchor"><a class="heading-anchor" href="#-1"><span></span></a><!-- --></h2>
+<h2 id="" class="anchor"><a class="heading-anchor" href="#"><span></span></a><!-- --></h2>
 
 <h2 id="configurationfile" class="anchor"><a class="heading-anchor" href="#configurationfile"><span></span></a>Configuration File</h2>
 
@@ -303,20 +301,20 @@
 <br><br>
 Sample settings content in configuration.xml:</p>
 
-<pre class="prettyprint"><code>&lt;settings&gt;
-    &lt;admin_mode&gt;true&lt;/admin_mode&gt;
-    &lt;continue_testing_on_failure&gt;true&lt;/continue_testing_on_failure&gt;
-    &lt;show_extra_data&gt;true&lt;/show_extra_data&gt;
-    &lt;debug&gt;true&lt;/debug&gt;
-    &lt;close_on_result_acknowledge&gt;false&lt;/close_on_result_acknowledge&gt;
-    &lt;status_log_name&gt;status.log&lt;/status_log_name&gt;
-    &lt;history_log_name&gt;history.log&lt;/history_log_name&gt;
-    &lt;log_file_max_size_mb&gt;25&lt;/log_file_max_size_mb&gt;
-&lt;/settings&gt;
+<pre class="prettyprint"><code>  &lt;settings&gt;
+      &lt;admin_mode&gt;true&lt;/admin_mode&gt;
+      &lt;continue_testing_on_failure&gt;true&lt;/continue_testing_on_failure&gt;
+      &lt;show_extra_data&gt;true&lt;/show_extra_data&gt;
+      &lt;debug&gt;true&lt;/debug&gt;
+      &lt;close_on_result_acknowledge&gt;false&lt;/close_on_result_acknowledge&gt;
+      &lt;status_log_name&gt;status.log&lt;/status_log_name&gt;
+      &lt;history_log_name&gt;history.log&lt;/history_log_name&gt;
+      &lt;log_file_max_size_mb&gt;25&lt;/log_file_max_size_mb&gt;
+  &lt;/settings&gt;
 </code></pre></li>
 </ul>
 
-<h2 id="-2" class="anchor"><a class="heading-anchor" href="#-2"><span></span></a><!-- --></h2>
+<h2 id="-1" class="anchor"><a class="heading-anchor" href="#-1"><span></span></a><!-- --></h2>
 
 <h2 id="configuretests" class="anchor"><a class="heading-anchor" href="#configuretests"><span></span></a>Configure Tests</h2>
 
@@ -342,14 +340,14 @@ Timeout values can be specified for tests that require user intervention. Once t
 <p>Configuration parameters:</p>
 
 <ul>
-<li><strong>Scanner Test –</strong> checks whether the scanner is functioning 
+<li><strong>Scanner Test –</strong> checks whether the scanner is functioning
 
 
 <ul>
 <li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul>
 </li>
 
-<li><strong>Button Test –</strong> checks for the operation of push-to-talk, left or right scan trigger, volume up and volume down hard buttons on the device. 
+<li><strong>Button Test –</strong> checks for the operation of push-to-talk, left or right scan trigger, volume up and volume down hard buttons on the device.
 
 
 <ul>
@@ -363,57 +361,57 @@ Timeout values can be specified for tests that require user intervention. Once t
 <li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul>
 </li>
 
-<li><strong>Bluetooth Tests –</strong> tests the Bluetooth radio and returns Bluetooth related information 
+<li><strong>Bluetooth Tests –</strong> tests the Bluetooth radio and returns Bluetooth related information
 
 
 <ul>
-<li><strong>Name –</strong> returns the Bluetooth name </li>
+<li><strong>Name –</strong> returns the Bluetooth name</li>
 
-<li><strong>Radio Power Cycle –</strong> checks for operability when turning the Bluetooth radio on/off </li>
+<li><strong>Radio Power Cycle –</strong> checks for operability when turning the Bluetooth radio on/off</li>
 
-<li><strong>Functional/Non-functional –</strong> determines whether the Bluetooth radio can be enabled/disabled within a specified period of time. Returns functional if the Bluetooth radio is functional. </li>
+<li><strong>Functional/Non-functional –</strong> determines whether the Bluetooth radio can be enabled/disabled within a specified period of time. Returns functional if the Bluetooth radio is functional.</li>
 
 <li><strong>Discoverable/Connectable –</strong> checks if connectable or discoverable</li></ul>
 </li>
 
-<li><strong>WiFi Test –</strong> tests operation of the WiFi radio and returns WiFi related information 
+<li><strong>WiFi Test –</strong> tests operation of the WiFi radio and returns WiFi related information
 
 
 <ul>
-<li><strong>MAC address –</strong> checks whether the MAC address is valid based on its format </li>
+<li><strong>MAC address –</strong> checks whether the MAC address is valid based on its format</li>
 
-<li><strong>Ping Address –</strong> specifies the domain name to perform the ping test </li>
+<li><strong>Ping Address –</strong> specifies the domain name to perform the ping test</li>
 
 <li><strong>Network Test –</strong> pings the web address specified in the Ping Address field via WiFi and returns the amount of time it takes to receive a response</li></ul>
 </li>
 
-<li><strong>Battery Test –</strong> checks the battery status and returns battery related information 
+<li><strong>Battery Test –</strong> checks the battery status and returns battery related information
 
 
 <ul>
-<li><strong>Part Number –</strong> returns the battery part number </li>
+<li><strong>Part Number –</strong> returns the battery part number</li>
 
-<li><strong>Serial Number –</strong> returns the battery serial number </li>
+<li><strong>Serial Number –</strong> returns the battery serial number</li>
 
-<li><strong>Manufacture Date –</strong> returns the battery date of manufacture </li>
+<li><strong>Manufacture Date –</strong> returns the battery date of manufacture</li>
 
-<li><strong>Battery Health –</strong> returns the health of the battery, whether it needs to be decommissioned </li>
+<li><strong>Battery Health –</strong> returns the health of the battery, whether it needs to be decommissioned</li>
 
 <li><strong>Battery Threshold Value -</strong> sets the maximum charge cycle count of the battery to change the <strong>Battery Health</strong>. If this value is less than the actual charge cycle count of the battery, <strong>Battery Health</strong> is changed to "Need to replace battery." This applies only to <a href="https://www.zebra.com/us/en/products/accessories/powerprecision-battery-solutions.html">PowerPrecision</a> batteries. The default value is 400.</li></ul>
 </li>
 
-<li><strong>WWAN Test –</strong> tests operation of the WWAN radio and returns related WWAN information 
+<li><strong>WWAN Test –</strong> tests operation of the WWAN radio and returns related WWAN information
 
 
 <ul>
-<li><strong>Sim State –</strong> checks whether the sim card is present </li>
+<li><strong>Sim State –</strong> checks whether the sim card is present</li>
 
-<li><strong>Voice State –</strong> checks the voice state of the sim card </li>
+<li><strong>Voice State –</strong> checks the voice state of the sim card</li>
 
 <li><strong>Data State –</strong> checks the data state of the sim card</li></ul>
 </li>
 
-<li><strong>Audio Test –</strong> tests operation of the device microphone and speaker <br>
+<li><strong>Audio Test –</strong> tests operation of the device microphone and speaker
 
 
 <ul>
@@ -421,23 +419,16 @@ Timeout values can be specified for tests that require user intervention. Once t
 </li>
 
 <li><strong>SD Card Test -</strong> tests for presence/absence of external SD card and ability to read/write. The SD card must be mounted as portable storage in order to be detected.
-
-
-<ul>
-<li><strong>SD Card -</strong> checks for presence/absence of external SD card</li>
-
-<li><strong>Read -</strong> checks if can read SD card</li>
-
-<li><strong>Write -</strong> checks if can write to SD card 
-<br></li></ul>
-</li>
+_ <strong>SD Card -</strong> checks for presence/absence of external SD card
+_ <strong>Read -</strong> checks if can read SD card * <strong>Write -</strong> checks if can write to SD card
+<br></li>
 </ul>
 
 <p>When text values are modified, such as <b>Test Timeout</b> or <b>Ping Address</b>, these values take effect as long as the app is running. When the app is closed and relaunched, the values retrieved from the configuration file take into effect.</p>
 
 <p>Refer to <a href="../criteria">Test Criteria</a> section for more information.</p>
 
-<h2 id="-3" class="anchor"><a class="heading-anchor" href="#-3"><span></span></a><!-- --></h2>
+<h2 id="-2" class="anchor"><a class="heading-anchor" href="#-2"><span></span></a><!-- --></h2>
 
 <hr>
 
