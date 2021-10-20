@@ -57,7 +57,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             DataWedge
-                                            8.2
+                                            11.0
                         </p>
 
                     </ul>
@@ -68,42 +68,47 @@
 
 
                         <li>
-                            <a href="/datawedge/8-2/guide/about">
+                            <a href="/datawedge/11-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/programmers-guides">
+                            <a href="/datawedge/11-0/guide/programmers-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/profiles">
+                            <a href="/datawedge/11-0/guide/profiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/matrix">
+                            <a href="/datawedge/11-0/guide/matrix">
                                     Feature Matrix
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/settings">
+                            <a href="/datawedge/11-0/guide/decoders">
+                                    Decoders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/datawedge/11-0/guide/settings">
                                     Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/api">
+                            <a href="/datawedge/11-0/guide/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/samples">
+                            <a href="/datawedge/11-0/guide/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/faq">
+                            <a href="/datawedge/11-0/guide/faq">
                                     FAQ
                             </a>
                         </li>
@@ -113,10 +118,18 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/search">
+                            <a href="/datawedge/11-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
+                        <li class="dropdown languagedropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                                <li><a onclick="changeLanguage('datawedge','datawedge/dw-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
+                                <li><a onclick="changeLanguage('datawedge','datawedge/dw-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
+                          </ul>
+                        </li>                    
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -228,7 +241,7 @@
                                     <h1 id="about-datawedge" class="anchor"><a class="heading-anchor" href="#about-datawedge"><span></span></a>About DataWedge</h1>
                                     <p>
                                             DataWedge
-                                            8.2
+                                            11.0
                                     </p>
                                 </div>
                             </section>                    
@@ -318,12 +331,10 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 <li><strong><a href="../input/barcode#multibarcodeparams">Report decoded barcodes</a> -</strong> report decoded barcodes in a single scan session.</li></ul>
 </li>
 
-<li><strong>Document Capture -</strong> retrieve barcode data from documents, and/or capture partial or entire images of documents based on a <a href="../input/barcode/#documentselectiondocumentcapture">Document Capture/NextGen SimulScan template</a>. Contact your local Zebra sales representative for assistance to create a Document Capture/NextGen SimulScan template.</li>
-
-<li><strong>OCR -</strong> OCR was not migrated from legacy SimulScan and is not supported in NextGen SimulScan. However, <a href="../input/barcode/#decoderselection">OCR A/B</a>, the feature that captures travel documents, is supported.</li>
+<li><strong>Document Capture -</strong> scan a document based on a <a href="../input/barcode#documentcapture">Document Capture/NextGen SimulScan template</a>. Contact your local Zebra sales representative for assistance to create a Document Capture/NextGen SimulScan template.</li>
 </ul>
 
-<p><strong>See <a href="/simulscan/1-1/guide/alert">SimulScan Migration Alert</a> for more information on the legacy SimulScan features that have been migrated to the scanner framework used by DataWedge.</strong></p>
+<p>See <a href="/simulscan/1-1/guide/alert">Simulscan Migration Alert</a> for more information.</p>
 
 <h3 id="voiceinputoptionsdeprecated" class="anchor"><a class="heading-anchor" href="#voiceinputoptionsdeprecated"><span></span></a>Voice Input Options Deprecated</h3>
 
@@ -341,7 +352,7 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 
 <h3 id="reportingdeprecated" class="anchor"><a class="heading-anchor" href="#reportingdeprecated"><span></span></a>Reporting Deprecated</h3>
 
-<p>DataWedge <a href="../settings/#reportingdeprecated">Reporting</a> is deprecated and will be discontinued on Zebra devices running Android 12, expected to be released in early 2022. (Must not be confused with <a href="../input/barcode#multibarcodeparams">Instant Reporting</a> from MultiBarcode). As an alternative, Zebra recommends using the following DataWedge intent APIs to identify the supported scanners and parameters:</p>
+<p>DataWedge <a href="../settings/#reportingdeprecated">Reporting</a> is deprecated and will be discontinued on Zebra devices running Android 12, expected to be released in early 2022. (Must not be confused with <a href="../input/barcode#multibarcodeparams">Instant Reporting</a> from MultiBarcode.) As an alternative, Zebra recommends using the following DataWedge intent APIs to identify the supported scanners and parameters:</p>
 
 <ul>
 <li><strong><a href="../api/enumeratescanners">Enumerate Scanners</a> -</strong> generates an index of scanners available on the device.</li>
@@ -399,13 +410,31 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 <li>Simplified Chinese</li>
 
 <li>Traditional Chinese</li>
+
+<li>Japanese</li>
 </ul>
 
 <p>For more information about approved languages or to download a localized operating system, please <a href="https://www.zebra.com/us/en/about-zebra/contact-zebra/contact-tech-support.html">contact Zebra Technical Support</a>.</p>
 
 <hr>
 
-<h2 id="newindatawedge82" class="anchor"><a class="heading-anchor" href="#newindatawedge82"><span></span></a>New in DataWedge 8.2</h2>
+<h2 id="newindatawedge110" class="anchor"><a class="heading-anchor" href="#newindatawedge110"><span></span></a>New in DataWedge 11.0</h2>
+
+<ul>
+<li>Renamed the Auto Group Identification option (part of <a href="../input/barcode/#documentselectiondocumentcapture">Document Capture</a> with MultiBarcode) from <strong>Group of Common barcodes dynamic quantity</strong> to <strong>User-defined Barcode Quantity</strong>.</li>
+
+<li>New <a href="../decoders">Decoders</a> section listing supported decoders and decoder parameters.</li>
+
+<li>Android 11 scoped storage enforcement requires a <a href="../admin/#importconfigurationfilefromspecifiedpath">deployment configuration change</a>.</li>
+
+<li>Added support for <strong>RFID Readers with USB CDC connectivity,</strong> such as RFD40.</li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="addedindatawedge82" class="anchor"><a class="heading-anchor" href="#addedindatawedge82"><span></span></a>Added in DataWedge 8.2</h3>
 
 <ul>
 <li><a href="../input/barcode/#scannerselection">Multiple scanner support</a> added for different scanners to be used interchangeably without the need for manual configuration.</li>
@@ -423,7 +452,7 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 
 
 <ul>
-<li>Detect the presence of a handwritten signature with <a href="../input/barcode/#documentselectiondocumentcapture">signature presence detection</a>. To detect this programmatically, see <a href="../programmers-guides/content-provider">Content Provider Programmer's Guide</a>.</li>
+<li>Detect the presence of a handwritten signature with <a href="../input/barcode/#documentselectiondocumentcapture">signature presence detection</a>. To programmatically read the signature presence flag, see <a href="../programmers-guides/content-provider">Content Provider Programmer's Guide</a>.</li>
 
 <li>Capture the entire document as an image with <a href="../input/barcode/#documentselectiondocumentcapture">whole document capture</a></li>
 
@@ -433,11 +462,9 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 <li>New <strong><a href="../output/keystroke">DataWedge keyboard options</a></strong> in Keystroke Output to display a DataWedge "keyboard" (DataWedge icon that displaces the default keyboard) when dispatching keystroke data.</li>
 
 <li>Use of unlicensed features is reported when <a href="../licensing/#importingdatawedgeconfigurations">importing configurations</a>.</li>
+
+<li>Updated the <a href="../samples/signaturecapture">Signature Capture</a> sample app to use Content Provider to deliver the captured image of <a href="../decoders/#decodersignature">Decoder Signature</a> instead of using internal storage.</li>
 </ul>
-
-<hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="addedindatawedge81" class="anchor"><a class="heading-anchor" href="#addedindatawedge81"><span></span></a>Added in DataWedge 8.1</h3>
 
@@ -498,7 +525,7 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 
 <li><strong>Image Capture Mode</strong> option from <strong>Reader Params</strong> is removed due to changes in the scanner framework.</li>
 
-<li><strong>Support for SimulScan API is deprecated -</strong> SimulScan support will be removed from DataWedge beginning with Android 10 Q device support.</li>
+<li><strong>Support for SimulScan API is deprecated -</strong> SimulScan support will be removed from DataWedge beginning with Android 10 device support.</li>
 </ul>
 
 <h3 id="addedindatawedge75" class="anchor"><a class="heading-anchor" href="#addedindatawedge75"><span></span></a>Added in DataWedge 7.5</h3>
@@ -706,7 +733,7 @@ To learn more about DataWedge APIs, read [DataWedge APIs - Benefits & Usage Scen
 <ul>
 <li><p><strong>New <a href="../input/serial">serial input options</a> allow DataWedge to specify communications parameters for a scanner or other device connected to a serial port and used to acquire data</strong>.</p></li>
 
-<li><p><strong><a href="../settings/#reportingdeprecated">Import Reporting</a> displays the results of imported databases and Profiles, allowing administrators to easily identify source/destination differences and make adjustments to compensate</strong>.</p></li>
+<li><p><strong><a href="../settings/#reporting">Import Reporting</a> displays the results of imported databases and Profiles, allowing administrators to easily identify source/destination differences and make adjustments to compensate</strong>.</p></li>
 
 <li><p><strong>A new <a href="../api/setreportingoptions">SET_REPORTING_OPTIONS</a> API provides control of Reporting features with intents</strong>.</p></li>
 
@@ -808,7 +835,7 @@ _The Zebra Support Central site showing search results for the search term "inte
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2021 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--

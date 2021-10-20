@@ -57,7 +57,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             DataWedge
-                                            8.2
+                                            11.0
                         </p>
 
                     </ul>
@@ -68,42 +68,47 @@
 
 
                         <li>
-                            <a href="/datawedge/8-2/guide/about">
+                            <a href="/datawedge/11-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/programmers-guides">
+                            <a href="/datawedge/11-0/guide/programmers-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/profiles">
+                            <a href="/datawedge/11-0/guide/profiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/matrix">
+                            <a href="/datawedge/11-0/guide/matrix">
                                     Feature Matrix
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/settings">
+                            <a href="/datawedge/11-0/guide/decoders">
+                                    Decoders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/datawedge/11-0/guide/settings">
                                     Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/api">
+                            <a href="/datawedge/11-0/guide/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/samples">
+                            <a href="/datawedge/11-0/guide/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/faq">
+                            <a href="/datawedge/11-0/guide/faq">
                                     FAQ
                             </a>
                         </li>
@@ -113,11 +118,18 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/search">
+                            <a href="/datawedge/11-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
-                   
+                        <li class="dropdown languagedropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                                <li><a onclick="changeLanguage('datawedge','datawedge/dw-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
+                                <li><a onclick="changeLanguage('datawedge','datawedge/dw-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
+                          </ul>
+                        </li>                    
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -229,7 +241,7 @@
                                     <h1 id="keystroke-output" class="anchor"><a class="heading-anchor" href="#keystroke-output"><span></span></a>Keystroke Output</h1>
                                     <p>
                                             DataWedge
-                                            8.2
+                                            11.0
                                     </p>
                                 </div>
                             </section>                    
@@ -244,24 +256,24 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Keystroke Output collects the processed data and sends it to the associated application as a series of keystrokes, emulating the actions of a user pressing keys on the device. DataWedge supports TAB, ENTER and other special characters that might be required by an application to submit acquired data for further processing, to advance the cursor to another input field or for other reasons. Special characters are added to acquired data by using the Action key character (shown below) and in the <a href="../../process/bdf">Basic Data Formatting</a> or <a href="../../process/bdf">Advanced Data Formatting</a> Process functions. </p>
+<p>Keystroke Output collects the processed data and sends it to the associated application as a series of keystrokes, emulating the actions of a user pressing keys on the device. DataWedge supports TAB, ENTER and other special characters that might be required by an application to submit acquired data for further processing, to advance the cursor to another input field or for other reasons. Special characters are added to acquired data by using the Action key character (shown below) and in the <a href="../../process/bdf">Basic Data Formatting</a> or <a href="../../process/bdf">Advanced Data Formatting</a> Process functions.</p>
 
 <p>The parameters of this feature can be configured using <a href="../../api/setconfig">Set Config API</a>.</p>
 
 <blockquote>
-  <p>For Android 10 and higher, the default keyboard disappears briefly during a scan and reappears after the data is delivered to the app. This is due to DataWedge using its own InputMethodService to dispatch data. </p>
+  <p>For Android 10 and higher, the default keyboard disappears briefly during a scan and reappears after the data is delivered to the app. This is due to DataWedge using its own InputMethodService to dispatch data.</p>
 </blockquote>
 
 <hr>
 
 <h3 id="outputtingrawdata" class="anchor"><a class="heading-anchor" href="#outputtingrawdata"><span></span></a>Outputting Raw Data</h3>
 
-<p>In addition to its normal plain-text and hexadecimal modes, DataWedge can output acquired data in its raw form, before the application of any encoders. This can be useful if custom encoders are needed for acquiring character sets not supported by Zebra.  </p>
+<p>In addition to its normal plain-text and hexadecimal modes, DataWedge can output acquired data in its raw form, before the application of any encoders. This can be useful if custom encoders are needed for acquiring character sets not supported by Zebra.</p>
 
-<p>Raw data is received as a byte stream using the <code>com.symbol.datawedge.decode_data</code> intent extra. For more information, see the <a href="../intent">Intent Output guide</a>. </p>
+<p>Raw data is received as a byte stream using the <code>com.symbol.datawedge.decode_data</code> intent extra. For more information, see the <a href="../intent">Intent Output guide</a>.</p>
 
 <blockquote>
-  <p><strong>Raw data cannot be output as keystrokes</strong>. </p>
+  <p><strong>Raw data cannot be output as keystrokes</strong>.</p>
 </blockquote>
 
 <hr>
@@ -288,20 +300,20 @@
 <p><strong>Key event options -</strong> sends keystrokes as key events, sends certain key events as string, and controls key event delays. <em>Supported only on SDM660 products (including PS20, TC52, TC57, TC72, and TC77).</em> Options:</p>
 
 <ul>
-<li><strong>Key event delay -</strong> set a delay (in ms) prior to the key event being sent. Used for dispatching control characters as keystrokes to the foreground application. This parameter is useful when sending data containing text as well as key events, where key events are sent asynchronously causing data to be delivered in the incorrect order. In this circumstance, it is recommended to add a key event delay to correct the order of data delivery.</li>
+<li><p><strong>Key event delay -</strong> set a delay (in ms) prior to the key event being sent. Used for dispatching control characters as keystrokes to the foreground application. This parameter is useful when sending data containing text as well as key events, where key events are sent asynchronously causing data to be delivered in the incorrect order. In this circumstance, it is recommended to add a key event delay to correct the order of data delivery.</p></li>
 
-<li><strong>Send Characters as Events -</strong> set to send ASCII code 32 to 126 as key events</li>
+<li><p><strong>Send Characters as Events -</strong> set to send ASCII code 32 to 126 as key events</p></li>
 
-<li><strong>Send Enter as string -</strong> set to send ENTER key stroke output as a string. By default, this is disabled and ENTER is sent as a key event.</li>
+<li><p><strong>Send Enter as string -</strong> set to send ENTER key stroke output as a string. By default, this is disabled and ENTER is sent as a key event.</p></li>
 
-<li><strong>Send Tab as string -</strong> set to send TAB key stroke output as a string. By default, this is disabled and TAB is sent as a key event.</li>
+<li><p><strong>Send Tab as string -</strong> set to send TAB key stroke output as a string. By default, this is disabled and TAB is sent as a key event.</p></li>
 
-<li><strong>Send Control Characters as Events -</strong> set to send ASCII code 1 to 31 as key events. By default, this is disabled and the data is sent as a string. Refer to <a href="./#asciicontrolcharactertable">ASCII Control Character Table</a> for a mapping of ASCII Control Characters to Android KeyEvents. Android applications can listen to key events using onKeyUp() and onKeyDown() APIs. However, web applications listen to these key events using DOM (Document Object Model) - they do not generate Android key press events. For example, when scanning a barcode in a web browser, if the barcode contains Ctrl+F character it does not open a Find window. Similarly, if the barcode contains Ctrl+H it does not open the History window.</li>
+<li><p><strong>Send Control Characters as Events -</strong> set to send ASCII code 1 to 31 as key events. By default, this is disabled and the data is sent as a string. Refer to <a href="./#asciicontrolcharactertable">ASCII Control Character Table</a> for a mapping of ASCII Control Characters to Android KeyEvents. Android applications can listen to key events using onKeyUp() and onKeyDown() APIs. However, web applications listen to these key events using DOM (Document Object Model) - they do not generate Android key press events. For example, when scanning a barcode in a web browser, if the barcode contains Ctrl+F character it does not open a Find window. Similarly, if the barcode contains Ctrl+H it does not open the History window.</p></li>
 </ul>
 
-<p><strong>Inter-character delay –</strong> used to set a delay (in ms) following the delivery of each character to the application. This parameter is intended to help avoid issues that arise when data is dispatched too quickly for an application to accept. <strong>Default=0</strong>. If experiencing errors in keystroke delivery, increase this value in increments of 100 (to a max. of 1000) until errors cease. <strong>Note: This parameter can negatively effect application performance</strong>. </p>
+<p><strong>Inter-character delay –</strong> used to set a delay (in ms) following the delivery of each character to the application. This parameter is intended to help avoid issues that arise when data is dispatched too quickly for an application to accept. <strong>Default=0</strong>. If experiencing errors in keystroke delivery, increase this value in increments of 100 (to a max. of 1000) until errors cease. <strong>Note: This parameter can negatively effect application performance</strong>.</p>
 
-<p><strong>Multi-byte character delay -</strong> applies the Inter-character delay (described above) to multi-byte characters only. This parameter is intended to help avoid problems that arise when sending Unicode and multi-byte characters to the Android browser. Available only when Inter-character delay is enabled. <strong>Disabled by default</strong>. </p>
+<p><strong>Multi-byte character delay -</strong> applies the Inter-character delay (described above) to multi-byte characters only. This parameter is intended to help avoid problems that arise when sending Unicode and multi-byte characters to the Android browser. Available only when Inter-character delay is enabled. <strong>Disabled by default</strong>.</p>
 
 <p><strong>DataWedge keyboard options -</strong> used to display the DataWedge "keyboard" (a DataWedge icon that displaces the default keyboard) when dispatching keystroke data and set the time period for the duration the DataWedge keyboard is displayed. Applies to Android 10 or higher, in which the default keyboard disappears during a scan and reappears after the data is delivered to the app. By enabling this feature, when a scan is performed the default keyboard is displaced with the DataWedge keyboard when dispatching data. After data dispatch is complete and the timeout elapses, the keyboard is switched back to the default keyboard. Zebra recommends to enable this option in the following situations:<br>
 &nbsp;&nbsp;&nbsp;-&nbsp; When it is required to automatically move to the next text field with ENTER/TAB key after each scan (from Basic Data Formatting settings) in a webpage or Android application.<br>
@@ -309,10 +321,10 @@
 DataWedge keyboard options:</p>
 
 <ul>
-<li><strong>Display DataWedge keyboard -</strong> enable/disable the visibility of DataWedge keyboard. DataWedge keyboard shows a graphical user interface when this option is turned on. 
+<li><strong>Display DataWedge keyboard -</strong> enable/disable the visibility of DataWedge keyboard. DataWedge keyboard shows a graphical user interface when this option is turned on.
 <strong>Note:</strong> Enabling/Disabling this option will not change the configurations in Android system Language and Input settings.</li>
 
-<li><strong>Keyboard display timeout -</strong> used to set the amount of time (in seconds) the keyboard should remain visible after a scan. Default value is 10 seconds. This timeout applies only when <strong>Display DataWedge keyboard</strong> is enabled. Users can tap on the keyboard UI if required to switch back to the previous keyboard before the timeout elapses. Setting the timeout value to 0 results to an infinite timeout. The keyboard does not switch to the previous keyboard unless the user taps on the DataWedge keyboard UI or there is a profile switch. </li>
+<li><strong>Keyboard display timeout -</strong> used to set the amount of time (in seconds) the keyboard should remain visible after a scan. Default value is 10 seconds. This timeout applies only when <strong>Display DataWedge keyboard</strong> is enabled. Users can tap on the keyboard UI if required to switch back to the previous keyboard before the timeout elapses. Setting the timeout value to 0 results to an infinite timeout. The keyboard does not switch to the previous keyboard unless the user taps on the DataWedge keyboard UI or there is a profile switch.</li>
 </ul>
 
 <hr>
@@ -320,23 +332,23 @@ DataWedge keyboard options:</p>
 <h3 id="profileimportbehavior" class="anchor"><a class="heading-anchor" href="#profileimportbehavior"><span></span></a>Profile Import Behavior</h3>
 
 <ul>
-<li><p><strong>For Profiles imported <u>into DataWedge 6.7 (and higher)</u> from prior versions</strong>, the value specified for the "Multi byte character delay" is applied to the Inter-character delay and the “Delay Multi-byte characters only” parameter is enabled. </p></li>
+<li><p><strong>For Profiles imported <u>into DataWedge 6.7 (and higher)</u> from prior versions</strong>, the value specified for the "Multi byte character delay" is applied to the Inter-character delay and the “Delay Multi-byte characters only” parameter is enabled.</p></li>
 
-<li><p><strong>For Profiles created with DataWedge 6.7 (and higher) <u>and imported into a prior version</u></strong>, the specified delay, if any, is applied only to multi-byte characters. </p></li>
+<li><p><strong>For Profiles created with DataWedge 6.7 (and higher) <u>and imported into a prior version</u></strong>, the specified delay, if any, is applied only to multi-byte characters.</p></li>
 </ul>
 
 <hr>
 
 <h3 id="udidataoutput" class="anchor"><a class="heading-anchor" href="#udidataoutput"><span></span></a>UDI Data Output</h3>
 
-<p>This setting applies when the Scanning mode in <a href="../../input/barcode/#readerparams">Barcode Reader Params</a> is set to UDI, which acquires multiple data points (tokens) as specified in the Universal Device Identifier parameter(s) selected in the above-referenced section. </p>
+<p>This setting applies when the Scanning mode in <a href="../../input/barcode/#readerparams">Barcode Reader Params</a> is set to UDI, which acquires multiple data points (tokens) as specified in the Universal Device Identifier parameter(s) selected in the above-referenced section.</p>
 
 <p><strong>Support for UDI barcodes has been restored to Zebra devices running Android 10</strong> with <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">BSP 10.12.13 "Update 17"</a> (or later).</p>
 
-<!-- 5/5/21 - removed per TUT46063: 
+<!-- 5/5/21 - removed per TUT46063:
 **Support for UDI barcodes, such as GS1, HIBCC and ICCBBA, is being terminated. This feature is supported using the imager on [selected Zebra devices](../../input/barcode/#udidecoding) up to Android P (version 9.x) only** -->
 
-<!-- 2/8/18- removed pre-DW 6.7 panel 
+<!-- 2/8/18- removed pre-DW 6.7 panel
 <img style="height:350px" src="../token_selection_highlighted.png"/>
  -->
 
@@ -344,21 +356,21 @@ DataWedge keyboard options:</p>
 
 <p><strong>Token selection -</strong> allows the output order of acquired UDI data to be adjusted and the optional insertion of a Tab, Line Feed or Carriage Return character between tokens, if required.</p>
 
-<p><strong>To adjust UDI Token settings</strong>: </p>
+<p><strong>To adjust UDI Token settings</strong>:</p>
 
-<p><strong>1. Tap "Send tokens" to select the desired output</strong> for acquired UDI data. 
+<p><strong>1. Tap "Send tokens" to select the desired output</strong> for acquired UDI data.
 <img style="height:350px" src="../token_selector.png"></p>
 
 <p><strong>Tokens only -</strong> DataWedge parses the UDI data into separate Tokens for output (separated by a separator character, if selected).</p>
 
 <p><strong>Barcodes and tokens -</strong> DataWedge sends the barcode string appended by the tokenized data. If no separator character is selected (see Step 2), DataWedge sends two instances of the same data.</p>
 
-<p><strong>2. Tap "Token separator" in the Token selection screen to specify a separator character</strong> to be inserted between Tokens, if desired. If "Barcode and tokens" mode is selected, the selected character also is inserted between the two. 
+<p><strong>2. Tap "Token separator" in the Token selection screen to specify a separator character</strong> to be inserted between Tokens, if desired. If "Barcode and tokens" mode is selected, the selected character also is inserted between the two.
 <img style="height:350px" src="../separator.png">
 <em>This setting is not available if "Send tokens" is disabled</em>.
 <br></p>
 
-<p><strong>3. Tap "Token order" to include/exclude Tokens</strong> from the output and adjust their output order. 
+<p><strong>3. Tap "Token order" to include/exclude Tokens</strong> from the output and adjust their output order.
 <img style="height:350px" src="../token_order.png">
 <em>Drag tokens to adjust output order</em>.
 <br>
@@ -375,12 +387,12 @@ Programmatically configure UDI Data Output and retrieve the configuration:</p>
 
 <h3 id="multibarcodedataoutput" class="anchor"><a class="heading-anchor" href="#multibarcodedataoutput"><span></span></a>MultiBarcode Data Output</h3>
 
-<p>This setting applies when the Scanning mode in <a href="../../input/barcode/#readerparams">Barcode Reader Params</a> is set to MultiBarcode, which simultaneously acquires the number of barcodes (from 2-10) specified in the corresponding reader parameter. </p>
+<p>This setting applies when the Scanning mode in <a href="../../input/barcode/#readerparams">Barcode Reader Params</a> is set to MultiBarcode, which simultaneously acquires the number of barcodes (from 2-10) specified in the corresponding reader parameter.</p>
 
 <h4 id="toconfiguremultibarcodeoutput" class="anchor"><a class="heading-anchor" href="#toconfiguremultibarcodeoutput"><span></span></a>To configure MultiBarcode output:</h4>
 
 <ol>
-<li><p>Tap "Data formatting and ordering" to specify a separator character to be inserted between the data from each barcode. 
+<li><p>Tap "Data formatting and ordering" to specify a separator character to be inserted between the data from each barcode.
 <img style="height:350px" src="../dw_6.7_data_formatting_and_ordering.png"></p></li>
 
 <li><p>Tap "Barcode separator" to specify the desired insertion character (CR, LF or TAB).<br>This adds a separator in between each barcode and appends a separator after the last barcode. To remove the extra separator after the last barcode, use the "Remove characters" action from <a href="../../process/adf/#supportedadfactions">Advanced Data Formatting</a> rules.<br>Data from each barcode is otherwise concatenated and delivered as a single string of keystrokes.
@@ -392,14 +404,14 @@ Programmatically configure UDI Data Output and retrieve the configuration:</p>
 <p>Select a supported default character (CR, LF, or TAB) as a MultiBarcode separator together with the Advanced Data Formatting plugin configuration to replace this selected character with a user specified character. The following steps replaces "TAB" with "+" as the custom separator character:</p>
 
 <ol>
-<li>Tap "Data formatting and ordering" to specify a separator character to be inserted between the data from each barcode. 
+<li>Tap "Data formatting and ordering" to specify a separator character to be inserted between the data from each barcode.
 <img style="height:350px" src="../dw_6.7_data_formatting_and_ordering.png">
 <br></li>
 
 <li>Tap "Barcode separator" to specify the desired insertion character (CR, LF or TAB). In this case, select TAB.<br>Data from each barcode is otherwise concatenated and delivered as a single string of keystrokes.
 <img style="height:350px" src="../dw_6.7_data_separating.png"></li>
 
-<li>Tap back to return to the main profile screen. Select <strong>Advanced data formatting</strong> 
+<li>Tap back to return to the main profile screen. Select <strong>Advanced data formatting</strong>
 <img style="height:370px" src="./dw_keystroke_tap_advanced_data_formatting.png"></li>
 
 <li>Under "Keystroke output" click Enable (tap on the checkbox). Tap Rule0.
@@ -414,25 +426,25 @@ Programmatically configure UDI Data Output and retrieve the configuration:</p>
 <li>Scroll down and tap “Replace string”.
 <img style="height:370px" src="./dw_keystroke_replace_string.png"></li>
 
-<li>Tap “Replace String”. 
+<li>Tap “Replace String”.
 <img style="height:370px" src="./dw_keystroke_rule0_actions_2.png"></li>
 
-<li>Tap "Find String". 
+<li>Tap "Find String".
 <img style="height:370px" src="./dw_keystroke_find_string.png"></li>
 
 <li>Enter the hexadecimal notation for tab: \x09. Tap OK.
 <img style="height:370px" src="./dw_keystroke_enter_string_tab.png"></li>
 
-<li>Tap "Replace String". 
+<li>Tap "Replace String".
 <img style="height:370px" src="./dw_keystroke_replace_string_2.png"></li>
 
-<li>Enter desired string to use as replacement, for example "+".  Tap OK.
+<li>Enter desired string to use as replacement, for example "+". Tap OK.
 <img style="height:370px" src="./dw_keystroke_replace_plus.png"></li>
 
 <li>Tap back to return to the rule.
 <img style="height:370px" src="./dw_keystroke_rule0_actions_2.png"></li>
 
-<li>Tap and hold the horizontal bars next to "Replace string" and drag it above "Send Remaining". 
+<li>Tap and hold the horizontal bars next to "Replace string" and drag it above "Send Remaining".
 <img style="height:370px" src="./dw_keystroke_rule0_actions_3.png"></li>
 
 <li>Tap back.</li>
@@ -440,7 +452,7 @@ Programmatically configure UDI Data Output and retrieve the configuration:</p>
 
 <p>When performing a scan, each barcode in the MultiBarcode decode is now followed by a plus "+" character.</p>
 
-<!-- 
+<!--
 Send data - Set to transfer the captured data to the foreground application. Disabling this option prevents the actual data from being transmitted. However, the prefix and suffix strings, if present, are still transmitted even when this option is disabled (default - enabled).
 -->
 
@@ -448,7 +460,7 @@ Send data - Set to transfer the captured data to the foreground application. Dis
 
 <h3 id="hexadecimaldataoutput" class="anchor"><a class="heading-anchor" href="#hexadecimaldataoutput"><span></span></a>Hexadecimal Data Output</h3>
 
-<p>Hex data is based on the encoded data received from the scanner framework after it's converted from its raw form to the selected character set. When the hex-output option is selected, the plain-text string is converted to the corresponding hex digits and output as a string. That hex data can be acquired programmatically. </p>
+<p>Hex data is based on the encoded data received from the scanner framework after it's converted from its raw form to the selected character set. When the hex-output option is selected, the plain-text string is converted to the corresponding hex digits and output as a string. That hex data can be acquired programmatically.</p>
 
 <p>The Java command below returns the hex data stored in the keystroke or intent output string:</p>
 
@@ -456,7 +468,7 @@ Send data - Set to transfer the captured data to the foreground application. Dis
 String hex = Hex.encodeHex(data.getString(DATA_STRING_TAG).toCharArray(), false);
 </code></pre>
 
-<p><strong>For more information and to enable hex output using the DataWedge UI, see <a href="../../process/bdf">Basic Data Formatting (BDF)</a></strong>. </p>
+<p><strong>For more information and to enable hex output using the DataWedge UI, see <a href="../../process/bdf">Basic Data Formatting (BDF)</a></strong>.</p>
 
 <hr>
 
@@ -737,7 +749,7 @@ String hex = Hex.encodeHex(data.getString(DATA_STRING_TAG).toCharArray(), false)
 <ul>
 <li><a href="../../profiles">DataWedge Profiles</a></li>
 
-<li><a href="../../api">DataWedge APIs</a> </li>
+<li><a href="../../api">DataWedge APIs</a></li>
 </ul><p></p>
                                         
 

@@ -57,7 +57,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             DataWedge
-                                            8.2
+                                            11.0
                         </p>
 
                     </ul>
@@ -68,42 +68,47 @@
 
 
                         <li>
-                            <a href="/datawedge/8-2/guide/about">
+                            <a href="/datawedge/11-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/programmers-guides">
+                            <a href="/datawedge/11-0/guide/programmers-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/profiles">
+                            <a href="/datawedge/11-0/guide/profiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/matrix">
+                            <a href="/datawedge/11-0/guide/matrix">
                                     Feature Matrix
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/settings">
+                            <a href="/datawedge/11-0/guide/decoders">
+                                    Decoders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/datawedge/11-0/guide/settings">
                                     Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/api">
+                            <a href="/datawedge/11-0/guide/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/samples">
+                            <a href="/datawedge/11-0/guide/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/guide/faq">
+                            <a href="/datawedge/11-0/guide/faq">
                                     FAQ
                             </a>
                         </li>
@@ -113,10 +118,18 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/8-2/search">
+                            <a href="/datawedge/11-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
+                        <li class="dropdown languagedropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                                <li><a onclick="changeLanguage('datawedge','datawedge/dw-cn')"><img src="/images/flags/img-flag-china.png" style="display:inline!important;" alt="CN - 普通话"> CN - 普通话</a></li>
+                                <li><a onclick="changeLanguage('datawedge','datawedge/dw-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
+                          </ul>
+                        </li>                    
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
                         <li ><a href="/guides">Guides</a></li>
@@ -228,7 +241,7 @@
                                     <h1 id="voice-input" class="anchor"><a class="heading-anchor" href="#voice-input"><span></span></a>Voice Input</h1>
                                     <p>
                                             DataWedge
-                                            8.2
+                                            11.0
                                     </p>
                                 </div>
                             </section>                    
@@ -243,7 +256,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Voice Input enables DataWedge to convert spoken entries into keystrokes as if they were typed or acquired from a scan. Voice Input uses the Google speech recognition engine included on GMS devices. Voice-to-data capture can be useful in cases when a barcode is wet, damaged, covered with stray markings or otherwise cannot be scanned. </p>
+<p>Voice Input enables DataWedge to convert spoken entries into keystrokes as if they were typed or acquired from a scan. Voice Input uses the Google speech recognition engine included on GMS devices. Voice-to-data capture can be useful in cases when a barcode is wet, damaged, covered with stray markings or otherwise cannot be scanned.</p>
 
 <p>Voice Input options:</p>
 
@@ -310,22 +323,22 @@
 <p><i>Figure 1 &amp; 2. Voice input settings</i></p>
 
 <ul>
-<li><p><strong>Enabled</strong> - Enables voice input. </p></li>
+<li><p><strong>Enabled</strong> - Enables voice input.</p></li>
 
 <li><p><strong>Data capture start option</strong> - Select trigger option for voice capture.</p>
 
 <ul>
 <li><strong>Start phrase -</strong> Sets a start phrase to trigger voice capture. Start phrase is specified in option <b>Data capture start phrase</b>. <strong><em>This feature is being deprecated and will be discontinued in a future release. As an alternative, Zebra recommends using the PTT button to trigger voice capture.</em></strong></li>
 
-<li><strong>PTT button -</strong>  Sets PTT button to trigger voice capture. <i>Only supported on EC30, MC93, TC52/TC57, TC72/TC77, and TC8300 devices. For other devices, the PTT button may be mapped to an available button on the device.</i> <br></li></ul></li>
+<li><strong>PTT button -</strong> Sets PTT button to trigger voice capture. <i>Only supported on EC30, MC93, TC52/TC57, TC72/TC77, and TC8300 devices. For other devices, the PTT button may be mapped to an available button on the device.</i> <br></li></ul></li>
 
 <li><p><strong>Data capture start phrase</strong> - Specified phrase to start the data capture if <strong>Start phrase</strong> is selected as the <strong>Data capture start option</strong>. Numbers and special characters are not supported as part of the start phrase. <em>The default value is "start."</em> <strong><em>This feature is being deprecated and will be discontinued in a future release. As an alternative, Zebra recommends using the PTT button to trigger voice capture.</em></strong></p></li>
 
 <li><p><strong>Data capture end phrase</strong> - Optional phrase that ends the data capture. There is no default value. <strong><em>This feature is being deprecated and will be discontinued in a future release. As an alternative, Zebra recommends using the PTT button to trigger voice capture.</em></strong></p></li>
 
-<li><p><strong>End detection timeout</strong> - Sets the timeout value (in seconds) for the data capture during the “waiting for data” state. If the value is set to "0" and the end phrase is defined, it waits infinitely for the data capture. Whereas, when the end phrase is not defined, data is returned immediately. This timeout is approximate, as it may encounter a 1 to 2 second delay. <em>The default value is "0."</em> </p></li>
+<li><p><strong>End detection timeout</strong> - Sets the timeout value (in seconds) for the data capture during the “waiting for data” state. If the value is set to "0" and the end phrase is defined, it waits infinitely for the data capture. Whereas, when the end phrase is not defined, data is returned immediately. This timeout is approximate, as it may encounter a 1 to 2 second delay. <em>The default value is "0."</em></p></li>
 
-<li><p><strong>Voice commands</strong> - Configure and set voice commands to navigate a foreground application. Commands are supported only when the device is in the "waiting for start phrase" or "press and hold PTT button to speak data" states. </p></li>
+<li><p><strong>Voice commands</strong> - Configure and set voice commands to navigate a foreground application. Commands are supported only when the device is in the "waiting for start phrase" or "press and hold PTT button to speak data" states.</p></li>
 </ul>
 
 <ul style="margin-left: 16px;">
@@ -362,7 +375,7 @@
 </ul>
 
 <ul>
-<li><strong>Data type</strong> - Configures the data type to be returned, with selections of: Any, Alpha, or Numeric. The data type is required to restrict data captured according to the preferences. 
+<li><strong>Data type</strong> - Configures the data type to be returned, with selections of: Any, Alpha, or Numeric. The data type is required to restrict data captured according to the preferences.
 Data type selections:</li>
 </ul>
 
@@ -373,16 +386,16 @@ Data type selections:</li>
 </ul>
 
 <ul>
-<li><p><strong>Start phrase waiting tone</strong> - Controls the start phrase waiting tone. It enables/disables the audio feedback for “waiting for start”, notifying that the device is waiting to start the speech engine in case the toast message notification is missed and there is a change in “waiting for data” state. </p></li>
+<li><p><strong>Start phrase waiting tone</strong> - Controls the start phrase waiting tone. It enables/disables the audio feedback for “waiting for start”, notifying that the device is waiting to start the speech engine in case the toast message notification is missed and there is a change in “waiting for data” state.</p></li>
 
-<li><p><strong>Data capture waiting tone</strong> - Controls the data capture waiting tone. It enables/disables audio feedback for “waiting for data”, notifying that the device is waiting to capture data in case the toast message notification is missed. </p></li>
+<li><p><strong>Data capture waiting tone</strong> - Controls the data capture waiting tone. It enables/disables audio feedback for “waiting for data”, notifying that the device is waiting to capture data in case the toast message notification is missed.</p></li>
 
 <li><p><strong>Offline speech recognition</strong> - Enables offline speech recognition when there is no access to the internet. This uses an offline recognition speech engine to detect the data spoken.</p></li>
 
 <li><p><strong>Validation window</strong> - Validates the result after speaking, displaying the spoken data and provides for editing the data on the same screen, if needed. This is useful in offline mode, since the results received in this mode might not be accurate.</p></li>
 </ul>
 
-<p><img src="dwdemo-voice.jpg" alt="img"> 
+<p><img src="dwdemo-voice.jpg" alt="img">
 <br></p>
 
 <blockquote>
@@ -501,13 +514,13 @@ Data type selections:</li>
 
 <li>Offline speech recognition provides lower accuracy levels.</li>
 
-<li>In GMS Restricted mode with the use of <a href="/mx/appmgr/#action">App Manager's DisableGMSApps action</a>, Voice Input will not work since it relies on Google speech recognition. </li>
+<li>In GMS Restricted mode with the use of <a href="/mx/appmgr/#action">App Manager's DisableGMSApps action</a>, Voice Input will not work since it relies on Google speech recognition.</li>
 
-<li>Do not use Google Assistant while DataWedge Voice Input is in use, as it can lead to undesirable behavior. </li>
+<li>Do not use Google Assistant while DataWedge Voice Input is in use, as it can lead to undesirable behavior.</li>
 
 <li>Providing numbers and other special characters as part of the data capture start phrase is not supported.</li>
 
-<li>Voice Input is not supported if Enterprise Home Screen (EHS) is in restricted mode. However, enabling all the privilege settings in EHS will reinstate Voice Input in DataWedge.  </li>
+<li>Voice Input is not supported if Enterprise Home Screen (EHS) is in restricted mode. However, enabling all the privilege settings in EHS will reinstate Voice Input in DataWedge.</li>
 
 <li>If the PTT (push-to-talk) button is released during voice capture, there can be a 1 to 2 second delay to display the captured data due to the speech engine continually listening at that moment.</li>
 
@@ -523,7 +536,7 @@ Data type selections:</li>
 <ul>
 <li><a href="../../profiles">Profiles/Plug-ins</a></li>
 
-<li><a href="../../api">DataWedge APIs</a> </li>
+<li><a href="../../api">DataWedge APIs</a></li>
 </ul><p></p>
                                         
 
