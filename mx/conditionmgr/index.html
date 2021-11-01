@@ -14,7 +14,11 @@
     <title>Condition Manager - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--     
     <link href="/css/font-awesome.min.css" rel="stylesheet">
+ -->    
+    <link href="/css/all.css" rel="stylesheet">
+    <link href="/css/v4-shims.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/owl.carousel.css" rel="stylesheet">
     <link href="/css/owl.transitions.css" rel="stylesheet">
@@ -766,55 +770,10 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-                                    <p class="">
-
-        </p><p>The Condition Manager allows an administrator to check for one or more conditions on a device before taking some action or checking for additional conditions. This can be useful for verifying that a device meets one or more requirements (i.e. "Must be an MC40") before attempting "risky" operations such as OS upgrades, the failure of which can render a device unusable, severely limited or otherwise in need of service. </p>
+                                    <p class=""></p><p>The Condition Manager allows an administrator to check for one or more conditions on a device before taking some action or checking for additional conditions. This can be useful for verifying that a device meets one or more requirements (i.e. "Must be an MC40") before attempting "risky" operations such as OS upgrades, the failure of which can render a device unusable, severely limited or otherwise in need of service. </p>
 
 <p>Each tested condition represents an instance of ConditionMgr, independent of all others. Tested conditions are either met or not met, and indicate the condition of the device at the time of the test (i.e. "Is there a valid IP address?"). Top-level conditions can test for Boolean, Integer or String data, but ultimately must result in a Boolean (true/false) value (i.e. "Does the Device Model field contain the 'MC40' string?"). </p>
 
@@ -843,10 +802,7 @@
 <!-- 1/23/19- removed per eng.
 * Check for the presence of a file 
 --></li>
-</ul>
-
-
-<p></p>
+</ul><p></p>
                                     
                                     
                                     
@@ -909,19 +865,56 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="data-type"><a class="heading-anchor" href="#data-type"><span></span></a>Data Type</h2>
-                                    <p class="">
-
-        </p><p>Used to enter whether the tested value on the device is Boolean, Integer or String. Regardless of the data type selected, all condition tests must ultimately yield a Boolean (true/false) value. The Boolean Data Type, such as whether a device has a valid IP address, provides a direct result and therefore requires no further adjustment. To arrive at a Boolean value when testing Integers and Strings, one of the relevant condition tests (such as "greater-than" for numeric values or "contains" for a string) must be specified. For example, the test of whether a device is an MC40 would look for a string in the Device Model field that contains the constant "MC40" and if so, return a "true" result. <strong>Note: The Source Types and System Values presented will vary depending on the selected Data Type</strong>.</p>
+                                    <p class=""></p><p>Used to enter whether the tested value on the device is Boolean, Integer or String. Regardless of the data type selected, all condition tests must ultimately yield a Boolean (true/false) value. The Boolean Data Type, such as whether a device has a valid IP address, provides a direct result and therefore requires no further adjustment. To arrive at a Boolean value when testing Integers and Strings, one of the relevant condition tests (such as "greater-than" for numeric values or "contains" for a string) must be specified. For example, the test of whether a device is an MC40 would look for a string in the Device Model field that contains the constant "MC40" and if so, return a "true" result. <strong>Note: The Source Types and System Values presented will vary depending on the selected Data Type</strong>.</p>
 
 <p><strong>Important: There is currently no supported method of performing an ordered comparison</strong> (i.e. greater-than/less-than) on String values. This would become relevant, for example, when attempting to create flow-control rules based on the version of OSx on a device, which is a numeric value stored as a string. </p>
 
-<p>While it might seem natural to attempt an operation on "all devices on which the OSx value is greater-than-or-equal-to 3.4," for example, this is not a supported action and could produce unwanted results. Although it's technically possible to treat a String as a floating point value, this too would be unpredictable due to variations in OSx version levels (i.e. 3.4.1.0) and other comparison factors. </p>
-
-
-<p></p>
+<p>While it might seem natural to attempt an operation on "all devices on which the OSx value is greater-than-or-equal-to 3.4," for example, this is not a supported action and could produce unwanted results. Although it's technically possible to treat a String as a floating point value, this too would be unpredictable due to variations in OSx version levels (i.e. 3.4.1.0) and other comparison factors. </p><p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> DataType</p>
                                         <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
@@ -939,6 +932,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A" data-api="" data-smartdoc="">
@@ -946,6 +940,9 @@
                                                 <td>Boolean</td>
                                                 <td>The tested value will be either true or false.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -969,6 +966,9 @@
                                                 <td>The tested value will be a number.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -990,6 +990,9 @@
                                                 <td>String</td>
                                                 <td>The tested value will be a string of characters.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1099,15 +1102,30 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="boolean-source-type"><a class="heading-anchor" href="#boolean-source-type"><span></span></a>Boolean Source Type</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the Boolean source expected to deliver a true/false value. </p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to enter the Boolean source expected to deliver a true/false value. </p><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Data Type is "Boolean"</p>
                                         <p><b>Parm Name:</b> BooleanSourceType</p>
@@ -1126,6 +1144,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1133,6 +1152,9 @@
                                                 <td>Pre-defined System Boolean Value</td>
                                                 <td>A true/false value defined by the system.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1191,28 +1213,10 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="boolean-system-value"><a class="heading-anchor" href="#boolean-system-value"><span></span></a>Boolean System Value</h2>
-                                    <p class="">
-
-        </p><p>Used to select a pre-defined Boolean System Value against which to test for a true/false condition. For example, to set an operation to proceed only if the target device has a valid IP address, set this value to 2 ("Have any valid IP Address") and proceed only on a "True" condition.</p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to select a pre-defined Boolean System Value against which to test for a true/false condition. For example, to set an operation to proceed only if the target device has a valid IP address, set this value to 2 ("Have any valid IP Address") and proceed only on a "True" condition.</p><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Data Type is "Boolean" and Boolean Source Type is "Pre-defined System Boolean Value"</p>
                                         <p><b>Parm Name:</b> BooleanSystemValue</p>
@@ -1231,6 +1235,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A,B" data-api="" data-smartdoc="">
@@ -1238,6 +1243,9 @@
                                                 <td>Have any valid IP Address</td>
                                                 <td>Returns "True" if the device has a valid IP address at the time of testing.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1259,40 +1267,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1367,12 +1341,7 @@
                                         <div class="">
                                     
                                     <h2 class="anchor" id="integer-source-type"><a class="heading-anchor" href="#integer-source-type"><span></span></a>Integer Source Type</h2>
-                                    <p class="">
-
-        
-
-
-</p>
+                                    <p class=""></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Data Type is "Integer"</p>
                                         <p><b>Parm Name:</b> IntegerSourceType</p>
@@ -1391,6 +1360,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1398,6 +1368,9 @@
                                                 <td>Pre-defined System Integer Value</td>
                                                 <td>A numeric value defined by the device operating system.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1431,15 +1404,45 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="integer-system-property"><a class="heading-anchor" href="#integer-system-property"><span></span></a>Integer System Property</h2>
-                                    <p class="">
-
-        </p><p>Used to select an integer-based device value against which to test the specified constant value to arrive at a Boolean value. For example, to set an operation to proceed only on devices with MX 4.x, set this value to 2 ("BSP major version") and enter "4" as the Integer Constant Value.</p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to select an integer-based device value against which to test the specified constant value to arrive at a Boolean value. For example, to set an operation to proceed only on devices with MX 4.x, set this value to 2 ("BSP major version") and enter "4" as the Integer Constant Value.</p><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Data Type is "Integer"</p>
                                         <p><b>Parm Name:</b> IntegerSystemProperty</p>
@@ -1458,6 +1461,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1465,6 +1469,9 @@
                                                 <td>Platform SDK version</td>
                                                 <td>Indicates the Android API level.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1488,6 +1495,9 @@
                                                 <td>The digit of the Board Support Package prior to the decimal.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1510,6 +1520,9 @@
                                                 <td>The digit of the Board Support Package following to the decimal.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1531,6 +1544,9 @@
                                                 <td>BSP build number</td>
                                                 <td>The specific number of the BSP build installed on the device.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1563,31 +1579,10 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="integer-system-value"><a class="heading-anchor" href="#integer-system-value"><span></span></a>Integer System Value</h2>
-                                    <p class="">
-
-        </p><p>Used to select a pre-defined Integer String Value against which to test the specified constant value to arrive at a Boolean value. For example, to set an operation to proceed only if the target device has a fully charged battery, set this value to 1 ("Battery Level") and enter "100" as the Constant String Value.</p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to select a pre-defined Integer String Value against which to test the specified constant value to arrive at a Boolean value. For example, to set an operation to proceed only if the target device has a fully charged battery, set this value to 1 ("Battery Level") and enter "100" as the Constant String Value.</p><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Data Type is "Integer"</p>
                                         <p><b>Parm Name:</b> IntegerSystemValue</p>
@@ -1606,6 +1601,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A,B" data-api="" data-smartdoc="">
@@ -1613,6 +1609,9 @@
                                                 <td>Battery Level</td>
                                                 <td>The current percentage of battery charge from 0-100</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1646,21 +1645,22 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="integer-constant-value"><a class="heading-anchor" href="#integer-constant-value"><span></span></a>Integer Constant Value</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the integer value (from -32768 to 32767) to test. </p>
+                                    <p class=""></p><p>Used to enter the integer value (from -32768 to 32767) to test. </p>
 
 <p><strong>Parm value input rules</strong>:</p>
 
 <ul>
 <li>Accepts an integer from -32768 to 32767</li>
-</ul>
-
-
-<p></p>
+</ul><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Data Type is "Integer"</p>
                                         <p><b>Parm Name:</b> IntegerConstantValue</p>
@@ -1685,15 +1685,11 @@
                                     
                                     
                                     
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="integer-condition-test"><a class="heading-anchor" href="#integer-condition-test"><span></span></a>Integer Condition Test</h2>
-                                    <p class="">
-
-        </p><p>Used to select a comparator for a specified value against the tested constant value to arrive at a Boolean value. For example, to set an operation to proceed only on devices with at least half of their battery power available, set this value to 5 ("Greater-than-or-equal-to a Constant Integer") and set the Constant Integer Value to 50.</p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to select a comparator for a specified value against the tested constant value to arrive at a Boolean value. For example, to set an operation to proceed only on devices with at least half of their battery power available, set this value to 5 ("Greater-than-or-equal-to a Constant Integer") and set the Constant Integer Value to 50.</p><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Data Type is "Integer"</p>
                                         <p><b>Parm Name:</b> IntegerConditionTest</p>
@@ -1712,6 +1708,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1719,6 +1716,9 @@
                                                 <td>Equal-to a Constant Integer</td>
                                                 <td>Tested value is the same as the specified value.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1742,6 +1742,9 @@
                                                 <td>Tested value is not the same as the specified value.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1763,6 +1766,9 @@
                                                 <td>Greater-than a Constant Integer</td>
                                                 <td>Tested value is higher than the specified value.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1786,6 +1792,9 @@
                                                 <td>Tested value is lower than the specified value.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1807,6 +1816,9 @@
                                                 <td>Greater-than-or-equal-to a Constant Integer</td>
                                                 <td>Tested value is the same as or higher than the specified value.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1830,6 +1842,9 @@
                                                 <td>Tested value is the same as or lower than the specified value.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1851,20 +1866,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1977,6 +1978,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1984,6 +1986,9 @@
                                                 <td>String System Property</td>
                                                 <td>A string of characters not defined by the device operating system.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2007,6 +2012,9 @@
                                                 <td>A string of characters defined by the device operating system.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2028,6 +2036,29 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2055,6 +2086,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6" data-devicetype="A,B" data-api="" data-smartdoc="">
@@ -2062,6 +2094,9 @@
                                                 <td>Product Model</td>
                                                 <td>The model number of the Zebra device.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2084,6 +2119,9 @@
                                                 <td>The version of Android running on the device.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2105,6 +2143,9 @@
                                                 <td>The specific number of the BSP build installed on the device.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2125,11 +2166,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2161,6 +2197,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6" data-devicetype="A" data-api="" data-smartdoc="">
@@ -2168,6 +2205,9 @@
                                                 <td>MX version</td>
                                                 <td>The version of MX installed on the device.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2190,6 +2230,9 @@
                                                 <td>OSX version</td>
                                                 <td>The version of OSx installed on the device.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2256,6 +2299,9 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="string-condition-test"><a class="heading-anchor" href="#string-condition-test"><span></span></a>String Condition Test</h2>
@@ -2278,6 +2324,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6" data-devicetype="A" data-api="" data-smartdoc="">
@@ -2285,6 +2332,9 @@
                                                 <td>Equal-to a Constant String</td>
                                                 <td>Tested string is the same as the specified string.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2308,6 +2358,9 @@
                                                 <td>Tested string is not the same as the specified string.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2329,6 +2382,9 @@
                                                 <td>Contains a Constant String</td>
                                                 <td>Tested string contains the specified string.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2352,6 +2408,9 @@
                                                 <td>Tested string does not contain the specified string.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2373,6 +2432,9 @@
                                                 <td>Starts-with a Constant String</td>
                                                 <td>Tested string begins with the specified string.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2396,6 +2458,9 @@
                                                 <td>Tested string does not begin with the specified string.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2417,6 +2482,9 @@
                                                 <td>Ends-with a Constant String</td>
                                                 <td>Tested string ends with the specified string.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2440,6 +2508,9 @@
                                                 <td>Tested string does not end with the specified string.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2461,6 +2532,15 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2519,12 +2599,7 @@
                                         <div class="">
                                     
                                     <h2 class="anchor" id="condition-met-action"><a class="heading-anchor" href="#condition-met-action"><span></span></a>Condition Met Action</h2>
-                                    <p class="">
-
-        </p><p>Used to select the action to perform when the tested condition is not met. <strong>To avoid moot conditions, Zebra recommends that the selected action be opposite of that selected in the "Condition Not Met Action" parameter</strong>. For example, if "Success" is selected as the "Condition Met Action," the "Condition Not Met Action" should be one of the two remaining "Fail" options.  </p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to select the action to perform when the tested condition is not met. <strong>To avoid moot conditions, Zebra recommends that the selected action be opposite of that selected in the "Condition Not Met Action" parameter</strong>. For example, if "Success" is selected as the "Condition Met Action," the "Condition Not Met Action" should be one of the two remaining "Fail" options.  </p><p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> ConditionMetAction</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -2542,6 +2617,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A" data-api="" data-smartdoc="">
@@ -2549,6 +2625,9 @@
                                                 <td>Success</td>
                                                 <td>Action to perform when a tested condition is successful.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2572,6 +2651,9 @@
                                                 <td>Action to perform when a tested condition fails.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2593,6 +2675,9 @@
                                                 <td>Retry (up to specified times) then Fail</td>
                                                 <td>Repeatedly tests the condition before failing.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2621,29 +2706,10 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="condition-not-met-action"><a class="heading-anchor" href="#condition-not-met-action"><span></span></a>Condition Not Met Action</h2>
-                                    <p class="">
-
-        </p><p>Used to select the action to perform when the tested condition is not met. <strong>To avoid moot conditions, Zebra recommends that the selected action be opposite of that selected in the "Condition Met Action" parameter</strong>. For example, if "Success" is selected as the "Condition Met Action," the "Condition Not Met Action" should be one of the two remaining "Fail" options.  </p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to select the action to perform when the tested condition is not met. <strong>To avoid moot conditions, Zebra recommends that the selected action be opposite of that selected in the "Condition Met Action" parameter</strong>. For example, if "Success" is selected as the "Condition Met Action," the "Condition Not Met Action" should be one of the two remaining "Fail" options.  </p><p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> ConditionNotMetAction</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -2661,6 +2727,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-devicetype="A" data-api="" data-smartdoc="">
@@ -2668,6 +2735,9 @@
                                                 <td>Success</td>
                                                 <td>Action to perform when a tested condition is successful.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2691,6 +2761,9 @@
                                                 <td>Action to perform when a tested condition fails.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2712,6 +2785,9 @@
                                                 <td>Retry (up to specified times) then Fail</td>
                                                 <td>Repeatedly tests the condition before failing.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2741,18 +2817,13 @@
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="condition-repeat-count"><a class="heading-anchor" href="#condition-repeat-count"><span></span></a>Condition Repeat Count</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the number of times (from 2-500) to repeat the test condition.</p>
+                                    <p class=""></p><p>Used to enter the number of times (from 2-500) to repeat the test condition.</p>
 
 <p><strong>Parm value input rules</strong>:</p>
 
 <ul>
 <li>Accepts an integer from 2-500</li>
-</ul>
-
-
-<p></p>
+</ul><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Condition Met Action or Condition Not Met Action is "Retry (up to specified times) then Fail"</p>
                                         <p><b>Parm Name:</b> ConditionRepeatCount</p>
@@ -2779,18 +2850,13 @@
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="condition-repeat-interval"><a class="heading-anchor" href="#condition-repeat-interval"><span></span></a>Condition Repeat Interval</h2>
-                                    <p class="">
-
-        </p><p>Used to enter a period of time (in seconds) to delay between tests of a Condition. </p>
+                                    <p class=""></p><p>Used to enter a period of time (in seconds) to delay between tests of a Condition. </p>
 
 <p><strong>Parm value input rules</strong>:</p>
 
 <ul>
 <li>Accepts an integer from 1-60</li>
-</ul>
-
-
-<p></p>
+</ul><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Condition Met Action or Condition Not Met Action is "Retry (up to specified times) then Fail"</p>
                                         <p><b>Parm Name:</b> ConditionRepeatInterval</p>
@@ -2811,21 +2877,21 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="condition-fail-message"><a class="heading-anchor" href="#condition-fail-message"><span></span></a>Condition Fail Message</h2>
-                                    <p class="">
-
-        </p><p>Used to enter a message to be returned when "Fail with characteristic-error” is selected as the “Condition Met Action” or “Condition Not Met Action." This message can be used to explain what went wrong and/or to communicate the reason for the failure to a user or application that is examining the Result XML document.</p>
+                                    <p class=""></p><p>Used to enter a message to be returned when "Fail with characteristic-error” is selected as the “Condition Met Action” or “Condition Not Met Action." This message can be used to explain what went wrong and/or to communicate the reason for the failure to a user or application that is examining the Result XML document.</p>
 
 <p><strong>Parm value input rules</strong>:</p>
 
 <ul>
 <li>Accepts a string from 1-250 characters</li>
-</ul>
-
-
-<p></p>
+</ul><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Condition Met Action or Condition Not Met Action is not "Success"</p>
                                         <p><b>Parm Name:</b> ConditionFailMessage</p>
@@ -2849,26 +2915,16 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="condition-wait-message"><a class="heading-anchor" href="#condition-wait-message"><span></span></a>Condition Wait Message</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the message to display while a Condition is pending. </p>
+                                    <p class=""></p><p>Used to enter the message to display while a Condition is pending. </p>
 
 <p><strong>Parm value input rules</strong>:</p>
 
 <ul>
 <li>Accepts a string from 1-250 characters</li>
-</ul>
-
-
-<p></p>
+</ul><p></p>
                                         <blockquote>
                                         <p><b>Shown if:</b> Condition Met Action or Condition Not Met Action is "Retry (up to specified times) then Fail"</p>
                                         <p><b>Parm Name:</b> ConditionWaitMessage</p>
@@ -2886,6 +2942,9 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2922,9 +2981,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3494,7 +3550,6 @@ filtering
                     
                     
                     
-                    
                     {
                             presentif: "",
                             name: "DataType",
@@ -3555,6 +3610,26 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3704,19 +3779,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "Data Type is &quot;Boolean&quot; and Boolean Source Type is &quot;Pre-defined System Boolean Value&quot;",
                             name: "BooleanSystemValue",
@@ -3743,40 +3805,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3885,6 +3913,41 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "Data Type is &quot;Integer&quot;",
                             name: "IntegerSystemProperty",
@@ -3972,22 +4035,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "Data Type is &quot;Integer&quot;",
                             name: "IntegerSystemValue",
@@ -4026,6 +4073,12 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -4045,6 +4098,7 @@ filtering
                         
                         
                     },
+                    
                     
                     
                     
@@ -4253,20 +4307,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "Data Type is &quot;String&quot;",
                             name: "StringSourceType",
@@ -4310,6 +4350,29 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4375,11 +4438,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4464,6 +4522,9 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -4668,6 +4729,15 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "ConditionMetAction",
@@ -4728,20 +4798,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4859,6 +4915,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -4878,11 +4939,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4921,6 +4977,9 @@ filtering
                     
                     
                     
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -4940,9 +4999,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
                     
                     
                     
