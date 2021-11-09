@@ -14,7 +14,11 @@
     <title>About Zebra LifeGuard for Android - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--     
     <link href="/css/font-awesome.min.css" rel="stylesheet">
+ -->    
+    <link href="/css/all.css" rel="stylesheet">
+    <link href="/css/v4-shims.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/owl.carousel.css" rel="stylesheet">
     <link href="/css/owl.transitions.css" rel="stylesheet">
@@ -71,7 +75,7 @@
                         </li>
                         <li>
                             <a href="/lifeguard/update">
-                                    Update a Device
+                                    Device Update
                             </a>
                         </li>
                         <li>
@@ -214,44 +218,30 @@
 
 <hr>
 
-<h3 id="devicerequirements" class="anchor"><a class="heading-anchor" href="#devicerequirements"><span></span></a>Device Requirements</h3>
-
-<p><strong>The following is required</strong> for a device to receive updates using LifeGuard OTA:</p>
+<h2 id="lifeguardotaoctober21update" class="anchor"><a class="heading-anchor" href="#lifeguardotaoctober21update"><span></span></a>LifeGuard OTA October '21 Update</h2>
 
 <ul>
-<li><strong>Zebra device running Android 7.x (Nougat) or later</strong> </li>
+<li><a href="../update">Automatic Update</a> option can apply device OS updates and patches to device whenever they become available</li>
 
-<li><strong>Android Patch 19 or later</strong> applied to device</li>
+<li>Auto-update feature can be administered through StageNow or a company's own EMM</li>
 
-<li><strong>FOTA client enabled</strong> on device(s)</li>
-
-<li><strong>Internet connectivity</strong> (for downloads to device)</li>
-
-<li><strong>The following open network ports</strong> with no IP restrictions: 
+<li>EMM-managed auto update system allows administrative control of: 
 
 
 <ul>
-<li><strong>443</strong></li>
+<li>Network type for download (cellular vs. Wi-Fi)</li>
 
-<li><strong>5228</strong></li>
+<li>Installation only when plugged in</li>
 
-<li><strong>5229</strong></li>
+<li>Installation only when battery has specified level of charge </li>
 
-<li><strong>5230</strong> </li></ul>
+<li>Custom upgrade postponement message</li></ul>
 </li>
+
+<li>Update packages use streaming to minimize available device storage space requirement</li>
+
+<li>Updates are delta packages, containing only the updates required to take the device from its present OS to desired OS</li>
 </ul>
-
-<hr>
-
-<h3 id="lifeguardovertheair" class="anchor"><a class="heading-anchor" href="#lifeguardovertheair"><span></span></a>LifeGuard Over the Air</h3>
-
-<p><strong>The mechanism for delivering LifeGuard OS updates to Zebra devices is called LifeGuard Over the Air, or LifeGuard OTA</strong>. The solution includes a set of REST APIs that can be used by EMM solution providers to interface with Zebra servers and automate updates of managed devices. </p>
-
-<p>Organizations that have deployed an EMM system integrated with LifeGuard OTA no longer have to manually retrieve updates from the Zebra Support Portal and its StageNow tool. Updates can be viewed, selected and applied from within compatible EMM systems. In addition, StageNow 5.0 and later integrates with the LifeGuard database of updates, which removes the need administrators to manually identify the OS and LifeGuard image(s) required for upgrade operation(s).</p>
-
-<blockquote>
-  <p>EMM solution providers interested in integrating with Zebra LifeGuard APIs can learn more at the <a href="https://developer.zebra.com/apis">Zebra Developer Portal</a>. <i class="fa fa-external-link" aria-hidden="true"></i></p>
-</blockquote>
 
 <hr>
 
@@ -269,9 +259,11 @@
 <li><strong>Smaller update packages further reduce upgrade times</strong> while delivering the all required fixes and patches, helping to minimize network bandwidth usage. </li>
 </ul>
 
-<h3 id="newinlifeguardota30" class="anchor"><a class="heading-anchor" href="#newinlifeguardota30"><span></span></a>New in LifeGuard OTA 3.0</h3>
+<hr>
 
-<h4 id="smallerupdates" class="anchor"><a class="heading-anchor" href="#smallerupdates"><span></span></a>Smaller Updates</h4>
+<h3 id="lifeguardotasummer21update" class="anchor"><a class="heading-anchor" href="#lifeguardotasummer21update"><span></span></a>LifeGuard OTA Summer '21 Update</h3>
+
+<h4 id="smallerupdatefiles" class="anchor"><a class="heading-anchor" href="#smallerupdatefiles"><span></span></a>Smaller Update Files</h4>
 
 <p>LifeGuard OTA Zebra now employs smaller OS update package for devices running Android 11 than previously available. Zebra's minimal update packages help to minimize update times and optimize network bandwidth for EMMs performing over-the-air delivery. </p>
 
@@ -315,6 +307,55 @@
 </ul>
 
 <!-- 
+
+FROM OCT 6, 2021:
+
+Existing Features of LifeGuard OTA  
+
+OS Update over the air
+Automatically calculates the packages required for installation and upgrades the devices
+Ability to install customer chosen Update or Update to Latest available from Zebra
+Ability to specify a local intranet server to download package from ( to reduce the internet traffic)
+Ability to schedule a deployment
+Fine grain configurability for download / install start time
+Configure time windows under which installation can be done
+Ability to Postpone the installation in case end user is busy
+Deploy to up to 2500 devices in  a single deployment  
+Support available on all Android devices starting Android N patch 19
+
+
+NOTE: These features may vary slightly in behavior depending on the EMM being used
+
+------
+
+drek from earlier: 
+
+New APIs available for integration by EMMs to provide customer more granular control
+
+### September, 2021
+
+* **Install Rules**
+
+LifeGuard OTA Zebra now employs smaller OS update package for devices running Android 11 than previously available. Zebra's minimal update packages help to minimize update times and optimize network bandwidth for EMMs performing over-the-air delivery. 
+
+### July, 2021
+
+#### Smaller Updates
+
+LifeGuard OTA Zebra now employs smaller OS update package for devices running Android 11 than previously available.Zebra's minimal update packages help to minimize update times and optimize network bandwidth for EMMs performing over-the-air delivery.
+
+#### AB Streaming
+
+Updates are now streamed to some devices, eliminating the need to fully download the image prior to installation. Device support for streaming:
+
+* Android 11: All devices, app packages
+* Android 10: For full OTA packages (baseline only)
+* Android 8.x (Oreo): Supported only on PS20J devices with BSP 1.30.04 Patch 19 (or later)
+
+NOTE: Devices running Android 9.x do not support OS-update streaming.
+-->
+
+<!-- 
 <img alt="image" style="height:350px" src="VisibilityIQ_dashboard.png"/>
 _Click image to enlarge; ESC to exit_. 
 <br>
@@ -353,7 +394,7 @@ _Click image to enlarge; ESC to exit_.
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2021 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
