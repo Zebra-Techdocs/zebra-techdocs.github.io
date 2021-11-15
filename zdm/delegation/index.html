@@ -78,18 +78,28 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/zdm/usage">
-                                    Using ZDM
+                            <a href="/zdm/query">
+                                    Query Device
                             </a>
                         </li>
                         <li>
                             <a href="/zdm/delegation">
-                                    Using Delegation Scopes
+                                    Delegate Access
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/zdm/usage">
+                                    Architecture
                             </a>
                         </li>
                         <li>
                             <a href="/zdm/faq">
                                     FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/zdm/api">
+                                    APIs
                             </a>
                         </li>
                         <li>
@@ -220,7 +230,112 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="underconstruction" class="anchor"><a class="heading-anchor" href="#underconstruction"><span></span></a><code>UndER CoNStrUcTion</code></h2>
+                                        <p></p><h4 id="underconstruction" class="anchor"><a class="heading-anchor" href="#underconstruction"><span></span></a><code>UndER CoNStrUcTion</code></h4>
+
+<h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p><strong>Delegation Scopes is a method by which the Android Device Policy Manager (DPM) APIs allow a device owner (DO) such as an Enterprise Mobility Management (EMM) agent to enable other apps to use some DPM functions</strong>. Apps targeting Android 11 (API 30) and later can declare that access to one or more of their interfaces should be controlled, and that an administrator can be allowed to delegate access to other apps within a given scope. The Android DPM implementation of Delegation Scopes covers package and certificate management and a few other categories. Zebra has adopted and expanded Delegation Scopes to allow applications to control access to their interfaces by limiting their use to applications to which the administrator has granted a suitable Delegation Scope. Zebra Device Manager (ZDM), a new service developed as part of the transition to Android 11 and 12, handles Delegation Scopes on the device. </p>
+
+<h4 id="requiredactions" class="anchor"><a class="heading-anchor" href="#requiredactions"><span></span></a>Required Actions:</h4>
+
+<ul>
+<li><strong>Developers</strong> that currently protect their app interfaces using MX/AccessMgr <strong>must switch to using Delegation Scopes and ZDM</strong>. </li>
+
+<li><strong>Administrators</strong> formerly granting access using MX/AccessMgr <strong>must switch to using Delegation Scopes and Zebra OEMConfig</strong>. </li>
+</ul>
+
+<blockquote>
+  <p><strong>NOTE</strong>: Apps that use protected <strong><em>services</em></strong> require NO modifications for these changes.</p>
+</blockquote>
+
+<hr>
+
+<h3 id="delegationscopesandzdm" class="anchor"><a class="heading-anchor" href="#delegationscopesandzdm"><span></span></a>Delegation Scopes and ZDM</h3>
+
+<p><img alt="image" style="height:550px" src="scoped_storage_diagram.png">
+<em>Click images to enlarge; ESC to exit.</em>
+<br></p>
+
+<p><strong>The relationship between Delegation Scopes and ZDM is usually transparent to the developer. Apps calling for access to another app's interface(s) must be explicitly granted permission by the initiating app; ZDM manages those permissions</strong>. When an app attempts to use an interface that the implementing app has chosen to protect using a <a href="../faq/whataredelegationscopes">Delegation Scope</a>, the implementing app must query ZDM to determine whether the calling app has been granted (by the administrator) a Delegation Scope that allows access to that interface. When a given function supported by ZDM or a Zebra app is controlled by a Delegation Scope, it allows only <strong><em>direct</em></strong> use of that function by a genuine instance of an app that has been explicitly granted that Delegation Scope.</p>
+
+<!-- OLD (replaced by above)
+When an app attempts to use an interface that the implementing app has chosen to protect using a Delegation Scope, the implementing app queries ZDM to determine whether the calling app has been granted (by the administrator) access to the Delegation Scope that the implementing app has decided should grant access to that interface. Similar to using an "allowlist" or "whitelist" in MX/AccessMgr, the calling app would not really "know" that ZDM was involved, but should be designed to gracefully handle instances when the implementing app rejects the calling app's attempt to use a protected interface.
+ -->
+
+<p><strong>The exception is when the calling app attempts to access an interface indirectly, such as through an intent</strong>. As in the MX/AccessMgr model, the calling app must acquire a token, which in the new model comes from ZDM. The token is sent by the calling app via intent to the implementing app, which checks with ZDM to determine whether the token was issued to an app entitled to access the protected API. <strong>When a genuine instance of an app is allowed <em>direct</em> use of a function controlled by a Delegation Scope, that app <em>might</em> choose to allow <em>indirect</em> use of that function by another application through a defined interface such as AIDL or a JavaScript callback</strong>. In such cases, the app that's allowed to use the function becomes responsible for ensuring that any use of that by another app is appropriately controlled.</p>
+
+<h3 id="usagenotes" class="anchor"><a class="heading-anchor" href="#usagenotes"><span></span></a>Usage Notes</h3>
+
+<ul>
+<li><strong>Each Delegation Scope must have a unique name</strong>. </li>
+
+<li><strong>Delegation Scope names must be in the form</strong> <code><u>delegation-zebra-bind-</u>[app name]-xxxx</code>.</li>
+
+<li>The <strong><u>underlined section</u> above is a mandatory prefix</strong>. 
+<br> <strong>Example</strong>: delegation-zebra-bind-zebradevicemanager-config-service`. </li>
+
+<li><strong>Delegation Scope status can be determined <a href="../query">using ZDM queries</a></strong>,</li>
+
+<li><strong>Apps with functions controlled by Delegation Scopes are assumed to be trustworthy</strong> for identifying apps trusted to use them.</li>
+
+<li><strong>Apps created using EMDK are automatically trusted to access Zebra apps</strong>. </li>
+
+<li><strong>Customer apps created using EMDK must be granted access to non-Zebra apps</strong> by an EMM administrator. </li>
+</ul>
+
+<hr>
+
+<h2 id="zebraappdelegationscopes" class="anchor"><a class="heading-anchor" href="#zebraappdelegationscopes"><span></span></a>Zebra-app Delegation Scopes</h2>
+
+<p>The following Delegation Scopes can be used to grant third-party apps access to Zebra-app interfaces designated as accessible for use by non-Zebra apps. </p>
+
+<table class="facelift" style="width:100%" border="1" padding="5px">
+<tbody>
+
+  <tr bgcolor="#dce8ef">
+    <th>Zebra App to Access</th>
+    <th>Delegation Scope Name</th>
+  </tr>
+
+<tr>
+  <td><b>DataWedge Query</b> (intent APIs for Enumerate Scanners,
+  Get DataWedge Status, etc.)</td>
+  <td><code>delegation-zebra-datawedge-api-access-query</code></td>
+</tr>
+
+<tr>
+  <td><b>DataWedge Notification</b> (intent APIs for Scanner Status, Profile Switch, etc.)</td>
+  <td><code>delegation-zebra-datawedge-api-access-notification</code></td>
+</tr>
+
+<tr>
+  <td><b>DataWedge Runtime</b> (intent APIs for Enable/Disable DataWedge, Soft Scan Trigger, etc.)</td>
+  <td><code>delegation-zebra-datawedge-api-access-control</code></td>
+</tr>
+
+<tr>
+  <td><b>DataWedge Configuration</b> (intent APIs for Set Config, Create Profile, etc.) </td>
+  <td><code>delegation-zebra-datawedge-api-access-config</code></td>
+</tr>
+
+<tr>
+  <td><b>EMDK-built customer apps</b>*</td>
+  <td><code>delegation-zebra-emdk-access</code></td>
+</tr>
+
+<tr>
+  <td><b>Secure Storage Manager</b></td>
+  <td><code>delegation-zebra-file-deployment</code></td>
+</tr>
+
+<tr>
+  <td><b>Zebra Workstation Connect</b></td>
+  <td><code>delegation-zwc-developer-api-access-control</code></td>
+</tr>
+
+</tbody></table>
+
+<p>* <em>In the future, only EMDK-built apps with an EMDK Delegation Scope will be allowed to submit JavaScript/JSON to ZDM using EMDK ProfileManager APIs</em>.</p>
 
 <!-- ## Also See
 
