@@ -78,7 +78,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/mx/flux/about">
+                            <a href="/flux/about">
                                     MX Transition
                             </a>
                         </li>
@@ -782,6 +782,24 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -1023,49 +1041,10 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="auto-rotate-onoff"><a class="heading-anchor" href="#auto-rotate-onoff"><span></span></a>Auto-rotate On/Off</h2>
-                                    <p class="">
-
-        </p><p>This is the On/Off switch for automatic screen rotation, which automatically rotates the display based on orientation of the device. </p>
-
-
-<p></p>
+                                    <p class=""></p><p>This is the On/Off switch for automatic screen rotation, which automatically rotates the display based on orientation of the device. </p><p></p>
                                         <blockquote>
                                         <p><b><u>Status</u>:</b> In devices running Android 12 and later, this feature can be accessed through StageNow and compatible EMM systems, or using Android Device Policy Manager (DPM) APIs.</p>
                                         <p><b>Parm Name:</b> Autorotate</p>
@@ -1200,15 +1179,23 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="allowed-orientations"><a class="heading-anchor" href="#allowed-orientations"><span></span></a>Allowed Orientations</h2>
-                                    <p class="">
-
-        </p><p>Used to select which screen orientation(s) to allow when auto-rotation is enabled on the device. Selecting "All except portrait inverted (180 degrees)" (option 2) prevents the screen from flipping when momentarily pointing the device downward, for example, to scan a barcode below waist level. </p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to select which screen orientation(s) to allow when auto-rotation is enabled on the device. Selecting "All except portrait inverted (180 degrees)" (option 2) prevents the screen from flipping when momentarily pointing the device downward, for example, to scan a barcode below waist level. </p><p></p>
                                         <blockquote>
                                         <p><b>Note:</b> Supported only on devices running Android 10 or later. Android 11 requires MX 11.2 or later.</p>
                                         <p><b>Shown if:</b> Auto Rotate is set to "Turn On"</p>
@@ -1354,10 +1341,70 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="locked-orientation-positions"><a class="heading-anchor" href="#locked-orientation-positions"><span></span></a>Locked Orientation Positions</h2>
-                                    <p class=""></p><p>Used to select the orientation to lock in when auto-rotation is not used.</p><p></p>
+                                    <p class=""></p><p>Used to select the orientation to lock in when auto-rotation is not used.</p>
+
+<!-- 12/8/21- Below is modified per TUT-60800, pending verification from eng. 
+---
+csp: displaymgr
+title: Locked Orientation Positions
+type: parm
+order: 7
+mx: "10.5"
+apilevel: "29"
+devicetype: A
+info: Some apps that require a particular orientation (e.g. DataWedge, StageNow) override this setting. The settings of this parameter are ignored on devices with physical (capacitive-touch) orientation buttons such as the EC30 and TC77. Supported only on devices running Android 10 or later. Android 11 requires MX 11.2 or later. Landscape is the default orientation on tablet devices, and the basis for other orientation references in this parameter. 
+parm:
+  presentif: Auto Rotate is set to "Turn Off"
+  pivotal: No
+  name: LockedOrientation
+  type: list
+  list:
+    - code: 86
+      mx: "10.5"
+      apilevel: "29"
+      name: Do not change
+      description: This value (or the absence of this parm from the XML) causes no change to current device behavior; any previously selected setting is retained.
+    - code: 0
+      devicetype: A
+      name: Portrait (No rotation)
+      mx: "10.5"
+      apilevel: "29"
+      description: Lock screen orientation in Portrait mode (Landscape on tablets).
+    - code: 1
+      devicetype: A
+      name: Landscape left (90 degrees)
+      mx: "10.5"
+      apilevel: "29"
+      description: Lock screen orientation in Landscape mode (Portrait on tablets).
+    - code: 2
+      devicetype: A
+      name: Portrait inverted (180 degrees)
+      mx: "10.5"
+      apilevel: "29"
+      description: Lock screen orientation in inverted-Portrait mode (inverted-Landscape on tablets).
+    - code: 3
+      devicetype: A
+      name: Landscape right (270 degrees)
+      mx: "10.5"
+      apilevel: "29"
+      description: Lock screen orientation in inverted-Landscape mode (inverted-Portrait on tablets).
+---
+
+Used to select the orientation to lock in when auto-rotation is not used.
+--><p></p>
                                         <blockquote>
                                         <p><b>Note:</b> Some apps that require a particular orientation (e.g. DataWedge, StageNow) override this setting. The settings of this parameter are ignored on devices with physical (capacitive-touch) orientation buttons such as the EC30 and TC77. Supported only on devices running Android 10 or later. Android 11 requires MX 11.2 or later.</p>
                                         <p><b>Shown if:</b> Auto Rotate is set to "Turn Off"</p>
@@ -1529,6 +1576,9 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="lock-override-button-enabledisable"><a class="heading-anchor" href="#lock-override-button-enabledisable"><span></span></a>Lock Override Button Enable/Disable</h2>
@@ -1645,49 +1695,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2074,6 +2081,38 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="stay-awake-enabledisable"><a class="heading-anchor" href="#stay-awake-enabledisable"><span></span></a>Stay Awake Enable/Disable</h2>
@@ -2181,6 +2220,28 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2357,27 +2418,10 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="default-display-for-remote-control"><a class="heading-anchor" href="#default-display-for-remote-control"><span></span></a>Default Display for Remote Control</h2>
-                                    <p class="">
-
-        </p><p>Used to select which display to use for Media Projection and Key and Touch Injection operations when running an app to remotely control the device or perform similar activities.</p>
-
-
-<p></p>
+                                    <p class=""></p><p>Used to select which display to use for Media Projection and Key and Touch Injection operations when running an app to remotely control the device or perform similar activities.</p><p></p>
                                         <blockquote>
                                         <p><b>Parm Name:</b> DefaultDisplay</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -2480,6 +2524,8 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -2597,16 +2643,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2808,12 +2844,15 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="27" data-smartdoc="">
 
                                     <h2 class="anchor" id="brightness-level"><a class="heading-anchor" href="#brightness-level"><span></span></a>Brightness Level</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the screen backlight brightness level (from 0-100) as a percentage of the maximum. Enter -1 to leave current device setting unchanged. <strong>On devices running Android 9.x Pie and later</strong>, which support setting brightness while Adaptive Brightness is On, input from the ambient light sensor causes this setting to change. To prevent automatic changes, set Adaptive Brightness to Off.</p>
+                                    <p class=""></p><p>Used to enter the screen backlight brightness level (from 0-100) as a percentage of the maximum. Enter -1 to leave current device setting unchanged. <strong>On devices running Android 9.x Pie and later</strong>, which support setting brightness while Adaptive Brightness is On, input from the ambient light sensor causes this setting to change. To prevent automatic changes, set Adaptive Brightness to Off.</p>
 
 <p><strong>Parm value input rules</strong>:</p>
 
@@ -2821,10 +2860,7 @@
 <li>Accepts an integer from -1–100</li>
 
 <li>If no value is entered, default value of -1 is used</li>
-</ul>
-
-
-<p></p>
+</ul><p></p>
                                         <blockquote>
                                         <p><b><u>Status</u>:</b> In devices running Android 12 and later, this feature can be accessed through StageNow and compatible EMM systems, or using Android Device Policy Manager (DPM) APIs.</p>
                                         <p><b>Parm Name:</b> Brightnesslevel</p>
@@ -2843,16 +2879,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3022,6 +3048,15 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3241,6 +3276,7 @@
                                     
                                     
                                     
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="screen-shot-enabledisable"><a class="heading-anchor" href="#screen-shot-enabledisable"><span></span></a>Screen Shot Enable/Disable</h2>
@@ -3400,13 +3436,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="screen-blanking-enabledisable"><a class="heading-anchor" href="#screen-blanking-enabledisable"><span></span></a>Screen Blanking Enable/Disable</h2>
@@ -3526,7 +3555,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="7.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-blanking-debounce-delay"><a class="heading-anchor" href="#set-blanking-debounce-delay"><span></span></a>Set Blanking Debounce Delay</h2>
@@ -3556,6 +3584,8 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -3654,6 +3684,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="set-blanking-signal-polarity"><a class="heading-anchor" href="#set-blanking-signal-polarity"><span></span></a>Set Blanking Signal Polarity</h2>
@@ -3740,6 +3772,22 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -4169,21 +4217,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -4203,22 +4236,6 @@ filtering
         csp: "displaymgr",
         name: "Display Manager",
         parms: [
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4501,6 +4518,19 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "Auto Rotate is set to &quot;Turn On&quot;",
                             name: "AllowedOrientations",
@@ -4561,6 +4591,16 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4705,6 +4745,9 @@ filtering
                     
                     
                     
+                    
+                    
+                    
                     {
                             presentif: "Auto Rotate is set to &quot;Turn Off&quot;",
                             name: "LockOverrideButton",
@@ -4765,49 +4808,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5078,6 +5078,38 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "StayAwake",
@@ -5138,6 +5170,28 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -5267,18 +5321,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "DefaultDisplay",
@@ -5348,6 +5390,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                             presentif: "Secondary Display Mode is &quot;Mirror Device Screen&quot;",
                             name: "ResizableWindows",
@@ -5408,16 +5452,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5567,6 +5601,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -5586,16 +5625,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5694,6 +5723,15 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -5838,6 +5876,7 @@ filtering
                     
                     
                     
+                    
                     {
                             presentif: "",
                             name: "ScreenShotUsage",
@@ -5898,13 +5937,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6017,7 +6049,6 @@ filtering
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "",
@@ -6037,6 +6068,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     
                     
@@ -6090,6 +6123,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                             presentif: "Screen Blanking is set to &quot;When Triggered by Signal&quot;",
                             name: "ScreenBlankingSignalPolarity",
@@ -6133,6 +6168,7 @@ filtering
                         
                         ]
                     },
+                    
                     
                     
                     
