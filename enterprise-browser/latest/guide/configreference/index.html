@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.2
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.3
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-2','1-4','/enterprise-browser/3-2/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-3','1-4','/enterprise-browser/3-3/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-2/guide/about">
+                            <a href="/enterprise-browser/3-3/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-3/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/tutorial/">
+                            <a href="/enterprise-browser/3-3/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/guide/samples">
+                            <a href="/enterprise-browser/3-3/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/guide">
+                            <a href="/enterprise-browser/3-3/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/guide/licensing">
+                            <a href="/enterprise-browser/3-3/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/guide/migration">
+                            <a href="/enterprise-browser/3-3/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/guide/configreference">
+                            <a href="/enterprise-browser/3-3/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/api">
+                            <a href="/enterprise-browser/3-3/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/download">
+                            <a href="/enterprise-browser/3-3/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-2/search">
+                            <a href="/enterprise-browser/3-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="configxml-reference" class="anchor"><a class="heading-anchor" href="#configxml-reference"><span></span></a>Config.xml Reference</h1>
                                     <p>
                                             Enterprise Browser
-                                            3.2
+                                            3.3
                                     </p>
                                 </div>
                             </section>                    
@@ -254,10 +254,10 @@
 
 <p>The default <code>Config.xml</code> file for Android devices is displayed below, followed by explanations of all tags and parameter settings for Android and Windows Mobile/CE. The EB <code>Config.xml</code> can be edited with an ordinary text editor or with the <a href="../ConfigEditor">Config Editor utility</a> included with the installation of Enterprise Browser 1.3 and later. </p>
 
-<h3 id="important" class="anchor"><a class="heading-anchor" href="#important"><span></span></a><code>IMPORTANT:</code></h3>
+<h3 id="iclassfafaexclamationcircleariahiddentruestylecolorff0000iimportant" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcircleariahiddentruestylecolorff0000iimportant"><span></span></a><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> IMPORTANT</h3>
 
 <blockquote>
-  <p>Some device EB settings parameters are executed through the <a href="https://techdocs.zebra.com/mx/overview/">MX Framework</a>, Zebra's device management layer. If an EB app containing such parameters is executed immediately after a device is booted, some or all of the instructions could fail if the MX Framework isn't ready in time to receive them. To prevent such failures, <strong><u>Zebra recommends waiting 20 seconds after a device starts up before launching any EB app</u></strong> that contains one or more of the configuration parameters listed below. </p>
+  <p>Some EB device-setting parameters are executed through the <a href="https://techdocs.zebra.com/mx/overview/">MX Framework</a>, Zebra's device management layer. If an EB app containing such parameters is executed immediately after a device is booted, some or all of the instructions could fail if the MX Framework isn't ready in time to receive them. To prevent such failures, <strong><u>Zebra recommends waiting 20 seconds after a device starts up before launching any EB app</u></strong> containing one or more of the configuration parameters listed below. </p>
 </blockquote>
 
 <h4 id="mxbasedconfigparameters" class="anchor"><a class="heading-anchor" href="#mxbasedconfigparameters"><span></span></a>MX-based Config Parameters:</h4>
@@ -282,12 +282,12 @@
 
 <ul>
 <li><p>On the Enterprise Tablet, the <code>Config.xml</code> file is read from: 
-<code>/Android/data/com.symbol.EnterpriseBrowser/</code></p></li>
+<code>/Android/data/com.zebra.mdna.enterprisebrowser/</code></p></li>
 
 <li><p>On all other devices, Enterprise Browser will attempt to read the <code>Config.xml</code> file from the <code>/Config</code> directory off the installation root, which varies by device platform: </p>
 
 <ul>
-<li><strong>Android</strong>: <code>/Android/data/com.symbol.enterprisebrowser</code></li>
+<li><strong>Android</strong>: <code>/Android/data/com.zebra.mdna.enterprisebrowser/</code></li>
 
 <li><strong>Windows</strong>: <code>\Program Files\EnterpriseBrowser\Config</code></li></ul></li>
 </ul>
@@ -326,38 +326,26 @@
         <th>Description</th>
     </tr>
       <tr>
-        <td>%INSTALLDIR%<br>(read-write)</td>
+        <td>&nbsp;&nbsp;%INSTALLDIR%&nbsp;&nbsp;<br>(read-write)</td>
         <td>
-        Installation directory of the Enterprise Browser app<br>(i.e. <strong>/Android/Data/com.symbol.enterprisebrowser</strong>)
+        &nbsp;&nbsp;Installation directory of the Enterprise Browser app<br>(i.e. <strong>/Android/data/com.zebra.mdna.enterprisebrowser/</strong>)
         </td>
       </tr>
       <tr>
-        <td>%PRIMARYDIR%<br>(read-write)</td>
+        <td>&nbsp;&nbsp;%PERSISTCONFDIR%&nbsp;&nbsp;<br>(read-write)</td>
         <td>
-        The root directory of internal device storage<br>(i.e. <strong>/storage/sdcard0</strong>)
-        </td>
-      </tr>
-      <tr>
-        <td>%SECONDARYDIR%<br>(read-only)</td>
-        <td>
-        The root directory of external storage<br>(i.e. <strong>/storage/sdcard1</strong>)
-        </td>
-      </tr>
-      <tr>
-        <td>%PERSISTCONFDIR%<br>(read-write)</td>
-        <td>
-        A directory that persists after an Enterprise Reset of the device<br>(<strong>i.e. /enterprise/device/enterprisebrowser</strong>)
+        &nbsp;&nbsp;A directory that persists after an Enterprise Reset of the device<br>(<strong>i.e. /enterprise/device/enterprisebrowser</strong>)
         </td>
       </tr>
 </tbody></table>
 </div>
 
-<p><strong>Notes</strong>:</p>
+<h4 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes:</h4>
 
 <ul>
-<li><p><strong>Zebra recommends using the %PERSISTCONFDIR% variable only with MDM and/or EMM systems</strong> or in mass deployment scenarios.</p></li>
+<li><strong>The %PRIMARYDIR% and %SECONDARYDIR% variables are not supported on devices running Android 11 or later</strong>. </li>
 
-<li><p><strong>The %SECONDARYDIR% variable is read-only</strong>; Enterprise Browser cannot write to an external SD Card.</p></li>
+<li><strong>As appropriate, Zebra recommends switching to the %PERSISTCONFDIR% variable</strong>, which resolves to a directory that persists after an <a href="/mx/powermgr/#enterprisereset">Enterprise Reset</a> is performed on the device.</li>
 </ul>
 
 <hr>
@@ -828,7 +816,7 @@
 
 <p><strong>Applies only to devices running Android with Google Mobile Services (GMS)</strong>. Controls whether Android Speech Recognition (ASR) features are enabled in the app. <strong>Enabled by default</strong>. A value of “1” enables ASR and activates the ASR parameters that follow below. </p>
 
-<h4 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes</h4>
+<h4 id="notes-1" class="anchor"><a class="heading-anchor" href="#notes-1"><span></span></a>Notes</h4>
 
 <ul>
 <li><strong>Zebra recommends installing the latest language package in the device (for the Google speech recognition engine)</strong>. </li>
@@ -2422,7 +2410,7 @@ Controls whether Enterprise Browser history is deleted when the app is launched.
 <li><strong>AUTO</strong> - Locks app in "natural" orientation of device (see Notes, below)</li>
 </ul>
 
-<h5 id="notes-1" class="anchor"><a class="heading-anchor" href="#notes-1"><span></span></a>Notes:</h5>
+<h5 id="notes-2" class="anchor"><a class="heading-anchor" href="#notes-2"><span></span></a>Notes:</h5>
 
 <ul>
 <li><strong>Portrait mode is the "natural" orientation of all Zebra devices</strong> <em>except</em> the ET55, VC80 and WT6000, for which it is landscape. </li>
@@ -3859,40 +3847,6 @@ For Android - If alarm.ogg file is present under '/sdcard' directory in the devi
 
 <h2 id="dominjection" class="anchor"><a class="heading-anchor" href="#dominjection"><span></span></a>DOM injection</h2>
 
-<h3 id="appconfigfilepath" class="anchor"><a class="heading-anchor" href="#appconfigfilepath"><span></span></a>appConfigFilePath</h3>
-
-<p><strong>Applies to Android devices only</strong>. Specifies the path of the <code>appconfiguration.txt</code> file on the device, which contains user-created data for injected DOM elements. Path can be specified as true values or substitution variables. Variables differ by platform and by Android version. </p>
-
-<p><strong>NOTE: This tag is not present in the default</strong> <code>Config.xml</code> <strong>file</strong> and must be added manually. <strong>If tag is missing or contains no value</strong>, EB by default seeks the <code>appconfiguration.txt</code> file in the EB install directory (<code>%INSTALLDIR%</code>).</p>
-
-<p><strong>Possible Values</strong>:</p>
-
-<ul>
-<li>Fully qualified path and file name</li>
-
-<li>Accepts substitution variables: 
-
-
-<ul>
-<li><code>%INSTALLDIR%</code></li>
-
-<li><code>%PRIMARYDIR%</code></li>
-
-<li><code>%SECONDARYDIR%</code></li>
-
-<li><code>%PERSISTCONFDIR%</code> </li></ul>
-</li>
-</ul>
-
-<h4 id="example-131" class="anchor"><a class="heading-anchor" href="#example-131"><span></span></a>Example</h4>
-
-<pre class="prettyprint"><code>
-&lt;DOMInjectionUtility&gt;
-    &lt;appConfigFilePath value=" file://%INSTALLDIR%/appconfiguration.txt "/&gt;
-    ...
-&lt;/DOMInjectionUtility&gt;
-</code></pre>
-
 <h3 id="dominjectionutilty" class="anchor"><a class="heading-anchor" href="#dominjectionutilty"><span></span></a>DOMInjectionUtilty</h3>
 
 <p><strong>Applies only to Android devices with EB 2.6 or later</strong>. Controls whether the device is in "training mode" for use with the <a href="../eac">Enterprise Application Configurator</a> utility, a tool introduced with EB 2.6 that simplifies DOM injection implementation. </p>
@@ -3945,7 +3899,7 @@ For Android - If alarm.ogg file is present under '/sdcard' directory in the devi
 </li>
 </ul>
 
-<h4 id="example-132" class="anchor"><a class="heading-anchor" href="#example-132"><span></span></a>Example</h4>
+<h4 id="example-131" class="anchor"><a class="heading-anchor" href="#example-131"><span></span></a>Example</h4>
 
 <pre class="prettyprint"><code> &lt;DOMInjectionUtility&gt;
     &lt;appConfigEnabled value="1"/&gt;
@@ -3956,6 +3910,36 @@ For Android - If alarm.ogg file is present under '/sdcard' directory in the devi
         &lt;indicatorWidth value="90"/&gt;
         &lt;indicatorImage value="file://%INSTALLDIR%/myimage.png"/&gt;
  &lt;/DOMInjectionUtility&gt; 
+</code></pre>
+
+<h3 id="appconfigfilepath" class="anchor"><a class="heading-anchor" href="#appconfigfilepath"><span></span></a>appConfigFilePath</h3>
+
+<p><strong>Applies to Android devices only</strong>. Specifies the path of the <code>appconfiguration.txt</code> file on the device, which contains user-created data for injected DOM elements. Path can be specified as true values or substitution variables. Variables differ by platform and by Android version. </p>
+
+<p><strong>NOTE: This tag is not present in the default</strong> <code>Config.xml</code> <strong>file</strong> and must be added manually. <strong>If tag is missing or contains no value</strong>, EB by default seeks the <code>appconfiguration.txt</code> file in the EB install directory (<strong>%INSTALLDIR%</strong>).</p>
+
+<p><strong>Possible Values</strong>:</p>
+
+<ul>
+<li>Fully qualified path and file name</li>
+
+<li>Accepts substitution variables: 
+
+
+<ul>
+<li><strong>%INSTALLDIR%</strong></li>
+
+<li><strong>%PERSISTCONFDIR%</strong> </li></ul>
+</li>
+</ul>
+
+<h4 id="example-132" class="anchor"><a class="heading-anchor" href="#example-132"><span></span></a>Example</h4>
+
+<pre class="prettyprint"><code>
+&lt;DOMInjectionUtility&gt;
+    &lt;appConfigFilePath value=" file://%INSTALLDIR%/appconfiguration.txt "/&gt;
+    ...
+&lt;/DOMInjectionUtility&gt;
 </code></pre>
 
 <h3 id="customdomelements" class="anchor"><a class="heading-anchor" href="#customdomelements"><span></span></a>CustomDOMElements</h3>
