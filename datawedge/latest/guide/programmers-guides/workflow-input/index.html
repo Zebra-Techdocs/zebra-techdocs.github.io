@@ -288,7 +288,7 @@ Video providing step-by-step instructions on how to develop an app to capture da
 
 <li>Built-in camera on mobile computer</li>
 
-<li><strong>Mobility DNA OCR Wedge license</strong><!--<a href="/licensing/about/">Mobility DNA OCR Wedge license</a>--> - required for each individual OCR feature:
+<li><a href="/licensing/about/">Mobility DNA OCR Wedge license</a> - required for each individual OCR feature:
 
 
 <ul>
@@ -666,7 +666,7 @@ public class ImageProcessing{
 
 <h2 id="ocrresultoutput" class="anchor"><a class="heading-anchor" href="#ocrresultoutput"><span></span></a>OCR Result Output</h2>
 
-<p>The scan result intent contains a String extra called <code>com.symbol.datawedge.data</code> from which the data can be extracted. This section lists the Field Names available for each OCR feature. See <a href="#3extractstringdatafromtheintent">Extract string data from the intent</a> for instructions on usage.</p>
+<p>The scan result intent contains a String extra called <code>com.symbol.datawedge.data</code> from which the data can be extracted. This section provides the Field Names available for each OCR feature, with additional Field Names available specifically for <a href="#identificationdocument">identification documents</a>. See <a href="#3extractstringdatafromtheintent">Extract string data from the intent</a> for instructions on usage.</p>
 
 <h3 id="ocrresult" class="anchor"><a class="heading-anchor" href="#ocrresult"><span></span></a>OCR Result</h3>
 
@@ -676,11 +676,11 @@ public class ImageProcessing{
     <th style="width:65%">Description</th>
   </tr>
   <tr>
-    <td>Result</td>
-    <td>Text data read from the OCR-based feature: license plate, vehicle identification number, tire identification number, or meter. Exception: See  <a href="#identificationdocument">Identification Document</a>.</td>
+    <td>string_data</td>
+    <td>Text data read from OCR-based features: license plate, vehicle identification number, tire identification number, or meter. The exception is <a href="#identificationdocument">identification document</a>, which can return a multitude of Field Names, see the section below.</td>
   </tr>
   <tr>
-    <td>String Length</td>
+    <td>data_size</td>
     <td>Length of the data</td>
   </tr>
 </tbody></table>
@@ -689,9 +689,21 @@ public class ImageProcessing{
 
 <h4 id="identificationdocument" class="anchor"><a class="heading-anchor" href="#identificationdocument"><span></span></a>Identification Document</h4>
 
-<p>The following data fields can be read from driver licenses, ID cards and/or insurance cards. Some field names are different for documents based on different geographical regions.</p>
+<p>The table below displays the data fields that can be read from driver licenses, ID cards and/or insurance cards. Some field names are different for documents based on different geographical regions.</p>
 
-<p>Legend:</p>
+<p>The data returned depends on the content of the identification document. If a Field Name (in the table below) is designated as Mandatory, it may not exist in some identification documents. In those cases, no data would be returned when that Field Name is queried. For example:</p>
+
+<ul>
+<li><strong>Mexican voter ID (Type C) -</strong> date of birth and document number does not exist</li>
+
+<li><strong>Mexican voter ID (Type G) -</strong> document number does not exist</li>
+
+<li><strong>Australian driving license (NSW) -</strong>  first name and last name does not exist as separate fields, they are combined into a single field called "name."</li>
+</ul>
+
+<p><br></p>
+
+<p><strong>Legend:</strong></p>
 
 <ul>
 <li><font color="blue">O</font> - Optional</li>
@@ -1170,7 +1182,7 @@ public class ImageProcessing{
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2021 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--
