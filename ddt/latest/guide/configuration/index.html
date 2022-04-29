@@ -54,7 +54,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.6
+                                            2.7
                         </p>
 
                     </ul>
@@ -65,36 +65,36 @@
 
 
                         <li>
-                            <a href="/ddt/2-6/guide/about">
+                            <a href="/ddt/2-7/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/guide/usage">
+                            <a href="/ddt/2-7/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/guide/configuration">
+                            <a href="/ddt/2-7/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/guide/criteria">
+                            <a href="/ddt/2-7/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/guide/managed-config">
+                            <a href="/ddt/2-7/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/search">
+                            <a href="/ddt/2-7/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
-
+<!--
                         <li class="dropdown languagedropdown">
                           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <img src="/images/flags/img-flag-usa.png" style="display:inline!important;" alt=""> US - English
                           <span class="caret"></span></button>
@@ -107,7 +107,7 @@
                                 <li><a onclick="changeLanguage('ddt','ddt/ddt-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
                                 <li><a onclick="changeLanguage('ddt','ddt/ddt-pt')"><img src="/images/flags/img-flag-portugal.png" style="display:inline!important;" alt="PT - Português"> PT - Português</a></li>
                           </ul>
-                        </li>                    
+                        </li>    -->                
                         
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
@@ -220,7 +220,7 @@
                                     <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.6
+                                            2.7
                                     </p>
                                 </div>
                             </section>                    
@@ -293,6 +293,8 @@
 
 <li><p><strong>continue_testing_on_failure -</strong> If set to <em>true</em>, the test automatically proceeds to the next section test until all tests are completed, even if the previous section test fails. Default value = <em>false</em>.</p></li>
 
+<li><p><strong>upload_only_on_failure -</strong> If set to <em>true</em>, result test logs are uploaded to the server only after a test failure. If <em>false</em>, uploads logs based on the specified test schedule.</p></li>
+
 <li><p><strong>show_extra_data -</strong> If set to <em>true</em>, informational data is displayed in the test results page. Refer to Test Criteria section to see the affected informational data. Default value = <em>true</em>.</p></li>
 
 <li><p><strong>debug –</strong> If set to <em>true</em>, application logging is displayed in logcat for debugging purposes. Default value = <em>true</em>.</p></li>
@@ -304,6 +306,7 @@ Sample settings content in configuration.xml:</p>
 <pre class="prettyprint"><code>  &lt;settings&gt;
       &lt;admin_mode&gt;true&lt;/admin_mode&gt;
       &lt;continue_testing_on_failure&gt;true&lt;/continue_testing_on_failure&gt;
+      &lt;upload_only_on_failure&gt;true&lt;/upload_only_on_failure&gt;
       &lt;show_extra_data&gt;true&lt;/show_extra_data&gt;
       &lt;debug&gt;true&lt;/debug&gt;
       &lt;close_on_result_acknowledge&gt;false&lt;/close_on_result_acknowledge&gt;
@@ -474,7 +477,7 @@ _ <strong>Read -</strong> checks if can read SD card * <strong>Write -</strong> 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--

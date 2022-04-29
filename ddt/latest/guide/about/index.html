@@ -54,7 +54,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.6
+                                            2.7
                         </p>
 
                     </ul>
@@ -65,32 +65,32 @@
 
 
                         <li>
-                            <a href="/ddt/2-6/guide/about">
+                            <a href="/ddt/2-7/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/guide/usage">
+                            <a href="/ddt/2-7/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/guide/configuration">
+                            <a href="/ddt/2-7/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/guide/criteria">
+                            <a href="/ddt/2-7/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/guide/managed-config">
+                            <a href="/ddt/2-7/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-6/search">
+                            <a href="/ddt/2-7/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -220,7 +220,7 @@
                                     <h1 id="about-device-diagnostic-tool" class="anchor"><a class="heading-anchor" href="#about-device-diagnostic-tool"><span></span></a>About Device Diagnostic Tool</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.6
+                                            2.7
                                     </p>
                                 </div>
                             </section>                    
@@ -263,7 +263,21 @@
 
 <p>Download DDT from the <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Support Portal</a>.</p>
 
-<h2 id="newin26" class="anchor"><a class="heading-anchor" href="#newin26"><span></span></a>New in 2.6</h2>
+<h2 id="newin27" class="anchor"><a class="heading-anchor" href="#newin27"><span></span></a>New in 2.7</h2>
+
+<ul>
+<li>New <a href="../managed-config/#uploadpreference">Upload Preference</a> option from Managed Config to specify whether to upload logs based on the specified test schedule or upload only after a test failure.</li>
+
+<li>New Android 11 device support, see <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Support Portal</a>.</li>
+
+<li>Fixed issue: On TC57 when performing a Button test, a scan error occurred due to the inability to detect the scan button. </li>
+
+<li>Known issue: When running more than one test and viewing the results in the <a href="https://www.zebra.com/us/en/services/visibilityiq.html">VisibilityIQ</a> dashboard, the start times are the same across the different tests. Similarly, the end times are also the same across the different tests.</li>
+</ul>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin26" class="anchor"><a class="heading-anchor" href="#newin26"><span></span></a>New in 2.6</h3>
 
 <ul>
 <li>New <strong>About</strong> screen added, containing version information. To access <strong>About</strong>, tap the menu on the top right of the main screen and select <strong>About</strong>.</li>
@@ -272,12 +286,10 @@
 
 <li>DDT now sends test result data to <a href="/zds">Zebra Data Service</a> for integration with <a href="https://www.zebra.com/us/en/services/visibilityiq.html">VisibilityIQ</a>.</li>
 
-<li>Added test completion (end) time to the log files, in addition to the test start time. </li>
+<li>Added test completion (end) time to the log files, in addition to the test start time.</li>
 
-<li>Known issue: When running more than one test and viewing the results in the <a href="https://www.zebra.com/us/en/services/visibilityiq.html">VisibilityIQ</a> dashboard, the start times are the same across the different tests. Similarly, the end times are also the same across the different tests. </li>
+<li>Known issue: When running more than one test and viewing the results in the <a href="https://www.zebra.com/us/en/services/visibilityiq.html">VisibilityIQ</a> dashboard, the start times are the same across the different tests. Similarly, the end times are also the same across the different tests.</li>
 </ul>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="newin25" class="anchor"><a class="heading-anchor" href="#newin25"><span></span></a>New in 2.5</h3>
 
@@ -578,13 +590,22 @@ The following table lists the supported GMS devices, except for MC33 which only 
 
 <h2 id="importantusagenotes" class="anchor"><a class="heading-anchor" href="#importantusagenotes"><span></span></a>Important Usage Notes</h2>
 
-<ol>
+<ul>
 <li><strong>Multiple Android user accounts -</strong> When using multiple Android user accounts on a single device, Device Diagnostic Tool use and functionality only applies to the active primary user.</li>
 
 <li><strong>Limitation due to low memory on the device -</strong> Once the available device memory is less than 3 MB, a message appears indicating there is no space on the device and logging will no longer take place. Additionally the Audio Test cannot be executed.</li>
 
 <li><strong>Split screen support -</strong> On Android N and above, Device Diagnostic Tool does not support split screen mode.</li>
-</ol>
+
+<li><strong>Android 10 and Android 11 limitations</strong> due to security restrictions:
+
+
+<ul>
+<li>In the WWAN test details screen, "Device ID" is not visible.</li>
+
+<li>In the History.log file, "Device ID" and "Device Serial#" is not visible.</li></ul>
+</li>
+</ul>
 
 <h2 id="br" class="anchor"><a class="heading-anchor" href="#br"><span></span></a><br></h2>
 
@@ -630,7 +651,7 @@ The following table lists the supported GMS devices, except for MC33 which only 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--
