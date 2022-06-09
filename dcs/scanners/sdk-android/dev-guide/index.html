@@ -58,7 +58,7 @@
                                 <a href="/dcs/scanners/sdk-android/about">About</a>
                             </li>
                             <li>
-                                <a href="/dcs/scanners/sdk-android/get-started">'How To' Videos</a>
+                                <a href="/dcs/scanners/sdk-android/sample-apps/">Sample Apps</a>
                             </li>
                             <li>
                                 <a href="/dcs/scanners/sdk-android/dev-guide">Programmer's Guide</a>
@@ -183,8 +183,10 @@
 
 <pre class="prettyprint">
 <code>
-&lt;uses-permission android:name="android.permission.BLUETOOTH" />
-&lt;uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+&lt;uses-permission android:name="android.permission.BLUETOOTH"/>
+&lt;uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+&lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 </code>
 </pre>
 
@@ -1175,6 +1177,8 @@ public void getActiveScanners(View view) {
 }
 </code>
 </pre>
+
+                                                    <p><strong>NOTE</strong> Due to a Google security patch, Google CVE-2020-12856, the Android device must notify users of pairing events with a popup message (prevents silent pairing).</p>
                                                 </div>
                                             </div>
                                         </div>
