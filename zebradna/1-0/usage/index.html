@@ -90,7 +90,7 @@
                         </li>
                         <li>
                             <a href="/zebradna/1-0/faq">
-                                    FAQ
+                                    Known Issues
                             </a>
                         </li>
                         <li>
@@ -222,29 +222,69 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+                                        <p></p><blockquote>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Actions in this section can be performed only after zDNA Cloud has been set up by an organization. If necessary, please <strong>follow instructions in the <a href="../setup/#iconfigurenetwork">zDNA Cloud Setup Guide</a> before returning to this section</strong>.</p>
+</blockquote>
+
+<p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p><strong>After one or more devices are enrolled and licensed in the zDNA Cloud system</strong>, administrators can begin creating and deploying device settings and performing other administrative tasks. These tasks are performed by administrators as defined below: </p>
 
 <ul>
-<li><strong>Tenant Owner -</strong> assigned to the first account created along with a new Zebra DNA Cloud instance; requires <a href="../setup/#iiregisterwithzebracom">registration at Zebra.com</a>; uses Zebra SSO credentials; able to create zDNA Administrative Users.</li>
+<li><strong>Tenant Owner</strong>: 
 
-<li><strong>Administrative Users -</strong> can access all features of zDNA Cloud except user administration; created and maintained by the Tenant Owner. </li>
+
+<ul>
+<li><strong>Created with each new <u>instance</u></strong> of Zebra DNA Cloud</li>
+
+<li><strong>No more than one is allowed</strong> per organization</li>
+
+<li>Requires <a href="../setup/#iiregisterwithzebracom">registration at Zebra.com</a></li>
+
+<li>Uses Zebra SSO credentials</li>
+
+<li><strong>Able to create Administrative Users</strong> and perform all other admin duties</li></ul>
+</li>
+
+<li><strong>Administrative Users</strong>: 
+
+
+<ul>
+<li>Created and <strong>maintained by Tenant Owner</strong></li>
+
+<li>Can perform all routine administrative duties</li>
+
+<li>Can access all features <strong><em>except</em></strong> user administration</li>
+
+<li><strong>Does <u>NOT</u> use Zebra SSO credentials</strong></li></ul>
+</li>
 </ul>
 
-<h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
+<h3 id="adminrequirements" class="anchor"><a class="heading-anchor" href="#adminrequirements"><span></span></a>Admin Requirements</h3>
 
 <ul>
-<li><strong>One or more Zebra devices running Android 11</strong> (or later) enrolled, licensed</li>
-
-<li>Obtained during <a href="../setup">zDNA Cloud Setup</a>:
+<li>At least one set of <strong>Adminstrator credentials</strong>: 
 
 
 <ul>
-<li><strong>Zebra.com login</strong> credentials</li>
+<li><strong>zDNA Cloud Tenant Owner (SSO) credentials</strong> (obtained during <a href="../setup">zDNA Cloud Setup</a>)<br> 
+<strong>~OR~</strong><br> </li>
 
-<li><strong>A zDNA Cloud Tenant Owner account</strong> </li></ul>
+<li><strong>Admin User (non-SSO) credentials</strong> (created by Tenant Owner) </li></ul>
 </li>
+
+<li><strong>One or more Zebra devices running Android 11</strong> (or later) updated as follows:
+
+
+<ul>
+<li><strong>SDM660-platform</strong>: <code>11-23-13.00-RG-U00-STD-HEL-04</code> (May 2022 LG build or later) </li>
+
+<li><strong>QC6490-platform</strong>: <code>11-10-17.00-RG-U00-STD-ATH-04</code> (or later)</li>
+
+<li><strong>WS50 wearable</strong>: <code>11-17-03.00-RN-U00-STD-WTX-04</code> (or later)</li></ul>
+</li>
+
+<li><strong>Devices must be enrolled and licensed</strong> for access to all system features (<a href="../setup/#iiienrolldevices">see Setup -&gt; Enrollment</a>) </li>
 </ul>
 
 <hr>
@@ -264,19 +304,25 @@
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
 
+<blockquote>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> The actions listed below are <strong>executed only on devices that are powered up and online</strong> when the action is issued.<br><strong>To create durable actions</strong> that execute the next time the device is available, <strong>see <a href="#managesettingsandgroups">Manage Devices and Groups</a></strong> section.  </p>
+</blockquote>
+
 <ul>
-<li><strong>Reset Device Passcode -</strong> removes any existing swipe pattern, PIN or password </li>
+<li><strong>Reset Device Passcode * -</strong> removes any existing swipe pattern, PIN or password </li>
 
 <li><strong>Reboot Device -</strong> causes all apps to quit and restarts the device </li>
 
 <li><strong>Wipe Device -</strong> resets the device to its factory-fresh state, <strong>permanently erasing all user apps and data</strong></li>
 
-<li><strong>Delete Device -</strong> removes zDNA client app from device, de-enrolls device from zDNA Cloud system; other apps and settings on device remain unchanged ✝︎</li>
+<li><strong>Delete Device ✝︎ -</strong> removes zDNA client app from device, de-enrolls device from zDNA Cloud system; other apps and settings on device remain unchanged</li>
 
 <li><strong>Update zDNA Client -</strong> checks the client app on the device and pushes an update, if necessary </li>
+
+<li><strong>Reapply -</strong> Re-applies a settings Profile, usually after addressing "Issues" or a change of device availability </li>
 </ul>
 
-<p><i><font size="1" color="grey">✝︎ Deleted devices could remain visible in deployment detail documents if the device was selected for deployment before being deleted.</font></i></p>
+<p><i><font size="1" color="grey">* This feature has no effect on the device if the user changed the passcode before zDNA Cloud enrollment. An Enterprise Reset and re-enrollment of the device is required to regain control.<br>✝︎ Deleted devices could remain visible in deployment detail documents if the device was selected for deployment before being deleted.</font></i></p>
 
 <h4 id="onmultipledevices" class="anchor"><a class="heading-anchor" href="#onmultipledevices"><span></span></a>On Multiple Devices</h4>
 
@@ -309,21 +355,39 @@
 
 <hr>
 
-<h3 id="devicegroups" class="anchor"><a class="heading-anchor" href="#devicegroups"><span></span></a>Device Groups</h3>
-
-<p>To perform actions on a group of devices all at once, it can be helpful to create one or more device Groups and associate certain devices with that Group. For example, a Group called "Warehouse" might be created to configure devices to connect with the access points in the company's warehouse and to receive its apps for inventory and order picking. <strong>Devices added to a Group automatically receive the configuration settings created for that Group</strong>. Groups can be created and devices added during enrollment or at any time thereafter. </p>
-
-<p><strong>Click on the pencil icon</strong> in a device's row to manage the Group it belongs to.<br>
-<i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> This action might effect <a href="#iiilicensing">device licensing</a>. A device can belong to NO MORE than one Group at a time. 
-<img alt="image" style="height:350px" src="manage device group.png">
-<em>Click image to enlarge; ESC to exit.</em>
-<br></p>
-
-<hr>
-
 <h2 id="managesettingsandgroups" class="anchor"><a class="heading-anchor" href="#managesettingsandgroups"><span></span></a>Manage Settings and Groups</h2>
 
-<p>As in <a href="/stagenow">Zebra StageNow</a>, Zebra DNA Cloud employs the concept of Profiles, which are collections of device settings and/or apps to configure devices to behave in a certain way or to enable workers to perform particular sets of tasks. Zebra DNA Cloud also implements device Groups, <strong>allowing administrators to deploy a Profile associated with that Group simply by adding devices to the Group</strong>.   </p>
+<p>To perform actions on a group of devices all at once, it can be helpful to create one or more device Groups and associate one or more settings with that Group. For example, a Group called "Warehouse" might be created for devices configured to connect with specific access points in the company's warehouse and to receive the company's apps for inventory control and order picking activities. </p>
+
+<h4 id="settingsprofiles" class="anchor"><a class="heading-anchor" href="#settingsprofiles"><span></span></a>Settings Profiles</h4>
+
+<p>As in <a href="/stagenow">Zebra StageNow</a>, Zebra DNA Cloud employs the concept of Profiles, which are collections of device settings and/or apps that configure devices to behave in a certain way or to enable workers to perform particular sets of tasks. Zebra DNA Cloud also implements device Groups, <strong>allowing administrators to deploy a Profile associated with that Group simply by adding devices to the Group</strong>.   </p>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> When a Group is associated with a settings Profile, all devices added to that Group automatically receive the settings in that Profile. See additional Profile and Group behaviors below. </p>
+</blockquote>
+
+<h4 id="profileandgroupbehavior" class="anchor"><a class="heading-anchor" href="#profileandgroupbehavior"><span></span></a>Profile and Group Behavior</h4>
+
+<p>A Group can have only one profile, but a profile can be applied to more than one group.  </p>
+
+<ul>
+<li><strong>Profiles remain in effect until deleted</strong>; they effect devices immediately as they come online. </li>
+
+<li><strong>Groups can be created and devices added during enrollment</strong> or at any time thereafter. </li>
+
+<li><strong>Devices added to a Group automatically receive the settings in the Profile associated with that Group</strong>. </li>
+
+<li><strong>A device can belong to only one Group</strong> at a time.</li>
+
+<li><strong>Removing a device from a Group cancels deployment of any pending settings Profiles</strong>.  </li>
+
+<li><strong>Deleting a Group or removing a device from a Group <i>DOES NOT</i> remove settings Profile(s) previously applied</strong>. </li>
+
+<li><strong>Deleting a Profile cancels deployment of any jobs "in progress" for that Profile</strong>, but does NOT remove past deployments.</li>
+</ul>
+
+<hr>
 
 <h3 id="createasettingsprofile" class="anchor"><a class="heading-anchor" href="#createasettingsprofile"><span></span></a>Create a Settings Profile</h3>
 
@@ -384,14 +448,43 @@
 <br></p></li>
 
 <li><p><strong>Monitor progress of settings deployments</strong> in the Device Settings landing page:
-<img alt="image" style="height:350px" src="settings_summary.png">
+<img alt="image" style="height:350px" src="settings_summary_plus.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 </ol>
 
+<h4 id="statusdefinitions" class="anchor"><a class="heading-anchor" href="#statusdefinitions"><span></span></a>Status Definitions</h4>
+
+<ul>
+<li><strong>Success (green) -</strong> Deployment to device(s) completed on device(s) as expected</li>
+
+<li><strong>Failed (red) -</strong> Deployment did not succeed, possibly because:
+
+
+<ul>
+<li>The Profile never reached the device</li>
+
+<li>One or more settings are not supported by the device(s)</li></ul>
+</li>
+
+<li><strong>In Progress (blue) -</strong> Deployment is pending on at least one device; no errors have occurred </li>
+
+<li><strong>Issues (yellow) -</strong> Partial success; one or more problems are preventing full deployment</li>
+
+<li><strong>Draft (black) -</strong> Profile is unfinished or awaiting deployment </li>
+
+<li><strong>Unknown -</strong> Status could not be determined, possibly because all devices have been removed from Profile</li>
+</ul>
+
 <blockquote>
-  <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> Selecting a Group in Step 9 above <strong>applies all settings created in the Profile to</strong>:<br> &nbsp;&nbsp; • <strong>All devices currently in that Group</strong><br>&nbsp;&nbsp; • <strong>Devices added to the Group at any time in the future</strong> </p>
+  <p><strong>More about <a href="#profileandgroupbehavior">Profile and Group Behavior</a></strong></p>
 </blockquote>
+
+<!-- #### Notes
+* <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Selecting a Group in Step 9 above **would apply all settings created in the Profile to**:
+ * **All devices currently in that Group**
+ * **Devices added to the Group at any time in the future** 
+ -->
 
 <hr>
 
@@ -438,10 +531,50 @@
 <br></p></li>
 
 <li><p><strong>Monitor progress of settings deployment</strong> in the Device Settings landing page:
-<img alt="image" style="height:350px" src="settings_summary.png">
+<img alt="image" style="height:350px" src="settings_summary_plus.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 </ol>
+
+<h4 id="statusdefinitions-1" class="anchor"><a class="heading-anchor" href="#statusdefinitions-1"><span></span></a>Status Definitions</h4>
+
+<ul>
+<li><strong>Success (green) -</strong> Deployment to device(s) completed on device(s) as expected</li>
+
+<li><strong>Failed (red) -</strong> Deployment did not succeed, possibly because:
+
+
+<ul>
+<li>The Profile never reached the device</li>
+
+<li>One or more settings are not supported by the device(s)</li></ul>
+</li>
+
+<li><strong>In Progress (blue) -</strong> Deployment is pending on at least one device; no errors have occurred </li>
+
+<li><strong>Issues (yellow) -</strong> Partial success; one or more problems are preventing full deployment</li>
+
+<li><strong>Draft (black) -</strong> Profile is unfinished or awaiting deployment </li>
+
+<li><strong>Unknown -</strong> Status could not be determined, possibly because all devices have been removed from Profile</li>
+</ul>
+
+<blockquote>
+  <p><strong>More about <a href="#profileandgroupbehavior">Profile and Group Behavior</a></strong></p>
+</blockquote>
+
+<hr>
+
+<h3 id="changedevicegroup" class="anchor"><a class="heading-anchor" href="#changedevicegroup"><span></span></a>Change Device Group</h3>
+
+<p>From the "My Devices" screen, <strong>click on the pencil icon</strong> in a device's row to manage the Group it belongs to:<br>
+<img alt="image" style="height:350px" src="change_device_group.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> This action might effect <a href="../licensing">device licensing</a>. <strong>NOTE</strong>: A device can belong to <strong>NO MORE</strong> than one Group at a time. </p>
+</blockquote>
 
 <hr>
 
@@ -549,6 +682,140 @@ _Click image to enlarge; ESC to exit._
 <p>7. At login, <strong>select "Forgot Password"</strong> to generate an email with further instructions.</p>
 
 <p>8. Repeat this process for all Administrative Users. </p>
+
+<hr>
+
+<h2 id="androidupdates" class="anchor"><a class="heading-anchor" href="#androidupdates"><span></span></a>Android Updates</h2>
+
+<p><strong>The Android Updates function keeps enrolled devices up to date with the latest Android OS updates and security patches</strong>. Devices managed with this feature are subject to the behaviors listed below.</p>
+
+<ul>
+<li><strong>General Behavior</strong>
+
+
+<ul>
+<li><strong>Android Updates are applicable only on enrolled devices</strong>.</li>
+
+<li>For unenrolled devices, the only available Action is to Enroll.</li></ul>
+</li>
+
+<li><strong>Bulk Actions</strong>
+
+
+<ul>
+<li><strong>"Update" Action can be performed</strong> in bulk on devices of the <strong>same model number ONLY</strong>. </li>
+
+<li><strong>"Enroll" Action can be performed on dissimilar</strong> device models.</li>
+
+<li><strong>Enroll and Update Actions can be combined in a bulk operation</strong>, unenrolled devices are enrolled only; already enrolled devices are updated.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h3 id="performanandroidupdate" class="anchor"><a class="heading-anchor" href="#performanandroidupdate"><span></span></a>Perform an Android Update</h3>
+
+<p><strong>1. Click on Android Updates</strong> to display the Device View: <br>
+<img alt="image" style="height:350px" src="android_update_01.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<h4 id="devicesupdatestatus" class="anchor"><a class="heading-anchor" href="#devicesupdatestatus"><span></span></a>Devices Update Status</h4>
+
+<ul>
+<li><strong>Up to date -</strong> Device has all the latest OS updates and security patches. No action is required. </li>
+
+<li><strong>New Available -</strong> Device does NOT have the latest OS updates and/or security patches. Click "Update to Latest" to upgrade.</li>
+
+<li><strong>Not Enrolled -</strong> LifeGuard Over the Air (OTA) servvice is NOT running on the device. Click "Enroll" to install.  </li>
+</ul>
+
+<hr>
+
+<p><strong>2. Click on the checkbox</strong> for one or more devices on which to perform an Action.<br>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Updates can be performed on <strong>multiple devices ONLY of the same model number</strong>: 
+<img alt="image" style="height:350px" src="android_update_02.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<hr>
+
+<p><strong>3. Enter a Job Name (or use the auto-generated default), Source and Description</strong> for later identification of the Job: <br>
+<img alt="image" style="height:350px" src="android_update_04.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<hr>
+
+<p><strong>4. Review the contents of the Update</strong> to confirm that it's correct: <br>
+<img alt="image" style="height:350px" src="android_update_05.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<hr>
+
+<p><strong>5. Select a Schedule for performing the Update</strong>. For example, schedule during "off hours" to minimize worker dispuption.<br>
+Select "As soon as possible" to begin the Update immediately upon starting the job.<br>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> If setting an installation window, <strong>the "Start at" date must be EARLIER than the selected End Date</strong>.
+<img alt="image" style="height:350px" src="android_update_06a.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<hr>
+
+<p><strong>6. Select the Conditions under which the Update is to be performed</strong> and whether to allow the device user to postpone.<br>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> An Update begins only <strong>when ALL conditions are met</strong>. <br>
+<img alt="image" style="height:350px" src="android_update_07.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<hr>
+
+<p><strong>7. Review settings are configured as desired</strong>. If necessary, click "Edit" to modify.<br>
+<strong>When finished, click the "Start Job" button</strong>: <br>
+<img alt="image" style="height:350px" src="android_update_08.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<hr>
+
+<p><strong>8. The Deployment tab displays the status of all Android Update jobs</strong>: <br>
+<img alt="image" style="height:350px" src="android_update_09.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<h4 id="updatejobstatus" class="anchor"><a class="heading-anchor" href="#updatejobstatus"><span></span></a>Update Job Status</h4>
+
+<ul>
+<li><strong>Success (green)-</strong> Deployment to device(s) completed as expected</li>
+
+<li><strong>In Progress (blue) -</strong> Deployment is pending on at least one device; no errors are reported </li>
+
+<li><strong>Issues (yellow) -</strong> One or more problems prevented the Update from completing successfully</li>
+
+<li><strong>Issue(Cr) -</strong> Appears briefly when a cancel request is received for an Update</li>
+
+<li><strong>Cancelled -</strong> Update deployment has been cancelled</li>
+
+<li><strong>Created -</strong> Appears when an Update job has been started</li>
+</ul>
+
+<hr>
+
+<p><strong>9. Click "Open" in the Action column to display the status of device(s) targeted by an individual Update job</strong>: <br>
+<img alt="image" style="height:350px" src="android_update_09a.PNG">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<h4 id="actions" class="anchor"><a class="heading-anchor" href="#actions"><span></span></a>Actions</h4>
+
+<ul>
+<li><strong>Open -</strong> Displays Update details of the deployment in that row</li>
+
+<li><strong>Cancel -</strong> Cancels an In-Progress Update (disabled after Update is completed)</li>
+
+<li><strong>Delete -</strong> Removes the Update from the deployment Profies list (available only when status is "Success," "Issue" or "Cancelled")</li>
+</ul>
 
 <hr>
 
