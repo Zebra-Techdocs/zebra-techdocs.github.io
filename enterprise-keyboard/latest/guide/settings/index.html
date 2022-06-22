@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Enterprise Keyboard
-                                            4.0
+                                            4.1
                         </p>
 
                     </ul>
@@ -63,27 +63,27 @@
 
 
                         <li>
-                            <a href="/enterprise-keyboard/4-0/guide/about">
+                            <a href="/enterprise-keyboard/4-1/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-0/guide/setup">
+                            <a href="/enterprise-keyboard/4-1/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-0/guide/settings">
+                            <a href="/enterprise-keyboard/4-1/guide/settings">
                                     Customize
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-0/guide/deploy">
+                            <a href="/enterprise-keyboard/4-1/guide/deploy">
                                     Deploy
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-0/guide/apis">
+                            <a href="/enterprise-keyboard/4-1/guide/apis">
                                     APIs
                             </a>
                         </li>
@@ -93,12 +93,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-0/download">
+                            <a href="/enterprise-keyboard/4-1/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-0/search">
+                            <a href="/enterprise-keyboard/4-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="enterprise-keyboard-customization" class="anchor"><a class="heading-anchor" href="#enterprise-keyboard-customization"><span></span></a>Enterprise Keyboard Customization</h1>
                                     <p>
                                             Enterprise Keyboard
-                                            4.0
+                                            4.1
                                     </p>
                                 </div>
                             </section>                    
@@ -260,6 +260,8 @@
 <li><code>ADDED in v.3.9.9.1</code> Shift key now behaves according to Android conventions. <a href="#usagenotes">See Usage Notes</a> for details. </li>
 
 <li><code>ADDED in v.3.9.11</code> Support for Zebra devices running Android 11</li>
+
+<li><code>ADDED in v.4.1</code> Added <a href="#preferences">voice input tab</a>; supports Zebra Workstation Connect secondary (external) screen <a href="#zwcusagenotes">see ZWC Usage Notes</a> for details.</li>
 </ul>
 
 <h4 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h4>
@@ -416,6 +418,11 @@ Selected languages will appear in the language  menu in the Enterprise Keyboard:
 
 <hr>
 
+<!-- ekb41_width.png
+ekb41_preferences.png
+ekb41_height.png
+-->
+
 <h3 id="preferences" class="anchor"><a class="heading-anchor" href="#preferences"><span></span></a>Preferences</h3>
 
 <p>The Preferences section controls keypress feedback, default layout and tab selections, and other aids to productivity. <strong>NOTE: Enterprise Keyboard Designer 1.4 (and later) allows a custom keyboard layout to be selected as the default</strong> in the device, to appear whenever an input field receives focus (<strong>requires EKB 3.4 or later</strong>). See the <a href="http://techdocs.zebra.com/ekd/latest/guide/usage/#iicreatelayouts">EKD User Guide</a> for more information. </p>
@@ -424,54 +431,92 @@ Selected languages will appear in the language  menu in the Enterprise Keyboard:
 
 <p><img alt="" style="height:350px" src="ekb_prefs.png">
 <img alt="" style="height:91px" src="ekb1.6_prefs_crop.png">
+<br>
+<img alt="" style="height:350px" src="41_prefs.png">
+<em>EKB 4.1 adds mic tab, keyboard size adjusters.</em><br> 
+<em>Click to enlarge; ESC to exit.</em> 
 <br></p>
 
 <h5 id="setpreferencesasdesired" class="anchor"><a class="heading-anchor" href="#setpreferencesasdesired"><span></span></a>Set preferences as desired:</h5>
 
-<p><b><u>Auto-capitalization</u></b> automatically capitalizes the first word of each sentence following a period. </p>
+<ul>
+<li><b><u>Auto-capitalization</u></b> automatically capitalizes the first word of each sentence following a period. </li>
 
-<p><b><u>Double-space period</u></b> automatically inserts a period and space after double-tapping the spacebar. </p>
+<li><b><u>Double-space period</u></b> automatically inserts a period and space after double-tapping the spacebar. </li>
 
-<p><b><u>Vibration on keypress</u></b> sets the device to vibrate when a key is pressed (option seen only on devices that support vibration).<br>
-Vibration duration configurable in <a href="#advanced">Advanced settings</a>. </p>
+<li><b><u>Vibration on keypress</u></b> sets the device to vibrate when a key is pressed (option seen only on devices that support vibration).<br>
+Vibration duration configurable in <a href="#advanced">Advanced settings</a>. </li>
 
-<p><b><u>Sound on keypress</u></b> plays a sound when a key is pressed.<br>
-Volume configurable in <a href="#advanced">Advanced settings</a>.</p>
+<li><b><u>Sound on keypress</u></b> plays a sound when a key is pressed.<br>
+Volume configurable in <a href="#advanced">Advanced settings</a>.</li>
 
-<p><b><u>Popup on keypress</u></b> displays a pop-up of the key being pressed (not applicable to keys 0–9 on the numeric layout). <!--A delay can be added in <a href="#advanced">Advanced settings</a>.--></p>
+<li><b><u>Popup on keypress</u></b> displays a pop-up of the key being pressed (not applicable to keys 0–9 on the numeric layout). <!--A delay can be added in <a href="#advanced">Advanced settings</a>.--></li>
 
-<p><b><u>Voice input key</u></b> displays a key for allowing Enterprise Keyboard to accept spoken input using the device microphone (on GMS-enabled devices only).<br> 
-<strong>NOTE</strong>: Google Voice typing must be enabled to use this key (see <strong>Language and input &gt; On-screen keyboard</strong> panel). </p>
+<li><b><u>Voice input key</u></b> displays a key for allowing Enterprise Keyboard to accept spoken input using the device microphone (on GMS-enabled devices only). <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Google Voice Typing must be enabled to use this key (see <strong>Language and input &gt; On-screen keyboard</strong> panel). Also see <a href="#voiceinputnotes">voice input notes</a>. </li>
 
-<p><b><u>Show scan tab</u></b> displays a tab for switching to the scanner to collect barcode data.<br>
-Scanning in Enterprise Keyboard requires <a href="#datawedge">the DataWedge service</a> to be enabled on the device. </p>
+<li><b><u>Voice input tab</u></b> displays a microphone tab for allowing Enterprise Keyboard to accept spoken input using the device microphone (on GMS-enabled devices only). Also see <a href="#voiceinputnotes">voice input notes</a>.</li>
 
-<p><b><u>Flick</u></b> enables the alternate (long-press) character of a key to be input by "flicking" the key.<br> <strong>Not supported on VC80x or VC83x devices</strong>.</p>
+<li><b><u>Show scan tab</u></b> displays a tab for switching to the scanner to collect barcode data. Disabled by default.<br>
+Scanning in Enterprise Keyboard requires <a href="#datawedge">the DataWedge service</a> to be enabled on the device. </li>
 
-<b><u>Numeric (Telephone)</u></b> layout appears when the numeric keypad is in focus. When disabled, the Calculator layout is used. 
-<!-- 
-<img alt="" style="height:350px" src="ekb1.6_nav.png"/>
-<br>
- -->
+<li><b><u>Flick</u></b> enables the alternate (long-press) character of a key to be input by "flicking" the key.<br> <strong>Not supported on VC80x or VC83x devices</strong>.</li>
 
-<h5 id="additionalpreferences" class="anchor"><a class="heading-anchor" href="#additionalpreferences"><span></span></a>Additional preferences:</h5>
+<li><b><u>Numeric (Telephone)</u></b> layout appears when the numeric keypad is in focus. When disabled, the Calculator layout is used. </li>
 
-<p>(<em>applies to devices with MX 7.1 and later only</em>) 
-<b><u>Navigation</u></b> controls the means of navigating between keyboard layouts. "<b>Tabs</b>" mode permits switching layouts by swiping across a layout (to bring up the adjacent one) or tapping directly on the desired layout tab. The tab bar is visible at all times except when spelling corrections (if enabled) are being displayed. "<b>Keys</b>" mode permits keys to be used for switching layouts. Such keys are typically in the lower-left corner of the layout. <strong>See important layout notes below</strong>.</p>
+<li><b><u>Keyboard Height</u></b> used to <strong><em>reduce</em></strong> the height of the keyboard (as a percentage from 25–100 of the default height) when it appears on an external monitor as with Zebra Workstation Connect. <a href="#zwcusagenotes">See ZWC notes</a>. </li>
 
-<!-- 
-<img alt="" style="height:350px" src="ekb1.6_prefs.png"/>
-<br>
- -->
+<li><b><u>Keyboard Width</u></b> used to <strong><em>reduce</em></strong> the width of the keyboard (as a percentage from 25–100 of the default width) when it appears on an external monitor as with Zebra Workstation Connect. <a href="#zwcusagenotes">See ZWC notes</a>. </li>
+</ul>
+
+<!-- 6/21/22- removed from 2 placea above, and in voice input notes below (per eng 69456).
+<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> **Google "voice typing" must be enabled** to use this tab (see **Language and input > On-screen keyboard** panel). 
+
+ * **Google "voice typing"** (Language and input > On-screen keyboard)
+-->
+
+<h4 id="additionalpreferences" class="anchor"><a class="heading-anchor" href="#additionalpreferences"><span></span></a>Additional preferences:</h4>
+
+<p>(<em>applies to devices with MX 7.1 and later only</em>)</p>
+
+<p><b><u>Navigation</u></b> controls the means of navigating between keyboard layouts.<br>
+"<b><u>Tabs</u></b>" mode permits switching layouts by swiping across a layout (to bring up the adjacent one) or tapping directly on the desired layout tab. The tab bar is visible at all times except when spelling corrections (if enabled) are being displayed.<br> 
+"<b><u>Keys</u></b>" mode permits keys to be used for switching layouts. Such keys are typically in the lower-left corner of the layout.<br> 
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>See important tab bar notes below</strong>.</p>
+
+<h3 id="voiceinputnotes" class="anchor"><a class="heading-anchor" href="#voiceinputnotes"><span></span></a>Voice Input Notes</h3>
+
+<ul>
+<li><strong>For EKB voice input, the following <em>MUST</em> be running</strong> on the device and not in use by other apps: 
+
+
+<ul>
+<li><strong>Android Speech Recognition (ASR) service</strong> (enabled by default)</li>
+
+<li>The <code>com.google.android.googlequicksearchbox</code> package must <strong>NOT be disabled</strong></li></ul>
+</li>
+
+<li><strong>Voice input will NOT output offensive words</strong>, even if the "Block offensive words" feature is disabled.</li>
+
+<li>For proper operation, disable any voice input key setting (if so configured) <em>before</em> enabling the voice tab.</li>
+
+<li><strong>Only English is supported</strong> for voice input through EKB.</li>
+</ul>
+
+<hr>
+
+<h3 id="tabconfiguration" class="anchor"><a class="heading-anchor" href="#tabconfiguration"><span></span></a>Tab Configuration</h3>
 
 <p><b><u>Tab configuration</u></b> allows a user or administrator to enable or disable the numeric, alphanumeric, symbol and/or scan key-layout tab(s), hiding them from view and preventing display of the corresponding layout. <!-- **EKB will not permit all four tabs to be disabled at the same time**. --></p>
 
 <p><b><u>Select prefer tab</u></b> causes the selected tab to appear whenever EKB is invoked. This option is controlled from within the Tab configuration panel (shown below). </p>
 
 <p><img alt="" style="height:350px" src="ekb1.6_tab_config.png">
+<br>
+<img alt="" style="height:200px" src="41_micTab.png">
+<em>EKB 4.1 adds a mic tab</em>.
 <br></p>
 
-<p><strong>Tab Bar Notes</strong>:</p>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500itabbarnotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500itabbarnotes"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Tab Bar Notes</h4>
 
 <!-- Navigation mode set to Keys, voice input key and show correction suggestions are enabled, then tab bar will always be visible except for some input texts like numeric, email, sip, websites etc.,
  -->
@@ -741,15 +786,83 @@ Tap on a setting to bring up a panel for adjusting that setting:
 
 <hr>
 
+<h2 id="scannercontrol" class="anchor"><a class="heading-anchor" href="#scannercontrol"><span></span></a>Scanner Control</h2>
+
+<p>It's important to note that <strong>control of a device's barcode scanning hardware is exclusive</strong>. When an application that uses the scanner is active (such as one made with EMDK that uses the Barcode API), neither DataWedge nor the Enterprise Keyboard scan tab will not operate. Likewise, when an app such as Enterprise Keyboard controls the scanning hardware, other apps are prevented from doing so. It is therefore important to understand how to take control of a device's scanner hardware and if necessary, release it to other apps when scanning is complete. For more information, see the section on <a href="http://techdocs.zebra.com/datawedge/latest/guide/settings/#disabledatawedge">Disabling DataWedge</a> in the <a href="http://techdocs.zebra.com/datawedge">DataWedge User Guide</a>. </p>
+
+<hr>
+
 <h2 id="tabkeynavigation" class="anchor"><a class="heading-anchor" href="#tabkeynavigation"><span></span></a>Tab-key Navigation</h2>
 
 <p>The Tab key is designed to move the cursor or UI focus from one text field or UI component to the next. On apps that are unaware of this context, the Enterprise Keyboard Tab key might input spaces instead of moving the cursor. For HTML apps, Zebra recommends using the Tab key to navigate from field to field. For help with native-app navigation, please refer to Android developer docs for information about <a href="https://developer.android.com/training/keyboard-input/navigation.html">Android Tab-key navigation</a>.</p>
 
 <hr>
 
-<h2 id="scannercontrol" class="anchor"><a class="heading-anchor" href="#scannercontrol"><span></span></a>Scanner Control</h2>
+<h2 id="zwcusagenotes" class="anchor"><a class="heading-anchor" href="#zwcusagenotes"><span></span></a>ZWC Usage Notes</h2>
 
-<p>It's important to note that <strong>control of a device's barcode scanning hardware is exclusive</strong>. When an application that uses the scanner is active (such as one made with EMDK that uses the Barcode API), neither DataWedge nor the Enterprise Keyboard scan tab will not operate. Likewise, when an app such as Enterprise Keyboard controls the scanning hardware, other apps are prevented from doing so. It is therefore important to understand how to take control of a device's scanner hardware and if necessary, release it to other apps when scanning is complete. For more information, see the section on <a href="http://techdocs.zebra.com/datawedge/latest/guide/settings/#disabledatawedge">Disabling DataWedge</a> in the <a href="http://techdocs.zebra.com/datawedge">DataWedge User Guide</a>. </p>
+<p><strong>Enterprise Keyboard 4.1 introduced support for <a href="/zwc">Zebra Workstation Connect</a></strong>, a solution that transforms a Zebra mobile computer into a desktop computing experience, complete with external monitor, keyboard and mouse. <strong>Use of EKB with ZWC is subject to the requirements, behaviors and restrictions listed below</strong>.  </p>
+
+<h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
+
+<ul>
+<li><strong>One or more <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/workstation-connect.html">Zebra devices compatible with ZWC</a></strong> running Android 11 or later</li>
+
+<li><strong>Zebra Workstation Cradle</strong> (corresponding to device(s) in use)</li>
+
+<li><strong><a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard OS update</a></strong> <code>11-23-13.00-RG-U00</code> (or later) installed</li>
+
+<li><strong><a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/workstation-connect.html">Workstation Connect 1.4.86</a></strong> (or later) installed</li>
+
+<li><strong><a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/enterprise-keyboard.html">Enterprise Keyboard 4.1</a></strong> (or later) (<code>com.zebra.mdna.enterprisebrowser.apk</code>) installed</li>
+</ul>
+
+<p><img alt="" style="height:350px" src="41_preferences_zwc2.png">
+<em>EKB 4.1 (and later) allows keyboard size adjustments.</em><br> 
+<em>Click to enlarge; ESC to exit.</em> 
+<br></p>
+
+<h3 id="behaviorsandrestrictions" class="anchor"><a class="heading-anchor" href="#behaviorsandrestrictions"><span></span></a>Behaviors and Restrictions</h3>
+
+<ul>
+<li><strong>Keyboard height and width are configurable</strong> ONLY through <a href="/oemconfig">Managed Configurations</a> or the EKB Preferences panel on the device (see screenshot above). </li>
+
+<li><strong>EKB layouts <u>cannot</u> be used</strong>:
+
+
+<ul>
+<li>Simultaneously on primary (built-in) and secondary (external) screens.</li>
+
+<li>If a physical (USB) keyboard is connected.</li></ul>
+</li>
+
+<li><strong>Custom layouts should NOT be set as the default layout through <a href="/ekb">Enterprise Keyboard Designer</a></strong>.<br>
+<strong>Instead, use <a href="/datawedge/latest/guide/profiles/">DataWedge Profile0</a></strong> to set the default layout. </li>
+
+<li><strong>Avoid desktop resolution of 800x600</strong>, which causes EKB Suggestion Bar to overlap keys.</li>
+
+<li><strong>Zebra recommends <u>closing</u> any EKB layout on the <u>primary</u> screen <u>before</u></strong>: 
+
+
+<ul>
+<li>Docking or undocking the device. </li>
+
+<li>Moving an app from primary to secondary screen (or vice versa).</li></ul>
+</li>
+
+<li><strong>Zebra recommends <u>closing</u> any EKB layout on the <u>secondary</u> screen <u>before</u></strong>: 
+
+
+<ul>
+<li>Resizing, minimizing or maximizing an app. </li>
+
+<li>Opening the "All Apps" panel, notification panel or volume controls from the ZWC taskbar.</li></ul>
+</li>
+
+<li><strong>When an app is changed from full-screen to minimized view</strong> on secondary screen, EKB sometimes does not fit properly.<br>
+<strong>To correct</strong>, close and relaunch the app in minimized view. </li>
+
+<li>The EKB layout with focus switches to its preferred tab when a USB keyboard is connected.</li>
+</ul>
 
 <hr>
 
