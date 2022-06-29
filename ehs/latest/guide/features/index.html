@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Zebra EHS 4.1
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Zebra EHS 5.0
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-4','2-3','/ehs/4-1/guide/about')">Zebra EHS 3.0</a></li>
+                                <li><a onclick="changeVersion('2-4','2-3','/ehs/5-0/guide/about')">Zebra EHS 3.0</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,32 +65,32 @@
 
 
                         <li>
-                            <a href="/ehs/4-1/guide/about">
+                            <a href="/ehs/5-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-1/guide/setup">
+                            <a href="/ehs/5-0/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-1/guide/settings">
+                            <a href="/ehs/5-0/guide/settings">
                                     Advanced Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-1/guide/features">
+                            <a href="/ehs/5-0/guide/features">
                                     Special Features
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-1/download">
+                            <a href="/ehs/5-0/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-1/search">
+                            <a href="/ehs/5-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="zebra-ehs-special-features" class="anchor"><a class="heading-anchor" href="#zebra-ehs-special-features"><span></span></a>Zebra EHS Special Features</h1>
                                     <p>
                                             Zebra EHS
-                                            4.1
+                                            5.0
                                     </p>
                                 </div>
                             </section>                    
@@ -258,38 +258,56 @@ _Click image to enlarge; ESC to exit_.
 </ul>
 
 <blockquote>
-  <p><b><u>IMPORTANT</u></b>: 
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <b><u>IMPORTANT</u></b>: 
   <br>EHS Screen Blanking uses GPS to determine vehicle motion. On initial use, <strong>a significant delay in Screen Blanking can be seen while the device locates satellites</strong> and begins acquiring location data. Obstructions such as buildings and tunnels can interrupt GPS signals and cause Screen Blanking to disengage while the vehicle is moving. During normal use, <strong>EHS is designed to automatically disengage Screen Blanking if the GPS signal is interrupted</strong> for longer than five (5) minutes. Screen Blanking is automatically re-engaged when the GPS signal is restored.
   <br>
-  <br> <strong><u>DOT WARNING</u></strong>:<br>
-  The EHS Display Blanking feature was NOT developed in accordance with any transportation department rules or regulations. <strong>Zebra assumes no responsibility for damage or loss due to distracted driving</strong>.
-  Enable Google location Accuracy and Keep the Wi-Fi Switch ON to achieve better accuracy for Screen blanking</p>
-  
-  <h3 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes</h3>
-  
-  <ul>
-  <li><strong>All touch input is blocked</strong> when overlay is displayed.</li>
-  
-  <li><strong>Vehicle speed calculation is based on Google GPS</strong> location API output.</li>
-  
-  <li><strong>Keep Wi-Fi and Google Location Accuracy enabled on the device</strong> for the most precise locationing. </li>
-  
-  <li><strong>Incoming phone calls cannot be accepted</strong> when blanking is active.</li>
-  
-  <li><strong>The transparent overlay allows display of Maps</strong> or other apps but no user interaction.</li>
-  
-  <li><strong>Blanking becomes inactive when</strong>: 
-  
-  
-  <ul>
-  <li><strong>Vehicle speed drops and remains below the configured speed threshold</strong> for 10 seconds.</li>
-  
-  <li><strong>GPS data is lost for a period of five (5) minutes</strong>. The service checks for a GPS signal every five (5) minutes; blanking is re-engaged automatically when the GPS signal is restored.  </li></ul>
-  </li>
-  
-  <li><strong>Screen Blanking can require several minutes to initialize</strong> following a device reboot. </li>
-  </ul>
+  <br><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> <strong><u>DOT WARNING</u></strong>:<br>
+  The EHS Display Blanking feature was NOT developed in accordance with any transportation department rules or regulations. <strong>Zebra assumes no responsibility for damage or loss due to distracted driving</strong>. </p>
 </blockquote>
+
+<h3 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes</h3>
+
+<ul>
+<li><strong>All touch input is blocked</strong> when overlay is displayed <strong><em><u>except</u></em></strong>:
+
+
+<ul>
+<li><strong>Status Bar can be pulled down</strong> to display notifications and accept calls. †  </li>
+
+<li><strong>Navigation bar</strong> (BACK, HOME RECENT keys). ‡</li></ul>
+</li>
+
+<li><strong>Incoming phone calls <u>CAN</u> be accepted</strong> through Status bar when blanking is active. †</li>
+
+<li><strong>Vehicle speed calculation is based on Google GPS</strong> location API output.</li>
+
+<li><strong>Keep Wi-Fi and Google Location Accuracy enabled on the device</strong> for the most precise locationing. </li>
+
+<li><strong>The transparent overlay allows display of Maps</strong> or other apps but no user interaction.</li>
+
+<li><strong>Blanking becomes inactive when</strong>: 
+
+
+<ul>
+<li><strong>Vehicle speed drops and remains below the configured speed threshold</strong> for 10 seconds.</li>
+
+<li><strong>GPS data is lost for a period of five (5) minutes</strong>. The service checks for a GPS signal every five (5) minutes; blanking is re-engaged automatically when the GPS signal is restored.  </li></ul>
+</li>
+
+<li><strong>Screen Blanking can require several minutes to initialize</strong> following a device reboot. </li>
+</ul>
+
+<p>† <strong>To prevent, use UI Manager to <a href="/mx/uimgr/#status-bar-enabledisable">disable the Status Bar</a></strong>. </p>
+
+<p>‡ <strong>Navigation keys operate as follows</strong> when screen blanking is enabled:<br></p>
+
+<ul>
+<li><strong>BACK -</strong> no effect </li>
+
+<li><strong>HOME -</strong> displays Home screen; accepts no input</li>
+
+<li><strong>RECENTS -</strong> displays recently used apps (if enabled in EHS); accepts no input </li>
+</ul>
 
 <hr>
 
@@ -487,12 +505,12 @@ Bypass keyguard (see TUT-28656)
 
 <pre class="prettyprint"><code>
 //Disable Kiosk Mode:
-Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK_MODE");
+Intent intent = new Intent("com.zebra.mdna.enterprisehomescreen.actions.MODIFY_KIOSK_MODE");
  Intent.putExtra("enable",false);
  sendBroadcast(intent);
 
 //Enable Kiosk Mode:
-Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK_MODE");
+Intent intent = new Intent("com.zebra.mdna.enterprisehomescreen.actions.MODIFY_KIOSK_MODE");
  Intent.putExtra("enable",true);
  sendBroadcast(intent);
 </code></pre>
