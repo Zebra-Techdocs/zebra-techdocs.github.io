@@ -59,7 +59,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             OEMConfig
-                                            11.2
+                                            11.4
                         </p>
 
                     </ul>
@@ -70,27 +70,27 @@
 
 
                         <li>
-                            <a href="/oemconfig/11-2/about">
+                            <a href="/oemconfig/11-4/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/11-2/setup">
+                            <a href="/oemconfig/11-4/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/11-2/faq">
+                            <a href="/oemconfig/11-4/faq">
                                     FAQs
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/11-2/mc">
+                            <a href="/oemconfig/11-4/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/11-2/search">
+                            <a href="/oemconfig/11-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -206,7 +206,7 @@
                                     <h1 id="about-oemconfig" class="anchor"><a class="heading-anchor" href="#about-oemconfig"><span></span></a>About OEMConfig</h1>
                                     <p>
                                             OEMConfig
-                                            11.2
+                                            11.4
                                     </p>
                                 </div>
                             </section>                    
@@ -233,22 +233,131 @@
 
 <hr>
 
-<h2 id="whatsnewinv112" class="anchor"><a class="heading-anchor" href="#whatsnewinv112"><span></span></a>What's New in v11.2</h2>
+<h2 id="whatsnewinv114" class="anchor"><a class="heading-anchor" href="#whatsnewinv114"><span></span></a>What's New in v11.4</h2>
 
-<p><strong>OEMConfig 11.2 now supports MX 11.2</strong>, adding the following major features and enhancements: </p>
-
-<ul>
-<li><strong><u><a href="../mc/#volumeuiconfiguration">VolumeUI Configuration</a></u></strong> adds the ability to: 
-
+<p><strong>OEMConfig now supports the following</strong> major features and enhancements: </p>
 
 <ul>
-<li>Assign preset volume levels for streaming music to HDMI output<br>(Volume UI Configuration -&gt; Add Profile Streams -&gt; Modes -&gt; Type -&gt; Hdmi) </li></ul>
+<li><strong>File Management</strong>: 
+
+
+<ul>
+<li><a href="../mc/#deployfileforapplication">Deploy file for an application</a> to the device and grant that specific application access to the file </li></ul>
+</li>
+
+<li><strong>General UI Configuration</strong>: 
+
+
+<ul>
+<li><a href="../mc/#controlproximitysensor">Turn on/off the proximity sensor</a> on the device </li>
+
+<li>Assign, configure and activate <a href="../mc/#doubletrigger">double-trigger mode</a>, which allows a key-code to be sent whenever a scan trigger is pressed twice during a specified time span </li>
+
+<li><a href="../mc/#showpoweroffinpowerkeymenu">Show/hide the "Power Off" button</a> on the menu that appears after long-pressing the device power button </li></ul>
+</li>
+
+<li><strong>Notification Configuration</strong>: 
+
+
+<ul>
+<li><a href="../mc/#notificationstate">Control notification state (On/Off)</a> </li>
+
+<li><a href="../mc/#notificationpackagename">Control notifications of individual apps</a></li></ul>
+</li>
+
+<li><strong>Settings UI Configuration</strong>: 
+
+
+<ul>
+<li>Allows <a href="../mc/#setdefaultdialer">selection of the default dialer</a> app used for making and taking calls on the device </li>
+
+<li>Allow <a href="../mc/#allowdeviceusercontroldefaultapps">user control over default app used device behaviors</a>, such as for making and taking calls </li></ul>
+</li>
+
+<li><strong>Wireless LAN Configuration</strong>: <br>
+
+
+<ul>
+<li>Control whether to <a href="../mc/#globalproxyconfiguration">use a Global Proxy server</a> for all device communications </li></ul>
 </li>
 </ul>
 
 <hr>
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="addedinv113" class="anchor"><a class="heading-anchor" href="#addedinv113"><span></span></a>Added in v11.3</h3>
+
+<p><strong>OEMConfig 11.3 now supports MX 11.3</strong>, adding the following major features and enhancements: </p>
+
+<ul>
+<li>Access Manager adds ability to:
+
+
+<ul>
+<li>Restrict user access to the Android Settings panel <br>See <a href="../mc/#uiConfig.uiSettingsConfig">Settings UI Configuration</a> &gt; Settings Panel Access (Full/Partial/None) options </li></ul>
+</li>
+
+<li>Audio Manager adds ability to: 
+
+
+<ul>
+<li>Control user access to vibrate settings <br>See <a href="../mc/#audioconfiguration">Audio Configuration</a> &gt; Allow Device User Control Vibrate on Call </li>
+
+<li>Select vibration options for incoming calls to the device  <br>See <a href="../mc/#audioconfiguration">Audio Configuration</a> &gt; Control Vibrate on Call options </li>
+
+<li>Manage a list of devices excluded from consideration as best path for media output  <br>See <a href="../mc/#audioconfiguration">Audio Configuration</a> &gt; Best Path Exclude Action </li></ul>
+</li>
+
+<li>DHCP Option Manager <strong><em><u>removes</u></em></strong> ability to: 
+
+
+<ul>
+<li>Set DHCP Options 28 and 43 </li></ul>
+</li>
+
+<li>KeyMapping Manager adds: 
+
+
+<ul>
+<li>New key identifiers DELETE and INSERT  <br>See <a href="../mc/#keyboardmapping">KeyMapping configuration</a> &gt; Add Mapping Key ID </li></ul>
+</li>
+
+<li>License Manager adds ability to: 
+
+
+<ul>
+<li>Persist all licenses on the device following an Enterprise Reset  <br>See <a href="../mc/#licenseconfiguration">License Configuration</a> &gt; Zebra License Persistence </li></ul>
+</li>
+
+<li>UI Manager adds ability to: 
+
+
+<ul>
+<li>Edit display and layout of Quick Tiles on the device  <br>See <a href="../mc/#uiConfig.uiSettingsConfig">Settings UI Configuration</a> &gt; Quick Tiles Action </li>
+
+<li>Control user access to Quick Tiles layout editing  <br>See <a href="../mc/#uiConfig.uiSettingsConfig">Settings UI Configuration</a> &gt; Device User Editing of Quick Tiles </li>
+
+<li>Turn on/off Dark theme mode (black background) for System and compliant apps  <br>See <a href="../mc/#generaluiconfiguration">General UI Configuration</a> &gt; Control Dark Theme </li>
+
+<li>Control user access to Battery Saver mode  <br>See <a href="../mc/#powerconfiguration">Power Configuration</a> &gt; User Control of Battery Saver Mode   </li></ul>
+</li>
+</ul>
+
+<h3 id="addedinv112" class="anchor"><a class="heading-anchor" href="#addedinv112"><span></span></a>Added in v11.2</h3>
+
+<p><strong>OEMConfig 11.2 now supports MX 11.2</strong>, adding the following major features and enhancements: </p>
+
+<ul>
+<li><strong>VolumeUI Configuration</strong> adds the ability to: 
+
+
+<ul>
+<li>Assign preset volume levels for streaming music to HDMI output<br>(Volume UI Configuration &gt; Add Profile Streams &gt; Modes &gt; Type &gt; Hdmi) </li></ul>
+</li>
+</ul>
+
+<hr>
 
 <h3 id="addedinv111" class="anchor"><a class="heading-anchor" href="#addedinv111"><span></span></a>Added in v11.1</h3>
 
@@ -275,7 +384,7 @@
 <li>secondaryDisplayRemoteControl </li></ul>
 </li>
 
-<li><strong><u><a href="../mc/#firmwareovertheairconfiguration">Firmware Over the Air Configuration</a></u></strong> now supports the following parameters: <br>
+<li><strong>Firmware Over the Air Configuration</strong> now supports the following parameters: <br>
 
 
 <ul>
@@ -348,7 +457,7 @@
 <li>btBeaconXmitInterval </li></ul>
 </li>
 
-<li><u><a href="../mc/#deviceadministrationconfiguration">Device Administration</a></u> now supports lock-screen customization and free-fall detection for the alert-button through these parameters:
+<li>Device Administration now supports lock-screen customization and free-fall detection for the alert-button through these parameters:
 
 
 <ul>
@@ -869,7 +978,7 @@ Since the release of Android Enterprise, capabilities once accessible only throu
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2021 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
