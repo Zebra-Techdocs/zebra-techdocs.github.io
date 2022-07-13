@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             RxLogger
-                                            7.0
+                                            7.x
                         </p>
 
                     </ul>
@@ -203,7 +203,7 @@
                                     <h1 id="about-rxlogger" class="anchor"><a class="heading-anchor" href="#about-rxlogger"><span></span></a>About RxLogger</h1>
                                     <p>
                                             RxLogger
-                                            7.0
+                                            7.x
                                     </p>
                                 </div>
                             </section>                    
@@ -220,14 +220,23 @@
 
 <p>RxLogger is a software utility that provides centralized control of application and system logging, with the ability to easily customize output metrics for targeted diagnostic purposes. At the core of RxLogger is <code>diagdaemon</code>, a Zebra-built logging service that collects data and event logs from the Android kernel, logcat and other system components, and stores them in a single location where they can be filtered and displayed. Through an easy-to-use GUI interface, RxLogger also can change the type and frequency of data collection and control how much data is stored on the device. RxLogger is included with every Zebra Android device by default.</p>
 
+<!--
+> See [Device Specific Information](#devicespecificinformation) for differences in behavior due to hardware or chipset restrictions. -->
+
 <p><em><b>Note:</b> The appearance of sample app screens displayed throughout this guide can vary by RxLogger version, Android version, and screen size.</em></p>
 
 <hr>
 
-<h2 id="newinrxlogger70" class="anchor"><a class="heading-anchor" href="#newinrxlogger70"><span></span></a>New in RxLogger 7.0</h2>
+<h2 id="newinrxlogger7x" class="anchor"><a class="heading-anchor" href="#newinrxlogger7x"><span></span></a>New in RxLogger 7.x</h2>
 
 <ul>
 <li>Usage Stats option from <a href="../modules/#snapshotmodule">Snapshot Module</a> is now disabled by default.</li>
+
+<li>New hardware support based on new Zebra mobile computers released.<!-- See <a href="#devicespecificinformation">Device-Specific Information</a>.--></li>
+
+<li>New <a href="../modules/#batterypower">Battery power</a> data available based on device model. </li>
+
+<li>New <a href="../modules/#snapshotmodule">Memory Info</a> option to capture memory used by system processes.</li>
 </ul>
 
 <hr>
@@ -249,6 +258,16 @@
 
 <li>Change in <a href="../settings/#settingsfile">internal storage path</a>.</li>
 </ul>
+
+<!--
+---
+
+## Device-Specific Information
+
+The following links provide information on how RxLogger operation or behavior may differ based on device model or chipset:
+* [WS50](../devices/ws50) - RxLogger screens are customized due to screen size limitation. 
+* [Battery power](../modules/#batterypower) data varies by RxLogger version based on the device model's chipset. 
+-->
 
 <hr>
 
@@ -288,9 +307,11 @@ RxLogger has lost connection to the `diagdaemon`:
 
 <li><p><strong>Stop button -</strong> stops the <code>diagdaemon</code> service and halts data collection.</p></li>
 
-<li><p><strong>About button -</strong> displays version information for <code>diagdaemon</code>, RxLogger and data collection modules.</p></li>
+<li><p><strong>About button -</strong> displays version information for <code>diagdaemon</code>, RxLogger and data collection modules. <br>
+<strong>Note:</strong> On WS50, "About" is accessible from the top-right options menu in the main screen.</p></li>
 
-<li><p><strong>Settings button -</strong> displays a panel for configuring RxLogger and <code>diagdaemon</code> settings.</p></li>
+<li><p><strong>Settings button -</strong> displays a panel for configuring RxLogger and <code>diagdaemon</code> settings. <br>
+<strong>Note:</strong> On WS50, "Settings" is accessible from the top-right options menu in the main screen.</p></li>
 </ul>
 
 <hr>
@@ -351,7 +372,7 @@ RxLogger has lost connection to the `diagdaemon`:
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <!--
                     <div class="col-sm-2">
