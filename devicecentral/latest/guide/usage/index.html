@@ -57,7 +57,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Central
-                                            3.2
+                                            3.3
                         </p>
 
                     </ul>
@@ -65,17 +65,17 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicecentral/3-2/guide/about">
+                            <a href="/devicecentral/3-3/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-2/guide/setup">
+                            <a href="/devicecentral/3-3/guide/setup">
                                         Install
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-2/guide/usage">
+                            <a href="/devicecentral/3-3/guide/usage">
                                         Using Device Central
                             </a>
                         </li>
@@ -85,7 +85,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/devicecentral/3-2/search">
+                            <a href="/devicecentral/3-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -195,7 +195,7 @@
                                     <h1 id="using-device-central" class="anchor"><a class="heading-anchor" href="#using-device-central"><span></span></a>Using Device Central</h1>
                                     <p>
                                             Device Central
-                                            3.2
+                                            3.3
                                     </p>
                                 </div>
                             </section>                    
@@ -210,17 +210,11 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>This section describes how to use <strong>Device Central</strong>. Device Central works only on <a href="../about/#supporteddevices">specific devices</a> and requires Bluetooth to be enabled on the device.</p>
+<p>This section describes how to use <strong>Device Central</strong>. Device Central supports pairing/unpairing of all Bluetooth peripherals that follow the Bluetooth standards.</p>
 
-<h3 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h3>
+<p><i><b>Exception: Unpairing a Bluetooth Scanner peripheral is currently not supported.</b> Zebra Bluetooth scanners act as a master device which controls the pairing and connection with mobile computers. These Bluetooth scanners have the re-connect feature which may be initiated on the scanner itself. Therefore, unpairing the Bluetooth scanner from a mobile computer will not remove the paired information completely. To address this, pressing the re-connect button on the Bluetooth scanner will re-establish the pairing and connection with mobile computers.</i></p>
 
-<ul>
-<li><strong>Device Central 3.1:</strong> New <strong>Smart Leash</strong> feature triggering notification alerts if a Bluetooth accessory moves out of range and becomes disconnected, preventing loss of accessories. This feature applies to Android 10 devices and higher.</li>
-
-<li><strong>Device Central 3.0:</strong> Mobility DNA Enterprise License required for some devices, now supports Pairing/Unpairing of all Bluetooth peripherals that follow the Bluetooth standards, fixed issue pairing with printers and other accessories if authentication is set with user PIN entry, and fixed issue with improper reporting of the connection state if multiple RS5100 devices are paired.</li>
-
-<li><strong>Device Central 2.1:</strong> Use of hardware scan trigger to scan and pair.</li>
-</ul>
+<hr>
 
 <h2 id="pairunpairaperipheral" class="anchor"><a class="heading-anchor" href="#pairunpairaperipheral"><span></span></a>Pair/Unpair a Peripheral</h2>
 
@@ -345,6 +339,8 @@
 <br></p></li>
 </ol>
 
+<hr>
+
 <h2 id="notifications" class="anchor"><a class="heading-anchor" href="#notifications"><span></span></a>Notifications</h2>
 
 <p>Device Central displays a notification of the connected peripheral in the Notification bar. This notification displays information on the type of peripheral connected and the length of time for the connection. This information remains in the notification bar for the duration of the active connection.
@@ -357,6 +353,8 @@ For Android 10 or higher, Device Central displays a notification related to the 
 <img style="height:400px" src="notification_Android10.png">
 <br>
 Tapping on the notification opens the Device Central app.</p>
+
+<hr>
 
 <h2 id="devicedetails" class="anchor"><a class="heading-anchor" href="#devicedetails"><span></span></a>Device Details</h2>
 
@@ -434,6 +432,8 @@ The Firmware Update screen appears.
 <li><p>Verify if the update is successful by validating the firmware version in the Device Details screen after the peripheral reconnects.</p></li>
 </ol>
 
+<hr>
+
 <h2 id="peripheralssummarylist" class="anchor"><a class="heading-anchor" href="#peripheralssummarylist"><span></span></a>Peripherals Summary List</h2>
 
 <p>The <strong>Peripherals</strong> tab provides a list of the paired Bluetooth peripherals. The peripherals are listed by device name showing their connected state as indicated by the green dot (connected) or red dot (disconnected). If the peripheral is in the connected state, additional information is displayed for supported peripherals such as Zebra RS6000 Bluetooth Scanner and Zebra HS3100 Bluetooth Headset. This information includes battery status and the length of time the peripheral has been connected. Some connected peripherals may provide action buttons that allow the user to perform an action associated with a given peripheral. For example, the RS6000 allows a user to Page the connected scanner or update the firmware. <br>
@@ -445,6 +445,8 @@ The Firmware Update screen appears.
 <p>The <strong>My Device</strong> tab displays information pertaining to the Android device which Device Central is running on and its battery. This information includes: device model, device serial number, OS version, system build number, battery level, battyer part number, battery serial number, and battery manufactured date.
 <img style="height:400px" src="my_device_3.0.png">
 <br></p>
+
+<hr>
 
 <h2 id="smartleash" class="anchor"><a class="heading-anchor" href="#smartleash"><span></span></a>Smart Leash</h2>
 
@@ -464,36 +466,29 @@ The Firmware Update screen appears.
 <li><p>Tap the top right hamburger menu, then tap on <strong>Settings.</strong>
 <img style="height:400px" src="settings_menu.png"></p></li>
 
-<li><p>Toggle to enable <strong>Smart Leash.</strong> Optionally, toggle to enable other feedback and related options:</p></li>
-</ol>
+<li><p>Toggle to enable <strong>Smart Leash.</strong> Optionally, toggle to enable other feedback and related options:</p>
 
 <ul>
-<li><strong>Audio Feedback:</strong>
+<li><strong>Audio Feedback:</strong></li>
 
-
-<ul>
 <li><strong>Notification Sound -</strong> select the audio for the alert</li>
 
 <li><strong>Repeat Count -</strong> set the number of times (0-100) the audio feedback sound repeats after initial playback</li>
 
-<li><strong>Volume -</strong> set the volume level percentage % (1-100) for the audio feedback sound</li></ul>
-</li>
+<li><strong>Volume -</strong> set the volume level percentage % (1-100) for the audio feedback sound</li>
 
-<li><strong>Haptic Feedback:</strong>
+<li><strong>Haptic Feedback:</strong></li>
 
-
-<ul>
 <li><strong>Duration -</strong> set the time in milliseconds (500-1,800,000) equivalent to 0.5 seconds to 30 minutes for the haptic, or vibration, feedback to take place</li></ul>
-</li>
-</ul>
 
-<p><img style="height:400px" src="settings.png"></p>
+<p><img style="height:400px" src="settings.png"></p></li>
 
-<ol>
-<li>When the connected Bluetooth peripheral moves out of range and becomes disconnected from the device, by default a notification message appears in the notification drawer:
+<li><p>When the connected Bluetooth peripheral moves out of range and becomes disconnected from the device, by default a notification message appears in the notification drawer:
 <img style="height:400px" src="smartleash_notification.png">
-<br></li>
+<br></p></li>
 </ol>
+
+<hr>
 
 <h2 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h2>
 
@@ -504,7 +499,7 @@ The Firmware Update screen appears.
 
 
 <ul>
-<li><em>For Bluetooth headsets, mobile payment modules and printers:</em> If a device is already previously paired and another device of that same category type is being paired, the previously paired device will be automatically unpaired to allow the new device to be paired. </li>
+<li><em>For Bluetooth headsets, mobile payment modules and printers:</em> If a device is already previously paired and another device of that same category type is being paired, the previously paired device will be automatically unpaired to allow the new device to be paired.</li>
 
 <li><em>For Bluetooth scanners:</em> If a device is already previously paired and another device of that same category type is being paired, the previously paired device will not be unpaired automatcially and the new device will not be paired until the previous device is disconnected or unpaired.</li></ul>
 </li>
@@ -519,34 +514,60 @@ The Firmware Update screen appears.
 <li><strong>Enable/Disable Silent Pairing Option</strong>: If enabled and configured, it allows the confirmation prompt to be bypassed during the pairing process. Use <a href="/mx/bluetoothmgr">Bluetooth Manager CSP</a> to configure this option.</li>
 </ul>
 
+<hr>
+
 <h2 id="usagenotes" class="anchor"><a class="heading-anchor" href="#usagenotes"><span></span></a>Usage Notes</h2>
 
 <ul>
 <li>When in <strong>Android Multiple User mode,</strong> Device Central only supports the Primary user.</li>
 
-<li><strong>Silent Pairing</strong> can be enabled/disabled via <a href="/mx/bluetoothmgr">Bluetooth Manager CSP</a>, allowing the confirmation prompt to be bypassed during the pairing process.</li>
-
 <li>The <strong>scanning profile named “DeviceCentral” in DataWedge should not be removed or modified</strong>, otherwise unexpected behavior may occur.</li>
 
-<li>Only <strong>Zebra Bluetooth scanners are listed in the notification drawer in Android when connected to the device</strong>. All other peripheral devices are listed only in the Device Central main UI.</li>
+<li>When connected to the device, only <strong>Zebra Bluetooth scanners are listed in the notification drawer in Android.</strong> All other peripheral devices are listed in the Device Central main UI.</li>
 
-<li><strong>To receive Smart Leash alerts:</strong>
+<li>The Device Central application must be installed on the device before being <strong>configured with <a href="/mx/devicecentralmgr">Device Central Manager CSP</a>.</strong></li>
+
+<li><strong>To receive Smart Leash alerts,</strong> the Device Central application must be installed and launched at least once.</li>
+
+<li>The <strong>serial number for HS3100 Bluetooth headset</strong> may report incorrectly.</li>
+
+<li>When <strong>connecting the RS6000 scanner, HS3100 headset or another Bluetooth peripheral device that provides battery information,</strong> it may take 10-15 seconds for the battery information to appear.</li>
+
+<li><strong>When launching Device Central for the first time,</strong> users must wait 2-3 seconds before scanning a barcode that contains the MAC address of a Bluetooth peripheral.</li>
+</ul>
+
+<p><br></p>
+
+<hr>
+
+<h2 id="zebraws50devicenotes" class="anchor"><a class="heading-anchor" href="#zebraws50devicenotes"><span></span></a>Zebra WS50 Device Notes</h2>
+
+<p>The WS50 is a full-featured wearable touch computer with a two-inch screen. Device Central features and functionality are limited due to restrictions based on the screen size and form factor of the WS50.</p>
+
+<ul>
+<li>Introduced a new floating button that expands to 3 quick access icons: <a href="../usage/#scanandpair">Scan &amp; Pair</a>, <a href="../usage/#peripheralssummarylist">Peripherals</a> and <a href="../usage/#mydevice">My Device</a>.
+<img alt="" style="height:200px" src="floating-button-expanded.png"></li>
+
+<li>Connected (green dot) and disconnected but paired (red dot) peripherals are displayed as cards. Swipe horizontally to see other cards not in view. Applies to <strong>Scan &amp; Pair</strong> and <strong>Peripherals</strong> screens.
+<img alt="image" style="height:200px" src="peripherals.png"></li>
+
+<li>The <strong>Device Details</strong> screen is limited, displaying the following information: serial number, MAC address, battery level (%) and firmware version.
+<img alt="image" style="height:200px" src="device-details.png"></li>
+
+<li><strong>Bluetooth Control Show/Hide</strong> is only configurable through <a href="/stagenow/latest/csp/devicecentralmgr/">StageNow</a>, an Enterprise Mobility Management (EMM) system or <a href="/mx/devicecentralmgr">Device Central Manager CSP</a>. After the control is enabled, the <strong>Enable Bluetooth</strong> option is visible.
+<img alt="image" style="height:200px" src="enable-bluetooth.png"></li>
+
+<li>The following Device Central features are not supported:
 
 
 <ul>
-<li>Device Central must be installed and launched at least once on the device.</li>
+<li><a href="../usage/#smartleash">Smart Leash</a></li>
 
-<li>Vibration must be supported on the device to receive haptic feedback.</li></ul>
+<li><a href="../usage/#updatefirmware">Peripheral Firmware Update</a></li>
+
+<li><a href="../usage/#pageaconnectedperipheral">Page Connected Peripheral</a></li></ul>
 </li>
-
-<li>If the <strong>Smart Leash option is enabled and a Bluetooth peripheral is connected,</strong> an additional 5-10% of battery can be consumed on the mobile computer regardless of how many peripherals are connected.</li>
-
-<li>When <strong>DataWedge intent APIs are in <a href="/datawedge/latest/guide/programmers-guides/secure-intent-apis">controlled mode</a></strong> restricting the use of APIs, scanning functionality in Device Central does not work as expected.</li>
-
-<li>When <strong>connecting the RS6000 scanner, HS3100 headset or another Bluetooth peripheral device that provides battery information,</strong> it may take 10-15 seconds for the battery information to appear.</li>
 </ul>
-
-<p><br><br></p>
 
 <hr>
 
@@ -594,7 +615,7 @@ The Firmware Update screen appears.
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--
