@@ -304,7 +304,7 @@
 
 <p><i>Scanner Selection</i></p>
 
-<p><strong>Auto</strong> is the default scanner selection, automatically determining the best scanning device from the list of available devices based on the following auto scanner selection rules:</p>
+<p><strong>Auto</strong> is the default scanner selection, which automatically determines the best scanning device from the list of available devices based on the following auto scanner selection rules:</p>
 
 <ul>
 <li>If a Zebra Scan Module or Scan/MSR Module is installed, the 2D imager is selected.</li>
@@ -316,7 +316,9 @@
 <li>When 2D Imager is selected, scanning is performed using the installed Scan or Scan/MSR module.</li>
 </ul>
 
-<p>Generic scanner selection for <strong>Zebra Bluetooth Scanner</strong> and <strong>Zebra USB Scanner:</strong> Newly released Zebra Bluetooth or USB scanners are automatically supported (in SSI mode), but the specfic scanner model names may not be visible in the <strong>Scanner selection</strong> list yet. In this case, selecting either <strong>Zebra Bluetooth Scanner</strong> or <strong>Zebra USB Scanner</strong> can be used as a generic option to scan from each respective peripheral device. The availability of the scanner model name being listed relies on the operating system build (BSP) - see <a href="../../matrix">Feature Matrix</a> for version compatibility and the <a href="https://www.zebra.com/us/en/support-downloads.html">Zebra Support Portal</a> to download the latest build.</p>
+<p><strong>Generic scanner selection</strong> for <strong><a href="#bluetoothssiscanners">Zebra Bluetooth Scanner</a></strong> and <strong><a href="#usbssiscanners">Zebra USB Scanner</a>:</strong> Newly released Zebra Bluetooth or USB scanners are automatically supported (in SSI mode), but the specfic scanner model names may not be visible in the <strong>Scanner selection</strong> list yet. In this case, selecting either <strong>Zebra Bluetooth Scanner</strong> or <strong>Zebra USB Scanner</strong> can be used as a generic option to scan from each respective peripheral device. The availability of the scanner model name being listed relies on the operating system build (BSP) - see <a href="../../matrix">Feature Matrix</a> for version compatibility and the <a href="https://www.zebra.com/us/en/support-downloads.html">Zebra Support Portal</a> to download the latest build.</p>
+
+<p><strong><a href="#usbssicradles">Zebra USB Cradles</a></strong> supports Bluetooth scanners paired/connected to its USB cradle, connected to a workstation cradle with an Android device inserted. This permits the Bluetooth scanner to scan data into the Android device inserted in the workstation cradle. </p>
 
 <p><strong>Multiple scanner support</strong> provides the capability to use more than one scanner interchangeably in the same DataWedge profile without the need for manual configuration, such as when an internal scanner and an external Bluetooth scanner is required. Additionally, each scanner can be individually configured within the same profile. To add a scanner, in the <strong>Scanner Selection</strong> screen tap the top right menu and select <strong>Add new scanner.</strong> A list of available scanners is displayed.</p>
 
@@ -401,6 +403,8 @@
 <li><strong>Keep Enabled on Suspend -</strong> This mode is supported on Bluetooth and pluggable scanners, and might result in faster battery drain than would otherwise be expected while in suspend mode. <strong>Note: The Zebra computing device wakes from suspend mode when pressing the scan trigger of any supported scanner</strong>.</li>
 </ul>
 
+<hr>
+
 <h3 id="usbssiscanners" class="anchor"><a class="heading-anchor" href="#usbssiscanners"><span></span></a>USB SSI Scanners</h3>
 
 <p>DataWedge supports the following Zebra USB SSI scanners:</p>
@@ -436,6 +440,108 @@
 <blockquote>
   <p><strong>Important</strong>: Support for decode parameters can vary depending on the scanning device selected. For device-specific support notes, please refer to the <a href="https://www.zebra.com/us/en/sitesearch.html?q=integrator">Integrator Guide</a> that accompanied the unit.</p>
 </blockquote>
+
+<hr>
+
+<h3 id="usbssicradles" class="anchor"><a class="heading-anchor" href="#usbssicradles"><span></span></a>USB SSI Cradles</h3>
+
+<p>DataWedge supports the following Zebra USB cradles with Bluetooth scanner for barcode scanning in SSI mode:</p>
+
+<table class="facelift" style="width40%" border="1" padding="5px">
+    <tbody><tr bgcolor="#dce8ef">
+        <th>Cradle/Scanner</th>
+        <th>Minimum Firmware Version</th>
+    </tr>
+    <tr>
+        <td>STB3678 (cradle)</td>
+        <td>PAACNS00-005-R00</td>
+    </tr>
+    <tr>
+        <td>CR2278 (cradle)</td>
+        <td>PAADNS00-001-R04</td>
+    </tr>
+    <tr>
+        <td>CR8178 (cradle)</td>
+        <td>PAACYS00-006-R02</td>
+    </tr>
+    <tr>
+        <td>DS3678 (scanner)</td>
+        <td>PAACKS00-010-R00</td>
+    </tr>
+    <tr>
+        <td>DS2278 (scanner)</td>
+        <td>PAADFS00-002-R05</td>
+    </tr>
+    <tr>
+        <td>DS8178 (scanner)</td>
+        <td>PAACXS00-007-R01</td>
+    </tr>
+</tbody></table>
+
+<p><br>
+DataWedge supports the following Zebra Android devices to connect to the supported USB cradle (Scanner framework version 32.7.31.0 or later is required on the Android device):</p>
+
+<ul>
+<li>EC50 / EC55</li>
+
+<li>ET51 / ET56 </li>
+
+<li>L10AW</li>
+
+<li>TC52AX</li>
+
+<li>TC52 / TC57</li>
+
+<li>TC52X / TC57X</li>
+
+<li>VC8300</li>
+</ul>
+
+<p>The proper setup and configuration is required for connection to be established.</p>
+
+<h4 id="usbcradleandscannerconfiguration" class="anchor"><a class="heading-anchor" href="#usbcradleandscannerconfiguration"><span></span></a>USB Cradle and Scanner Configuration</h4>
+
+<p>The Zebra USB cradle and scanner must be in “SSI over USB CDC” mode to work with DataWedge. </p>
+
+<p>Follow the steps below:</p>
+
+<ol>
+<li><p>Power the Zebra USB cradle by connecting it to any PC.</p></li>
+
+<li><p>Pair/Connect the Bluetooth scanner by scanning the pairing barcode printed on the USB cradle.</p></li>
+
+<li><p>Scan the “SSI Over USB CDC” barcode with the Bluetooth Scanner:
+<img style="height:150px" src="ssi-over-usb-cdc-barcode.png"></p></li>
+
+<li><p>The Bluetooth scanner automatically restarts.</p></li>
+
+<li><p>Both scanner and USB cradle are now in SSI over USB CDC mode.</p></li>
+</ol>
+
+<h4 id="setupandconnectwithandroiddevice" class="anchor"><a class="heading-anchor" href="#setupandconnectwithandroiddevice"><span></span></a>Setup and Connect with Android Device</h4>
+
+<p>Connect the Android device to the Bluetooth scanner via USB cradle:</p>
+
+<ol>
+<li>Power on the supported Zebra Android device. </li>
+
+<li>Insert the device into the workstation cradle which supports USB connection and is connected to a power supply.</li>
+
+<li>Insert one end of the <em>ethernet</em> cable into the USB cradle. </li>
+
+<li>Insert the other end of the cable <em>(USB)</em> to the workstation cradle. The green LED lights up on the USB cradle.</li>
+
+<li>Pair/connect the supported Bluetooth scanner to the USB cradle by scanning the Bluetooth pairing barcode printed on the USB cradle. The scanner connects to the USB cradle.</li>
+</ol>
+
+<p>Scanning can now be performed with the Bluetooth scanner for the results to output to the Android device. 
+The <strong>Scanner Selection</strong> in DataWedge automatically selects <strong>Zebra USB Cradle.</strong> If scanning with DWDemo, press the hard trigger button on the Bluetooth scanner or press the soft trigger button from the DWDemo app to start scanning.</p>
+
+<p><strong>Note:</strong> The steps above must be followed in order. If the scan application is opened before pairing/connecting the Bluetooth Scanner with the USB cradle, scanning will not work.</p>
+
+<p><img style="height:350px" src="usb-cradle-connection.png"></p>
+
+<p><em>Connectivity between the Zebra Android device, USB cradle and Bluetooth scanner</em></p>
 
 <hr>
 
@@ -896,7 +1002,28 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 
 <h3 id="multibarcodeparams" class="anchor"><a class="heading-anchor" href="#multibarcodeparams"><span></span></a>MultiBarcode Params</h3>
 
-<p><strong>MultiBarcode</strong> (separate from MultiBarcode under Document Capture, which includes <a href="#dreadspecificbarcode">Read Specific Barcode</a> and <a href="#eautogroupidentification">Auto Group Identification</a>) acquires multiple, unique barcodes from a form in a single scan session and delivers the data either immediately or after the specified number of barcodes per scan is reached. A template is not required. In DataWedge 8.1 and earlier, this section is displayed as <strong>Basic MultiBarcode params</strong>.</p>
+<p><strong>MultiBarcode</strong> acquires multiple, unique barcodes from a form in a single scan session and delivers the data either immediately or after a specific requirement is met - a specific number of barcodes is scanned or the number of barcodes scanned lies within a specified value range. Duplicate barcodes are decoded only once. A template is not required. <strong>MultiBarcode</strong> must be selected as the <strong><a href="#scanningmodes-1">Scanning Mode</a></strong> under <strong>NG SimulScan Configuration.</strong> MultiBarcode includes the following features:</p>
+
+<ul>
+<li><strong>Instant Reporting</strong> immediately reports each barcode decoded while allowing the user control of the scan session - when the scan session starts (press and hold trigger) and ends (release trigger) - with decode feedback for each barcode scanned.</li>
+
+<li><strong>Variable barcode quantity</strong> applies to workflows where barcode quantity varies from label to label. Labels may not necessarily follow a specification, a specific quantity of barcodes or unique criteria to distinguish specific barcodes. Consider labels from different manufacturers that use different barcode identifiers and/or labels that have additional barcode information. Adjust variable barcode quantity by setting the minimum and maximum number of barcodes per scan. </li>
+
+<li><strong>Fixed barcode quantity</strong> applies to workflows where the same number of barcodes are always expected and no unique criteria exists to distinguish each barcode. Specify the specific number of barcodes per scan.</li>
+
+<li>Specify when to <strong>report decoded barcodes,</strong> whether immediately when a barcode is scanned or not until one of the following requirements is met:
+
+
+<ul>
+<li>A <strong>specific number of barcodes</strong> is scanned </li>
+
+<li>The <strong>number of barcodes scanned is within range</strong> of the minimum and maximum quantity of barcodes specified</li></ul>
+</li>
+</ul>
+
+<blockquote>
+  <p><em>MultiBarcode from NG SimulScan</em> is not to be confused with <em>MultiBarcode from Document Capture,</em> which includes <a href="#dreadspecificbarcode">Read Specific Barcode</a> and <a href="#eautogroupidentification">Auto Group Identification</a>.</p>
+</blockquote>
 
 <table>
 
@@ -913,16 +1040,23 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 
 </tbody></table>
 
-<p><i>MultiBarcode params</i></p>
+<p><i>MultiBarcode params (in DataWedge 8.1 and earlier, this section is displayed as <b>Basic MultiBarcode params</b> instead of <b>MultiBarcode params</b>)</i></p>
 
 <p>MultiBarcode params options:</p>
 
 <ul>
-<li><strong>Instant Reporting -</strong> Enable/Disable immediate reporting of unique barcodes within a scanning session; duplicate barcodes are ignored. If enabled, it ignores the value of <strong>Maximum/Specific number of barcodes per scan</strong> and immediately reports the scanned data. If disabled (default), the decoded data is returned as a single entity after reaching the <strong>Maximum/Specific number of barcodes per scan.</strong> If barcode separators are designated to be output (using <a href="../../output/ip">IP Output</a> or <a href="../../output/keystroke">Keystroke Output</a>) for multibarcodes, these separators are not added - by design, the barcodes are output one at a time with <strong>Instant Reporting.</strong></li>
+<li><strong>Instant Reporting -</strong> Enable/Disable immediate reporting of unique barcodes within a scanning session; press and hold the trigger to initiate scanning, release the trigger to stop scanning. Duplicate barcodes are ignored. If <strong>Instant Reporting</strong> is enabled, it ignores the value from <strong>Maximum/Specific number of barcodes per scan</strong> and immediately reports the scanned data. If disabled (default), the decoded data is returned as a single entity after reaching the <strong>Maximum/Specific number of barcodes per scan.</strong> If barcode separators are designated to be output (using <a href="../../output/ip">IP Output</a> or <a href="../../output/keystroke">Keystroke Output</a>) for multibarcodes, these separators are not added - by design, the barcodes are output one at a time with <strong>Instant Reporting.</strong></li>
 
-<li><strong>Minimum number of barcodes per scan -</strong> Represents the lower limit for number of barcodes to scan in a single scan session if <strong>Report decoded barcodes</strong> is enabled. Barcode data is decoded only if the number of barcodes scanned is between the range of <strong>Minimum number of barcodes to scan</strong> and <strong>Maximum/Specific number of barcodes to scan.</strong> To eliminate the minimum limit, set this value to 0 and set a specific value for <strong>Maximum/Specific number of barcodes per scan.</strong> <em>Only applies to integrated imagers, not external scanners (e.g. RS5100 ring scanner).</em> If <strong>Report decoded barcodes</strong> is disabled, this option is grayed out and inaccessible. </li>
+<li><strong>Minimum number of barcodes per scan -</strong> Represents the lower limit for number of barcodes to scan in a single scan session if <strong>Report decoded barcodes</strong> is enabled. Barcode data is decoded only if the number of barcodes scanned is between the range of <strong>Minimum number of barcodes to scan</strong> and <strong>Maximum/Specific number of barcodes to scan.</strong> To eliminate the minimum limit, set this value to 0 and set a specific value for <strong>Maximum/Specific number of barcodes per scan.</strong> <em>Only applies to integrated imagers, not external scanners (e.g. RS5100 ring scanner).</em> If <strong>Report decoded barcodes</strong> is disabled, this option is grayed out and inaccessible.</li>
 
-<li><strong>Maximum/Specific number of barcodes per scan -</strong> Represents the higher limit for number of barcodes to scan if <strong>Report decoded barcodes</strong> is enabled. Barcode data is decoded only if the number of barcodes is between the range of <strong>Minimum number of barcodes to scan</strong> and <strong>Maximum/Specific number of barcodes to scan.</strong> If <strong>Report decoded barcodes</strong> is disabled, this represents the specific number of barcodes to scan in a single scan session. <em>Only applies to integrated imagers, not external scanners (e.g. RS5100 ring scanner).</em></li>
+<li><strong>Maximum/Specific number of barcodes per scan -</strong> Only applies to integrated imagers, not external scanners (e.g. RS5100 ring scanner).
+
+
+<ul>
+<li><em>Variable barcode quantity -</em> <strong>Maximum number of barcodes per scan</strong> represents the higher limit for number of barcodes to scan in a single scan session, if <strong>Report decoded barcodes</strong> is enabled. Barcode data is decoded only if the number of barcodes is between the range of <strong>Minimum number of barcodes to scan</strong> and <strong>Maximum number of barcodes to scan.</strong> The maximum limit is 100.</li>
+
+<li><em>Fixed barcode quantity -</em> <strong>Specific number of barcodes per scan</strong> represents the specific number of barcodes to be scanned in a single scan session, if <strong>Report decoded barcodes</strong> is disabled. If the specified number of barcodes is not initially in view of the scanner, the scanner does not decode any data. If the scanner's field of view contains a number of barcodes greater than the specified quantity, the scanner randomly decodes barcode(s) until the specified number is reached. For example, if the count is set to 2 and 8 barcodes are in the field of view, the scanner decodes the first 2 barcodes it reads, returning the data in random order. <strong>Data is returned only after the specified number of barcodes is read</strong>.</li></ul>
+</li>
 
 <li><strong>Report Decoded Barcodes -</strong> Enable/Disable reporting of decoded barcode data in a single scan session irrespective of the specified <strong>Maximum/Specific number of barcodes per scan.</strong> If disabled, the decoded barcodes are not reported if the <strong>Maximum/Specific number of barcodes per scan</strong> is not reached in the scan session. If enabled, the decoded barcodes are reported when the number of barcodes scanned is between the range of <strong>Minimum number of barcodes per scan</strong> and <strong>Maximum/specific number of barcodes per scan.</strong> Consider the following behavior when <strong>Report decoded barcodes</strong> is enabled:
 
@@ -943,15 +1077,14 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 
 <li><strong>Picklist behavior -</strong> If the Picklist parameter is set to “Disabled,” the device will attempt to scan the number of barcodes specified in the MultiBarcode params screen. If the Picklist parameter is set to a value other than “Disabled," the user is expected to move the cross-hair to each barcode to be scanned. <strong>Data is returned only after the specified number of barcodes is read</strong>.</li>
 
-<li><strong>Duplicate barcodes -</strong> If a label to be scanned contains multiple barcodes, some of which are duplicates (with the same label type and data), only one barcode from the duplicates is decoded; the remainder are ignored. If the label has two duplicate barcodes plus another two different barcodes, a maximum of three barcodes will be decoded from that form; one will be ignored as a duplicate.</li>
+<li><strong>Multiple barcode types -</strong> Multiple barcode types (decoders) can be acquired in the same scan session. For example, if the specified quantity for a MultiBarcode scan is four, two barcodes can be barcode type Code 128 and the other two can be type Code 39.</li>
 
-<li><strong>Multiple barcode types -</strong> Barcodes can be of multiple label types and still be acquired together. For example, if the specified quantity for a Multi-barcode scan is four, two barcodes can be label type Code 128 and the other two can be type Code 39.</li>
+<li><strong>If both Continuous Read and Instant Reporting parameters are enabled, Instant Reporting takes precedence</strong> over <strong>Continuous Read,</strong> which is ignored.</li>
 
-<li><strong>Barcodes in view -</strong>If the specified number of barcodes is not initially in view of the scanner, the scanner will not decode any data. If the scanner's field of view contains a number of barcodes greater than the specified quantity, the scanner will randomly decode barcode(s) until the specified number is reached. For example, if the count is set to two and eight barcodes are in the field of view, the scanner will decode the first two barcodes it sees, returning the data in random order. <strong>Data is returned only after the specified number of barcodes is read</strong>.</li>
-
-<li><strong>If both Continuous Read and Instant Reporting parameters are enabled, Instant Reporting</strong> takes precedence over <strong>Continuous Read,</strong> which is ignored.</li>
-
-<li><strong>If the Beam Timer expires</strong> during any of the scan sessions prior to meeting the specific criteria (e.g. minimum/maximum number of barcodes), the scanned data is not reported.</li>
+<li><strong>If the Beam Timer expires</strong> during any of the scan sessions prior to meeting the specific criteria (e.g. minimum/maximum number of barcodes), the scanned data is not reported.
+<!--  // Included as part of description stating duplicates are ignored.
+- **Duplicate barcodes -** If a label to be scanned contains multiple barcodes, some of which are duplicates (with the same label type and data), only one barcode from the duplicates is decoded; the remainder are ignored. If the label has two duplicate barcodes plus another two different barcodes, a maximum of three barcodes will be decoded from that form; one will be ignored as a duplicate.
+--></li>
 </ul>
 
 <hr>
@@ -1018,7 +1151,8 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 <p>To create a Barcode Highlighting Rule:</p>
 
 <ol>
-<li><p>Enable <strong>Barcode Input</strong> and <strong>Barcode Highlighting</strong>.</p>
+<li>Enable <strong>Barcode Input</strong> and <strong>Barcode Highlighting</strong>.</li>
+</ol>
 
 <table>
     <tbody><tr>
@@ -1026,8 +1160,9 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
         <td>&nbsp;&nbsp;&nbsp;</td>
         <td><img style="height:350px" src="barcode-highlighting.png"></td>
     </tr>
-</tbody></table></li>
+</tbody></table>
 
+<ol>
 <li><p>Tap on the ellipsis (...) next to <strong>Barcode Highlighting</strong> to open <strong>Barcode Highlighting Parameters</strong>.
 <img style="height:350px" src="barcode-highlighting-params.png"></p></li>
 
@@ -1047,10 +1182,12 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 <li><p>Tap <strong>Conditions</strong> to specify the conditions for the rule to take into effect.
 <img style="height:350px" src="highlight-conditions.png"></p></li>
 
-<li><p>Tap <strong>Identifier.</strong></p>
+<li><p>Tap <strong>Identifier.</strong></p></li>
+</ol>
 
-<p><img style="height:350px" src="highlight-condition-identifier.png"></p></li>
+<p><img style="height:350px" src="highlight-condition-identifier.png"></p>
 
+<ol>
 <li><p>Specify the appropriate settings as desired:
 <img style="height:350px" src="highlight-condition-identifier-params.png"></p></li>
 
@@ -1117,15 +1254,18 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 <p>To create a Report Data Rule:</p>
 
 <ol>
-<li><p>Enable <strong>Barcode Input</strong> and <strong>Barcode Highlighting</strong>.
-</p><table>
+<li>Enable <strong>Barcode Input</strong> and <strong>Barcode Highlighting</strong>.</li>
+</ol>
+
+<table>
     <tbody><tr>
         <td><img style="height:350px" src="barcode-input-enable.png"></td>
         <td>&nbsp;&nbsp;&nbsp;</td>
         <td><img style="height:350px" src="barcode-highlighting.png"></td>
     </tr>
-</tbody></table><p></p></li>
+</tbody></table>
 
+<ol>
 <li><p>Tap on the ellipsis (...) next to <strong>Barcode Highlighting</strong> to open <strong>Barcode Highlighting Parameters</strong>.
 <img style="height:350px" src="barcode-highlighting-params.png"></p></li>
 
@@ -1840,7 +1980,7 @@ _**Note:** Zebra does not recommend changing the Image Capture Mode parameter wh
 
 <p>Optical character recognition (OCR) allows digital text to be extracted from images. <strong>OCR Params</strong> applies to <strong>OCR A</strong> and/or <strong>OCR B</strong> decoders, when enabled. OCR A and OCR B only supports upper case letters, not lower case letters. OCR decoding is not as secure as barcode. To decrease OCR misdecodes and speed OCR reading, set an accurate OCR template and character subset, and use a check digit. Enabling OCR can slow barcode decoding. Enabling more than one OCR font could also slow OCR decoding and impact OCR decoding accuracy.</p>
 
-<p><strong>OCR is supported on all Zebra SDM660 platform devices with built-in imagers</strong> (such as TC52, TC57, TC72, and TC77). OCR is not supported on camera-only devices, Bluetooth scanners, SE965-based devices, nor Zebra Scanner Expansion Back (ZBack).</p>
+<p><strong>OCR is supported on all Zebra SDM660 platform devices with built-in imagers</strong> (such as TC52, TC57, TC72, and TC77). OCR is <em>not</em> supported on camera-only devices, Bluetooth scanners, SE965-based devices (such as MC3300 and MC9300), Zebra Scanner Expansion Back (ZBack) nor ET51 with integrated scanner.</p>
 
 <p><strong>Inverse OCR -</strong> White or light words on a black or dark background. Select an option for decoding inverse OCR:</p>
 
@@ -1947,7 +2087,7 @@ The Check Digit Modulus is 10. It passes because 19 divided by 10 leaves a remai
 
 <p><strong>OCR Subset -</strong> Defines a custom group of characters in place of a preset font variant. For example, if scanning only numbers and the letters A, B, and C, create a subset of just these characters to speed decoding. This applies a designated OCR Subset across all enabled OCR fonts.</p>
 
-<p><strong>OCR Template -</strong> Creates a template for precisely matching scanned OCR characters to a desired input format, which helps eliminate scanning errors. The template is formed with alpha, numeric and/or special characters. The default is 99999999, which '9' represents a digit for each character. Refer to the table below, where the <em>Template</em> column contains OCR templates consisting of characters that are represented based on the <em>Name</em> column. Each character has a specific representation. Carefully constructing an OCR template eliminates scanning errors. </p>
+<p><strong>OCR Template -</strong> Creates a template for precisely matching scanned OCR characters to a desired input format, which helps eliminate scanning errors. The template is formed with alpha, numeric and/or special characters. The default is 99999999, which '9' represents a digit for each character. Refer to the table below, where the <em>Template</em> column contains OCR templates consisting of characters that are represented based on the <em>Name</em> column. Each character has a specific representation. Carefully constructing an OCR template eliminates scanning errors.</p>
 
 <p>Minimum length - 3<br>
 Maximum Length - 100 (Default - 99999999)<br></p>
