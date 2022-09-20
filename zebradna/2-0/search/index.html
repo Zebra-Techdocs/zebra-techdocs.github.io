@@ -58,7 +58,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            PRE-RELEASE DOCUMENTATION (v1.3)
+                                            Zebra DNA Cloud
+                                            2.0
                         </p>
 
                     </ul>
@@ -69,32 +70,32 @@
 
 
                         <li>
-                            <a href="/zebradna/1-3/about">
+                            <a href="/zebradna/2-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/setup">
+                            <a href="/zebradna/2-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/usage">
+                            <a href="/zebradna/2-0/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/licensing">
+                            <a href="/zebradna/2-0/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/faq">
+                            <a href="/zebradna/2-0/faq">
                                     Known Issues
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/search">
+                            <a href="/zebradna/2-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -197,7 +198,7 @@
             last: false
         }
         var results = [];
-        $.getJSON( "/zebradna/1-3/index.json", function( data ) {
+        $.getJSON( "/zebradna/2-0/index.json", function( data ) {
           json_data = data;
           console.log("got data");
           fuse = new Fuse(json_data, { keys: ["title", "keywords"] });
@@ -220,7 +221,7 @@
               $("#btn-loading").show()
               $("#btn-search").hide();
               
-              var product_version = "/zebradna/1-3/index.json".replace("/index.json","");
+              var product_version = "/zebradna/2-0/index.json".replace("/index.json","");
                 var q = $("#query").val();
                 var url="https://www.google.com/search?q=site:techdocs.zebra.com" + product_version + "+"+q;
                 window.open(url);

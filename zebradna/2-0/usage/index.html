@@ -58,7 +58,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            PRE-RELEASE DOCUMENTATION (v1.3)
+                                            Zebra DNA Cloud
+                                            2.0
                         </p>
 
                     </ul>
@@ -69,32 +70,32 @@
 
 
                         <li>
-                            <a href="/zebradna/1-3/about">
+                            <a href="/zebradna/2-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/setup">
+                            <a href="/zebradna/2-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/usage">
+                            <a href="/zebradna/2-0/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/licensing">
+                            <a href="/zebradna/2-0/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/faq">
+                            <a href="/zebradna/2-0/faq">
                                     Known Issues
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/1-3/search">
+                            <a href="/zebradna/2-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -209,7 +210,8 @@
                                 <div class="">
                                     <h1 id="using-zebra-dna-cloud" class="anchor"><a class="heading-anchor" href="#using-zebra-dna-cloud"><span></span></a>Using Zebra DNA Cloud</h1>
                                     <p>
-                                            PRE-RELEASE DOCUMENTATION (v1.3)
+                                            Zebra DNA Cloud
+                                            2.0
                                     </p>
                                 </div>
                             </section>                    
@@ -222,11 +224,7 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="changelog" class="anchor"><a class="heading-anchor" href="#changelog"><span></span></a>Changelog</h2>
-
-<p><strong><code>JULY 2022</code> - Now reports <a href="#batteryhealth">battery health</a></strong> (on-device client update required). Feature can be found in the <a href="#managesettingsandgroups">Manage Settings and Groups</a> section. </p>
-
-<h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> <strong>Actions in this section can be performed only after zDNA Cloud has been set up</strong> by an organization. If necessary, please <strong>follow instructions in the <a href="../setup/#iconfigurenetwork">zDNA Cloud Setup Guide</a> before returning to this section</strong>.</p>
 
@@ -239,11 +237,11 @@
 <ul>
 <li><strong>Created with each new <u>instance</u></strong> of Zebra DNA Cloud</li>
 
-<li><strong>No more than one is allowed</strong> per organization</li>
+<li><strong>No more than one Tenant is allowed</strong> per organization</li>
 
-<li>Requires <a href="../setup/#iiregisterwithzebracom">registration at Zebra.com</a></li>
+<li>Each Tenant requires <a href="../setup/#iiregisterwithzebracom">registration at Zebra.com</a></li>
 
-<li>Uses Zebra SSO credentials</li>
+<li>Tenants use Zebra SSO credentials</li>
 
 <li><strong>Able to create Administrative Users</strong> and perform all other admin duties</li></ul>
 </li>
@@ -258,14 +256,14 @@
 
 <li>Can access all features <strong><em>except</em></strong> user administration</li>
 
-<li><strong>Does <u>NOT</u> use Zebra SSO credentials</strong></li></ul>
+<li><strong>Do <u>NOT</u> use Zebra SSO credentials</strong></li></ul>
 </li>
 </ul>
 
 <h3 id="adminrequirements" class="anchor"><a class="heading-anchor" href="#adminrequirements"><span></span></a>Admin Requirements</h3>
 
 <ul>
-<li>At least one set of <strong>Adminstrator credentials</strong>: 
+<li>At least one set of <strong>Administrator credentials</strong>: 
 
 
 <ul>
@@ -293,13 +291,23 @@
 
 <h2 id="managedevices" class="anchor"><a class="heading-anchor" href="#managedevices"><span></span></a>Manage Devices</h2>
 
-<p>Devices can be managed in the zDNA Cloud system only <strong>after they have been enrolled and licensed in the system</strong>. To enroll devices in zDNA Cloud for the first time, <a href="../setup/#iiienrolldevices">see Enroll Devices</a> in the Setup Section. </p>
+<p>Devices can be managed in the zDNA Cloud system only <strong>after they have been enrolled and licensed in the system</strong>. To enroll devices in zDNA Cloud for the first time, <a href="../setup/#iiienrolldevices">see Enroll Devices</a> in the Setup Section. The device information displayed in this section is updated every 24 hours.  </p>
+
+<h4 id="updatedevery24hours" class="anchor"><a class="heading-anchor" href="#updatedevery24hours"><span></span></a>Updated Every 24 Hours:</h4>
+
+<ul>
+<li><strong>Device Name</strong></li>
+
+<li><strong>Android Version</strong></li>
+
+<li><strong>Installed apps and versions</strong></li>
+
+<li><strong>Battery information</strong></li>
+</ul>
 
 <hr>
 
-<h3 id="deviceactions" class="anchor"><a class="heading-anchor" href="#deviceactions"><span></span></a>Device Actions</h3>
-
-<h4 id="onindividualdevices" class="anchor"><a class="heading-anchor" href="#onindividualdevices"><span></span></a>On Individual Devices</h4>
+<h3 id="deviceactionsindividual" class="anchor"><a class="heading-anchor" href="#deviceactionsindividual"><span></span></a>Device Actions (individual)</h3>
 
 <p><strong>From the My Devices screen, the following actions can be executed remotely</strong> on enrolled device(s): 
 <img alt="image" style="height:350px" src="Device actions.png">
@@ -315,25 +323,27 @@
 
 <li><strong>Reboot Device -</strong> causes all apps to quit and restarts the device </li>
 
+<li><strong>Remote Support -</strong> initiates a remote-control session with the device </li>
+
 <li><strong>Wipe Device -</strong> resets the device to its factory-fresh state, <strong>permanently erasing all user apps and data</strong></li>
 
 <li><strong>Delete Device ✝︎ -</strong> removes zDNA client app from device, de-enrolls device from zDNA Cloud system; other apps and settings on device remain unchanged</li>
 
 <li><strong>Update zDNA Client -</strong> checks the client app on the device and pushes an update, if necessary </li>
 
-<li><strong>Reapply -</strong> Reapplies a settings Profile, usually after addressing "Issues" or a change of device availability </li>
+<li><strong>Reapply -</strong> Reapplies a settings Profile, usually after addressing "Issues" or a change of device availability (expires after 7 days)</li>
 </ul>
 
 <p><i><font size="1" color="grey">* This feature has no effect on the device if the user changed the passcode before zDNA Cloud enrollment. An Enterprise Reset and re-enrollment of the device is required to regain control.<br>✝︎ Deleted devices could remain visible in deployment detail documents if the device was selected for deployment before being deleted.</font></i></p>
 
-<h4 id="onmultipledevices" class="anchor"><a class="heading-anchor" href="#onmultipledevices"><span></span></a>On Multiple Devices</h4>
+<hr>
+
+<h3 id="deviceactionsbulk" class="anchor"><a class="heading-anchor" href="#deviceactionsbulk"><span></span></a>Device Actions (bulk)</h3>
 
 <p><strong>Selecting one or more devices activates the "Bulk Actions" button</strong>: 
 <img alt="image" style="height:350px" src="manage_devices_02.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
-
-<hr>
 
 <p><strong>Click on a Device name</strong> to display its details.<br>
 <i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>The device name and its Group association</strong> can be edited here and Groups can be created: 
@@ -354,6 +364,106 @@
 <img alt="image" style="height:350px" src="device_details_services.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
+
+<h3 id="deviceautonaming" class="anchor"><a class="heading-anchor" href="#deviceautonaming"><span></span></a>Device Auto-naming</h3>
+
+<p>Devices can be named using a custom alphanumeric prefix and a numerical sequence applied automatically upon enrollment or at any time thereafter. This can help simplify the naming of devices intended for a similar purpose. For example, devices intended for use in a warehouse might be tagged "Warehouse" and automatically named "Warehouse_1," "Warehouse_2," etc. </p>
+
+<h4 id="autonamingbehavior" class="anchor"><a class="heading-anchor" href="#autonamingbehavior"><span></span></a>Auto-naming Behavior</h4>
+
+<ul>
+<li><strong>The counter begins at _1</strong> with each new device name.</li>
+
+<li><strong>If an automatically named device is deleted</strong> or otherwise un-enrolled, it receives new number when re-enrolled. </li>
+
+<li><strong>Characters supported for prefix naming</strong>: 
+
+
+<ul>
+<li>Alphanumeric characters</li>
+
+<li>Dash (-) and underscore (_) special characters</li></ul>
+</li>
+</ul>
+
+<h4 id="tousedeviceautonaming" class="anchor"><a class="heading-anchor" href="#tousedeviceautonaming"><span></span></a>To Use Device Auto-naming</h4>
+
+<ol>
+<li>Create a <a href="#createasettingsprofile">Device Settings Profile</a>. </li>
+
+<li>In the Basic Properties step, enter the desired prefix in the Device Naming section:
+<img alt="image" style="height:350px" src="device_naming.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></li>
+</ol>
+
+<h4 id="alldevicesreceivingthisprofilearenamedusingtheenteredprefixautomaticallyappendedwithanunderscoreandthenextnumberinthesequence" class="anchor"><a class="heading-anchor" href="#alldevicesreceivingthisprofilearenamedusingtheenteredprefixautomaticallyappendedwithanunderscoreandthenextnumberinthesequence"><span></span></a>All devices receiving this Profile are named using the entered prefix automatically appended with an underscore and the next number in the sequence.</h4>
+
+<!-- 
+device_name_03.png
+device_name_02.png
+device_name_01.png
+-->
+
+<hr>
+
+<h3 id="remotesupport" class="anchor"><a class="heading-anchor" href="#remotesupport"><span></span></a>Remote Support</h3>
+
+<p>Devices with zDNA client 1.2 or later can be viewed and controlled remotely. </p>
+
+<p>If supported on a device, the "Remote Support" Action is available:
+<img alt="image" style="height:350px" src="remote_01.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<p>Clicking on the "Remote Support" link opens a new window, displaying the device screen along with some information, and allowing the device to be controlled remotely through the browser window: 
+<img alt="image" style="height:350px" src="remote_02.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> The Remote Support function does not support bulk operation. </p>
+
+<h4 id="remotedosanddonts" class="anchor"><a class="heading-anchor" href="#remotedosanddonts"><span></span></a>Remote Do's and Don'ts</h4>
+
+<ul>
+<li><strong>DO</strong>: 
+
+
+<ul>
+<li><strong>Use the latest zDNA Cloud</strong> <code>.apk</code> (v1.2 or later) on the device for proper RC operation</li>
+
+<li><strong>Use keyboard shortcuts</strong> (CTRL-X, CTRL-C, CTRL-V) </li>
+
+<li><strong>Double-click to zoom in or out</strong> on remote-device screens and images</li></ul>
+</li>
+
+<li><strong>DON'T</strong>: 
+
+
+<ul>
+<li><strong>Quit or disable the Screencast app</strong> in the device when a remote session is active</li>
+
+<li><strong>Refresh/press BACK or close the browser window</strong> when a remote-session window is starting up (see Notes, below)</li>
+
+<li><strong>Use browser shortcuts</strong> (CTRL+N, CTRL+SHIFT+N, CTRL+F, CTRL+G, CTRL+W) in a remote session</li></ul>
+</li>
+</ul>
+
+<h4 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>Notes</h4>
+
+<ul>
+<li><strong>SSO users <u>must log into the zDNA console <em>at least once</em></u></strong> to enable Administrative Users to access Remote Support features</li>
+
+<li><strong>A remote session can require up to 15 seconds</strong> to start up</li>
+
+<li><strong>To unlock a remote device with a screen lock set to "Swipe,"</strong> use the mouse to drag upward on the remote screen image</li>
+
+<li><strong>Wait at least five (5) seconds after disconnecting a remote session</strong> before starting new session with same device</li>
+
+<li><strong>The "Files" app on the device does not respond to single- or double-clicks</strong> on folders or files </li>
+
+<li><strong>When Chrome is in "Incognito" mode on a device</strong>, its screen appears all black in the remote window</li>
+</ul>
 
 <hr>
 
@@ -384,7 +494,9 @@
 
 <li><strong>Removing a device from a Group cancels deployment of any pending settings Profiles</strong>.  </li>
 
-<li><strong>Deleting a Group or removing a device from a Group <i>DOES NOT</i> remove settings Profile(s) previously applied</strong>. </li>
+<li><strong>Deleting a Group or removing a device from a Group <i>DOES NOT</i> remove settings Profile(s) previously applied</strong>.</li>
+
+<li><strong>Deleting a device from a Group <i>DOES NOT</i> remove apps</strong> previously installed.</li>
 
 <li><strong>Deleting a Profile cancels deployment of any jobs "in progress" for that Profile</strong>, but does NOT remove past deployments.</li>
 </ul>
@@ -404,43 +516,47 @@
 
 <p>The Settings Wizard presents the most common configuration parameters and pre-selects the most common options. </p>
 
+<blockquote>
+  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>IMPORTANT</strong>: If the security screen Lock Type is set to "Pin" and the Screen Lock Quality is set to "Numeric" (through the Settings Wizard), the setting cannot be changed to "Swipe" unless the Screen Lock Quality setting is first set to "Do not change" through the Wizard.  </p>
+</blockquote>
+
 <h4 id="tocreateaprofilewithsettingswizard" class="anchor"><a class="heading-anchor" href="#tocreateaprofilewithsettingswizard"><span></span></a>To Create a Profile with Settings Wizard:</h4>
 
 <ol>
-<li><p><strong>Configure Language/Locale and Date/Time settings</strong> as desired and <strong>click "Next"</strong> button:
+<li><p><strong>Configure Language/Locale and Date/Time settings</strong> as desired and <strong>click "Next"</strong>:
 <img alt="image" style="height:350px" src="settings_2.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
-<li><p><strong>Configure Networks</strong> as desired and <strong>click "Next"</strong> button:
+<li><p><strong>Configure Networks</strong> as desired and <strong>click "Next"</strong>:
 <img alt="image" style="height:350px" src="settings_3.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
-<li><p><strong>Configure Security settings</strong> as desired and <strong>click "Next"</strong> button:
+<li><p><strong>Configure Security settings</strong> as desired and <strong>click "Next"</strong>:
 <img alt="image" style="height:350px" src="settings_4.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
-<li><p><strong>Configure Display settings</strong> as desired and <strong>click "Next"</strong> button:
+<li><p><strong>Configure Display settings</strong> as desired and <strong>click "Next"</strong>:
 <img alt="image" style="height:350px" src="settings_5.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
-<li><p><strong>Configure other hardware settings</strong> as desired and <strong>click "Next"</strong> button:
+<li><p><strong>Configure other hardware settings</strong> as desired and <strong>click "Next"</strong>:
 <img alt="image" style="height:350px" src="settings_6.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
 <li><p><strong>Enter a Name for this settings Profile</strong> or accept the auto-generated one.<br> 
 <strong>Add a short description</strong> to help identify the Profile later.<br>
-<strong>Click "Next"</strong> button when finished:
+<strong>Click "Next"</strong> when finished:
 <img alt="image" style="height:350px" src="settings_7.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
 <li><p><strong>Review all settings</strong> and edit as needed.<br> 
-<strong>Click "Apply Now"</strong> button to proceed:
+<strong>Click "Apply Now"</strong> to proceed:
 <img alt="image" style="height:350px" src="settings_8.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
@@ -516,20 +632,20 @@
 <li><p><strong>Click "+"</strong> to expand the group and expose its parameters.<br>
 <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> It might be necessary to <strong>scroll down to see all parameters</strong> and options.<br>
 <strong>Configure parameter options as desired</strong>.<br> 
-<strong>Click "Next"</strong> button when finished:
+<strong>Click "Next"</strong> when finished:
 <img alt="image" style="height:350px" src="advSettings_1a.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
 <li><p><strong>Enter a Name for this settings Profile</strong> or accept the auto-generated one.<br> 
 <strong>Add a short description</strong> to help identify the Profile later.<br>
-<strong>Click "Next"</strong> button when finished: 
+<strong>Click "Next"</strong> when finished: 
 <img alt="image" style="height:350px" src="advSettings_3.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
 <li><p><strong>Review all settings</strong> and edit as needed.<br> 
-<strong>Click "Apply Now"</strong> or "Save" button to proceed: 
+<strong>Click "Apply Now"</strong> or "Save" to proceed: 
 <img alt="image" style="height:350px" src="advSettings_4.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
@@ -662,63 +778,242 @@ https://jira.zebra.com/browse/DLM-8112
 
 <h2 id="manageapps" class="anchor"><a class="heading-anchor" href="#manageapps"><span></span></a>Manage Apps</h2>
 
-<p>This section covers installation and uninstallation of apps on devices and deployment of related files, if any. </p>
+<p><strong>The My Apps section is for installation of apps on devices and deployment of related files</strong>, if any. Apps are uploaded to the zDNA Cloud system in a Collection, after which the administrator creates an <strong>App Setup Profile</strong>, designating an <code>.apk</code> (selected from the Collection) for deployment along with configuration and/or data file(s).</p>
 
-<h3 id="installappsandorfiles" class="anchor"><a class="heading-anchor" href="#installappsandorfiles"><span></span></a>Install app(s) and/or files</h3>
+<ul>
+<li><strong>An App Setup Profile may contain</strong>:
 
-<p><strong>1</strong>. In the My Apps section, <strong>click on the "Configure and Deploy App(s)" button</strong>:
-<img alt="image" style="height:350px" src="manage_app_01.png">
-<em>Click image to enlarge; ESC to exit.</em>
-<br></p>
+
+<ul>
+<li>An app alone, as selected from an organization's Collection</li>
+
+<li>An app plus related configuration and/or data files </li>
+
+<li>Configuration and/or data files alone (for deployment to devices on which the target app is already installed) </li></ul>
+</li>
+</ul>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <u>zDNA Cloud <strong>DOES NOT</strong> host apps nor perform app-hosting services</u>. </p>
+</blockquote>
 
 <hr>
 
-<p><strong>2</strong>. <strong>Enter the package name and source URL</strong> for the app being installed.<br>
-<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> <strong>To deploy only files</strong> (and no app), uncheck the "App Installation" box and proceed to Step 3.
-<img alt="image" style="height:350px" src="manage_app_02.png">
+<h3 id="zebracollection" class="anchor"><a class="heading-anchor" href="#zebracollection"><span></span></a>Zebra Collection</h3>
+
+<p>Zebra DNA Cloud stores apps in Collections. Apps preinstalled on Zebra devices can be seen in the "Zebra Collection" tab (see image, below). Apps installed by an organization are seen in the "My Collection" tab </p>
+
+<ol>
+<li><p>On the Zebra Collection tab, <strong>click on the app to be set up</strong>: 
+<img alt="image" style="height:350px" src="zva_01.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p>On the App Details page, <strong>confirm the information and click "Next"</strong> to proceed: 
+<img alt="image" style="height:350px" src="zva_02.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p>To include configuration and/or data file(s) for the app <strong>select the "Yes" radio button</strong>.<br>
+The page appears similar to the image below:
+<img alt="image" style="height:350px" src="zva_03a.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Enter the name of the configuration file and its desired location on the device</strong>.<br>
+<strong>Click "Upload"</strong> to store the file on zDNA Clound in preparation for deployment.<br></p></li>
+</ol>
+
+<p>When finished uploading files <strong>click Next</strong> to proceed: <br>
+<img alt="image" style="height:350px" src="zva_03b.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
 
+<ol>
+<li><p><strong>Enter a Name and Description</strong> for the profile or use the auto-generated name.<br>
+<strong>Click "Next"</strong> to proceed: 
+<img alt="image" style="height:350px" src="zva_04.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p>Review the settings.<br>
+<strong>Click "Apply Now"</strong> to deploy settings immediately.<br>
+<strong>Click "Save"</strong> to save App Setup Profile for later deployment.
+<img alt="image" style="height:350px" src="zva_05.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+</ol>
+
 <hr>
 
-<p><strong>3</strong>. If adding files, <strong>click the "Add app-related files" button</strong> to add files for deployment.<br>
-<strong>Click "Add" when finished</strong> adding each file name and desired destination on the device.<br>
-<strong>Repeat until all related files are added</strong>:
+<h3 id="addappstocollection" class="anchor"><a class="heading-anchor" href="#addappstocollection"><span></span></a>Add Apps to Collection</h3>
+
+<p>At least one app must be in a Collection to proceed. </p>
+
+<ol>
+<li><p>On the My Collection tab, <strong>click "Add App"</strong> to begin: 
+<img alt="image" style="height:350px" src="myApps_01.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Select the location of the app</strong> (<code>.apk</code>) to be added:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>a. For Google Drive</strong>: <strong>Click "Connect"</strong> and browse to and select the file to be uploaded and added to the Collection.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;This invokes a Google API, which automatically populates the URL, App Package and App Version fields.<br>
+<img alt="image" style="height:350px" src="myApps_02a.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>b. For a Specified Server, copy and paste the FTP or HTTP address</strong> into the URL field.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;Then <strong>click "Upload"</strong> to proceed:<br>
+<img alt="image" style="height:350px" src="myApps_03aa.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br>
+A screen similar to the image below is temporarily displayed: 
+<img alt="image" style="height:350px" src="myApps_03bb.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p>After a moment, App Package and Version fields auto-populate.<br>
+<strong>Enter App Name</strong> and additional data as desired.<br>
+<strong>Then click Save</strong> to proceed:<br>
+<img alt="image" style="height:350px" src="myApps_03cc.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Confirm addition of app</strong> in "My Collection" tab:
+<img alt="image" style="height:350px" src="myApps_01a.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+</ol>
+
+<hr>
+
+<h3 id="createappsetupprofile" class="anchor"><a class="heading-anchor" href="#createappsetupprofile"><span></span></a>Create App Setup Profile</h3>
+
+<p><strong>Each App Setup Profile contains all the information required to deploy an app</strong> and/or its configuration and/or data file(s) to devices. </p>
+
+<ol>
+<li><p><strong>Click "New Setup"</strong> to begin:
+<img alt="image" style="height:350px" src="myApps_04.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Select App Name</strong> from the My Collection drop-down.<br>
+<strong>Alternatively, apps can be added "on the fly"</strong> using the Add App button.
+<strong>Click "Next"</strong> to proceed: 
+<img alt="image" style="height:350px" src="myApps_05.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Select "Yes" to include app config and/or data file(s)</strong> in the setup.<br>
+<strong>Enter file information and click "Next"</strong> to proceed: 
+<img alt="image" style="height:350px" src="myApps_06.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Enter a Name and Description</strong> for the profile or use the auto-generated name.<br>
+<strong>Click "Next"</strong> to proceed: 
+<img alt="image" style="height:350px" src="myApps_07.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p>Review the settings.<br>
+<strong>Click "Apply Now"</strong> to deploy settings immediately.<br>
+<strong>Click "Save"</strong> to save App Setup Profile for later deployment.
+<img alt="image" style="height:350px" src="myApps_08.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Select an App Setup Profile from the App Setup tab</strong> to check its deployment status: 
+<img alt="image" style="height:350px" src="myApps_4+9.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+</ol>
+
+<h3 id="notes-1" class="anchor"><a class="heading-anchor" href="#notes-1"><span></span></a>Notes</h3>
+
+<ul>
+<li><strong>Each App Setup Profile applies to <u>a single app only</u></strong>.</li>
+
+<li><strong>An App Setup Profile may contain</strong>:
+
+
+<ul>
+<li><strong>An app alone</strong>, as selected from an organization's Collection</li>
+
+<li><strong>An app plus related files</strong> for configuration and/or data </li>
+
+<li><strong>Configuration and/or data files alone</strong> (for deployment to devices on which the target app is already installed)</li></ul>
+</li>
+
+<li><strong>Removing an App Setup Profile from the system or a device <u>removes the app from the device</u></strong> while leaving data files that might have accompanied it, if any.</li>
+</ul>
+
+<!-- 
+### Install app(s) and/or files
+
+**&#49;**. In the My Apps section, **click on the "Configure and Deploy App(s)" button**:
+<img alt="image" style="height:350px" src="manage_app_01.png"/>
+_Click image to enlarge; ESC to exit._
+<br>
+
+-----
+**&#50;**. **Enter the package name and source URL** for the app being installed.<br>
+<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> **To deploy only files** (and no app), uncheck the "App Installation" box and proceed to Step 3.
+<img alt="image" style="height:350px" src="manage_app_02.png"/>
+_Click image to enlarge; ESC to exit._
+<br>
+
+-----
+**&#51;**. If adding files, **click the "Add app-related files" button** to add files for deployment.<br>
+**Click "Add" when finished** adding each file name and desired destination on the device.<br>
+**Repeat until all related files are added**:
 <img alt="image" style="height:350px" src="manage_app_05.png
-">
-<em>Click image to enlarge; ESC to exit.</em>
-<br></p>
+"/>
+_Click image to enlarge; ESC to exit._
+<br>
 
-<hr>
+-----
+**&#52;**. **Click "Next"** to proceed:
+<img alt="image" style="height:350px" src="manage_app_03.png"/>
+_Click image to enlarge; ESC to exit._
+<br>
 
-<p><strong>4</strong>. <strong>Click "Next"</strong> to proceed:
-<img alt="image" style="height:350px" src="manage_app_03.png">
-<em>Click image to enlarge; ESC to exit.</em>
-<br></p>
+-----
+**&#53;**. **Select the target device(s)** to receive the app and/or file(s).<br>
+When finished selecting target(s), **click "Apply Now" to push changes**:
+<img alt="image" style="height:350px" src="manage_app_04.png"/>
+_Click image to enlarge; ESC to exit._
+<br>
 
-<hr>
+**&#54;. Confirm app deployment to device(s) by individual inspection or user confirmation**.  
 
-<p><strong>5</strong>. <strong>Select the target device(s)</strong> to receive the app and/or file(s).<br>
-When finished selecting target(s), <strong>click "Apply Now" to push changes</strong>:
-<img alt="image" style="height:350px" src="manage_app_04.png">
-<em>Click image to enlarge; ESC to exit.</em>
-<br></p>
-
-<p><strong>6. Confirm app deployment to device(s) by individual inspection or user confirmation</strong>.  </p>
-
-<!-- 6/10/22- per eng, status of this activity is now shown in beta release
+6/10/22- per eng, status of this activity is now shown in beta release
 
 **&#54;. Monitor progress of settings deployment** in the Device Settings landing page:
 <img alt="image" style="height:350px" src="settings_summary.png"/>
 _Click image to enlarge; ESC to exit._
 <br>
- -->
+
+### Display Installed Apps
+
+To confirm installation or to display a list of apps installed on a device:
+
+1. **My Devices -> [Device Name]**
+2. **Click "Installed Apps"** tab
+
+A list of Zebra and third-party apps installed on the device is displayed, similar to the image below:
+
+<img alt="image" style="height:350px" src="MyApps_page.png"/>
+_Click image to enlarge; ESC to exit._
+<br>
+
+-->
 
 <hr>
 
 <h2 id="manageusers" class="anchor"><a class="heading-anchor" href="#manageusers"><span></span></a>Manage Users</h2>
 
-<p>The Tenant Owner creates Administrative Users in the zDNA Cloud system using Zebra.com credemntials. Admin users can perform all tasks within the system <strong><em>except</em></strong> user administration. </p>
+<p>The Tenant Owner creates Administrative Users in the zDNA Cloud system using Zebra.com credentials. Admin users can perform all tasks within the system <strong><em>except</em></strong> user administration. </p>
 
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> This section requires login as the Tenant Owner using Zebra.com credentials. For credentials, please <a href="../setup/#iiregisterwithzebracom">register with Zebra.com</a>. </p>
 
@@ -740,14 +1035,14 @@ _Click image to enlarge; ESC to exit._
 
 <hr>
 
-<p>3. In All Users screen, <strong>click "New User" button</strong>: 
+<p>3. In All Users screen, <strong>click "New User"</strong>: 
 <img alt="image" style="height:350px" src="user_admin_01a.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
 
 <hr>
 
-<p><strong>4. Enter user info and click "Add" button</strong>:
+<p><strong>4. Enter user info and click "Add"</strong>:
 <img alt="image" style="height:350px" src="user_admin_02.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
@@ -778,7 +1073,7 @@ _Click image to enlarge; ESC to exit._
 <ul>
 <li><strong>Android Updates are applicable only on enrolled devices</strong>.</li>
 
-<li>For unenrolled devices, the only available Action is to Enroll.</li></ul>
+<li>For un-enrolled devices, the only available Action is to Enroll.</li></ul>
 </li>
 
 <li><strong>Bulk Actions</strong>
@@ -789,7 +1084,7 @@ _Click image to enlarge; ESC to exit._
 
 <li><strong>"Enroll" Action can be performed on dissimilar</strong> device models.</li>
 
-<li><strong>Enroll and Update Actions can be combined in a bulk operation</strong>, unenrolled devices are enrolled only; already enrolled devices are updated.</li></ul>
+<li><strong>Enroll and Update Actions can be combined in a bulk operation</strong>, un-enrolled devices are enrolled only; already enrolled devices are updated.</li></ul>
 </li>
 </ul>
 
@@ -802,14 +1097,14 @@ _Click image to enlarge; ESC to exit._
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
 
-<h4 id="devicesupdatestatus" class="anchor"><a class="heading-anchor" href="#devicesupdatestatus"><span></span></a>Devices Update Status</h4>
+<h4 id="deviceupdatestatus" class="anchor"><a class="heading-anchor" href="#deviceupdatestatus"><span></span></a>Device Update Status</h4>
 
 <ul>
 <li><strong>Up to date -</strong> Device has all the latest OS updates and security patches. No action is required. </li>
 
 <li><strong>New Available -</strong> Device does NOT have the latest OS updates and/or security patches. Click "Update to Latest" to upgrade.</li>
 
-<li><strong>Not Enrolled -</strong> LifeGuard Over the Air (OTA) servvice is NOT running on the device. Click "Enroll" to install.  </li>
+<li><strong>Not Enrolled -</strong> LifeGuard Over the Air (OTA) service is NOT running on the device. Click "Enroll" to install.  </li>
 </ul>
 
 <hr>
@@ -836,7 +1131,7 @@ _Click image to enlarge; ESC to exit._
 
 <hr>
 
-<p><strong>5. Select a Schedule for performing the Update</strong>. For example, schedule during "off hours" to minimize worker dispuption.<br>
+<p><strong>5. Select a Schedule for performing the Update</strong>. For example, schedule during "off hours" to minimize worker disruption.<br>
 Select "As soon as possible" to begin the Update immediately upon starting the job.<br>
 <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> If setting an installation window, <strong>the "Start at" date must be EARLIER than the selected End Date</strong>.
 <img alt="image" style="height:350px" src="android_update_06a.png">
@@ -854,7 +1149,7 @@ Select "As soon as possible" to begin the Update immediately upon starting the j
 <hr>
 
 <p><strong>7. Review settings are configured as desired</strong>. If necessary, click "Edit" to modify.<br>
-<strong>When finished, click the "Start Job" button</strong>: <br>
+<strong>When finished, click "Start Job"</strong> to continue: <br>
 <img alt="image" style="height:350px" src="android_update_08.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
@@ -936,11 +1231,11 @@ formerly above ^ android_update_09a.png
 
 <li><strong>Cancel -</strong> Cancels an In-Progress Update (disabled after Update is completed)</li>
 
-<li><strong>Delete -</strong> Removes the Update from the deployment Profies list (available only when status is "Success," "Issue" or "Cancelled")</li>
+<li><strong>Delete -</strong> Removes the Update from the deployment Profiles list (available only when status is "Success," "Issue" or "Cancelled")</li>
 
 <li><strong>Remove -</strong> removes the device in that row from the Update job</li>
 
-<li><strong>Reapply -</strong> Attempts to reapply the Update on the device in that row</li>
+<li><strong>Reapply -</strong> Attempts to reapply the Update on the device in that row (expires after 7 days)</li>
 </ul>
 
 <hr>
