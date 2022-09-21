@@ -10,11 +10,15 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Using Secure Storage Manager">
-    <title>Using Secure Storage Manager - TechDocs</title>
+    <meta title="Share File Sample">
+    <title>Share File Sample - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--     
     <link href="/css/font-awesome.min.css" rel="stylesheet">
+ -->    
+    <link href="/css/all.css" rel="stylesheet">
+    <link href="/css/v4-shims.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/owl.carousel.css" rel="stylesheet">
     <link href="/css/owl.transitions.css" rel="stylesheet">
@@ -55,7 +59,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Secure Storage Manager
-                                            1.0
+                                            1.1
                         </p>
 
                     </ul>
@@ -66,27 +70,22 @@
 
 
                         <li>
-                            <a href="/ssm/1-0/guide/about">
+                            <a href="/ssm/1-1/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ssm/1-0/guide/use">
-                                    Using SSM
+                            <a href="/ssm/1-1/guide/share-data">
+                                    Data Sharing
                             </a>
                         </li>
                         <li>
-                            <a href="/ssm/1-0/guide/api">
-                                    APIs
+                            <a href="/ssm/1-1/guide/share-files">
+                                    File Sharing
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.zebra.com/forum/search?keys=&amp;field_zebra_curated_tags_tid%5B%5D=184">
-                                    <i class="fa fa-comments-o"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ssm/1-0/search">
+                            <a href="/ssm/1-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -113,7 +112,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Using Secure Storage Manager</strong></li>
+                            <li><strong>Share File Sample</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -199,10 +198,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="using-secure-storage-manager" class="anchor"><a class="heading-anchor" href="#using-secure-storage-manager"><span></span></a>Using Secure Storage Manager</h1>
+                                    <h1 id="share-file-sample" class="anchor"><a class="heading-anchor" href="#share-file-sample"><span></span></a>Share File Sample</h1>
                                     <p>
                                             Secure Storage Manager
-                                            1.0
+                                            1.1
                                     </p>
                                 </div>
                             </section>                    
@@ -217,93 +216,66 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>Secure Storage Manager (SSM)</strong> securely stores data provided by an originating app and delivers data only to an authenticated instance of a specified target app. After acquiring data, the target app gains ownership of the data. SSM ensures that data is delivered to the target app only after the authenticity of the app accessing the data is verified with its package name and signature. </p>
+<p><strong>Secure Storage Manager (SSM)</strong> is a mechanism for securely sharing files and/or data from an originating app to one or more target apps, or to itself. This sample app demonstrates the following:</p>
 
-<p>Data items are structured as name/value pairs, and each pair is uniquely identified by the originating app name and data-item name when made available to a target app. Ownership of the data, including the ability to change or delete, starts with the originating app and transitions to the target app once the data is delivered.  </p>
+<ul>
+<li><strong>Insert file -</strong> securely store the file from the specified source path to SSM. Set the persist flag based on whether the file should persist (true) or not persist (false) through an enterprise reset.</li>
 
-An originating app must instruct SSM to store data either in a persistent or non-persistent manner. Persistent data stored under SSM remains available after an Enterprise Reset is performed; a Factory Reset erases all device data. 
-<!-- ## DISPLAY WHEN DET IS RELEASED ## 
-To encrypt data from the originating app prior to storing the data in SSM, use the [Data Encryption Tool](/det).-->
+<li><strong>Query file -</strong> the file content is retrieved based on the target app package name.</li>
 
-<hr>
+<li><strong>Update file -</strong> securely update the existing file stored in SSM, replacing it with the updated file.</li>
 
-<h2 id="configureanapptousessm" class="anchor"><a class="heading-anchor" href="#configureanapptousessm"><span></span></a>Configure an app to use SSM</h2>
+<li><strong>Delete file -</strong> removes the file and all related data information from SSM.</li>
+</ul>
 
-<p>To configure an app to use Secure Storage Manager (SSM), insert the appropriate line(s) in the client app’s manifest file (based on Java/Kotlin): </p>
-
-<p><strong>Insert / update / delete data:</strong></p>
-
-<pre class="prettyprint"><code>&lt;uses-permission android:name="com.zebra.securestoragemanager.securecontentprovider.PERMISSION.WRITE"/&gt;
-</code></pre>
-
-<p><strong>Query data:</strong></p>
-
-<pre class="prettyprint"><code>&lt;uses-permission android:name="com.zebra.securestoragemanager.securecontentprovider.PERMISSION.READ"/&gt;
-</code></pre>
-
-<p><strong>Query provider for apps targeting API Level 30 and above:</strong></p>
-
-<pre class="prettyprint"><code>&lt;queries&gt;
-    &lt;provider android:authorities="com.zebra.securestoragemanager.securecontentprovider"/&gt;
-&lt;/queries&gt;
-</code></pre>
-
-<p><strong>Retrieve data using SSM</strong> by declaring the content URI of the SSM Content Provider:</p>
-
-<pre class="prettyprint"><code>private String AUTHORITY = "content://com.zebra.securestoragemanager.securecontentprovider/data";
-</code></pre>
-
-<p>See <a href="../api/#samplecode">Sample Code</a> for complete context.</p>
+<blockquote>
+  <p>This sample may be used based on acceptance of the <a href="https://github.com/ZebraDevs/SSM-Samples">EULA</a>.</p>
+</blockquote>
 
 <hr>
 
-<h2 id="receivingencrypteddatatossm" class="anchor"><a class="heading-anchor" href="#receivingencrypteddatatossm"><span></span></a>Receiving Encrypted Data to SSM</h2>
+<h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
 
-<p>If SSM receives encrypted data from an originating app <!-- (e.g. with the use of Data Encryption Tool)-->, it decrypts the incoming data and saves it in SSM-encrypted format in the SSM database. The procedure to encrypt data to be stored in SSM is provided below. When the data is retrieved, SSM removes the SSM encryption and delivers the data according to the data output form required by the target app. </p>
+<ul>
+<li>Secure Storage Manager, built into Zebra mobile computers with Android 11 or higher</li>
+</ul>
 
-<!--  ## DISPLAY WHEN DET IS RELEASED ##
-<img src="SSM_DET.png" />
--->
+<hr>
 
-<p><strong>To encrypt data, use AES Secret Key:</strong></p>
+<h2 id="download" class="anchor"><a class="heading-anchor" href="#download"><span></span></a>Download</h2>
+
+<p>Download <a href="https://github.com/ZebraDevs/SSM-Samples">Share Data</a> sample source code.</p>
+
+<hr>
+
+<h2 id="usingthissample" class="anchor"><a class="heading-anchor" href="#usingthissample"><span></span></a>Using This Sample</h2>
 
 <ol>
-<li><p>Create an AES secret key:</p>
+<li>Download, build and launch the sample app.
+<img alt="image" style="height:350px" src="file_persist.png"></li>
 
-<pre class="prettyprint"><code>private SecretKey getRandomKey(String algorithmType) 
-{
+<li>Tap the dropdown for <strong>Persist Flag</strong> and select one of the following:
 
-<pre><code>SecureRandom rand = new SecureRandom();
-KeyGenerator generator;
-try {
-    generator = KeyGenerator.getInstance(algorithmType);
-    generator.init(128, rand);
-    mSecretKey = generator.generateKey();
-    Log.d(TAG, "mSecretKey = "+ mSecretKey);
-    return mSecretKey;
-} catch (NoSuchAlgorithmException e) {
-    e.printStackTrace();
-}
-return null;
-</code></pre>
 
-}
-</code></pre></li>
+<ul>
+<li><strong>true -</strong> data persists through an enterprise reset</li>
 
-<li><p>Encrypt data using the secret key created in Step 1.</p></li>
+<li><strong>false -</strong> data does not persist through an enterprise reset</li></ul>
+</li>
 
-<li><p>Encrypt the secret key using SSM public key (Base64 String):</p>
+<li>Create a file named "A.txt" and copy it to the <code>/enterprise/usr</code> folder on the device (for example, using ADB). Make sure the <strong>Source Path and File Name</strong> field matches with the actual file name and folder.</li>
 
-<pre class="prettyprint"><code>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwE1qxpfNZVGq3wfPp3AqSeSpCPi3NUC1cCBuh5nkPvC3TfYHiozsy3gBYyUoYWIoAYlgypehqLIQfdHTrLpsVbS1BW6mnv76WvYwmaGrGfHzi50ETA8bFDwkrboG3jcHnvDJPH904BdU5eMrsq1o+BDmTmF/OAm1rJPohb8mukWh+o6OW6iNhO28IDRb26pKuTu6sckHn8I1I51bl44qaxq55A4wVR4mHEZL0EK/q2hY0Iqcak2dA8w8N0nJrWzbIbp5FeT/WyGO2pure7UxKEZfE5pkewPfcHSGp+0sbdCMaw6KrDpC5jusry4PjFw92sS/Huywv6/pv7WVPmwIDAQAB
-</code></pre></li>
+<li>Keep the default entry in <strong>Target Path and File Name</strong>. (Optionally, the file name can be changed.) </li>
 
-<li><p>Insert the encrypted secret key and data into the SSM database. Specify the data input and output form to detect the encrypted data:</p>
+<li>Tap <strong>Insert File.</strong> The file is stored in SSM.</li>
 
-<pre class="prettyprint"><code>values.put("data_input_form”, "2"); // plaintext=1, encrypted=2 
-values.put("data_output_form", "1"); // plaintext=1, encrypted=2
-values.put("data_input_encrypted_key","Encrypted Secret Key");
-values.put("data_value", inputData);
-</code></pre></li>
+<li>Tap <strong>Query File.</strong> The file information is queried and displayed (below <strong>Query Result</strong>).</li>
+
+<li><strong>Update file:</strong> Edit the file content (from "A.txt"). On the device, replace the file in the source path specified in step 3. Tap <strong>Update File.</strong> The original file is replaced with the updated file and stored in SSM.</li>
+
+<li>Repeat step 6 to query the updated file and check if the update is successful.</li>
+
+<li>To <strong>delete the file,</strong> tap <strong>Delete File.</strong></li>
 </ol>
 
 <hr>
@@ -311,9 +283,9 @@ values.put("data_value", inputData);
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
 <ul>
-<li><a href="../about">About SSM</a></li>
+<li><a href="../share-data">Data Sharing</a></li>
 
-<li><a href="../api">Content Provider Interface APIs</a></li>
+<li><a href="../share-files">File Sharing</a></li>
 </ul><p></p>
                                         
 
@@ -348,7 +320,7 @@ values.put("data_value", inputData);
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
