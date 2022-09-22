@@ -275,7 +275,7 @@ In Android, it is recommended to run only UI components on the main thread. Any 
 <p><strong>1. Using Android Handler:</strong></p>
 
 <ul>
-<li>A <a href="http://developer.android.com/reference/android/os/Handler.html">Handler</a> allows you to send and process <a href="http://developer.android.com/reference/android/os/Message.html">Message</a> and Runnable objects associated with a thread's <a href="http://developer.android.com/reference/android/os/MessageQueue.html">MessageQueue</a>. Each Handler instance is associated with a single thread and that thread's message queue.</li>
+<li>A <a href="https://developer.android.com/reference/android/os/Handler.html">Handler</a> allows you to send and process <a href="https://developer.android.com/reference/android/os/Message.html">Message</a> and Runnable objects associated with a thread's <a href="https://developer.android.com/reference/android/os/MessageQueue.html">MessageQueue</a>. Each Handler instance is associated with a single thread and that thread's message queue.</li>
 
 <li>There are two main uses for a Handler: (1) to schedule messages and runnables to be executed as some point in the future; and (2) to enqueue an action to be performed on a different thread than your own.</li>
 
@@ -289,11 +289,11 @@ In Android, it is recommended to run only UI components on the main thread. Any 
 <p><strong>2. Using Android AsyncTask:</strong></p>
 
 <ul>
-<li><a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> enables proper and easy use of the UI thread. This class allows to perform background operations and publish results on the UI thread without having to manipulate threads and/or handlers.</li>
+<li><a href="https://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> enables proper and easy use of the UI thread. This class allows to perform background operations and publish results on the UI thread without having to manipulate threads and/or handlers.</li>
 
-<li>AsyncTask is designed to be a helper class around <a href="http://developer.android.com/reference/java/lang/Thread.html">Thread</a> and <a href="http://developer.android.com/reference/android/os/Handler.html">Handler</a> and does not constitute a generic threading framework.</li>
+<li>AsyncTask is designed to be a helper class around <a href="https://developer.android.com/reference/java/lang/Thread.html">Thread</a> and <a href="https://developer.android.com/reference/android/os/Handler.html">Handler</a> and does not constitute a generic threading framework.</li>
 
-<li>AsyncTasks should ideally be used for short operations (a few seconds at the most.) If you need to keep threads running for long periods of time, it is highly recommended you use the various APIs provided by the <code>java.util.concurrent</code> pacakge such as <a href="http://developer.android.com/reference/java/util/concurrent/Executor.html">Executor</a>, <a href="http://developer.android.com/reference/java/util/concurrent/ThreadPoolExecutor.html">ThreadPoolExecutor</a> and <a href="http://developer.android.com/reference/java/util/concurrent/FutureTask.html">FutureTask</a>.</li>
+<li>AsyncTasks should ideally be used for short operations (a few seconds at the most.) If you need to keep threads running for long periods of time, it is highly recommended you use the various APIs provided by the <code>java.util.concurrent</code> pacakge such as <a href="https://developer.android.com/reference/java/util/concurrent/Executor.html">Executor</a>, <a href="https://developer.android.com/reference/java/util/concurrent/ThreadPoolExecutor.html">ThreadPoolExecutor</a> and <a href="https://developer.android.com/reference/java/util/concurrent/FutureTask.html">FutureTask</a>.</li>
 </ul>
 
 <p>Since configuration of any Mx feature requires only a few seconds, we can go with any of the two solutions. In this tutorial, we will configure Mx Profile using both Handler and AsyncTask by creating dedicated Activity for each.   </p>
@@ -616,7 +616,7 @@ public void onClosed() {
 }
 </code></pre></li>
 
-<li><p>So far we have done with the coding that will use Runnable and Handler to apply App Manager's install configuration on background thread. It will also close the application immediately using <code>finish()</code> method once background thread starts its execution to apply configurations silently. But the app will still be visible to the user for that small period of time (few milliseconds) before it is closed. We want to avoid UI as it may not require for many Mx configurations. So We will make the UI invisible (basically transparent) for those few milliseconds by applying <a href="http://developer.android.com/guide/topics/ui/themes.html">Android Styles</a> to the <code>HandlerActivity</code>. </p>
+<li><p>So far we have done with the coding that will use Runnable and Handler to apply App Manager's install configuration on background thread. It will also close the application immediately using <code>finish()</code> method once background thread starts its execution to apply configurations silently. But the app will still be visible to the user for that small period of time (few milliseconds) before it is closed. We want to avoid UI as it may not require for many Mx configurations. So We will make the UI invisible (basically transparent) for those few milliseconds by applying <a href="https://developer.android.com/guide/topics/ui/themes.html">Android Styles</a> to the <code>HandlerActivity</code>. </p>
 
 <p>Before applying, we need to create a custom style that will make the UI transparent. So go to res -&gt; values -&gt; styles.xml of "ApplyProfileSilentlyTutorial" tutorial and write following Android style in <code>&lt;resources&gt;</code> tag that will make background transparent.</p>
 
@@ -652,7 +652,7 @@ android:theme="@style/Transparent"
 <h3 id="usingasynctask" class="anchor"><a class="heading-anchor" href="#usingasynctask"><span></span></a>Using AsyncTask:</h3>
 
 <ol>
-<li><p>We will create another activity (Ex. AsyncTaskActivity) and apply App Manager's install configuration silently in a Non-Blocking way using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a>.</p></li>
+<li><p>We will create another activity (Ex. AsyncTaskActivity) and apply App Manager's install configuration silently in a Non-Blocking way using <a href="https://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a>.</p></li>
 
 <li><p>Select the project and add a new Empty with name "AsyncTaskActivity".</p></li>
 
@@ -680,7 +680,7 @@ private EMDKResults results;
 
 <p><img src="../../images/ApplyProfileSilentlyTutorialImages/async_oncreate_added.jpg" alt="img"></p></li>
 
-<li><p>We will now create an inner class named "ConfigureProfile" in "AsyncTaskActivity" that will extend <code>AsyncTask</code>. <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> will run the operation on a background thread without blocking UI thread. It can also return the processing result on UI thread if you want.</p>
+<li><p>We will now create an inner class named "ConfigureProfile" in "AsyncTaskActivity" that will extend <code>AsyncTask</code>. <a href="https://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> will run the operation on a background thread without blocking UI thread. It can also return the processing result on UI thread if you want.</p>
 
 <pre class="prettyprint"><code>
 // Class extending AsyncTask that runs operations in a background thread
@@ -779,7 +779,7 @@ if (profileManager != null) {
 
 <p><img src="../../images/ApplyProfileSilentlyTutorialImages/on_closed_destroyed_async.jpg" alt="img"></p></li>
 
-<li><p>But the app will still be visible to the user for small period of time (few milliseconds) before it is closed similar to the case of Handler. We want to avoid UI as it may not require for many Mx configurations. So We will make the UI invisible (basically transparent) for those few milliseconds by applying <a href="http://developer.android.com/guide/topics/ui/themes.html">Android Styles</a> to the <code>AsyncTaskActivity</code>.</p>
+<li><p>But the app will still be visible to the user for small period of time (few milliseconds) before it is closed similar to the case of Handler. We want to avoid UI as it may not require for many Mx configurations. So We will make the UI invisible (basically transparent) for those few milliseconds by applying <a href="https://developer.android.com/guide/topics/ui/themes.html">Android Styles</a> to the <code>AsyncTaskActivity</code>.</p>
 
 <p>We have already created a transparent style earlier in this tutorial while applying profile using Handler. We will now  simply include that style in "AsyncTaskActivity" to make it transparent. So go to <code>AndroidManifest.xml</code> and add the following code in the <code>&lt;activity&gt;</code> tag for "AsyncTaskActivity".</p>
 
@@ -938,9 +938,9 @@ android:label="@string/app_name"
                     </div>
                     <div class="col-sm-2">
                         <ul class="social-icons">
-                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>

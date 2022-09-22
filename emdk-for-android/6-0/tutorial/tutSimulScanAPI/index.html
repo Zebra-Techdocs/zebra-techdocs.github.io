@@ -278,7 +278,7 @@
 </ul>
 
 <blockquote>
-  <p>Note: As SimulScan is built into the OS image in the above devices, download the latest OS from  <a href="http://support.zebra.com">SupportCentral</a>. </p>
+  <p>Note: As SimulScan is built into the OS image in the above devices, download the latest OS from  <a href="https://support.zebra.com">SupportCentral</a>. </p>
 </blockquote>
 
 <h2 id="creatingatemplate" class="anchor"><a class="heading-anchor" href="#creatingatemplate"><span></span></a>Creating a Template</h2>
@@ -414,9 +414,9 @@ import com.symbol.emdk.simulscan.SimulScanStatusData;
 
 <li><p>Implement <a href="/emdk-for-android/6-0/api/simulscan/SimulScanReader-StatusListerner">SimulScanReader.StatusListerner</a>, which is an interface for notifying client applications to notify scan events. Override its <code>onStatus</code> method to receive status of any SimulScan operation that would be performed in the application.</p></li>
 
-<li><p>Implement <a href="http://developer.android.com/reference/android/view/View.OnClickListener.html">View.OnClickListener</a> and override its <code>onClick</code> method to handle on click of buttons.</p></li>
+<li><p>Implement <a href="https://developer.android.com/reference/android/view/View.OnClickListener.html">View.OnClickListener</a> and override its <code>onClick</code> method to handle on click of buttons.</p></li>
 
-<li><p>Implement <a href="http://developer.android.com/reference/android/widget/AdapterView.OnItemSelectedListener.html">AdapterView.OnItemSelectedListener</a> and override its <code>onItemSelected</code> and <code>onNothingSelected</code> methods for handling spinner.</p>
+<li><p>Implement <a href="https://developer.android.com/reference/android/widget/AdapterView.OnItemSelectedListener.html">AdapterView.OnItemSelectedListener</a> and override its <code>onItemSelected</code> and <code>onNothingSelected</code> methods for handling spinner.</p>
 
 <p>:::java
 public class MainActivity extends Activity implements EMDKManager.EMDKListener,
@@ -458,7 +458,7 @@ public void onStatus(SimulScanStatusData simulScanStatusData) {
 
 <p>We will now create some global variables to hold the instance objects of <a href="/emdk-for-android/6-0/api/core/EMDKManager">EMDKManager</a>, <a href="/emdk-for-android/6-0/api/simulscan/SimulScanManager">SimulScanManager</a> and <a href="/emdk-for-android/6-0/api/simulscan/SimulScanReader">SimulScanReader</a>. These variables would be used throughout the code.</p>
 
-<p>We will then add some UI elements starting with a <a href="http://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of SimulScan operation. The UI would have a <a href="http://developer.android.com/guide/topics/ui/controls/spinner.html">Spinner</a> that would contain a list of SimulScan supported devices. The UI would also have two <a href="http://developer.android.com/guide/topics/ui/controls/button.html">Buttons</a> to start and stop reading template.</p>
+<p>We will then add some UI elements starting with a <a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of SimulScan operation. The UI would have a <a href="https://developer.android.com/guide/topics/ui/controls/spinner.html">Spinner</a> that would contain a list of SimulScan supported devices. The UI would also have two <a href="https://developer.android.com/guide/topics/ui/controls/button.html">Buttons</a> to start and stop reading template.</p>
 
 <p>The variables would also have a list (readerInfoList) to hold Simulscan supported device and another <code>synchronized</code> list (simulScanDataList) to hold various data of the scanned template along with an exception (lastException) to catch exceptions if any.   </p>
 
@@ -503,8 +503,8 @@ private Exception lastException;
 <p>So, remove all the code, inside "res/layout/activity_main.xml" and add following XML layout code for UI.</p>
 
 <pre class="prettyprint"><code>
-&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+&lt;LinearLayout xmlns:android="https://schemas.android.com/apk/res/android"
+    xmlns:tools="https://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -548,7 +548,7 @@ private Exception lastException;
 </code></pre></li>
 
 
-<li><p>In the <code>onCreate</code> method, we take reference of UI elements that are declared in "res/layout/activity_main.xml" in order to use them in our <a href="http://developer.android.com/reference/android/app/Activity.html">Activity</a> and add their respective onclick listeners. We then call getEMDKManager so that the EMDK can be initialized and checked to see if it is ready. </p>
+<li><p>In the <code>onCreate</code> method, we take reference of UI elements that are declared in "res/layout/activity_main.xml" in order to use them in our <a href="https://developer.android.com/reference/android/app/Activity.html">Activity</a> and add their respective onclick listeners. We then call getEMDKManager so that the EMDK can be initialized and checked to see if it is ready. </p>
 
 <p>Finally, we would add methods calls to handle buttons and check boxes events.  </p>
 
@@ -1119,9 +1119,9 @@ textViewStatus.setText("Status: " + "EMDK closed unexpectedly!");
                     </div>
                     <div class="col-sm-2">
                         <ul class="social-icons">
-                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>

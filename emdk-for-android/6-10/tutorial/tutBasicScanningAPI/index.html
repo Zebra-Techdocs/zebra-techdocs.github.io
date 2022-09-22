@@ -264,7 +264,7 @@
 <li><p>Enable permissions for <code>com.symbol.emdk.permission.EMDK</code>:  </p>
 
 <pre class="prettyprint"><code>
-&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+&lt;manifest xmlns:android="https://schemas.android.com/apk/res/android"
     package="com.example.basicscanningtotorial"&gt;
     &lt;uses-permission android:name="com.symbol.emdk.permission.EMDK" /&gt;
     &lt;application&gt;
@@ -314,7 +314,7 @@ public class MainActivity extends Activity implements EMDKListener, StatusListen
 }
 </code></pre></li>
 
-<li><p>Create some global variables to hold the instance objects of <code>EMDKManager</code>, <code>BarcodeManager</code> and <code>Scanner</code>. These variables are used throughout the code. This section also adds some UI elements starting with a <a href="http://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of the scanning operation and <a href="http://developer.android.com/reference/android/widget/EditText.html">EditText</a> to populate scanned barcode data.</p>
+<li><p>Create some global variables to hold the instance objects of <code>EMDKManager</code>, <code>BarcodeManager</code> and <code>Scanner</code>. These variables are used throughout the code. This section also adds some UI elements starting with a <a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of the scanning operation and <a href="https://developer.android.com/reference/android/widget/EditText.html">EditText</a> to populate scanned barcode data.</p>
 
 <pre class="prettyprint"><code>
 // Declare a variable to store EMDKManager object
@@ -337,13 +337,13 @@ private EditText dataView = null;
 private boolean startRead = false;
 </code></pre></li>
 
-<li><p>Design a simple UI that has a <a href="http://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of scanning operation. Above that is an <a href="http://developer.android.com/reference/android/widget/EditText.html">EditText</a> element to populate scanned barcode data.</p></li>
+<li><p>Design a simple UI that has a <a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of scanning operation. Above that is an <a href="https://developer.android.com/reference/android/widget/EditText.html">EditText</a> element to populate scanned barcode data.</p></li>
 
 <li><p>Remove all the code inside the <code>res/layout/activity_main.xml</code> folder and add the following XML layout code for the UI:</p>
 
 <pre class="prettyprint"><code>
-&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
+&lt;RelativeLayout xmlns:android="https://schemas.android.com/apk/res/android"
+xmlns:tools="https://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:padding="16dip"
@@ -378,7 +378,7 @@ tools:context=".MainActivity" &gt;
 &lt;/RelativeLayout&gt;
 </code></pre></li>
 
-<li><p>In the onCreate method, take the reference of UI elements that are declared in <code>res/layout/activity_main.xml</code> to use them in the <a href="http://developer.android.com/reference/android/app/Activity.html">Activity</a>. Then call <code>getEMDKManager</code> to initialize EMDK and confirm that it's ready. </p>
+<li><p>In the onCreate method, take the reference of UI elements that are declared in <code>res/layout/activity_main.xml</code> to use them in the <a href="https://developer.android.com/reference/android/app/Activity.html">Activity</a>. Then call <code>getEMDKManager</code> to initialize EMDK and confirm that it's ready. </p>
 
 <pre class="prettyprint"><code>
 // Reference to UI elements
@@ -467,9 +467,9 @@ try {
 }
 </code></pre></li>
 
-<li><p>When a barcode is scanned, its data is received in the <code>onData</code> method callback. This step gets that data, processes it in the desired format and populates the <a href="http://developer.android.com/reference/android/widget/EditText.html">EditText</a> UI element.</p>
+<li><p>When a barcode is scanned, its data is received in the <code>onData</code> method callback. This step gets that data, processes it in the desired format and populates the <a href="https://developer.android.com/reference/android/widget/EditText.html">EditText</a> UI element.</p>
 
-<p>The received data should be processed in a background thread so as not to block the UI thread. This can be done using Android's <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a>. Create the AsyncTask <code>AsyncDataUpdate</code> that takes <a href="/emdk-for-android/6-10/api/barcode/ScanDataCollection">ScanDataCollection</a> that has the scanned data. The <code>doInBackground</code> method parses the barcode data and label type into strings, which are passed to the UI thread in the <code>onPostExecute</code> method of AsyncTask to populate. <br><br></p>
+<p>The received data should be processed in a background thread so as not to block the UI thread. This can be done using Android's <a href="https://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a>. Create the AsyncTask <code>AsyncDataUpdate</code> that takes <a href="/emdk-for-android/6-10/api/barcode/ScanDataCollection">ScanDataCollection</a> that has the scanned data. The <code>doInBackground</code> method parses the barcode data and label type into strings, which are passed to the UI thread in the <code>onPostExecute</code> method of AsyncTask to populate. <br><br></p>
 
 <p>As referenced earlier, it's possible to call the <code>read()</code> method in this callback so that the user can scan multiple barcodes.</p>
 
@@ -563,7 +563,7 @@ new AsyncDataUpdate().execute(scanDataCollection);
 
 <li><p>Whether scanning the barcode by pressing the hard scan key or keeping it idle, it returns the status of the scanner at a specific point in time in the overridden <code>onStatus</code> method of the implemented <code>StatusListener</code> interface. Since the status also is being displayed along with barcode data, the app can make use of this method and populate the status.</p>
 
-<p>Just like scanned data, the scanner status is being processed in a background thread. Hence another <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> (named <code>AsyncStatusUpdate</code>) is created to take <a href="/emdk-for-android/6-10/api/barcode/StatusData">StatusData</a> and processes it in the <code>doInBackground</code> method to retrieve the state in string format. This is populated in status Text View in the UI thread in the <code>onPostExecute</code> method of the AsyncTask. </p>
+<p>Just like scanned data, the scanner status is being processed in a background thread. Hence another <a href="https://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> (named <code>AsyncStatusUpdate</code>) is created to take <a href="/emdk-for-android/6-10/api/barcode/StatusData">StatusData</a> and processes it in the <code>doInBackground</code> method to retrieve the state in string format. This is populated in status Text View in the UI thread in the <code>onPostExecute</code> method of the AsyncTask. </p>
 
 <pre class="prettyprint"><code>
 // AsyncTask that configures the current state of scanner on background
@@ -698,13 +698,13 @@ this.emdkManager = null;
 
 <p><img src="../../images/BasicScanningTutorialImages/home_screen.png" alt="img"></p>
 
-<p>A <a href="http://developer.android.com/guide/topics/ui/notifiers/toasts.html">Toast message</a> appears indicating that the Scanner has been enabled and scans can begin by pressing hard scan button of the device.</p></li>
+<p>A <a href="https://developer.android.com/guide/topics/ui/notifiers/toasts.html">Toast message</a> appears indicating that the Scanner has been enabled and scans can begin by pressing hard scan button of the device.</p></li>
 
-<li><p>Pressing the hard scan button causes the status listener in the code to start working; the current status of Scanner (which is "Scanning") is displayed in the Status <a href="http://developer.android.com/reference/android/widget/TextView.html">TextView</a>.  </p>
+<li><p>Pressing the hard scan button causes the status listener in the code to start working; the current status of Scanner (which is "Scanning") is displayed in the Status <a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a>.  </p>
 
 <p><img src="../../images/BasicScanningTutorialImages/status_scanning.png" alt="img"></p></li>
 
-<li><p>Once finished with scanning, release the hard scan button. Data is populated to <a href="http://developer.android.com/reference/android/widget/EditText.html">EditText</a> and status "Idle" is displayed in the Status <a href="http://developer.android.com/reference/android/widget/TextView.html">TextView</a>.</p>
+<li><p>Once finished with scanning, release the hard scan button. Data is populated to <a href="https://developer.android.com/reference/android/widget/EditText.html">EditText</a> and status "Idle" is displayed in the Status <a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a>.</p>
 
 <p><img src="../../images/BasicScanningTutorialImages/status_idle.png" alt="img">  </p></li>
 </ol>
@@ -798,9 +798,9 @@ this.emdkManager = null;
                      <!--
                      <div class="col-sm-2">
                         <ul class="social-icons">
-                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>

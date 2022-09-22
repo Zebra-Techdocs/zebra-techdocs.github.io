@@ -549,7 +549,7 @@ if (results.statusCode == EMDKResults.STATUS_CODE.CHECK_XML) {
 }
 </code></pre>
 
-<p>This <code>processProfile</code> method returns the result of applying a particular profile that we set using EMDK Profile Wizard in <a href="/emdk-for-android/6-8/api/core/EMDKResults">EMDKResults</a> reference. If the profile is successfully processed, it returns the status as <code>CHECK_XML</code> and then we go on and parse the response to get further details whether the profile was applied successfully or not. Otherwise we display a Failure message in a <a href="http://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>.</p>
+<p>This <code>processProfile</code> method returns the result of applying a particular profile that we set using EMDK Profile Wizard in <a href="/emdk-for-android/6-8/api/core/EMDKResults">EMDKResults</a> reference. If the profile is successfully processed, it returns the status as <code>CHECK_XML</code> and then we go on and parse the response to get further details whether the profile was applied successfully or not. Otherwise we display a Failure message in a <a href="https://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>.</p>
 
 <blockquote>
   <p>Note: 1. There is a difference between processing a profile successfully and applying a profile successfully.</p>
@@ -568,7 +568,7 @@ handleEMDKResult(results);
 
 <p><img src="../../images/MxPowerManagerTutorialImages/on_opened_method.jpg" alt="img"></p></li>
 
-<li><p>It shows error as we have not yet declared <code>handleEMDKResult</code> method. So let us create this method, which would get the XML String response from <a href="/emdk-for-android/6-8/api/core/EMDKResults">EMDKResults</a>, call the <code>parseXML</code> method to parse it and eventually call <code>displayResults</code> method to display output in a <a href="http://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>, which we would be declaring in coming steps. </p>
+<li><p>It shows error as we have not yet declared <code>handleEMDKResult</code> method. So let us create this method, which would get the XML String response from <a href="/emdk-for-android/6-8/api/core/EMDKResults">EMDKResults</a>, call the <code>parseXML</code> method to parse it and eventually call <code>displayResults</code> method to display output in a <a href="https://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>, which we would be declaring in coming steps. </p>
 
 <pre class="prettyprint"><code>
 // Method to handle EMDKResult by extracting response and parsing it
@@ -599,7 +599,7 @@ displayResults();
 
 <p><img src="../../images/MxPowerManagerTutorialImages/handle_emdk_result.jpg" alt="img"></p></li>
 
-<li><p>You will see few errors as we have not declared the respective methods to parse the response and display result. Lets do it one by one. In this step, we will create a method <code>parseXML</code> that uses <a href="http://developer.android.com/reference/org/xmlpull/v1/XmlPullParser.html">XML Pull Parser</a> to parse the XML string response and set the status and error parameters if any.</p>
+<li><p>You will see few errors as we have not declared the respective methods to parse the response and display result. Lets do it one by one. In this step, we will create a method <code>parseXML</code> that uses <a href="https://developer.android.com/reference/org/xmlpull/v1/XmlPullParser.html">XML Pull Parser</a> to parse the XML string response and set the status and error parameters if any.</p>
 
 <p>In the response, we are supposed to capture <code>name</code> and <code>desc</code> for <code>parm-error</code> tag, <code>type</code> and <code>desc</code> for <code>characteristic-error</code> tag in case of any errors.</p>
 
@@ -649,7 +649,7 @@ e.printStackTrace();
 
 <p><img src="../../images/MxPowerManagerTutorialImages/parse_xml.jpg" alt="img"></p></li>
 
-<li><p>You will still see one error as we need to declare <code>displayResults</code> method to display the result of profile operation in a <a href="http://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>. Before displaying the results, we should form the content of the result to be shown first, specifically in case of errors. This could be done by creating <code>buildFailureMessage</code> method.</p>
+<li><p>You will still see one error as we need to declare <code>displayResults</code> method to display the result of profile operation in a <a href="https://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>. Before displaying the results, we should form the content of the result to be shown first, specifically in case of errors. This could be done by creating <code>buildFailureMessage</code> method.</p>
 
 <p>In this method, the error message in case of error is formed using following way: </p>
 
@@ -683,7 +683,7 @@ public String buildFailureMessage() {
 
 <p><img src="../../images/MxPowerManagerTutorialImages/build_failure_message.jpg" alt="img"></p></li>
 
-<li><p>In this step, we will add <code>displayResults</code> method to display the result of profile operation. If the Profile is successfully applied, it will proceed with the respective power manager operation and in case of any errors, we will display a <a href="http://developer.android.com/reference/android/app/AlertDialog.html">dialog</a> with the corresponding error details.</p>
+<li><p>In this step, we will add <code>displayResults</code> method to display the result of profile operation. If the Profile is successfully applied, it will proceed with the respective power manager operation and in case of any errors, we will display a <a href="https://developer.android.com/reference/android/app/AlertDialog.html">dialog</a> with the corresponding error details.</p>
 
 <pre class="prettyprint"><code>
 // Method to display results (Status, Error Name, Error Type, Error
@@ -750,8 +750,8 @@ protected void onDestroy() {
 </blockquote>
 
 <pre class="prettyprint"><code>
-&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
+&lt;RelativeLayout xmlns:android="https://schemas.android.com/apk/res/android"
+xmlns:tools="https://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:layout_margin="20dip"
@@ -1130,9 +1130,9 @@ The method <code>modifyProfile_XMLString</code> method should look like: </p>
     <!--                 
                     <div class="col-sm-2">
                         <ul class="social-icons">
-                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>

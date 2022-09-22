@@ -254,18 +254,18 @@
 
 <p><strong>2. App Manager API:</strong></p>
 
-<p>Once the EHS has been set as the default launcher application, we will modify this setting by setting another application as default launcher through the code using App Manager API for default launcher. You can use any applicable launcher application. We will use <a href="http://www.appsapk.com/galaxy-launcher/">Galaxy Launcher</a> application to set  as default launcher application through code in this tutorial.</p>
+<p>Once the EHS has been set as the default launcher application, we will modify this setting by setting another application as default launcher through the code using App Manager API for default launcher. You can use any applicable launcher application. We will use <a href="https://www.appsapk.com/galaxy-launcher/">Galaxy Launcher</a> application to set  as default launcher application through code in this tutorial.</p>
 
 <p>This allows you to understand how to configure parameters using Profile Manager and modify it using App Manager API.   </p>
 
 <h2 id="downloadingrequiredlauncherapplications" class="anchor"><a class="heading-anchor" href="#downloadingrequiredlauncherapplications"><span></span></a>Downloading required Launcher Applications:</h2>
 
-<p>As discussed above, we will now download and install the two launcher applications (<a href="https://developer.motorolasolutions.com/docs/DOC-1875">EHS</a> and <a href="http://www.appsapk.com/galaxy-launcher/">Galaxy Launcher</a>).</p>
+<p>As discussed above, we will now download and install the two launcher applications (<a href="https://developer.motorolasolutions.com/docs/DOC-1875">EHS</a> and <a href="https://www.appsapk.com/galaxy-launcher/">Galaxy Launcher</a>).</p>
 
 <ul>
 <li>You can download Enterprise Home Screen application <a href="https://portal.motorolasolutions.com/Support/US-EN/Resolution?solutionId=92627&amp;redirectForm=search&amp;searchQuery=%3FsearchType%3Dsimple%26searchTerm%3DDownload%20EHS">here</a>. Unzip the file to get the APK to install.</li>
 
-<li>You can download Galaxy Launcher application <a href="http://www.appsapk.com/galaxy-launcher/">here</a>.</li>
+<li>You can download Galaxy Launcher application <a href="https://www.appsapk.com/galaxy-launcher/">here</a>.</li>
 </ul>
 
 <p>Once downloaded, you can put them in SD card of the the device and install both of these launcher applications.</p>
@@ -504,7 +504,7 @@ if (results.statusCode == EMDKResults.STATUS_CODE.CHECK_XML) {
 }
 </code></pre>
 
-<p>This <code>processProfile</code> method returns the result of applying a particular profile that we set using EMDK Profile Wizard in <a href="/emdk-for-android/6-10/api/core/EMDKResults">EMDKResults</a> reference. If the profile is successfully processed, it retuns the status as <code>CHECK_XML</code> and then we go on and parse the response to get further details whether the profile was applied successfully or not. Otherwise we display a Failure message in a <a href="http://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>.</p>
+<p>This <code>processProfile</code> method returns the result of applying a particular profile that we set using EMDK Profile Wizard in <a href="/emdk-for-android/6-10/api/core/EMDKResults">EMDKResults</a> reference. If the profile is successfully processed, it retuns the status as <code>CHECK_XML</code> and then we go on and parse the response to get further details whether the profile was applied successfully or not. Otherwise we display a Failure message in a <a href="https://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>.</p>
 
 <blockquote>
   <p>Note: 1. There is a difference between processing a profile successfully and applying a profile successfully.</p>
@@ -523,7 +523,7 @@ handleEMDKResult(results);
 
 <p><img src="../../images/MxDefaultLauncherTutorialImages/on_opened_method.jpg" alt="img"></p></li>
 
-<li><p>It shows error as we have not yet declared <code>handleEMDKResult</code> method. So let us create this method, which would get the XML String response from <a href="/emdk-for-android/6-10/api/core/EMDKResults">EMDKResults</a>, call the <code>parseXML</code> method to parse it and eventually call <code>displayResults</code> method to display output in a <a href="http://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>, which we would be declaring in coming steps. </p>
+<li><p>It shows error as we have not yet declared <code>handleEMDKResult</code> method. So let us create this method, which would get the XML String response from <a href="/emdk-for-android/6-10/api/core/EMDKResults">EMDKResults</a>, call the <code>parseXML</code> method to parse it and eventually call <code>displayResults</code> method to display output in a <a href="https://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>, which we would be declaring in coming steps. </p>
 
 <pre class="prettyprint"><code>
 // Method to handle EMDKResult by extracting response and parsing it
@@ -554,7 +554,7 @@ displayResults();
 
 <p><img src="../../images/MxDefaultLauncherTutorialImages/handle_emdk_result.jpg" alt="img"></p></li>
 
-<li><p>You will see few errors as we have not declared the respective methods to parse the response and display result. Lets do it one by one. In this step, we will create a method <code>parseXML</code> that uses <a href="http://developer.android.com/reference/org/xmlpull/v1/XmlPullParser.html">XML Pull Parser</a> to parse the XML string response and set the status and error parameters if any.</p>
+<li><p>You will see few errors as we have not declared the respective methods to parse the response and display result. Lets do it one by one. In this step, we will create a method <code>parseXML</code> that uses <a href="https://developer.android.com/reference/org/xmlpull/v1/XmlPullParser.html">XML Pull Parser</a> to parse the XML string response and set the status and error parameters if any.</p>
 
 <p>In the reponse, we are supposed to capture <code>name</code> and <code>desc</code> for <code>parm-error</code> tag, <code>type</code> and <code>desc</code> for <code>characteristic-error</code> tag in case of any errors.</p>
 
@@ -604,7 +604,7 @@ e.printStackTrace();
 
 <p><img src="../../images/MxDefaultLauncherTutorialImages/parse_xml.jpg" alt="img"> </p></li>
 
-<li><p>You will still see one error as we need to declare <code>displayResults</code> method to display the result of profile operation in a <a href="http://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>. Before displaying the results, we should form the content of the result to be shown first, specifically in case of errors. This could be done by creating <code>buildFailureMessage</code> method.</p>
+<li><p>You will still see one error as we need to declare <code>displayResults</code> method to display the result of profile operation in a <a href="https://developer.android.com/reference/android/app/AlertDialog.html">dialog</a>. Before displaying the results, we should form the content of the result to be shown first, specifically in case of errors. This could be done by creating <code>buildFailureMessage</code> method.</p>
 
 <p>In this method, the error message in case of error is formed using following way: </p>
 
@@ -638,7 +638,7 @@ public String buildFailureMessage() {
 
 <p><img src="../../images/MxDefaultLauncherTutorialImages/build_failure_message.jpg" alt="img"></p></li>
 
-<li><p>In this step, we will add <code>displayResults</code> method to display the result of profile operation. If the Profile is successfully applied, we will display a <a href="http://developer.android.com/guide/topics/ui/notifiers/toasts.html">Toast</a> with a success message and in case of any errors, we will display a <a href="http://developer.android.com/reference/android/app/AlertDialog.html">dialog</a> with the corresponding error details.</p>
+<li><p>In this step, we will add <code>displayResults</code> method to display the result of profile operation. If the Profile is successfully applied, we will display a <a href="https://developer.android.com/guide/topics/ui/notifiers/toasts.html">Toast</a> with a success message and in case of any errors, we will display a <a href="https://developer.android.com/reference/android/app/AlertDialog.html">dialog</a> with the corresponding error details.</p>
 
 <pre class="prettyprint"><code>
 // Method to display results (Status, Error Name, Error Type, Error
@@ -894,7 +894,7 @@ public void onClick(View v) {
 
 <blockquote>
   <p>Note:
-  In case of failure, the app will display a failure message in an <a href="http://developer.android.com/reference/android/app/AlertDialog.html">Alert Dialog</a> and no change will take place.  </p>
+  In case of failure, the app will display a failure message in an <a href="https://developer.android.com/reference/android/app/AlertDialog.html">Alert Dialog</a> and no change will take place.  </p>
 </blockquote></li>
 </ol>
 
@@ -971,9 +971,9 @@ public void onClick(View v) {
                      <!--
                      <div class="col-sm-2">
                         <ul class="social-icons">
-                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>

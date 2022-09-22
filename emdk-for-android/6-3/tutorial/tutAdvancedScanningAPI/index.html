@@ -374,9 +374,9 @@ StatusListener, DataListener, OnCheckedChangeListener {
 
 <p>We will now create some global variables to hold the instance objects of EMDKManager, <a href="/emdk-for-android/6-3/api/barcode/BarcodeManager">BarcodeManager</a> and <a href="/emdk-for-android/6-3/api/barcode/Scanner">Scanner</a>. These variables would be used throughout the code.</p>
 
-<p>It will have some UI elements such as <a href="http://developer.android.com/reference/android/widget/CheckBox.html">Checkboxes</a> to  </p>
+<p>It will have some UI elements such as <a href="https://developer.android.com/reference/android/widget/CheckBox.html">Checkboxes</a> to  </p>
 
-<p>We will then add some UI elements starting with a <a href="http://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of scanning operation and then <a href="http://developer.android.com/reference/android/widget/EditText.html">EditText</a> to populate scanned barcode data.</p>
+<p>We will then add some UI elements starting with a <a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of scanning operation and then <a href="https://developer.android.com/reference/android/widget/EditText.html">EditText</a> to populate scanned barcode data.</p>
 
 <p>We will also declare a boolean variable to call setProfile() method only when required avoiding scanner exceptions while setting profile.</p>
 
@@ -457,12 +457,12 @@ private boolean isScanToneFirstTime;
   <p>Note: Due to more variables, it has been divided into multiple screen captures. </p>
 </blockquote></li>
 
-<li><p>Now, let us design the simple UI that has fields for each of the features mentioned above starting with <a href="http://developer.android.com/guide/topics/ui/controls/spinner.html">Spinner</a> to display list of scanner devices and scan tones at the bottom. It will then have some <a href="http://developer.android.com/reference/android/widget/CheckBox.html">Checkboxes</a> to display decoder params, reader params and scan params for scanner. We then have a <a href="http://developer.android.com/reference/android/widget/Button.html">Button</a> that would be set as a soft trigger in the app to scan barcodes later in this tutorial as we are not using the hard scan trigger of the device. Finally the screen has a <a href="http://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of scanning operation and above that an <a href="http://developer.android.com/reference/android/widget/EditText.html">EditText</a> to populate scanned barcode data. Since the UI has lots of elements, we need to embed it in a <a href="http://developer.android.com/reference/android/widget/ScrollView.html">ScrollView</a> to view all the UI elements.</p>
+<li><p>Now, let us design the simple UI that has fields for each of the features mentioned above starting with <a href="https://developer.android.com/guide/topics/ui/controls/spinner.html">Spinner</a> to display list of scanner devices and scan tones at the bottom. It will then have some <a href="https://developer.android.com/reference/android/widget/CheckBox.html">Checkboxes</a> to display decoder params, reader params and scan params for scanner. We then have a <a href="https://developer.android.com/reference/android/widget/Button.html">Button</a> that would be set as a soft trigger in the app to scan barcodes later in this tutorial as we are not using the hard scan trigger of the device. Finally the screen has a <a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a> to display the status of scanning operation and above that an <a href="https://developer.android.com/reference/android/widget/EditText.html">EditText</a> to populate scanned barcode data. Since the UI has lots of elements, we need to embed it in a <a href="https://developer.android.com/reference/android/widget/ScrollView.html">ScrollView</a> to view all the UI elements.</p>
 
 <p>So, remove all the code, inside "res/layout/activity_main.xml" and add following XML layout code for UI.</p>
 
 <pre class="prettyprint"><code>
-&lt;ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+&lt;ScrollView xmlns:android="https://schemas.android.com/apk/res/android"
 android:layout_width="fill_parent"
 android:layout_height="fill_parent"
 android:paddingBottom="5dip" &gt;
@@ -680,7 +680,7 @@ android:paddingBottom="5dip" &gt;
 
 <p><img src="../../images/AdvancedScanningTutorialImages/ui_layout.jpg" alt="img">      </p></li>
 
-<li><p>In the <code>onCreate</code> method, we take reference of UI elements that are declared in <code>res/layout/activity_main.xml</code> in order to use them in our <a href="http://developer.android.com/reference/android/app/Activity.html">Activity</a>. We would then set <code>OnCheckedChangeListener</code> for all the checkboxes followed by <code>setOnTouchListener</code> for the "Scan" button that we have declared in UI.</p>
+<li><p>In the <code>onCreate</code> method, we take reference of UI elements that are declared in <code>res/layout/activity_main.xml</code> in order to use them in our <a href="https://developer.android.com/reference/android/app/Activity.html">Activity</a>. We would then set <code>OnCheckedChangeListener</code> for all the checkboxes followed by <code>setOnTouchListener</code> for the "Scan" button that we have declared in UI.</p>
 
 <p>We will also set the Spinner Adapter to hold the list of Scanner devices and Scan Tones followed by the listener calls for both spinners.    </p>
 
@@ -1157,9 +1157,9 @@ private void enumerateScannerDevices() {
 
 <p><img src="../../images/AdvancedScanningTutorialImages/enumerate_scanner_method.jpg" alt="img"></p></li>
 
-<li><p>As mentioned earlier that whenever a barcode is scanned, its data will be received in a callback <code>onData</code> method upon data availability. So we need to get that data, process it in the format we want and populate in the <a href="http://developer.android.com/reference/android/widget/EditText.html">EditText</a> of UI.</p>
+<li><p>As mentioned earlier that whenever a barcode is scanned, its data will be received in a callback <code>onData</code> method upon data availability. So we need to get that data, process it in the format we want and populate in the <a href="https://developer.android.com/reference/android/widget/EditText.html">EditText</a> of UI.</p>
 
-<p>The received data should be processed on a background thread not to block the UI thread. Hence we will use Android's own <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> to process the scanned data on background thread. So we create AsyncTask <code>AsyncDataUpdate</code> that takes <a href="/emdk-for-android/6-3/api/barcode/ScanDataCollection">ScanDataCollection</a>, which has the scanned data. It then processes this object in <code>doInBackground</code> method to filter the barcode data and label type in strings, which is then passed to the UI thread in <code>onPostExecute</code> method of AsyncTask to Populate.</p>
+<p>The received data should be processed on a background thread not to block the UI thread. Hence we will use Android's own <a href="https://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> to process the scanned data on background thread. So we create AsyncTask <code>AsyncDataUpdate</code> that takes <a href="/emdk-for-android/6-3/api/barcode/ScanDataCollection">ScanDataCollection</a>, which has the scanned data. It then processes this object in <code>doInBackground</code> method to filter the barcode data and label type in strings, which is then passed to the UI thread in <code>onPostExecute</code> method of AsyncTask to Populate.</p>
 
 <pre class="prettyprint"><code>
 // Update the scan data on UI
@@ -1238,7 +1238,7 @@ new AsyncDataUpdate().execute(scanDataCollection);
 
 <li><p>Whether we scan the barcode by pressing the hard scan key or keep it idle, it returns the status of the scanner at specific point of time in the overridden <code>onStatus</code> method of implemented <code>StatusListener</code> interface. Since we are also displaying the status along with barcode data, we will make use of this method and populate the status.</p>
 
-<p>Just like scanned data, we are also processing the scanner status on a background thread. Hence we will create another <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> named <code>AsyncStatusUpdate</code> that takes <a href="/emdk-for-android/6-3/api/barcode/StatusData">StatusData</a> and processes it in <code>doInBackground</code> method to retrieve state in string format which is populated in status Text View on UI thread in <code>onPostExecute</code> method of the AsyncTask.              </p>
+<p>Just like scanned data, we are also processing the scanner status on a background thread. Hence we will create another <a href="https://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> named <code>AsyncStatusUpdate</code> that takes <a href="/emdk-for-android/6-3/api/barcode/StatusData">StatusData</a> and processes it in <code>doInBackground</code> method to retrieve state in string format which is populated in status Text View on UI thread in <code>onPostExecute</code> method of the AsyncTask.              </p>
 
 <pre class="prettyprint"><code>
 // AsyncTask that configures the current state of scanner on background
@@ -1381,9 +1381,9 @@ this.emdkManager = null;
 
 <p><img src="../../images/AdvancedScanningTutorialImages/home_screen.png" alt="img"></p>
 
-<p>You can see a <a href="http://developer.android.com/guide/topics/ui/notifiers/toasts.html">Toast</a>, which indicates that the Scanner has been enabled and you can start scanning by pressing hard scan button of the device.</p></li>
+<p>You can see a <a href="https://developer.android.com/guide/topics/ui/notifiers/toasts.html">Toast</a>, which indicates that the Scanner has been enabled and you can start scanning by pressing hard scan button of the device.</p></li>
 
-<li><p>Now if you press and hold the Scan button on the UI, the status listener in the code starts working and current status of Scanner is displayed in Status <a href="http://developer.android.com/reference/android/widget/TextView.html">TextView</a>, which is <code>Scanning</code>. The "Scanner Device Type" Spinner shows Serial SSI Scanner as it is the default scanner for Symbol TC55 device. All the decoders are checked, which means current configuration scan supports all of these decoder types. But Scan Tone is <code>NONE</code>, which means there won't be any tone/sound while scanning a barcode.   </p>
+<li><p>Now if you press and hold the Scan button on the UI, the status listener in the code starts working and current status of Scanner is displayed in Status <a href="https://developer.android.com/reference/android/widget/TextView.html">TextView</a>, which is <code>Scanning</code>. The "Scanner Device Type" Spinner shows Serial SSI Scanner as it is the default scanner for Symbol TC55 device. All the decoders are checked, which means current configuration scan supports all of these decoder types. But Scan Tone is <code>NONE</code>, which means there won't be any tone/sound while scanning a barcode.   </p>
 
 <p><img src="../../images/AdvancedScanningTutorialImages/status_scanning.png" alt="img"></p>
 
@@ -1482,9 +1482,9 @@ this.emdkManager = null;
                     </div>
                     <div class="col-sm-2">
                         <ul class="social-icons">
-                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
                         </ul>
