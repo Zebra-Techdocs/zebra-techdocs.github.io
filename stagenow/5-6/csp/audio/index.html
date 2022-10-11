@@ -361,6 +361,8 @@
                                 <li class="smartdocs-mx" data-value="11.3"><a>11.3</a></li>
                                 <li class="smartdocs-mx" data-value="11.4"><a>11.4</a></li>
                                 <li class="smartdocs-mx" data-value="11.5"><a>11.5</a></li>
+                                <li class="smartdocs-mx" data-value="11.6"><a>11.6</a></li>
+                                <li class="smartdocs-mx" data-value="11.7"><a>11.7</a></li>
                               </ul>
                               </li>
                         
@@ -390,8 +392,10 @@
                                 <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" id="smartdocs-devicetype-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Model: All <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                <li class="smartdocs-devicetype" data-value="A"><a>All Devices</a></li>
-                                <li class="smartdocs-devicetype" data-value="A,B"><a>TC20/TC25</a></li> 
+                                <li class="smartdocs-devicetype" data-value="A"><a href="/mx/compatibility">All Devices</a></li>
+                                <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/et40">ET40/ET45</a></li> 
+                                <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/tc2x">TC20/TC25</a></li> 
+                                <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/ws50">WS50</a></li> 
                               </ul>
                               </li>
                               
@@ -842,19 +846,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -875,7 +866,7 @@
 
 <li>Change the volume levels to be the Preset volume levels of the current Audio Profile</li>
 
-<li>Control the global mute and vibrate states of the device</li>
+<li>Control the global mute and vibrate usage and states of the device</li>
 </ul>
 
 <blockquote>
@@ -994,10 +985,169 @@
                                     
                                     
                                     
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="mutevibrate-usage-enabledisable"><a class="heading-anchor" href="#mutevibrate-usage-enabledisable"><span></span></a>Mute/Vibrate Usage Enable/Disable</h2>
+                                    <p class="">
+
+        </p><p>Controls whether the device user can change the Mute/Vibrate States (On/Off) on the device.</p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Parm Name:</b> MuteVibrateUsage</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.6" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.6+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.6" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>Enable</td>
+                                                <td>Enables the device user to change the Mute/Vibrate states on the device.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.6+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.6" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>2</td>
+                                                <td>Disable</td>
+                                                <td>Prevents the device user from changing the Mute/Vibrate states (On/Off) on the device.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.6+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                         <div class="">
                                     
-                                    <h2 class="anchor" id="mutevibrate-state"><a class="heading-anchor" href="#mutevibrate-state"><span></span></a>Mute/Vibrate State</h2>
+                                    <h2 class="anchor" id="mutevibrate-onoff"><a class="heading-anchor" href="#mutevibrate-onoff"><span></span></a>Mute/Vibrate On/Off</h2>
                                     <p class="">
 
         </p><p>Used to mute and unmute sounds on the device and enable the device to vibrate. </p>
@@ -1184,6 +1334,50 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="current-profile-name"><a class="heading-anchor" href="#current-profile-name"><span></span></a>Current Profile Name</h2>
+                                    <p class="">
+
+        </p><p>Used to enter the name of an existing Audio Profile to be set as the new current Audio Profile. If the specified name does not match the name of a currently defined Audio Profile, an error will be returned in the Result XML document.</p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>String from 1–255 characters</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> The Current Active Profile Action is "Set an Audio UI Profile as the current Profile"</p>
+                                        <p><b>Parm Name:</b> CurrentProfileName</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>OSX: 4.4+
+                                                </li>
+                                                <li>MX: 4.4+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    
+                                </div> 
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="set-the-active-profile"><a class="heading-anchor" href="#set-the-active-profile"><span></span></a>Set the Active Profile</h2>
@@ -1328,91 +1522,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
-
-                                    <h2 class="anchor" id="current-profile-name"><a class="heading-anchor" href="#current-profile-name"><span></span></a>Current Profile Name</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the name of an existing Audio Profile to be set as the new current Audio Profile. If the specified name does not match the name of a currently defined Audio Profile, an error will be returned in the Result XML document.</p>
-
-<p><strong>Parm value input rules</strong>: </p>
-
-<ul>
-<li>String from 1–255 characters</li>
-</ul>
-
-
-<p></p>
-                                        <blockquote>
-                                        <p><b>Shown if:</b> The Current Active Profile Action is "Set an Audio UI Profile as the current Profile"</p>
-                                        <p><b>Parm Name:</b> CurrentProfileName</p>
-                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
-                                        <p><b>Requires:</b> 
-                                            </p><ul>
-                                                <li>OSX: 4.4+
-                                                </li>
-                                                <li>MX: 4.4+ </li>
-                                           </ul>
-                                        <p></p>
-                                        
-
-                                        
-                                        </blockquote>
-                                    
-                                    
-                                    
-                                </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1709,7 +1818,7 @@
                                     <h2 class="anchor" id="audio-ui-profile-name"><a class="heading-anchor" href="#audio-ui-profile-name"><span></span></a>Audio UI Profile Name</h2>
                                     <p class="">
 
-        </p><p>Used to enter the name of the Audio Profile to Create, Modify or Delete. Speciied name <strong>must match exactly</strong> the name specified when setting the current Audio Profile using the CurrentProfileName parameter. </p>
+        </p><p>Used to enter the name of the Audio Profile to Create, Modify or Delete. Specified name <strong>must match exactly</strong> the name specified when setting the current Audio Profile using the CurrentProfileName parameter. </p>
 
 <blockquote>
   <p><strong><u>NOTE</u></strong>: This value cannot be "FactoryPreset" since this is a reserved name for the FactoryPreset Profile built into the device.</p>
@@ -1742,6 +1851,26 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1798,19 +1927,6 @@
                                     
                                 </div> 
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-icon"><a class="heading-anchor" href="#music-icon"><span></span></a>Music Icon</h2>
@@ -1850,6 +1966,20 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1939,19 +2069,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-speaker-levels"><a class="heading-anchor" href="#music-speaker-levels"><span></span></a>Music Speaker Levels</h2>
@@ -1993,6 +2110,19 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2048,19 +2178,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-wired-headset-levels"><a class="heading-anchor" href="#music-wired-headset-levels"><span></span></a>Music Wired Headset Levels</h2>
@@ -2107,6 +2224,13 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="music-bluetooth-headset-levels"><a class="heading-anchor" href="#music-bluetooth-headset-levels"><span></span></a>Music Bluetooth Headset Levels</h2>
@@ -2148,23 +2272,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2241,6 +2348,10 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-label"><a class="heading-anchor" href="#incoming-call-label"><span></span></a>Incoming Call Label</h2>
@@ -2280,6 +2391,8 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -2337,7 +2450,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-control-parameters"><a class="heading-anchor" href="#incoming-call-control-parameters"><span></span></a>Incoming Call Control Parameters</h2>
@@ -2375,6 +2487,12 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2421,6 +2539,9 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2504,12 +2625,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="incoming-call-wired-headset-levels"><a class="heading-anchor" href="#incoming-call-wired-headset-levels"><span></span></a>Incoming Call Wired Headset Levels</h2>
@@ -2551,9 +2666,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2610,6 +2722,11 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-label"><a class="heading-anchor" href="#notification-label"><span></span></a>Notification Label</h2>
@@ -2654,6 +2771,11 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-icon"><a class="heading-anchor" href="#notification-icon"><span></span></a>Notification Icon</h2>
@@ -2693,21 +2815,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2765,6 +2872,23 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-speaker-levels"><a class="heading-anchor" href="#notification-speaker-levels"><span></span></a>Notification Speaker Levels</h2>
@@ -2806,11 +2930,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2861,6 +2980,12 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="notification-wired-headset-levels"><a class="heading-anchor" href="#notification-wired-headset-levels"><span></span></a>Notification Wired Headset Levels</h2>
@@ -2902,7 +3027,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -2968,14 +3092,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-label"><a class="heading-anchor" href="#system-sounds-label"><span></span></a>System Sounds Label</h2>
@@ -3015,6 +3131,17 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
@@ -3062,8 +3189,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-control-parameters"><a class="heading-anchor" href="#system-sounds-control-parameters"><span></span></a>System Sounds Control Parameters</h2>
@@ -3101,9 +3226,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
@@ -3151,6 +3273,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-receiver-levels"><a class="heading-anchor" href="#system-sounds-receiver-levels"><span></span></a>System Sounds Receiver Levels</h2>
@@ -3192,7 +3316,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -3258,12 +3381,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="system-sounds-bluetooth-headset-levels"><a class="heading-anchor" href="#system-sounds-bluetooth-headset-levels"><span></span></a>System Sounds Bluetooth Headset Levels</h2>
@@ -3305,6 +3422,11 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
@@ -3352,6 +3474,7 @@
                                     
                                     
                                     
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-icon"><a class="heading-anchor" href="#alarm-icon"><span></span></a>Alarm Icon</h2>
@@ -3393,6 +3516,16 @@
                                 </div> 
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-control-parameters"><a class="heading-anchor" href="#alarm-control-parameters"><span></span></a>Alarm Control Parameters</h2>
@@ -3430,18 +3563,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3507,7 +3628,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="alarm-wired-headset-levels"><a class="heading-anchor" href="#alarm-wired-headset-levels"><span></span></a>Alarm Wired Headset Levels</h2>
@@ -3550,6 +3670,7 @@
                                     
                                     
                                 </div> 
+                                    
                                     
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
@@ -3599,6 +3720,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="bluetooth-alarm-volume"><a class="heading-anchor" href="#bluetooth-alarm-volume"><span></span></a>Bluetooth Alarm Volume</h2>
@@ -3644,6 +3767,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-label"><a class="heading-anchor" href="#voice-call-label"><span></span></a>Voice Call Label</h2>
@@ -3681,6 +3806,10 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3737,11 +3866,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-control-parameters"><a class="heading-anchor" href="#voice-call-control-parameters"><span></span></a>Voice Call Control Parameters</h2>
@@ -3779,7 +3903,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -3833,6 +3956,9 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-receiver-levels"><a class="heading-anchor" href="#voice-call-receiver-levels"><span></span></a>Voice Call Receiver Levels</h2>
@@ -3874,7 +4000,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -3931,6 +4056,16 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="voice-call-bluetooth-headset-levels"><a class="heading-anchor" href="#voice-call-bluetooth-headset-levels"><span></span></a>Voice Call Bluetooth Headset Levels</h2>
@@ -3972,17 +4107,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -4028,9 +4152,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-icon"><a class="heading-anchor" href="#decode-beep-icon"><span></span></a>Decode Beep Icon</h2>
@@ -4070,6 +4191,8 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -4158,6 +4281,20 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="decode-beep-receiver-levels"><a class="heading-anchor" href="#decode-beep-receiver-levels"><span></span></a>Decode Beep Receiver Levels</h2>
@@ -4199,19 +4336,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                         <div class="" data-osx="4.4" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
@@ -4332,6 +4456,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="keypad-tone-label"><a class="heading-anchor" href="#keypad-tone-label"><span></span></a>Keypad Tone Label</h2>
@@ -4364,9 +4490,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -4446,6 +4569,11 @@
                                     
                                 </div> 
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="keypad-tone-speaker-levels"><a class="heading-anchor" href="#keypad-tone-speaker-levels"><span></span></a>Keypad Tone Speaker Levels</h2>
@@ -4483,13 +4611,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="keypad-tone-receiver-levels"><a class="heading-anchor" href="#keypad-tone-receiver-levels"><span></span></a>Keypad Tone Receiver Levels</h2>
@@ -4523,6 +4644,12 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -4569,8 +4696,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="keypad-tone-bluetooth-headset-levels"><a class="heading-anchor" href="#keypad-tone-bluetooth-headset-levels"><span></span></a>Keypad Tone Bluetooth Headset Levels</h2>
@@ -4604,18 +4729,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -4944,6 +5057,22 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -5002,6 +5131,103 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                            presentif: "",
+                            name: "MuteVibrateUsage",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.6",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "Enable",
+                                    description: "Enables the device user to change the Mute/Vibrate states on the device.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.6",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "2",
+                                    name: "Disable",
+                                    description: "Prevents the device user from changing the Mute/Vibrate states (On/Off) on the device.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.6",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
                     
                     
                     
@@ -5177,6 +5403,35 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                        requires: {
+                            osx: "4.4",
+                            osxEnd: "",
+                            mx: "4.4",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A"
+                        },
+
+                            presentif: "The Current Active Profile Action is &quot;Set an Audio UI Profile as the current Profile&quot;",
+                            name: "CurrentProfileName",
+                            pivotal: "No",
+                        
+                        
+                    },
+                    
                     {
                             presentif: "",
                             name: "CurrentProfileAction",
@@ -5254,76 +5509,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    {
-                        requires: {
-                            osx: "4.4",
-                            osxEnd: "",
-                            mx: "4.4",
-                            api: "",
-                            osxSpecific: "",
-                            osxSpecificList: "",
-                            osxExclude: "",
-                            osxExcludeEnd: "",
-                            devicetype: "A"
-                        },
-
-                            presentif: "The Current Active Profile Action is &quot;Set an Audio UI Profile as the current Profile&quot;",
-                            name: "CurrentProfileName",
-                            pivotal: "No",
-                        
-                        
-                    },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5545,6 +5730,26 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5565,19 +5770,6 @@ filtering
                         
                     },
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5597,6 +5789,20 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -5668,19 +5874,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5700,6 +5893,19 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -5733,19 +5939,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5770,6 +5963,13 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5789,23 +5989,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5863,6 +6046,10 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5882,6 +6069,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     
                     
@@ -5919,7 +6108,6 @@ filtering
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5944,6 +6132,12 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -5963,6 +6157,9 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -6024,12 +6221,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6049,9 +6240,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
                     
                     
                     
@@ -6086,6 +6274,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6110,6 +6303,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6129,21 +6327,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6183,6 +6366,23 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6202,11 +6402,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6235,6 +6430,12 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6254,7 +6455,6 @@ filtering
                         
                         
                     },
-                    
                     
                     
                     
@@ -6298,14 +6498,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6325,6 +6517,17 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     {
@@ -6352,8 +6555,6 @@ filtering
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6373,9 +6574,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
                     
                     
                     {
@@ -6401,6 +6599,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6420,7 +6620,6 @@ filtering
                         
                         
                     },
-                    
                     
                     
                     
@@ -6464,12 +6663,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6489,6 +6682,11 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
                     
                     
                     {
@@ -6516,6 +6714,7 @@ filtering
                     
                     
                     
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6537,6 +6736,16 @@ filtering
                     },
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6556,18 +6765,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6608,7 +6805,6 @@ filtering
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6629,6 +6825,7 @@ filtering
                         
                     },
                     
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6648,6 +6845,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     
                     
@@ -6674,6 +6873,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6693,6 +6894,10 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -6729,11 +6934,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6753,7 +6953,6 @@ filtering
                         
                         
                     },
-                    
                     
                     
                     
@@ -6785,6 +6984,9 @@ filtering
                     
                     
                     
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6804,7 +7006,6 @@ filtering
                         
                         
                     },
-                    
                     
                     
                     
@@ -6839,6 +7040,16 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6858,17 +7069,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6894,9 +7094,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6916,6 +7113,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     
                     
@@ -6962,6 +7161,20 @@ filtering
                         
                     },
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "4.4",
@@ -6981,19 +7194,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     {
                         requires: {
@@ -7066,6 +7266,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -7085,9 +7287,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
                     
                     
                     
@@ -7135,6 +7334,11 @@ filtering
                         
                     },
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -7158,13 +7362,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -7184,6 +7381,12 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -7216,8 +7419,6 @@ filtering
                     
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -7237,6 +7438,10 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
                     
                     
                     
