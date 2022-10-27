@@ -1,6 +1,16 @@
 
 <!DOCTYPE html>
 <html lang="en"><head>
+
+<!-- Google tag -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-01QJCMQM9N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-01QJCMQM9N');
+</script>
+
     <meta charset="utf-8">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="-1">
@@ -14,7 +24,11 @@
     <title>Touch Manager - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--     
     <link href="/css/font-awesome.min.css" rel="stylesheet">
+ -->    
+    <link href="/css/all.css" rel="stylesheet">
+    <link href="/css/v4-shims.css" rel="stylesheet">
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/owl.carousel.css" rel="stylesheet">
     <link href="/css/owl.transitions.css" rel="stylesheet">
@@ -129,11 +143,7 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
-        <h4><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> TECHDOCS ARCHIVE: A newer version of this product and documentation are available. <a href="https://techdocs.zebra.com/emdk-for-android" class="btn btn-danger">See the latest</a></h4>
-    </div>
-  </header><!--/header-->
+    </header><!--/header-->
 <div class="container-fluid">
     <section id="blog">
         <div class="">
@@ -232,9 +242,10 @@
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
                                     <h1 id="touch-manager" class="anchor"><a class="heading-anchor" href="#touch-manager"><span></span></a>Touch Manager</h1>
-                                    <p><b>Note</b>: To display <u>only</u> the features present on a particular device, select one or more filters from the SmartDocs bar below.  
+                                    <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> To display <u>only</u> the features present on a particular device, select one or more filters from the SmartDocs bar below.  
                                     <a id="smartdocs-help"><i class="fa fa-question-circle fa-lg"></i></a></p> 
-                                    <p><b>Language Note</b>: Input fields accept <b><u>ENGLISH ONLY</u></b>.</p>
+                                    <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Input fields accept <b><u>ENGLISH ONLY</u></b>.</p>
+                                    <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Queries are not supported on Zebra devices running Android 11 or later.</p>
 
 
                                     EMDK For Android
@@ -297,6 +308,7 @@
                                 <li class="smartdocs-osx" data-value="9.2"><a>9.2</a></li>
                                 <li class="smartdocs-osx" data-value="10.0"><a>10.0</a></li>
                                 <li class="smartdocs-osx" data-value="10.5"><a>10.5</a></li>
+                                <li class="smartdocs-osx" data-value="11.0"><a>11.0</a></li>
                               </ul>
                               </li>
                         
@@ -335,6 +347,13 @@
                                 <li class="smartdocs-mx" data-value="10.3"><a>10.3</a></li>
                                 <li class="smartdocs-mx" data-value="10.4"><a>10.4</a></li>
                                 <li class="smartdocs-mx" data-value="10.5"><a>10.5</a></li>
+                                <li class="smartdocs-mx" data-value="11.1"><a>11.1</a></li>
+                                <li class="smartdocs-mx" data-value="11.2"><a>11.2</a></li>
+                                <li class="smartdocs-mx" data-value="11.3"><a>11.3</a></li>
+                                <li class="smartdocs-mx" data-value="11.4"><a>11.4</a></li>
+                                <li class="smartdocs-mx" data-value="11.5"><a>11.5</a></li>
+                                <li class="smartdocs-mx" data-value="11.6"><a>11.6</a></li>
+                                <li class="smartdocs-mx" data-value="11.7"><a>11.7</a></li>
                               </ul>
                               </li>
                         
@@ -364,8 +383,10 @@
                                 <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" id="smartdocs-devicetype-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Model: All <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                <li class="smartdocs-devicetype" data-value=""><a>All Devices</a></li>
-                                <li class="smartdocs-devicetype" data-value="B"><a>TC20/TC25</a></li> 
+                                <li class="smartdocs-devicetype" data-value="A"><a href="/mx/compatibility">All Devices</a></li>
+                                <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/et40">ET40/ET45</a></li> 
+                                <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/tc2x">TC20/TC25</a></li> 
+                                <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/ws50">WS50</a></li> 
                               </ul>
                               </li>
                               
@@ -788,6 +809,9 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -802,24 +826,28 @@
 <ul>
 <li><strong>EC30, EC50, EC55</strong></li>
 
-<li><strong>ET50, ET51, ET56</strong></li>
+<li><strong>ET40, ET45, ET50, ET51, ET56</strong></li>
 
 <li><strong>L10</strong></li>
 
 <li><strong>MC20, MC2200, MC2700, MC33, MC33ax, MC3300x, MC93</strong></li>
 
-<li><strong>TC21, TC26, TC51, TC52, TC52ax, TC52x, TC55, TC56, TC57, TC57x</strong></li>
+<li><strong>TC15, TC21, TC26, TC51, TC52, TC52ax, TC52x, TC53, TC55, TC56, TC57, TC57x, TC58</strong></li>
 
 <li><strong>TC70, TC70x, TC72, TC75, TC75x, TC77</strong></li>
 
 <li><strong>TC8000, TC8300</strong></li>
 
-<li><strong>VC83</strong></li></ul>
+<li><strong>TN28</strong></li>
+
+<li><strong>VC83</strong></li>
+
+<li><strong>WS50</strong></li></ul>
 </li>
 </ul>
 
 <blockquote>
-  <p><strong><code>IMPORTANT:</code></strong> Touch-screen sensitivity settings vary by device. </p>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> <strong>Touch-screen sensitivity settings vary by device</strong>. </p>
 </blockquote>
 
 <h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
@@ -951,6 +979,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A" data-api="" data-smartdoc="">
@@ -958,6 +987,9 @@
                                                 <td>Any</td>
                                                 <td>This value (or the absence of this parm from the XML) applies Touch Mode settings for any and all devices.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -980,8 +1012,11 @@
                                                 <td>8960</td>
                                                 <td>Applies settings for MC33, MC3300x or MC33ax devices.</td>
                                                 <td>
-                                    <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="MX 10.4 or later is required to use this option for MC3300x and MC33ax devices." aria-hidden="true"></i>
+                                    <i class="fa fa-info-circle" style="color:#108CED;" data-toggle="tooltip" data-placement="top" title="MX 10.4 or later is required to use this option for MC3300x and MC33ax devices." aria-hidden="true"></i>
                                     </td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1004,8 +1039,11 @@
                                                 <td>8000</td>
                                                 <td>Applies settings for TC8000, TC8300 or MC20 devices.</td>
                                                 <td>
-                                    <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="MX 10.4 or later is required to use this option for some devices." aria-hidden="true"></i>
+                                    <i class="fa fa-info-circle" style="color:#108CED;" data-toggle="tooltip" data-placement="top" title="MX 10.4 or later is required to use this option for some devices." aria-hidden="true"></i>
                                     </td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1029,6 +1067,9 @@
                                                 <td>Applies settings for TC51, TC56, TC70x, or TC75x devices.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1051,6 +1092,9 @@
                                                 <td>Applies settings for ET50 and ET55 devices.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1072,8 +1116,11 @@
                                                 <td>SDM660</td>
                                                 <td>Applies settings for ET51, ET56, MC93, TC52, TC52ax, TC52x, TC57, TC57x, TC72 or TC77 devices.</td>
                                                 <td>
-                                    <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="MX 10.2 or later is required to use this option for TC52x and TC57x devices. MX 10.4 is required for TC57x and TC52ax devices." aria-hidden="true"></i>
+                                    <i class="fa fa-info-circle" style="color:#108CED;" data-toggle="tooltip" data-placement="top" title="MX 10.2 or later is required to use this option for TC52x and TC57x devices. MX 10.4 is required for TC57x and TC52ax devices." aria-hidden="true"></i>
                                     </td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1097,6 +1144,9 @@
                                                 <td>Applies settings for VC83 devices.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1118,8 +1168,11 @@
                                                 <td>EC30</td>
                                                 <td>Applies settings for EC30, EC50, EC55, MC2200, MC2700, TC21 or TC26 devices.</td>
                                                 <td>
-                                    <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="MX 10.2 or later is required to use this option for TC21 and TC26 devices. MX 10.4 is required for EC50, EC55, MC2200 and MC2700 devices." aria-hidden="true"></i>
+                                    <i class="fa fa-info-circle" style="color:#108CED;" data-toggle="tooltip" data-placement="top" title="MX 10.2 or later is required to use this option for TC21 and TC26 devices. MX 10.4 is required for EC50, EC55, MC2200 and MC2700 devices." aria-hidden="true"></i>
                                     </td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1143,6 +1196,9 @@
                                                 <td>Applies settings for L10 tablets.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1159,11 +1215,112 @@
                                                 
                                             </tr>
                                             
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>9</td>
+                                                <td>WS50</td>
+                                                <td>Applies settings for TC15, TN28 and WS50 devices.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>10</td>
+                                                <td>6490</td>
+                                                <td>Applies settings for TC53, TC58 and other 6490-based devices.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.5" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>11</td>
+                                                <td>6375</td>
+                                                <td>Applies settings for ET40, ET45 and other 6375-based devices.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.5+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
                                             
                                         </tbody></table>
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1239,7 +1396,7 @@
 
         </p><p>Used to apply Touch-Mode settings on any supported device in accordance with the touch-screen sensitivity required for an expected usage scenario. </p>
 
-<p><strong>IMPORTANT</strong>: Use this parameter only when no device-specific parameter exists for a target device <u><em><strong>AND ONLY</strong></em> when it is known that touch-screen sensitivity settings are supported on that device</u>. Applying this parameter to a device that does not support touch-screen sensitivity settings results in unpredictable behavior, causes an error or produces no output in the Result XML to indicate failure. </p>
+<p><strong><u>IMPORTANT</u></strong>: Use this parameter only when no device-specific parameter exists for a target device <u><em><strong>AND ONLY</strong></em> when it is known that touch-screen sensitivity settings are supported on that device</u>. Applying this parameter to a device that does not support touch-screen sensitivity settings results in unpredictable behavior, causes an error or produces no output in the Result XML to indicate failure. </p>
 
 
 <p></p>
@@ -1262,6 +1419,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1269,6 +1427,9 @@
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1292,6 +1453,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1313,6 +1477,9 @@
                                                 <td>Glove and Finger</td>
                                                 <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1336,6 +1503,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a bare finger only.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1358,6 +1528,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a stylus, or bare or gloved finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1379,15 +1552,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1516,6 +1680,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1523,6 +1688,9 @@
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1546,6 +1714,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a gloved or bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1568,6 +1739,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a bare.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1589,6 +1763,284 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="touch-actions---mc-series"><a class="heading-anchor" href="#touch-actions---mc-series"><span></span></a>Touch Actions - MC Series</h2>
+                                    <p class="">
+
+        </p><p>Used to enter the Touch Mode for a specific set of devices in accordance with the touch-screen sensitivity required for an expected usage scenario. <strong>This parameter is designed for use with the Zebra MC33, MC3300x and some other 8960-based devices</strong>. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> Device Type is set to "8960"</p>
+                                        <p><b>Parm Name:</b> TouchAction</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.2" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 4.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.2" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>Stylus and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 4.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.2" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>2</td>
+                                                <td>Glove and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 4.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1680,6 +2132,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1687,6 +2140,9 @@
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) will cause no change to the Touch Mode on a TC8000; any previously selected setting is retained.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1710,6 +2166,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1731,6 +2190,9 @@
                                                 <td>Glove and Finger</td>
                                                 <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1754,6 +2216,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a stylus, or bare or gloved finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1775,6 +2240,68 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1819,6 +2346,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-devicetype="A" data-api="" data-smartdoc="">
@@ -1826,6 +2354,9 @@
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1849,6 +2380,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1870,6 +2404,9 @@
                                                 <td>Glove and Finger</td>
                                                 <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -1893,6 +2430,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -1935,296 +2475,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        <div class="">
-                                    
-                                    <h2 class="anchor" id="touch-actions---mc-series"><a class="heading-anchor" href="#touch-actions---mc-series"><span></span></a>Touch Actions - MC Series</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the Touch Mode for a specific set of devices in accordance with the touch-screen sensitivity required for an expected usage scenario. <strong>This parameter is designed for use with the Zebra MC33, MC3300x and some other 8960-based devices</strong>. </p>
-
-
-<p></p>
-                                        <blockquote>
-                                        <p><b>Shown if:</b> Device Type is set to "8960"</p>
-                                        <p><b>Parm Name:</b> TouchAction</p>
-                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
-                                        
-
-                                        
-                                        </blockquote>
-                                    
-                                    
-                                    <div>
-                                        <table class="table">
-                                            <tbody><tr>
-                                                <th>Option</th>
-                                                <th>Name</th>
-                                                <th>Description</th>
-                                           <!-- <th>Model</th> -->
-                                                <th>Note</th>
-                                                <th>Requires</th>
-                                            </tr>
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.2" data-devicetype="A" data-api="" data-smartdoc="">
-                                                <td>0</td>
-                                                <td>Do not change</td>
-                                                <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
-                                                <td></td>
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
- -->                                                    <!-- A -->
-<!--                                                     N/A on TC20/TC25
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 4.2+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.2" data-devicetype="A" data-api="" data-smartdoc="">
-                                                <td>1</td>
-                                                <td>Stylus and Finger</td>
-                                                <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
-                                                <td></td>
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
- -->                                                    <!-- A -->
-<!--                                                     N/A on TC20/TC25
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 4.2+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.2" data-devicetype="A" data-api="" data-smartdoc="">
-                                                <td>2</td>
-                                                <td>Glove and Finger</td>
-                                                <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
-                                                <td></td>
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
- -->                                                    <!-- A -->
-<!--                                                     N/A on TC20/TC25
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 4.2+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            
-                                        </tbody></table>
-                                    </div>	
-                                    
-                                </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        <div class="">
-                                    
-                                    <h2 class="anchor" id="touch-actions---sdm660-series"><a class="heading-anchor" href="#touch-actions---sdm660-series"><span></span></a>Touch Actions - SDM660 Series</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the Touch Mode for a specific set of devices in accordance with the touch-screen sensitivity required for an expected usage scenario. <strong>This parameter is designed for use with Zebra ET51, ET56, L10, MC93, TC52, TC57, TC72, TC77 and other SDM660-based devices</strong>. </p>
-
-<blockquote>
-  <p><strong>NOTE</strong>: On L10 devices, the "Wet" screen sensitivity option is accessible only through the device Settings panel.  </p>
-</blockquote>
-
-
-<p></p>
-                                        <blockquote>
-                                        <p><b>Shown if:</b> Device Type is set to "SDM660"</p>
-                                        <p><b>Parm Name:</b> TouchActionSDM660</p>
-                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
-                                        
-
-                                        
-                                        </blockquote>
-                                    
-                                    
-                                    <div>
-                                        <table class="table">
-                                            <tbody><tr>
-                                                <th>Option</th>
-                                                <th>Name</th>
-                                                <th>Description</th>
-                                           <!-- <th>Model</th> -->
-                                                <th>Note</th>
-                                                <th>Requires</th>
-                                            </tr>
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
-                                                <td>0</td>
-                                                <td>Do not change</td>
-                                                <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
-                                                <td></td>
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
- -->                                                    <!-- A -->
-<!--                                                     N/A on TC20/TC25
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 9.1+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
-                                                <td>10</td>
-                                                <td>Stylus and Finger</td>
-                                                <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
-                                                <td></td>
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
- -->                                                    <!-- A -->
-<!--                                                     N/A on TC20/TC25
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 9.1+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
-                                                <td>11</td>
-                                                <td>Glove and Finger</td>
-                                                <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
-                                                <td></td>
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
- -->                                                    <!-- A -->
-<!--                                                     N/A on TC20/TC25
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 9.1+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
-                                                <td>12</td>
-                                                <td>Finger</td>
-                                                <td>Adjusts touch-screen sensitivity for input with a bare finger only.</td>
-                                                <td></td>
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
- -->                                                    <!-- A -->
-<!--                                                     N/A on TC20/TC25
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 9.1+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            
-                                        </tbody></table>
-                                    </div>	
-                                    
-                                </div> 
                                     
                                     
                                     
@@ -2301,6 +2551,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
@@ -2308,6 +2559,9 @@
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) causes no change to device setings; any previously selected setting is retained.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2331,6 +2585,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2353,6 +2610,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a stylus, or bare or gloved finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2374,6 +2634,25 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2414,6 +2693,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
@@ -2421,6 +2701,9 @@
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2444,6 +2727,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a gloved or bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2466,6 +2752,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2487,6 +2776,700 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="touch-actions---ws50-wearables"><a class="heading-anchor" href="#touch-actions---ws50-wearables"><span></span></a>Touch Actions - WS50 Wearables</h2>
+                                    <p class="">
+
+        </p><p>Used to enter the Touch Mode for a specific set of devices in accordance with the touch-screen sensitivity required for an expected usage scenario. <strong>This parameter is designed for use with Zebra WS50 wearable devices</strong>. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> Device Type is set to "WS50"</p>
+                                        <p><b>Parm Name:</b> TouchActionWS50</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>20</td>
+                                                <td>Glove and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>21</td>
+                                                <td>Finger Only</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="touch-actions---sdm660-series"><a class="heading-anchor" href="#touch-actions---sdm660-series"><span></span></a>Touch Actions - SDM660 Series</h2>
+                                    <p class="">
+
+        </p><p>Used to enter the Touch Mode for a specific set of devices in accordance with the touch-screen sensitivity required for an expected usage scenario. <strong>This parameter is designed for use with Zebra ET51, ET56, L10, MC93, TC52, TC57, TC72, TC77 and other SDM660-based devices</strong>. </p>
+
+<blockquote>
+  <p><strong><u>NOTE</u></strong>: On L10 devices, the "Wet" screen sensitivity option is accessible only through the device Settings panel.  </p>
+</blockquote>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> Device Type is set to "SDM660"</p>
+                                        <p><b>Parm Name:</b> TouchActionSDM660</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 9.1+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>10</td>
+                                                <td>Stylus and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 9.1+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>11</td>
+                                                <td>Glove and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 9.1+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>12</td>
+                                                <td>Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare finger only.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 9.1+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="touch-actions---6490-series"><a class="heading-anchor" href="#touch-actions---6490-series"><span></span></a>Touch Actions - 6490 Series</h2>
+                                    <p class="">
+
+        </p><p>Used to enter the Touch Mode for a specific set of devices in accordance with the touch-screen sensitivity required for an expected usage scenario. <strong>This parameter is designed for use with the Zebra TC53, TC58 and other 6490-based devices</strong>. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> Device Type is set to "TC53, TC58"</p>
+                                        <p><b>Parm Name:</b> TouchAction6490</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>23</td>
+                                                <td>Glove and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>24</td>
+                                                <td>Stylus and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>25</td>
+                                                <td>Finger Only</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.4+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="touch-actions---6375-series"><a class="heading-anchor" href="#touch-actions---6375-series"><span></span></a>Touch Actions - 6375 Series</h2>
+                                    <p class="">
+
+        </p><p>Used to enter the Touch Mode for a specific set of devices in accordance with the touch-screen sensitivity required for an expected usage scenario. <strong>This parameter is designed for use with the Zebra ET40, ET45 and other 6375-based devices</strong>. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> Device Type is set to "ET40, ET45"</p>
+                                        <p><b>Parm Name:</b> TouchAction6375</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.5" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.5+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.5" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>26</td>
+                                                <td>Glove and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.5+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.5" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>27</td>
+                                                <td>Stylus and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.5+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.5" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>28</td>
+                                                <td>Finger Only</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a bare finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.5+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.5" data-devicetype="A" data-api="30" data-smartdoc="">
+                                                <td>29</td>
+                                                <td>Stylus, Glove and Finger</td>
+                                                <td>Adjusts touch-screen sensitivity for input with a stylus or bare or gloved finger.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 11.5+ </p>
+                                                        <p>Android API: 30+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2529,6 +3512,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.1" data-devicetype="A" data-api="" data-smartdoc="">
@@ -2536,6 +3520,9 @@
                                                 <td>Do not change</td>
                                                 <td>This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2559,6 +3546,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a stylus or bare finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2581,6 +3571,9 @@
                                                 <td>Adjusts touch-screen sensitivity for input with a bare or gloved finger.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2602,101 +3595,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2723,7 +3621,7 @@
 
         </p><p>Controls whether screen sensitivity is adjusted to compensate for the presence of a screen protector. <strong>Checkbox is displayed <u>only if Screen Protector is supported</u> by the selected Device Type and by the selected Touch Action</strong>. </p>
 
-<p><strong><code>IMPORTANT NOTE:</code> A setting of "false" for this parameter could return an error in EMDK, StageNow and some enterprise mobile management (EMM) systems</strong> on devices containing a <code>com.symbol.mxmf.csp.touchmgr</code> CSP version <u><i><b>prior to</b></i></u> 10.2.3. To configure a setting of "false" on such a device, simply skip this parameter. <strong>To display the version number of any CSP on a device, enable "Show System" in Settings -&gt; Apps</strong>.</p>
+<p><strong><u>IMPORTANT NOTE</u></strong>: A setting of "false" for this parameter could return an error in EMDK, StageNow and some enterprise mobile management (EMM) systems on devices containing a <code>com.symbol.mxmf.csp.touchmgr</code> CSP version <u><i><b>prior to</b></i></u> 10.2.3. To configure a setting of "false" on such a device, simply skip this parameter. <strong>To display the version number of any CSP on a device, enable "Show System" in Settings -&gt; Apps</strong>.</p>
 
 
 <p></p>
@@ -2745,6 +3643,7 @@
                                                 <th>Description</th>
                                            <!-- <th>Model</th> -->
                                                 <th>Note</th>
+                                                <th>Status</th>
                                                 <th>Requires</th>
                                             </tr>
                                             <tr data-osx="6.2" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A" data-api="" data-smartdoc="">
@@ -2752,6 +3651,9 @@
                                                 <td>(unchecked)</td>
                                                 <td>Screen protector not present; sensitivity is not adjusted to compensate. See IMPORTANT NOTE above.</td>
                                                 <td></td>
+
+                                                <td></td>
+
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
@@ -2777,6 +3679,9 @@
                                                 <td>Screen protector is present; sensitivity is adjusted (on devices that support it) to compensate.</td>
                                                 <td></td>
 
+                                                <td></td>
+
+
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
                                         
 <!--                                                <td> 
@@ -2800,169 +3705,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3376,6 +4118,9 @@ filtering
                     
                     
                     
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "DeviceType",
@@ -3536,8 +4281,82 @@ filtering
 
                                 },
                         
+                                {
+                                    code: "9",
+                                    name: "WS50",
+                                    description: "Applies settings for TC15, TN28 and WS50 devices.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.4",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "10",
+                                    name: "6490",
+                                    description: "Applies settings for TC53, TC58 and other 6490-based devices.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.4",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "11",
+                                    name: "6375",
+                                    description: "Applies settings for ET40, ET45 and other 6375-based devices.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.5",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3801,15 +4620,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "Device Type is set to &quot;EC30&quot;",
                             name: "TouchActionEC30",
@@ -3870,6 +4680,234 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                            presentif: "Device Type is set to &quot;8960&quot;",
+                            name: "TouchAction",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "4.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "Stylus and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a stylus or bare finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "4.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "2",
+                                    name: "Glove and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a bare or gloved finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "4.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4028,6 +5066,68 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "Device Type is set to &quot;L10&quot;",
                             name: "TouchActionL10",
@@ -4156,9 +5256,120 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
-                            presentif: "Device Type is set to &quot;8960&quot;",
-                            name: "TouchAction",
+                            presentif: "Device Type is set to &quot;TC8000&quot;",
+                            name: "TouchAction8000",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to device setings; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "9.1",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "5",
+                                    name: "Finger Only",
+                                    description: "Adjusts touch-screen sensitivity for input with a bare finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "9.1",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "6",
+                                    name: "Stylus, Glove and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a stylus, or bare or gloved finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "9.1",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                            presentif: "Device Type is set to &quot;VC83&quot;",
+                            name: "TouchActionVC83",
                             pivotal: "No",
                         
                         
@@ -4170,7 +5381,7 @@ filtering
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
-                                        mx: "4.2",
+                                        mx: "9.1",
                                         api: "",
                                         osxSpecific: "",
                                         osxSpecificList: "",
@@ -4181,13 +5392,13 @@ filtering
                                 },
                         
                                 {
-                                    code: "1",
-                                    name: "Stylus and Finger",
-                                    description: "Adjusts touch-screen sensitivity for input with a stylus or bare finger.",
+                                    code: "13",
+                                    name: "glove and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a gloved or bare finger.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
-                                        mx: "4.2",
+                                        mx: "9.1",
                                         api: "",
                                         osxSpecific: "",
                                         osxSpecificList: "",
@@ -4198,13 +5409,117 @@ filtering
                                 },
                         
                                 {
-                                    code: "2",
+                                    code: "14",
+                                    name: "Finger Only",
+                                    description: "Adjusts touch-screen sensitivity for input with a bare finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "9.1",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                            presentif: "Device Type is set to &quot;WS50&quot;",
+                            name: "TouchActionWS50",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.4",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "20",
                                     name: "Glove and Finger",
                                     description: "Adjusts touch-screen sensitivity for input with a bare or gloved finger.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
-                                        mx: "4.2",
+                                        mx: "11.4",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "21",
+                                    name: "Finger Only",
+                                    description: "Adjusts touch-screen sensitivity for input with a bare finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.4",
                                         api: "",
                                         osxSpecific: "",
                                         osxSpecificList: "",
@@ -4366,92 +5681,9 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
-                            presentif: "Device Type is set to &quot;TC8000&quot;",
-                            name: "TouchAction8000",
-                            pivotal: "No",
-                        
-                        
-                        listitems: [
-                                {
-                                    code: "0",
-                                    name: "Do not change",
-                                    description: "This value (or the absence of this parm from the XML) causes no change to device setings; any previously selected setting is retained.",
-                                    requires: {
-                                        osx: "",
-                                        osxEnd: "",
-                                        mx: "9.1",
-                                        api: "",
-                                        osxSpecific: "",
-                                        osxSpecificList: "",
-                                        osxExclude: "",
-                                        osxExcludeEnd: ""
-                                    },
-
-                                },
-                        
-                                {
-                                    code: "5",
-                                    name: "Finger Only",
-                                    description: "Adjusts touch-screen sensitivity for input with a bare finger.",
-                                    requires: {
-                                        osx: "",
-                                        osxEnd: "",
-                                        mx: "9.1",
-                                        api: "",
-                                        osxSpecific: "",
-                                        osxSpecificList: "",
-                                        osxExclude: "",
-                                        osxExcludeEnd: ""
-                                    },
-
-                                },
-                        
-                                {
-                                    code: "6",
-                                    name: "Stylus, Glove and Finger",
-                                    description: "Adjusts touch-screen sensitivity for input with a stylus, or bare or gloved finger.",
-                                    requires: {
-                                        osx: "",
-                                        osxEnd: "",
-                                        mx: "9.1",
-                                        api: "",
-                                        osxSpecific: "",
-                                        osxSpecificList: "",
-                                        osxExclude: "",
-                                        osxExcludeEnd: ""
-                                    },
-
-                                },
-                        
-                        ]
-                    },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    {
-                            presentif: "Device Type is set to &quot;VC83&quot;",
-                            name: "TouchActionVC83",
+                            presentif: "Device Type is set to &quot;TC53, TC58&quot;",
+                            name: "TouchAction6490",
                             pivotal: "No",
                         
                         
@@ -4463,8 +5695,8 @@ filtering
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
-                                        mx: "9.1",
-                                        api: "",
+                                        mx: "11.4",
+                                        api: "30",
                                         osxSpecific: "",
                                         osxSpecificList: "",
                                         osxExclude: "",
@@ -4474,14 +5706,14 @@ filtering
                                 },
                         
                                 {
-                                    code: "13",
-                                    name: "glove and Finger",
-                                    description: "Adjusts touch-screen sensitivity for input with a gloved or bare finger.",
+                                    code: "23",
+                                    name: "Glove and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a bare or gloved finger.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
-                                        mx: "9.1",
-                                        api: "",
+                                        mx: "11.4",
+                                        api: "30",
                                         osxSpecific: "",
                                         osxSpecificList: "",
                                         osxExclude: "",
@@ -4491,14 +5723,31 @@ filtering
                                 },
                         
                                 {
-                                    code: "14",
+                                    code: "24",
+                                    name: "Stylus and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a stylus or bare finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.4",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "25",
                                     name: "Finger Only",
                                     description: "Adjusts touch-screen sensitivity for input with a bare finger.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
-                                        mx: "9.1",
-                                        api: "",
+                                        mx: "11.4",
+                                        api: "30",
                                         osxSpecific: "",
                                         osxSpecificList: "",
                                         osxExclude: "",
@@ -4509,6 +5758,124 @@ filtering
                         
                         ]
                     },
+                    
+                    {
+                            presentif: "Device Type is set to &quot;ET40, ET45&quot;",
+                            name: "TouchAction6375",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to the Touch Mode; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.5",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "26",
+                                    name: "Glove and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a bare or gloved finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.5",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "27",
+                                    name: "Stylus and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a stylus or bare finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.5",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "28",
+                                    name: "Finger Only",
+                                    description: "Adjusts touch-screen sensitivity for input with a bare finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.5",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "29",
+                                    name: "Stylus, Glove and Finger",
+                                    description: "Adjusts touch-screen sensitivity for input with a stylus or bare or gloved finger.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "11.5",
+                                        api: "30",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4584,101 +5951,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5071,169 +6343,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
         ]
     }
 
@@ -5245,7 +6354,7 @@ filtering
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2020 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
