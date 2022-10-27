@@ -280,7 +280,7 @@
 <ul>
 <li><strong>EHS 4.2 now fully supports <a href="https://support.google.com/accessibility/android/answer/6283677?hl=en">Google TalkBack</a></strong> <i class="fa fa-external-link" aria-hidden="true" style="color:#3498DB;"></i>, which helps with device interaction for the visually impaired. TalkBack behavior is now consistent with that of Google when identifying app icons and labels in the EHS launcher.  </li>
 
-<li><strong>Now supports Zebra TC53 and WS50</strong> devices running Android 11. </li>
+<li><strong>Now supports Zebra TC53 and WS50</strong> devices running Android 11. <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong><a href="#zebraws50devicenotes">See WS50 Notes</a></strong>. </li>
 </ul>
 
 <!-- 7/21/21- removed per eng: 
@@ -304,8 +304,10 @@
 <em>Click image to enlarge; ESC to exit</em>. 
 <br></p>
 
+<h4 id="ws50notes" class="anchor"><a class="heading-anchor" href="#ws50notes"><span></span></a>WS50 Notes</h4>
+
 <ul>
-<li><strong>Zebra recommends configuring WS50 settings on a device with a full-sized display</strong>, then <em><u>testing</u></em> on a WS50 before deployment. </li>
+<li><strong><a href="../features/#privilegedsettings">Privileged Settings</a> feature not supported on WS50 devices</strong>. See Zebra Recommendations, below. </li>
 
 <li><strong>A WS50-specific</strong> <code>enterprisehomescreen.xml</code> <strong>config file is <em>NOT</em> required</strong>; a single file can be created and deployed to all supported devices. </li>
 
@@ -333,12 +335,24 @@
 </li>
 </ul>
 
+<h4 id="zebrarecommendations" class="anchor"><a class="heading-anchor" href="#zebrarecommendations"><span></span></a>Zebra Recommendations</h4>
+
+<ul>
+<li><strong><u>Before installing EHS on a WS50 for the first time</u></strong>, push a config file to the device to <strong>enable USB debugging, System settings panel and Google Quick Search</strong>. This manually enables Privileged Settings to simplify administration after EHS is installed. </li>
+
+<li><strong>To prevent user access to the Settings panel</strong>, push a second config file to the device that includes removal of the System settings app from the enabled apps list before deployment to users. </li>
+
+<li><strong>Configure settings intended for WS50 targets on a device with a full-sized display</strong>, then deploy to and <em><u>test</u></em> on a WS50 before wider deployment. </li>
+</ul>
+
 <h4 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h4>
 
 <ul>
-<li><strong><a href="https://www.zebra.com/us/en/products/mobile-computers/wearable-computers/ws50.html">About the WS50</a></strong> | Description, use cases, specs</li>
+<li><strong><a href="https://www.zebra.com/us/en/products/mobile-computers/wearable-computers/ws50.html">About the WS50</a> |</strong> Description, use cases, specs</li>
 
-<li><strong><a href="https://techdocs.zebra.com/emdk-for-android/latest/guide/ws50_programming/">WS50 Programmer's Guide</a></strong> | Guidelines for writing small-screen apps with limited device resources </li>
+<li><strong><a href="https://techdocs.zebra.com/emdk-for-android/latest/guide/ws50_programming/">WS50 Programmer's Guide</a> |</strong> Guidelines for writing small-screen apps with limited device resources </li>
+
+<li><strong><a href="/ws50">Additional WS50 Resources</a> |</strong> Using WS50 with DataWedge; Demo App  </li>
 </ul>
 
 <hr>
