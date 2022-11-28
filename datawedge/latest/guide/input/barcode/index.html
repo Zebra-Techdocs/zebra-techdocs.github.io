@@ -35,7 +35,18 @@
 <script src="/js/jquery.js"></script></head><!--/head-->
 
 
+
 <body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
+
+    <!-- Google tag -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-01QJCMQM9N"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-01QJCMQM9N');
+    </script>
 
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -54,7 +65,7 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-left">
                     <ul class="nav navbar-nav">
-                        <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
+                        <li class="navbar-text pull-left"><strong><a href="/">TechDocs Home</a></strong></li>
                         <p class="navbar-text">
                                             DataWedge
                                             11.3
@@ -1047,7 +1058,7 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 <ul>
 <li><strong>Instant Reporting -</strong> Enable/Disable immediate reporting of unique barcodes within a scanning session; press and hold the trigger to initiate scanning, release the trigger to stop scanning. Duplicate barcodes are ignored. If <strong>Instant Reporting</strong> is enabled, it ignores the value from <strong>Maximum/Specific number of barcodes per scan</strong> and immediately reports the scanned data. If disabled (default), the decoded data is returned as a single entity after reaching the <strong>Maximum/Specific number of barcodes per scan.</strong> If barcode separators are designated to be output (using <a href="../../output/ip">IP Output</a> or <a href="../../output/keystroke">Keystroke Output</a>) for multibarcodes, these separators are not added - by design, the barcodes are output one at a time with <strong>Instant Reporting.</strong></li>
 
-<li><strong>Minimum number of barcodes per scan -</strong> Represents the lower limit for number of barcodes to scan in a single scan session if <strong>Report decoded barcodes</strong> is enabled. Barcode data is decoded only if the number of barcodes scanned is between the range of <strong>Minimum number of barcodes to scan</strong> and <strong>Maximum/Specific number of barcodes to scan.</strong> To eliminate the minimum limit, set this value to 0 and set a specific value for <strong>Maximum/Specific number of barcodes per scan.</strong> <em>Only applies to integrated imagers, not external scanners (e.g. RS5100 ring scanner).</em> If <strong>Report decoded barcodes</strong> is disabled, this option is grayed out and inaccessible.</li>
+<li><strong>Minimum number of barcodes per scan -</strong> Represents the lower limit for number of barcodes to scan in a single scan session if <strong>Report decoded barcodes</strong> is enabled. Barcode data is decoded only if the number of barcodes scanned is between the range of <strong>Minimum number of barcodes to scan</strong> and <strong>Maximum/Specific number of barcodes to scan.</strong> <em>Only applies to integrated imagers, not external scanners (e.g. RS5100 ring scanner).</em> </li>
 
 <li><strong>Maximum/Specific number of barcodes per scan -</strong> Only applies to integrated imagers, not external scanners (e.g. RS5100 ring scanner).
 
@@ -1358,7 +1369,7 @@ After the NextGen SimulScan template is imported for Document Capture, the **Doc
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Chinese 2of5</p></td>
-<td align="left" valign="top"><p class="table"><a href="../../decoders/#codabar">Codabar</a><sup>*</sup></p></td>
+<td align="left" valign="top"><p class="table"><a href="../../decoders/#codabar">Codabar (also known as NW-7)</a><sup>*</sup></p></td>
 <td align="left" valign="top"><p class="table"><a href="../../decoders/#code11">Code 11</a></p></td>
 </tr>
 <tr>
