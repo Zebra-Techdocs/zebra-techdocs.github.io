@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            2.1
+                                            2.4
                         </p>
 
                     </ul>
@@ -81,32 +81,32 @@
 
 
                         <li>
-                            <a href="/zebradna/2-1/about">
+                            <a href="/zebradna/2-4/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/setup">
+                            <a href="/zebradna/2-4/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/usage">
+                            <a href="/zebradna/2-4/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/licensing">
+                            <a href="/zebradna/2-4/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/faq">
+                            <a href="/zebradna/2-4/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/search">
+                            <a href="/zebradna/2-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -222,7 +222,7 @@
                                     <h1 id="using-zebra-dna-cloud" class="anchor"><a class="heading-anchor" href="#using-zebra-dna-cloud"><span></span></a>Using Zebra DNA Cloud</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            2.1
+                                            2.4
                                     </p>
                                 </div>
                             </section>                    
@@ -672,6 +672,20 @@
   <p><strong>More about <a href="#profileandgroupbehavior">Profile and Group Behavior</a></strong></p>
 </blockquote>
 
+<hr>
+
+<h3 id="clientupdatewarning" class="anchor"><a class="heading-anchor" href="#clientupdatewarning"><span></span></a>Client Update Warning</h3>
+
+<p>A banner and icons (similar the image below) alert administrators when one or more target devices contain out-of-date client software. 
+<img alt="image" style="height:350px" src="24_client_warning.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> During deployment, <strong><u>settings are deployed only to targets with the latest client software</u></strong>. Devices with out-of-date client software are skipped.<br><br>
+  <i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>Zebra recommends updating client software on all target devices prior to Profile deployment</strong>.  </p>
+</blockquote>
+
 <!-- #### Notes
 * <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Selecting a Group in Step 9 above **would apply all settings created in the Profile to**:
  * **All devices currently in that Group**
@@ -763,6 +777,20 @@
 
 <hr>
 
+<h3 id="clientupdatewarning-1" class="anchor"><a class="heading-anchor" href="#clientupdatewarning-1"><span></span></a>Client Update Warning</h3>
+
+<p>A banner and icons (similar the image below) alert administrators when one or more target devices contain out-of-date client software. 
+<img alt="image" style="height:350px" src="24_client_warning.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> During deployment, <strong><u>settings are deployed only to targets with the latest client software</u></strong>. Devices with out-of-date client software are skipped.<br><br>
+  <i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>Zebra recommends updating client software on all target devices prior to Profile deployment</strong>.  </p>
+</blockquote>
+
+<hr>
+
 <h3 id="changedevicegroup" class="anchor"><a class="heading-anchor" href="#changedevicegroup"><span></span></a>Change Device Group</h3>
 
 <p>From the "My Devices" screen, <strong>click on the pencil icon</strong> in a device's row to manage the Group it belongs to:<br>
@@ -793,7 +821,7 @@
 
 <li><b><font size="3" color="red">Red</font></b> - <strong>Replace Battery</strong></li>
 
-<li><b><font size="3" color="dimgray">Dark Grey</font></b> - <strong>Unknown Battery</strong></li>
+<li><b><font size="3" color="dimgray">Dark Grey</font></b> - <strong>Unknown or Unsupported Battery</strong></li>
 </ul>
 
 <p><strong>Click on a Device Name in the "Model" column (above) to display its details (below)</strong>, including battery health and additional battery information: 
@@ -859,14 +887,16 @@ https://jira.zebra.com/browse/DLM-8112
 
 <h2 id="myapps" class="anchor"><a class="heading-anchor" href="#myapps"><span></span></a>My Apps</h2>
 
-<p><strong>The My Apps section is for installation of apps on devices and deployment of related files</strong>, if any. Apps are uploaded to the zDNA Cloud system in a Collection, after which the administrator creates an <strong>App Setup Profile</strong>, designating an <code>.apk</code> (selected from the Collection) for deployment along with configuration and/or data file(s).</p>
+<p><strong>The My Apps section is for installation of apps on devices and deployment of related files</strong>, if any. Apps are uploaded to the zDNA Cloud system in a Collection, after which the administrator creates an <strong>App Setup Profile</strong>, designating an <code>.apk</code> (selected from a Collection) for deployment along with configuration and/or data file(s).</p>
+
+<p>Zebra apps available for installation and maintenance can be seen in the "Zebra Collection" tab (see image, below). Non-Zebra apps installed by an organization are seen in the "My Collection" tab. </p>
 
 <ul>
 <li><strong>An App Setup Profile may contain</strong>:
 
 
 <ul>
-<li>An app alone, as selected from an organization's Collection</li>
+<li>An app alone, selected from a Collection</li>
 
 <li>An app plus related configuration and/or data files </li>
 
@@ -882,7 +912,7 @@ https://jira.zebra.com/browse/DLM-8112
 
 <h3 id="zebracollection" class="anchor"><a class="heading-anchor" href="#zebracollection"><span></span></a>Zebra Collection</h3>
 
-<p>Zebra DNA Cloud stores apps in Collections. Zebra apps available for installation and maintenance can be seen in the "Zebra Collection" tab (see image, below). Non-Zebra apps installed by an organization are seen in the "My Collection" tab. </p>
+<h4 id="tosetupazebraapp" class="anchor"><a class="heading-anchor" href="#tosetupazebraapp"><span></span></a>To Set up a Zebra App:</h4>
 
 <ol>
 <li><p>On the Zebra Collection tab, <strong>click on the app to be set up</strong>: 
@@ -896,21 +926,18 @@ https://jira.zebra.com/browse/DLM-8112
 <br></p></li>
 
 <li><p>To include configuration and/or data file(s) for the app <strong>select the "Yes" radio button</strong>.<br>
-The page appears similar to the image below:
+A page appears similar to the image below:
 <img alt="image" style="height:350px" src="zva_03a.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
 <li><p><strong>Enter the name of the configuration file and its desired location on the device</strong>.<br>
-<strong>Click "Upload"</strong> to store the file on zDNA Clound in preparation for deployment.<br></p></li>
-</ol>
-
-<p>When finished uploading files <strong>click Next</strong> to proceed: <br>
+<strong>Click "Upload"</strong> to store the file on zDNA Clound in preparation for deployment.<br>
+When finished uploading files <strong>click Next</strong> to proceed: <br>
 <img alt="image" style="height:350px" src="zva_03b.png">
 <em>Click image to enlarge; ESC to exit.</em>
-<br></p>
+<br></p></li>
 
-<ol>
 <li><p><strong>Enter a Name and Description</strong> for the profile or use the auto-generated name.<br>
 <strong>Click "Next"</strong> to proceed: 
 <img alt="image" style="height:350px" src="zva_04.png">
@@ -925,31 +952,39 @@ The page appears similar to the image below:
 <br></p></li>
 </ol>
 
-<blockquote>
-  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> This release of zDNA Cloud system <strong>can store only ONE version of any package</strong>. Support for multiple versions is currently under development. </p>
-</blockquote>
-
 <hr>
 
 <h3 id="addappstocollection" class="anchor"><a class="heading-anchor" href="#addappstocollection"><span></span></a>Add Apps to Collection</h3>
 
 <p>At least one app must be in a Collection to proceed. </p>
 
+<h5 id="fromthemycollectiontab" class="anchor"><a class="heading-anchor" href="#fromthemycollectiontab"><span></span></a>From the My Collection tab:</h5>
+
 <ol>
-<li><p>On the My Collection tab, <strong>click "Add App"</strong> to begin: 
+<li><p><strong>Click "Add App"</strong> to introduce a new app to the system<br> 
+&nbsp;&nbsp;&nbsp;&nbsp; <strong>- OR -</strong> <br> 
+<strong>Click "Add Version"</strong> to add another version of an app already in the system: 
 <img alt="image" style="height:350px" src="myApps_01.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
-<li><p><strong>Select the location of the app</strong> (<code>.apk</code>) to be added:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>a. For Google Drive</strong>: <strong>Click "Connect"</strong> and browse to and select the file to be uploaded and added to the Collection.<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;This invokes a Google API, which automatically populates the URL, App Package and App Version fields.<br>
-<i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong><a href="#appnotes">See App Notes</a></strong>, below.<br> 
+<li><p><strong>Select the location of the app or app version</strong> (<code>.apk</code>) to be added:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>a. For Google Drive</strong>: <strong>Click "Browse File"</strong> (signing in, if necessary). <i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>Also <a href="#appnotes">see App Notes</a></strong>, below.<br> 
 <img alt="image" style="height:350px" src="myApps_02a.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>b. For a Specified Server, copy and paste the FTP/S or HTTP/S address</strong> into the URL field.<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;Then <strong>click "Upload"</strong> to proceed:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>b. Navigate to and select the file(s) to be uploaded</strong> and added to the Collection.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;To add a new file, click "Upload" tab and follow prompts.<br>
+<img alt="image" style="height:300px" src="gdrive_dl.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>Drag or browse to file(s)</strong> to be uploaded.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>Once all are selected, click the "Upload" to proceed</strong>.
+<img alt="image" style="height:300px" src="gdrive_ul.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>c. For a Specified Server, copy and paste the FTP/S or HTTP/S address</strong> into the URL field.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;Then <strong>click "Upload" to proceed</strong>:<br>
 <img alt="image" style="height:350px" src="myApps_03aa.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br>
@@ -974,11 +1009,11 @@ A screen similar to the image below is temporarily displayed:
 <h3 id="appnotes" class="anchor"><a class="heading-anchor" href="#appnotes"><span></span></a>App Notes</h3>
 
 <ul>
-<li><strong>zDNA Cloud can store only ONE version of any package</strong>. Support for multiple versions is under development. </li>
+<li><strong>Changing the Google Drive after creating one or more Profiles could render those Profiles read-only</strong> and/or produce unpredictable behavior during deployments. <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <a href="../setup/#myservicesnotes">See My Services notes</a> for more information.</li>
 
-<li><strong>Changing the Google Drive after creating one or more Profiles renders those Profiles read-only</strong>.</li>
+<li><strong>A changed Google Drive is indicated by a banner</strong> similar to the one shown below (DNA Cloud 2.4 and later). <img alt="image" style="height:50px" src="24_g_drive_banner.png"></li>
 
-<li><strong>If an app update requires a different package name</strong>, the older app is uninstalled and the newer version is installed; all data is preserved.</li>
+<li><strong>If an app update requires a different package name</strong>, the DNA Cloud deployment process uninstalls the older app and installs the newer version while preserving existing app data.</li>
 </ul>
 
 <hr>
@@ -993,14 +1028,15 @@ A screen similar to the image below is temporarily displayed:
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
-<li><p><strong>Select App Name</strong> from the My Collection drop-down.<br>
-<strong>Alternatively, apps can be added "on the fly"</strong> using the Add App button.
+<li><p><strong>Select App and version</strong> from the desired collection.<br>
+<strong>Alternatively, apps can be added "on the fly"</strong> using the Add App button.<br>
 <strong>Click "Next"</strong> to proceed: 
 <img alt="image" style="height:350px" src="myApps_05.png">
 <em>Click image to enlarge; ESC to exit.</em>
-<br></p></li>
+<br>
+<a id="step3"></a></p></li>
 
-<li><p><strong>Select "Yes" to include app config and/or data file(s)</strong> in the setup.<br>
+<li><p>If there is nothing extra to install, click "Next" to proceed.<br> <strong>Select "Yes" to include app config and/or data file(s)</strong> in the setup. <br>
 <strong>Enter file information and click "Next"</strong> to proceed: 
 <img alt="image" style="height:350px" src="myApps_06.png">
 <em>Click image to enlarge; ESC to exit.</em>
@@ -1025,12 +1061,44 @@ A screen similar to the image below is temporarily displayed:
 <br></p></li>
 </ol>
 
+<hr>
+
+<h3 id="editanappsetupprofile" class="anchor"><a class="heading-anchor" href="#editanappsetupprofile"><span></span></a>Edit an App Setup Profile</h3>
+
+<p><strong>zDNA Cloud 2.2 (and later) allows the app version and other info in an app setup Profile to be changed</strong> after the Profile has been created. </p>
+
+<h4 id="toeditaprofile" class="anchor"><a class="heading-anchor" href="#toeditaprofile"><span></span></a>To edit a Profile:</h4>
+
+<ol>
+<li><p><strong>a. Click "My Apps"</strong> to display the lists of app collections and setups.<br>
+<strong>b. Select "App Setup"</strong> tab.<br>
+<strong>c. Click "Edit"</strong> to display contents of the Profile to be edited.
+<img alt="image" style="height:350px" src="22_app_setup_list.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Select the desired app info to edit</strong>.<br> 
+In the example, "App Details" is selected to allow a change of the app version:
+<img alt="image" style="height:350px" src="22_edit_app_setup.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Select the desired app version</strong> from the version drop-down (or edit other info as needed).<br>
+<strong>Click "Next"</strong> to proceed.<br> 
+<img alt="image" style="height:350px" src="22_edit_version_2.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong><u><a href="#step3">Go to Step 3</a></u></strong> (above) to complete the process. 
+<br></p></li>
+</ol>
+
 <h3 id="profilenotes" class="anchor"><a class="heading-anchor" href="#profilenotes"><span></span></a>Profile Notes</h3>
 
 <ul>
-<li><strong>Each App Setup Profile applies to <u>a single app only</u></strong>.</li>
+<li><strong>Each app setup Profile applies to <u>a single app only</u></strong>.</li>
 
-<li><strong>An App Setup Profile may contain</strong>:
+<li><strong>An app setup Profile may contain</strong>:
 
 
 <ul>
@@ -1041,7 +1109,7 @@ A screen similar to the image below is temporarily displayed:
 <li><strong>Configuration and/or data files alone</strong> (for deployment to devices on which the target app is already installed)</li></ul>
 </li>
 
-<li><strong>Removing an App Setup Profile from the system or a device <u>removes the app from the device</u></strong> while leaving data files that might have accompanied it, if any.</li>
+<li><strong>Removing an app setup Profile from the system or a device <u>removes the app from the device</u></strong> while leaving data files that might have accompanied it, if any.</li>
 </ul>
 
 <!-- 
@@ -1390,7 +1458,7 @@ _Click image to enlarge; ESC to exit._
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">

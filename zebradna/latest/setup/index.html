@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            2.1
+                                            2.4
                         </p>
 
                     </ul>
@@ -81,32 +81,32 @@
 
 
                         <li>
-                            <a href="/zebradna/2-1/about">
+                            <a href="/zebradna/2-4/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/setup">
+                            <a href="/zebradna/2-4/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/usage">
+                            <a href="/zebradna/2-4/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/licensing">
+                            <a href="/zebradna/2-4/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/faq">
+                            <a href="/zebradna/2-4/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/2-1/search">
+                            <a href="/zebradna/2-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -222,7 +222,7 @@
                                     <h1 id="zebra-dna-cloud-setup" class="anchor"><a class="heading-anchor" href="#zebra-dna-cloud-setup"><span></span></a>Zebra DNA Cloud Setup</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            2.1
+                                            2.4
                                     </p>
                                 </div>
                             </section>                    
@@ -457,7 +457,7 @@ Uninstall zDNA client, purges device device from the system. Settings remain.
 
 <h2 id="iiimanageusers" class="anchor"><a class="heading-anchor" href="#iiimanageusers"><span></span></a>III. Manage Users</h2>
 
-<p>The Tenant Owner creates Administrative Users in the zDNA Cloud system using Zebra.com credentials. Admin users can perform all tasks within the system <strong><em>except</em></strong> user administration. </p>
+<p>The Tenant Owner creates Administrative Users in the zDNA Cloud system using Zebra.com credentials. Admin users can perform all tasks within the system <strong><em>except</em></strong> user administration and management of connection services (i.e. Google Drive). </p>
 
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> This section requires login as the Tenant Owner using Zebra.com credentials. For credentials, please <a href="../setup/#iiregisterwithzebracom">register with Zebra.com</a>. </p>
 
@@ -465,7 +465,7 @@ Uninstall zDNA client, purges device device from the system. Settings remain.
 
 <h3 id="createadminusers" class="anchor"><a class="heading-anchor" href="#createadminusers"><span></span></a>Create Admin Users</h3>
 
-<p><strong>If administrative users are NOT required at this time</strong>, <a href="#ivnewdevicesetup">skip to Step IV</a>. </p>
+<p><strong>If creating Administrative Users and/or connected services (i.e. Google Drive) is NOT required at this time</strong>, <a href="#ivnewdevicesetup">skip to Step IV</a>. </p>
 
 <p>1. Point browser to Zebra DNA Cloud server and <strong>log in as "Tenant Owner"</strong> using Zebra.com credentials: 
 <img alt="image" style="height:350px" src="zDNA_login.png">
@@ -500,13 +500,45 @@ Uninstall zDNA client, purges device device from the system. Settings remain.
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
 
-<p>6. Instruct the new user to <strong>visit <a href="https://dnacloud.zebra.com">zDNA Cloud server</a> and log in</strong> as an Administrative User. </p>
+<p><a id="myservices"></a>
+6. In My Services screen, <strong>click "Connect" on the desired service(s)</strong> and follow prompts.<br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Services activated here are available to Administrative Users for use in setup Profiles, but only the Tenant Owner can create, edit or disable them. <strong><a href="../setup/#myservicesnotes">See My Services notes</a> below</strong>. 
+<img alt="image" style="height:350px" src="23_myprofile_services.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
 
-<p>7. At login, <strong>select "Forgot Password"</strong> to generate an email with further instructions.</p>
+<p>7. Instruct the new user to <strong>visit <a href="https://dnacloud.zebra.com">zDNA Cloud server</a> and log in</strong> as an Administrative User. </p>
 
-<p>8. Repeat this process for all Administrative Users. </p>
+<p>8. At login, <strong>select "Forgot Password"</strong> to generate an email with further instructions.</p>
+
+<p>9. Repeat this process for all Administrative Users. </p>
 
 <h4 id="iclassfafacheckcirclestylecolor27ae60ionceregisteredeachnewuserreceivesanemailwithfurtherinstructions" class="anchor"><a class="heading-anchor" href="#iclassfafacheckcirclestylecolor27ae60ionceregisteredeachnewuserreceivesanemailwithfurtherinstructions"><span></span></a><i class="fa fa-check-circle" style="color:#27AE60;"></i> Once registered, each new user receives an email with further instructions.</h4>
+
+<hr>
+
+<p><a id="myservicesnotes"></a></p>
+
+<h3 id="myservices" class="anchor"><a class="heading-anchor" href="#myservices"><span></span></a>My Services</h3>
+
+<p>DNA Cloud 2.4 (and later) provides a My Services section to contain information about connection services associated with a DNA Cloud tenant. Such services are governed by the following rules and behaviors. </p>
+
+<h4 id="myservicesbehavior" class="anchor"><a class="heading-anchor" href="#myservicesbehavior"><span></span></a>My Services Behavior</h4>
+
+<ul>
+<li><strong>Settings for connected services (i.e. Google Drive) are <u>available only to the Tenant Owner</u></strong>. The "My Services" section is not visible to or accessible by Administrative Users.</li>
+
+<li><strong>Administrative Users are able to browse files accessible through connected services ONLY if the Tenant Owner had previously established the connection and logged into the service through DNA Cloud</strong>. </li>
+
+<li><strong>All actions performed on a connected service are performed using the Tenant Owner's credentials</strong>.</li>
+
+<li>If the Tenant Owner logs out of a connected service <strong><u>all users are denied access to that service</u></strong> until the Tenant Owner logs in again.</li>
+
+<li><strong>If the Tenant Owner makes changes to a connected service</strong> being accessed by one or more Profiles, the Profile(s) could be seen as "read-only" by Administrative Users. <strong>To resolve this condition</strong>, the Tenant Owner must edit the Profile(s) so they contain the new connected service information. DNA Cloud 2.4 (and later) displays the <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> icon to identify affected Profiles. </li>
+</ul>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>Zebra strongly recommends using dedicated accounts for access to connected services from within DNA Cloud</strong>. Sharing accounts and/or login credentials among Tenant Owners is strongly discouraged, and could result in unexpected disruptions in DNA Cloud services for some or all users. </p>
+</blockquote>
 
 <hr>
 
@@ -651,7 +683,7 @@ Then <strong>click "Done"</strong> button.
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
