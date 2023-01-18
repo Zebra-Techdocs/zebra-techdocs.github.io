@@ -11,8 +11,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="About Zebra Data Service">
-    <title>About Zebra Data Service - TechDocs</title>
+    <meta title="About USB Host Manager">
+    <title>About USB Host Manager - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!--     
@@ -69,7 +69,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            ZDS
+                                            Zebra USB Host Manager
+                                            1.0
                         </p>
 
                     </ul>
@@ -80,22 +81,27 @@
 
 
                         <li>
-                            <a href="/zds/about">
+                            <a href="/uhm/1-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zds/setup">
+                            <a href="/uhm/1-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zds/faq">
+                            <a href="/uhm/1-0/usage">
+                                    Usage
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/uhm/1-0/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zds/search">
+                            <a href="/uhm/1-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -122,7 +128,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>About Zebra Data Service</strong></li>
+                            <li><strong>About USB Host Manager</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -208,9 +214,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="about-zebra-data-service" class="anchor"><a class="heading-anchor" href="#about-zebra-data-service"><span></span></a>About Zebra Data Service</h1>
+                                    <h1 id="about-usb-host-manager" class="anchor"><a class="heading-anchor" href="#about-usb-host-manager"><span></span></a>About USB Host Manager</h1>
                                     <p>
-                                            ZDS
+                                            Zebra USB Host Manager
+                                            1.0
                                     </p>
                                 </div>
                             </section>                    
@@ -223,177 +230,51 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><p><a id="system_config"></a></p>
-
-<h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-
-<p>The Zebra Data Service (ZDS) system is a set of background services running on all supported Zebra devices and is responsible for collecting and uploading analytics data coming from ZDS plug-ins and Zebra-authorized third-party apps. Data is uploaded to the Zebra analytics database every 24 hours by default with transport secured with HTTPS. ZDS accepts configuration changes to the upload interval, data-collection events and other parameters through a barcode scanned by the device. Learn more about <a href="../faq/#qcananyzdsparameterscanbechanged">changing ZDS parameters</a>. </p>
-
-<blockquote>
-  <p><strong>ZDS components are self-updating to ensure that devices contain the most up-to-date features and bug-fixes</strong>. Learn more <a href="../faq/#qwhatisthesizeofthezdsupdatedownload">about ZDS updates</a>.</p>
-</blockquote>
-
-<h3 id="availablereports" class="anchor"><a class="heading-anchor" href="#availablereports"><span></span></a>Available Reports</h3>
-
-<p>The image below shows some of the reports available for visualizing data collected from devices within an organization. </p>
-
-<p><img alt="image" style="height:350px" src="VisibilityIQ_dashboard.png">
-<em>Click image to enlarge; ESC to exit</em>. 
-<br></p>
-
-<hr>
-
-<p><a id="clock_config"></a></p>
-
-<h3 id="datacollected" class="anchor"><a class="heading-anchor" href="#datacollected"><span></span></a>Data Collected</h3>
-
-<ul>
-<li><strong>Device "Build Fingerprint" including</strong>:
-
-
-<ul>
-<li>Device model number</li>
-
-<li>Android version</li>
-
-<li>Build ID</li></ul>
-</li>
-
-<li>Device serial number</li>
-
-<li>Device usage data </li>
-
-<li>OS image, LifeGuard and security patch levels applied</li>
-
-<li>Available RAM</li>
-
-<li>Low-RAM events</li>
-
-<li>Device storage (flash) information and health </li>
-
-<li>Battery life and health information</li>
-
-<li>Battery charge/discharge status </li>
-
-<li>Wi-Fi (WLAN) connection events</li>
-
-<li>Airplane Mode usage</li>
-
-<li>Screen brightness min, max and average</li>
-
-<li>Cellular (WWAN) connection events (if applicable)</li>
-
-<li>Static MAC address</li>
-
-<li>Dynamic MAC addresses in WLAN info (when enabled by Administrator)</li>
-
-<li><strong>Data traffic statistics (as applicable) for</strong>: 
-
-
-<ul>
-<li>Bluetooth</li>
-
-<li>Cellular (WWAN)</li>
-
-<li>Ethernet</li>
-
-<li>Wi-Fi (WLAN)</li></ul>
-</li>
-
-<li><strong>Location data (as applicable) for</strong>: 
-
-
-<ul>
-<li>Cellular </li>
-
-<li>GPS</li>
-
-<li>Wi-Fi (WLAN)</li></ul>
-</li>
-
-<li>System app info and usage</li>
-
-<li><strong>Zebra app info and usage data, including for</strong>: <br>
-
-
-<ul>
-<li>DataWedge</li>
-
-<li>Enterprise Home Screen</li>
-
-<li>EMDK for Android </li>
-
-<li>EMDK for Xamarin</li>
-
-<li>MX STATS</li>
-
-<li>SimulScan</li>
-
-<li>StageNow</li></ul>
-</li>
-
-<li>Scanner information and usage statistics</li>
-
-<li>Reboots triggered by the system or an app</li>
-
-<li>Application Not Responding (ANR) events</li>
-
-<li>Default data collection and upload frequency has been changed to once every 15 days (from every 24 hrs) </li>
-
-<li>Data collection is enabled by default</li>
-</ul>
-
-<hr>
-
-<h2 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h2>
-
-<h4 id="zdssupportnotes" class="anchor"><a class="heading-anchor" href="#zdssupportnotes"><span></span></a>ZDS Support Notes</h4>
-
-<ul>
-<li><strong>ZDS is compatible with all Zebra devices running Android 4.4</strong> (Kit Kat) and later. </li>
-
-<li><strong>ZDS comes preinstalled on most devices with the latest Android 7.x (and later) builds</strong>. </li>
-
-<li><strong>Battery Remaining Useful Life (RUL) estimates are most accurate</strong> on devices running Android 7, 8, 10 and later. <u><a href="../faq/#rul">More info</a></u>. </li>
-
-<li><strong>Zebra offers active ZDS support for devices running Android 6.x</strong> (Marshmallow) and later. </li>
-
-<li><strong>Installation might be required</strong> for devices running Android 4.4, Android 5.x (Lollipop) and later Android versions.</li>
-</ul>
-
-<p>Contact <a href="https://www.zebra.com/us/en/about-zebra/contact-zebra/contact-tech-support.html">Zebra Support</a> for more information.</p>
-
-<!-- 10/6/20 matrix removed at request of engineering (TUT-44574)
-<img alt="image" style="height:650px" src="zds_20_supported_devices.png"/>
-_Click image to enlarge; ESC to exit_. 
-<br>
+                                        <p><!-- 
+#### See [what's new in ZWC 1.5](#newinzwcv15)
  -->
+
+<!-- #### About Zebra Workstation Connect
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gcyf8xfa3_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ -->
+
+</p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p><strong>Zebra USB Host Manager (UHM) is an app for Zebra devices running Android</strong> that scans and reports details of all connected USB peripherals. Using this informtion, UHM allows administrators to create rules for controlling which USB peripherals can be used on the device. Rules can be created based on device class, vendor ID (VID) and/or product ID (PID), then exported and applied across an enterprise using <a href="/stagenow">Zebra StageNow</a> or a company's own EMM system.  </p>
+
+<p><strong>Deploying rules that limit the use of USB peripherals can help improve data security and worker productivity</strong>. For example, prohibiting the connection of storage devices can help prevent data leaks, and allowing only work-related input devices (i.e. keyboards, mice, etc.) can help keep workers focused on business activities. </p>
+
+<p><img alt="image" style="height:450px" src="overview_01.png">
+<em>The USB Host Manager home screen (above) running on an external monitor through the <a href="/zwc">Zebra Workstation Connect</a> app and cradle.<br> 
+Click image to enlarge; ESC to exit.</em><br></p>
+
+<p><img alt="image" style="height:350px" src="overview_02.png">
+<em>USB Host Manager (light and dark modes) running on handheld devices.</em><br> 
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
 
 <hr>
 
 <h2 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h2>
 
 <ul>
-<li><strong><a href="../faq">FAQ</a></strong> | Frequently asked questions about ZDS</li>
+<li><strong><a href="../usage">UHM Usage Guide</a></strong> | How to create rules for USB peripheral usage and deploy rules to an enterprise</li>
 
-<li><strong><a href="../setup">ZDS Setup Guide</a></strong> | How to check whether ZDS is installed and/or enabled.</li>
+<li><strong><a href="link-TK">UHM Product Reference Guide (.pdf)</a></strong> <code>LINK TO COME</code> | Download complete guide in portable document format</li>
 
-<li><strong><a href="https://www.zebra.com/us/en/blog/posts/2019/zebra-operational-visibility-services-is-now-visibilityiq-foresight.html">Visibility IQ info page</a></strong> | Sign up for regular updates</li>
+<li><strong><a href="link-TK">Download USB Host Manager</a></strong> | <code>LINK TO COME</code> Go here to get the app</li>
 </ul>
 
 <!-- 
-menu:
-  items:
-    - title: About
-      url: /oemconfig/9-3/about
-    - title: Setup
-      url: /oemconfig/9-3/setup
-    - title: FAQs
-      url: /oemconfig/9-3/faq
-    - title: Managed Configurations
-      url: /oemconfig/9-3/mc
-    - icon: fa fa-search
-      url: /oemconfig/9-3/search --><p></p>
+* **[Workstation Connect Administrator's Guide (pdf)](https://www.zebra.com/content/dam/zebra_new_ia/en-us/manuals/software/workstation-connect/wsc-ag-en.pdf)** | Setting up users, installing/removing apps and shortcuts, configuring access to apps and USB-based storage
+* **[Workstation Connect Installation Guide (pdf)](https://www.zebra.com/apps/dlmanager?dlp=-227178c9720c025483893483886ea540bd07dd0f9873752cf891686eb4950400add13410300d57bba85f97bf163f9fdfea3ed8bf485bd7a171c5a8061d1bce3aeaf983a14fd41a046c19712f82903d932d112803839fae3&c=us&l=en)** | Installing the ZWC solution manually, or using Zebra StageNow or an EMM system
+* **[Workstation Connect User Guide (pdf)](https://www.zebra.com/apps/dlmanager?dlp=-227178c9720c025483893483886ea540bd07dd0f9873752cf891686eb4950400add13410300d57bba85f97bf163f9fdfea3ed8bf485bd7a171c5a8061d1bce3aeaf983a14fd41a0ce93cb5cf4286df532d112803839fae3&c=us&l=en)** | Desktop Mode set-up and usage
+* **[Usage Notes](../usage)** | ZWC app behaviors and restrictions
+* **[FAQ](../faq)** | Frequently asked questions about ZWC
+
+ --><p></p>
                                         
 
 

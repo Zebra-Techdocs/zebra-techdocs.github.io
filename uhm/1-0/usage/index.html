@@ -11,8 +11,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="About Zebra Data Service">
-    <title>About Zebra Data Service - TechDocs</title>
+    <meta title="Using USB Host Manager">
+    <title>Using USB Host Manager - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!--     
@@ -69,7 +69,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            ZDS
+                                            Zebra USB Host Manager
+                                            1.0
                         </p>
 
                     </ul>
@@ -80,22 +81,27 @@
 
 
                         <li>
-                            <a href="/zds/about">
+                            <a href="/uhm/1-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zds/setup">
+                            <a href="/uhm/1-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zds/faq">
+                            <a href="/uhm/1-0/usage">
+                                    Usage
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/uhm/1-0/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zds/search">
+                            <a href="/uhm/1-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -122,7 +128,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>About Zebra Data Service</strong></li>
+                            <li><strong>Using USB Host Manager</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -208,9 +214,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="about-zebra-data-service" class="anchor"><a class="heading-anchor" href="#about-zebra-data-service"><span></span></a>About Zebra Data Service</h1>
+                                    <h1 id="using-usb-host-manager" class="anchor"><a class="heading-anchor" href="#using-usb-host-manager"><span></span></a>Using USB Host Manager</h1>
                                     <p>
-                                            ZDS
+                                            Zebra USB Host Manager
+                                            1.0
                                     </p>
                                 </div>
                             </section>                    
@@ -223,177 +230,256 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><p><a id="system_config"></a></p>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+<p><strong>Zebra USB Host Manager (UHM)</strong> can be installed on any Zebra device running Android, but <strong>is not required to apply rules on a device</strong>. Restrictions are applied when a rules file created by UHM is deployed to the device using <a href="/stagenow">Zebra StageNow</a> or a company's own EMM system, if compatible. A common administrator workflow is shown below. </p>
 
-<p>The Zebra Data Service (ZDS) system is a set of background services running on all supported Zebra devices and is responsible for collecting and uploading analytics data coming from ZDS plug-ins and Zebra-authorized third-party apps. Data is uploaded to the Zebra analytics database every 24 hours by default with transport secured with HTTPS. ZDS accepts configuration changes to the upload interval, data-collection events and other parameters through a barcode scanned by the device. Learn more about <a href="../faq/#qcananyzdsparameterscanbechanged">changing ZDS parameters</a>. </p>
+<h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
+
+<ul>
+<li><strong>Administrator PC</strong> configured with Zebra StageNow or EMM console</li>
+
+<li><strong>Zebra device running Android</strong> (to run USB Host Manager as admin)</li>
+
+<li><strong>Zebra device(s) running Android</strong> (for testing rules made with USB Host Manager)</li>
+
+<li><strong>Optional</strong>:
+
+
+<ul>
+<li><strong>Zebra Workstation Cradle</strong> (with monitor, keyboard and mouse connected)</li>
+
+<li><strong>Zebra Workstation Connect</strong> software running on admin (Android) device</li></ul>
+</li>
+</ul>
+
+<p><i class="fa fa-check-circle" style="color:#27AE60;"></i> Zebra recommends using the <a href="/zwc">Zebra Workstation Connect</a> solution for maximum administrator productivity and convenience. <a href="https://www.zebra.com/us/en/products/software/mobile-computers/workstation-connect.html">Learn more</a>. ZWC 1.6 (or later) is required. </p>
+
+<h3 id="adminworkflow" class="anchor"><a class="heading-anchor" href="#adminworkflow"><span></span></a>Admin Workflow</h3>
+
+<ol>
+<li><strong>Connect USB peripherals</strong> desired for use </li>
+
+<li><strong>Launch USB Host Manager</strong>, which scans and displays all connected peripherals</li>
+
+<li><strong>Set rules</strong> to allow the desired connected peripherals (thereby disallowing all others)  </li>
+
+<li><strong>Export rules file</strong> and transfer to administrative PC</li>
+
+<li><strong>Deploy rules file using Zebra StageNow or an EMM system</strong> to device(s) for testing</li>
+
+<li><u>After successful testing</u>, <strong>deploy to enterprise as needed</strong>  </li>
+</ol>
+
+<hr>
+
+<h2 id="allowingusbperipherals" class="anchor"><a class="heading-anchor" href="#allowingusbperipherals"><span></span></a>Allowing USB Peripherals</h2>
+
+<p><strong>Zebra USB Host Manager works through the creation of "Allow Rules",</strong> which enable an administrator to specify which peripherals are permitted to be used on a device, to the exclusion of all others. Once a set of Allow Rules is deployed to a device, <strong>all other peripherals are prohibited from use on that device</strong>, without exception. If an additional peripheral is required for use at a later time, a new set of Allow Rules that includes that peripheral must be created and deployed to the device, overwriting the previous rules file. </p>
+
+<h3 id="peripheralcharacteristics" class="anchor"><a class="heading-anchor" href="#peripheralcharacteristics"><span></span></a>Peripheral Characteristics</h3>
+
+<p>USB peripherals can be identified by one or more categories. </p>
+
+<ul>
+<li><strong>Class -</strong> Class name of connected peripherals (<a href="#supporteddeviceclasses">see classes list</a>, below)</li>
+
+<li><strong>Restricted Class -</strong> Displayed in a light gray font; they cannot be used to allow or disallow usage</li>
+
+<li><strong>Vendor ID -</strong> Unique alpha-numeric number assigned to each USB device manufacturer (see <a href="https://www.usb.org/getting-vendor-id">USB.org</a>)</li>
+
+<li><strong>Product ID –</strong> Multi-digit value assigned to individual products by its manufacturer</li>
+
+<li><strong>Status -</strong> Status of peripherals is shown as "<font size="3" color="green">Enabled</font>" (allowed) and "<font size="3" color="red">Disabled</font>" (disallowed) </li>
+</ul>
+
+<h4 id="homescreenoptions" class="anchor"><a class="heading-anchor" href="#homescreenoptions"><span></span></a>Home Screen Options:</h4>
+
+<ul>
+<li><strong>Show All -</strong> Displays allowed (green) and disallowed (red) peripherals connected to the device</li>
+
+<li><strong>Show Enabled Only -</strong> Displays only peripherals that are connected and allowed</li>
+</ul>
+
+<hr>
+
+<h3 id="createrules" class="anchor"><a class="heading-anchor" href="#createrules"><span></span></a>Create Rules</h3>
+
+<p>The following section provides details of the typical <a href="#adminworkflow">admin workflow</a> shown above. </p>
+
+<!-- <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Each vendor ID is unique to a manufacturer. Vendors assign unique product IDs to each of their products.
+ -->
+
+<ol>
+<li><p><strong>Connect USB peripherals to be allowed</strong> for use in the enterprise to a Zebra device running Android. </p></li>
+
+<li><p><strong>Launch the USB Host Manager app on the device</strong>. The UHM home screen appears (screens vary by device): 
+<img alt="image" style="height:450px" src="overview_01.png">
+<em>The USB Host Manager home screen (above) showing enabled (green) and disabled (red) peripherals.</em><br> 
+<em>Click image to enlarge; ESC to exit.</em><br>
+<img alt="image" style="height:350px" src="overview_02.png">
+<em>USB Host Manager (light and dark modes) running on handheld devices.</em><br> 
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Click or tap on a peripheral name to select it for an "Allow Rule."</strong> Depending on the platform, a screen appears that's similar to one of the images below.<br>
+<strong>Click or tap on the desired rule button(s)</strong>. Blue buttons are available for selection, and turn gray to indicate that a rule has been set.<br>
+<strong>When finished, click or tap "Done" button</strong> to save selections and apply the rules on the current host device. 
+<img alt="image" style="height:450px" src="screen_01.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br>
+<br>
+<img alt="image" style="height:350px" src="screen_03.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Repeat Step 3 until rules are created</strong> to allow the desired peripherals.<br></p></li>
+
+<li><p><strong>Click or tap the "Rules" button</strong> to review the rules before testing.<br>
+<img alt="image" style="height:450px" src="main_screen_01a.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p><strong>Click or tap the "Rules" button to display the rules</strong> in force on a device.<br>
+<strong>To delete a rule, click or tap its <i class="fa fa-trash-o fa-lg" style="color:#FA2929;" aria-hidden="true"></i> icon</strong>. 
+<img alt="image" style="height:450px" src="screen_04.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br>
+<br>
+<img alt="image" style="height:350px" src="screen_02.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p>To export, <strong>click or tap the "Export" button</strong>.<br>
+&nbsp;&nbsp;a. The rules file <code>usb_device_config.xml</code> is saved to the folder <code>/enterprise/usr/usb</code> on the device (as seen in image below).
+<br>
+&nbsp;&nbsp;b. <strong>Copy the rules file to the administrator PC</strong>. 
+<img alt="image" style="height:450px" src="screen_05.png">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+</ol>
 
 <blockquote>
-  <p><strong>ZDS components are self-updating to ensure that devices contain the most up-to-date features and bug-fixes</strong>. Learn more <a href="../faq/#qwhatisthesizeofthezdsupdatedownload">about ZDS updates</a>.</p>
+  <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> Usage rules for USB peripherals can now be deployed using Zebra StageNow and <a href="https://techdocs.zebra.com/stagenow/latest/csp/usb/#host-mode-peripherals">USB Manager</a> or an EMM system. </p>
 </blockquote>
 
-<h3 id="availablereports" class="anchor"><a class="heading-anchor" href="#availablereports"><span></span></a>Available Reports</h3>
+<hr>
 
-<p>The image below shows some of the reports available for visualizing data collected from devices within an organization. </p>
+<h3 id="supporteddeviceclasses" class="anchor"><a class="heading-anchor" href="#supporteddeviceclasses"><span></span></a>Supported Device Classes</h3>
 
-<p><img alt="image" style="height:350px" src="VisibilityIQ_dashboard.png">
-<em>Click image to enlarge; ESC to exit</em>. 
-<br></p>
+<p>The following <strong>device classes can be used</strong> for creating device rules:</p>
+
+<ul>
+<li><code>AINPUT_SOURCE_DPAD</code></li>
+
+<li><code>AINPUT_SOURCE_GAMEPAD</code></li>
+
+<li><code>AINPUT_SOURCE_KEYBOARD</code></li>
+
+<li><code>AINPUT_SOURCE_MOUSE</code></li>
+
+<li><code>AINPUT_SOURCE_MOUSE_RELATIVE</code></li>
+
+<li><code>AINPUT_SOURCE_JOYSTICK</code></li>
+
+<li><code>AINPUT_SOURCE_ROTARY_ENCODER</code></li>
+
+<li><code>AINPUT_SOURCE_STYLUS</code></li>
+
+<li><code>AINPUT_SOURCE_TOUCH_NAVIGATION</code></li>
+
+<li><code>AINPUT_SOURCE_TOUCHPAD</code></li>
+
+<li><code>AINPUT_SOURCE_TOUCHSCREEN</code></li>
+
+<li><code>AINPUT_SOURCE_TRACKBALL</code></li>
+
+<li><code>USB_CLASS_AUDIO</code></li>
+
+<li><code>USB_CLASS_CDC_DATA</code></li>
+
+<li><code>USB_CLASS_COMM</code></li>
+
+<li><code>USB_CLASS_CONTENT_SEC</code></li>
+
+<li><code>USB_CLASS_CSCID</code></li>
+
+<li><code>USB_CLASS_MASS_STORAGE</code></li>
+
+<li><code>USB_CLASS_PHYSICA</code></li>
+
+<li><code>USB_CLASS_PRINTER</code></li>
+
+<li><code>USB_CLASS_STILL_IMAGE</code></li>
+
+<li><code>USB_CLASS_VIDEO</code></li>
+
+<li><code>USB_CLASS_WIRELESS_CONTROLLER</code></li>
+</ul>
+
+<p>The following <strong>restricted classes CANNOT be used</strong> for creating device rules: </p>
+
+<ul>
+<li><code>USB_CLASS_APP_SPEC</code></li>
+
+<li><code>USB_CLASS_HID</code></li>
+
+<li><code>USB_CLASS_HUB</code></li>
+
+<li><code>USB_CLASS_MISC</code></li>
+
+<li><code>USB_CLASS_PER_INTERFACE</code></li>
+
+<li><code>USB_CLASS_VENDOR_SPEC</code></li>
+</ul>
+
+<p>Learn more <a href="https://techdocs.zebra.com/mx/usbmgr/#custom-rules-list">about custom rules deployment</a>.</p>
 
 <hr>
 
-<p><a id="clock_config"></a></p>
+<h3 id="exampleallowrulesfile" class="anchor"><a class="heading-anchor" href="#exampleallowrulesfile"><span></span></a>Example "Allow Rules" File</h3>
 
-<h3 id="datacollected" class="anchor"><a class="heading-anchor" href="#datacollected"><span></span></a>Data Collected</h3>
+<pre class="prettyprint"><code>                
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                &lt;usbconfig mode="whitelist"&gt;
+                  &lt;class&gt;AINPUT_SOURCE_DPAD&lt;/class&gt;
+                  &lt;class&gt;AINPUT_SOURCE_JOYSTICK&lt;/class&gt;
+                  &lt;class&gt;USB_CLASS_AUDIO&lt;/class&gt;
+                    &lt;vid vendorid="1504"&gt;
+                    &lt;pid&gt;5889&lt;/pid&gt;
+                    &lt;/vid&gt; 
+                &lt;/usbconfig&gt;
+</code></pre>
 
-<ul>
-<li><strong>Device "Build Fingerprint" including</strong>:
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Zebra recommends deployment of <u>machine-generated</u> XML files only</strong>. Manual editing is NOT recommended.</p>
 
-
-<ul>
-<li>Device model number</li>
-
-<li>Android version</li>
-
-<li>Build ID</li></ul>
-</li>
-
-<li>Device serial number</li>
-
-<li>Device usage data </li>
-
-<li>OS image, LifeGuard and security patch levels applied</li>
-
-<li>Available RAM</li>
-
-<li>Low-RAM events</li>
-
-<li>Device storage (flash) information and health </li>
-
-<li>Battery life and health information</li>
-
-<li>Battery charge/discharge status </li>
-
-<li>Wi-Fi (WLAN) connection events</li>
-
-<li>Airplane Mode usage</li>
-
-<li>Screen brightness min, max and average</li>
-
-<li>Cellular (WWAN) connection events (if applicable)</li>
-
-<li>Static MAC address</li>
-
-<li>Dynamic MAC addresses in WLAN info (when enabled by Administrator)</li>
-
-<li><strong>Data traffic statistics (as applicable) for</strong>: 
-
-
-<ul>
-<li>Bluetooth</li>
-
-<li>Cellular (WWAN)</li>
-
-<li>Ethernet</li>
-
-<li>Wi-Fi (WLAN)</li></ul>
-</li>
-
-<li><strong>Location data (as applicable) for</strong>: 
-
-
-<ul>
-<li>Cellular </li>
-
-<li>GPS</li>
-
-<li>Wi-Fi (WLAN)</li></ul>
-</li>
-
-<li>System app info and usage</li>
-
-<li><strong>Zebra app info and usage data, including for</strong>: <br>
-
-
-<ul>
-<li>DataWedge</li>
-
-<li>Enterprise Home Screen</li>
-
-<li>EMDK for Android </li>
-
-<li>EMDK for Xamarin</li>
-
-<li>MX STATS</li>
-
-<li>SimulScan</li>
-
-<li>StageNow</li></ul>
-</li>
-
-<li>Scanner information and usage statistics</li>
-
-<li>Reboots triggered by the system or an app</li>
-
-<li>Application Not Responding (ANR) events</li>
-
-<li>Default data collection and upload frequency has been changed to once every 15 days (from every 24 hrs) </li>
-
-<li>Data collection is enabled by default</li>
-</ul>
+<blockquote>
+  <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> <strong>All connected USB peripherals NOT explicitly allowed are rendered <i>unusable</i> by apps</strong>. Such peripherals <strong>continue to receive power</strong> (via USB) and in some cases could appear to be enabled, <strong>but are effectively prevented from communicating with apps</strong>. </p>
+</blockquote>
 
 <hr>
 
-<h2 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h2>
+<h2 id="errormessages" class="anchor"><a class="heading-anchor" href="#errormessages"><span></span></a>Error Messages</h2>
 
-<h4 id="zdssupportnotes" class="anchor"><a class="heading-anchor" href="#zdssupportnotes"><span></span></a>ZDS Support Notes</h4>
+<p>Two potential errors could occur while using USB Host Manager.</p>
 
-<ul>
-<li><strong>ZDS is compatible with all Zebra devices running Android 4.4</strong> (Kit Kat) and later. </li>
+<ol>
+<li><p><strong>"Proxy Framework Timeout error"</strong><br>USB Host Manager scans for connected USB peripherals when initially launched and after clicking or tapping the "Refresh" button. If it does not receive data within three seconds, it displays this message, prompting to click or tap the "Refresh" button.</p></li>
 
-<li><strong>ZDS comes preinstalled on most devices with the latest Android 7.x (and later) builds</strong>. </li>
-
-<li><strong>Battery Remaining Useful Life (RUL) estimates are most accurate</strong> on devices running Android 7, 8, 10 and later. <u><a href="../faq/#rul">More info</a></u>. </li>
-
-<li><strong>Zebra offers active ZDS support for devices running Android 6.x</strong> (Marshmallow) and later. </li>
-
-<li><strong>Installation might be required</strong> for devices running Android 4.4, Android 5.x (Lollipop) and later Android versions.</li>
-</ul>
-
-<p>Contact <a href="https://www.zebra.com/us/en/about-zebra/contact-zebra/contact-tech-support.html">Zebra Support</a> for more information.</p>
-
-<!-- 10/6/20 matrix removed at request of engineering (TUT-44574)
-<img alt="image" style="height:650px" src="zds_20_supported_devices.png"/>
-_Click image to enlarge; ESC to exit_. 
-<br>
- -->
+<li><p><strong>"Intended only for Zebra devices"</strong><br>USB Host Manager is designed to run only on Zebra-branded devices. An error is displayed if attempting to run on non-Zebra devices. <strong>To clear the error, click or tap "OK" button</strong>.</p></li>
+</ol>
 
 <hr>
 
 <h2 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h2>
 
 <ul>
-<li><strong><a href="../faq">FAQ</a></strong> | Frequently asked questions about ZDS</li>
+<li><strong><a href="../usage">UHM Usage Guide</a></strong> | How to create rules for USB peripheral usage and deploy rules to an enterprise</li>
 
-<li><strong><a href="../setup">ZDS Setup Guide</a></strong> | How to check whether ZDS is installed and/or enabled.</li>
+<li><strong><a href="link-TK">UHM Product Reference Guide (.pdf)</a></strong> <code>LINK TO COME</code> | Download complete guide in portable document format</li>
 
-<li><strong><a href="https://www.zebra.com/us/en/blog/posts/2019/zebra-operational-visibility-services-is-now-visibilityiq-foresight.html">Visibility IQ info page</a></strong> | Sign up for regular updates</li>
-</ul>
-
-<!-- 
-menu:
-  items:
-    - title: About
-      url: /oemconfig/9-3/about
-    - title: Setup
-      url: /oemconfig/9-3/setup
-    - title: FAQs
-      url: /oemconfig/9-3/faq
-    - title: Managed Configurations
-      url: /oemconfig/9-3/mc
-    - icon: fa fa-search
-      url: /oemconfig/9-3/search --><p></p>
+<li><strong><a href="link-TK">Download USB Host Manager</a></strong> | <code>LINK TO COME</code> Go here to get the app</li>
+</ul><p></p>
                                         
 
 
