@@ -117,16 +117,115 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-12 ">
-
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>EHS Special Features</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="ehs-special-features" class="anchor"><a class="heading-anchor" href="#ehs-special-features"><span></span></a>EHS Special Features</h1>
+                                    <p>
+                                            Enterprise Home Screen
+                                            3.0
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
                     <div id="mainContent" class="row">
                         <div class="col-sm-12">
-                            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <div class="blog-post blog-large fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
                             <!-- Start of guide -->
-                                <div class="service-box wow fadeInRight">
+                                <div class="service-box fadeInRight">
                                     <div class="">
 
-<!--                         <p><h2 id="overview">Overview</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>This guide covers advanced EHS features such as Kiosk Mode and EHS Logging. It assumes a working knowledge of Enterprise Home Screen and use of its <a href="../settings">Advanced Settings</a> through direct manipulation of the <code>enterprisehomescreen.xml</code> config file. For those not familiar with these procedures, please refer to the <a href="../about">About</a> and <a href="../setup">Setup</a> pages and the <a href="../settings">Advanced Settings Guide</a> before continuing. </p>
 
@@ -136,22 +235,22 @@
   <p><strong>Note</strong>: Secure Mode is discontinued in EHS 3.0 and higher. </p>
 </blockquote>
 
-<hr />
+<hr>
 
-<h2 id="kioskmode">Kiosk Mode</h2>
+<h2 id="kioskmode" class="anchor"><a class="heading-anchor" href="#kioskmode"><span></span></a>Kiosk Mode</h2>
 
 <p>Kiosk Mode is designed for devices to run a single application, often with a touch-based UI. Examples include retail price checkers, auto parts look-ups, patient check-in systems and so on. Kiosk Mode also can be useful when dedicating a device to a single user and/or task, such as a retail clerk's hand-held barcode scanner. Kiosk Mode places the app in full-screen mode and prevents the BACK and HOME keys from being used to exit the app by mapping those keys to the Kiosk app's most recent activity. </p>
 
 <p>Also see the EHS <a href="../settings#autolaunch">Auto-Launch</a> feature, which provides functionality similar to Kiosk Mode without changing the HOME and BACK key functions. </p>
 
-<h5 id="kioskmodetags">Kiosk Mode tags:</h5>
+<h5 id="kioskmodetags" class="anchor"><a class="heading-anchor" href="#kioskmodetags"><span></span></a>Kiosk Mode tags:</h5>
 
 <p><b>&lt;kiosk&gt;</b> - Specifies the app that will run when Kiosk Mode is enabled</p>
 
 <p><b>&lt;kiosk_mode_enabled&gt;</b> - Toggles the feature on and off
 <br></p>
 
-<h3 id="enablekioskmode">Enable Kiosk Mode</h3>
+<h3 id="enablekioskmode" class="anchor"><a class="heading-anchor" href="#enablekioskmode"><span></span></a>Enable Kiosk Mode</h3>
 
 <p>In the <code>enterprisehomescreen.xml</code> file:</p>
 
@@ -166,7 +265,7 @@
 
 <p><b>Security Note</b>: When using Kiosk Mode, be sure to disable 'key remapping' and other possible methods of launching applications, which would thereby defeat Kiosk Mode safeguards. </p>
 
-<h3 id="disablekioskmode">Disable Kiosk Mode</h3>
+<h3 id="disablekioskmode" class="anchor"><a class="heading-anchor" href="#disablekioskmode"><span></span></a>Disable Kiosk Mode</h3>
 
 <p>Once Kiosk Mode is enabled it can be disabled in only one of two ways (without writing custom program code):</p>
 
@@ -176,11 +275,11 @@
 <li><p><b>If USB Debugging was disabled for User Mode</b>, perform a factory reset. </p></li>
 </ul>
 
-<h5 id="controlkioskmodeprogrammatically">Control Kiosk Mode Programmatically</h5>
+<h5 id="controlkioskmodeprogrammatically" class="anchor"><a class="heading-anchor" href="#controlkioskmodeprogrammatically"><span></span></a>Control Kiosk Mode Programmatically</h5>
 
 <p>Kiosk Mode can be controlled from within an Android application using Android Intents. The following JavaScript code shows how to enable and disable Kiosk Mode programmatically:  </p>
 
-<pre><code>:::javascript
+<pre class="prettyprint"><code>
 //Disable Kiosk Mode:
 Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK_MODE");
  Intent.putExtra("enable",false);
@@ -194,9 +293,9 @@ Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK
 
 <p><b>Security Note</b>: When using Kiosk Mode, be sure to disable "key remapping" and other possible methods of launching applications, which would thereby defeat Kiosk Mode safeguards. </p>
 
-<hr />
+<hr>
 
-<h2 id="privilegedsettings">Privileged Settings</h2>
+<h2 id="privilegedsettings" class="anchor"><a class="heading-anchor" href="#privilegedsettings"><span></span></a>Privileged Settings</h2>
 
 <p>In EHS 3.0 (and higher), certain features once automatically enabled when entering Admin Mode must now be enabled manually. EHS refers to these as Privileged Settings:</p>
 
@@ -209,7 +308,7 @@ Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK
 </ul>
 
 <p>Most notably, activation of USB Debugging enables the Android Debug Bridge (adb) and its ability to transfer files to and from a device. The Privileged Settings state on the device is indicated by a pop-up whenever the user enters Admin Mode: 
-<img alt="" style="height:150px" src="Priviledged_03.png"/>
+<img alt="" style="height:150px" src="Priviledged_03.png">
 <em>Tap "OK" to dismiss</em>. 
 <br></p>
 
@@ -218,16 +317,16 @@ Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK
 <p><strong>To access Privileged Settings</strong>: </p>
 
 <ol>
-<li>While in Admin Mode, <strong>go to Tools -> Privileged Settings for Admin</strong>: 
-<img alt="" style="height:200px" src="Priviledged_05.png"/>
+<li>While in Admin Mode, <strong>go to Tools -&gt; Privileged Settings for Admin</strong>: 
+<img alt="" style="height:200px" src="Priviledged_05.png">
 <br></li>
 
 <li>The current state (disabled) is shown. <br> <strong>Tap "Enable" to activate Privileged Settings</strong>: 
-<img alt="" style="height:200px" src="Priviledged_01.png"/>
+<img alt="" style="height:200px" src="Priviledged_01.png">
 <br></li>
 
 <li>Privileged Settings are enabled immediately. <strong>Tap "OK" to continue</strong>.
-<img alt="" style="height:200px" src="Priviledged_04.png"/>
+<img alt="" style="height:200px" src="Priviledged_04.png">
 <br></li>
 </ol>
 
@@ -235,45 +334,45 @@ Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK
   <p><strong>Administrator Note</strong>: Be sure to restore settings (to disable USB debugging, Settings app, Search app) once privileged-mode tasks are completed.</p>
 </blockquote>
 
-<hr />
+<hr>
 
 <p><strong>To disable Privileged Settings</strong>: </p>
 
 <ol>
-<li><strong>Go to Tools -> Privileged Settings for Admin</strong>: 
-<img alt="" style="height:200px" src="Priviledged_05.png"/>
+<li><strong>Go to Tools -&gt; Privileged Settings for Admin</strong>: 
+<img alt="" style="height:200px" src="Priviledged_05.png">
 <br></li>
 
 <li>The current state (enabled) is shown. <br> <strong>Tap "Restore" to disable all three features</strong>: 
-<img alt="" style="height:200px" src="Priviledged_02.png"/>
+<img alt="" style="height:200px" src="Priviledged_02.png">
 <br></li>
 
 <li>Features are disabled immediately and a confirmation dialog appears.<br><strong>Tap "OK" to continue</strong>.
-<img alt="" style="height:200px" src="Priviledged_03.png"/>
+<img alt="" style="height:200px" src="Priviledged_03.png">
 <br></li>
 </ol>
 
-<hr />
+<hr>
 
-<h2 id="ehslog">EHS Log</h2>
+<h2 id="ehslog" class="anchor"><a class="heading-anchor" href="#ehslog"><span></span></a>EHS Log</h2>
 
 <p>EHS records all major activities, failures and security events in the <code>/enterprise/usr/enterprisehomescreen.log</code> file. These include failed attempts to enter Admin Mode, switches of the operating mode and all EHS errors. The log is a plain text file and can be retrieved with ADB or an EMM and viewed with any text editor.  </p>
 
 <p>For more information about logging, see <a href="../settings/#loggingdisabled">Logging Preferences</a>. </p>
 
-<p><img alt="" style="height:450px" src="logging_disabled.png"/>
+<p><img alt="" style="height:450px" src="logging_disabled.png">
 <em>In EHS 2.7 and higher, logging can be enabled/disabled through the UI or config file.</em>
 <br></p>
 
 <p><strong>IMPORTANT</strong>: Secure Mode is discontinued in EHS 3.0 and higher. Log files are no longer designated as "SECURED" or "UNSECURED" in log entries.  </p>
 
-<hr />
+<hr>
 
-<h2 id="securitynotes">Security Notes</h2>
+<h2 id="securitynotes" class="anchor"><a class="heading-anchor" href="#securitynotes"><span></span></a>Security Notes</h2>
 
 <p>This section covers important interactions between EHS and Android features that might impact device security or application behavior. </p>
 
-<h3 id="recentappslist">Recent Apps List</h3>
+<h3 id="recentappslist" class="anchor"><a class="heading-anchor" href="#recentappslist"><span></span></a>Recent Apps List</h3>
 
 <ul>
 <li>Accessing an app from the Recent Apps list could represent a security risk; apps not cleared from the list can be activated with the BACK button, potentially exposing a non-EHS home screen.</li>
@@ -336,9 +435,7 @@ Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK
 <p><strong>Note</strong>: The System Settings Restricted feature allows the device user to access Display and Sound settings and the "About device" screen. </p>
 
 <hr><p></p>
- --&gt;                        
-
-<h2 id="redirecting-to-techdocs-archive-site" class="anchor"><a class="heading-anchor" href="#redirecting-to-techdocs-archive-site"><span></span></a>Redirecting to TechDocs archive site...</h2> 
+                                        
 
 
                                     </div>
@@ -353,7 +450,6 @@ Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK
         </div>
     </section>    
 
-
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -367,15 +463,73 @@ Intent intent = new Intent("com.symbol.enterprisehomescreen.actions.MODIFY_KIOSK
 					</div>
 			</div>
 		  </div>
-		</div>
-    <script>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                    </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
+                    <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+     -->            </div>
+            </div>
+        </footer><!--/#footer-->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
 
-    var new_domain = "zebra-techdocs-archive.netlify.app";
-    var old_domain = window.location.host;
-    var current_href = window.location.href;
-    var new_href = current_href.replace(old_domain,new_domain);
-    window.location = new_href;
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-    </script>
-                                        
-</div></body></html>
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>

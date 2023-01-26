@@ -117,16 +117,115 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-12 ">
-
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>About Enterprise Home Screen</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="about-enterprise-home-screen" class="anchor"><a class="heading-anchor" href="#about-enterprise-home-screen"><span></span></a>About Enterprise Home Screen</h1>
+                                    <p>
+                                            Enterprise Home Screen
+                                            3.2
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
                     <div id="mainContent" class="row">
                         <div class="col-sm-12">
-                            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <div class="blog-post blog-large fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
                             <!-- Start of guide -->
-                                <div class="service-box wow fadeInRight">
+                                <div class="service-box fadeInRight">
                                     <div class="">
 
-<!--                         <p><h2 id="overview">Overview</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>Enterprise Home Screen is a free Android app from Zebra Technologies that provides a simple way for administrators to control access to apps and settings on a Zebra device without the need to write custom code. Using a simple touch interface, EHS easily limits usage to one or more specified applications, prevents changes to device settings and locks down the file system. It can be configured in seconds, and settings can be deployed via MDM. EHS settings are stored in a simple XML file that's easy to read and edit by hand, if necessary. </p>
 
@@ -144,10 +243,10 @@
 
 <p><strong><a href="#newinehs32">What's New in EHS 3.2</a></strong></p>
 
-<hr />
+<hr>
 
 <p>The first time it's installed, EHS presents the admin with this simple choice: 
-<img style="height:150px" src="homePrompt.png"/></p>
+<img style="height:150px" src="homePrompt.png"></p>
 
 <p>Selecting "Always" locks EHS in as the default home app and <strong>locks users out of the following</strong> device features by default:</p>
 
@@ -173,16 +272,16 @@
 
 <p>Ready to get started? <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/enterprise-home-screen.html">Download Enterprise Home Screen</a> now! </p>
 
-<hr />
+<hr>
 
-<h2 id="supporteddevices">Supported Devices</h2>
+<h2 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h2>
 
 <p>This version of Enterprise Home Screen has been approved for use with the Zebra Android devices listed below.</p>
 
 <table class="MsoNormalTable" style="" id="table2" border="1" cellpadding="3" cellspacing="0">
 <tbody>
 
-<tr bgcolor="#ccffcc" >
+<tr bgcolor="#ccffcc">
 <td style="width: 150.35pt;" width="200">
 <p class="MsoNormal"><b><font color="#333399" size="4">Device</font></b></p>
 </td>
@@ -197,90 +296,90 @@
 </td>
 </tr>
 
-<tr >
-<td style="width: 118.35pt;"  width="158">
+<tr>
+<td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">CC600/CC6000</font></p>
 </td>
 
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
-<tr >
-<td style="width: 118.35pt;"  width="158">
+<tr>
+<td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">EC30</font></p>
 </td>
 
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
-<tr >
-<td style="width: 118.35pt;"  width="158">
+<tr>
+<td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">ET51/ET56</font></p>
 </td>
 
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
-<tr >
-<td style="width: 118.35pt;"  width="158">
+<tr>
+<td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">L10</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
 <tr>
-<td style="width: 150.35pt;"  width="250">
+<td style="width: 150.35pt;" width="250">
 <p class="MsoNormal"><font color="#333399" size="3">MC33</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
 <tr>
-<td style="width: 150.35pt;"  width="250">
+<td style="width: 150.35pt;" width="250">
 <p class="MsoNormal"><font color="#333399" size="3">MC9300</font></p>
 </td>
-</td>
-<td style="width: 96px;" >
+
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
-<tr >
-<td style="width: 118.35pt;"  width="158">
+<tr>
+<td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">PS20</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
 </tr>
@@ -289,10 +388,10 @@
 <td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">TC20, TC25</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
@@ -301,10 +400,10 @@
 <td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">TC51, TC56</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
@@ -313,10 +412,10 @@
 <td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">TC52</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
 </tr>
@@ -325,10 +424,10 @@
 <td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">TC57</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
@@ -337,10 +436,10 @@
 <td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">TC72</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
 </tr>
@@ -349,78 +448,78 @@
 <td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">TC77</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
-<td style="width: 118.35pt;" width="158">
+<tr><td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">TC70x</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
-</tr>
 
-<tr >
+
+</tr><tr>
 <td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">TC75x</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
-<p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
-</td>
-</tr>
-
-<tr >
-<td style="width: 118.35pt;"  width="158">
-<p class="MsoNormal"><font color="#333399" size="3">VC80x</font></p>
-</td>
-<td style="width: 96px;" >
-<p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
-</td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
 <tr>
-<td style="width: 150.35pt;"  width="250">
+<td style="width: 118.35pt;" width="158">
+<p class="MsoNormal"><font color="#333399" size="3">VC80x</font></p>
+</td>
+<td style="width: 96px;">
+<p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
+</td>
+<td style="width: 96px;">
+<p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
+</td>
+</tr>
+
+<tr>
+<td style="width: 150.35pt;" width="250">
 <p class="MsoNormal"><font color="#333399" size="3">TC8300</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
 </tr>
 
-<td style="width: 118.35pt;"  width="158">
+<tr><td style="width: 118.35pt;" width="158">
 <p class="MsoNormal"><font color="#333399" size="3">VC8300</font></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">√</font></b></p>
 </td>
-<td style="width: 96px;" >
+<td style="width: 96px;">
 <p class="MsoNormal" align="center"><b><font color="#333399" size="4">&nbsp;</font></b></p>
 </td>
-</tr>
 
-</tbody>
+
+</tr></tbody>
 </table>
 
-<hr />
+<hr>
 
-<h2 id="newinehs32">New in EHS 3.2</h2>
+<h2 id="newinehs32" class="anchor"><a class="heading-anchor" href="#newinehs32"><span></span></a>New in EHS 3.2</h2>
 
 <ul>
 <li><strong>Now supports <u>ONLY</u> Android 8.x (Oreo) and Android 9.x (Pie)</strong>.</li>
@@ -429,12 +528,12 @@
 
 <li><strong>Bypass user confirmation dialog when adding Pinned shortcuts</strong> is a configurable option designed to aid automated shortcut creation by suppressing the dialog that appears when a shortcut is added. Disabled by default. </li>
 
-<li><strong>EHS can now launch links that reference local files</strong> though a “URL” tag (i.e. "file://&#42;.html") on devices running Android 8.x Oreo (and later) if files reside on internal or external storage (i.e. SD card).</li>
+<li><strong>EHS can now launch links that reference local files</strong> though a “URL” tag (i.e. "file://*.html") on devices running Android 8.x Oreo (and later) if files reside on internal or external storage (i.e. SD card).</li>
 </ul>
 
-<hr />
+<hr>
 
-<h3 id="endofsupport">End of Support</h3>
+<h3 id="endofsupport" class="anchor"><a class="heading-anchor" href="#endofsupport"><span></span></a>End of Support</h3>
 
 <ul>
 <li><p><strong>Support for Android 7.x Nougat is dropped</strong>. Use <a href="/ehs/3-1/guide/about">EHS 3.1</a> if Nougat support is required. </p></li>
@@ -444,9 +543,9 @@
 <li><p><strong>Support ends for the following devices running Nougat</strong>: MC33, TC20, TC25, TC51, TC56, TC70x, TC75x, VC80x, WT6000</p></li>
 </ul>
 
-<hr />
+<hr>
 
-<h3 id="androidpienotes">Android Pie Notes</h3>
+<h3 id="androidpienotes" class="anchor"><a class="heading-anchor" href="#androidpienotes"><span></span></a>Android Pie Notes</h3>
 
 <p><strong><em>Applies to devices running Android 9.x Pie and higher</em></strong>.</p>
 
@@ -467,21 +566,21 @@
 </li>
 </ul>
 
-<hr />
+<hr>
 
-<h3 id="androidoreonotes">Android Oreo Notes</h3>
+<h3 id="androidoreonotes" class="anchor"><a class="heading-anchor" href="#androidoreonotes"><span></span></a>Android Oreo Notes</h3>
 
 <p><strong><em>Applies to devices running Android 8.x Oreo and higher</em></strong>.</p>
 
 <ul>
-<li><strong>SSID and BSSID information do not appear in the "Wireless Info" or "<a href="../setup/#batteryandwifiquickview">Battery and Wi-Fi Quick View</a>" screens</strong> on Oreo devices if Location services (Settings -> Security &amp; Location -> Location) are turned off. </li>
+<li><strong>SSID and BSSID information do not appear in the "Wireless Info" or "<a href="../setup/#batteryandwifiquickview">Battery and Wi-Fi Quick View</a>" screens</strong> on Oreo devices if Location services (Settings -&gt; Security &amp; Location -&gt; Location) are turned off. </li>
 
 <li><strong>If the operating system on a device (except TC20/TC25) is being upgraded to Android 8.1 Oreo</strong> from Marshmallow or Nougat, <strong><u>the previous EHS installation must be removed before the new version of EHS is installed</u></strong>. Follow instructions to <a href="../setup#uninstallation">uninstall EHS</a> before installing EHS on an Oreo device. <strong>Prior configuration settings, if any, are re-applied automatically</strong>.</li>
 
-<li>EHS <strong><u>CAN</u></strong> now launch links that reference local files though a “URL” tag (i.e. "file://&#42;.html") on devices running Android 8.x Oreo (and later).</li>
+<li>EHS <strong><u>CAN</u></strong> now launch links that reference local files though a “URL” tag (i.e. "file://*.html") on devices running Android 8.x Oreo (and later).</li>
 </ul>
 
-<hr />
+<hr>
 
 <!-- 12/18/18- Marshmallow support ended with 3.0
 
@@ -818,9 +917,7 @@ _The User Mode screen with XXL icons_. -->
 
 <li>TC8000 KitKat version 4.4 support (added January, 2016)</li>
 </ul><p></p>
- --&gt;                        
-
-<h2 id="redirecting-to-techdocs-archive-site" class="anchor"><a class="heading-anchor" href="#redirecting-to-techdocs-archive-site"><span></span></a>Redirecting to TechDocs archive site...</h2> 
+                                        
 
 
                                     </div>
@@ -835,7 +932,6 @@ _The User Mode screen with XXL icons_. -->
         </div>
     </section>    
 
-
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -849,15 +945,73 @@ _The User Mode screen with XXL icons_. -->
 					</div>
 			</div>
 		  </div>
-		</div>
-    <script>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                    </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
+                    <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+     -->            </div>
+            </div>
+        </footer><!--/#footer-->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
 
-    var new_domain = "zebra-techdocs-archive.netlify.app";
-    var old_domain = window.location.host;
-    var current_href = window.location.href;
-    var new_href = current_href.replace(old_domain,new_domain);
-    window.location = new_href;
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-    </script>
-                                        
-</div></body></html>
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>

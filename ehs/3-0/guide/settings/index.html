@@ -117,36 +117,135 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-12 ">
-
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>EHS Advanced Settings</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="ehs-advanced-settings" class="anchor"><a class="heading-anchor" href="#ehs-advanced-settings"><span></span></a>EHS Advanced Settings</h1>
+                                    <p>
+                                            Enterprise Home Screen
+                                            3.0
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
                     <div id="mainContent" class="row">
                         <div class="col-sm-12">
-                            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <div class="blog-post blog-large fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
                             <!-- Start of guide -->
-                                <div class="service-box wow fadeInRight">
+                                <div class="service-box fadeInRight">
                                     <div class="">
 
-<!--                         <p><h2 id="overview">Overview</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>This section assumes a basic knowledge of Enterprise Home Screen and its capabilities and essential workings. For those not familiar with Zebra's free security tool for its Android devices, please see the <a href="../about">About</a> and <a href="../setup">Setup</a> pages before continuing with this guide. Also see the <a href="../features">Special Features Guide</a> for information about Kiosk Mode, device logging and other special EHS features. </p>
 
 <p>The behavior of Enterprise Home Screen is controlled entirely through <code>enterprisehomescreen.xml</code>, an easy-to-read file that can be modified with any text editor. A default version of the file contains many common device security settings plus a few standard apps, and is part of every EHS installation. In many instances, all that's needed to begin using EHS is to add an organization's own applications and to apply preferred security and display settings. </p>
 
-<h4 id="aboutthisguide">About this Guide</h4>
+<h4 id="aboutthisguide" class="anchor"><a class="heading-anchor" href="#aboutthisguide"><span></span></a>About this Guide</h4>
 
 <p>This guide describes the how to add apps and configure settings using the <code>enterprisehomescreen.xml</code> config file alone (if the setting also can be configured through the GUI, a screenshot is shown). It details the interaction between EHS and the config file, and provides instructions for accessing and customizing the file for a company's specific requirements, and for deploying the settings to device(s). A detailed analysis of the config file follows, with explanations of each of the parameters and examples of how to configure them. </p>
 
 <p><b>Note</b>: Many of the capabilities of EHS also can be accomplished by other means on the device, either programmatically through <a href="../../../../emdk-for-android">EMDK</a> or remotely using <a href="../../../../stagenow">StageNow</a> or a third-party mobile device management (MDM) system (if supported by that MDM system). EHS simply puts these capabilities into a single tool.</p>
 
-<hr />
+<hr>
 
-<h2 id="workingwiththeconfigfile">Working with the Config File</h2>
+<h2 id="workingwiththeconfigfile" class="anchor"><a class="heading-anchor" href="#workingwiththeconfigfile"><span></span></a>Working with the Config File</h2>
 
 <p>This section describes important interactions between EHS and the <code>enterprisehomescreen.xml</code> config file, and instructions for retrieving, modifying and deploying the file to devices. </p>
 
-<hr />
+<hr>
 
-<h4 id="configfilelocation">Config File Location</h4>
+<h4 id="configfilelocation" class="anchor"><a class="heading-anchor" href="#configfilelocation"><span></span></a>Config File Location</h4>
 
 <ul>
 <li>The config file is stored in the <code>/enterprise/usr</code> directory on the device.</li>
@@ -162,11 +261,11 @@
   <p><b>Note</b>: Use caution when exposing File Browser to users; it can be used to manipulate the EHS config file and change security or other settings.</p>
 </blockquote>
 
-<hr />
+<hr>
 
-<h4 id="forbiddencharacters">Forbidden Characters</h4>
+<h4 id="forbiddencharacters" class="anchor"><a class="heading-anchor" href="#forbiddencharacters"><span></span></a>Forbidden Characters</h4>
 
-<p>The EHS config file is fully XML-compliant, and must remain so to be readable by EHS's XML parser. XML specifications forbid the use of five characters ( " ' &lt; > &amp; ) except in the ways described in the spec. If those characters are required as part of XML content, they must substituted with their "escaped" equivalents as follows: </p>
+<p>The EHS config file is fully XML-compliant, and must remain so to be readable by EHS's XML parser. XML specifications forbid the use of five characters ( " ' &lt; &gt; &amp; ) except in the ways described in the spec. If those characters are required as part of XML content, they must substituted with their "escaped" equivalents as follows: </p>
 
 <p><code>"</code> (quote) <code>&amp;quot;</code><br>
 <code>'</code> (apostrophe) <code>&amp;apos;</code><br>
@@ -174,30 +273,30 @@
 <code>&gt;</code> (greater-than) <code>&amp;gt;</code><br>
 <code>&amp;</code> (ampersand) <code>&amp;amp;</code><br></p>
 
-<hr />
+<hr>
 
-<h4 id="configfileaccess">Config File Access</h4>
+<h4 id="configfileaccess" class="anchor"><a class="heading-anchor" href="#configfileaccess"><span></span></a>Config File Access</h4>
 
-<h5 id="usingadb">Using ADB</h5>
+<h5 id="usingadb" class="anchor"><a class="heading-anchor" href="#usingadb"><span></span></a>Using ADB</h5>
 
 <p>The Android Debug Bridge (ADB) is by far the most efficient way to work through the "pull-edit-push-test" cycle for configuring and testing changes to EHS settings through the <code>enterprisehomescreen.xml</code> file. The process requires a Mac or Windows PC that's connected via USB to a device with EHS installed. For help with software setup, please refer to <a href="../setup">Setup Guide</a>. </p>
 
 <p>From a computer connected to a target device that has EHS installed: </p>
 
-<p>&#49;. <b>Use ADB to pull the config file</b> from its default location to the local PC: </p>
+<p>1. <b>Use ADB to pull the config file</b> from its default location to the local PC: </p>
 
-<pre><code>:::term
+<pre class="prettyprint"><code>
 adb pull /enterprise/usr/enterprisehomescreen.xml
 </code></pre>
 
 <p><br></p>
 
-<p>&#50;. Locate, open and <b>edit the config file</b> with a text editor, saving changes. <b>Do NOT change the file name in any way</b>. 
+<p>2. Locate, open and <b>edit the config file</b> with a text editor, saving changes. <b>Do NOT change the file name in any way</b>. 
 <br></p>
 
-<p>&#51;. <b>Push the edited config file</b> to the device: </p>
+<p>3. <b>Push the edited config file</b> to the device: </p>
 
-<pre><code>:::term
+<pre class="prettyprint"><code>
 adb push enterprisehomescreen.xml /enterprise/usr/enterprisehomescreen.xml
 </code></pre>
 
@@ -205,7 +304,7 @@ adb push enterprisehomescreen.xml /enterprise/usr/enterprisehomescreen.xml
   <p><strong>Important</strong>: Be sure to <strong>include the name of the edited source file in the adb push command</strong>. Not doing so could cause changes to be ignored. </p>
 </blockquote>
 
-<h5 id="whathappensnow">What happens now?</h5>
+<h5 id="whathappensnow" class="anchor"><a class="heading-anchor" href="#whathappensnow"><span></span></a>What happens now?</h5>
 
 <ul>
 <li>Pushing a new version of the config file overwrites the old one. </li>
@@ -215,7 +314,7 @@ adb push enterprisehomescreen.xml /enterprise/usr/enterprisehomescreen.xml
 <li>If EHS is in the background, the new settings take effect the next time EHS comes to the foreground.</li>
 </ul>
 
-<h5 id="othernotes">Other Notes</h5>
+<h5 id="othernotes" class="anchor"><a class="heading-anchor" href="#othernotes"><span></span></a>Other Notes</h5>
 
 <ul>
 <li>Config file must be named "<code>enterprisehomescreen.xml</code>" in lower-case letters. </li>
@@ -231,55 +330,55 @@ adb push enterprisehomescreen.xml /enterprise/usr/enterprisehomescreen.xml
 <li>Once configured, a config file is suitable for <a href="../setup/#automatedinstallation">mass-deployment using an MDM</a> with or without the EHS app.</li>
 </ul>
 
-<h5 id="exportingtheconfigfile">Exporting the Config File</h5>
+<h5 id="exportingtheconfigfile" class="anchor"><a class="heading-anchor" href="#exportingtheconfigfile"><span></span></a>Exporting the Config File</h5>
 
 <p>For device troubleshooting and certain other scenarios, it is sometimes useful to make the config file (<code>enterprisehomescreen.xml</code>) visible or to look inside the file and check its settings. The file can be made visible from Admin Mode by exporting it to a visible area of the file system. Alternatively, the config file can be viewed, copied, moved and shared via email or other means using the Android File Browser. </p>
 
 <p><b>Note</b>: A config file exported to a visible area of the device file system might remain invisible to the PC until the device is rebooted. </p>
 
-<p>&#49;. In Admin Mode on the device, <b>select Export Configuration File</b> from the Tools menu:
-<img alt="" style="height:350px" src="admin_menu.png"/>
+<p>1. In Admin Mode on the device, <b>select Export Configuration File</b> from the Tools menu:
+<img alt="" style="height:350px" src="admin_menu.png">
 <br></p>
 
-<p>&#50;. <b>Tap OK</b> to confirm the action:
-<img alt="" style="height:350px" src="export_confirm.png"/>
+<p>2. <b>Tap OK</b> to confirm the action:
+<img alt="" style="height:350px" src="export_confirm.png">
 <br></p>
 
-<p>&#51;. <b>Note the location</b> in the confirmation message:
-<img alt="" style="height:350px" src="export_completed.png"/>
+<p>3. <b>Note the location</b> in the confirmation message:
+<img alt="" style="height:350px" src="export_completed.png">
 <br></p>
 
-<p>&#52;. <b>Drag the config file</b> (arrow) to a PC for editing using Windows Explorer, Android File Transfer (shown) or a similar means:
-<img alt="" style="height:300px" src="ehs_folder.png"/>
+<p>4. <b>Drag the config file</b> (arrow) to a PC for editing using Windows Explorer, Android File Transfer (shown) or a similar means:
+<img alt="" style="height:300px" src="ehs_folder.png">
 <br>
 <b>Note</b>: A config file exported to a visible area of the device file system might remain invisible to the PC until the device is rebooted. </p>
 
-<h5 id="usingfilebrowser">Using File Browser</h5>
+<h5 id="usingfilebrowser" class="anchor"><a class="heading-anchor" href="#usingfilebrowser"><span></span></a>Using File Browser</h5>
 
 <p>The Android File Browser offers a fast way to get a quick view inside the config file on a device. It also permits the file to be copied, moved or shared via email, Bluetooth or any means enabled on the device. </p>
 
 <p>To look inside the config file on a device: </p>
 
-<p>&#49;. In File Browser, <b>navigate to the /enterprise/usr directory</b>:
-<img alt="" style="height:350px" src="fileBrowser_usr.png"/>
+<p>1. In File Browser, <b>navigate to the /enterprise/usr directory</b>:
+<img alt="" style="height:350px" src="fileBrowser_usr.png">
 <br></p>
 
-<p>&#50;. <b>Long-press the</b> <code>enterprisehomescreen.xml</code><b> file</b> to display the File Operations menu:
-<img alt="" style="height:350px" src="long-press_menu.png"/>
+<p>2. <b>Long-press the</b> <code>enterprisehomescreen.xml</code><b> file</b> to display the File Operations menu:
+<img alt="" style="height:350px" src="long-press_menu.png">
 <br></p>
 
-<p>&#51;. <b>Select "Open as.."</b> to select a viewer and <b>hit Launch</b>:
-<img alt="" style="height:350px" src="open_as.png"/>
+<p>3. <b>Select "Open as.."</b> to select a viewer and <b>hit Launch</b>:
+<img alt="" style="height:350px" src="open_as.png">
 <br>
 It might be necessary to also tap "txt" to specify the extension type.  </p>
 
-<p>&#51;. The config file will open in the Android HTML Viewer:
-<img alt="" style="height:350px" src="html_viewer.png"/>
+<p>3. The config file will open in the Android HTML Viewer:
+<img alt="" style="height:350px" src="html_viewer.png">
 <br></p>
 
-<hr />
+<hr>
 
-<h2 id="defaultconfigfile">Default Config File</h2>
+<h2 id="defaultconfigfile" class="anchor"><a class="heading-anchor" href="#defaultconfigfile"><span></span></a>Default Config File</h2>
 
 <p>This section explains the <code>enterprisehomescreen.xml</code> config file, which controls all aspects of EHS behavior. The default version is shown below, followed by an explanation of the file's XML tags and the configuration options for each. </p>
 
@@ -299,7 +398,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <p><strong>Default</strong> <code>enterprisehomescreen.xml</code> <strong>file</strong>:</p>
 
-<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+<pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;config&gt;
     &lt;kiosk&gt;
         &lt;application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/&gt;
@@ -331,19 +430,19 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 &lt;/config&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h2 id="configtags">Config Tags</h2>
+<h2 id="configtags" class="anchor"><a class="heading-anchor" href="#configtags"><span></span></a>Config Tags</h2>
 
 <p>This section describes all tags in the <code>enterprisehomescreen.xml</code> file and their possible values. They're shown below in the same order they appear in the default file, and are followed by optional tags. Tags can appear in any order, but must be contained within the &lt;config&gt; &lt;/config&gt; tag set (node). </p>
 
-<hr />
+<hr>
 
-<h3 id="kiosk">Kiosk</h3>
+<h3 id="kiosk" class="anchor"><a class="heading-anchor" href="#kiosk"><span></span></a>Kiosk</h3>
 
 <p>Specifies the app to run when the device is in <a href="../features">Kiosk Mode</a>, an optional mode under which a single app fills the screen and the BACK and HOME keys cannot be used to exit it. Kiosk Mode is activated using the &lt;kiosk_mode_enabled&gt; tag in the &lt;Preferences&gt; section. </p>
 
-<p><img alt="" style="height:350px" src="kiosk.png"/></p>
+<p><img alt="" style="height:350px" src="kiosk.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -355,16 +454,16 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>Activity (optional): name of the activity to be invoked when the app starts</li>
 </ul>
 
-<h5 id="example">Example</h5>
+<h5 id="example" class="anchor"><a class="heading-anchor" href="#example"><span></span></a>Example</h5>
 
-<pre><code>&lt;kiosk&gt;
+<pre class="prettyprint"><code>&lt;kiosk&gt;
         &lt;application label="Calculator" package="com.android.calculator2" activity=""/&gt;
 &lt;/kiosk&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="applications">Applications</h3>
+<h3 id="applications" class="anchor"><a class="heading-anchor" href="#applications"><span></span></a>Applications</h3>
 
 <p>Specifies the applications and/or browser links to be displayed to users while EHS is in User Mode. An optional activity parameter permits an app activity to be invoked when the app starts up. <b>Some apps do not launch unless the app package <em>and</em> an activity are specified</b>. </p>
 
@@ -378,15 +477,15 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><strong>EHS 3.0 and higher supports VectorDrawable app icons</strong>, which scale to different sizes without loss of image quality. <a href="https://developer.android.com/guide/topics/graphics/vector-drawable-resources">Learn more</a>.</li>
 </ul>
 
-<hr />
+<hr>
 
-<h4 id="chineseedition">Chinese Edition</h4>
+<h4 id="chineseedition" class="anchor"><a class="heading-anchor" href="#chineseedition"><span></span></a>Chinese Edition</h4>
 
-<p>In the EHS version localized for Simplified Chinese, the default <code>enterprisehomescreen.xml</code> config file contains sample apps with English-language titles. If any of the same apps are added in the Chinese edition, those apps will appear twice in User Mode&mdash;once with the English title and again with the Chinese. If this is undesired, remove the unwanted <code>&lt;application&gt;</code> entry from the <code>&lt;applications&gt;</code> node in the config file. </p>
+<p>In the EHS version localized for Simplified Chinese, the default <code>enterprisehomescreen.xml</code> config file contains sample apps with English-language titles. If any of the same apps are added in the Chinese edition, those apps will appear twice in User Mode—once with the English title and again with the Chinese. If this is undesired, remove the unwanted <code>&lt;application&gt;</code> entry from the <code>&lt;applications&gt;</code> node in the config file. </p>
 
-<hr />
+<hr>
 
-<h4 id="applicationexample">Application Example</h4>
+<h4 id="applicationexample" class="anchor"><a class="heading-anchor" href="#applicationexample"><span></span></a>Application Example</h4>
 
 <p><b>Possible values (apps)</b>:</p>
 
@@ -395,16 +494,16 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <li>Package: app package name </li>
 
-<li>&#42; (asterisk): used as a wildcard to specify multiple packages with the same prefix </li>
+<li>* (asterisk): used as a wildcard to specify multiple packages with the same prefix </li>
 
 <li>Exclude: used with wildcard to omit one or more apps from a wildcard set</li>
 
 <li>Activity (optional): name of an activity to be invoked when an app starts</li>
 </ul>
 
-<h4 id="samplexmlusingwildcardtoselectseveralapps">Sample XML using wildcard to select several apps:</h4>
+<h4 id="samplexmlusingwildcardtoselectseveralapps" class="anchor"><a class="heading-anchor" href="#samplexmlusingwildcardtoselectseveralapps"><span></span></a>Sample XML using wildcard to select several apps:</h4>
 
-<pre><code>&lt;applications&gt;
+<pre class="prettyprint"><code>&lt;applications&gt;
     //The following lines:
       &lt;application label="Packaging" package="com.mobility.packaging" activity=""/&gt;
       &lt;application label="Online" package="com.mobility.online" activity=""/&gt;
@@ -429,27 +528,27 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <p><br></p>
 
-<h4 id="usingwildcardtodisplayallandroidappswithcastheirfirstletter">Using wildcard to display all Android apps with "c" as their first letter:</h4>
+<h4 id="usingwildcardtodisplayallandroidappswithcastheirfirstletter" class="anchor"><a class="heading-anchor" href="#usingwildcardtodisplayallandroidappswithcastheirfirstletter"><span></span></a>Using wildcard to display all Android apps with "c" as their first letter:</h4>
 
-<pre><code>&lt;applications&gt;
+<pre class="prettyprint"><code>&lt;applications&gt;
     &lt;application label="" package="com.android.c*"/&gt;
 &lt;/applications&gt;
 </code></pre>
 
 <p><br></p>
 
-<h4 id="displayallandroidappsstartingwiththelettercexceptcalculator">Display all Android apps starting with the letter "c" except Calculator:</h4>
+<h4 id="displayallandroidappsstartingwiththelettercexceptcalculator" class="anchor"><a class="heading-anchor" href="#displayallandroidappsstartingwiththelettercexceptcalculator"><span></span></a>Display all Android apps starting with the letter "c" except Calculator:</h4>
 
-<pre><code>&lt;applications&gt;
+<pre class="prettyprint"><code>&lt;applications&gt;
     &lt;application label="" package="com.android.c*" exclude="com.android.Calculator2"/&gt;
 &lt;/applications&gt;
 </code></pre>
 
 <p><br></p>
 
-<h4 id="displayallandroidappsstartingwiththelettercexceptcontactsandcamera">Display all Android apps starting with the letter "c" except Contacts and Camera:</h4>
+<h4 id="displayallandroidappsstartingwiththelettercexceptcontactsandcamera" class="anchor"><a class="heading-anchor" href="#displayallandroidappsstartingwiththelettercexceptcontactsandcamera"><span></span></a>Display all Android apps starting with the letter "c" except Contacts and Camera:</h4>
 
-<pre><code>&lt;applications&gt;
+<pre class="prettyprint"><code>&lt;applications&gt;
     &lt;application label="" package="com.android.c*" exclude="com.android.camera2;com.android.contacts"/&gt;
 &lt;/applications&gt;
 </code></pre>
@@ -461,7 +560,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <li><p>Apps within each wildcard set are listed alphabetically by label relative to other apps in that set. </p></li>
 
-<li><p>Wildcard search is designed to work with packages that comply with the &#34;&lt;any_name&gt;.&lt;any_name&gt;&#42;&#34; format. </p></li>
+<li><p>Wildcard search is designed to work with packages that comply with the "&lt;any_name&gt;.&lt;any_name&gt;*" format. </p></li>
 
 <li><p>If <strong>bundle</strong> and <strong>icon</strong> attributes are used, the same specified attributes apply to all wildcard-selected apps. </p></li>
 
@@ -486,23 +585,23 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><p>The following wildcard searches have been blocked by EHS as a security measure, avoiding the accidental inclusion of all standard Android apps: </p>
 
 <ul>
-<li>com.android.&#42;</li>
+<li>com.android.*</li>
 
-<li>com.android&#42;</li>
+<li>com.android*</li>
 
-<li>com.androi&#42;</li>
+<li>com.androi*</li>
 
-<li>com.andro&#42;</li>
+<li>com.andro*</li>
 
-<li>com.andr&#42;</li>
+<li>com.andr*</li>
 
-<li>com.and&#42;</li>
+<li>com.and*</li>
 
-<li>com.an&#42;</li>
+<li>com.an*</li>
 
-<li>com.a&#42;</li>
+<li>com.a*</li>
 
-<li>com.&#42;</li></ul></li>
+<li>com.*</li></ul></li>
 
 <li><p>Wildcard searches can include "com.androidX" where X=any character except dot (.).  </p></li>
 
@@ -511,21 +610,21 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><p>The EHS app and EHS installer always are excluded from any filtered app list. </p></li>
 </ul>
 
-<hr />
+<hr>
 
-<h4 id="urlexample">URL Example</h4>
+<h4 id="urlexample" class="anchor"><a class="heading-anchor" href="#urlexample"><span></span></a>URL Example</h4>
 
 <p><b>Possible values (URLs)</b></p>
 
 <ul>
 <li>Label: string</li>
 
-<li>Package: URL (http://, https:// or file://&#42;.html)</li>
+<li>Package: URL (http://, https:// or file://*.html)</li>
 </ul>
 
-<h4 id="samplexmlforweblink">Sample XML (for web link)</h4>
+<h4 id="samplexmlforweblink" class="anchor"><a class="heading-anchor" href="#samplexmlforweblink"><span></span></a>Sample XML (for web link)</h4>
 
-<pre><code>&lt;applications&gt;
+<pre class="prettyprint"><code>&lt;applications&gt;
     ...
     &lt;link label="Mozilla Mobile" url="http://www.mozilla.org/en-US/mobile/" package="org.mozilla.firefox" activity="org.mozilla.firefox.App" /&gt;
     ...
@@ -534,9 +633,9 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <p>In the example above, the package and activity attributes are used to launch the URL in the Mozilla Mobile browser. If the specified app (as defined in the package and activity parameters) is not present on the device, the URL will not be displayed. If no activity is specified, EHS will launch the link using the default browser. </p>
 
-<p><strong><code>OREO NOTE:</code></strong> EHS can <strong><u>NOT</u></strong> launch links that reference local files though a “URL” tag (i.e. "file://&#42;.html") on devices running Android 8.x Oreo (and newer). </p>
+<p><strong><code>OREO NOTE:</code></strong> EHS can <strong><u>NOT</u></strong> launch links that reference local files though a “URL” tag (i.e. "file://*.html") on devices running Android 8.x Oreo (and newer). </p>
 
-<h4 id="linkremoval">Link Removal</h4>
+<h4 id="linkremoval" class="anchor"><a class="heading-anchor" href="#linkremoval"><span></span></a>Link Removal</h4>
 
 <p>To remove a web link from the User Mode screen: </p>
 
@@ -546,9 +645,9 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>Redeploy the modified <code>enterprisehomescreen.xml</code> file to the device. </li>
 </ol>
 
-<hr />
+<hr>
 
-<h3 id="tools">Tools</h3>
+<h3 id="tools" class="anchor"><a class="heading-anchor" href="#tools"><span></span></a>Tools</h3>
 
 <p>Specifies the apps to be listed in the Tools menu of Admin and User Modes. <b>Note</b>: Package names might vary from one Android version to another. </p>
 
@@ -562,22 +661,22 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>Activity (optional): name of the activity to be invoked when the app starts</li>
 </ul>
 
-<h4 id="example-1">Example</h4>
+<h4 id="example-1" class="anchor"><a class="heading-anchor" href="#example-1"><span></span></a>Example</h4>
 
-<pre><code>&lt;tools&gt;
+<pre class="prettyprint"><code>&lt;tools&gt;
     ...
     &lt;application label="Calculator" package="com.android.calculator2" activity=""/&gt;
     ...   
 &lt;/tools&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="passwords">Passwords</h3>
+<h3 id="passwords" class="anchor"><a class="heading-anchor" href="#passwords"><span></span></a>Passwords</h3>
 
 <p>Stores the encrypted password for logging into Admin Mode (blank by default). <b><u>Do not populate this tag manually</u> in the config file or edit in any way</b>. The administrator password is stored here programmatically by EHS after being entered or changed through the Tools menu in EHS Admin Mode. EHS uses this tag to store the password as a 256-bit AES-encrypted hash. Once a password is created and stored in the config file, it can be mass-deployed along with all other settings.</p>
 
-<h5 id="importantpasswordencryptionnotes">Important Password Encryption Notes:</h5>
+<h5 id="importantpasswordencryptionnotes" class="anchor"><a class="heading-anchor" href="#importantpasswordencryptionnotes"><span></span></a>Important Password Encryption Notes:</h5>
 
 <ul>
 <li><strong>EHS 2.8 (and higher) implements a more secure encryption method</strong> than prior versions. </li>
@@ -589,7 +688,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><strong>Once a config file is updated using the new encryption</strong>, that file is no longer compatible with older EHS versions. </li>
 </ul>
 
-<p><img alt="" style="height:350px" src="admin_password.png"/>
+<p><img alt="" style="height:350px" src="admin_password.png">
 <em>The admin password <b><u>must</u></b> be entered and changed using the Admin Tools menu in the EHS GUI</em>. </p>
 
 <p><b>Possible values</b>:</p>
@@ -598,16 +697,16 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>(<strong>EHS USE ONLY; Do not add to or edit the contents of this tag</strong>)</li>
 </ul>
 
-<h4 id="example-2">Example</h4>
+<h4 id="example-2" class="anchor"><a class="heading-anchor" href="#example-2"><span></span></a>Example</h4>
 
-<pre><code>&lt;passwords&gt;
+<pre class="prettyprint"><code>&lt;passwords&gt;
     &lt;admin&gt;EHS USE ONLY&lt;/admin&gt;
 &lt;/passwords&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="appiconsize">App Icon Size</h3>
+<h3 id="appiconsize" class="anchor"><a class="heading-anchor" href="#appiconsize"><span></span></a>App Icon Size</h3>
 
 <p>Permits the size of application icons to be set to Small, Medium, Large, Extra Large and Extra Extra Large . Icon size can be controlled through the <code>enterprisehomescreen.xml</code> file or through the device UI while in Admin or User Modes. </p>
 
@@ -616,17 +715,17 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <p><strong>To change the icon size through the UI</strong>:</p>
 
 <p>In Admin or User Mode, <strong>tap the menu icon</strong> and <strong>select Icon settings</strong>: 
-<img alt="" style="height:350px" src="2-4_icon_menu.png"/>
+<img alt="" style="height:350px" src="2-4_icon_menu.png">
 <em>Icon size setting applies to Admin and User Modes</em>.
 <br></p>
 
 <p><strong>Tap on the desired icon size</strong>, then tap OK. Selected size is applied immediately. 
-<img alt="" style="height:350px" src="2-4_icon_size.png"/>
+<img alt="" style="height:350px" src="2-4_icon_size.png">
 <em>Medium (shown) is the default icon size</em>. 
 <br></p>
 
-<p><img alt="" style="height:500px" src="app_icon_sizes.png"/>
-<em>App icons can be displayed in five sizes; changes apply to Admin and User Modes</em>. <br />
+<p><img alt="" style="height:500px" src="app_icon_sizes.png">
+<em>App icons can be displayed in five sizes; changes apply to Admin and User Modes</em>. <br>
 <br></p>
 
 <p><strong>To set icon size through the</strong> <code>enterprisehomescreen.xml</code> <strong>file</strong>: </p>
@@ -645,28 +744,28 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>XXL = Extra extra large icons</li>
 </ul>
 
-<h4 id="example-3">Example</h4>
+<h4 id="example-3" class="anchor"><a class="heading-anchor" href="#example-3"><span></span></a>Example</h4>
 
-<pre><code>&lt;user_options&gt;
+<pre class="prettyprint"><code>&lt;user_options&gt;
     &lt;icon_settings&gt;
         &lt;app_icon_size&gt;XL&lt;/app_icon_size&gt;
     &lt;/icon_settings&gt;   
 &lt;user_options&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="preferences">Preferences</h3>
+<h3 id="preferences" class="anchor"><a class="heading-anchor" href="#preferences"><span></span></a>Preferences</h3>
 
 <p>Control various aspects of EHS behavior, security and display settings corresponding to options configured in the EHS Preferences UI panel. Tags of individual preferences can appear in any order, but <strong>must be contained within the &lt;preferences&gt; &lt;/preferences&gt; node</strong>. </p>
 
-<hr />
+<hr>
 
-<h3 id="title">Title</h3>
+<h3 id="title" class="anchor"><a class="heading-anchor" href="#title"><span></span></a>Title</h3>
 
 <p>Specifies the title bar text for the EHS app. The default title "Enterprise Home Screen" can be changed to any static string of characters or emoji(s). For device-specific (dynamic) options, see <a href="#deviceidintitle">Device ID in Title</a> below.  </p>
 
-<p><img alt="" style="height:350px" src="title_bar_1.png"/></p>
+<p><img alt="" style="height:350px" src="title_bar_1.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -674,20 +773,20 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>character string</li>
 </ul>
 
-<h4 id="example-4">Example</h4>
+<h4 id="example-4" class="anchor"><a class="heading-anchor" href="#example-4"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;title&gt;MetaCorp Home Screen&lt;/title&gt;
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="deviceidintitle">Device ID in Title</h3>
+<h3 id="deviceidintitle" class="anchor"><a class="heading-anchor" href="#deviceidintitle"><span></span></a>Device ID in Title</h3>
 
 <p>Allows (dynamic) information that uniquely identifies the device to be displayed as the title bar text of the EHS home screen. Specify serial number, Wi-Fi MAC address, Wi-Fi host name, Bluetooth address, Bluetooth name or IMEI number.</p>
 
-<p><img alt="" style="height:350px" src="28_device_ID_title.png"/></p>
+<p><img alt="" style="height:350px" src="28_device_ID_title.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -720,9 +819,9 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <p><strong><u>WARNING</u>: Square brackets must not be used inside the &lt;value&gt; tags except as specified above</strong>. </p>
 
-<h4 id="example-5">Example</h4>
+<h4 id="example-5" class="anchor"><a class="heading-anchor" href="#example-5"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
         &lt;title&gt;
             &lt;value&gt;MetaCorp device #[serial_number]&lt;/value&gt;
         &lt;/title&gt;
@@ -741,13 +840,13 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><strong>Square brackets must not be used</strong> inside the &lt;value&gt; tags except as specified above. </li>
 </ul>
 
-<hr />
+<hr>
 
-<h3 id="titlebaricondisabled">Title Bar Icon Disabled</h3>
+<h3 id="titlebaricondisabled" class="anchor"><a class="heading-anchor" href="#titlebaricondisabled"><span></span></a>Title Bar Icon Disabled</h3>
 
 <p>Controls whether an icon is displayed in the Title Bar of the EHS home screen. <strong>A value of 0 (false) allows EHS to display the standard EHS icon or a custom icon specified in the <a href="#titlebariconfile">Title Bar Icon File parameter</a> below</strong>. </p>
 
-<p><img alt="" style="height:350px" src="ehs28_title_icon_panels.png"/></p>
+<p><img alt="" style="height:350px" src="ehs28_title_icon_panels.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -757,9 +856,9 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>0 - (displays EHS icon or icon specified <a href="#titlebariconfile">below</a>)</li>
 </ul>
 
-<h4 id="example-6">Example</h4>
+<h4 id="example-6" class="anchor"><a class="heading-anchor" href="#example-6"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;title_bar_icon&gt;
         &lt;title_bar_icon_disabled&gt;0&lt;/title_bar_icon_disabled&gt;
         &lt;title_bar_icon_file&gt;/storage/sdcard0/Android/data/com.symbol.enterprisehomescreen/files/title.jpg&lt;/title_bar_icon_file &gt; 
@@ -767,15 +866,15 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="titlebariconfile">Title Bar Icon File</h3>
+<h3 id="titlebariconfile" class="anchor"><a class="heading-anchor" href="#titlebariconfile"><span></span></a>Title Bar Icon File</h3>
 
 <p>Allows an image to be specified for display in the EHS Title Bar. <strong>Supports .bmp, .gif, .jpg, .png and .webp image formats of medium resolution</strong> (varies by device; some high-res images might not display). Image must be stored locally on the device and specified in the <code>enterprisehomescreen.xml</code> file or in the UI using the full path. Images are scaled (up or down) using the aspect ratio of the image to fill the available space (which varies by device). Default EHS icon (shown below) is displayed if tag is missing or left blank, or if the specified image file is missing or invalid. Icon can optionally be displayed on other screens. See <a href="#reusecustomicon">Reuse Custom Icon</a> below.</p>
 
 <p>When selecting an image using the Preferences panel UI, use tap-navigation to locate the image in the device file system or specify the file name and path using the keyboard (required for restricted areas not visible to the file browser). </p>
 
-<p><img alt="" style="height:350px" src="ehs_28_titlebar_icon.png"/></p>
+<p><img alt="" style="height:350px" src="ehs_28_titlebar_icon.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -795,9 +894,9 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><strong>Zebra recommends avoiding the use of removable storage for wallpaper and icon image files</strong>. <a href="../about/#androidnougatnotes">More info</a>.</li>
 </ul>
 
-<h4 id="example-7">Example</h4>
+<h4 id="example-7" class="anchor"><a class="heading-anchor" href="#example-7"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;title_bar_icon&gt;
         &lt;title_bar_icon_disabled&gt;0&lt;/title_bar_icon_disabled&gt;
         &lt;title_bar_icon_file&gt;/storage/sdcard0/Android/data/com.symbol.enterprisehomescreen/files/title.jpg&lt;/title_bar_icon_file &gt; 
@@ -805,13 +904,13 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="reusecustomicon">Reuse Custom Icon</h3>
+<h3 id="reusecustomicon" class="anchor"><a class="heading-anchor" href="#reusecustomicon"><span></span></a>Reuse Custom Icon</h3>
 
 <p>Optionally designates the custom graphic specified using the <a href="#titlebariconfile">Title Bar Icon File tag</a> (above) to display on most EHS screens, including those for Battery Info, Wireless Info, Preferences and the Tools menu (excludes "About" box). </p>
 
-<p><img alt="" style="height:350px" src="28_reuse_icon.png"/></p>
+<p><img alt="" style="height:350px" src="28_reuse_icon.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -821,9 +920,9 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><strong>0 - Do not reuse icon (default)</strong> </li>
 </ul>
 
-<h4 id="example-8">Example</h4>
+<h4 id="example-8" class="anchor"><a class="heading-anchor" href="#example-8"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;title_bar_icon&gt;
                &lt;title_bar_icon_file&gt;/storage/sdcard0/title.jpg&lt;/title_bar_icon_file &gt;
                &lt;reuse_custom_icon&gt;1&lt;/reuse_custom_icon&gt;
@@ -833,13 +932,13 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 
 <p><strong>Note: To hide a custom icon from the EHS screens effected by this tag (and display the default EHS logo instead), set the tag value to "0."</strong> The "Title Bar Icon Disabled" tag applies only to the home screen. </p>
 
-<hr />
+<hr>
 
-<h3 id="iconlabelbackground">Icon Label Background</h3>
+<h3 id="iconlabelbackground" class="anchor"><a class="heading-anchor" href="#iconlabelbackground"><span></span></a>Icon Label Background</h3>
 
 <p>Specifies the background color of the icon label text of apps and links displayed in Admin and User Modes. Default background is #00FFFFFF, which is transparent with an opacity value of 00 (from a range of 00 to FF). Get help <a href="http://www.colorpicker.com/">picking HTML color codes</a>.</p>
 
-<p><img alt="" style="height:350px" src="icon_label_bg.png"/>
+<p><img alt="" style="height:350px" src="icon_label_bg.png">
 <br></p>
 
 <p><strong>Code Key</strong>:</p>
@@ -862,9 +961,9 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>Color names: red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray and darkgray.</li>
 </ul>
 
-<h4 id="examples">Examples</h4>
+<h4 id="examples" class="anchor"><a class="heading-anchor" href="#examples"><span></span></a>Examples</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;icon_label_background_color&gt;#00FFFFFF&lt;/icon_label_background_color&gt;
     &lt;icon_label_background_color&gt;#75A319&lt;/icon_label_background_color&gt;
     &lt;icon_label_background_color&gt;#80EF671B&lt;/icon_label_background_color&gt;
@@ -872,13 +971,13 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="iconlabeltextcolor">Icon Label Text Color</h3>
+<h3 id="iconlabeltextcolor" class="anchor"><a class="heading-anchor" href="#iconlabeltextcolor"><span></span></a>Icon Label Text Color</h3>
 
 <p>Specifies the color of the icon label text of apps and links displayed in Admin and User Modes. The EHS default icon text color is #FFFFFFFF, that is white with an opacity value of FF (from a range of 00 to FF). Get help <a href="http://www.colorpicker.com/">picking HTML color codes</a>.</p>
 
-<p><img alt="" style="height:350px" src="icon_label_text.png"/>
+<p><img alt="" style="height:350px" src="icon_label_text.png">
 <br></p>
 
 <p><strong>Code Key</strong>:</p>
@@ -901,9 +1000,9 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li>Color names: red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray and darkgray.</li>
 </ul>
 
-<h4 id="examples-1">Examples</h4>
+<h4 id="examples-1" class="anchor"><a class="heading-anchor" href="#examples-1"><span></span></a>Examples</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;icon_label_text_color&gt;#FFFFFFFF&lt;/icon_label_text_color&gt;
     &lt;icon_label_text_color&gt;#75A319&lt;/icon_label_text_color&gt;
     &lt;icon_label_text_color&gt;#80EF671B&lt;/icon_label_text_color&gt;
@@ -911,15 +1010,15 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="orientation">Orientation</h3>
+<h3 id="orientation" class="anchor"><a class="heading-anchor" href="#orientation"><span></span></a>Orientation</h3>
 
 <p>Allows the screen orientation to be fixed in landscape or portrait mode. Omitting or leaving this setting blank (default) allows Android system settings to control screen orientation.  </p>
 
 <p>Screen orientation can be changed through the Quick Settings panel only when EHS is set to accept the System orientation setting (the EHS default). If an EHS administrator sets the orientation to landscape or portrait mode, the device user will no longer be able to change the orientation setting.</p>
 
-<h5 id="notes">NOTES:</h5>
+<h5 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>NOTES:</h5>
 
 <ul>
 <li><strong>Zebra recommends leaving this setting blank</strong> (default) if app- and system-control of screen orientation are desired.</li>
@@ -929,7 +1028,7 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><strong>Android orientation (auto-rotate/portrait/landscape) settings remain effective on non-EHS apps</strong> regardless of this parameter setting.</li>
 </ul>
 
-<p><img alt="" style="height:350px" src="orientation.png"/></p>
+<p><img alt="" style="height:350px" src="orientation.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -941,20 +1040,20 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><b>&lt;blank&gt; (accepts System setting; EHS default)</b></li>
 </ul>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-9" class="anchor"><a class="heading-anchor" href="#example-9"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;orientation&gt;&lt;/orientation&gt;
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="autolaunchenableapps">Auto Launch Enable (apps)</h3>
+<h3 id="autolaunchenableapps" class="anchor"><a class="heading-anchor" href="#autolaunchenableapps"><span></span></a>Auto Launch Enable (apps)</h3>
 
 <p>Enables one or more apps to be automatically launched after EHS starts up. Works with optional &lt;auto_launch&gt; section. When enabled, apps specified in the &lt;auto_launch&gt; section are launched after a specified delay. <b>BACK and HOME keys can be used to exit the app</b>. See the <a href="#optionalfeaturetags">Optional Feature Tags section</a> for more information. Disabled by default. See also: <a href="#kiosk">Kiosk Mode</a>. </p>
 
-<p><img alt="" style="height:350px" src="autolaunch.png"/></p>
+<p><img alt="" style="height:350px" src="autolaunch.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -964,20 +1063,20 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><b>0 (default)</b></li>
 </ul>
 
-<h4 id="example-10">Example</h4>
+<h4 id="example-10" class="anchor"><a class="heading-anchor" href="#example-10"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;auto_launch_enable&gt;0&lt;/auto_launch_enable&gt;
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="serviceautolaunchenable">Service Auto Launch Enable</h3>
+<h3 id="serviceautolaunchenable" class="anchor"><a class="heading-anchor" href="#serviceautolaunchenable"><span></span></a>Service Auto Launch Enable</h3>
 
 <p>Enables one or more services to be automatically launched after EHS starts up. Works with optional &lt;service_auto_launch&gt; section. When enabled, apps specified in the &lt;service_auto_launch&gt; section are launched after a delay, if specified. The Service Auto-Launch feature can be enabled/disabled in the <code>enterprisehomescreen.xml</code> file or Admin-Mode UI; Services must be specified in the config file. See the <a href="#optionalfeaturetags">Optional Feature Tags section</a> for details. Disabled by default. </p>
 
-<p><img alt="" style="height:350px" src="2-4_service_auto-launch.png"/></p>
+<p><img alt="" style="height:350px" src="2-4_service_auto-launch.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -987,20 +1086,20 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><b>0 (default)</b></li>
 </ul>
 
-<h4 id="example-11">Example</h4>
+<h4 id="example-11" class="anchor"><a class="heading-anchor" href="#example-11"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;service_auto_launch_enable&gt;1&lt;/service_auto_launch_enable&gt;
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="foregroundserviceautolaunchenable">Foreground Service Auto Launch Enable</h3>
+<h3 id="foregroundserviceautolaunchenable" class="anchor"><a class="heading-anchor" href="#foregroundserviceautolaunchenable"><span></span></a>Foreground Service Auto Launch Enable</h3>
 
 <p>Enables one or more services to be automatically launched in the foreground after EHS starts up. Works with optional &lt;foreground_service_auto_launch&gt; section. When enabled, apps specified in the &lt;foreground_service_auto_launch&gt; section are launched after a delay, if specified. The Foreground Service Auto-Launch feature can be enabled/disabled in the <code>enterprisehomescreen.xml</code> file or Admin-Mode UI (Oreo devices only); Services must be specified in the config file. See the <a href="#optionalfeaturetags">Optional Feature Tags section</a> for details. <strong>Disabled by default</strong>. </p>
 
-<p><img alt="" style="height:350px" src="EHS_foreground_service_launch.png"/></p>
+<p><img alt="" style="height:350px" src="EHS_foreground_service_launch.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -1010,22 +1109,22 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><b>0 (default)</b></li>
 </ul>
 
-<h4 id="example-12">Example</h4>
+<h4 id="example-12" class="anchor"><a class="heading-anchor" href="#example-12"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;foreground_service_auto_launch_enable&gt;1&lt;/foreground_service_auto_launch_enable&gt;
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="wallpaper">Wallpaper</h3>
+<h3 id="wallpaper" class="anchor"><a class="heading-anchor" href="#wallpaper"><span></span></a>Wallpaper</h3>
 
 <p>Allows a background image to be specified for display in Admin and User Modes. If left unspecified, the system's default image is displayed. <strong>Supports .bmp, .gif, .jpg, .png and .webp file formats. Resolution support varies by device</strong>. If a selected image fails to display, Zebra recommends scaling down the resolution or selecting a different image. </p>
 
 <p>When selecting an image using the Preferences panel UI, use tap-navigation to locate the image in the device file system or specify the file name and path using the keyboard (required for restricted areas not visible to the file browser). </p>
 
-<p><img alt="" style="height:350px" src="2-7_wallpaper.png"/></p>
+<p><img alt="" style="height:350px" src="2-7_wallpaper.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -1041,29 +1140,29 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><strong>Zebra recommends avoiding the use of removable storage for wallpaper and icon image files</strong>. <a href="../about/#androidnougatnotes">More info</a>.</li>
 </ul>
 
-<h4 id="example-13">Example</h4>
+<h4 id="example-13" class="anchor"><a class="heading-anchor" href="#example-13"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;wallpaper&gt;/enterprise/usr/mybackground.png&lt;/wallpaper&gt;
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="wallpaperstretching">Wallpaper Stretching</h3>
+<h3 id="wallpaperstretching" class="anchor"><a class="heading-anchor" href="#wallpaperstretching"><span></span></a>Wallpaper Stretching</h3>
 
 <p>Used to enable/disable the background image for display in Admin and User Modes to be stretched to fill the screen. Disabled by default. Stretching is disabled if this value is unspecified. <strong>See Wallpaper parameter for supported file format and location</strong>.  </p>
 
-<p><img alt="" style="height:350px" src="2-7_wallpaper_stretch.png"/></p>
+<p><img alt="" style="height:350px" src="2-7_wallpaper_stretch.png"></p>
 
 <p><em>EHS with default wallpaper</em>:
-<img style="height:250px" src="../about/default_wallpaper.png"/></p>
+<img style="height:250px" src="../about/default_wallpaper.png"></p>
 
 <p><em><strong>Stretching disabled</strong> (default) with custom wallpaper image</em>:
-<img style="height:275px" src="../about/default_no_stretching.png"/></p>
+<img style="height:275px" src="../about/default_no_stretching.png"></p>
 
 <p><em><strong>Stretching enabled</strong> with custom wallpaper image</em>:
-<img style="height:250px" src="../about/with_stretching.png"/></p>
+<img style="height:250px" src="../about/with_stretching.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -1073,20 +1172,20 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><b>0 (default)</b></li>
 </ul>
 
-<h4 id="example-14">Example</h4>
+<h4 id="example-14" class="anchor"><a class="heading-anchor" href="#example-14"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
       &lt;wallpaper_stretching_enabled &gt;0&lt;/wallpaper_stretching_enabled &gt;
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="fullscreen">Fullscreen</h3>
+<h3 id="fullscreen" class="anchor"><a class="heading-anchor" href="#fullscreen"><span></span></a>Fullscreen</h3>
 
 <p>EHS can be made to run in full-screen mode by setting the value of this tag to 1. Default is 0. Applies only to EHS; apps launched from within EHS behave as individually designed. Does not prevent access to the Android Status/Notification Bar on some devices.  </p>
 
-<p><img alt="" style="height:350px" src="fullscreen.png"/></p>
+<p><img alt="" style="height:350px" src="fullscreen.png"></p>
 
 <p><b>Possible values</b>:</p>
 
@@ -1096,18 +1195,18 @@ It might be necessary to also tap "txt" to specify the extension type.  </p>
 <li><b>0 (default)</b></li>
 </ul>
 
-<h4 id="example-15">Example</h4>
+<h4 id="example-15" class="anchor"><a class="heading-anchor" href="#example-15"><span></span></a>Example</h4>
 
-<pre><code>&lt;preferences&gt;
+<pre class="prettyprint"><code>&lt;preferences&gt;
     &lt;fullscreen&gt;1&lt;/fullscreen&gt;
 &lt;/preferences&gt;
 </code></pre>
 
-<hr />
+<hr>
 
-<h3 id="kioskmodeenabled">Kiosk Mode Enabled</h3>
+<h3 id="kioskmodeenabled" class="anchor"><a class="heading-anchor" href="#kioskmodeenabled"><span></span></a>Kiosk Mode Enabled</h3>
 
-<p>Causes the app specified in the &lt;kiosk&gt; section to be launched in full screen mode after EHS start-up and prevents use of BACK and HOME keys to exit the app. Disabled by default. See also: <a href="#autolaunch">Auto-Launch</a>. <!-- 10/18/18- removed L ref. per eng. **On Android L devices: Kiosk Mode should not be used with Screen Pinning, a feature in Android L that provides similar functionality**. --><p></p>
+<p>Causes the app specified in the &lt;kiosk&gt; section to be launched in full screen mode after EHS start-up and prevents use of BACK and HOME keys to exit the app. Disabled by default. See also: <a href="#autolaunch">Auto-Launch</a>. <!-- 10/18/18- removed L ref. per eng. **On Android L devices: Kiosk Mode should not be used with Screen Pinning, a feature in Android L that provides similar functionality**. --></p>
 
 <blockquote>
   <p>Once enabled, Kiosk Mode can be disabled by pushing a new config file with its tag set to "0" if USB Debugging is enabled. Otherwise a factory reset is required. Kiosk Mode also can be enabled/disabled programmatically from an Android application using Android Intents. For more information, see the <a href="../features/#disablekioskmode">Special Features section</a>.</p>
@@ -2005,9 +2104,7 @@ Refer to the examples below to see this the context of the `enterprisehomescreen
 <hr>
 
 <p>See the <a href="../features">Special Features Guide</a> for information about Kiosk Mode, Privileged Settings and other special EHS features and behaviors. </p><p></p>
- --&gt;                        
-
-<h2 id="redirecting-to-techdocs-archive-site" class="anchor"><a class="heading-anchor" href="#redirecting-to-techdocs-archive-site"><span></span></a>Redirecting to TechDocs archive site...</h2> 
+                                        
 
 
                                     </div>
@@ -2022,7 +2119,6 @@ Refer to the examples below to see this the context of the `enterprisehomescreen
         </div>
     </section>    
 
-
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -2036,15 +2132,73 @@ Refer to the examples below to see this the context of the `enterprisehomescreen
 					</div>
 			</div>
 		  </div>
-		</div>
-    <script>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                    </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
+                    <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+     -->            </div>
+            </div>
+        </footer><!--/#footer-->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
 
-    var new_domain = "zebra-techdocs-archive.netlify.app";
-    var old_domain = window.location.host;
-    var current_href = window.location.href;
-    var new_href = current_href.replace(old_domain,new_domain);
-    window.location = new_href;
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-    </script>
-                                        
-</div></body></html>
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>

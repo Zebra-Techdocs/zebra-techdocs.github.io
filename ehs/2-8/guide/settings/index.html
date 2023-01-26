@@ -117,46 +117,145 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-12 ">
-
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>EHS Advanced Settings</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="ehs-advanced-settings" class="anchor"><a class="heading-anchor" href="#ehs-advanced-settings"><span></span></a>EHS Advanced Settings</h1>
+                                    <p>
+                                            Enterprise Home Screen
+                                            2.8
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
                     <div id="mainContent" class="row">
                         <div class="col-sm-12">
-                            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <div class="blog-post blog-large fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
                             <!-- Start of guide -->
-                                <div class="service-box wow fadeInRight">
+                                <div class="service-box fadeInRight">
                                     <div class="">
 
-<!--                         <p><h2 id="overview">Overview</h2>
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>This section assumes a basic knowledge of Enterprise Home Screen and its capabilities and essential workings. For those not familiar with Zebra's free security tool for its Android devices, please see the <a href="../about">About</a> and <a href="../setup">Setup</a> pages before continuing with this guide. Also see the <a href="../features">Special Features Guide</a> for information about Kiosk Mode, Secure Mode and other special EHS features. </p>
 
 <p>The behavior of Enterprise Home Screen is controlled entirely through <code>enterprisehomescreen.xml</code>, an easy-to-read file that can be modified with any text editor. A default version of the file contains many common device security settings plus a few standard apps, and is part of every EHS installation. In many instances, all that's needed to begin using EHS is to add an organization's own applications and to apply preferred security and display settings. </p>
 
-<h4 id="aboutthisguide">About this Guide</h4>
+<h4 id="aboutthisguide" class="anchor"><a class="heading-anchor" href="#aboutthisguide"><span></span></a>About this Guide</h4>
 
 <p>This guide describes the how to add apps and configure settings using the <code>enterprisehomescreen.xml</code> config file alone (if the setting also can be configured through the GUI, a screenshot is shown). It details the interaction between EHS and the config file, and provides instructions for accessing and customizing the file for a company's specific requirements, and for deploying the settings to device(s). A detailed analysis of the config file follows, with explanations of each of the parameters and examples of how to configure them. </p>
 
 <p><b>Note</b>: Many of the capabilities of EHS also can be accomplished by other means on the device, either programmatically through <a href="../../../../emdk-for-android">EMDK</a> or remotely using <a href="../../../../stagenow">StageNow</a> or a third-party mobile device management (MDM) system (if supported by that MDM system). EHS simply puts these capabilities into a single tool.</p>
 
-<hr />
+<hr>
 
-<h2 id="workingwiththeconfigfile">Working with the Config File</h2>
+<h2 id="workingwiththeconfigfile" class="anchor"><a class="heading-anchor" href="#workingwiththeconfigfile"><span></span></a>Working with the Config File</h2>
 
 <p>This section describes important interactions between EHS and the <code>enterprisehomescreen.xml</code> config file, and instructions for retrieving, modifying and deploying the file to devices. </p>
 
-<hr />
+<hr>
 
-<h4 id="configfilelocation">Config File Location</h4>
+<h4 id="configfilelocation" class="anchor"><a class="heading-anchor" href="#configfilelocation"><span></span></a>Config File Location</h4>
 
 <ul>
-<li>The config file is initially stored in the <code>/enterprise/usr</code> directory on the device. <!-- (does not apply to <a href="../features#securemode">Secure Mode</a>)-->
+<li>The config file is initially stored in the <code>/enterprise/usr</code> directory on the device. <!-- (does not apply to <a href="../features#securemode">Secure Mode</a>)--></li>
 
 <li>This directory is <b>invisible</b> to most apps, <b>including Windows Explorer and Android File Transfer (Mac)</b>. </li>
 
 <li>The directory is <b>visible to Android File Browser</b>, which can be used to manage its contents. </li>
 
 <li>The file is <b>accessible via Android Debug Bridge (ADB)</b> "pull" and "push" commands. </li>
-
+</ul>
 
 <blockquote>
   <p><b>Note</b>: Use caution when exposing File Browser to users; it can be used to manipulate the EHS config file and change security or other settings.</p>
@@ -2027,9 +2126,7 @@ action="com.sample.androidserviceexample.MyService.downloadfile"/&gt;
 <hr>
 
 <p>See the <a href="../features">Special Features Guide</a> for information about Kiosk Mode, Secure Mode, Lockdown State and other special EHS features and behaviors. </p><p></p>
- --&gt;                        
-
-<h2 id="redirecting-to-techdocs-archive-site" class="anchor"><a class="heading-anchor" href="#redirecting-to-techdocs-archive-site"><span></span></a>Redirecting to TechDocs archive site...</h2> 
+                                        
 
 
                                     </div>
@@ -2044,7 +2141,6 @@ action="com.sample.androidserviceexample.MyService.downloadfile"/&gt;
         </div>
     </section>    
 
-
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -2058,15 +2154,73 @@ action="com.sample.androidserviceexample.MyService.downloadfile"/&gt;
 					</div>
 			</div>
 		  </div>
-		</div>
-    <script>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                    </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
+                    <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+     -->            </div>
+            </div>
+        </footer><!--/#footer-->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
 
-    var new_domain = "zebra-techdocs-archive.netlify.app";
-    var old_domain = window.location.host;
-    var current_href = window.location.href;
-    var new_href = current_href.replace(old_domain,new_domain);
-    window.location = new_href;
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-    </script>
-                                        
-</div></body></html>
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>
