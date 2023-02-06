@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Documentation for Zebra Technologies developer tools and utiltiescomp including EMDK for Android, EMDK for Xamarin, StageNow, Enterprise Browser.">
+    <meta name="author" content="Zebra Technologies">
+    <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
+    <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
+    <meta title="Enterprise Keyboard Customization">
+    <title>Enterprise Keyboard 自定义 - Zebra Technologies TechDocs</title><!-- core CSS --><link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/owl.carousel.css" rel="stylesheet">
+    <link href="/css/owl.transitions.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/prettify.css" rel="stylesheet">
+    <link href="/css/bootstrap-treenav.min.css" rel="stylesheet"><!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]--><script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
+    <link rel="shortcut icon" href="/favicon.ico">
+<script src="/js/jquery.js"></script></head><!--/head--><body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
+
+    <header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">切换导航</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/images/logo.png" alt="徽标" style="max-height:66px;float: inherit;
+    padding-right: 3px;"></a></div>
+                <div class="collapse navbar-collapse navbar-left"><ul class="nav navbar-nav"><li class="navbar-text pull-left"><strong>TechDocs</strong></li>
+                        <p class="navbar-text">Enterprise Keyboard 2.0</p></ul></div>
+                <div class="collapse navbar-collapse navbar-right"><ul class="nav navbar-nav"><li><a href="/enterprise-keyboard-cn/2-0/guide/about">关于</a></li>
+                        <li><a href="/enterprise-keyboard-cn/2-0/guide/setup">设置</a></li>
+                        <li><a href="/enterprise-keyboard-cn/2-0/guide/settings">自定义</a></li>
+                        <li><a href="/enterprise-keyboard-cn/2-0/download"><i class="fa fa-download"></i></a></li>
+                        <li><a href="/enterprise-keyboard-cn/2-0/search"><i class="fa fa-search"></i></a></li><!-- <li ><a href="/products">SDKs</a></li>
+                        <li ><a href="/samples">Samples</a></li>
+                        <li ><a href="/guides">Guides</a></li>
+                        <li ><a href="/tutorials">Tutorials</a></li>
+                        <li ><a href="/apis">APIs</a></li> --> <!-- <li><a href="#"><input type="text" class="st-default-search-input"></a></li> --> </ul>
+                </div>
+            </div><!--/.container--></nav><!--/nav--></header><!--/header--><div class="container-fluid"><section id="blog">
+        <div class="">
+            <section class="content-with-sidebar">
+            <div class="row">
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; "><ul class="nav"><li><strong>Enterprise Keyboard 自定义</strong></li></ul></nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">设备上的 MX 版本：</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">设备上的 OSX 版本：</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">设备上的 Android 版本：</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 JellyBean</option>
+                    					  <option value="17">4.2.x JellyBean</option>
+                    					  <option value="16">4.1.x JellyBean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">保存更改</button><button class="primary" id="btn_ClearSmartDocOptions">清除更改</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="enterprise-keyboard-customization" class="anchor"><a class="heading-anchor" href="#enterprise-keyboard-customization"><span></span></a>Enterprise Keyboard 自定义</h1>
+                                    <p>Enterprise Keyboard 2.0</p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
+                    <div id="mainContent" class="row">
+                        <div class="col-sm-12">
+                            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms"><!-- Start of guide --><div class="service-box wow fadeInRight">
+                                    <div class="">
+
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>概述</h2>
+
+<p>Enterprise Keyboard 在常备 Android 键盘的基础上构建，以提供将数据输入到 Zebra 设备中的更有效方式。Zebra 键盘允许在语言之间快速切换，可以直接从键盘扫描以收集数据，并且可以设置按键来执行特定任务。它还实施手指轻击，以便用于键入长按字符和滑动来切换键盘布局。</p>
+
+<p>Enterprise Keyboard 使用 Android 个人词典功能进行拼写更正和快捷方式替换，从而能够存储特定于行业的术语来帮助提高键盘输入的速度和准确性。术语可以使用 Zebra 的移动性扩展 <a href="../../../../mx">(MX)</a> 和 <a href="../../../../">StageNow</a> 工具进行保存和大规模部署。</p>
+
+<h2 id="customizingkeyboardsettings" class="anchor"><a class="heading-anchor" href="#customizingkeyboardsettings"><span></span></a>自定义键盘设置</h2>
+
+<p>通过 Android&ldquo;设置&rdquo;面板可访问 Enterprise Keyboard 设置：</p>
+
+<p>1.在设备上<b>打开&ldquo;设置&rdquo;面板</b>：<img alt="" style="height:350px" src="home_screen.png"> <br></p>
+
+<p>2.<b>轻触&ldquo;语言和输入&rdquo;控件</b>：<img alt="" style="height:350px" src="input_in_settings.png"> <br></p>
+
+<p>3.<b>轻触&ldquo;Enterprise Keyboard 设置&rdquo;按钮</b>：<img alt="" style="height:350px" src="ekb_settings_button.png"> <br></p>
+
+<p>5.<b>轻触要更改的设置</b>：<img alt="" style="height:350px" src="ekb_settings_panel.png"></p>
+
+<hr>
+
+<h3 id="languages" class="anchor"><a class="heading-anchor" href="#languages"><span></span></a>语言</h3>
+
+<p>默认情况下，Enterprise Keyboard 使用在 Android&ldquo;设置&rdquo;面板的&ldquo;语言和输入&rdquo;部分中选择的语言：</p>
+
+<p><img alt="" style="height:350px" src="android_lang.png"></p>
+
+<h5 id="switchfromsystemselectedlanguagetooneprovidedwithenterprisekeyboard" class="anchor"><a class="heading-anchor" href="#switchfromsystemselectedlanguagetooneprovidedwithenterprisekeyboard"><span></span></a>从系统选择的语言切换到随 Enterprise Keyboard 提供的语言：</h5>
+
+<p>1.在&ldquo;Enterprise Keyboard 首选项&rdquo;面板中<b>轻触&ldquo;语言&rdquo;</b>：<img alt="" style="height:350px" src="ekb_settings_panel.png">此版本的 Enterprise Keyboard 包括以下语言：</p><ul><li>英语（英国）</li>
+
+<li>英语（美国）</li>
+
+<li>法语</li>
+
+<li>意大利语</li>
+
+<li>德语</li>
+
+<li>西班牙语</li>
+
+<li>俄语</li></ul><p>2.<b>取消选中&ldquo;使用系统语言&rdquo;复选框</b>：<img alt="" style="height:350px" src="pref_language.png"> <br></p>
+
+<p>在取消选中&ldquo;使用系统语言&rdquo;首选项的情况下，可选择语言包。</p>
+
+<p>3.<b>轻触一种或多种语言</b>以选择它们：<img alt="" style="height:350px" src="pref_language_2.png"> <br></p><!--
+Selected languages will appear in the language  menu in the Enterprise Keyboard: 
+<img alt="" style="height:350px" src="sample_2.png"/>
+<br>
+--><hr>
+
+<h3 id="preferences" class="anchor"><a class="heading-anchor" href="#preferences"><span></span></a>首选项</h3>
+
+<p>&ldquo;首选项&rdquo;部分控制按键反馈、默认布局和选项卡选项以及其他有助于提高工作效率的内容。默认设置如下所示：</p>
+
+<p><img alt="" style="height:350px" src="ekb_prefs.png"> <img alt="" style="height:91px" src="ekb1.6_prefs_crop.png"> <br></p>
+
+<h5 id="setpreferencesasdesired" class="anchor"><a class="heading-anchor" href="#setpreferencesasdesired"><span></span></a>根据需要设置首选项：</h5>
+
+<p><b><u>自动大写</u></b>会自动使每个跟随在句点后的句子的第一个字词大写。</p>
+
+<p><b><u>双击空格键输入句点</u></b>会在双击空格键之后自动插入句点和空格。</p>
+
+<p><b><u>按键时振动</u></b>会将设备设置为在按下按键时振动。可在<a href="#advanced">&ldquo;高级&rdquo;设置</a>中配置持续时间。</p>
+
+<p><b><u>按键时发声</u></b>会在按下按键时播放声音。可在<a href="#advanced">&ldquo;高级&rdquo;设置</a>中配置音量。</p>
+
+<p><b><u>按键时弹出</u></b>会显示所按的按键的弹出窗口。 <!--A delay can be added in <a href="#advanced">Advanced settings</a>.--></p>
+
+<p><b><u>语音输入键</u></b>会显示一个按键，允许 Enterprise Keyboard 接受使用麦克风讲出来的输入内容（仅在启用了 GMS 的设备上）。</p>
+
+<p><b><u>显示扫描选项卡</u></b>会显示一个选项卡，用于切换到扫描器以收集条码数据。在 Enterprise Keyboard 中扫描需要在设备上启用 <a href="#datawedge">DataWedge 服务</a>。</p>
+
+<p><b><u>轻击</u></b>使得可以通过&ldquo;轻击&rdquo;按键来输入备选（长按）字符。</p>
+
+<p><b><u>数字（电话）</u></b>布局在数字键盘处于焦点时会出现。当禁用时，会使用计算器布局。</p><!-- 
+<img alt="" style="height:350px" src="ekb1.6_nav.png"/>
+<br>
+ --><h5 id="ondeviceswithmx71andhigheronly" class="anchor"><a class="heading-anchor" href="#ondeviceswithmx71andhigheronly"><span></span></a>仅在具有 MX 7.1 及更高版本的设备上：</h5>
+
+<p><b><u>导航</u></b>控制在键盘布局之间导航的方式。&ldquo;<b>选项卡</b>&rdquo;模式允许通过在布局上滑动（以显示相邻布局）或直接在所需布局选项卡上轻触来切换布局。除了在显示拼写更正（如果启用）时，选项卡栏始终可见。&ldquo;<b>按键</b>&rdquo;模式允许使用按键来切换布局。此类按键通常在布局的左下角。<strong>请参阅下面的重要布局备注</strong>。</p><!-- 
+<img alt="" style="height:350px" src="ekb1.6_prefs.png"/>
+<br>
+ --><p><b><u>选项卡配置</u></b>使用户或管理员可以启用或禁用数字、字母数字、符号和/或扫描按键布局选项卡，使它们在视图中隐藏以及阻止显示相应布局。 <!-- **EKB will not permit all four tabs to be disabled at the same time**. --></p>
+
+<p><b><u>选择首选选项卡</u></b>会使选定选项卡在每次调用 EKB 时出现。此选项可从&ldquo;选项卡配置&rdquo;面板中进行控制（如下所示）。</p>
+
+<p><img alt="" style="height:350px" src="ekb1.6_tab_config.png"> <br></p>
+
+<p><strong>选项卡栏备注</strong>：</p><ul><li>如果选项卡栏或建议栏均处于启用状态，则两者都会显示。</li>
+
+<li>如果&ldquo;下一个字词建议&rdquo;栏和语音输入键均处于禁用状态，则不会显示选项卡栏。</li>
+
+<li>在 GMS 设备上，如果启用了语音并且禁用了下一个字词建议功能，则会在建议字词时在选项卡栏上方显示空白建议栏。</li>
+
+<li>如果启用了 <code>TYPE_TEXT_FLAG_NO_SUGGESTIONS</code> 输入类型，则选项卡栏和建议栏都不会显示。<a href="https://developer.android.com/reference/android/text/InputType.html">有关 Android 输入类型的更多信息</a>。</li>
+
+<li>启用&ldquo;符号&rdquo;选项卡将禁止重映射数字 P3 键。</li>
+
+<li>启用&ldquo;字母数字&rdquo;选项卡将禁止重映射数字 P4 和符号 P1 键。</li>
+
+<li>启用&ldquo;数字&rdquo;选项卡将禁止重映射字母数字 P1 键。</li>
+
+<li>仅在具有 MX 7.1 及更高版本的设备上才支持导航和选项卡配置功能。</li></ul><hr>
+
+<h3 id="textcorrection" class="anchor"><a class="heading-anchor" href="#textcorrection"><span></span></a>文本更正</h3>
+
+<p>文本更正基于下面说明的预定义参数控制对键入的文本进行的自动更正。此功能由个人词典提供，后者还允许将自定义或特定于行业的术语和快捷方式（缩写）列表加载到设备中，并作为替代建议与所选语言的建议一起呈现。</p>
+
+<p><img alt="" style="height:350px" src="pref_text_2.png"> <br></p>
+
+<h5 id="setpreferencesasdesired-1" class="anchor"><a class="heading-anchor" href="#setpreferencesasdesired-1"><span></span></a>根据需要设置首选项：</h5>
+
+<p><b><u>阻止冒犯性字词</u></b>会阻止显示按照外部礼貌标准可能被认为有攻击性或冷漠的拼写建议。</p>
+
+<p><b><u>自动更正</u></b>会自动将拼写错误的字词替换为在附加和个人词典中找到的字词（请参见下文）。通过按下空格键来执行替换。</p>
+
+<p><b><u>显示更正建议</u></b>会在键入时显示建议字词，但不会在按下空格键时替换它们，除非还启用了自动更正。</p>
+
+<p><b><u>个性化建议</u></b>会从通信和键入的数据进行学习以改善建议。</p>
+
+<p><b><u>建议联系人姓名</u></b>会在键入姓名时自动显示通讯录中的联系人。</p>
+
+<p><b><u>下一个字词建议</u></b>会在键入一个字词之前查看单词，并显示接下来可能出现的字词。此功能有时称为&ldquo;预测文本&rdquo;。</p>
+
+<hr>
+
+<h4 id="personaldictionary" class="anchor"><a class="heading-anchor" href="#personaldictionary"><span></span></a>个人词典</h4>
+
+<p>个人词典可以用于存储特定于行业的术语及其缩写，以帮助提高键盘输入的速度和准确性。例如，如果为医疗设备进行配置，则可将缩略词 &quot;gerd&quot; 添加为快捷方式，并在每次键入它时替换为 &quot;gastroesophageal reflux disease&quot;。</p>
+
+<p><img alt="" style="height:350px" src="pref_text_1.png"> <br></p>
+
+<p><b>注意</b>：</p><ul><li>术语可以逐个或批量添加到个人词典中。</li>
+
+<li>对于批量加载，请参阅 StageNow 的 <a href="/stagenow/latest/csp/personaldictionary/">Personal Dictionary Manager</a>。</li>
+
+<li>对于可以输入到个人词典中的术语和短语的长度，没有设置限制。</li>
+
+<li>当显示时，较长术语和短语可能会在更正栏中被注入省略号 (...)。</li>
+
+<li>拼写更正并非对所有字段类型都会出现。</li>
+
+<li>对于大规模部署，必须使用 Zebra 的 <a href="../../../../">StageNow</a> 工具预先填充个人词典。</li></ul><h5 id="addatermtothepersonaldictionary" class="anchor"><a class="heading-anchor" href="#addatermtothepersonaldictionary"><span></span></a>将术语添加到个人词典：</h5>
+
+<p>1.在文本更正&ldquo;首选项&rdquo;面板中<b>轻触&ldquo;个人词典&rdquo;</b>：<img alt="" style="height:350px" src="personal_dic.png"> <br></p>
+
+<p>2.<b>轻触要与个人术语关联的语言</b>。选择&ldquo;用于所有语言&rdquo;以显示在每个语言包中提供的个人词典术语： <br> <img alt="" style="height:350px" src="pref_dic.png"> <br></p>
+
+<p>3.<b>轻触加号 (+)</b> 以定义新字词或短语：<img alt="" style="height:350px" src="pref_dic_add.png"> <br></p>
+
+<p>3.<b>输入字词或短语</b>（以及快捷方式，如果需要），然后<b>轻触齿轮图标以保存</b>。<img alt="" style="height:350px" src="enter_term_gerd.png"> <br></p>
+
+<p>4.<b>重复步骤 3 和 4</b>，直至添加所有术语。<b>字词和/或短语必须逐个添加</b>。添加每个术语之后，会显示术语列表：<img alt="" style="height:350px" src="term_list_gerd.png"> <br></p>
+
+<p>当键入快捷方式作为输入时，其关联术语会出现在拼写更正列表中：<img alt="" style="height:350px" src="autocorrected_gerd.png">按下空格键以接受突出显示的字词（在本例中为 &quot;Gerd&quot;），或是轻触所需字词或短语以插入它。 <br></p>
+
+<p><strong>注意</strong>：为了最大化用于应用程序的屏幕空间，拼写更正栏与键盘导航选项卡栏共享空间。当显示更正时，导航栏会暂时淡出。</p>
+
+<blockquote>
+  <p>对于批量加载，请参阅 <a href="/stagenow/latest/csp/personaldictionary/">Personal Dictionary Manager</a>。</p>
+</blockquote>
+
+<h5 id="editordeleteaterm" class="anchor"><a class="heading-anchor" href="#editordeleteaterm"><span></span></a>编辑或删除术语：</h5>
+
+<p>1.打开术语列表，然后<b>轻触要编辑的术语</b>：<img alt="" style="height:350px" src="term_list_gerd.png"> <br></p>
+
+<p>2.<b>编辑术语</b>或轻触垃圾桶图标以删除：<img alt="" style="height:350px" src="enter_term_gerd.png"> <br></p>
+
+<h4 id="addondictionaries" class="anchor"><a class="heading-anchor" href="#addondictionaries"><span></span></a>附加词典</h4>
+
+<p>附加词典包含在设备上安装的每种语言的预定义字词更正。<!--As Enterprise Keyboard is used, it stores new words and patterns of frequently used words and phrases so that its word suggestions can improve over time.Those words and patterns are appended to the Add-on dictionaries according to language in use by the keyboard at the time the pattern was identified. -->在此面板中，用户操作仅限于查看已安装的附加词典的列表以及删除/重新安装它们。不允许执行其他操作。</p><img alt="" style="height:350px" src="pref_dic_addon_1.png"> <!--
+<img alt="" style="height:350px" src="pref_dic_addon_2.png"/>
+
+<img alt="" style="height:350px" src="pref_dic_addon_3.png"/>
+--><hr>
+
+<h3 id="advanced" class="anchor"><a class="heading-anchor" href="#advanced"><span></span></a>高级</h3>
+
+<p>通过&ldquo;高级&rdquo;面板可以为在&ldquo;首选项&rdquo;面板中启用的反馈类型设置按键反馈参数。下图显示声音反馈已禁用（默认情况）： <br> <img alt="" style="height:350px" src="pref_advanced.png"> <br></p>轻触某个设置以打开一个面板来调整该设置： <!--
+<b>Key Popup dismiss delay</b> controls whether to delay when dismissing the key popup. 
+<img alt="" style="height:150px" src="adv_popup.png"/>
+<br>--><p><b>按键振动持续时间</b>设置设备为了指示按键被按下而振动的时间长度（从 0 到 100 毫秒，默认值为 0 毫秒）。<img alt="" style="height:150px" src="adv_vibrate.png"> <br></p>
+
+<p><b>按键声音音量</b>控制与按键同时发出的声音的响度（从 0 到 100，默认值为系统设置）。<img alt="" style="height:150px" src="adv_sound.png"> <br></p>
+
+<p><b>键长按延迟</b>设置在被视为长按之前必须按住按键的时间（从 100 到 700 毫秒，默认值为 300 毫秒）。<img alt="" style="height:150px" src="adv_longpress.png"> <br></p>
+
+<hr>
+
+<h3 id="remappingkeys" class="anchor"><a class="heading-anchor" href="#remappingkeys"><span></span></a>重映射按键</h3>
+
+<p>Enterprise Keyboard 将某些按键指定为用户可编程：一个在字母数字布局中，四个在数字布局中，还有一个在符号按键布局中。&ldquo;重映射&rdquo;面板显示每个按键的当前字符和 Unicode 映射。下图显示默认设置，包括映射到表情符号面板的字母数字和符号 P1 键。</p>
+
+<p><img alt="" style="height:150px" src="keyboard_alone.png"> <em>可以在字母数字布局中重映射一个按键</em>。 <br></p>
+
+<p><img alt="" style="height:150px" src="keyboard_numerical.png"> <em>可以在数字布局中重映射四个按键</em>。 <br></p>
+
+<p><img alt="" style="height:150px" src="EKB_symbol_layout.png"> <em>可以在符号布局中重映射一个按键</em>。 <br></p>
+
+<p><img alt="" style="height:350px" src="EKB_18_remapping_panel.png"> <em>显示可重映射按键的当前设置的&ldquo;重映射&rdquo;面板；轻触以编辑</em>。</p>
+
+<p><br></p>
+
+<h5 id="toremapakey" class="anchor"><a class="heading-anchor" href="#toremapakey"><span></span></a>要重映射按键：</h5>
+
+<p>1.轻触 EKB 应用程序 &gt;&ldquo;重映射&rdquo;，然后<b>轻触要重映射的按键</b>：<img alt="" style="height:350px" src="remap.png"> <br></p>
+
+<p>2.<b>指定 Unicode 值或键入备选字符</b>以便与该按键关联： <br> <img alt="" style="height:350px" src="remap_keypad.png"> <br></p>
+
+<p>3.<b>轻触&ldquo;确定&rdquo;</b>以存储设置。更改会立即生效。</p>
+
+<hr>
+
+<h2 id="datawedge" class="anchor"><a class="heading-anchor" href="#datawedge"><span></span></a>DataWedge</h2>
+
+<p>Enterprise Keyboard 中的扫描选项卡使用 <a href="../../../../">DataWedge</a>（包含在每个 Zebra 设备中的 Zebra 数据采集和交付工具）提供的扫描服务。<b>必须在设备上启用 DataWedge，扫描选项卡才能正常工作</b>。</p>
+
+<p><img alt="" style="height:350px" src="scan_tab.png"> <br></p>
+
+<p><strong>要在设备上启用 DataWedge</strong>（或确认它已启用）：</p>
+
+<p>1.在设备上，找到并<b>轻触 DataWedge 图标</b>：<img alt="" style="height:350px" src="datawedge_home_screen.png"> <br></p>
+
+<p>2.在 DataWedge&ldquo;配置文件&rdquo;屏幕中，轻触&ldquo;汉堡&rdquo;菜单（请参见箭头），然后在该菜单上<b>轻触&ldquo;设置&rdquo;</b>：<img alt="" style="height:350px" src="datawedge_settings.png"> <br></p>
+
+<p>3.DataWedge&ldquo;设置&rdquo;面板会出现。确认选中<b>&ldquo;DataWedge 已启用&rdquo;</b>框。<img alt="" style="height:350px" src="datawedge_enabled.png"> <br></p>
+
+<p><strong>重要说明</strong>：请参阅下面的<a href="#scannercontrol">扫描器控制</a>部分。</p>
+
+<p>有关使用 Enterprise Keyboard 进行扫描的更多信息，请参阅 <a href="../setup">Enterprise Keyboard 设置</a>。</p>
+
+<p>有关完整文档，另请参阅 <a href="../../../../">DataWedge 用户指南</a>。</p>
+
+<hr>
+
+<h2 id="dynamicinputmethod" class="anchor"><a class="heading-anchor" href="#dynamicinputmethod"><span></span></a>动态输入法</h2>
+
+<p><strong><em>此功能仅适用于本机应用程序</em></strong>。</p>
+
+<p>Enterprise Keyboard（1.2 及更高版本）支持对输入法编辑器 (IME) 的编程访问，这可以根据所选字段动态更改输入法。例如，当光标进入旨在用于条码数据的字段时，可以自动调用扫描选项卡以及用于填充字段的设备扫描器。当光标位于文本字段上时，键盘会返回，诸如此类。</p>
+
+<p><strong>要将输入法设置为静态</strong>：</p><ul><li>在 <code>StaticLayout.xml</code> 文件的 &lt;EditText&gt; 字段中包含 <code>android:privateImeOptions=&quot;scan&quot;</code> 行，如下所示：</li></ul><p><img alt="" style="height:350px" src="IME_code_placement.png"> <em>Android Studio 中的 StaticLayout.xml 文件的 EditText 参数。单击图像放大</em>。 <br></p>
+
+<p><strong>要将输入法设置为动态</strong>：</p><ul><li>将 &quot;scan&quot; 作为参数来调用 <code>setPrivateImeOptions()</code> 方法，如下所示： <ul><li><code>editTextTest.setPrivateImeOptions(&quot;scan&quot;)</code></li></ul></li></ul><p><strong><em>此功能仅适用于本机应用程序</em></strong>。</p>
+
+<hr>
+
+<h2 id="tabkeynavigation" class="anchor"><a class="heading-anchor" href="#tabkeynavigation"><span></span></a>Tab 键导航</h2>
+
+<p>Tab 键设计为将光标或 UI 焦点从一个文本字段或 UI 组件移到下一个文本字段或 UI 组件。在不知道此上下文的应用程序中，Enterprise Keyboard Tab 键可能会输入空格，而不是移动光标。对于 HTML 应用程序，Zebra 建议使用 Tab 键在字段之间导航。有关本机应用程序导航的帮助，请参阅 Android 开发人员文档以了解有关 <a href="https://developer.android.com/training/keyboard-input/navigation.html">Android Tab 键导航</a>的信息。</p>
+
+<hr>
+
+<h2 id="scannercontrol" class="anchor"><a class="heading-anchor" href="#scannercontrol"><span></span></a>扫描器控制</h2>
+
+<p>值得注意的是，<strong>设备条码扫描硬件的控制具有排他性</strong>。当使用扫描器的应用程序处于活动状态（例如，通过 EMDK 创建的使用条码 API 的应用程序）时，DataWedge（因而还有 Enterprise Keyboard 扫描选项卡）不会运行。同样，当 Enterprise Keyboard 等应用程序控制扫描硬件时，系统会阻止其他应用程序这样做。因此，了解如何控制设备的扫描器硬件非常重要，如有必要，在完成扫描时将其对其他应用程序释放。有关更多信息，请参阅 <a href="../../../../datawedge">DataWedge 用户指南</a>中的<a href="../../../../datawedge/6-0/guide/setup/#disabledatawedge">禁用 DataWedge</a> 部分。</p><p></p>
+                                        
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-sm-6--></div>
+            </section>
+        </div>
+    </section>    
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+					</div>
+					<div class="modal-body">
+						<div id="modalImg">
+						
+						</div>
+					</div>
+			</div>
+		  </div>
+		</div></div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">© 2019 ZIH Corp. 和/或其附属公司。保留所有权利。Zebra 和标志性的斑马头像是 ZIH 公司在全球许多司法管辖区内注册的商标。所有其他商标均为其各自所有者的财产。<a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">条款与条件</a></div><!-- 10/17/18- remove navbar fixed class, social icons
+                    <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+     --></div>
+            </div>
+        </footer><!--/#footer--><script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>
