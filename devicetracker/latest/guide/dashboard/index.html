@@ -239,6 +239,8 @@
 
 <p>Device Tracker supports a single session for each user login and does not support multiple login sessions.&nbsp;If an admin or manager logs in to multiple browser sessions or devices using the same user login, the login sessions are automatically terminated after a period of time.</p>
 
+<p>The web portal also provides data reports to administrators. Daily device summary reports can be sent to designated recipients.</p>
+
 <hr>
 
 <h2 id="administratordashboard" class="anchor"><a class="heading-anchor" href="#administratordashboard"><span></span></a>Administrator Dashboard</h2>
@@ -1543,27 +1545,29 @@ To perform a device search:</p>
 
 <h2 id="reports" class="anchor"><a class="heading-anchor" href="#reports"><span></span></a>Reports</h2>
 
-<p>Reports are provided in the web portal for managers and administrators to monitor device performance, user activity and site activity. All data reports are logged in America/Chicago time (CST). If multiple days are selected for the report, the report is provided in a single .ZIP file containing multiple .CSV files, one .CSV file per day. If the data report exceeds 1 GB in size for any day, the report is split into multiple files. Data history remains for up to 3 months.</p>
+<p>Reports are provided in the web portal for administrators to monitor device performance, user activity and site activity. Administrators can designate managers or others to receive End of Day Device Summary reports by email.</p>
+
+<p>All data reports are logged in America/Chicago time (CST). If multiple days are selected for the report, the report is provided in a single .ZIP file containing multiple .CSV files, one .CSV file per day. If the data report exceeds 1 GB in size for any day, the report is split into multiple files. Data history remains for up to 3 months.</p>
 
 <h3 id="eventsbysite" class="anchor"><a class="heading-anchor" href="#eventsbysite"><span></span></a>Events By Site</h3>
 
-<p><em>Events By Site</em> provides a report of event counts per site based on the date range selected. An event is considered as a state change from one device state to another, regardless of the duration the device remains in the new state. The events for this report are based on the device finding process, device charging and low battery. The device count for the states are cumulative, incrementing each time a device reaches that state. Data is collected every day at 3 am America/Chicago time (CST) no matter which region the user is located.</p>
+<p><em>Events By Site</em> provides a report of event changes based on the transition of device status/states (e.g. disconnected, found, not found, low battery, etc.) per site within the date range selected. An event is considered as a state change from one device state to another, regardless of the duration the device remains in the new state. The events for this report are based on the device finding process, device charging and low battery. The device count for the states are cumulative, incrementing each time a device reaches that state. Data is collected every day at 3 am America/Chicago time (CST) no matter which region the user is located.</p>
 
 <p>To view <em>Events By Site:</em></p>
 
 <ol>
-<li>Login to the web portal as an administrator or manager.</li>
+<li>Login to the web portal as an administrator.</li>
 
 <li>Click <strong>Reports</strong> in the left menu and click <strong>Events By Site.</strong></li>
 
-<li>For administrators, in the <strong>Site</strong> dropdown, select the specific site to generate the report for or select <strong>All</strong> to generate a report for all sites. For managers, only the data for their assigned site can be viewed.</li>
+<li>In the <strong>Site</strong> dropdown, select the specific site for which to generate the report, or select <strong>All</strong> to generate a report for all sites. <!-- For administrators, in the **Site** dropdown, select the specific site to generate the report for or select **All** to generate a report for all sites. For managers, only the data for their assigned site can be viewed. --></li>
 
 <li>Select the start date and end date to generate the report.</li>
 
 <li>The data is displayed.</li>
 
-<li>To download the displayed data in .CSV format, click <strong>Download Data.</strong>
-<img alt="image" style="height:350px" src="report-events-by-site.png"></li>
+<li>To download the displayed data in .CSV format, click <strong>Export Data.</strong>
+<img alt="image" style="height:300px" src="report-events-by-site.png"></li>
 </ol>
 
 <p>Data displayed (all device counts are cumulative):</p>
@@ -1654,7 +1658,7 @@ Data displayed (all device counts are cumulative):
 
 <h3 id="endofdaydevicesummary" class="anchor"><a class="heading-anchor" href="#endofdaydevicesummary"><span></span></a>End of Day Device Summary</h3>
 
-<p><em>End of Day Device Summary</em> provides a snapshot of device counts based on their status at that moment in time. The data is <em>not</em> cumulative. This summary report helps managers to identify and track the accountability of devices at the end of the day on a daily basis. Managers and administrators can display data based on site location, or administrators can display data across all sites.</p>
+<p><em>End of Day Device Summary</em> provides a snapshot of device counts based on their status at that moment in time (e.g. disconnected, found, not found, low battery, etc.). The data is <em>not</em> cumulative. This summary report helps to identify and track the accountability of devices at the end of the day on a daily basis. From the web portal, administrators can display data based on site location or display data across all sites.</p>
 
 <!--
 Data is not available for the current date until the _scheduledReportTime_ _end of day" time is reached.
@@ -1662,22 +1666,22 @@ The report is generated once a day on a daily basis based on the _scheduledRepor
 when the [site is registered](../config/#managesites). The end of day summary report is viewable from the web portal, or an email can automatically be sent to designated managers or administrators.
 -->
 
-<p><em>End of Day Device Summary</em> reports can be sent by email to managers and administrators. The email recipients and scheduled report time are configured either manually or through .CSV file import. The report is sent by email each day when the specified scheduled report time is reached. It is sent from email address <code>zdtrksupport@zebra.com</code> to the list of email recipients. Each site can be configured with different scheduled report times. Data is not available for the current date until the scheduled report time elapses.</p>
+<p><em>End of Day Device Summary</em> reports can be sent by email to administrators, managers or other users. The email recipients and scheduled report time are configured either <a href="../config/#managesites">manually or through .CSV file import</a>. The report is sent by email each day when the specified scheduled report time is reached. It is sent from email address <code>zdtrksupport@zebra.com</code> to the list of email recipients. Each site can be configured with different scheduled report times. Data is not available for the current date until the scheduled report time elapses.</p>
 
 <p>To view <em>End of Day Device Summary:</em></p>
 
 <ol>
-<li><p>Login to the web portal as an administrator or manager.</p></li>
+<li><p>Login to the web portal as an administrator.</p></li>
 
 <li><p>Click <strong>Reports</strong> in the left menu and click <strong>End of Day Device Summary.</strong></p></li>
 
-<li><p>For administrators, in the <strong>Site</strong> dropdown, select the specific site to generate the report for or select <strong>All</strong> to generate a report for all sites. For managers, only the data for their assigned site can be viewed.</p></li>
+<li><p>In the <strong>Site</strong> dropdown, select the specific site for which to generate the report, or select <strong>All</strong> to generate a report for all sites. <!-- For administrators, in the **Site** dropdown, select the specific site to generate the report for or select **All** to generate a report for all sites. For managers, only the data for their assigned site can be viewed.--></p></li>
 
 <li><p>Select the date to generate the report.</p></li>
 
 <li><p>The data is displayed.</p></li>
 
-<li><p>To download the displayed data in .CSV format, click <strong>Download Data.</strong></p>
+<li><p>To download the displayed data in .CSV format, click <strong>Export Data.</strong></p>
 
 <p><img alt="image" style="height:350px" src="report-end-of-day-device-summary.png"></p></li>
 </ol>
