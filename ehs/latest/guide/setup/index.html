@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Zebra EHS 4.2
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Zebra EHS 5.0
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('2-4','2-3','/ehs/4-2/guide/about')">Zebra EHS 3.0</a></li>
+                                <li><a onclick="changeVersion('2-4','2-3','/ehs/5-0/guide/about')">Zebra EHS 3.0</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,32 +65,32 @@
 
 
                         <li>
-                            <a href="/ehs/4-2/guide/about">
+                            <a href="/ehs/5-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-2/guide/setup">
+                            <a href="/ehs/5-0/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-2/guide/settings">
+                            <a href="/ehs/5-0/guide/settings">
                                     Advanced Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-2/guide/features">
+                            <a href="/ehs/5-0/guide/features">
                                     Special Features
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-2/download">
+                            <a href="/ehs/5-0/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/ehs/4-2/search">
+                            <a href="/ehs/5-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="zebra-ehs-setup" class="anchor"><a class="heading-anchor" href="#zebra-ehs-setup"><span></span></a>Zebra EHS Setup</h1>
                                     <p>
                                             Zebra EHS
-                                            4.2
+                                            5.0
                                     </p>
                                 </div>
                             </section>                    
@@ -241,25 +241,80 @@
 
 <h2 id="manualinstallation" class="anchor"><a class="heading-anchor" href="#manualinstallation"><span></span></a>Manual Installation</h2>
 
-<p>These instructions apply to direct installation (from a computer to a single device) using the EHS 4.x installer (.apk) file. </p>
+<p>These instructions apply to direct installation (from a computer to a single device) using the EHS 5.x installer (.apk) file. </p>
 
 <h3 id="compatibilitynotes" class="anchor"><a class="heading-anchor" href="#compatibilitynotes"><span></span></a>Compatibility Notes</h3>
+
+<h4 id="ossupport" class="anchor"><a class="heading-anchor" href="#ossupport"><span></span></a>OS Support</h4>
 
 <ul>
 <li><strong>Supports Android 10 and Android 11 on <a href="../about/#supporteddevices">supported devices</a> only</strong>. </li>
 
 <li><strong>No longer supports devices running Android versions prior to Android 10</strong>. </li>
 
-<li>Download package includes a single <code>.apk</code> file <code>EHS_xxxxxx.apk</code> for all supported devices <strong><em>including</em> TC20/TC25</strong></li>
+<li><strong>EHS 5.0 requires the following</strong>: 
+
+
+<ul>
+<li><strong>Devices running Android 10</strong>: LifeGuard update <code>10-16-10.00-QG-U114-STD-HEL-04</code> (or later) </li>
+
+<li><strong>Devices running Android 11</strong>: LifeGuard update <code>11-23-13.00-RG-U00-STD-HEL-04</code> (or later) </li></ul>
+</li>
+</ul>
+
+<h4 id="iclassfafaexclamationcirclestylecolorff0000iuninstallationrequired" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcirclestylecolorff0000iuninstallationrequired"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Uninstallation Required</h4>
+
+<h5 id="packagenamechange" class="anchor"><a class="heading-anchor" href="#packagenamechange"><span></span></a>Package Name Change</h5>
+
+<ul>
+<li>EHS 5.0 and subsequent versions have the following package name: <br>
+
+
+<ul>
+<li><strong>EHS 5.0 (and later)</strong>: <code>com.zebra.mdna.enterprisehomescreen</code>  </li>
+
+<li><strong>All prior versions</strong>: <code>com.symbol.enterprisehomescreen</code>  </li></ul>
+</li>
+
+<li><strong>Previous EHS versions (with the old package name) <u>cannot be upgraded</u> to EHS 5.0</strong>. </li>
+
+<li><strong>EHS versions prior to 5.0 <u>must be uninstalled</u></strong>.<br>
+Android does NOT support upgrading an app to a newer version with a different package name.</li>
+
+<li><strong>EHS must again be desngnated as the default launcher</strong>. </li>
+
+<li><strong>All new features and device support will be added to EHS 5.0</strong> (and later) and delivered under the new package name. </li>
+
+<li>Previous versions and package names are deprecated. </li>
+
+<li><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Software, systems and files containing the prior EHS package name</strong> must be updated with the new package name.<br>
+These might include, but are not limited to: 
+
+
+<ul>
+<li><strong>Any "allowlist" or "whitelist"</strong> such as those created with <a href="/mx/accessmgr">Access Manager</a> </li>
+
+<li><strong>Intents</strong> that launch Enterprise Home Screen </li>
+
+<li><strong>StageNow Profiles</strong> used to install any version prior to EHS 5.0 </li>
+
+<li><strong>EMM systems</strong> used to install any version prior to EHS 5.0 </li>
+
+<li><strong>Any hard-coded instance of the string</strong> <code>com.symbol.enterprisehomescreen</code></li></ul>
+</li>
+
+<li>A single <code>.apk</code> file (<code>EHS_xxxxxx.apk</code>) works with all supported devices <strong><em>including</em> TC20/TC25</strong>.</li>
 </ul>
 
 <blockquote>
-  <p><strong>ABOUT UPGRADES</strong>: </p>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i>  <strong>ABOUT UPGRADES</strong>: </p>
   
   <ul>
-  <li><strong>Any <u>previous EHS installation must be removed</u> before EHS 4.1 is installed</strong>. Versions prior to EHS 4.1 were signed with a different key, and cannot be upgraded. Follow instructions to <a href="../setup/#uninstallation">uninstall EHS</a> before installing EHS 4.1 on any device. <br></li>
+  <li><strong>Any <u>previous EHS installation must be removed</u> before EHS 5.x is installed</strong>.<br>Follow instructions to <a href="../setup/#uninstallation">uninstall EHS</a> before installing EHS 5.x on any device.</li>
   
-  <li>Prior configuration settings, if any, are re-applied automatically.<br></li>
+  <li><strong>EHS must again be designated as the default launcher</strong>.  </li>
+  
+  <li>Prior configuration settings, if any, are re-applied automatically.</li>
   
   <li><strong>A Factory Reset erases all device data</strong>, including any saved EHS configurations.</li>
   </ul>
@@ -267,15 +322,13 @@
 
 <hr>
 
-<p><strong>To install EHS manually</strong>: </p>
-
-<p><strong>IMPORTANT:<br> On Oreo devices, Primary user must be active on device when EHS is installed and first launched</strong>. </p>
+<h5 id="toinstallehsmanually" class="anchor"><a class="heading-anchor" href="#toinstallehsmanually"><span></span></a>To install EHS manually:</h5>
 
 <p>1. <b>Connect the device</b> via USB to a PC or Mac.</p>
 
 <p>2. <b>Copy the .apk file</b> from the PC to any writable device folder.</p>
 
-<p>3. On the device, <b>launch "File Browser" or "Files" app</b> (Oreo) from the App Drawer:</p>
+<p>3. On the device, <b>launch "File Browser" or "Files" app</b> from the App Drawer:</p>
 
 <p><img alt="" style="height:500px" src="file_browser_in_drawer.png">
 <br></p>
@@ -309,6 +362,8 @@
   <p><strong>Note: After selecting "Always," wait 10 seconds before restarting to ensure the change remains persistent</strong>. </p>
 </blockquote>
 
+<hr>
+
 <h3 id="selectappsforusermode" class="anchor"><a class="heading-anchor" href="#selectappsforusermode"><span></span></a>Select Apps for User Mode</h3>
 
 <p>EHS is now ready to use. The next steps are for selecting which apps to display (and which to hide) while in User Mode, and for configuring the level of user access to device settings. When first run, EHS always defaults to User Mode, and will display a screen similar to the image below: </p>
@@ -317,7 +372,7 @@
 <img alt="" style="height:250px" src="user_screen.png"></p>
 
 <blockquote>
-  <p><b>Note</b>: EHS selects apps for display in User Mode from apps installed on the device. <b>All apps intended for use must be installed on the device before proceeding</b>.</p>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> EHS selects apps for display in User Mode from apps installed on the device. <b>All apps intended for use must be installed on the device before proceeding</b>.</p>
 </blockquote>
 
 <p>Enter Admin Mode and select which apps will be displayed to users:   </p>
@@ -350,6 +405,8 @@
 <p><img alt="" style="height:150px" src="remove_app.png"></p>
 
 <p>Repeat this step until desired apps are selected for display. To confirm selections, switch between Admin and User Modes by logging in and out of Admin Mode from the Tools menu. </p>
+
+<hr>
 
 <h3 id="useraccesstosettings" class="anchor"><a class="heading-anchor" href="#useraccesstosettings"><span></span></a>User Access to Settings</h3>
 
@@ -397,12 +454,14 @@
 <blockquote>
   <p><strong>Important</strong>: To execute EHS in a device in which a managed profile is enabled, EHS must be installed <u>before</u> configuring the managed profile in the device.</p>
   
-  <p><strong>ABOUT UPGRADES</strong>: </p>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>ABOUT UPGRADES</strong>: </p>
   
   <ul>
-  <li><strong>Any <u>previous EHS installation must be removed</u> before EHS 4.1 is installed</strong>. Versions prior to EHS 4.1 were signed with a different key, and cannot be upgraded. Follow instructions to <a href="../setup/#uninstallation">uninstall EHS</a> before installing EHS 4.1 on any device. <br></li>
+  <li><strong>Any <u>previous EHS installation must be removed</u> before EHS 5.x is installed</strong>.<br>Follow instructions to <a href="../setup/#uninstallation">uninstall EHS</a> before installing EHS 5.x on any device.</li>
   
-  <li>Prior configuration settings, if any, are re-applied automatically.<br></li>
+  <li><strong>EHS must again be designated as the default launcher</strong>.  </li>
+  
+  <li>Prior configuration settings, if any, are re-applied automatically.</li>
   
   <li><strong>A Factory Reset erases all device data</strong>, including any saved EHS configurations.</li>
   </ul>
@@ -412,44 +471,19 @@
 
 <p><strong>To install EHS using an EMM, instruct the EMM to do the following, in this order</strong>:</p>
 
-<p><strong>IMPORTANT:<br> On Oreo devices, Primary user must be active on device when EHS is installed and first launched</strong>. </p>
-
 <p>1. If desired, <b>create an</b> <code>enterprisehomescreen.xml</code><b> file</b> containing the desired user apps and settings. Otherwise, EHS will be installed with its default settings and apps. See the <a href="../settings">Advanced Settings</a> section for detailed instructions on the creation and editing of config files. </p>
 
 <p>2. <b>Deploy EHS and the config file</b> (if any) to the device(s). This includes the .apk file and the XML file (if any) created in the previous step.</p>
 
 <p>3. <b>Launch the app</b> using the following package and activity commands: </p>
 
-<table class="MsoNormalTable" style="" id="table2" border="1" cellpadding="3" cellspacing="0">
-<tbody>
-<tr>
-<td style="width: 300.35pt;" width="250">
-<p class="MsoNormal" style="text-align: center;" align="center"><font color="#333399" size="3">Deployed file</font></p>
-</td>
-<td style="width: 300px;">
-<p class="MsoNormal" style="text-align: center;" align="center"><font color="#333399" size="3">
-    Package name</font></p>
-</td>
-<td style="width: 300px;">
-<p class="MsoNormal" style="text-align: center;" align="center"><font color="#333399" size="3">
-    Main activity/class name</font></p>
-</td>
-
-</tr><tr bgcolor="#ccffcc">
-<td style="width: 118.35pt;" width="158">
-<p class="MsoNormal" style="text-align: center;"><font color="#333399" size="2">EHS_xxxxxx.apk</font></p>
-</td>
-<td style="width: 96px;">
-<p class="MsoNormal" align="center"><font color="#333399" size="2">com.symbol.enterprisehomescreen</font></p>
-</td>
-<td style="width: 96px;">
-<p class="MsoNormal" align="center"><font color="#333399" size="2">com.symbol.enterprisehomescreen.HomeScreenActivity</font></p>
-</td>
-</tr>
-</tbody>
-</table>
-
-<p><br></p>
+<blockquote>
+  <ul>
+  <li><strong>Package name</strong>: <code>com.zebra.mdna.enterprisehomescreen</code></li>
+  
+  <li><strong>Main activity/class name</strong>: <code>com.zebra.mdna.enterprisehomescreen.HomeScreenActivity</code></li>
+  </ul>
+</blockquote>
 
 <p>4. <b>Set Enterprise Home Screen as the default</b> home application on the device.  </p>
 
@@ -458,12 +492,12 @@
 <p>6. <b>Reboot the device</b> to complete the installation. This is a <b>required step</b>. </p>
 
 <blockquote>
-  <p><strong>Note: After selecting "Always," wait 10 seconds before restarting to ensure the change remains persistent.</strong>. </p>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>After selecting "Always," wait 10 seconds before restarting to ensure the change remains persistent.</strong>. </p>
 </blockquote>
 
 <p>The capabilities of EMM systems vary. Please refer to the EMM documentation for specific information about how to configure these commands. </p>
 
-<p><strong>Note: App installation, uninstallation, setting the default launcher and other operations are possible using the <a href="/mx/#app-manager">App Manager</a> through Zebra's <a href="/emdk-for-android/latest/guide/about">EMDK</a> or <a href="/stagenow/latest/about/">StageNow</a> tools</strong>. </p>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>App installation, uninstallation, setting the default launcher and other operations are possible using the <a href="/mx/#app-manager">App Manager</a> through Zebra's <a href="/emdk-for-android/latest/guide/about">EMDK</a> or <a href="/stagenow/latest/about/">StageNow</a> tools</strong>. </p>
 
 <hr>
 
@@ -535,38 +569,15 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 <p><strong>To uninstall EHS using an EMM, instruct the EMM to do the following</strong>:</p>
 
-<p>1. <b> Uninstall (remove) the EHS app</b>, referencing the package and activity names as indicated in the table below. </p>
+<p>1. <b> Uninstall (remove) the EHS app</b>, referencing the package and activity names as indicated below. </p>
 
-<table class="MsoNormalTable" style="" id="table2" border="1" cellpadding="3" cellspacing="0">
-<tbody>
-<tr>
-<td style="width: 300.35pt;" width="250">
-<p class="MsoNormal" style="text-align: center;" align="center"><font color="#333399" size="3">Deployed file</font></p>
-</td>
-<td style="width: 300px;">
-<p class="MsoNormal" style="text-align: center;" align="center"><font color="#333399" size="3">
-    Package name</font></p>
-</td>
-<td style="width: 300px;">
-<p class="MsoNormal" style="text-align: center;" align="center"><font color="#333399" size="3">
-    Main activity/class name</font></p>
-</td>
-
-</tr><tr bgcolor="#ccffcc">
-<td style="width: 118.35pt;" width="158">
-<p class="MsoNormal" style="text-align: center;"><font color="#333399" size="2">EHS_xxxxxx.apk</font></p>
-</td>
-<td style="width: 96px;">
-<p class="MsoNormal" align="center"><font color="#333399" size="2">com.symbol.enterprisehomescreen</font></p>
-</td>
-<td style="width: 96px;">
-<p class="MsoNormal" align="center"><font color="#333399" size="2">com.symbol.enterprisehomescreen.HomeScreenActivity</font></p>
-</td>
-</tr>
-</tbody>
-</table>
-
-<p><br></p>
+<blockquote>
+  <ul>
+  <li><strong>Package name</strong>: <code>com.zebra.mdna.enterprisehomescreen</code></li>
+  
+  <li><strong>Main activity/class name</strong>: <code>com.zebra.mdna.enterprisehomescreen.HomeScreenActivity</code></li>
+  </ul>
+</blockquote>
 
 <p>2. <b>OPTIONAL</b>: If a new <code>enterprisehomescreen.xml</code> configuration file will be deployed with the new version of EHS, <strong>skip to Step 3</strong>. Otherwise, instruct the EMM to remove the file <code>/enterprise/usr/enterprisehomescreen.xml</code> from the device. This will clear configuration settings from the previously installed EHS app. </p>
 
@@ -578,7 +589,7 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 <h5 id="remoteuninstallationofehsisnowcomplete" class="anchor"><a class="heading-anchor" href="#remoteuninstallationofehsisnowcomplete"><span></span></a>Remote uninstallation of EHS is now complete.</h5>
 
-<p><strong>Note: Capabilities of EMM systems vary. Please refer to the EMM documentation for specific information about command usage</strong>. </p>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Capabilities of EMM systems vary. Please refer to the EMM documentation for specific information about command usage</strong>. </p>
 
 <hr>
 
@@ -588,7 +599,7 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 
 <p>If EHS is removed from the device and the Android Launcher is the only remaining launcher on the device, it will become the default launcher. <strong>If more than one launcher will remain on the device after EHS is removed, a new default launcher should be selected to ensure desired operation</strong>.  </p>
 
-<p><strong>To manually change the default launcher on a device without removing EHS</strong>:</p>
+<h5 id="tomanuallychangethedefaultlauncheronadevicewithoutremovingehs" class="anchor"><a class="heading-anchor" href="#tomanuallychangethedefaultlauncheronadevicewithoutremovingehs"><span></span></a>To manually change the default launcher on a device without removing EHS:</h5>
 
 <p>1. In Admin Mode <b>open the Settings panel and tap Home</b>: 
 <img alt="" style="height:350px" src="settings_panel.png">
@@ -597,7 +608,7 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 <p>2. <b>Tap on the Android Launcher</b> to select it as the default launcher and Home screen. <br>
 <img alt="" style="height:350px" src="home_selector.png"></p>
 
-<p><b>Note</b>: The trash can icon seen here offers an alternative means of uninstalling EHS and restoring the Android Launcher. </p>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> The trash can icon seen here offers an alternative means of uninstalling EHS and restoring the Android Launcher. </p>
 
 <hr>
 
@@ -606,14 +617,10 @@ adb shell rm /enterprise/usr/enterprisehomescreen.xml
 <p>In addition to the separate panels for viewing Battery and Wi-Fi status provided in the menus of Admin- and User-Mode Launcher screens, EHS provides Quick View, an alternate way of accessing real-time status of these critical devices from a single screen.</p>
 
 <blockquote>
-  <p><strong>NOTE</strong>: EHS 4.0 and later allows adminisrators to <a href="../settings/#wirelessinformation">control Wi-Fi information display</a>. </p>
+  <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> EHS 4.0 and later allows administrators to <a href="../settings/#wirelessinformation">control Wi-Fi information display</a>. </p>
 </blockquote>
 
-<!-- 6/28/20- removed from EHS 4.0 since it applies to Android 10 and later. 
-**Note: SSID and BSSID information do not appear in the "Wireless Info" or "Battery and Wi-Fi Quick View" screens** on devices running Oreo if Location services (Settings -> Security & Location -> Location) are turned off. 
--->
-
-<p><strong>To view Battery and Wi-Fi status</strong>: </p>
+<h5 id="toviewbatteryandwifistatus" class="anchor"><a class="heading-anchor" href="#toviewbatteryandwifistatus"><span></span></a>To view Battery and Wi-Fi status:</h5>
 
 <p>From Admin or User Mode, <strong>tap the "i" icon</strong> as indicated below:
 <img alt="" style="height:350px" src="2-4_info_icon.png"></p>
