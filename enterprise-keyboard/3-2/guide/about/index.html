@@ -113,17 +113,112 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
-        <h4><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> WARNING: Newer versions of this product and documentation are available. <a href="https://techdocs.zebra.com/enterprise-keyboard" class="btn btn-danger">See the latest</a></h4>
-    </div>
-  </header><!--/header-->
+    </header><!--/header-->
 <div class="container-fluid">    <section id="blog">
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-12 ">
-
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>About Enterprise Keyboard</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="about-enterprise-keyboard" class="anchor"><a class="heading-anchor" href="#about-enterprise-keyboard"><span></span></a>About Enterprise Keyboard</h1>
+                                    <p>
+                                            Enterprise Keyboard
+                                            3.2
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
                     <div id="mainContent" class="row">
                         <div class="col-sm-12">
                             <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
@@ -131,11 +226,16 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-<!--                         <p><h2 id="overview">Overview</h2>
+                                        <p></p><div class="alert alert-danger alert-dismissible fade in" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
+<h4 id="-warning-a-newer-version-of-this-product-and-documentation-are-available-see-the-latest" class="anchor"><a class="heading-anchor" href="#-warning-a-newer-version-of-this-product-and-documentation-are-available-see-the-latest"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> WARNING: A newer version of this product and documentation are available. <a href="https://techdocs.zebra.com/enterprise-keyboard" class="btn btn-danger">See the latest</a></h4>
+</div>
+
+<p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>Enterprise Keyboard (EKB) is a soft input device that's designed to provide the most productive means possible of inputting data into Zebra devices. Building on the stock Android keyboard, Enterprise Keyboard provides programmable keys, can switch quickly between languages and key layouts, and has the ability to scan barcode data directly into an application using any of the device's scanners. </p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dPzyDFMcJzI" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dPzyDFMcJzI" frameborder="0" allowfullscreen=""></iframe>
 
 <p>Enterprise Keyboard (1.1 and higher) can be configured in the following ways: </p>
 
@@ -147,7 +247,7 @@
 <li>Remotely through a company's own enterprise mobility management (EMM) system (if supported by that system)</li>
 </ul>
 
-<hr />
+<hr>
 
 <p><strong>Enterprise Keyboard makes use of the Android Personal Dictionary for spelling corrections and shortcut substitutions</strong>, and permits the dictionary to be easily populated with industry-specific terms to help improve the speed and accuracy of keyboard input. A custom dictionary can be populated in bulk and mass-deployed through Zebra's Mobility Extensions <a href="../../../../mx">(MX)</a> and <a href="../../../../stagenow">StageNow</a> tools. </p>
 
@@ -169,7 +269,7 @@
 <li>Russian</li>
 </ul>
 
-<h4 id="learnmoreabout">Learn more about:</h4>
+<h4 id="learnmoreabout" class="anchor"><a class="heading-anchor" href="#learnmoreabout"><span></span></a>Learn more about:</h4>
 
 <ul>
 <li><a href="../settings#textcorrection">Text correction features</a></li>
@@ -177,11 +277,11 @@
 <li>The "Loadable" <a href="../../../../mx/personaldictionarymgr">Personal Dictionary</a></li>
 </ul>
 
-<hr />
+<hr>
 
-<h2 id="newinv32">New in v3.2</h2>
+<h2 id="newinv32" class="anchor"><a class="heading-anchor" href="#newinv32"><span></span></a>New in v3.2</h2>
 
-<h3 id="addedfeatures">Added Features</h3>
+<h3 id="addedfeatures" class="anchor"><a class="heading-anchor" href="#addedfeatures"><span></span></a>Added Features</h3>
 
 <ul>
 <li><strong>Can be loaded as a user app</strong> onto any supported device.  </li>
@@ -195,7 +295,7 @@
 <li><strong>No longer supports devices running Android 6.x Marshmallow, 5.x Lollipop, 4.x KitKat</strong>. </li>
 </ul>
 
-<h3 id="supporteddevices">Supported Devices</h3>
+<h3 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h3>
 
 <p>Support added for the following Zebra devices: </p>
 
@@ -225,24 +325,24 @@
   <p><strong>See all <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/enterprise-keyboard.html">devices supported by EKB</a></strong></p>
 </blockquote>
 
-<hr />
+<hr>
 
-<h2 id="uniqueekbfeatures">Unique EKB features</h2>
+<h2 id="uniqueekbfeatures" class="anchor"><a class="heading-anchor" href="#uniqueekbfeatures"><span></span></a>Unique EKB features</h2>
 
 <p>All versions of Enterprise Keyboard offer these other unique capabilities to help improve the speed and accuracy of input:  </p>
 
-<p><b>Switch layouts with taps or swipes</b> across the keypad: <br />
-<img alt="" style="height:350px" src="sample_1.png"/>
+<p><b>Switch layouts with taps or swipes</b> across the keypad: <br>
+<img alt="" style="height:350px" src="sample_1.png">
 <em>The Tab bar can be set to automatically hide away, maximizing screen space for applications</em>. 
 <br></p>
 
 <p><b>Scan directly with the Barcode tab</b> to collect data where and when it's needed:
-<img alt="" style="height:350px" src="sample_5.png"/>
+<img alt="" style="height:350px" src="sample_5.png">
 <em>The scan tab displays a scanner button for in-app data acquisition from barcode(s)</em>.
 <br></p>
 
 <p><b>Input long-press characters with a finger-flick</b> of the main key:
-<img alt="" style="height:350px" src="emailAddress.png"/>
+<img alt="" style="height:350px" src="emailAddress.png">
 <em>High-contrast key colors are visible in all lighting conditions</em>. 
 <br></p>
 
@@ -528,9 +628,7 @@ The <b>Numerical tab provides sub-tabs</b> for symbol key and custom function ke
 <p>Enterprise Keyboard comes pre-installed on supported Zebra devices. </p>
 
 <p>For more information, see the <a href="../../download">download page</a> or <a href="https://www.zebra.com/us/en/about-zebra/contact-zebra.html">contact a Zebra representative or partner</a>. </p><p></p>
- --&gt;                        
-
-<h2 id="redirecting-to-techdocs-archive-site" class="anchor"><a class="heading-anchor" href="#redirecting-to-techdocs-archive-site"><span></span></a>Redirecting to TechDocs archive site...</h2> 
+                                        
 
 
                                     </div>
@@ -545,7 +643,6 @@ The <b>Numerical tab provides sub-tabs</b> for symbol key and custom function ke
         </div>
     </section>    
 
-
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -559,15 +656,73 @@ The <b>Numerical tab provides sub-tabs</b> for symbol key and custom function ke
 					</div>
 			</div>
 		  </div>
-		</div>
-    <script>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                    </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
+                    <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+     -->            </div>
+            </div>
+        </footer><!--/#footer-->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
 
-    var new_domain = "zebra-techdocs-archive.netlify.app";
-    var old_domain = window.location.host;
-    var current_href = window.location.href;
-    var new_href = current_href.replace(old_domain,new_domain);
-    window.location = new_href;
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-    </script>
-                                        
-</div></body></html>
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>

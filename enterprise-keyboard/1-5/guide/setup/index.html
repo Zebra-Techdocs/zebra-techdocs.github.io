@@ -98,17 +98,112 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
-        <h4><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> WARNING: Newer versions of this product and documentation are available. <a href="https://techdocs.zebra.com/enterprise-keyboard" class="btn btn-danger">See the latest</a></h4>
-    </div>
-  </header><!--/header-->
+    </header><!--/header-->
 <div class="container-fluid">    <section id="blog">
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-12 ">
-
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>Enterprise Keyboard Setup</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="enterprise-keyboard-setup" class="anchor"><a class="heading-anchor" href="#enterprise-keyboard-setup"><span></span></a>Enterprise Keyboard Setup</h1>
+                                    <p>
+                                            Enterprise Keyboard
+                                            1.5
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
                     <div id="mainContent" class="row">
                         <div class="col-sm-12">
                             <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
@@ -116,7 +211,12 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-<!--                         <p><h2 id="overview">Overview</h2>
+                                        <p></p><div class="alert alert-danger alert-dismissible fade in" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
+<h4 id="-warning-a-newer-version-of-this-product-and-documentation-are-available-see-the-latest" class="anchor"><a class="heading-anchor" href="#-warning-a-newer-version-of-this-product-and-documentation-are-available-see-the-latest"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> WARNING: A newer version of this product and documentation are available. <a href="https://techdocs.zebra.com/enterprise-keyboard" class="btn btn-danger">See the latest</a></h4>
+</div>
+
+<p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>The Zebra Enterprise Keyboard is delivered as part of the operating system on Zebra Android Lollipop devices and installed as an OS patch on some KitKat devices. Depending on the device, activation might be required to make Enterprise Keyboard available to users. Zebra's keyboard also can be set as the default input method, if desired. This section covers manual activation of Enterprise Keyboard and the steps for setting it as the default input device. For advanced settings, such as language selection and scan-tab configuration, please see the <a href="../settings">Customize section</a>. </p>
 
@@ -135,73 +235,73 @@
 </li>
 </ul>
 
-<h2 id="manualactivation">Manual Activation</h2>
+<h2 id="manualactivation" class="anchor"><a class="heading-anchor" href="#manualactivation"><span></span></a>Manual Activation</h2>
 
 <p>The section covers direct activation of Enterprise Keyboard on a single device. If using one of the remote methods referenced above to activate and configure multiple managed devices, please see the <a href="#automatedactivation">Automated Activation section</a> later in this guide. </p>
 
 <p><b>To quickly determine whether Enterprise Keyboard has been activated</b>: </p>
 
-<p>&#49;. Bring up the Android keyboard and long-press the spacebar. </p>
+<p>1. Bring up the Android keyboard and long-press the spacebar. </p>
 
-<p>&#50;. If "Enterprise Keyboard" appears in a screen like the one below, tap its radio button (arrow) to set it as the default input device:
-<img alt="" style="height:150px" src="2a_choose_input.png"/>
+<p>2. If "Enterprise Keyboard" appears in a screen like the one below, tap its radio button (arrow) to set it as the default input device:
+<img alt="" style="height:150px" src="2a_choose_input.png">
 <br></p>
 
 <p>If the Enterprise Keyboard does not appear, proceed to the steps below. </p>
 
-<h5 id="activateenterprisekeyboard">Activate Enterprise Keyboard:</h5>
+<h5 id="activateenterprisekeyboard" class="anchor"><a class="heading-anchor" href="#activateenterprisekeyboard"><span></span></a>Activate Enterprise Keyboard:</h5>
 
-<p>&#49;. <b>Open the Settings panel</b> on the device:
-<img alt="" style="height:350px" src="home_screen.png"/>
+<p>1. <b>Open the Settings panel</b> on the device:
+<img alt="" style="height:350px" src="home_screen.png">
 <br></p>
 
-<p>&#50;. Scroll to and <b>tap the "Language and input" control</b>:
-<img alt="" style="height:350px" src="input_in_settings.png"/>
+<p>2. Scroll to and <b>tap the "Language and input" control</b>:
+<img alt="" style="height:350px" src="input_in_settings.png">
 <br></p>
 
-<p>&#51;. <b>Place a check next to "Enterprise Keyboard"</b> to enable it on the device. Uncheck other input devices to disable them, if desired. If Enterprise Keyboard was included with the device by default (and not downloaded as an OS patch), this step might not be necessary. 
-<img alt="" style="height:350px" src="panel_default.png"/>
+<p>3. <b>Place a check next to "Enterprise Keyboard"</b> to enable it on the device. Uncheck other input devices to disable them, if desired. If Enterprise Keyboard was included with the device by default (and not downloaded as an OS patch), this step might not be necessary. 
+<img alt="" style="height:350px" src="panel_default.png">
 <br> </p>
 
-<p>&#52;. <b>Tap "Default"</b> to set the default input device:
-<img alt="" style="height:350px" src="default_input.png"/></p>
+<p>4. <b>Tap "Default"</b> to set the default input device:
+<img alt="" style="height:350px" src="default_input.png"></p>
 
-<p>&#53;. <b>Tap the Enterprise Keyboard radio button</b> to set it as default input device:
-<img alt="" style="height:150px" src="2a_choose_input.png"/>
+<p>5. <b>Tap the Enterprise Keyboard radio button</b> to set it as default input device:
+<img alt="" style="height:150px" src="2a_choose_input.png">
 <b>Note</b>: This panel also can be invoked by long-pressing the spacebar whenever the Android or Zebra keyboard is visible.
 <br></p>
 
-<p>&#54;. <B>Tap the HOME key</b> to exit the Settings panel.  </p>
+<p>6. <b>Tap the HOME key</b> to exit the Settings panel.  </p>
 
 <p>Enterprise Keyboard is now ready to use with default settings. </p>
 
-<hr />
+<hr>
 
-<h3 id="changesettings">Change Settings</h3>
+<h3 id="changesettings" class="anchor"><a class="heading-anchor" href="#changesettings"><span></span></a>Change Settings</h3>
 
 <p>Following installation, Enterprise Keyboard settings can be changed through the Android Settings panel. </p>
 
-<h5 id="changeenterprisekeyboardsettings">Change Enterprise Keyboard settings:</h5>
+<h5 id="changeenterprisekeyboardsettings" class="anchor"><a class="heading-anchor" href="#changeenterprisekeyboardsettings"><span></span></a>Change Enterprise Keyboard settings:</h5>
 
-<p>&#49;. <b>Open the Settings panel</b> on the device:
-<img alt="" style="height:350px" src="home_screen.png"/>
+<p>1. <b>Open the Settings panel</b> on the device:
+<img alt="" style="height:350px" src="home_screen.png">
 <br></p>
 
-<p>&#50;. <b>Tap the "Language and input" control</b>:
-<img alt="" style="height:350px" src="input_in_settings.png"/>
+<p>2. <b>Tap the "Language and input" control</b>:
+<img alt="" style="height:350px" src="input_in_settings.png">
 <br></p>
 
-<p>&#51;. <b>Tap the Enterprise Keyboard Settings button</b> to change settings:
-<img alt="" style="height:350px" src="ekb_settings_button.png"/>
+<p>3. <b>Tap the Enterprise Keyboard Settings button</b> to change settings:
+<img alt="" style="height:350px" src="ekb_settings_button.png">
 <br></p>
 
-<p>&#52;. On the Enterprise Keyboard Preferences panel, <b>tap the setting(s) that require change</b>:
-<img alt="" style="height:350px" src="ekb_settings_panel.png"/>
+<p>4. On the Enterprise Keyboard Preferences panel, <b>tap the setting(s) that require change</b>:
+<img alt="" style="height:350px" src="ekb_settings_panel.png">
 See the <a href="../settings">Customize section</a> for more information about Enterprise Keyboard settings. </p>
 
-<hr />
+<hr>
 
-<h2 id="automatedactivation">Automated Activation</h2>
+<h2 id="automatedactivation" class="anchor"><a class="heading-anchor" href="#automatedactivation"><span></span></a>Automated Activation</h2>
 
 <p>Enterprise Keyboard 1.1 (and higher) can be configured remotely on multiple managed devices using Zebra's <a href="../../../../">StageNow</a> tools and the <a href="/mx/uimgr/">UI Manager</a> service or an organization's own MDM system. </p>
 
@@ -217,22 +317,22 @@ See the <a href="../settings">Customize section</a> for more information about E
 <li><b>Select a language</b> (if other than the system default)</li>
 </ol>
 
-<h3 id="setasdefaultinputdevice">Set as Default Input Device</h3>
+<h3 id="setasdefaultinputdevice" class="anchor"><a class="heading-anchor" href="#setasdefaultinputdevice"><span></span></a>Set as Default Input Device</h3>
 
 <p>Whether using the UI Manager service through Zebra's StageNow or EMDK tools, or if deploying Enterprise Keyboard from a company's own MDM, it is necessary to specify Enterprise Keyboard's package and class names to select it as the default keyboard on the device. </p>
 
 <p>The required package and class names are shown as the values below, wrapped by the coding necessary for using one of Zebra's tools: </p>
 
-<pre><code>    :::xml  
+<pre class="prettyprint"><code>    
     &lt;parm name="InputMethodPackageName" value="com.symbol.mxmf.csp.enterprisekeyboard"/&gt;
     &lt;parm name="InputMethodClassName" value="com.android.inputmethod.latin.LatinIME"/&gt;
 </code></pre>
 
 <p>For additional information about usage and syntax, please refer to respective documentation.</p>
 
-<hr />
+<hr>
 
-<h2 id="manualdeactivation">Manual Deactivation</h2>
+<h2 id="manualdeactivation" class="anchor"><a class="heading-anchor" href="#manualdeactivation"><span></span></a>Manual Deactivation</h2>
 
 <p>Enterprise Keyboard cannot be removed if it was included with the device operating system. However, it can be deactivated by reversing the activation process described in the Activation section. The steps below describe how to deactivate Enterprise Keyboard using the Android Settings panel. </p>
 
@@ -240,28 +340,26 @@ See the <a href="../settings">Customize section</a> for more information about E
 
 <p><strong>Deactivate Enterprise Keyboard on a device</strong>: </p>
 
-<p>&#49;. <b>Open the Settings panel</b> on the device:
-<img alt="" style="height:350px" src="home_screen.png"/>
+<p>1. <b>Open the Settings panel</b> on the device:
+<img alt="" style="height:350px" src="home_screen.png">
 <br></p>
 
-<p>&#50;. Scroll to and <b>tap the "Language and input" control</b>:
-<img alt="" style="height:350px" src="input_in_settings.png"/>
+<p>2. Scroll to and <b>tap the "Language and input" control</b>:
+<img alt="" style="height:350px" src="input_in_settings.png">
 <br></p>
 
-<p>&#51;. <b>Remove the check next to "Enterprise Keyboard"</b> to disable it on the device. If the Android keyboard is the only other input device, it automatically becomes the default input device and cannot be disabled. 
-<img alt="" style="height:350px" src="panel_default.png"/>
+<p>3. <b>Remove the check next to "Enterprise Keyboard"</b> to disable it on the device. If the Android keyboard is the only other input device, it automatically becomes the default input device and cannot be disabled. 
+<img alt="" style="height:350px" src="panel_default.png">
 <br> </p>
 
 <p>Manual deactivation of Enterprise Keyboard is complete. </p>
 
-<hr />
+<hr>
 
-<h2 id="automateddeactivation">Automated Deactivation</h2>
+<h2 id="automateddeactivation" class="anchor"><a class="heading-anchor" href="#automateddeactivation"><span></span></a>Automated Deactivation</h2>
 
-<p>Enterprise Keyboard 1.1 (and higher) can be deactivated on multiple managed devices using an organization's own MDM server in the same way as other Android apps. Alternatively, remote uninstallation can be accomplished through Zebra's <a href="/../../../../">EMDK</a> or <a href="../../../../">StageNow</a> tools using the <a href="/mx/appmgr">App Manager</a> service. </p></p>
- -->                        
-
-<h2 id="redirecting-to-techdocs-archive-site" class="anchor"><a class="heading-anchor" href="#redirecting-to-techdocs-archive-site"><span></span></a>Redirecting to TechDocs archive site...</h2> 
+<p>Enterprise Keyboard 1.1 (and higher) can be deactivated on multiple managed devices using an organization's own MDM server in the same way as other Android apps. Alternatively, remote uninstallation can be accomplished through Zebra's <a href="/../../../../">EMDK</a> or <a href="../../../../">StageNow</a> tools using the <a href="/mx/appmgr">App Manager</a> service. </p><p></p>
+                                        
 
 
                                     </div>
@@ -276,7 +374,6 @@ See the <a href="../settings">Customize section</a> for more information about E
         </div>
     </section>    
 
-
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -290,15 +387,73 @@ See the <a href="../settings">Customize section</a> for more information about E
 					</div>
 			</div>
 		  </div>
-		</div>
-    <script>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                    </div>
+    <!-- 10/17/18- remove navbar fixed class, social icons
+                    <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div>
+     -->            </div>
+            </div>
+        </footer><!--/#footer-->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
 
-    var new_domain = "zebra-techdocs-archive.netlify.app";
-    var old_domain = window.location.host;
-    var current_href = window.location.href;
-    var new_href = current_href.replace(old_domain,new_domain);
-    window.location = new_href;
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-    </script>
-                                        
-</div></body></html>
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>
