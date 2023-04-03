@@ -68,7 +68,7 @@
                         <li class="navbar-text pull-left"><strong><a href="/">TechDocs Home</a></strong></li>
                         <p class="navbar-text">
                                             DataWedge
-                                            11.4
+                                            13.0
                         </p>
 
                     </ul>
@@ -79,42 +79,42 @@
 
 
                         <li>
-                            <a href="/datawedge/11-4/guide/about">
+                            <a href="/datawedge/13-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/11-4/guide/gettingstarted">
+                            <a href="/datawedge/13-0/guide/gettingstarted">
                                     Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/11-4/guide/profiles">
+                            <a href="/datawedge/13-0/guide/profiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/11-4/guide/programmers-guides">
+                            <a href="/datawedge/13-0/guide/programmers-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/11-4/guide/matrix">
+                            <a href="/datawedge/13-0/guide/matrix">
                                     Feature Matrix
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/11-4/guide/api">
+                            <a href="/datawedge/13-0/guide/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/11-4/guide/samples">
+                            <a href="/datawedge/13-0/guide/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/11-4/guide/faq">
+                            <a href="/datawedge/13-0/guide/faq">
                                     FAQ
                             </a>
                         </li>
@@ -124,7 +124,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/datawedge/11-4/search">
+                            <a href="/datawedge/13-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -247,7 +247,7 @@
                                     <h1 id="about-datawedge" class="anchor"><a class="heading-anchor" href="#about-datawedge"><span></span></a>About DataWedge</h1>
                                     <p>
                                             DataWedge
-                                            11.4
+                                            13.0
                                     </p>
                                 </div>
                             </section>                    
@@ -264,17 +264,17 @@
 
 <p>Zebra DataWedge is an application service that provides the capability to control and manage data capture hardware with little effort to integrate acquired data into new or existing apps with DataWedge. It enables any application on the device to capture data from multiple input sources (such as barcode scanner, MSR, RFID, voice, and serial port) and format the data as needed using simple options or custom complex rules. DataWedge functionality is based on profiles - the foreground activity determines the set of configurations to apply from the profile. <a href="../profiles">Profiles</a> are configured manually or programmatically using Android intent <a href="../api">APIs</a>, with the capability for mass <a href="../admin">deployment</a>. DataWedge is available out-of-the-box with every Zebra Android device.</p>
 
-<p>See <a href="#newindatawedge114">What's New</a> for new features from the latest DataWedge version.</p>
+<p>See <a href="#newindatawedge130">What's New</a> for new features from the latest DataWedge version.</p>
 
 <blockquote>
-  <p>Learn about <a href="../gettingstarted">Getting Started</a> with DataWedge and see <a href="../programmers-guides/how-do-i">How Do I...</a> for step-by-step procedures on how to perform common tasks to capture data.</p>
+  <p>Learn about <a href="../gettingstarted">Getting Started</a> with DataWedge and see <a href="../programmers-guides/how-do-i">How Do I...</a> for step-by-step procedures on how to perform common tasks through the user interface to capture data.</p>
 </blockquote>
 
 <p><a href="../programmers-guides/usage-notes">Usage Notes and Behavior</a> contain important information on the use of DataWedge.</p>
 
 <p><a href="../matrix/">Feature Matrix</a> provides information on supported features based on the component versions (DataWedge version, build version, scan engine, etc.).</p>
 
-<p><a href="../programmers-guides/dw-programming">Programmer's guide</a>, <a href="../programmers-guides/articles">Developer Articles and Blogs</a> and <a href="../samples">Samples</a> provides guidance on use of <a href="../api/">DataWedge intent APIs</a> and best practices.</p>
+<p>For developers, refer to <a href="../programmers-guides/dw-programming">Programmer's guides</a>, <a href="../programmers-guides/articles">Developer Articles and Blogs</a> and <a href="../samples">Samples</a> providing guidance on use of <a href="../api/">DataWedge intent APIs</a> and best practices.</p>
 
 <div class="alert alert-danger alert-dismissible fade in" role="alert"><b>Important:</b> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Some DataWedge features are deprecated, including Reporting and some Voice Input options. See <a href="#importantinformation">Important Information</a> section below for more details.<br>
@@ -341,6 +341,22 @@
 <li><strong><a href="../api/enumeratescanners">Enumerate Scanners</a> -</strong> generates an index of scanners available on the device.</li>
 
 <li><strong><a href="../api/getconfig">Get Config</a> -</strong> retrieves the <code>PARAM_LIST</code> settings, or the supported parameters, from the specified Profile; returned as a set of value pairs or a Plug-in config bundle. See <a href="../api/getconfig/#getbarcodeparameters">Get Barcode Parameters</a> for sample code.</li>
+</ul>
+
+<hr>
+
+<h2 id="newindatawedge130" class="anchor"><a class="heading-anchor" href="#newindatawedge130"><span></span></a>New in DataWedge 13.0</h2>
+
+<ul>
+<li>DataWedge Reporting is deprecated and discontinued in Android 13 and later. As an alternative, Zebra recommends using the following DataWedge intent APIs to identify the supported scanners and parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦&nbsp; <b><a href="../api/enumeratescanners">Enumerate Scanners</a> -</b> generates an index of scanners available on the device.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦&nbsp; <b><a href="../api/getconfig">Get Config</a> -</b> retrieves the <code>PARAM_LIST</code> settings, or the supported parameters, from the specified Profile; returned as a set of value pairs or a Plug-in config bundle. See <a href="../api/getconfig/#getsupportedbarcodeparameters">Get Supported Barcode Parameters</a> for sample code.</li>
+
+<li><a href="../input/voice/">Voice Input</a> option to trigger data capture using a <strong>Start phrase</strong> and its related options are discontinued. Instead, Zebra recommends using the PTT button to trigger voice capture.</li>
+
+<li><a href="../programmers-guides/usage-notes/">Android 13 recent apps screen behavior change</a>: In Android 13 and higher, when opening the recent apps screen after launching an app associated with a DataWedge profile, the DataWedge profile remains active while in the recent apps screen. This was not the case with older Android versions.</li>
+
+<li>New <a href="../api/enumerateworkflows/">Enumerate Workflows API</a> lists workflow inputs available on the device.</li>
 </ul>
 
 <hr>
@@ -415,20 +431,6 @@
 
 <!--
 For more information about approved languages or to download a localized operating system, please [contact Zebra Technical Support](https://www.zebra.com/us/en/about-zebra/contact-zebra/contact-tech-support.html). -->
-
-<hr>
-
-<h2 id="newindatawedge114" class="anchor"><a class="heading-anchor" href="#newindatawedge114"><span></span></a>New in DataWedge 11.4</h2>
-
-<ul>
-<li>New support for <a href="../input/workflow/#tireidentificationnumbertin">Commercial and Tire Size Tire Identification Number (TIN)</a> in OCR Wedge and new corresponding Workflow Input parameters to set these types using <a href="../api/setconfig/#tireidentificationnumbertin">SetConfig API</a></li>
-
-<li>New <a href="../input/workflow/#freeformocr">Free-Form OCR</a> feature to capture text from an image based on the script specified by the user for text recognition</li>
-
-<li>OCR is renamed to <a href="../input/workflow/#ocrwedge">OCR Wedge</a></li>
-
-<li><strong>Decoding LED Notification</strong> is renamed to <strong>Decode LED Notification</strong> for <a href="../input/workflow">Workflow Input</a></li>
-</ul>
 
 <hr>
 
