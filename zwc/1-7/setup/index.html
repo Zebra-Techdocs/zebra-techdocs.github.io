@@ -345,7 +345,47 @@ _Click to enlarge; ESC to exit._
 
 <h2 id="developmentbestpractices" class="anchor"><a class="heading-anchor" href="#developmentbestpractices"><span></span></a>Development Best Practices</h2>
 
-<p>When developing apps for use with the Zebra Workstation Connect solution, the following techniques and resources might be useful. </p>
+<p>When developing apps for use with the Zebra Workstation Connect solution, the following techniques and resources might be useful in some situations. </p>
+
+<hr>
+
+<h3 id="disablechromepulltorefresh" class="anchor"><a class="heading-anchor" href="#disablechromepulltorefresh"><span></span></a>Disable Chrome Pull-to-Refresh</h3>
+
+<p>When using a mouse to scroll a web page in Chrome, the page sometimes refreshes unexpectedly, which can cause interruptions in the work flow. This behavior is related Chrome's pull-to-refresh feature, which is enabled by default on the mobile version. </p>
+
+<p>This behavior can be overridden by adding the following CSS line to the &lt;body&gt; of the offending web app(s): </p>
+
+<pre class="prettyprint"><code>
+&lt;body&gt;
+...
+
+{   /* Disables pull-to-refresh but allows overscroll glow effects. */   overscroll-behavior-y: contain; }
+
+... 
+&lt;/body&gt;
+</code></pre>
+
+<p><a href="https://developer.chrome.com/blog/overscroll-behavior/">Learn more</a>. <i class="fa fa-external-link" style="color:#3498DB;"></i></p>
+
+<hr>
+
+<h3 id="disablescreenshots" class="anchor"><a class="heading-anchor" href="#disablescreenshots"><span></span></a>Disable Screenshots</h3>
+
+<p>Many apps require the display of personal or sensitive information on the screen. Capturing a screen image, a capability built into every Android device and enabled by default, could allow this information to be compromised. <strong>To help prevent this security threat, disable the screen capture feature on devices that could be used to display sensitive information</strong>. Use the process below to ensure proper ZWC operation. </p>
+
+<p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>Disabling screenshots by ANY OTHER MEANS than that described below could interfere with ZWC operations</strong>.  </p>
+
+<p><strong>To disable screenshots without impacting Workstation Connect operations</strong>: </p>
+
+<ol>
+<li>Create a Profile with <a href="/stagenow">Zebra StageNow</a>. </li>
+
+<li>Add <a href="/stagenow/latest/csp/display">Display Manager</a> to the Profile. </li>
+
+<li>Configure the "<a href="/stagenow/latest/csp/display/#screen-shot-enabledisable">ScreenShotUsage</a>" parameter to disable screenshots. Until this setting is reversed, the screenshot feature remains disabled on the device.</li>
+</ol>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Disabling screen capture might cause unwanted behaviors</strong>. <br>See <a href="../usage/#administrationemm">Administrative/EMM section</a> of the Usage Notes for more information. </p>
 
 <hr>
 
@@ -489,6 +529,58 @@ private final class DockReceiver extends BroadcastReceiver{
     }
   }
 }
+</code></pre>
+
+<hr>
+
+<h3 id="optimizeappfordisplay" class="anchor"><a class="heading-anchor" href="#optimizeappfordisplay"><span></span></a>Optimize App for Display</h3>
+
+<p>For the best user experience, an app's UI should adapt to the screen it's being displayed on. The code below shows how to modify an app to adjust its UI layout based on the screen it's currently running on.  </p>
+
+<h4 id="addthislinetotheappsmanifest" class="anchor"><a class="heading-anchor" href="#addthislinetotheappsmanifest"><span></span></a>Add this line to the app's manifest:</h4>
+
+<pre class="prettyprint"><code>
+android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout|density|uiMode"
+</code></pre>
+
+<h4 id="addthreejavasnippetstotheapp" class="anchor"><a class="heading-anchor" href="#addthreejavasnippetstotheapp"><span></span></a>Add three Java snippets to the app:</h4>
+
+<h5 id="detectchangestothedeviceconfiguration" class="anchor"><a class="heading-anchor" href="#detectchangestothedeviceconfiguration"><span></span></a>Detect changes to the device configuration</h5>
+
+<pre class="prettyprint"><code>
+@Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);         
+/* Handling the movement of the application between displays */         
+    showUiLayout();     
+}
+</code></pre>
+
+<h5 id="methodtoshowthelayout" class="anchor"><a class="heading-anchor" href="#methodtoshowthelayout"><span></span></a>Method to show the layout</h5>
+
+<pre class="prettyprint"><code>    
+    private void showUiLayout() {
+/* Get the display ID of where the app is running */
+    displayId = getDisplayId();
+    if (displayId == 0) {             
+/* Primary screen - set the device-side layout */             
+    setContentView(R.layout.activity_main);         
+    } else { 
+/* Desktop screen - set the desktop-side layout */             
+/* This may happen for other displays such as remote view */
+    setContentView(R.layout.activity_second);         
+  }
+}
+</code></pre>
+
+<h5 id="methodtogetthedisplayid" class="anchor"><a class="heading-anchor" href="#methodtogetthedisplayid"><span></span></a>Method to get the display ID</h5>
+
+<pre class="prettyprint"><code>    
+    private int getDisplayId() {
+        Display mDisp = this.getDisplay(); 
+        if (mDisp != null) displayId = mDisp.getDisplayId();         
+        return displayId;     
+    }
 </code></pre>
 
 <!-- 8/6/21- replaced with above, per eng
