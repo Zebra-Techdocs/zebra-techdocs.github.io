@@ -786,6 +786,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/ddt/2-5':
         case '/ddt/2-6':
         case '/ddt/2-7':
+        case '/ddt/2-8':
             ddl_doc.options.length = 0;
             for (i=0; i < ddt_2_5_text.length; i++) {
                 createOption(ddl_doc, ddt_2_5_text[i], ddt_2_5_val[i]);
