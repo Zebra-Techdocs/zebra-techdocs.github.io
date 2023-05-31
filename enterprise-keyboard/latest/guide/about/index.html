@@ -52,7 +52,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Enterprise Keyboard
-                                            4.1
+                                            4.2
                         </p>
 
                     </ul>
@@ -63,27 +63,27 @@
 
 
                         <li>
-                            <a href="/enterprise-keyboard/4-1/guide/about">
+                            <a href="/enterprise-keyboard/4-2/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-1/guide/setup">
+                            <a href="/enterprise-keyboard/4-2/guide/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-1/guide/settings">
+                            <a href="/enterprise-keyboard/4-2/guide/settings">
                                     Customize
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-1/guide/deploy">
+                            <a href="/enterprise-keyboard/4-2/guide/deploy">
                                     Deploy
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-1/guide/apis">
+                            <a href="/enterprise-keyboard/4-2/guide/apis">
                                     APIs
                             </a>
                         </li>
@@ -93,12 +93,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-1/download">
+                            <a href="/enterprise-keyboard/4-2/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-keyboard/4-1/search">
+                            <a href="/enterprise-keyboard/4-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="about-enterprise-keyboard" class="anchor"><a class="heading-anchor" href="#about-enterprise-keyboard"><span></span></a>About Enterprise Keyboard</h1>
                                     <p>
                                             Enterprise Keyboard
-                                            4.1
+                                            4.2
                                     </p>
                                 </div>
                             </section>                    
@@ -226,7 +226,7 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h4 id="seewhatsnewinekb41newinv41" class="anchor"><a class="heading-anchor" href="#seewhatsnewinekb41newinv41"><span></span></a><a href="#newinv41">See what's new in EKB 4.1</a></h4>
+                                        <p></p><h4 id="seewhatsnewinekb42newinv42" class="anchor"><a class="heading-anchor" href="#seewhatsnewinekb42newinv42"><span></span></a><a href="#newinv42">See what's new in EKB 4.2</a></h4>
 
 <h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
@@ -248,23 +248,35 @@
 
 <p><strong>Enterprise Keyboard makes use of the Android Personal Dictionary for spelling corrections and shortcut substitutions</strong>, and permits the dictionary to be easily populated with industry-specific terms to help improve the speed and accuracy of keyboard input. A custom dictionary can be populated in bulk and mass-deployed through Zebra's Mobility Extensions <a href="../../../../mx">(MX)</a> and <a href="../../../../stagenow">StageNow</a> tools. </p>
 
-<p>This version of Enterprise Keyboard includes the following languages: </p>
+<h4 id="supportedlanguages" class="anchor"><a class="heading-anchor" href="#supportedlanguages"><span></span></a>Supported Languages:</h4>
 
 <ul>
+<li>English (US)</li>
+
 <li>English (UK)</li>
 
-<li>English (US) </li>
+<li>Polish </li>
 
-<li>French</li>
+<li>Slovak </li>
 
-<li>German</li>
+<li>Romanian </li>
 
-<li>Italian</li>
-
-<li>Spanish</li>
+<li>Czech </li>
 
 <li>Russian</li>
 </ul>
+
+<!-- removed per TUT-81629 
+This version of Enterprise Keyboard includes the following languages: 
+
+* English (UK)
+* English (US) 
+* French
+* German
+* Italian
+* Spanish
+* Russian
+ -->
 
 <h4 id="learnmoreabout" class="anchor"><a class="heading-anchor" href="#learnmoreabout"><span></span></a>Learn more about:</h4>
 
@@ -276,46 +288,58 @@
 
 <hr>
 
-<h2 id="newinv41" class="anchor"><a class="heading-anchor" href="#newinv41"><span></span></a>New in v4.1</h2>
+<h2 id="newinv42" class="anchor"><a class="heading-anchor" href="#newinv42"><span></span></a>New in v4.2</h2>
 
 <ul>
-<li><strong>Supports Zebra Workstation Connect (1.4.86) secondary screen</strong> (see <a href="../settings/#zwcusagenotes">Usage Notes</a>) </li>
+<li><strong>Supports devices running Android 13</strong>†</li>
 
-<li><strong>Supports Managed Configurations</strong> for remote configuration using <a href="/oemconfig">Zebra OEMConfig</a> or other non-proprietary tools </li>
+<li><strong>Supports Android Mirror Mode</strong> on devices with Android 11 and later</li>
 
-<li><strong>New Voice-to-Text tab</strong> displays a microphone for accepting voice input ¹ ³</li>
+<li><strong>Color of secondary keys changed to 'white'</strong> to comply with <a href="https://www.w3.org/WAI/WCAG2AA-Conformance">W3C accessibility guidelines</a> <i class="fa fa-external-link" style="color:#3498DB;"></i></li>
 
-<li><strong>Keyboard default layout height and width are now adjustable</strong> on secondary screen ² ³</li>
+<li><strong>Supports selection of a custom language</strong> through managed configurations</li>
 
-<li><strong>Can be upgraded <u>only</u> from EKB 4.0</strong><br> 
-<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> To upgrade from EKB 3.9 or older, see <a href="../setup/#upgradeinstallusingusb">setup instructions</a></li>
+<li><strong>Supports new secured path for custom layout file deployment</strong>:<br> <code>/sdcard/Android/data/com.zebra.mdna.enterprisekeyboard/files/config</code>††</li>
+
+<li><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Support for remote configuration through <a href="/oemconfig">Zebra OEMConfig</a> is <strong><u>deprecated</u></strong></li>
 </ul>
 
-<p><b><font size="2" color="SlateGray"><strong>¹</strong> Supported on Zebra devices running:</font></b></p>
+<p><i><font size="2" color="SlateGray"><strong>†</strong> Zebra recommends upgrading to EKB 4.2 <b><u>BEFORE</u> migrating devices to Android 13</b> to avoid unwanted behavior.</font></i></p>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font size="2" color="SlateGray">• Android 10 with <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">OS image</a> <code>10-16-10.00-QG-U114-STD-HEL-04</code> (or later)</font></b></p>
+<p><i><font size="2" color="SlateGray"><strong>††</strong> Deployment to this secure destination requires use of the "Deploy file for an application" File Action of <a href="/mx/filemgr/#file-action">MX File Manager</a> (or the equivalent EMM functionality). In the <code>TargetApplicationAndFileName</code> parameter, enter the value: <code>com.zebra.mdna.enterprisekeyboard/config/&lt;yourLayoutFileName&gt;.encrypted</code> in the deployment Profile.</font></i></p>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font size="2" color="SlateGray">• Android 11 with <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard OS Update</a> <code>11-23-13.00-RG-U00</code> (or later)
-</font></b></p>
-
-<p><b><font size="2" color="SlateGray"><strong>²</strong> Requires Zebra Workstation Connect 1.4.86 (or later)</font></b></p>
-
-<p><b><font size="2" color="SlateGray"><strong>³</strong> Configurable only through <a href="/oemconfig/latest/mc">Managed Configs</a> or <a href="../settings/#preferences">device UI</a>
-</font></b></p>
+<blockquote>
+  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> This version can be upgraded <u>only</u> from EKB 4.0 or later.<br> 
+  To upgrade from EKB 3.9 or older, see <a href="../setup/#upgradeinstallusingusb">setup instructions</a>.</p>
+</blockquote>
 
 <h3 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h3>
 
 <ul>
-<li><strong>Support added for Zebra TC53 devices</strong> (<strong>see Platform Note</strong>, below)<br>
-<strong><a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/enterprise-keyboard.html">See all supported devices</a></strong></li>
+<li><strong>Support added for</strong>: ET40, ET45, TC15, TC58, TC73, TC78<br><strong><a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/enterprise-keyboard.html">See all supported devices</a></strong></li>
 </ul>
 
-<h3 id="iclassfafaexclamationcirclestylecolorff0000iplatformnote" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcirclestylecolorff0000iplatformnote"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Platform Note</h3>
+<h4 id="iclassfafaexclamationcirclestylecolorff0000iplatformnotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcirclestylecolorff0000iplatformnotes"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Platform Notes:</h4>
 
-<p>Due to new Android security restrictions, the <strong>Zebra TC53</strong> (and forthcoming devices built on the same platform) <strong>does not support the adb “push” command</strong>, even when the device is in developer mode. <strong>The <a href="/ekd/latest/guide/usage/#vdeploylayouts">EKD deployment feature</a> for custom layouts is therefore not functional for those devices</strong>. </p>
+<ul>
+<li><strong>On ET40, ET45, TC15, TC53 (and other 6375- and 6490-platform devices), Android restrictions prohibit the adb “push” command</strong> for deployment of files to the device.<br>This impacts deployment functions, including those of the <a href="/ekd">Enterprise Keyboard Designer</a> tool. </li>
 
-<p><strong>To deploy custom layout files to a TC53</strong> and similar devices, use a desktop file explorer and copy files to:<br>
- <code>/sdcard/Android/data/com.zebra.mdna.enterprisekeyboard/files/config/</code></p>
+<li><strong>To manually deploy custom layouts and other files</strong>, copy files using a desktop file explorer to:<br><code>/sdcard/Android/data/com.zebra.mdna.enterprisekeyboard/files/config</code><br> on the device.</li>
+
+<li><strong>Administrators can continue to mass-deploy custom layout files to</strong>:<br><code>/enterprise/device/settings/ekb/config</code> </li>
+</ul>
+
+<h4 id="usagenotes" class="anchor"><a class="heading-anchor" href="#usagenotes"><span></span></a>Usage Notes</h4>
+
+<ul>
+<li><strong>If upgrading from EKB 3.9 or earlier</strong>, see <a href="../setup/#upgradeinstallusingusb">special instructions</a>.  </li>
+
+<li><strong>Existing Stage Now and MX Enterprise Keyboard Manager profiles can be used</strong> to configure EKB 4.0 or later. </li>
+
+<li><strong>No change is required in Enterprise Keyboard Designer desktop tool</strong> for support of this version. </li>
+
+<li><strong>All existing custom layouts can be used with this version of EKB</strong>. </li>
+</ul>
 
 <p>Enterprise Keyboard is <strong>available on <a href="https://play.google.com/store/apps/details?id=com.zebra.mdna.enterprisekeyboard&amp;hl=en_US&amp;gl=US">Google Play</a> and the <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/enterprise-keyboard.html">Zebra support portal</a></strong>.</p>
 
@@ -375,6 +399,51 @@ The <b>Numerical tab provides sub-tabs</b> for symbol key and custom function ke
 <hr>
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="addedinv41" class="anchor"><a class="heading-anchor" href="#addedinv41"><span></span></a>Added in v4.1</h3>
+
+<ul>
+<li><strong>Supports Zebra Workstation Connect (1.4.86) secondary screen</strong> (see <a href="../settings/#zwcusagenotes">Usage Notes</a>) </li>
+
+<li><strong>Supports Managed Configurations</strong> for remote configuration using <a href="/oemconfig">Zebra OEMConfig</a> or other non-proprietary tools </li>
+
+<li><strong>New Voice-to-Text tab</strong> displays a microphone for accepting voice input ¹ ³</li>
+
+<li><strong>Keyboard default layout height and width are now adjustable</strong> on secondary screen ² ³</li>
+
+<li><strong>Can be upgraded <u>only</u> from EKB 4.0</strong><br> 
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> To upgrade from EKB 3.9 or older, see <a href="../setup/#upgradeinstallusingusb">setup instructions</a></li>
+</ul>
+
+<p><b><font size="2" color="SlateGray"><strong>¹</strong> Supported on Zebra devices running:</font></b></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font size="2" color="SlateGray">• Android 10 with <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">OS image</a> <code>10-16-10.00-QG-U114-STD-HEL-04</code> (or later)</font></b></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font size="2" color="SlateGray">• Android 11 with <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard OS Update</a> <code>11-23-13.00-RG-U00</code> (or later)
+</font></b></p>
+
+<p><b><font size="2" color="SlateGray"><strong>²</strong> Requires Zebra Workstation Connect 1.4.86 (or later)</font></b></p>
+
+<p><b><font size="2" color="SlateGray"><strong>³</strong> Configurable only through <a href="/oemconfig/latest/mc">Managed Configs</a> or <a href="../settings/#preferences">device UI</a>
+</font></b></p>
+
+<h4 id="devicesupport-1" class="anchor"><a class="heading-anchor" href="#devicesupport-1"><span></span></a>Device Support</h4>
+
+<ul>
+<li><strong>Support added for Zebra TC53 devices</strong> (<strong>see Platform Note</strong>, below)<br>
+<strong><a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/enterprise-keyboard.html">See all supported devices</a></strong></li>
+</ul>
+
+<h4 id="iclassfafaexclamationcirclestylecolorff0000iplatformnote" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcirclestylecolorff0000iplatformnote"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Platform Note</h4>
+
+<p>Due to new Android security restrictions, the <strong>Zebra TC53</strong> (and forthcoming devices built on the same platform) <strong>does not support the adb “push” command</strong>, even when the device is in developer mode. <strong>The <a href="/ekd/latest/guide/usage/#vdeploylayouts">EKD deployment feature</a> for custom layouts is therefore not functional for those devices</strong>. </p>
+
+<p><strong>To deploy custom layout files to a TC53</strong> and similar devices, use a desktop file explorer and copy files to:<br>
+ <code>/sdcard/Android/data/com.zebra.mdna.enterprisekeyboard/files/config/</code></p>
+
+<p>Enterprise Keyboard is <strong>available on <a href="https://play.google.com/store/apps/details?id=com.zebra.mdna.enterprisekeyboard&amp;hl=en_US&amp;gl=US">Google Play</a> and the <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/enterprise-keyboard.html">Zebra support portal</a></strong>.</p>
+
+<hr>
 
 <h3 id="addedinv40" class="anchor"><a class="heading-anchor" href="#addedinv40"><span></span></a>Added in v4.0</h3>
 
@@ -507,7 +576,7 @@ These might include, but are not limited to:<br>
 <em>Click image to enlarge, ESC to exit</em>. 
 <br></p>
 
-<h4 id="devicesupport-1" class="anchor"><a class="heading-anchor" href="#devicesupport-1"><span></span></a>Device Support</h4>
+<h4 id="devicesupport-2" class="anchor"><a class="heading-anchor" href="#devicesupport-2"><span></span></a>Device Support</h4>
 
 <ul>
 <li><strong>Now supports Zebra devices running Android 10</strong></li>
@@ -878,7 +947,7 @@ These might include, but are not limited to:<br>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
                     </div>
     <!-- 10/17/18- remove navbar fixed class, social icons
                     <div class="col-sm-2">
