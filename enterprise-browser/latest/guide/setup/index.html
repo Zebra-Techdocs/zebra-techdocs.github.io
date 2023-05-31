@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.3
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.4
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-3','1-4','/enterprise-browser/3-3/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-4','1-4','/enterprise-browser/3-4/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/about">
+                            <a href="/enterprise-browser/3-4/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-4/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/tutorial/">
+                            <a href="/enterprise-browser/3-4/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/samples">
+                            <a href="/enterprise-browser/3-4/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide">
+                            <a href="/enterprise-browser/3-4/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/licensing">
+                            <a href="/enterprise-browser/3-4/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/migration">
+                            <a href="/enterprise-browser/3-4/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/configreference">
+                            <a href="/enterprise-browser/3-4/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/api">
+                            <a href="/enterprise-browser/3-4/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/download">
+                            <a href="/enterprise-browser/3-4/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/search">
+                            <a href="/enterprise-browser/3-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="enterprise-browser-setup" class="anchor"><a class="heading-anchor" href="#enterprise-browser-setup"><span></span></a>Enterprise Browser Setup</h1>
                                     <p>
                                             Enterprise Browser
-                                            3.3
+                                            3.4
                                     </p>
                                 </div>
                             </section>                    
@@ -326,7 +326,7 @@
 
 <li>An Enterprise Mobility Management (EMM) system (optional) </li>
 
-<li>An Enterprise Browser 3.3 <code>.apk</code> downloaded from <a href="https://play.google.com/store/apps/developer?id=Zebra+Technologies&amp;hl=en_US&amp;gl=US">Google Play</a> or the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a></li>
+<li>An Enterprise Browser 3.3 <code>.apk</code> downloaded from <a href="https://play.google.com/store/apps/details?id=com.zebra.mdna.enterprisebrowser&amp;hl=en_US&amp;gl=US">Google Play</a> or the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a></li>
 
 <li>For manual deployment directly to individual device(s) <strong>ONLY</strong>:
 
@@ -413,7 +413,8 @@ These might include, but are not limited to:
 </ul>
 
 <blockquote>
-  <p><strong>Why Change the Package Name?</strong> <br> In compliance with Google policy, the package name of the public version of Enterprise Browser was changed to differentiate it from the private version previously released on Google Play.</p>
+  <p><strong>Why Change the Package Name?</strong> <br> In compliance with Google policy, the package name of the public version of Enterprise Browser was changed to differentiate it from the private version previously released on Google Play.<br><br>
+  <i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>IMPORTANT</strong>: Devices with EB 3.3 or later (with its new package name) are <strong><u>automatically upgraded by Google Play</u></strong> to the latest posted EB version, even if EB was not originally installed from Google Play.<br><strong>To prevent such updates, apply <a href="/mx/appmgr/#action">App Manager Action 17</a></strong> "DisallowApplicationUpgrade" on the EB package <code>com.zebra.mdna.enterprisebrowser</code>. </p>
 </blockquote>
 
 <h3 id="storagerestrictions" class="anchor"><a class="heading-anchor" href="#storagerestrictions"><span></span></a>Storage Restrictions</h3>
@@ -496,6 +497,8 @@ If present on the device, licenses are automatically reapplied when Enterprise B
 <h4 id="toinstalltheenterprisebrowserruntimeontoadevice" class="anchor"><a class="heading-anchor" href="#toinstalltheenterprisebrowserruntimeontoadevice"><span></span></a>To install the Enterprise Browser runtime onto a device:</h4>
 
 <ol>
+<li><strong>Using the Windows Apps and Features Control Panel</strong>, uninstall any previous version of EB, if present. </li>
+
 <li>From the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a>, <strong>download and install the</strong> desired version of the <strong>EB <code>.msi</code> file</strong>.<br><strong>For example</strong>:<br><code>EnterpriseBrowserForAndroid_3.2.5.0.msi</code></li>
 
 <li>Select <strong>Start -&gt; Enterprise Browser for Android -&gt; Enterprise Browser Installer</strong> to bring up the EB Installer. <br>A window appears similar to the image below:
@@ -553,39 +556,66 @@ If present on the device, licenses are automatically reapplied when Enterprise B
 
 <p>The Enterprise Browser installer (<code>.apk</code>) , apps (<code>.html</code>) and configuration (<code>.xml</code>) file(s) can be mass-deployed to devices across an enterprise with <!-- Zebra <a href="https://techdocs.zebra.com/stagenow/latest/gettingstarted/">StageNow</a> or  -->a compatible EMM system using instructions in this section and in the <a href="#emmprocedures">EMM Procedures section</a> below.  </p>
 
-<blockquote>
-  <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> <strong>Zebra recommendations</strong>:<br>
-  • <strong>Back up user data</strong> before any installation or upgrade operation.<br>
-  • <strong>Fully test all apps and deployment processes</strong> before distribution.</p>
-</blockquote>
+<h3 id="iclassfafaexclamationcirclestylecolorff0000iplatformnotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcirclestylecolorff0000iplatformnotes"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Platform Notes</h3>
 
-<h3 id="tomassdeployaneb33app" class="anchor"><a class="heading-anchor" href="#tomassdeployaneb33app"><span></span></a>To mass-deploy an EB 3.3 app:</h3>
+<ul>
+<li><strong>Secure deployment of EB configuration files</strong> on newer Zebra devices:<br>
 
-<ol>
-<li><strong>Uninstall any prior version of Enterprise Browser</strong>, if present.<br>
-<strong><u>Previous package name</u></strong>: <code>com.symbol.enterprisebrowser</code> </li>
 
-<li><strong>For <a href="https://play.google.com/store/apps/developer?id=Zebra+Technologies&amp;hl=en_US&amp;gl=US">Google Play</a>, 
-configure the EMM to download and install Enterprise Browser</strong> and set a Policy to deploy and manage it through the EMM.<br>
-<strong><u>EB 3.3 package name</u></strong>: <code>com.zebra.mdna.enterprisebrowser</code><br>
-<strong>For the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a>, manually download the Enterprise Browser</strong> <code>.apk</code> and deploy and install it using <a href="/stagenow">Zebra StageNow</a> or the organization's EMM. </li>
+<ul>
+<li><strong>New Android restrictions prohibit the TC58, TC73, TC78, ET40, ET45, TC15 (and other forthcoming devices using 6490 and 6375 platforms) from supporting the adb “push” command</strong> for the deployment of files to the device. This prevents deployment of EB configuration for developer use cases. </li>
 
-<li><strong>Copy the app's</strong> <code>.html</code>, <code>Config.xml</code> <strong>and <a href="#optionalconfigfiles">optional config file(s)</a></strong> (if any) to the following folder on the device:<br> 
-<code>/enterprise/device/enterprisebrowser</code> <br>
-<strong>If deploying shortcuts</strong>, copy the <code>EBShortcuts.xml</code> file to:<br>
-<code>/enterprise/device/enterprisebrowser/EnterpriseBrowserShortcutFiles</code><br> 
-<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Directory names are case sensitive.</li>
+<li><strong>To manually deploy EB configuration files</strong>, copy files using a desktop file explorer to the following location on the device:<br>
+&nbsp;&nbsp;&nbsp;<code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br></li>
 
-<li><strong>Relaunch EB</strong> to activate settings.<br> </li>
+<li><strong>To mass deploy an EB</strong> <code>config.xml</code> <strong>file to</strong> <code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code>
+using “Deploy file” feature of File Manager, administrator must use the "<strong>TargetApplicationAndFileName</strong>"  parameter value as:<br>
+<code>com.zebra.mdna.enterprisebrowser/config.xml</code> when a profile is created. <code>Learn more???</code><br></li>
 
-<li><strong><a href="../licensing">Apply device license</a></strong> if necessary. <br>
-<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Licenses applied to previous EB versions (and not removed) are automatically reapplied when EB is reinstalled.</li>
-</ol>
+<li><strong>To mass deploy any other EB configuration files to</strong>:<br><code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br>
+using “Deploy file” feature of File Manager, administrator must use the "<strong>TargetApplicationAndFileName</strong>" parameter value as<br> <code>com.zebra.mdna.enterprisebrowser/[subdir if required]/[configuration file name]</code><br> when a Profile is created. <br></li></ul>
+</li>
+
+<li><strong>Administrators can continue to mass-deploy EB configuration files to</strong>:<br>
+<code>/enterprise/device/enterprisebrowser/</code><br> on the device.<br></li>
+</ul>
+
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> <strong>Zebra recommendations</strong>:<br>
+• <strong>Back up user data</strong> before any installation or upgrade operation.<br>
+• <strong>Fully test all apps and deployment processes</strong> before distribution.</p>
+
+<hr>
+
+<h3 id="tomassdeployaneb33orlaterapp" class="anchor"><a class="heading-anchor" href="#tomassdeployaneb33orlaterapp"><span></span></a>To mass-deploy an EB 3.3 (or later) app:</h3>
+
+<p><strong>1. Uninstall any prior version of Enterprise Browser</strong>, if present.<br>
+<strong><u>Previous package name</u></strong>: <code>com.symbol.enterprisebrowser</code>(v3.2-)<br>
+<strong><u>Current package name</u></strong>: <code>com.zebra.mdna.enterprisebrowser</code>(v3.3+)<br></p>
+
+<p><strong>2a. For Google Play</strong>:<br>
+&nbsp;&nbsp;&nbsp; a. Configure the EMM to download and install Enterprise Browser to device(s)<br> 
+&nbsp;&nbsp;&nbsp; b. Set a Policy to deploy and manage EB through the EMM<br></p>
+
+<p><strong>2b. For the Zebra Support Portal</strong>:<br>
+&nbsp;&nbsp;&nbsp; a. Manually download the Enterprise Browser <code>.apk</code> from the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a><br>
+&nbsp;&nbsp;&nbsp; b. Deploy and install EB using Zebra StageNow or the organization's EMM <br>
+&nbsp;&nbsp;&nbsp; c. Optionally set a policy to manage EB through the EMM<br></p>
+
+<p><strong>3. Copy the app's</strong> <code>.html</code>, <code>Config.xml</code> <strong>and <a href="#optionalconfigfiles">optional config file(s)</a></strong> (if any) to the following folder on the device:<br> 
+ <code>/enterprise/device/enterprisebrowser</code> <br>
+ <strong>If deploying shortcuts</strong>, copy the <code>EBShortcuts.xml</code> file to:<br>
+ <code>/enterprise/device/enterprisebrowser/EnterpriseBrowserShortcutFiles</code><br> 
+<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Directory names are case sensitive.</p>
+
+<p><strong>4. Relaunch EB</strong> to activate settings.<br> </p>
+
+<p><strong>5. <a href="../licensing">Apply device license</a></strong> if necessary. <br>
+<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Licenses applied to previous EB versions (and not removed) are automatically reapplied when EB is reinstalled.</p>
 
 <h4 id="iclassfafaexclamationcircleariahiddentruestylecolorff0000iimportantbr" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcircleariahiddentruestylecolorff0000iimportantbr"><span></span></a><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> IMPORTANT:<br></h4>
 
 <ul>
-<li>If deploying config files, <strong>it's critical that the EMM be configured to <u>execute Step 2 <em>prior</em> to Step 3</u></strong> above for activation of config files.<br></li>
+<li>If deploying config files, <strong>it's critical that the EMM be configured to <u>execute Step 3 <em>prior</em> to Step 4</u></strong> above for activation of config files.<br></li>
 
 <li><strong>Deployed files and folders must be granted full ("777") permissions</strong> to read, write, and execute for all users.</li>
 </ul>
@@ -604,53 +634,89 @@ configure the EMM to download and install Enterprise Browser</strong> and set a 
 
 <h2 id="iiimanualdeployment" class="anchor"><a class="heading-anchor" href="#iiimanualdeployment"><span></span></a>III. Manual Deployment</h2>
 
-<p>Enterprise Browser can be manually installed on a device in one of three ways: </p>
+<h3 id="iclassfafaexclamationcirclestylecolorff0000iplatformnotes-1" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcirclestylecolorff0000iplatformnotes-1"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Platform Notes</h3>
 
-<ol>
-<li><p><strong>Select and install it from <a href="https://play.google.com/store/search?q=zebra%20technologies">Google Play</a></strong> either remotely through a computer browser or through the Google Play app on the device itself.</p></li>
+<ul>
+<li><strong>Secure deployment of EB configuration files</strong> on newer Zebra devices:<br>
 
-<li><p><strong>Download the <code>.apk</code> from the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a></strong> and install on a USB-connected device using adb:<br></p>
 
-<pre class="prettyprint"><code>
-adb install [apk path]
-</code></pre></li>
+<ul>
+<li><strong>New Android restrictions prohibit the TC58, TC73, TC78, ET40, ET45, TC15 (and other forthcoming devices using 6490 and 6375 platforms) from supporting the adb “push” command</strong> for the deployment of files to the device. This prevents deployment of EB configuration for developer use cases. </li>
 
-<li><p><strong>Download the installer (<code>.msi</code>) file from the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a></strong>, install it and use the included installer utility to push EB to one or more USB-connected devices.  </p></li>
-</ol>
+<li><strong>To manually deploy EB configuration files</strong>, copy files using a desktop file explorer to the following location on the device:<br>
+&nbsp;&nbsp;&nbsp;<code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br></li>
 
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> NOTE: The EB installer package (<code>.apk</code>) can be individually pushed to devices from Windows or macOS machines and manually unpackaged on the device. After running the desired Enterprise Browser installer (<code>.msi</code> or <code>.dmg</code>) on the development host, perform the steps below as appropriate for the manual installation scenario. The Enterprise Browser runtime and app(s) also can be mass-deployed using Zebra <a href="/stagenow">StageNow</a> or a compatible EMM system. <a href="#massdeployment">See the Mass Deployment section</a>. </p>
+<li><strong>To mass deploy an EB</strong> <code>config.xml</code> <strong>file to</strong> <code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code>
+using “Deploy file” feature of File Manager, administrator must use the "<strong>TargetApplicationAndFileName</strong>"  parameter value as:<br>
+<code>com.zebra.mdna.enterprisebrowser/config.xml</code> when a profile is created. <code>Learn more???</code><br></li>
 
-<p><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> <strong>Zebra recommends fully testing apps using the manual deployment process before mass deployment across an enterprise</strong>.</p>
+<li><strong>To mass deploy any other EB configuration files to</strong>:<br><code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br>
+using “Deploy file” feature of File Manager, administrator must use the "<strong>TargetApplicationAndFileName</strong>" parameter value as<br> <code>com.zebra.mdna.enterprisebrowser/[subdir if required]/[configuration file name]</code><br> when a Profile is created. <br></li></ul>
+</li>
 
-<p><strong>All EB apps comprise a <em>minimum</em> of three files</strong>: <br></p>
+<li><strong>Administrators can continue to mass-deploy EB configuration files to</strong>:<br>
+<code>/enterprise/device/enterprisebrowser/</code><br> on the device.<br></li>
+</ul>
+
+<hr>
+
+<h4 id="enterprisebrowsernotes" class="anchor"><a class="heading-anchor" href="#enterprisebrowsernotes"><span></span></a>Enterprise Browser Notes</h4>
+
+<ul>
+<li><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> <strong>Zebra recommends fully testing apps using the manual deployment process before mass deployment across an enterprise</strong>.</li>
+
+<li><strong>All EB apps comprise a <em>minimum</em> of three files</strong>:
+
 
 <ul>
 <li><code>theApp.html</code> - The HTML code with user interface, program logic and references to device-peripheral APIs (JavaScript).</li>
 
 <li><code>Config.xml</code> - Configuration and feature settings for the app. </li>
 
-<li><code>ebapi-modules.js</code> - JavaScript file with APIs for using device peripherals.<br>
-<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> An additional settings file is required for each of the <a href="#optionalconfigfiles">optional features</a> employed by the app, if any.</li>
+<li><code>ebapi-modules.js</code> - JavaScript file with APIs for using device peripherals.<br></li>
+
+<li><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> An additional settings file is required for each of the <a href="#optionalconfigfiles">optional features</a> employed by the app, if any.</li></ul>
+</li>
+
+<li><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> <strong>Zebra recommends using the latest JavaScript libraries</strong> included with the downloaded version of Enterprise Browser. After installation, JavaScript <strong>libraries are located on the development host computer</strong> in:<br>
+<code>C:\EnterpriseBrowserForAndroid\JavaScriptFiles\EnterpriseBrowser</code><br>  </li>
 </ul>
 
-<p><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> <strong>Zebra recommends using the latest JavaScript libraries</strong> included with the downloaded version of Enterprise Browser. After installation, JavaScript libraries are located in:<br>
-<code>C:\EnterpriseBrowserForAndroid\JavaScriptFiles\EnterpriseBrowser</code><br> 
-on the development host computer. <i class="fa-solid fa-star-exclamation" style="color:#DEDE1D;"></i></p>
+ <!-- <i class="fa-solid fa-star-exclamation" style="color:#DEDE1D;"></i> -->
 
 <hr>
 
-<h4 id="tomanuallypushanebapptoadevice" class="anchor"><a class="heading-anchor" href="#tomanuallypushanebapptoadevice"><span></span></a>To manually push an EB app to a device:</h4>
+<h3 id="manuallyinstallebapp" class="anchor"><a class="heading-anchor" href="#manuallyinstallebapp"><span></span></a>Manually Install EB App</h3>
+
+<p>There are three primary methods of manually deploying EB directly to devices: </p>
+
+<ol>
+<li><p><strong>Select and install EB from <a href="https://play.google.com/store/apps/details?id=com.zebra.mdna.enterprisebrowser&amp;hl=en_US&amp;gl=US">Google Play</a></strong> either remotely <strong>using a computer browser</strong> or with the <strong>Google Play app on the device itself</strong>.<br></p></li>
+
+<li><p><strong>Download the EB <code>.apk</code> from the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a></strong> and install on a USB-connected device using the following adb command:<br></p>
+
+<pre class="prettyprint"><code>`adb install [apk path]`
+</code></pre></li>
+
+<li><p><strong>Download one of the installer file(s) from the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a></strong> and install it on a Windows or macOS computer. Then push EB to one or more USB-connected devices using the directions in <a href="#iprephostandtarget">Section I</a> above. </p></li>
+</ol>
+
+<!-- The EB installer package (`.apk`) can be individually pushed to devices from Windows or macOS machines and manually unpackaged on the device. After running the platform-specific Enterprise Browser installer (`.msi` for Windows or `.dmg` for macOS) on the development host, perform the steps below as appropriate for manual installation.  -->
 
 <blockquote>
-  <p><strong>Skip to Step 4 if the EB runtime has already been installed on the target device</strong> and the need is ONLY to deploy a new or updated app and its settings file(s).  </p>
+  <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> The Enterprise Browser runtime, app UI and config files(s) also can be mass-deployed using Zebra <a href="/stagenow">StageNow</a> or a compatible EMM system. <a href="#massdeployment">See the Mass Deployment section</a>. </p>
 </blockquote>
 
-<p><strong>1. Uninstall any prior version of Enterprise Browser</strong>, if present. </p>
+<h4 id="tomanuallypushanebapptoadevice" class="anchor"><a class="heading-anchor" href="#tomanuallypushanebapptoadevice"><span></span></a>To manually push an EB app to a device:</h4>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>To deploy ONLY UI screens and/or EB settings files</strong> (<code>.html</code> and/or <code>Config.XML</code>, and NOT the EB <code>.apk</code> itself), <strong>skip to Step 5</strong>. </p>
+
+<p><strong>1. Uninstall any prior version of Enterprise Browser from the device</strong> using the Android App Manager app. </p>
 
 <p><strong>2. Download and install Enterprise Browser</strong> from one of the sites below: </p>
 
 <ul>
-<li><strong><a href="https://play.google.com/store/apps/developer?id=Zebra+Technologies&amp;hl=en_US&amp;gl=US">Google Play</a></strong></li>
+<li><strong><a href="https://play.google.com/store/apps/details?id=com.zebra.mdna.enterprisebrowser&amp;hl=en_US&amp;gl=US">Google Play</a></strong></li>
 
 <li><strong><a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html">Zebra Support Portal</a></strong></li>
 </ul>
@@ -662,9 +728,12 @@ on the development host computer. <i class="fa-solid fa-star-exclamation" style=
     adb install [apk path]
 </code></pre>
 
-<p>&nbsp;&nbsp;&nbsp; <strong>b. <em>~OR~</em> using a file browser on the device, locate double-tap the</strong> <code>.apk</code>.<br>This creates the <code>/enterprise/device/enterprisebrowser/</code> folder on the device and stores the Enterprise Browser executable there. </p>
+<p>&nbsp;&nbsp;&nbsp; <strong>b. <em>~OR~</em> using a file browser on the device, locate and double-tap the</strong> <code>.apk</code>.<br>
+&nbsp;&nbsp;&nbsp; Step 3 (a or b) creates the <code>/enterprise/device/enterprisebrowser/</code> folder on the device and stores the Enterprise Browser executable there. </p>
 
-<p><strong>4. Push the app's</strong> <code>.html</code> and  <code>Config.xml</code> <strong>files and optional config files (if any, see <a href="#overview">Overview</a>) to</strong>:<br></p>
+<p><strong>4. Launch the EB app</strong>. This step is required to ensure that EB directories are created and populated with the necessary config and startup files. </p>
+
+<p><strong>5. Push the app's UI pages</strong> (an <code>.html</code> file) <strong>and the</strong> <code>Config.xml</code> <strong>file</strong> (with app settings) <strong>plus any <a href="#optionalconfigfiles">optional config files</a> to</strong>:<br></p>
 
 <ul>
 <li><code>/enterprise/device/enterprisebrowser/</code></li>
@@ -672,12 +741,12 @@ on the development host computer. <i class="fa-solid fa-star-exclamation" style=
 
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Directory names are case sensitive.</p>
 
-<p><strong>5. Relaunch EB</strong> to activate settings. </p>
+<p><strong>6. Relaunch EB</strong> to activate settings. </p>
 
-<p><strong>6. <a href="../licensing">Apply device license</a></strong> if necessary.<br>
+<p><strong>7. <a href="../licensing">Apply device license</a></strong> if necessary.<br>
 <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> Licenses applied to previous EB versions (and not removed) are automatically reapplied when EB is reinstalled.</p>
 
-<h4 id="theebappisreadytouse" class="anchor"><a class="heading-anchor" href="#theebappisreadytouse"><span></span></a>The EB app is ready to use.</h4>
+<h4 id="iclassfafacheckcirclestylecolor27ae60itheebappisreadytouse" class="anchor"><a class="heading-anchor" href="#iclassfafacheckcirclestylecolor27ae60itheebappisreadytouse"><span></span></a><i class="fa fa-check-circle" style="color:#27AE60;"></i> The EB app is ready to use.</h4>
 
 <!-- &nbsp;&nbsp;&nbsp;• Checks the root directory and copies `Config.xml` and `keycodemapping.xml` files (if present) to the new directory, overwriting existing file(s), if any<br>
 &nbsp;&nbsp;&nbsp;• Copies those same config file(s) to `/enterprise/device/enterprisebrowser/backup/` and deletes the originals<br>
@@ -699,38 +768,52 @@ on the development host computer. <i class="fa-solid fa-star-exclamation" style=
 <h4 id="generalizedemmprocess" class="anchor"><a class="heading-anchor" href="#generalizedemmprocess"><span></span></a>Generalized EMM Process</h4>
 
 <ol>
-<li>Navigate to app policies or resources section </li>
+<li>Navigate to app policies or resources section.</li>
 
-<li>Create a new Policy or add an app</li>
+<li>Create a new Policy or add an app.</li>
 
-<li>Select platform as Android or Android Enterprise</li>
+<li>Select platform as Android or Android Enterprise.</li>
 
-<li>If deploying from Google Play, create an app Policy for "Managed Google Play" </li>
+<li>If deploying from Google Play, create an app Policy for "Managed Google Play." </li>
 
-<li>When prompted, search for "Enterprise Browser"</li>
+<li>When prompted, search for "Enterprise Browser."</li>
 
-<li>Select Enterprise Browser as the app to deploy</li>
+<li>Select Enterprise Browser as the app to deploy.</li>
 
-<li>Select additional app options as desired for Policy </li>
+<li>Select additional app options as desired for Policy. </li>
 
-<li>Save and assign the Policy</li>
+<li>Save and assign the Policy.</li>
 </ol>
 
 <hr>
 
 <h2 id="connections" class="anchor"><a class="heading-anchor" href="#connections"><span></span></a>Connections</h2>
 
-<h3 id="androiddevices" class="anchor"><a class="heading-anchor" href="#androiddevices"><span></span></a>Android devices</h3>
+<h3 id="targetingandroiddevices" class="anchor"><a class="heading-anchor" href="#targetingandroiddevices"><span></span></a>Targeting Android Devices</h3>
 
-<p>Requirements for using the Enterprise Browser Installer on a Windows system to target an Android device:</p>
+<p><strong>System requirements for targeting Android devices</strong>:</p>
+
+<ul>
+<li><strong>For Windows</strong>:
+
 
 <ul>
 <li>USB drivers for the specific hardware device being targeted</li>
 
 <li>The Android ADT bundle to make devices visible and to push files (includes ADB) </li>
 
-<li>A path to <code>adb.exe</code> in the host system's environment variable</li>
+<li>A path to <code>adb.exe</code> in the host system's environment variable</li></ul>
+</li>
+
+<li><strong>For macOS</strong>: 
+
+
+<ul>
+<li>Download and install the <a href="https://www.android.com/filetransfer/">Android File Transfer</a> utility</li></ul>
+</li>
 </ul>
+
+<h3 id="configurewindows" class="anchor"><a class="heading-anchor" href="#configurewindows"><span></span></a>Configure Windows</h3>
 
 <h4 id="step1getusbdrivers" class="anchor"><a class="heading-anchor" href="#step1getusbdrivers"><span></span></a>STEP 1: Get USB drivers</h4>
 
@@ -797,7 +880,7 @@ $ adb devices
 <p><img alt="" style="height:150px" src="../../images/getting-started/setup/adb_devices_command.png">
 <br></p>
 
-<p>The system is now ready to deploy Enterprise Browser apps to an Android device.</p>
+<h4 id="iclassfafacheckcirclestylecolor27ae60ithesystemisnowreadytodeployebappstodevices" class="anchor"><a class="heading-anchor" href="#iclassfafacheckcirclestylecolor27ae60ithesystemisnowreadytodeployebappstodevices"><span></span></a><i class="fa fa-check-circle" style="color:#27AE60;"></i> The system is now ready to deploy EB apps to devices.</h4>
 
 <hr>
 
@@ -879,7 +962,7 @@ $ adb devices
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
                     </div>
                      <!--
                      <div class="col-sm-2">

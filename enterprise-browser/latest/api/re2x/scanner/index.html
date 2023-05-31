@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.3
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.4
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-3','1-4','/enterprise-browser/3-3/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-4','1-4','/enterprise-browser/3-4/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/about">
+                            <a href="/enterprise-browser/3-4/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-4/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/tutorial/">
+                            <a href="/enterprise-browser/3-4/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/samples">
+                            <a href="/enterprise-browser/3-4/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide">
+                            <a href="/enterprise-browser/3-4/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/licensing">
+                            <a href="/enterprise-browser/3-4/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/migration">
+                            <a href="/enterprise-browser/3-4/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/configreference">
+                            <a href="/enterprise-browser/3-4/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/api">
+                            <a href="/enterprise-browser/3-4/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/download">
+                            <a href="/enterprise-browser/3-4/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/search">
+                            <a href="/enterprise-browser/3-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -247,12 +247,42 @@
                                 <div class="service-box fadeInRight">
                                     <div class="">
 
-                                        <p></p><div class="alert alert-danger alert-dismissible fade in" role="alert"><b>This API is DEPRECATED; it will be <u>DISCONTINUED after Dec. 31, 2021</u>.</b><br> Developers are encouraged to <b>migrate to <a href="../../barcode">Enterprise Browser Barcode APIs</a></b> as soon as possible.<br><b>See <a href="../../../guide/migration">Migration Guides</a></b> for assistance. 
+                                        <p><!-- 
+
+<div class="alert alert-danger alert-dismissible fade in" role="alert"><h3>This API is DISCONTINUED</h3><br>
+<b>NOT supported on:</b><br>
+&nbsp;&nbsp;&nbsp;• 4350-platform devices (incl. ET40/ET45)<br>
+&nbsp;&nbsp;&nbsp;• 6490-platform devices (incl. TC53/TC58, TC73/TC78)<br>
+<br>
+Please migrate to <a href="../../barcode">Enterprise Browser Barcode APIs</a></b>.<br>
+<br>
+<b><a href="../../../guide/migration">See Migration Guides</a></b> for assistance. 
+</div>
+
+ -->
+
+</p><div class="alert alert-danger alert-dismissible fade in" role="alert">
+<h4 id="-this-api-is-discontinued" class="anchor"><a class="heading-anchor" href="#-this-api-is-discontinued"><span></span></a><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> This API is DISCONTINUED</h4><p><u><b>Zebra strongly recommends using DataWedge for apps that require barcode scanning</b></u>. While Zebra continues to support EB Barcode APIs, the intent-based interfaces of DataWedge are easier to use than EB Barcode APIs.</p> 
+<p> <b>DataWedge facts</b>:
+    </p><ul>
+        <li><b>DataWedge APIs have the same capabilities currently available in EB Barcode APIs.</b></li>
+        <li><b>DataWedge intent-based APIs are easier and faster to implement than EB Barcode APIs.</b></li>
+        <li><b>New features are added to DataWedge before being considered for EB Barcode APIs.</b></li>
+    </ul>
+    <br>
+    <a href="../../../guide/datawedge" class="btn btn-danger">Using DataWedge With EB</a>  <p></p> 
 </div>
 
 <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
 <p>The Scanner Module controls the functionality of the device scanner.</p>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <b>This API is NOT supported on</b>:<br>
+  &nbsp;&nbsp;&nbsp;• 4350-platform devices (incl. ET40/ET45)<br>
+  &nbsp;&nbsp;&nbsp;• 6490-platform devices (incl. TC53/TC58, TC73/TC78)<br>
+  <br></p>
+</blockquote>
 
 <h2 id="syntax" class="anchor"><a class="heading-anchor" href="#syntax"><span></span></a>Syntax</h2>
 
@@ -889,7 +919,7 @@ function onScannerEnable()
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
                     </div>
                      <!--
                      <div class="col-sm-2">

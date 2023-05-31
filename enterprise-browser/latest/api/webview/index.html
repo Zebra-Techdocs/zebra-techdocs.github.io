@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.3
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.4
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-3','1-4','/enterprise-browser/3-3/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-4','1-4','/enterprise-browser/3-4/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/about">
+                            <a href="/enterprise-browser/3-4/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-4/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/tutorial/">
+                            <a href="/enterprise-browser/3-4/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/samples">
+                            <a href="/enterprise-browser/3-4/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide">
+                            <a href="/enterprise-browser/3-4/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/licensing">
+                            <a href="/enterprise-browser/3-4/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/migration">
+                            <a href="/enterprise-browser/3-4/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/configreference">
+                            <a href="/enterprise-browser/3-4/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/api">
+                            <a href="/enterprise-browser/3-4/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/download">
+                            <a href="/enterprise-browser/3-4/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/search">
+                            <a href="/enterprise-browser/3-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="webview" class="anchor"><a class="heading-anchor" href="#webview"><span></span></a>WebView</h1>
                                     <p>
                                             Enterprise Browser
-                                            3.3
+                                            3.4
                                     </p>
                                 </div>
                             </section>                    
@@ -295,19 +295,21 @@ a directory on the computer that contains the Enterprise Browser installation.</
   <p>In the code lines above, notice that <code>ebapi.js</code> is included first, followed by <code>eb.webview.js</code>, which is the WebView API for Enterprise Browser. <strong>This coding is required on each HTML page whenever an individual API will be called from that page</strong>.</p>
 </blockquote>
 
+<hr>
+
 <h2 id="methods" class="anchor"><a class="heading-anchor" href="#methods"><span></span></a>Methods</h2>
 
-<h3 id="capturewebpagescreen" class="anchor"><a class="heading-anchor" href="#capturewebpagescreen"><span></span></a>captureWebPageScreen()</h3>
+<h3 id="getconfigurationchangenotification" class="anchor"><a class="heading-anchor" href="#getconfigurationchangenotification"><span></span></a>getConfigurationChangeNotification()</h3>
 
-<p>Used to capture the current application page and save it to a directory on the device.</p>
+<p>Used for reading the displayID of the currently attached secondary display, as well as its screen height, width and density values. Optional callback for changes to displayID or monitor orientation.  </p>
 
 <h4 id="parameters" class="anchor"><a class="heading-anchor" href="#parameters"><span></span></a>Parameters</h4>
 
-<ul>
-<li>Void</li>
-</ul>
+<ul><li>callback : <span class="text-info">CallBackHandler (optional)</span></li></ul>
 
 <h4 id="returns" class="anchor"><a class="heading-anchor" href="#returns"><span></span></a>Returns</h4>
+
+<p>Synchronous Return:</p>
 
 <ul>
 <li>Void</li>
@@ -326,23 +328,23 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.captureWebPageScreen()</code></li></ul>
+<li><code>EB.WebView.getConfigurationChangeNotification()</code></li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="clearapplicationcache" class="anchor"><a class="heading-anchor" href="#clearapplicationcache"><span></span></a>clearApplicationCache()</h3>
+<h3 id="capturewebpagescreen" class="anchor"><a class="heading-anchor" href="#capturewebpagescreen"><span></span></a>captureWebPageScreen()</h3>
 
-<p>Used for clearing HTML5 Application Cache data in Enterprise Browser application. Note: Use WebView clearCache API for clearing cache data.</p>
+<p>Used to capture the current application page and save it to a directory on the device.</p>
 
 <h4 id="parameters-1" class="anchor"><a class="heading-anchor" href="#parameters-1"><span></span></a>Parameters</h4>
 
-<ul><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+<ul>
+<li>Void</li>
+</ul>
 
 <h4 id="returns-1" class="anchor"><a class="heading-anchor" href="#returns-1"><span></span></a>Returns</h4>
-
-<p>Synchronous Return:</p>
 
 <ul>
 <li>Void</li>
@@ -361,15 +363,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.clearApplicationCache()</code></li></ul>
+<li><code>EB.WebView.captureWebPageScreen()</code></li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="clearcache" class="anchor"><a class="heading-anchor" href="#clearcache"><span></span></a>clearCache()</h3>
+<h3 id="clearapplicationcache" class="anchor"><a class="heading-anchor" href="#clearapplicationcache"><span></span></a>clearApplicationCache()</h3>
 
-<p>Forces WebView to clear cache data in Enterprise Browser application. Note: This doesnot clear HTML5 Application Cache data.</p>
+<p>Used for clearing HTML5 Application Cache data in Enterprise Browser application. Note: Use WebView clearCache API for clearing cache data.</p>
 
 <h4 id="parameters-2" class="anchor"><a class="heading-anchor" href="#parameters-2"><span></span></a>Parameters</h4>
 
@@ -396,15 +398,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.clearCache()</code></li></ul>
+<li><code>EB.WebView.clearApplicationCache()</code></li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="clearcookies" class="anchor"><a class="heading-anchor" href="#clearcookies"><span></span></a>clearCookies()</h3>
+<h3 id="clearcache" class="anchor"><a class="heading-anchor" href="#clearcache"><span></span></a>clearCache()</h3>
 
-<p>Forces WebView to clear cookies saved in Enterprise Browser application.</p>
+<p>Forces WebView to clear cache data in Enterprise Browser application. Note: This doesnot clear HTML5 Application Cache data.</p>
 
 <h4 id="parameters-3" class="anchor"><a class="heading-anchor" href="#parameters-3"><span></span></a>Parameters</h4>
 
@@ -431,15 +433,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.clearCookies()</code></li></ul>
+<li><code>EB.WebView.clearCache()</code></li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="clearhistory" class="anchor"><a class="heading-anchor" href="#clearhistory"><span></span></a>clearHistory()</h3>
+<h3 id="clearcookies" class="anchor"><a class="heading-anchor" href="#clearcookies"><span></span></a>clearCookies()</h3>
 
-<p>Forces WebView to clear history in Enterprise Browser application.</p>
+<p>Forces WebView to clear cookies saved in Enterprise Browser application.</p>
 
 <h4 id="parameters-4" class="anchor"><a class="heading-anchor" href="#parameters-4"><span></span></a>Parameters</h4>
 
@@ -466,19 +468,19 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.clearHistory()</code></li></ul>
+<li><code>EB.WebView.clearCookies()</code></li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="navigatespanclasstextinfostringspanurlspanclasstextinfointegerspantabindex" class="anchor"><a class="heading-anchor" href="#navigatespanclasstextinfostringspanurlspanclasstextinfointegerspantabindex"><span></span></a>navigate(<span class="text-info">STRING</span> url, <span class="text-info">INTEGER</span> tabIndex)</h3>
+<h3 id="clearhistory" class="anchor"><a class="heading-anchor" href="#clearhistory"><span></span></a>clearHistory()</h3>
 
-<p>Force WebView to navigate to a URL. White page flickering during transition may happen if a controller action method doesn't return any rendered value, but instead performs a WebView.navigate(someUrl) call. <!--It is important to avoid using WebView.navigate in Ruby action methods because WebView.navigate is intended to be used in callback methods asynchronously.--></p>
+<p>Forces WebView to clear history in Enterprise Browser application.</p>
 
 <h4 id="parameters-5" class="anchor"><a class="heading-anchor" href="#parameters-5"><span></span></a>Parameters</h4>
 
-<ul><li>url : <span class="text-info">STRING</span><p>Navigate to this url. </p></li><li>tabIndex : <span class="text-info">INTEGER</span> <span class="label label-info">Optional</span><span class="label "> Default: -1</span><p>TabBar tab index. If no tab bar present, index is ignored. Please avoid of navigate in not opened tab - this is unsupported on Android. Refresh active WebView.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+<ul><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
 
 <h4 id="returns-5" class="anchor"><a class="heading-anchor" href="#returns-5"><span></span></a>Returns</h4>
 
@@ -492,10 +494,6 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <ul>
 <li>Android</li>
-
-<li>Windows Mobile</li>
-
-<li>Windows CE</li>
 </ul>
 
 <h4 id="methodaccess-5" class="anchor"><a class="heading-anchor" href="#methodaccess-5"><span></span></a>Method Access:</h4>
@@ -505,19 +503,19 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.navigate(<span class="text-info">STRING</span> url, <span class="text-info">INTEGER</span> tabIndex)</code> </li></ul>
+<li><code>EB.WebView.clearHistory()</code></li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="navigatebackspanclasstextinfointegerspantabindex" class="anchor"><a class="heading-anchor" href="#navigatebackspanclasstextinfointegerspantabindex"><span></span></a>navigateBack(<span class="text-info">INTEGER</span> tabIndex)</h3>
+<h3 id="navigatespanclasstextinfostringspanurlspanclasstextinfointegerspantabindex" class="anchor"><a class="heading-anchor" href="#navigatespanclasstextinfostringspanurlspanclasstextinfointegerspantabindex"><span></span></a>navigate(<span class="text-info">STRING</span> url, <span class="text-info">INTEGER</span> tabIndex)</h3>
 
-<p>Force WebView to navigate to the previous page using Browser back.</p>
+<p>Force WebView to navigate to a URL. White page flickering during transition may happen if a controller action method doesn't return any rendered value, but instead performs a WebView.navigate(someUrl) call. <!--It is important to avoid using WebView.navigate in Ruby action methods because WebView.navigate is intended to be used in callback methods asynchronously.--></p>
 
 <h4 id="parameters-6" class="anchor"><a class="heading-anchor" href="#parameters-6"><span></span></a>Parameters</h4>
 
-<ul><li>tabIndex : <span class="text-info">INTEGER</span> <span class="label label-info">Optional</span><span class="label "> Default: -1</span><p>TabBar tab index. If no tab bar present, index is ignored. Navigate back in active WebView.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+<ul><li>url : <span class="text-info">STRING</span><p>Navigate to this url. </p></li><li>tabIndex : <span class="text-info">INTEGER</span> <span class="label label-info">Optional</span><span class="label "> Default: -1</span><p>TabBar tab index. If no tab bar present, index is ignored. Please avoid of navigate in not opened tab - this is unsupported on Android. Refresh active WebView.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
 
 <h4 id="returns-6" class="anchor"><a class="heading-anchor" href="#returns-6"><span></span></a>Returns</h4>
 
@@ -544,19 +542,19 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.navigateBack(<span class="text-info">INTEGER</span> tabIndex)</code> </li></ul>
+<li><code>EB.WebView.navigate(<span class="text-info">STRING</span> url, <span class="text-info">INTEGER</span> tabIndex)</code> </li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="refreshspanclasstextinfointegerspantabindex" class="anchor"><a class="heading-anchor" href="#refreshspanclasstextinfointegerspantabindex"><span></span></a>refresh(<span class="text-info">INTEGER</span> tabIndex)</h3>
+<h3 id="navigatebackspanclasstextinfointegerspantabindex" class="anchor"><a class="heading-anchor" href="#navigatebackspanclasstextinfointegerspantabindex"><span></span></a>navigateBack(<span class="text-info">INTEGER</span> tabIndex)</h3>
 
-<p>Force WebView to refresh the current page.</p>
+<p>Force WebView to navigate to the previous page using Browser back.</p>
 
 <h4 id="parameters-7" class="anchor"><a class="heading-anchor" href="#parameters-7"><span></span></a>Parameters</h4>
 
-<ul><li>tabIndex : <span class="text-info">INTEGER</span> <span class="label label-info">Optional</span><span class="label "> Default: -1</span><p>TabBar tab index. If no tab bar present, index is ignored. Refresh active WebView.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+<ul><li>tabIndex : <span class="text-info">INTEGER</span> <span class="label label-info">Optional</span><span class="label "> Default: -1</span><p>TabBar tab index. If no tab bar present, index is ignored. Navigate back in active WebView.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
 
 <h4 id="returns-7" class="anchor"><a class="heading-anchor" href="#returns-7"><span></span></a>Returns</h4>
 
@@ -583,19 +581,19 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.refresh(<span class="text-info">INTEGER</span> tabIndex)</code> </li></ul>
+<li><code>EB.WebView.navigateBack(<span class="text-info">INTEGER</span> tabIndex)</code> </li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="resizewebviewlayoutspanclasstextinfointegerspanleftspanclasstextinfointegerspantopspanclasstextinfointegerspanwidthspanclasstextinfointegerspanheight" class="anchor"><a class="heading-anchor" href="#resizewebviewlayoutspanclasstextinfointegerspanleftspanclasstextinfointegerspantopspanclasstextinfointegerspanwidthspanclasstextinfointegerspanheight"><span></span></a>resizeWebviewLayout(<span class="text-info">INTEGER</span> left, <span class="text-info">INTEGER</span> top, <span class="text-info">INTEGER</span> width, <span class="text-info">INTEGER</span> height)</h3>
+<h3 id="refreshspanclasstextinfointegerspantabindex" class="anchor"><a class="heading-anchor" href="#refreshspanclasstextinfointegerspantabindex"><span></span></a>refresh(<span class="text-info">INTEGER</span> tabIndex)</h3>
 
-<p>Resize the WebView layout parameters with the specified left, top, width and height values in Enterprise Browser application.</p>
+<p>Force WebView to refresh the current page.</p>
 
 <h4 id="parameters-8" class="anchor"><a class="heading-anchor" href="#parameters-8"><span></span></a>Parameters</h4>
 
-<ul><li>left : <span class="text-info">INTEGER</span><p>Specifies the initial horizontal position of the webView layout in pixels.</p></li><li>top : <span class="text-info">INTEGER</span><p>Specifies the initial vertical position of the webView layout in pixels.</p></li><li>width : <span class="text-info">INTEGER</span><p>Specifies the width of the webView layout in pixels. The maximum value should not be greater than device Width.</p></li><li>height : <span class="text-info">INTEGER</span><p>Specifies the height of the webView layout in pixels. The maximum value should not be greater than device Height.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+<ul><li>tabIndex : <span class="text-info">INTEGER</span> <span class="label label-info">Optional</span><span class="label "> Default: -1</span><p>TabBar tab index. If no tab bar present, index is ignored. Refresh active WebView.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
 
 <h4 id="returns-8" class="anchor"><a class="heading-anchor" href="#returns-8"><span></span></a>Returns</h4>
 
@@ -609,6 +607,10 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <ul>
 <li>Android</li>
+
+<li>Windows Mobile</li>
+
+<li>Windows CE</li>
 </ul>
 
 <h4 id="methodaccess-8" class="anchor"><a class="heading-anchor" href="#methodaccess-8"><span></span></a>Method Access:</h4>
@@ -618,19 +620,19 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.resizeWebviewLayout(<span class="text-info">INTEGER</span> left, <span class="text-info">INTEGER</span> top, <span class="text-info">INTEGER</span> width, <span class="text-info">INTEGER</span> height)</code></li></ul>
+<li><code>EB.WebView.refresh(<span class="text-info">INTEGER</span> tabIndex)</code> </li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="resetwebviewlayout" class="anchor"><a class="heading-anchor" href="#resetwebviewlayout"><span></span></a>resetWebviewLayout()</h3>
+<h3 id="resizewebviewlayoutspanclasstextinfointegerspanleftspanclasstextinfointegerspantopspanclasstextinfointegerspanwidthspanclasstextinfointegerspanheight" class="anchor"><a class="heading-anchor" href="#resizewebviewlayoutspanclasstextinfointegerspanleftspanclasstextinfointegerspantopspanclasstextinfointegerspanwidthspanclasstextinfointegerspanheight"><span></span></a>resizeWebviewLayout(<span class="text-info">INTEGER</span> left, <span class="text-info">INTEGER</span> top, <span class="text-info">INTEGER</span> width, <span class="text-info">INTEGER</span> height)</h3>
 
-<p>Reset the WebView layout to default in Enterprise Browser application.</p>
+<p>Resize the WebView layout parameters with the specified left, top, width and height values in Enterprise Browser application.</p>
 
 <h4 id="parameters-9" class="anchor"><a class="heading-anchor" href="#parameters-9"><span></span></a>Parameters</h4>
 
-<ul><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+<ul><li>left : <span class="text-info">INTEGER</span><p>Specifies the initial horizontal position of the webView layout in pixels.</p></li><li>top : <span class="text-info">INTEGER</span><p>Specifies the initial vertical position of the webView layout in pixels.</p></li><li>width : <span class="text-info">INTEGER</span><p>Specifies the width of the webView layout in pixels. The maximum value should not be greater than device Width.</p></li><li>height : <span class="text-info">INTEGER</span><p>Specifies the height of the webView layout in pixels. The maximum value should not be greater than device Height.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
 
 <h4 id="returns-9" class="anchor"><a class="heading-anchor" href="#returns-9"><span></span></a>Returns</h4>
 
@@ -653,19 +655,19 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.resetWebviewLayout()</code></li></ul>
+<li><code>EB.WebView.resizeWebviewLayout(<span class="text-info">INTEGER</span> left, <span class="text-info">INTEGER</span> top, <span class="text-info">INTEGER</span> width, <span class="text-info">INTEGER</span> height)</code></li></ul>
 </li>
 </ul>
 
 <hr>
 
-<h3 id="savespanclasstextinfostringspanformatspanclasstextinfostringspanpathspanclasstextinfointegerspantabindex" class="anchor"><a class="heading-anchor" href="#savespanclasstextinfostringspanformatspanclasstextinfostringspanpathspanclasstextinfointegerspantabindex"><span></span></a>save(<span class="text-info">STRING</span> format, <span class="text-info">STRING</span> path, <span class="text-info">INTEGER</span> tabIndex)</h3>
+<h3 id="resetwebviewlayout" class="anchor"><a class="heading-anchor" href="#resetwebviewlayout"><span></span></a>resetWebviewLayout()</h3>
 
-<p>Save current page to file system.</p>
+<p>Reset the WebView layout to default in Enterprise Browser application.</p>
 
 <h4 id="parameters-10" class="anchor"><a class="heading-anchor" href="#parameters-10"><span></span></a>Parameters</h4>
 
-<ul><li>format : <span class="text-info">STRING</span><p>Format of the saved page. </p><p><strong>Possible Values</strong> :</p> <dl><dt>Constant: EB.WebView.SAVE_FORMAT_JPEG <br> String:jpeg</dt><dd>Save as jpeg image.</dd></dl></li><li>path : <span class="text-info">STRING</span><p>Path to the file / folder to save the page. </p></li><li>tabIndex : <span class="text-info">INTEGER</span> <span class="label label-info">Optional</span><span class="label "> Default: -1</span><p>TabBar tab index. If no tab bar present, index is ignored. If tabbar index omitted then active WebView will be saved.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+<ul><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
 
 <h4 id="returns-10" class="anchor"><a class="heading-anchor" href="#returns-10"><span></span></a>Returns</h4>
 
@@ -688,6 +690,41 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
+<li><code>EB.WebView.resetWebviewLayout()</code></li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h3 id="savespanclasstextinfostringspanformatspanclasstextinfostringspanpathspanclasstextinfointegerspantabindex" class="anchor"><a class="heading-anchor" href="#savespanclasstextinfostringspanformatspanclasstextinfostringspanpathspanclasstextinfointegerspantabindex"><span></span></a>save(<span class="text-info">STRING</span> format, <span class="text-info">STRING</span> path, <span class="text-info">INTEGER</span> tabIndex)</h3>
+
+<p>Save current page to file system.</p>
+
+<h4 id="parameters-11" class="anchor"><a class="heading-anchor" href="#parameters-11"><span></span></a>Parameters</h4>
+
+<ul><li>format : <span class="text-info">STRING</span><p>Format of the saved page. </p><p><strong>Possible Values</strong> :</p> <dl><dt>Constant: EB.WebView.SAVE_FORMAT_JPEG <br> String:jpeg</dt><dd>Save as jpeg image.</dd></dl></li><li>path : <span class="text-info">STRING</span><p>Path to the file / folder to save the page. </p></li><li>tabIndex : <span class="text-info">INTEGER</span> <span class="label label-info">Optional</span><span class="label "> Default: -1</span><p>TabBar tab index. If no tab bar present, index is ignored. If tabbar index omitted then active WebView will be saved.</p></li><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+
+<h4 id="returns-11" class="anchor"><a class="heading-anchor" href="#returns-11"><span></span></a>Returns</h4>
+
+<p>Synchronous Return:</p>
+
+<ul>
+<li>Void</li>
+</ul>
+
+<h4 id="platforms-11" class="anchor"><a class="heading-anchor" href="#platforms-11"><span></span></a>Platforms</h4>
+
+<ul>
+<li>Android</li>
+</ul>
+
+<h4 id="methodaccess-11" class="anchor"><a class="heading-anchor" href="#methodaccess-11"><span></span></a>Method Access:</h4>
+
+<ul>
+<li>Class Method: This method can only be accessed via the API class object. 
+
+
+<ul>
 <li><code>EB.WebView.save(<span class="text-info">STRING</span> format, <span class="text-info">STRING</span> path, <span class="text-info">INTEGER</span> tabIndex)</code> </li></ul>
 </li>
 </ul>
@@ -696,17 +733,46 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h2 id="properties" class="anchor"><a class="heading-anchor" href="#properties"><span></span></a>Properties</h2>
 
-<h3 id="usewideviewport" class="anchor"><a class="heading-anchor" href="#usewideviewport"><span></span></a>useWideViewPort</h3>
+<h3 id="setuseragent" class="anchor"><a class="heading-anchor" href="#setuseragent"><span></span></a>setUserAgent</h3>
 
 <h4 id="type" class="anchor"><a class="heading-anchor" href="#type"><span></span></a>Type</h4>
 
-<p><span class="text-info">BOOLEAN</span> </p>
+<p><span class="text-info">STRING</span> </p>
 
 <h4 id="description" class="anchor"><a class="heading-anchor" href="#description"><span></span></a>Description</h4>
 
-<p>Used to control whether the WebView supports the viewport HTML meta tag or a wide viewport. When false, layout width is always set to the width of the WebView control in device-independent (CSS) pixels. When true and the page contains the viewport meta tag, the value of the width specified in the tag is used. If the page does not contain the tag or does not specify a width, wide viewport id used. <strong>Overrides any value set using the UseWideViewPort parameter of the <a href="../../guide/configreference/#viewport">UseWideViewport config tag</a></strong>.</p>
+<p>Used to modify the default user agent of the current WebView instance.</p>
 
 <h4 id="access" class="anchor"><a class="heading-anchor" href="#access"><span></span></a>Access</h4>
+
+<ul>
+<li>Class: This property can only be accessed via the API class object.
+
+
+<ul>
+<li>EB.WebView.setUserAgent</li></ul>
+</li>
+</ul>
+
+<h4 id="platforms-12" class="anchor"><a class="heading-anchor" href="#platforms-12"><span></span></a>Platforms</h4>
+
+<ul>
+<li>Android</li>
+</ul>
+
+<hr>
+
+<h3 id="usewideviewport" class="anchor"><a class="heading-anchor" href="#usewideviewport"><span></span></a>useWideViewPort</h3>
+
+<h4 id="type-1" class="anchor"><a class="heading-anchor" href="#type-1"><span></span></a>Type</h4>
+
+<p><span class="text-info">BOOLEAN</span> </p>
+
+<h4 id="description-1" class="anchor"><a class="heading-anchor" href="#description-1"><span></span></a>Description</h4>
+
+<p>Used to control whether the WebView supports the viewport HTML meta tag or a wide viewport. When false, layout width is always set to the width of the WebView control in device-independent (CSS) pixels. When true and the page contains the viewport meta tag, the value of the width specified in the tag is used. If the page does not contain the tag or does not specify a width, wide viewport id used. <strong>Overrides any value set using the UseWideViewPort parameter of the <a href="../../guide/configreference/#viewport">UseWideViewport config tag</a></strong>.</p>
+
+<h4 id="access-1" class="anchor"><a class="heading-anchor" href="#access-1"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -717,7 +783,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-11" class="anchor"><a class="heading-anchor" href="#platforms-11"><span></span></a>Platforms</h4>
+<h4 id="platforms-13" class="anchor"><a class="heading-anchor" href="#platforms-13"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android KitKat and higher</li>
@@ -727,15 +793,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="loadwithoverviewmode" class="anchor"><a class="heading-anchor" href="#loadwithoverviewmode"><span></span></a>loadWithOverviewMode</h3>
 
-<h4 id="type-1" class="anchor"><a class="heading-anchor" href="#type-1"><span></span></a>Type</h4>
+<h4 id="type-2" class="anchor"><a class="heading-anchor" href="#type-2"><span></span></a>Type</h4>
 
 <p><span class="text-info">BOOLEAN</span> </p>
 
-<h4 id="description-1" class="anchor"><a class="heading-anchor" href="#description-1"><span></span></a>Description</h4>
+<h4 id="description-2" class="anchor"><a class="heading-anchor" href="#description-2"><span></span></a>Description</h4>
 
 <p>Used to control whether the WebView loads pages in "zoomed out" (Overview) mode, which allows the width of content to fit on screen. This mode is generally used when content width is greater than the width of the WebView control. </p>
 
-<h4 id="access-1" class="anchor"><a class="heading-anchor" href="#access-1"><span></span></a>Access</h4>
+<h4 id="access-2" class="anchor"><a class="heading-anchor" href="#access-2"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property is accessed only through the API class object.
@@ -746,7 +812,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-12" class="anchor"><a class="heading-anchor" href="#platforms-12"><span></span></a>Platforms</h4>
+<h4 id="platforms-14" class="anchor"><a class="heading-anchor" href="#platforms-14"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android 5.x Lollipop and higher</li>
@@ -767,15 +833,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="activetab" class="anchor"><a class="heading-anchor" href="#activetab"><span></span></a>activeTab</h3>
 
-<h4 id="type-2" class="anchor"><a class="heading-anchor" href="#type-2"><span></span></a>Type</h4>
+<h4 id="type-3" class="anchor"><a class="heading-anchor" href="#type-3"><span></span></a>Type</h4>
 
 <p><span class="text-info">INTEGER</span> <span class="label label-warning">Read Only</span></p>
 
-<h4 id="description-2" class="anchor"><a class="heading-anchor" href="#description-2"><span></span></a>Description</h4>
+<h4 id="description-3" class="anchor"><a class="heading-anchor" href="#description-3"><span></span></a>Description</h4>
 
 <p>Return an active tab index. For change active tab use Use EB.NativeTabbar.currentTab property.</p>
 
-<h4 id="access-2" class="anchor"><a class="heading-anchor" href="#access-2"><span></span></a>Access</h4>
+<h4 id="access-3" class="anchor"><a class="heading-anchor" href="#access-3"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -786,7 +852,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-13" class="anchor"><a class="heading-anchor" href="#platforms-13"><span></span></a>Platforms</h4>
+<h4 id="platforms-15" class="anchor"><a class="heading-anchor" href="#platforms-15"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android</li>
@@ -800,15 +866,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="blocknetworkimage" class="anchor"><a class="heading-anchor" href="#blocknetworkimage"><span></span></a>blockNetworkImage</h3>
 
-<h4 id="type-3" class="anchor"><a class="heading-anchor" href="#type-3"><span></span></a>Type</h4>
+<h4 id="type-4" class="anchor"><a class="heading-anchor" href="#type-4"><span></span></a>Type</h4>
 
 <p><span class="text-info">BOOLEAN</span> </p>
 
-<h4 id="description-3" class="anchor"><a class="heading-anchor" href="#description-3"><span></span></a>Description</h4>
+<h4 id="description-4" class="anchor"><a class="heading-anchor" href="#description-4"><span></span></a>Description</h4>
 
 <p>Controls whether the WebView loads image resources from the network. Note that disabling all network loads using blockNetworkLoads property or via BlockNetworkLoads config tag also will prevent network images from loading, even if this flag is set to false. When the value of this setting is changed from true to false, network images resources referenced by content currently displayed by the WebView are fetched automatically. <strong>Note</strong>: This property overrides the value set using BlockNetworkImage configuration tag.</p>
 
-<h4 id="access-3" class="anchor"><a class="heading-anchor" href="#access-3"><span></span></a>Access</h4>
+<h4 id="access-4" class="anchor"><a class="heading-anchor" href="#access-4"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -819,7 +885,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-14" class="anchor"><a class="heading-anchor" href="#platforms-14"><span></span></a>Platforms</h4>
+<h4 id="platforms-16" class="anchor"><a class="heading-anchor" href="#platforms-16"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android</li>
@@ -829,42 +895,13 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="blocknetworkloads" class="anchor"><a class="heading-anchor" href="#blocknetworkloads"><span></span></a>blockNetworkLoads</h3>
 
-<h4 id="type-4" class="anchor"><a class="heading-anchor" href="#type-4"><span></span></a>Type</h4>
+<h4 id="type-5" class="anchor"><a class="heading-anchor" href="#type-5"><span></span></a>Type</h4>
 
 <p><span class="text-info">BOOLEAN</span> </p>
 
-<h4 id="description-4" class="anchor"><a class="heading-anchor" href="#description-4"><span></span></a>Description</h4>
-
-<p>Controls whether the WebView loads resources from the network. Use blockNetworkImage property or BlockNetworkImage config tag to only avoid loading image resources. If the value of this setting is changed from true to false, network resources referenced by content currently displayed by the WebView are not fetched until reloading of page is not done. <strong>Note</strong>: This property overrides the value which was set using BlockNetworkLoads configuration tag.</p>
-
-<h4 id="access-4" class="anchor"><a class="heading-anchor" href="#access-4"><span></span></a>Access</h4>
-
-<ul>
-<li>Class: This property can only be accessed via the API class object.
-
-
-<ul>
-<li><code>EB.WebView.blockNetworkLoads</code></li></ul>
-</li>
-</ul>
-
-<h4 id="platforms-15" class="anchor"><a class="heading-anchor" href="#platforms-15"><span></span></a>Platforms</h4>
-
-<ul>
-<li>Android</li>
-</ul>
-
-<hr>
-
-<h3 id="cachesize" class="anchor"><a class="heading-anchor" href="#cachesize"><span></span></a>cacheSize</h3>
-
-<h4 id="type-5" class="anchor"><a class="heading-anchor" href="#type-5"><span></span></a>Type</h4>
-
-<p><span class="text-info">INTEGER</span> <span class="label label-warning">Read Only</span></p>
-
 <h4 id="description-5" class="anchor"><a class="heading-anchor" href="#description-5"><span></span></a>Description</h4>
 
-<p>The browser cache size, in whole MBs. Defined in the Navigation\Cache parameter of the <code>config.xml</code> file.</p>
+<p>Controls whether the WebView loads resources from the network. Use blockNetworkImage property or BlockNetworkImage config tag to only avoid loading image resources. If the value of this setting is changed from true to false, network resources referenced by content currently displayed by the WebView are not fetched until reloading of page is not done. <strong>Note</strong>: This property overrides the value which was set using BlockNetworkLoads configuration tag.</p>
 
 <h4 id="access-5" class="anchor"><a class="heading-anchor" href="#access-5"><span></span></a>Access</h4>
 
@@ -873,36 +910,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.cacheSize</code></li></ul>
-</li>
-</ul>
-
-<h4 id="platforms-16" class="anchor"><a class="heading-anchor" href="#platforms-16"><span></span></a>Platforms</h4>
-
-<ul>
-<li>Windows Mobile (WebKit)</li>
-</ul>
-
-<hr>
-
-<h3 id="contentheight" class="anchor"><a class="heading-anchor" href="#contentheight"><span></span></a>contentHeight</h3>
-
-<h4 id="type-6" class="anchor"><a class="heading-anchor" href="#type-6"><span></span></a>Type</h4>
-
-<p><span class="text-info">INTEGER</span> <span class="label label-warning">Read Only</span></p>
-
-<h4 id="description-6" class="anchor"><a class="heading-anchor" href="#description-6"><span></span></a>Description</h4>
-
-<p>Gets the height of the HTML content.</p>
-
-<h4 id="access-6" class="anchor"><a class="heading-anchor" href="#access-6"><span></span></a>Access</h4>
-
-<ul>
-<li>Class: This property can only be accessed via the API class object.
-
-
-<ul>
-<li><code>EB.WebView.contentHeight</code></li></ul>
+<li><code>EB.WebView.blockNetworkLoads</code></li></ul>
 </li>
 </ul>
 
@@ -914,17 +922,75 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <hr>
 
-<h3 id="enablezoom" class="anchor"><a class="heading-anchor" href="#enablezoom"><span></span></a>enableZoom</h3>
+<h3 id="cachesize" class="anchor"><a class="heading-anchor" href="#cachesize"><span></span></a>cacheSize</h3>
+
+<h4 id="type-6" class="anchor"><a class="heading-anchor" href="#type-6"><span></span></a>Type</h4>
+
+<p><span class="text-info">INTEGER</span> <span class="label label-warning">Read Only</span></p>
+
+<h4 id="description-6" class="anchor"><a class="heading-anchor" href="#description-6"><span></span></a>Description</h4>
+
+<p>The browser cache size, in whole MBs. Defined in the Navigation\Cache parameter of the <code>config.xml</code> file.</p>
+
+<h4 id="access-6" class="anchor"><a class="heading-anchor" href="#access-6"><span></span></a>Access</h4>
+
+<ul>
+<li>Class: This property can only be accessed via the API class object.
+
+
+<ul>
+<li><code>EB.WebView.cacheSize</code></li></ul>
+</li>
+</ul>
+
+<h4 id="platforms-18" class="anchor"><a class="heading-anchor" href="#platforms-18"><span></span></a>Platforms</h4>
+
+<ul>
+<li>Windows Mobile (WebKit)</li>
+</ul>
+
+<hr>
+
+<h3 id="contentheight" class="anchor"><a class="heading-anchor" href="#contentheight"><span></span></a>contentHeight</h3>
 
 <h4 id="type-7" class="anchor"><a class="heading-anchor" href="#type-7"><span></span></a>Type</h4>
 
-<p><span class="text-info">BOOLEAN</span> </p>
+<p><span class="text-info">INTEGER</span> <span class="label label-warning">Read Only</span></p>
 
 <h4 id="description-7" class="anchor"><a class="heading-anchor" href="#description-7"><span></span></a>Description</h4>
 
-<p>Enables WebView to “pinch zoom” in and out of an image or web page using the two-finger gesture. <strong>Supported on EB 3.0.6.0 and later</strong>. Also can be configured using the 'EnableZoom' parameter in the <code>config.xml</code> file.</p>
+<p>Gets the height of the HTML content.</p>
 
 <h4 id="access-7" class="anchor"><a class="heading-anchor" href="#access-7"><span></span></a>Access</h4>
+
+<ul>
+<li>Class: This property can only be accessed via the API class object.
+
+
+<ul>
+<li><code>EB.WebView.contentHeight</code></li></ul>
+</li>
+</ul>
+
+<h4 id="platforms-19" class="anchor"><a class="heading-anchor" href="#platforms-19"><span></span></a>Platforms</h4>
+
+<ul>
+<li>Android</li>
+</ul>
+
+<hr>
+
+<h3 id="enablezoom" class="anchor"><a class="heading-anchor" href="#enablezoom"><span></span></a>enableZoom</h3>
+
+<h4 id="type-8" class="anchor"><a class="heading-anchor" href="#type-8"><span></span></a>Type</h4>
+
+<p><span class="text-info">BOOLEAN</span> </p>
+
+<h4 id="description-8" class="anchor"><a class="heading-anchor" href="#description-8"><span></span></a>Description</h4>
+
+<p>Enables WebView to “pinch zoom” in and out of an image or web page using the two-finger gesture. <strong>Supported on EB 3.0.6.0 and later</strong>. Also can be configured using the 'EnableZoom' parameter in the <code>config.xml</code> file.</p>
+
+<h4 id="access-8" class="anchor"><a class="heading-anchor" href="#access-8"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property is accessed via the API class object:
@@ -943,7 +1009,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <p><strong>Disable:</strong> false</p>
 
-<h4 id="platforms-18" class="anchor"><a class="heading-anchor" href="#platforms-18"><span></span></a>Platforms</h4>
+<h4 id="platforms-20" class="anchor"><a class="heading-anchor" href="#platforms-20"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android</li>
@@ -953,15 +1019,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="fontfamily" class="anchor"><a class="heading-anchor" href="#fontfamily"><span></span></a>fontFamily</h3>
 
-<h4 id="type-8" class="anchor"><a class="heading-anchor" href="#type-8"><span></span></a>Type</h4>
+<h4 id="type-9" class="anchor"><a class="heading-anchor" href="#type-9"><span></span></a>Type</h4>
 
 <p><span class="text-info">STRING</span> <span class="label label-warning">Read Only</span></p>
 
-<h4 id="description-8" class="anchor"><a class="heading-anchor" href="#description-8"><span></span></a>Description</h4>
+<h4 id="description-9" class="anchor"><a class="heading-anchor" href="#description-9"><span></span></a>Description</h4>
 
 <p>Specifies the default font to use when rendering text in web pages. The specified font should be a TrueType font present on the device. On Windows, the default font has been set to 'Tahoma' as this is present on all Zebra devices running Windows Mobile/CE. Note that Tahoma has no italic or oblique variants. On the Enterprise Tablet, the default is Droid Sans Fallback. The font specified must be stored in \Windows for Windows Mobile/CE devices or /system/fonts folder for Enterprise Tablet. Defined in the HTMLStyles\FontFamily parameter of the <code>config.xml</code> file.  </p>
 
-<h4 id="access-8" class="anchor"><a class="heading-anchor" href="#access-8"><span></span></a>Access</h4>
+<h4 id="access-9" class="anchor"><a class="heading-anchor" href="#access-9"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can be accessed only via the API class object.
@@ -972,7 +1038,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-19" class="anchor"><a class="heading-anchor" href="#platforms-19"><span></span></a>Platforms</h4>
+<h4 id="platforms-21" class="anchor"><a class="heading-anchor" href="#platforms-21"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Windows Mobile (WebKit)</li>
@@ -982,15 +1048,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="framework" class="anchor"><a class="heading-anchor" href="#framework"><span></span></a>framework</h3>
 
-<h4 id="type-9" class="anchor"><a class="heading-anchor" href="#type-9"><span></span></a>Type</h4>
+<h4 id="type-10" class="anchor"><a class="heading-anchor" href="#type-10"><span></span></a>Type</h4>
 
 <p><span class="text-info">STRING</span> <span class="label label-warning">Read Only</span></p>
 
-<h4 id="description-9" class="anchor"><a class="heading-anchor" href="#description-9"><span></span></a>Description</h4>
+<h4 id="description-10" class="anchor"><a class="heading-anchor" href="#description-10"><span></span></a>Description</h4>
 
 <p>Same as System.webViewFramework.</p>
 
-<h4 id="access-9" class="anchor"><a class="heading-anchor" href="#access-9"><span></span></a>Access</h4>
+<h4 id="access-10" class="anchor"><a class="heading-anchor" href="#access-10"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -1001,7 +1067,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-20" class="anchor"><a class="heading-anchor" href="#platforms-20"><span></span></a>Platforms</h4>
+<h4 id="platforms-22" class="anchor"><a class="heading-anchor" href="#platforms-22"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android</li>
@@ -1013,11 +1079,11 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="fullscreen" class="anchor"><a class="heading-anchor" href="#fullscreen"><span></span></a>fullScreen</h3>
 
-<h4 id="type-10" class="anchor"><a class="heading-anchor" href="#type-10"><span></span></a>Type</h4>
+<h4 id="type-11" class="anchor"><a class="heading-anchor" href="#type-11"><span></span></a>Type</h4>
 
 <p><span class="text-info">BOOLEAN</span> </p>
 
-<h4 id="description-10" class="anchor"><a class="heading-anchor" href="#description-10"><span></span></a>Description</h4>
+<h4 id="description-11" class="anchor"><a class="heading-anchor" href="#description-11"><span></span></a>Description</h4>
 
 <p>Use full screen mode.</p>
 
@@ -1025,7 +1091,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <p><strong>Default:</strong> false</p>
 
-<h4 id="access-10" class="anchor"><a class="heading-anchor" href="#access-10"><span></span></a>Access</h4>
+<h4 id="access-11" class="anchor"><a class="heading-anchor" href="#access-11"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -1036,7 +1102,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-21" class="anchor"><a class="heading-anchor" href="#platforms-21"><span></span></a>Platforms</h4>
+<h4 id="platforms-23" class="anchor"><a class="heading-anchor" href="#platforms-23"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android</li>
@@ -1050,11 +1116,11 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="navigationtimeout" class="anchor"><a class="heading-anchor" href="#navigationtimeout"><span></span></a>navigationTimeout</h3>
 
-<h4 id="type-11" class="anchor"><a class="heading-anchor" href="#type-11"><span></span></a>Type</h4>
+<h4 id="type-12" class="anchor"><a class="heading-anchor" href="#type-12"><span></span></a>Type</h4>
 
 <p><span class="text-info">INTEGER</span> </p>
 
-<h4 id="description-11" class="anchor"><a class="heading-anchor" href="#description-11"><span></span></a>Description</h4>
+<h4 id="description-12" class="anchor"><a class="heading-anchor" href="#description-12"><span></span></a>Description</h4>
 
 <p>Number of milliseconds (max. = 45000) before the browser times out and navigates to the page specified in the badlink setting. Can be defined using the Navigation\NavTimeout parameter of the <code>config.xml</code> file. If it is determined that the destination is unreachable regardless of wait time, the badlink may be loaded before NAVTIMEOUT. This is the time taken to establish communication with the server, not the time taken to fully load the page. Note that the navigation timeout will not be invoked when navigating to the start page. The best practice is to store the first page locally to avoid connectivity issues at start up, and then redirect to an online page if desired.</p>
 
@@ -1062,7 +1128,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <p><strong>Default:</strong> 45000</p>
 
-<h4 id="access-11" class="anchor"><a class="heading-anchor" href="#access-11"><span></span></a>Access</h4>
+<h4 id="access-12" class="anchor"><a class="heading-anchor" href="#access-12"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -1073,7 +1139,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-22" class="anchor"><a class="heading-anchor" href="#platforms-22"><span></span></a>Platforms</h4>
+<h4 id="platforms-24" class="anchor"><a class="heading-anchor" href="#platforms-24"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Windows Mobile (WebKit)</li>
@@ -1083,11 +1149,11 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="scrolltechnique" class="anchor"><a class="heading-anchor" href="#scrolltechnique"><span></span></a>scrollTechnique</h3>
 
-<h4 id="type-12" class="anchor"><a class="heading-anchor" href="#type-12"><span></span></a>Type</h4>
+<h4 id="type-13" class="anchor"><a class="heading-anchor" href="#type-13"><span></span></a>Type</h4>
 
 <p><span class="text-info">STRING</span> <span class="label label-warning">Read Only</span></p>
 
-<h4 id="description-12" class="anchor"><a class="heading-anchor" href="#description-12"><span></span></a>Description</h4>
+<h4 id="description-13" class="anchor"><a class="heading-anchor" href="#description-13"><span></span></a>Description</h4>
 
 <p>Specifies the technique used to scroll about the page. Defined in the Scrolling\ScrollTechnique paramter of the <code>config.xml</code> file.</p>
 
@@ -1107,7 +1173,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 <li>Constant: EB.WebView.SCROLL_FINGER - String: "FingerScroll" Scrolling is possible using finger swiping.</li>
 </ul>
 
-<h4 id="access-12" class="anchor"><a class="heading-anchor" href="#access-12"><span></span></a>Access</h4>
+<h4 id="access-13" class="anchor"><a class="heading-anchor" href="#access-13"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -1118,7 +1184,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-23" class="anchor"><a class="heading-anchor" href="#platforms-23"><span></span></a>Platforms</h4>
+<h4 id="platforms-25" class="anchor"><a class="heading-anchor" href="#platforms-25"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Windows Mobile (WebKit)</li>
@@ -1126,15 +1192,15 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="textzoomlevel" class="anchor"><a class="heading-anchor" href="#textzoomlevel"><span></span></a>textZoomLevel</h3>
 
-<h4 id="type-13" class="anchor"><a class="heading-anchor" href="#type-13"><span></span></a>Type</h4>
+<h4 id="type-14" class="anchor"><a class="heading-anchor" href="#type-14"><span></span></a>Type</h4>
 
 <p><span class="text-info">INTEGER</span> </p>
 
-<h4 id="description-13" class="anchor"><a class="heading-anchor" href="#description-13"><span></span></a>Description</h4>
+<h4 id="description-14" class="anchor"><a class="heading-anchor" href="#description-14"><span></span></a>Description</h4>
 
 <p>Sets the font size to be displayed on the page, set to 0 for the smallest font and 4 for the largest font.</p>
 
-<h4 id="access-13" class="anchor"><a class="heading-anchor" href="#access-13"><span></span></a>Access</h4>
+<h4 id="access-14" class="anchor"><a class="heading-anchor" href="#access-14"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -1145,7 +1211,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-24" class="anchor"><a class="heading-anchor" href="#platforms-24"><span></span></a>Platforms</h4>
+<h4 id="platforms-26" class="anchor"><a class="heading-anchor" href="#platforms-26"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android</li>
@@ -1157,11 +1223,11 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <h3 id="useragent" class="anchor"><a class="heading-anchor" href="#useragent"><span></span></a>userAgent</h3>
 
-<h4 id="type-14" class="anchor"><a class="heading-anchor" href="#type-14"><span></span></a>Type</h4>
+<h4 id="type-15" class="anchor"><a class="heading-anchor" href="#type-15"><span></span></a>Type</h4>
 
 <p><span class="text-info">STRING</span> <span class="label label-warning">Read Only</span></p>
 
-<h4 id="description-14" class="anchor"><a class="heading-anchor" href="#description-14"><span></span></a>Description</h4>
+<h4 id="description-15" class="anchor"><a class="heading-anchor" href="#description-15"><span></span></a>Description</h4>
 
 <p>Defined in in the Navigation\UserAgent parameter of the <code>config,.xml</code> file. When visiting a web server, the WebKit browser reports itself as the specified user agent. Use the following substitution variables:</p>
 
@@ -1177,39 +1243,6 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <p>From RhoElements 2.1 onward, the default value was changed to work out of the box with a greater number of server configurations. Prior to RhoElements 2.1, the default user agent was "<strong>Mozilla/5.0 (%p) AppleWebKit/%w (KHTML, like Gecko) WebKit/%e Safari/%w</strong>"</p>
 
-<h4 id="access-14" class="anchor"><a class="heading-anchor" href="#access-14"><span></span></a>Access</h4>
-
-<ul>
-<li>Class: This property can only be accessed via the API class object.
-
-
-<ul>
-<li><code>EB.WebView.userAgent</code></li></ul>
-</li>
-</ul>
-
-<h4 id="platforms-25" class="anchor"><a class="heading-anchor" href="#platforms-25"><span></span></a>Platforms</h4>
-
-<ul>
-<li>Windows Mobile (WebKit)</li>
-</ul>
-
-<hr>
-
-<h3 id="viewportenabled" class="anchor"><a class="heading-anchor" href="#viewportenabled"><span></span></a>viewportEnabled</h3>
-
-<h4 id="type-15" class="anchor"><a class="heading-anchor" href="#type-15"><span></span></a>Type</h4>
-
-<p><span class="text-info">BOOLEAN</span> <span class="label label-warning">Read Only</span></p>
-
-<h4 id="description-15" class="anchor"><a class="heading-anchor" href="#description-15"><span></span></a>Description</h4>
-
-<p>Get whether viewport meta tag processing is enabled or disabled in the Navigation\ViewportEnabled parameter of the <code>config.xml</code> file.</p>
-
-<h4 id="params-4" class="anchor"><a class="heading-anchor" href="#params-4"><span></span></a>Params</h4>
-
-<p><strong>Default:</strong> true</p>
-
 <h4 id="access-15" class="anchor"><a class="heading-anchor" href="#access-15"><span></span></a>Access</h4>
 
 <ul>
@@ -1217,36 +1250,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 
 <ul>
-<li><code>EB.WebView.viewportEnabled</code></li></ul>
-</li>
-</ul>
-
-<h4 id="platforms-26" class="anchor"><a class="heading-anchor" href="#platforms-26"><span></span></a>Platforms</h4>
-
-<ul>
-<li>Windows Mobile (WebKit)</li>
-</ul>
-
-<hr>
-
-<h3 id="viewportwidth" class="anchor"><a class="heading-anchor" href="#viewportwidth"><span></span></a>viewportWidth</h3>
-
-<h4 id="type-16" class="anchor"><a class="heading-anchor" href="#type-16"><span></span></a>Type</h4>
-
-<p><span class="text-info">INTEGER</span> <span class="label label-warning">Read Only</span></p>
-
-<h4 id="description-16" class="anchor"><a class="heading-anchor" href="#description-16"><span></span></a>Description</h4>
-
-<p>Default viewport width to use for pages that do not have a viewport meta tag (uses 1:1 scaling if not specified). Defined in the Navigation\ViewportWidth parameter of the <code>config.xml</code> file.</p>
-
-<h4 id="access-16" class="anchor"><a class="heading-anchor" href="#access-16"><span></span></a>Access</h4>
-
-<ul>
-<li>Class: This property can only be accessed via the API class object.
-
-
-<ul>
-<li><code>EB.WebView.viewportWidth</code></li></ul>
+<li><code>EB.WebView.userAgent</code></li></ul>
 </li>
 </ul>
 
@@ -1258,17 +1262,79 @@ a directory on the computer that contains the Enterprise Browser installation.</
 
 <hr>
 
-<h3 id="zoompage" class="anchor"><a class="heading-anchor" href="#zoompage"><span></span></a>zoomPage</h3>
+<h3 id="viewportenabled" class="anchor"><a class="heading-anchor" href="#viewportenabled"><span></span></a>viewportEnabled</h3>
+
+<h4 id="type-16" class="anchor"><a class="heading-anchor" href="#type-16"><span></span></a>Type</h4>
+
+<p><span class="text-info">BOOLEAN</span> <span class="label label-warning">Read Only</span></p>
+
+<h4 id="description-16" class="anchor"><a class="heading-anchor" href="#description-16"><span></span></a>Description</h4>
+
+<p>Get whether viewport meta tag processing is enabled or disabled in the Navigation\ViewportEnabled parameter of the <code>config.xml</code> file.</p>
+
+<h4 id="params-4" class="anchor"><a class="heading-anchor" href="#params-4"><span></span></a>Params</h4>
+
+<p><strong>Default:</strong> true</p>
+
+<h4 id="access-16" class="anchor"><a class="heading-anchor" href="#access-16"><span></span></a>Access</h4>
+
+<ul>
+<li>Class: This property can only be accessed via the API class object.
+
+
+<ul>
+<li><code>EB.WebView.viewportEnabled</code></li></ul>
+</li>
+</ul>
+
+<h4 id="platforms-28" class="anchor"><a class="heading-anchor" href="#platforms-28"><span></span></a>Platforms</h4>
+
+<ul>
+<li>Windows Mobile (WebKit)</li>
+</ul>
+
+<hr>
+
+<h3 id="viewportwidth" class="anchor"><a class="heading-anchor" href="#viewportwidth"><span></span></a>viewportWidth</h3>
 
 <h4 id="type-17" class="anchor"><a class="heading-anchor" href="#type-17"><span></span></a>Type</h4>
 
-<p><span class="text-info">FLOAT</span> </p>
+<p><span class="text-info">INTEGER</span> <span class="label label-warning">Read Only</span></p>
 
 <h4 id="description-17" class="anchor"><a class="heading-anchor" href="#description-17"><span></span></a>Description</h4>
 
-<p>Sets the zoom factor of the page. Factor 1.0 is no zoom, values less than 1.0 are zoomed out and values greater than 1.0 are zoomed in.It is recommended to not to use the zoom value less than 1.0 because the page doesn't look in readable format.In Android new Zoom value takes effect on current page, Previous page has to be revisited for the new zoom values to take effect </p>
+<p>Default viewport width to use for pages that do not have a viewport meta tag (uses 1:1 scaling if not specified). Defined in the Navigation\ViewportWidth parameter of the <code>config.xml</code> file.</p>
 
 <h4 id="access-17" class="anchor"><a class="heading-anchor" href="#access-17"><span></span></a>Access</h4>
+
+<ul>
+<li>Class: This property can only be accessed via the API class object.
+
+
+<ul>
+<li><code>EB.WebView.viewportWidth</code></li></ul>
+</li>
+</ul>
+
+<h4 id="platforms-29" class="anchor"><a class="heading-anchor" href="#platforms-29"><span></span></a>Platforms</h4>
+
+<ul>
+<li>Windows Mobile (WebKit)</li>
+</ul>
+
+<hr>
+
+<h3 id="zoompage" class="anchor"><a class="heading-anchor" href="#zoompage"><span></span></a>zoomPage</h3>
+
+<h4 id="type-18" class="anchor"><a class="heading-anchor" href="#type-18"><span></span></a>Type</h4>
+
+<p><span class="text-info">FLOAT</span> </p>
+
+<h4 id="description-18" class="anchor"><a class="heading-anchor" href="#description-18"><span></span></a>Description</h4>
+
+<p>Sets the zoom factor of the page. Factor 1.0 is no zoom, values less than 1.0 are zoomed out and values greater than 1.0 are zoomed in.It is recommended to not to use the zoom value less than 1.0 because the page doesn't look in readable format.In Android new Zoom value takes effect on current page, Previous page has to be revisited for the new zoom values to take effect </p>
+
+<h4 id="access-18" class="anchor"><a class="heading-anchor" href="#access-18"><span></span></a>Access</h4>
 
 <ul>
 <li>Class: This property can only be accessed via the API class object.
@@ -1279,7 +1345,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
 </li>
 </ul>
 
-<h4 id="platforms-28" class="anchor"><a class="heading-anchor" href="#platforms-28"><span></span></a>Platforms</h4>
+<h4 id="platforms-30" class="anchor"><a class="heading-anchor" href="#platforms-30"><span></span></a>Platforms</h4>
 
 <ul>
 <li>Android</li>
@@ -1319,7 +1385,7 @@ a directory on the computer that contains the Enterprise Browser installation.</
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
                     </div>
                      <!--
                      <div class="col-sm-2">

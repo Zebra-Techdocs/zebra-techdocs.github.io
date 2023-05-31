@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.3
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.4
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-3','1-4','/enterprise-browser/3-3/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-4','1-4','/enterprise-browser/3-4/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/about">
+                            <a href="/enterprise-browser/3-4/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-4/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/tutorial/">
+                            <a href="/enterprise-browser/3-4/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/samples">
+                            <a href="/enterprise-browser/3-4/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide">
+                            <a href="/enterprise-browser/3-4/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/licensing">
+                            <a href="/enterprise-browser/3-4/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/migration">
+                            <a href="/enterprise-browser/3-4/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/guide/configreference">
+                            <a href="/enterprise-browser/3-4/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/api">
+                            <a href="/enterprise-browser/3-4/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/download">
+                            <a href="/enterprise-browser/3-4/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-3/search">
+                            <a href="/enterprise-browser/3-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="zebra-workstation-connect-usage" class="anchor"><a class="heading-anchor" href="#zebra-workstation-connect-usage"><span></span></a>Zebra Workstation Connect Usage</h1>
                                     <p>
                                             Enterprise Browser
-                                            3.3
+                                            3.4
                                     </p>
                                 </div>
                             </section>                    
@@ -250,7 +250,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>Apps using Enterprise Browser 3.3.0.5 (or later) can run on the secondary screen of supported devices using <a href="/zwc">Zebra Workstation Connect</a></strong>, Zebra's enterprise solution that provides a desktop-like experience from a mobile device. The ZWC experience includes use of an external keyboard, mouse and secondary monitor with a Desktop unique from the device. </p>
+<p><strong>Apps using Enterprise Browser 3.3.0.5 (or later) can run on the secondary screen of supported devices using <a href="/zwc">Zebra Workstation Connect</a></strong>, Zebra's enterprise solution that provides a desktop-like experience from a mobile device. The ZWC experience includes use of an external keyboard, mouse and secondary monitor with a Desktop separate from that of the device. </p>
 
 <h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
 
@@ -397,10 +397,28 @@
 
 <hr>
 
+<h2 id="apisforzwc" class="anchor"><a class="heading-anchor" href="#apisforzwc"><span></span></a>APIs for ZWC</h2>
+
+<p>EB 3.4 (and later) includes the following API updates for use with Zebra Workstation Connect. </p>
+
+<h3 id="getconfigurationchangenotification" class="anchor"><a class="heading-anchor" href="#getconfigurationchangenotification"><span></span></a>getConfigurationChangeNotification</h3>
+
+<p>Used for reading the displayID of the currently attached secondary display, as well as its screen height, width and density values. Optionally allows for registration for a JavaScript callback whenever changes occur to displayID or monitor orientation, allowing execution of additional JavaScript for adapting to the change. </p>
+
+<p>See <a href="../../api/webview/#getconfigurationchangenotification">WebView API</a> for details. </p>
+
+<h3 id="setuseragent" class="anchor"><a class="heading-anchor" href="#setuseragent"><span></span></a>setUserAgent</h3>
+
+<p>Used to modify the default user agent of the current WebView instance. </p>
+
+<p>See <a href="../../api/webview/#setuseragent">WebView API</a> for details. </p>
+
+<hr>
+
 <h2 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h2>
 
 <ul>
-<li><strong><a href="/zwc">About Zebra Workstation Connect</a></strong> | An introduction to Zebra's mobile-to-desktop experience</li>
+<li><strong><a href="/zwc">About Zebra Workstation Connect</a></strong> | An introduction to Zebra's mobile-as-desktop experience</li>
 
 <li><strong><a href="https://www.zebra.com/apps/dlmanager?dlp=-227178c9720c025483893483886ea540bd07dd0f9873752cf891686eb4950400add13410300d57bba85f97bf163f9fdfea3ed8bf485bd7a171c5a8061d1bce3aeaf983a14fd41a0ce93cb5cf4286df532d112803839fae3&amp;c=us&amp;l=en">Workstation Connect User Guide (pdf)</a></strong> | ZWC Desktop Mode set-up and usage </li>
 
@@ -439,7 +457,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
                     </div>
                      <!--
                      <div class="col-sm-2">
