@@ -426,7 +426,8 @@
                                             <!-- <h4 class="uk-nav-header uk-position-absolute uk-margin-remove nv-title uk-text-capitalize">Solutions</h4> -->
                                             
                                             <ul class="uk-nav uk-padding-small txt-c uk-padding-remove-right uk-switcher-area parenter one uk-tab-left uk-width-1-4" uk-tab uk-switcher>                                                
-                                                <li><a href="#">DataWedge</a></li>                                                
+                                                <li><a href="#">DataWedge</a></li>   
+                                                <li><a href="#">Device Central</a></li>                                             
                                                 <li><a href="#">DEX Scan & Pair</a></li>
                                                 <li><a href="#">Enterprise Keyboard</a></li>
                                                 <li><a href="#">Enterprise Keyboard Designer</a></li>
@@ -445,6 +446,13 @@
                                                         <li><a href="/datawedge/latest/guide/samples">Samples</a></li>
                                                         <li><a href="/datawedge/latest/guide/faq">FAQ</a></li>
                                                     </ul>
+                                                </li>
+                                                <li>
+                                                    <ul class="uk-nav child-tab uk-navbar-dropdown-nav uk-width-1-2">
+                                                        <li><a href="/devicecentral/latest/guide/about/">About Device Central</a></li>
+                                                        <li><a href="/devicecentral/latest/guide/setup/">Installation</a></li>
+                                                        <li><a href="/devicecentral/latest/guide/usage/">Usage</a></li>
+                                                    </ul>                                                    
                                                 </li>
                                                 <li>
                                                     <ul class="uk-nav child-tab uk-navbar-dropdown-nav uk-width-1-2">       
@@ -601,7 +609,8 @@
                 <li class="uk-parent">
                     <a href="../prod/">Productivity</a>
                     <ul class="uk-nav-sub">                        
-                        <li><a href="/datawedge">DataWedge</a></li>                        
+                        <li><a href="/datawedge">DataWedge</a></li>        
+                        <li><a href="/devicecentral/">Device Central</a></li>                
                         <li><a href="/dex-scanpair">DEX Scan & Pair</a></li>
                         <li><a href="/enterprise-keyboard/">Enterprise Keyboard</a></li>
                         <li><a href="/ekd/">Enterprise Keyboard Designer</a></li>
@@ -708,11 +717,9 @@
                       </div>
                   </div>
               </div>
-      
-              <!--
+              
               <div class="col-sm-12 col-md-6">
-                <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-            
+                <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">            
                     <div class="media">
                       <div class="media-left " style="
                             max-width: 120px;
@@ -720,7 +727,7 @@
                             margin-right: 10px;
                         ">
                         <a href="#">
-                            <img class="media-object" src="/images/products/DeviceCentral.png">
+                            <img class="media-object" src="/images/products/device-central.png">
                         </a>
                       </div>
                       <div class="media-body" style="
@@ -729,42 +736,32 @@
                         <div class="row">
                           <div class="col-sm-6 col-md-8">
                             <h4 class="media-heading anchor" id="-device-central"><a class="heading-anchor" href="#-device-central"><span></span></a> <a href="/devicecentral">Device Central</a></h4>
-                          </div>
-                          <div class="col-sm-6 col-md-4 pull-right">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version <div class="btn-group pull-right">
-                                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  3.3 <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                  <li><a href="/devicecentral/3-3/guide/about">3.3</a></li> 
-                                  <li><a href="/devicecentral/3-2/guide/about">3.2</a></li> 
-                                  <li><a href="/devicecentral/3-1/guide/about">3.1</a></li> 
-                                  <li><a href="/devicecentral/3-0/guide/about">3.0</a></li> 
-                                  <li><a href="/devicecentral/2-1/guide/about">2.1</a></li>        
-                                  <li><a href="/devicecentral/2-0/guide/about">2.0</a></li> 
-                                </ul>
-                              </div>                    
-            
-                          </div>
-                        </div>
-                        
+                          </div>                          
+                        </div>                        
                         <p>A centralized solution for tracking Bluetooth peripherals, pairing and unpairing, and viewing detailed peripheral information across an enterprise.</p>
                         <div class="pull-right">
-                            <div class="btn-group pull-right position-static">
-                              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Go to section: <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                    <li><a href="/devicecentral/3-3/guide/about">About</a></li>
-                                    <li><a href="/devicecentral/3-3/guide/setup">Install</a></li>
-                                    <li><a href="/devicecentral/3-3/guide/usage">User Guide</a></li>
-                              </ul>
-                            </div>                    
+                            Go to section:
+                            <select id="dc-version" class="custom-select version-select" onchange="populateDropdown(this, document.getElementById('dc-doc'))">
+                                <option value="/devicecentral/3-4" selected>v 3.4</option>
+                                <option value="/devicecentral/3-3">v 3.3</option>
+                                <option value="/devicecentral/3-2">v 3.2</option>
+                                <option value="/devicecentral/3-1">v 3.1</option>
+                                <option value="/devicecentral/3-0">v 3.0</option>
+                                <option value="/devicecentral/2-1">v 2.1</option>
+                                <option value="/devicecentral/2-0">v 2.0</option>
+                            </select>
+                        
+                            <select id="dc-doc" class="custom-select doc-select">
+                                <option value="/guide/about" selected>About</option>
+                                <option value="/guide/setup">Install</option>
+                                <option value="/guide/usage">Usage</option>
+                            </select>
+                            <button class="btn-go" id="btn-dc" onclick="selectDoc(this.id)">Go</button>                                  
                           </div>
                       </div>
                     </div>
                 </div>
-            </div> -->
+            </div>              
 
            <div class="col-sm-12 col-md-6">
             <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
