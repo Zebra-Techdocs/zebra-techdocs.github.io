@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            5.2
+                                            5.3
                         </p>
 
                     </ul>
@@ -75,42 +75,47 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicetracker/5-2/guide/about">
+                            <a href="/devicetracker/5-3/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/getstarted">
+                            <a href="/devicetracker/5-3/guide/getstarted">
                                         Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/setup">
+                            <a href="/devicetracker/5-3/guide/setup">
                                         Installation
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/config">
+                            <a href="/devicetracker/5-3/guide/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/use">
+                            <a href="/devicetracker/5-3/guide/use">
                                         Track Devices
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/dashboard">
+                            <a href="/devicetracker/5-3/guide/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/faq">
+                            <a href="/devicetracker/5-3/guide/faq">
                                         FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/search">
+                            <a href="https://supportcommunity.zebra.com/s/global-search/device%20tracker?language=en_US">
+                                    <i class="fa fa-graduation-cap"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/devicetracker/5-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -220,7 +225,7 @@
                                     <h1 id="installation" class="anchor"><a class="heading-anchor" href="#installation"><span></span></a>Installation</h1>
                                     <p>
                                             Device Tracker
-                                            5.2
+                                            5.3
                                     </p>
                                 </div>
                             </section>                    
@@ -244,6 +249,8 @@
 </ul>
 
 <p>Client app installation is required for the device to communicate with the server and for devices to be tracked by the solution. This section discusses how to install and enable Device Tracker on the mobile device. To access Device Tracker server, the first step is to procure <a href="../license">Device Tracker licenses</a>.</p>
+
+<p><a href="../config/#enterpriseloginscreenels">Enterprise Login Screen (pre-release)</a> is an optional mobile application that ensures secure device access by requiring user authentication and device checkout using SSO login credentials, enforcing accountability. Steps are provided to install and run Enterprise Login Screen (ELS).</p>
 
 <!--
 Contact [Zebra services](https://www.zebra.com/us/en/services.html) for access to Device Tracker cloud and to procure licenses prior to installation.
@@ -273,6 +280,8 @@ Client app installation and configuration on the devices can be performed using 
 <h2 id="installationnotes" class="anchor"><a class="heading-anchor" href="#installationnotes"><span></span></a>Installation Notes</h2>
 
 <ul>
+<li><strong>Both server and client must be upgraded to Device Tracker 5.3</strong> to ensure compatibility of Device Tracker features.</li>
+
 <li>During a <strong>Google Play Services update,</strong> the Android system automatically stops Device Tracker. After the update is complete, relaunch the Device Tracker app or reboot the device to continue tracking of the device.</li>
 
 <li><strong>Backward Compatibility -</strong> Device Tracker Cloud Server v5.0 or above supports Client software versions 4.0, 4.1 and 4.2. Starting on <em>January 1, 2023,</em> Device Tracker Cloud Server will no longer support Device Tracker Client versions 4.0, 4.1 and 4.2. The device must be upgraded with Device Tracker Client version 5.0 or above. See <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Zebra Support Portal</a> for the latest Device Tracker client.</li>
@@ -304,6 +313,16 @@ If using **Do Not Disturb (DND),** it must be turned off in Android for the [dev
 <li>Device <strong><a href="../license">licenses</a></strong> are required for Device Tracker to operate. Contact a <a href="../license/#icontactareseller">Zebra reseller</a> to procure licenses.</li>
 </ul>
 
+<p>Requirements for <a href="../config/#enterpriseloginscreenels">Enterprise Login Screen (ELS)</a>:</p>
+
+<ul>
+<li><strong><a href="../config/#singlesignonsso">Single Sign-On (SSO)</a> must be activated</strong></li>
+
+<li><strong><a href="../config/#checkincheckoutdevice">Checkin/Checkout</a> must be enabled -</strong> ELS takes place of the <a href="../config/#checkincheckoutdevice">Checkout</a> screen, replacing it with an SSO login screen. If any <a href="../config/#devicecheckinoptions">Device Checkin Options</a> are enabled, when the selected action(s) is triggered from that option, the ELS screen appears in place of the Checkout screen.</li>
+
+<li><strong>Enterprise Login Screen and Chrome must be added to the Lock Task Mode allow list</strong> through an EMM or other method. This blocks the user from accessing the device until the user logs in with their SSO credentials.</li>
+</ul>
+
 <h3 id="networkrequirements" class="anchor"><a class="heading-anchor" href="#networkrequirements"><span></span></a>Network Requirements</h3>
 
 <p>Network requirements for communication between the device client app and the cloud server:</p>
@@ -318,45 +337,43 @@ If using **Do Not Disturb (DND),** it must be turned off in Android for the [dev
 <li><p>For device access and communication to the cloud server, <strong>specific domain names must be allowed through the firewall or proxy.</strong></p>
 
 <ul>
-<li><p>If the firewall or proxy supports wildcards, add the following domain names to the allow list:</p>
+<li><p>If the firewall or proxy supports wildcards, add the following domain names to the allow list:</p></li>
 
-<ul>
-<li><code>connectivitycheck.gstatic.com</code> <sup>0</sup></li>
+<li><p><code>connectivitycheck.gstatic.com</code> <sup>0</sup></p></li>
 
-<li><code>*.googleapis.com</code></li>
+<li><p><code>*.googleapis.com</code></p></li>
 
-<li><code>*.firebaseio.com</code></li>
+<li><p><code>*.firebaseio.com</code></p></li>
 
-<li><code>*.cloudfunctions.net</code></li>
+<li><p><code>*.cloudfunctions.net</code></p></li>
 
-<li><code>[ProjectID].firebaseapp.com</code> <sup>1</sup></li>
+<li><p><code>[ProjectID].firebaseapp.com</code> <sup>1</sup></p></li>
 
-<li><code>[Web portal URL]</code> (supplied by Zebra during onboarding)</li></ul></li>
+<li><p><code>[Web portal URL]</code> (supplied by Zebra during onboarding)</p></li>
 
-<li><p>If the firewall or proxy does not support wildcards, add the following domain names to the allow list:</p>
+<li><p>If the firewall or proxy does not support wildcards, add the following domain names to the allow list:</p></li>
 
-<ul>
-<li><code>connectivitycheck.gstatic.com</code> <sup>0</sup></li>
+<li><p><code>connectivitycheck.gstatic.com</code> <sup>0</sup></p></li>
 
-<li><code>www.googleapis.com</code></li>
+<li><p><code>www.googleapis.com</code></p></li>
 
-<li><code>firestore.googleapis.com</code></li>
+<li><p><code>firestore.googleapis.com</code></p></li>
 
-<li><code>firebasestorage.googleapis.com</code></li>
+<li><p><code>firebasestorage.googleapis.com</code></p></li>
 
-<li><code>cloudfunctions.googleapis.com</code></li>
+<li><p><code>cloudfunctions.googleapis.com</code></p></li>
 
-<li><code>us-central1-[ProjectID].cloudfunctions.net</code> <sup>1</sup></li>
+<li><p><code>us-central1-[ProjectID].cloudfunctions.net</code> <sup>1</sup></p></li>
 
-<li><code>[ProjectID].firebaseio.com</code> <sup>1</sup></li>
+<li><p><code>[ProjectID].firebaseio.com</code> <sup>1</sup></p></li>
 
-<li><code>[ProjectID]-default-rtdb.firebaseio.com</code> <sup>1</sup></li>
+<li><p><code>[ProjectID]-default-rtdb.firebaseio.com</code> <sup>1</sup></p></li>
 
-<li><code>*.firebaseio.com</code> <sup>2</sup></li>
+<li><p><code>*.firebaseio.com</code> <sup>2</sup></p></li>
 
-<li><code>[ProjectID].firebaseapp.com</code></li>
+<li><p><code>[ProjectID].firebaseapp.com</code></p></li>
 
-<li><code>[Web portal URL]</code> (supplied by Zebra during onboarding)</li></ul></li></ul>
+<li><p><code>[Web portal URL]</code> (supplied by Zebra during onboarding)</p></li></ul>
 
 <p><sup>0</sup> ICMP or TCP Echo Requests must not be blocked by your firewall.</p>
 
@@ -389,7 +406,7 @@ If using **Do Not Disturb (DND),** it must be turned off in Android for the [dev
 
 <p><strong>For first-time use,</strong> the administrator must set their password. Click <strong>Forgot Your Password</strong> in the web portal and enter the administrator email address, which is registered as a user in the system during onboarding. An email will be sent to the administrator with a link to set the password in order for the administrator to login.</p>
 
-<p><strong>If using single sign-on (SSO),</strong> see <a href="../config/#sso">SSO</a> for procedures on configuring SSO.</p>
+<p><strong>If using single sign-on (SSO),</strong> see <a href="../config/#singlesignonsso">SSO</a> for procedures on configuring SSO.</p>
 
 <h3 id="licenses" class="anchor"><a class="heading-anchor" href="#licenses"><span></span></a>Licenses</h3>
 
@@ -410,6 +427,8 @@ If using **Do Not Disturb (DND),** it must be turned off in Android for the [dev
 
 <li><strong>Download Device Tracker client</strong> from <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Zebra support portal</a> <strong>and install it</strong> on the device.</li>
 
+<li><em>(Optional)</em> If using <a href="../config/#singlesignonsso">SSO</a> for accountability and <a href="../config/#checkincheckoutdevice">Checkin/Checkout</a> is enabled, <strong>download Enterprise Login Screen (ELS)</strong> from <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Zebra support portal</a> <strong>and install it</strong> on the device.</li>
+
 <li><strong>Launch Device Tracker app. Grant all permissions</strong> when prompted:
 
 
@@ -418,13 +437,13 @@ If using **Do Not Disturb (DND),** it must be turned off in Android for the [dev
 
 <li>Allow permission for Device Tracker to always run in the background.</li>
 
-<li>Grant overlay permissions. Additional steps are required: 
+<li>Grant overlay permissions. Additional steps are required:
 
 
 <ol>
 <li>In apps, tap and hold the Device Tracker icon to show <strong>App info.</strong> Tap on this option.</li>
 
-<li>Scroll down and tap <strong>Advanced.</strong> </li>
+<li>Scroll down and tap <strong>Advanced.</strong></li>
 
 <li>Tap <strong>Display over other apps.</strong></li>
 
@@ -432,15 +451,28 @@ If using **Do Not Disturb (DND),** it must be turned off in Android for the [dev
 </li></ul>
 </li>
 
+<li><em>(Optional)</em> If using ELS, <strong>launch ELS app. Grant overlay permissions:</strong> 
+
+
+<ol>
+<li>In apps, tap and hold the ELS icon to show <strong>App info.</strong> Tap on this option.</li>
+
+<li>Scroll down and tap <strong>Advanced.</strong></li>
+
+<li>Tap <strong>Display over other apps.</strong></li>
+
+<li>Toggle to enable <strong>Allow display over other apps.</strong></li></ol>
+</li>
+
 <li><strong>Launch StageNow client and scan the barcode from the .PDF file</strong> provided by Zebra during the onboarding process. This configures Device Tracker with the cloud server settings.</li>
 
 <li><strong><em>Optionally,</em> enable <a href="../secondaryble">secondary BLE</a></strong> to allow devices that support this feature to be located even when powered off. <strong>Follow instructions in <a href="../secondaryble/#configuration">Secondary BLE Configuration</a> to enable and configure secondary BLE.</strong>
-<!-- 
-5. PART OF STEP 5:
+<!--
+8. PART OF STEP 5:
    - For Android 11 with May LG version 11-23-13.00 or higher, no further action is required since all required permissions are automatically granted.
    - For Android 10 or higher, if permissions are not automatically granted, choose option “Allow all the time” when granting **Location** permissions for background and fine location.
    - For Android 8, grant the read phone state and location permissions.
-8. **If using SSO, launch Enterprise Login Screen.** The app is displayed preventing device access until the user logs in with their SSO credentials. --></li>
+9. **If using SSO, launch Enterprise Login Screen.** The app is displayed preventing device access until the user logs in with their SSO credentials. --></li>
 </ol>
 
 <!-- // ORIGINAL STEP 5:
@@ -453,6 +485,8 @@ For Android 11 and higher, if permissions are not automatically granted, choose 
 <h2 id="installwithemm" class="anchor"><a class="heading-anchor" href="#installwithemm"><span></span></a>Install with EMM</h2>
 
 <p>For mass deployment, install Device Tracker client on devices through an EMM. A server connectivity XML file is provided by Zebra services to configure Device Tracker with the server settings.</p>
+
+<p><strong>Note:</strong> The maximum supported limit for simultaneous device registration is 500 devices. Zebra recommends to register no more than 500 devices at a time.</p>
 
 <h4 id="installationsteps" class="anchor"><a class="heading-anchor" href="#installationsteps"><span></span></a>Installation Steps</h4>
 
@@ -467,7 +501,9 @@ For Android 11 and higher, if permissions are not automatically granted, choose 
 
 <li><strong>Download Device Tracker client</strong> from the <a href="https://www.zebra.com/us/en/products/software/mobile-computers/device-tracker.html">Zebra support portal</a> <strong>and deploy it</strong> to the device through EMM.</li>
 
-<li><strong>Grant the required permissions through EMM, if not automatically granted,</strong> based on the Android platform. Refer to the EMM guide. For any platform versions not mentioned below, permissions are automatically granted.
+<li><em>(Optional)</em> If using <a href="../config/#singlesignonsso">SSO</a> for accountability and <a href="../config/#checkincheckoutdevice">Checkin/Checkout</a> is enabled, <strong>download <a href="../config/#enterpriseloginscreenels">Enterprise Login Screen (ELS)</a></strong> from the <a href="https://www.zebra.com/us/en/products/software/mobile-computers/device-tracker.html">Zebra support portal</a> <strong>and deploy it</strong> to the device through EMM.</li>
+
+<li><strong>Grant the required permissions for Device Tracker through EMM, if not automatically granted,</strong> based on the Android platform. Refer to the EMM guide. For any platform versions not mentioned below, permissions are automatically granted.
 
 
 <ul>
@@ -491,6 +527,8 @@ For Android 11 and higher, if permissions are not automatically granted, choose 
 </li>
 
 <li><strong>Download and deploy <a href="./DeviceTracker.xml" download="">Device Tracker setup XML</a> to MX through EMM.</strong> This grants permissions to display over other apps, disables battery optimization and starts the device tracking service.</li>
+
+<li><em>(Optional)</em> If using ELS, <strong>download and deploy <a href="./ELS.xml" download="">ELS XML</a> to MX through EMM.</strong> This grants permissions to display over other apps.</li>
 
 <li><strong>Download and deploy the server connectivity settings XML to MX through EMM</strong> provided by Zebra during the onboarding process. <em>If steps 6 and 7 are skipped, an error may occur indicating the device has not registered with MX Framework. Refer to the EMM guide for XML deployment.</em></li>
 
@@ -549,12 +587,25 @@ For Android 11 and higher, if permissions are not automatically granted, choose 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Package Name:</strong> com.zebra.mdna.devicetrackercloud<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Class Name:</strong> com.zebra.mdna.devicetrackercloud.csp.NGDTCspService<br></li></ul></li>
 
+<li><p><em>(Optional)</em> If using <a href="../config/#singlesignonsso">SSO</a> for accountability and <a href="../config/#checkincheckoutdevice">Checkin/Checkout</a> is enabled, download <a href="../config/#enterpriseloginscreenels">Enterprise Login Screen (ELS)</a> from <a href="https://www.zebra.com/us/en/support-downloads/software/productivity-apps/device-tracker.html">Zebra support portal</a> and add the following to the StageNow profile:</p>
+
+<ul>
+<li><strong>FileMgr:</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>File Action:</strong> Transfer/Copy File<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Target Path and File Name:</strong> [Enter path where APK is to be copied to the device, e.g. /sdcard/ELS.apk]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Source Access Method:</strong> [Select the appropriate setting]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Source File URI:</strong> [Select and enter the appropriate information when prompted]<br></li>
+
+<li><strong>AccessMgr</strong>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Application Package Name:</strong> com.zebra.mdna.els<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Application Signature:</strong> [browse to <a href="ELS.CRT">certificate file</a>]<br></li></ul></li>
+
 <li><p><strong>Launch StageNow client and scan the following barcodes:</strong></p>
 
 <ul>
-<li>Barcode generated from the StageNow profile   from step 4. </li>
+<li>Barcode generated from the StageNow profile from step 4 and step 5 (if applicable).</li>
 
-<li>Barcode from the .PDF file provided by Zebra during the onboarding process, which configures Device Tracker with the cloud server settings. </li></ul></li>
+<li>Barcode from the .PDF file provided by Zebra during the onboarding process, which configures Device Tracker with the cloud server settings.</li></ul></li>
 
 <li><p><strong><em>Optionally,</em> enable <a href="../secondaryble">secondary BLE</a></strong> to allow devices that support this feature to be located even when powered off. <strong>Follow instructions in <a href="../secondaryble/#configuration">Secondary BLE Configuration</a> to enable and configure secondary BLE.</strong></p></li>
 </ol>
@@ -637,7 +688,7 @@ Prerequisites to create StageNow profiles:
 Create a StageNow install profile to:
 
 - Copy the Device Tracker client to the device.
-- If integrating [SSO](#ssointegration), copy Enterprise Login Screen (ELS) to the device.
+- If integrating [SSO](#singlesignonssointegration), copy Enterprise Login Screen (ELS) to the device.
 - Install the Device Tracker client.
 - Install ELS.
 - Grant permission for the app to run in the background during doze mode (Android’s power-saving feature triggered when the device is in a prolonged suspended state).
@@ -763,7 +814,7 @@ To install and configure Device Tracker through an EMM - all steps must be follo
     - `android.permission.ACCESS_FINE_LOCATION` – Required to find devices using the Bluetooth proximity meter.
 6. **Download and deploy <a href="./DeviceTracker.xml" download>Device Tracker setup XML</a> to MX through EMM.** This grants permissions to display over other apps, disables battery optimization and starts the device tracking service.
 7. **Download and deploy the server connectivity settings XML to MX through EMM** provided by Zebra during the onboarding process. _If steps 6 and 7 are skipped, an error may occur indicating the device has not registered with MX Framework. Refer to the EMM guide for XML deployment._
-8. **If integrating [SSO](../config/#sso), download Enterprise Login Screen (ELS)** from the [Zebra Support Portal](https://www.zebra.com/us/en/support-downloads.html) and **deploy on the device. Grant the permissions required through the EMM** (refer to the EMM guide).
+8. **If integrating [SSO](../config/#singlesignonsso), download Enterprise Login Screen (ELS)** from the [Zebra Support Portal](https://www.zebra.com/us/en/support-downloads.html) and **deploy on the device. Grant the permissions required through the EMM** (refer to the EMM guide).
 9. **_Optionally,_ enable [secondary BLE](../secondaryble)** to allow devices that support this feature to be located even when powered off. **Follow instructions in [Secondary BLE Configuration](../secondaryble/#configuration) to enable and configure secondary BLE.**
 10. **If using SSO, launch Enterprise Login Screen.** The app is displayed preventing device access until the user logs in with their SSO credentials.
 
@@ -789,8 +840,8 @@ On a host PC, perform the following:
 1. **Download the Device Tracker client** from the [Zebra support portal](https://www.zebra.com/us/en/products/software/mobile-computers/device-tracker.html).
 2.  **If integrating [SSO](#ssointegration), download Enterprise Login Screen (ELS)** from the [Zebra Support Portal](https://www.zebra.com/us/en/support-downloads.html).
 3. <b>Download the <a href="./DeviceTracker.crt">app certificate</a>,</b> needed to create the <a href="#installprofile">install profile</a>.
-4. Use StageNow to create a **barcode to deploy Device Tracker** as follows: 
-    - Install Device Tracker app. 
+4. Use StageNow to create a **barcode to deploy Device Tracker** as follows:
+    - Install Device Tracker app.
     - Grant permission for the app to run in the background and track devices by removing Device Tracker from the Battery Optimization exemption list using [AppMgr](/mx/appmgr).
     - To use the [Device Checkout](../use/#devicecheckout) feature, grant permission to display the Checkout screen to prevent users from accessing the device prior to scanning their user barcode. This is done by granting System Alert Window using [AccessMgr](/mx/accessmgr).
     - Start Device Tracker app or start its service.<br />

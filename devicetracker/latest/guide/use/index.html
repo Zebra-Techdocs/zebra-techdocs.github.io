@@ -32,7 +32,17 @@
       <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script> 
     -->
     <link rel="shortcut icon" href="/favicon.ico">
-<script src="/js/jquery.js"></script></head><!--/head-->
+<script src="/js/jquery.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-01QJCMQM9N"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-01QJCMQM9N');
+</script></head><!--/head-->
+
+
+<!-- Google tag -->
+
 
 
 <body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
@@ -57,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            5.2
+                                            5.3
                         </p>
 
                     </ul>
@@ -65,42 +75,47 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicetracker/5-2/guide/about">
+                            <a href="/devicetracker/5-3/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/getstarted">
+                            <a href="/devicetracker/5-3/guide/getstarted">
                                         Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/setup">
+                            <a href="/devicetracker/5-3/guide/setup">
                                         Installation
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/config">
+                            <a href="/devicetracker/5-3/guide/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/use">
+                            <a href="/devicetracker/5-3/guide/use">
                                         Track Devices
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/dashboard">
+                            <a href="/devicetracker/5-3/guide/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/faq">
+                            <a href="/devicetracker/5-3/guide/faq">
                                         FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/search">
+                            <a href="https://supportcommunity.zebra.com/s/global-search/device%20tracker?language=en_US">
+                                    <i class="fa fa-graduation-cap"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/devicetracker/5-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -210,7 +225,7 @@
                                     <h1 id="track-devices" class="anchor"><a class="heading-anchor" href="#track-devices"><span></span></a>Track Devices</h1>
                                     <p>
                                             Device Tracker
-                                            5.2
+                                            5.3
                                     </p>
                                 </div>
                             </section>                    
@@ -225,14 +240,15 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Device Tracker restricts user access to the device with either of the following optional features:</p>
+<p>Device Tracker can block user access to the device with either of the following optional features for <a href="../config/#checkincheckoutdevice">device checkout</a>:</p>
 
 <ul>
-<li><a href="../config/#checkincheckoutdevice">Checkin/Checkout</a> - If enabled, the end user is presented with the <a href="#devicecheckout">Checkout</a> screen, prompting the user to scan their user barcode to gain device access.</li>
+<li><a href="../config/#checkincheckoutdevice">User barcode scan</a> - If enabled, the end user is presented with the <a href="#devicecheckout">Checkout</a> screen, prompting the user to scan their user barcode to gain device access.</li>
 
-<li><a href="../config/#sso">SSO</a> - If enabled, the end user logs in with their SSO credentials to gain access to the device.
-Device Tracker operation and functionality is based on the <a href="../config/#overview">user role</a> of the user logged in.</li>
+<li><a href="../config/#singlesignonsso">SSO signin</a> - If enabled, the user logs in with their SSO credentials to gain access to the device.</li>
 </ul>
+
+<p>Device Tracker operation and functionality is based on the <a href="../config/#overview">user role</a> of the user logged in.</p>
 
 <p>To <a href="#finddevice">find a device</a>, the misplaced device must be <a href="#markdevicetofind">marked for retrieval</a> by the administrator or manager. The “finding” device (the device performing the search) is used to determine the distance the user is located in relation to the “misplaced” device (the device to be found) using the visual proximity meter. When a device is found, <a href="#decommissionrecommissiondevice">recommission the device</a> to place it back into the active device pool. Alternatively, <a href="#decommissionrecommissiondevice">decommission the device</a> if it needs to be removed from the active device pool.</p>
 
@@ -264,13 +280,100 @@ This section discusses the actions that can be taken to track devices:
 - **[Add/Edit a Note](#addeditnote) -** add device-specific comments, e.g. to identify device issues.
 -->
 
+<hr>
+
 <h2 id="devicecheckout" class="anchor"><a class="heading-anchor" href="#devicecheckout"><span></span></a>Device Checkout</h2>
 
-<p><a href="../config/#checkincheckoutdevice">Device Checkout</a> is an optional feature configured by the administrator. If enabled, the user is required to scan their barcode at the start of their work shift to checkout the device, then logout at the end of their work shift to checkin the device. The checkout screen is in kiosk mode, preventing the user from accessing the device until checkout is performed. When a device is checked-out, the user is associated with the particular device until the user checks in the device.</p>
+<p>Device Checkout is an optional feature configured by the administrator to block device access until a user performs one of the following on the device:</p>
 
-<p><strong>Note:</strong> For Android Q and higher, if "Display over other apps" permission is not granted, the user must manually launch the app once and grant this permission for checkout functionality to work properly.</p>
+<ul>
+<li>Signs in with SSO credentials</li>
 
-<h3 id="checkout" class="anchor"><a class="heading-anchor" href="#checkout"><span></span></a>Checkout</h3>
+<li>Scans a user barcode</li>
+</ul>
+
+<p><a href="../config/#checkincheckoutdevice">Checkin/checkout</a> must be enabled. The following sections describe how to use checkout using either of the above options.</p>
+
+<h3 id="sso" class="anchor"><a class="heading-anchor" href="#sso"><span></span></a>SSO</h3>
+
+<p>When <a href="../config/#singlesignonsso">single sign-on SSO</a> is activated and <a href="../config/#enterpriseloginscreenels">Enterprise Login Screen</a> (ELS) is installed on the device, the user signs in to the device using SSO login credentials.</p>
+
+<h4 id="signin" class="anchor"><a class="heading-anchor" href="#signin"><span></span></a>Sign in</h4>
+
+<p>When SSO is activated and Enterprise Login Screen is installed on the device, users sign in to the device by entering their SSO login credentials. After successful sign in, the user is granted access to the device and is checked out with the user name returned by SSO for accountability.</p>
+
+<p>To sign in using SSO:</p>
+
+<ol>
+<li>In the Enterprise Login Screen, tap <strong>Sign in.</strong></li>
+
+<li>In the company SSO sign in screen, enter the user credentials and tap <strong>Sign in</strong> or the related button to signin.</li>
+</ol>
+
+<table>
+    <tbody><tr>
+        <td>
+            <img alt="image" style="height:350px" src="els.jpg">
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <img alt="image" style="height:350px" src="sso-zebra.png">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <i>Enterprise Login Screen</i>
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <i>Company SSO signin screen</i>
+        </td>
+    </tr>
+</tbody></table>
+
+<h4 id="passcode" class="anchor"><a class="heading-anchor" href="#passcode"><span></span></a>Passcode</h4>
+
+<p>If the user cannot sign in to the device, either due to an SSO signin failure or a network outage, the administrator can supply a <a href="../config/#enterpriseloginscreenels">passcode</a> for the user to enter on the device to bypass the SSO login. The passcode is set with an associated passcode group name through <a href="#ssointegration">SSO integration</a> under the <strong>Enterprise Login Screen Mobile Client</strong> section.</p>
+
+<p>To bypass the SSO signin screen, in the ELS screen tap the menu at the top right, select <strong>Sign in with Passcode</strong> and enter the passcode supplied by the administrator.</p>
+
+<p><img alt="image" style="height:350px" src="passcode-signin.jpg"></p>
+
+<p><em>Enter bypass passcode</em></p>
+
+<p>This grants the user device access and checks out the user as "passcode_" followed by the passcode group name as displayed in the Mobile Devices dashboard in the <strong>Checked Out By</strong> column.</p>
+
+<p><img alt="image" style="height:350px" src="passcode-dashboard.jpg"></p>
+
+<p><em>Checked in user from entering passcode</em></p>
+
+<h4 id="signout" class="anchor"><a class="heading-anchor" href="#signout"><span></span></a>Signout</h4>
+
+<p>To signout of ELS, in Device Tracker tap the top right menu and select <strong>Sign out of Device.</strong> The user is signed out and the ELS screen appears for the next signin session.</p>
+
+<p><img alt="image" style="height:350px" src="els-signout.jpg"></p>
+
+<p><em>Signout of ELS</em></p>
+
+<p>On successful signout of ELS, the device is checked in and accountability is removed from Device Tracker.</p>
+
+<h3 id="userbarcode" class="anchor"><a class="heading-anchor" href="#userbarcode"><span></span></a>User Barcode</h3>
+
+<p>When using barcode scanning for checkout (SSO is not activated), the user is required to scan the user barcode at the start of their work shift to checkout the device, then checkin the device at the end of the work shift. The checkout screen blocks device access, preventing the user from accessing the device until checkout is performed. When a device is checked-out, the user is associated with the particular device until the user checks in the device.</p>
+
+<p>By default, if no barcode prefix is defined all barcodes are accepted. Specify a <a href="../config/#checkoutbarcodeprefix">checkout barcode prefix</a> to restrict checkout only to barcodes that begin with the specified prefix.</p>
+
+<p><strong>Note:</strong> </p>
+
+<ul>
+<li><strong>For Android 10 and higher, if "Display over other apps" permission is not granted,</strong> the user must manually launch the app once and grant this permission for checkout functionality to work properly.</li>
+
+<li><strong>If any other app also uses a screen overlay, the checkin/checkout feature may conflict with the other app.</strong> For example, this feature cannot be used with Zebra’s MotionWorks Proximity application.</li>
+
+<li><strong>The checkout barcode can be scanned when the device is in the lock screen.</strong> If the Android lock screen appears after the checkout screen is displayed, a checkout barcode can be scanned while the device is in the lock screen. The device is checked out, as seen after unlocking the device.</li>
+</ul>
+
+<h4 id="checkout" class="anchor"><a class="heading-anchor" href="#checkout"><span></span></a>Checkout</h4>
 
 <p>Perform a device checkout at the start of a work shift as follows:</p>
 
@@ -287,10 +390,11 @@ This section discusses the actions that can be taken to track devices:
 <li><p>The user is now associated with the device. <br></p></li>
 </ol>
 
-<p><strong>Note:</strong> If Checkout is enabled, after a device is rebooted the Checkout screen may take up to one minute to be displayed.
-<br><br></p>
+<p><strong>Note:</strong> If Checkout is enabled, after a device is rebooted the Checkout screen may take up to one minute to be displayed.</p>
 
-<h3 id="checkin" class="anchor"><a class="heading-anchor" href="#checkin"><span></span></a>Check-In</h3>
+<p><br></p>
+
+<h4 id="checkin" class="anchor"><a class="heading-anchor" href="#checkin"><span></span></a>Check-In</h4>
 
 <p>Choose one of the following options to Check-In a device:</p>
 
@@ -352,6 +456,8 @@ This section discusses the actions that can be taken to track devices:
 <i>Manager/admin view to mark a device "To Be Found"</i></li>
 </ol>
 
+<hr>
+
 <h2 id="lostdevicenearby" class="anchor"><a class="heading-anchor" href="#lostdevicenearby"><span></span></a>Lost Device Nearby</h2>
 
 <p><a href="../config/#lostdevicenearby">Lost Device Nearby</a> is an optional feature (configured by the administrator) that proactively sends alert notifications to a device when a lost device is detected within close proximity. This allows the lost device to be found by nearby users in addition to any users that may be actively searching for the device. The nearby user that receives the alert notification can promptly initiate the finding process, expediting device recovery by allowing the lost device to be found more quickly with its vicinity immediately known. Alerts are sent as one or a combination of the following: audio, vibration, LED, and/or Android notification.</p>
@@ -384,20 +490,20 @@ This section discusses the actions that can be taken to track devices:
 
 <p><em>Offline detecting device displaying nearby devices</em></p>
 
-<!-- 
+<!--
 When _Lost Device Nearby_ is enabled, the "To Be Found" screen displays 2 tabs:
 * **All -** Displays devices that are marked "To Be Found" for the respective site.
 * **Nearby -** Filters lost devices that are marked "To Be Found" and are receiving Bluetooth beacons while within nearby proximity.
 
     <table>
     <tr>
-    <td> 
+    <td>
             <img alt="image" style="height:350px" src="to-be-found-all.png" />
     </td>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
     <td>
             <img alt="image" style="height:350px" src="to-be-found-nearby.png" />
-    </td> 
+    </td>
     </tr>
     <tr>
         <td>
@@ -424,10 +530,12 @@ When _Lost Device Nearby_ is enabled, the "To Be Found" screen displays 2 tabs:
 
 <li>The device must neither be charging nor in a low battery state (based on the <a href="../config/#configureautomationsettings">Low battery threshold</a>).</li>
 
-<li>If <a href="#checkincheckoutdevice">Checkin/Checkout</a> feature is enabled, the user must checked out the device.</li>
+<li>If <a href="../config/#checkincheckoutdevice">Checkin/Checkout</a> is enabled, the device must be Checked Out by a user.</li>
 </ul>
 
 <p><strong>Note:</strong> Any <em>Lost Device Nearby</em> notifications are removed when Bluetooth beacons are no longer detected from the lost device for at least 5 minutes. This is due to the lost device no longer: (1) located within close proximity of the detecting device, (2) emitting Bluetooth beacons, or (3) in the "To Be Found" state.</p>
+
+<hr>
 
 <h2 id="finddevice" class="anchor"><a class="heading-anchor" href="#finddevice"><span></span></a>Find Device</h2>
 
@@ -474,7 +582,7 @@ When _Lost Device Nearby_ is enabled, the "To Be Found" screen displays 2 tabs:
 <img alt="image" style="height:350px" src="device-tracking.png">
 <i>Tracking screen with proximity meter</i></p></li>
 
-<li><p>Tap <strong>Play Sound</strong> on the finding device. The misplaced device emits a chirping sound to help identify its location. Walk towards the sound. Continue this step until the device is found.</p></li>
+<li><p>Tap <strong>Play Sound</strong> on the finding device. The misplaced device emits a chirping sound to help identify its location. Walk towards the sound. Continue this step until the device is found. <strong>Note:</strong> When playing the sound, by design the Pixie Dust tone is played on the device.</p></li>
 
 <li><p>If the misplaced device is found, tap <strong>Device found.</strong> Select <em>one</em> of the following based on the behavior encountered:</p>
 
@@ -547,6 +655,38 @@ When _Lost Device Nearby_ is enabled, the "To Be Found" screen displays 2 tabs:
 <li>While finding a device, the values seen in the BLE proximity indicator may differ when finding a device that is powered on (primary BLE) versus a device that is powered off (secondary BLE), particularly if the <a href="../secondaryble/#configuration">Reference RSSI</a> is not specified for the battery-based secondary BLE. This is due to varying location and orientation of the secondary BLE antenna. During the finding process, the user should rely on the trend reflected in the BLE proximity meter to navigate to the misplaced device.</li>
 </ul>
 
+<h3 id="playsound" class="anchor"><a class="heading-anchor" href="#playsound"><span></span></a>Play Sound</h3>
+
+<p>To find a device that is close by, play a sound on the lost or misplaced device through the <a href="#finddevice">Find Device</a> process. Alternatively, managers and administrators can play sound from the web portal through the <strong>Actions</strong> menu from either the <strong>Mobile Devices</strong> dashboard or <strong>Device Details</strong> screen.</p>
+
+<p><strong>Note:</strong> When playing the sound, by design the Pixie Dust tone is played on the device.</p>
+
+<p>To play sound through the <strong>Mobile Devices</strong> dashboard:</p>
+
+<ol>
+<li>Login to the web portalas a manager or administrator .</li>
+
+<li>Go to Dashboard &gt; Mobile Devices. </li>
+
+<li>Tick the checkbox to select the desired device(s) to play sound.</li>
+
+<li>From the Actions dropdown, select <strong>Play Sound.</strong>
+<img alt="image" style="height:450px" src="devices-play-sound.jpg"></li>
+</ol>
+
+<p>To play sound through the <strong>Device Details</strong> screen:</p>
+
+<ol>
+<li>Login to the web portal as a manager or administrator.</li>
+
+<li>Go to Dashboard &gt; Mobile Devices. </li>
+
+<li>Click on the row of the desired device to play sound.</li>
+
+<li>The <strong>Device Details</strong> screen appears. From the Actions dropdown, select <strong>Play Sound.</strong>
+<img alt="image" style="height:450px" src="device-details-play-sound.jpg"></li>
+</ol>
+
 <h3 id="donotdisturbdndmode" class="anchor"><a class="heading-anchor" href="#donotdisturbdndmode"><span></span></a>Do Not Disturb (DND) Mode</h3>
 
 <p>DND mode is an Android feature that silences the device - it mutes sound and stops vibration. Device Tracker has the capability to play audio alerts when DND mode is turned on in the lost device, with exceptions (see below).</p>
@@ -585,6 +725,8 @@ When _Lost Device Nearby_ is enabled, the "To Be Found" screen displays 2 tabs:
 <li>Disable access to Android Settings by using an EMM or <a href="/ehs">Zebra Enterprise Home Screen</a>.</li>
 </ul>
 
+<hr>
+
 <h2 id="disablefinding" class="anchor"><a class="heading-anchor" href="#disablefinding"><span></span></a>Disable Finding</h2>
 
 <p>After a device is marked <strong>To Be Found</strong>, if the device search needs to be terminated follow these steps (applies to only managers and administrators):</p>
@@ -605,7 +747,8 @@ When _Lost Device Nearby_ is enabled, the "To Be Found" screen displays 2 tabs:
 
 <h2 id="decommissionrecommissiondevice" class="anchor"><a class="heading-anchor" href="#decommissionrecommissiondevice"><span></span></a>Decommission/Recommission Device</h2>
 
-Decommission a device to remove it from the active device pool and recommission it to place it back into the active device pool.
+<p>Decommission a device to remove it from the active device pool and recommission it to place it back into the active device pool.</p>
+
 <!-- After a device is found, recommission the device to place it back into the active device pool. This changes the device status from **Found** to **In Service**, restarts the device reporting to the server, and allocates a license to the device. On the other hand, decommission a device to remove it from the active device pool, mark it in the **Decommissioned** state, deallocate the license and stop any further reporting to the server. -->
 
 <h3 id="decommissionadevice" class="anchor"><a class="heading-anchor" href="#decommissionadevice"><span></span></a>Decommission a Device</h3>
@@ -752,7 +895,7 @@ Tap the device card to display the <strong>Device Details</strong> screen. Tap o
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--

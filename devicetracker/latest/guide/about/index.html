@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            5.2
+                                            5.3
                         </p>
 
                     </ul>
@@ -75,42 +75,47 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicetracker/5-2/guide/about">
+                            <a href="/devicetracker/5-3/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/getstarted">
+                            <a href="/devicetracker/5-3/guide/getstarted">
                                         Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/setup">
+                            <a href="/devicetracker/5-3/guide/setup">
                                         Installation
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/config">
+                            <a href="/devicetracker/5-3/guide/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/use">
+                            <a href="/devicetracker/5-3/guide/use">
                                         Track Devices
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/dashboard">
+                            <a href="/devicetracker/5-3/guide/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/guide/faq">
+                            <a href="/devicetracker/5-3/guide/faq">
                                         FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-2/search">
+                            <a href="https://supportcommunity.zebra.com/s/global-search/device%20tracker?language=en_US">
+                                    <i class="fa fa-graduation-cap"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/devicetracker/5-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -220,7 +225,7 @@
                                     <h1 id="about-device-tracker" class="anchor"><a class="heading-anchor" href="#about-device-tracker"><span></span></a>About Device Tracker</h1>
                                     <p>
                                             Device Tracker
-                                            5.2
+                                            5.3
                                     </p>
                                 </div>
                             </section>                    
@@ -285,13 +290,15 @@
 
 <li><a href="../use/#devicecheckout">Checkout</a> feature to associate users to devices for accountability.</li>
 
-<li><a href="../config/#sso">Single Sign On</a> (SSO) support for users to be authenticated with their SSO credentials for device access and for administrators and managers to gain access to their respective dashboards.</li>
+<li><a href="../config/#singlesignonsso">Single Sign On</a> (SSO) support for users to be authenticated with their SSO credentials for device access and for administrators and managers to gain access to their respective dashboards.</li>
 
 <li>Generate <a href="../config/#reports">reports</a> to monitor device performance, user activity and site activity.</li>
 
 <li><a href="../config/#automation">Automate</a> workflows to ease the process of finding and tracking devices.</li>
 
-<li>Automatically receive notifications from <a href="../config/#lostdevicenearby">lost devices in close proximity</a> via audio, vibrating or LED alerts.
+<li>Automatically receive notifications from <a href="../config/#lostdevicenearby">lost devices in close proximity</a> via audio, vibrating or LED alerts.</li>
+
+<li><a href="../config/#gpslocation">Locate devices</a> based on GPS coordinates and pinpoint device location on a map.
 <!--
 - Device dashboard available for [administrators](../dashboard/#deviceinformation) to centrally track devices across multiple sites with ability to view at site-level and [managers](../dashboard/#deviceinformation) to track devices at the site-level.
   --></li>
@@ -299,19 +306,63 @@
 
 <hr>
 
-<h2 id="newindevicetracker52" class="anchor"><a class="heading-anchor" href="#newindevicetracker52"><span></span></a>New in Device Tracker 5.2</h2>
+<h2 id="newindevicetracker53" class="anchor"><a class="heading-anchor" href="#newindevicetracker53"><span></span></a>New in Device Tracker 5.3</h2>
+
+<p><strong>Note: Both server and client must be upgraded to Device Tracker 5.3 to ensure compatibility of Device Tracker features.</strong></p>
 
 <ul>
-<li>New feature to automatically detect <a href="../config/#lostdevicenearby">Lost Devices Nearby</a>. When any device is in close proximity to a lost device, alert notifications (audio, vibration, LED or notification message) are received and further action can be taken to recover the lost device. 
-<!-- 
-- [Enterprise Login Screen](../config/#enterpriseloginscreen) facilitates SSO login for users to gain device access.
-- [Site Data Report](../config/#) - generate reports on daily device status counts, device utilization and device checkout to monitor performance and activity.
---></li>
+<li><a href="../config/#gpslocation">Locate devices</a> based on GPS coordinates and pinpoint device location on a map.</li>
+
+<li><a href="../config/#devicetositeassignment">Automatic device assignment to a site based on a specified range of IP addresses (IPV4)</a> when a device connects to the network</li>
+
+<li>New SSO login screen, aka <a href="../config/#enterpriseloginscreenels">Enterprise Login Screen</a> (pre-release), ensures secure device access by requiring user authentication and device checkout using SSO login credentials, enforcing accountability. <a href="../config/#loginbypass">Login bypass</a> allows a user to gain device access in unexpected situations when SSO login cannot occur.</li>
+
+<li>Device Tracker support for <a href="../config/#singlesignonsso">SSO</a> OAuth 2.0 with client authentication type None with PKCE</li>
+
+<li>Device Tracker dashboard access based on <a href="../config/#singlesignonsso">SSO</a> response parameters (such as Active Directory group name, job ID, and site location)</li>
+
+<li>Enhanced <a href="../dashboard/#endofdaydevicesummary">End of Day snapshot email report</a> for administrators to customize reported data based on criteria selected; see <a href="../config/#managesites">Manage Sites</a> to configure site reporting</li>
+
+<li>Enhanced <a href="../dashboard/#eventsbysite">events report</a> for administrators to analyze events and view event details, including detailed device information, identification of manual vs automatic events, total and average amount of time provided for devices in "Being Found" or "To Be Found" state, and ability to export device detail information as a CSV file</li>
+
+<li><a href="../config/#configureautomationsettings">Automatic clearing of the “To Be Found” status upon device checkout</a>. If a device is in the “To Be Found” state when it is checked out, it is automatically set back “In Service” (rather than remaining in the “To Be Found” state).</li>
+
+<li>API to integrate device checkin with a Line of Business (LOB) application to simplify the user device checkin workflow. See <a href="../config/#devicecheckinoptions">Device Checkin Options</a>.</li>
+
+<li>Automatically checkin devices after reaching the maximum checkout time. <a href="../config/#forcecheckin">Force Checkin</a> automatically checks in the user when the <strong>Maximum Checkout Time</strong> is reached. If a <a href="../config/#snoozetime">Snooze Time</a> is specified, it extends the maximum checkout time to allow the user to complete their task. This applies when SSO is in use with Enterprise Login Screen.</li>
+
+<li><a href="../config/#manageaccesspoints">Register location friendly name for the Access Point (AP) with a wildcard.</a>. A wildcard character "*" is now acceptable for the last digit of the last octet of the MAC address to register multiple APs which share the same MAC address aside from the last digit.</li>
+
+<li>New feature for managers and admins to <a href="../use/#playsound">Play Sound</a> through the device actions menu in the web portal.</li>
+
+<li>Resolved issues:
+
+
+<ul>
+<li>After a device is rebooted and then idle for a long period of time without being unlocked, the device may be shown as disconnected.</li>
+
+<li>Intermittently, a user may be unable to checkout a device by scanning a barcode.</li></ul>
+</li>
+
+<li>Known issues:
+
+
+<ul>
+<li>When accessing the SSO setting in the web portal, the Passcode section takes a few seconds to load the values.</li>
+
+<li>When a device is recommissioned (after being decommissioned), the device remains unassigned to a site (even if previously assigned to a site) until the user checks out the device through Enterprise Login Screen.</li></ul>
+</li>
 </ul>
 
 <hr>
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newindevicetracker52" class="anchor"><a class="heading-anchor" href="#newindevicetracker52"><span></span></a>New in Device Tracker 5.2</h3>
+
+<ul>
+<li>New feature to automatically detect <a href="../config/#lostdevicenearby">Lost Devices Nearby</a>. When any device is in close proximity to a lost device, alert notifications (audio, vibration, LED or notification message) are received and further action can be taken to recover the lost device.</li>
+</ul>
 
 <h3 id="newindevicetracker51" class="anchor"><a class="heading-anchor" href="#newindevicetracker51"><span></span></a>New in Device Tracker 5.1</h3>
 
@@ -320,7 +371,7 @@
 
 <li>Administrators can now <a href="../config/#managedevices">manage devices</a>, <a href="../config/#manageaccesspoints">access points</a> and <a href="../config/#managesites">sites</a> through the web portal either manually or by uploading the data via .CSV file.</li>
 
-<li>New <a href="../config/#sso">Single Sign On</a> (SSO) OAuth 2.0 support.</li>
+<li>New <a href="../config/#singlesignonsso">Single Sign On</a> (SSO) OAuth 2.0 support.</li>
 
 <li>Add SSO users for admin or manager access to the web portal through <a href="../config/#manageusers">Manage Users</a>.</li>
 
@@ -397,11 +448,12 @@
 <li>In rare cases, <strong>the Device Tracker web portal may not logout automatically</strong> after a period of inactivity. If this occurs, performing any action in the web portal results in unauthorized access error 401. The user must re-login to recover.</li>
 </ul>
 
-<h2 id="-1" class="anchor"><a class="heading-anchor" href="#-1"><span></span></a><!--</h2>
+<!--
 
-<h2 id="devicetrackercomparison">Device Tracker Comparison</h2>
+## Device Tracker Comparison
 
-<p>Comparison of <strong>Device Tracker On-Prem</strong> and <strong>Device Tracker</strong> cloud-based:</p>
+Comparison of **Device Tracker On-Prem** and **Device Tracker** cloud-based:
+
 
 <table class="facelift" style="width:100%" border="1" padding="5px">
   <tr bgcolor="#dce8ef">
@@ -455,7 +507,9 @@
   </tr>
 </table>
 
-<h2 id="">--></h2>
+-->
+
+<hr>
 
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
