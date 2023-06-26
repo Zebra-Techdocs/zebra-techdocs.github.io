@@ -513,6 +513,10 @@ function selectDoc(prod_id, doc_id) {
             ver = "";  // no version
             doc = $("#oeminfo-doc").val();
             break;
+        case 'btn-p5g':
+            ver = "";  // no version
+            doc = $("#private5g-doc").val();
+            break;
         case 'btn-rfid':
             ver = "";   // no version
             doc = $("#rfid-doc").val();
