@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            3.1
+                                            3.2
                         </p>
 
                     </ul>
@@ -81,32 +81,32 @@
 
 
                         <li>
-                            <a href="/zebradna/3-1/about">
+                            <a href="/zebradna/3-2/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-1/setup">
+                            <a href="/zebradna/3-2/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-1/usage">
+                            <a href="/zebradna/3-2/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-1/licensing">
+                            <a href="/zebradna/3-2/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-1/faq">
+                            <a href="/zebradna/3-2/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-1/search">
+                            <a href="/zebradna/3-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -222,7 +222,7 @@
                                     <h1 id="using-zebra-dna-cloud" class="anchor"><a class="heading-anchor" href="#using-zebra-dna-cloud"><span></span></a>Using Zebra DNA Cloud</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            3.1
+                                            3.2
                                     </p>
                                 </div>
                             </section>                    
@@ -362,6 +362,25 @@
 </ul>
 
 <p><i><font size="1" color="grey">* Has no effect if user changed passcode before ZDNA enrollment. To regain control, perform an Enterprise Reset and re-enroll device.<br>✝︎ Deleted devices could remain visible in deployment detail documents if the device was selected for deployment before being deleted.<br>‡ DNA Cloud 2.5 (or later) required for proper operation.</font></i></p>
+
+<h3 id="columnselection" class="anchor"><a class="heading-anchor" href="#columnselection"><span></span></a>Column Selection</h3>
+
+<p><strong>ZDNA 3.2 introduced the ability to select which columns to show/hide on most device-listing screens</strong>. When the feature is available, a Column Selection button appears on the screen as seen below: <br>
+<img alt="image" style="height:350px" src="32_column_select.jpg">
+<em>Click image to enlarge; ESC to exit</em>. 
+<br></p>
+
+<h4 id="toselectcolumns" class="anchor"><a class="heading-anchor" href="#toselectcolumns"><span></span></a>To Select Columns:</h4>
+
+<ol>
+<li><strong>Click the Column Selection button</strong> to display the current selections (default = all).</li>
+
+<li><strong>Select a column to show/hide</strong> by checking/unchecking its checkbox. Results are displayed immediately. </li>
+
+<li><strong>Click "Done" to preserve the selections</strong> for later use. <strong>See note, below</strong>. </li>
+</ol>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Clicking away from the Column Selection box dismisses the box, temporarily displaying the latest selections. After clicking away from the screen, temporary changes are lost. Upon return, the last-saved column selections are displayed. If no preferences were previously saved, all columns are displayed (default). </p>
 
 <hr>
 
@@ -656,15 +675,17 @@
 <h4 id="tocreateaprofilewithsettingswizard" class="anchor"><a class="heading-anchor" href="#tocreateaprofilewithsettingswizard"><span></span></a>To Create a Profile with Settings Wizard:</h4>
 
 <ol>
-<li><strong>Configure Language/Locale and Date/Time settings</strong> as desired and <strong>click "Next" to continue</strong>.<br>
-<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Only ONE source for Date/Time Server and ONE for Time Zone may be selected</strong>.<br> </li>
-</ol>
-
-<p><img alt="image" style="height:350px" src="settings_2.png">
+<li><p><strong>Configure Language/Locale and Date/Time settings</strong> as desired and <strong>click "Next" to continue</strong>.<br>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> For automatically setting the time, <strong>only ONE source for Date/Time Server and ONE for Time Zone may be selected</strong> For manually setting time, see below.<br>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>To set date and/or time manually</strong>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Check "Use cellular network-provided date and time" box.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Check "Use a NTP (Network Time Protocol) server for date and time" box and provide server address.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Check "Customize time zone" and select "Custom time zone" from dropdown.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Device date/time can now be set manually. 
+<img alt="image" style="height:350px" src="settings_2.png">
 <em>Click image to enlarge; ESC to exit.</em>
-<br></p>
+<br></p></li>
 
-<ol>
 <li><p><strong>Configure Networks</strong> as desired and <strong>click "Next"</strong>:
 <img alt="image" style="height:350px" src="settings_3.png">
 <em>Click image to enlarge; ESC to exit.</em>
@@ -779,10 +800,10 @@
 <li><p><strong>Hover mouse pointer over "info" icon</strong> to reveal parameters in each Settings group.
 <img alt="image" style="height:350px" src="advSettings_2.png">
 <em>Click image to enlarge; ESC to exit.</em>
-<br></p></li>
+<br>
+<a id="searchmc"></a></p></li>
 
 <li><p><strong>To search managed configurations, click in the Search box and type a key word</strong>. Parameters that contain the word are displayed in a drop-down for selection (as below). Repeat until all required parameters are listed in the right-hand pane.<br>
-<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> The Search box resets with any new input.<br>
 <i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>Changes to managed configurations DO NOT cause device reboot</strong> (ZDNA 3.1+).
 <img alt="image" style="height:350px" src="31_search.jpg">
 <em>Click image to enlarge; ESC to exit.</em>
@@ -949,7 +970,7 @@
 
 <!-- 
 ALSO SEE PPC DEF'Ns (explanations)
-https://techdocs.zebra.com/ppc/3-1/guide/about/
+https://techdocs.zebra.com/ppc/3-2/guide/about/
 
 See EPIC:
 https://jira.zebra.com/browse/DLM-8112
