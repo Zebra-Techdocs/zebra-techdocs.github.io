@@ -287,6 +287,8 @@
 <li>New <a href="../config/#checkincheckoutdevice">Device Checkin Options</a> to select the method of checkin: manual, cradle, or reboot.</li>
 
 <li>New capability to play an audio alert if <a href="../use/#donotdisturbdndmode">Do Not Disturb (DND)</a> is enabled on the lost device being tracked.</li>
+
+<li>Known issue: <strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li>
 </ul>
 
 <hr>
@@ -305,6 +307,8 @@
 <li>Fixed an intermittent issue when a user is unable to scan a barcode to checkout the device.</li>
 
 <li>Known Behavior: During a Google Play Services update, the Device Tracker app gets closed. Relaunch the Device Tracker app or reboot the device to continue tracking of the device.</li>
+
+<li>Known issue: <strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li>
 </ul>
 
 <h3 id="newindevicetracker41" class="anchor"><a class="heading-anchor" href="#newindevicetracker41"><span></span></a>New in Device Tracker 4.1</h3>
@@ -436,7 +440,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2022 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--
