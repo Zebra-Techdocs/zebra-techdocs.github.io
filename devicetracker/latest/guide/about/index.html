@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            5.4
+                                            5.5
                         </p>
 
                     </ul>
@@ -75,37 +75,37 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicetracker/5-4/guide/about">
+                            <a href="/devicetracker/5-5/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-4/guide/getstarted">
+                            <a href="/devicetracker/5-5/guide/getstarted">
                                         Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-4/guide/setup">
+                            <a href="/devicetracker/5-5/guide/setup">
                                         Installation
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-4/guide/config">
+                            <a href="/devicetracker/5-5/guide/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-4/guide/use">
+                            <a href="/devicetracker/5-5/guide/use">
                                         Track Devices
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-4/guide/dashboard">
+                            <a href="/devicetracker/5-5/guide/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-4/guide/faq">
+                            <a href="/devicetracker/5-5/guide/faq">
                                         FAQ
                             </a>
                         </li>
@@ -115,7 +115,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/5-4/search">
+                            <a href="/devicetracker/5-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -225,7 +225,7 @@
                                     <h1 id="about-device-tracker" class="anchor"><a class="heading-anchor" href="#about-device-tracker"><span></span></a>About Device Tracker</h1>
                                     <p>
                                             Device Tracker
-                                            5.4
+                                            5.5
                                     </p>
                                 </div>
                             </section>                    
@@ -306,7 +306,61 @@
 
 <hr>
 
-<h2 id="newindevicetracker54" class="anchor"><a class="heading-anchor" href="#newindevicetracker54"><span></span></a>New in Device Tracker 5.4</h2>
+<h2 id="newindevicetracker55" class="anchor"><a class="heading-anchor" href="#newindevicetracker55"><span></span></a>New in Device Tracker 5.5</h2>
+
+<ul>
+<li><strong>Now supports Zebra devices running Android 13</strong>. </li>
+
+<li><strong>Administrators can now <a href="../config/#enrolldevices">download XML and barcode files</a></strong> for device enrollment. 
+
+
+<ul>
+<li>Enrollment files are still emailed as part of Zebra’s on-boarding process. <br>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>NOTE: Separate barcodes must be used for</strong> devices running <strong>Android 13</strong> (or later) <strong>and Android 11</strong> (or earlier); the XML files are supported by any Android version.</li></ul>
+</li>
+
+<li><strong>Allows administrators to <a href="../config/#playsound">select an on-device sound file</a></strong> when using Play Sound feature from the portal:
+<img alt="image" style="height:250px" src="dt55_soundFile.jpg">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></li>
+
+<li><strong>Allows admins to arrange and save columns in the portal</strong> according to user preference:
+<img alt="image" style="height:250px" src="dt55_columns.jpg">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></li>
+
+<li><strong>Now can update device name, site and in-line notes</strong> from device details page. </li>
+
+<li><strong>A “Welcome” email with access instructions is now sent to newly added users</strong>. </li>
+
+<li><strong>Resolved Issues</strong>:
+
+
+<ul>
+<li>On systems using SSO, the “Checked Out By” field value is now being updated when a user logs in using Enterprise Login Screen (ELS) without the Device Tracker application running. </li></ul>
+</li>
+
+<li><strong>Known Issues</strong>: <br>
+
+
+<ul>
+<li><strong>When accessing the portal using single sign-on (SSO),</strong> the Passcode section takes longer than normal to load values.</li>
+
+<li><strong>When a device is recommissioned (after being decommissioned),</strong> the device remains unassigned to a site (even if previously assigned to a site) until the user checks out the device through ELS.  </li>
+
+<li><strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li></ul>
+</li>
+</ul>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Zebra recommends updating devices to the latest client to receive critical issue fixes and new features. Device Tracker Cloud Server 5.5 is backward-compatible with client version 5.3 and later. </p>
+</blockquote>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newindevicetracker54" class="anchor"><a class="heading-anchor" href="#newindevicetracker54"><span></span></a>New in Device Tracker 5.4</h3>
 
 <ul>
 <li>Adjust the tone, volume, duration and interval of the sound emitted when activating the <a href="../config/#playsound">Play Sound</a> function to locate misplaced devices.</li>
@@ -332,15 +386,13 @@
 <ul>
 <li>In the web portal, when switching from <strong>IP Address Range Configuration</strong> to <strong>Automatically assign devices to a connected AP’s site</strong> under Registration, it requires the device to be rebooted.</li>
 
-<li>When accessing the SSO setting in the web portal, the Passcode section takes a few seconds to load the values.</li>
+<li><strong>When accessing the SSO setting in the web portal,</strong> the Passcode section takes a few seconds to load the values.</li>
 
-<li>When a device is recommissioned (after being decommissioned), the device remains unassigned to a site (even if previously assigned to a site) until the user checks out the device through Enterprise Login Screen.</li></ul>
+<li><strong>When a device is recommissioned (after being decommissioned),</strong> the device remains unassigned to a site (even if previously assigned to a site) until the user checks out the device through Enterprise Login Screen.</li>
+
+<li><strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li></ul>
 </li>
 </ul>
-
-<hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="newindevicetracker53" class="anchor"><a class="heading-anchor" href="#newindevicetracker53"><span></span></a>New in Device Tracker 5.3</h3>
 
@@ -386,7 +438,9 @@
 <ul>
 <li>When accessing the SSO setting in the web portal, the Passcode section takes a few seconds to load the values.</li>
 
-<li>When a device is recommissioned (after being decommissioned), the device remains unassigned to a site (even if previously assigned to a site) until the user checks out the device through Enterprise Login Screen.</li></ul>
+<li>When a device is recommissioned (after being decommissioned), the device remains unassigned to a site (even if previously assigned to a site) until the user checks out the device through Enterprise Login Screen.</li>
+
+<li>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li></ul>
 </li>
 </ul>
 
@@ -394,6 +448,8 @@
 
 <ul>
 <li>New feature to automatically detect <a href="../config/#lostdevicenearby">Lost Devices Nearby</a>. When any device is in close proximity to a lost device, alert notifications (audio, vibration, LED or notification message) are received and further action can be taken to recover the lost device.</li>
+
+<li>Known issue: <strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li>
 </ul>
 
 <h3 id="newindevicetracker51" class="anchor"><a class="heading-anchor" href="#newindevicetracker51"><span></span></a>New in Device Tracker 5.1</h3>
@@ -421,6 +477,8 @@
 <li><em>Limitation:</em> If upgrading from Device Tracker 5.0 or lower, sites imported via .CSV file on the device must be updated with the local <a href="../config/#managesites">time zone</a> information in order for the new <a href="../config/#reports">data reporting</a> features to work.</li>
 
 <li><em>Deprecated Feature:</em> .CSV file import through the device client app for device, access point and site registration is deprecated. Starting with v5.1, Zebra recommends to import the .CSV file through the web portal.</li>
+
+<li><em>Known issue:</em> <strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li>
 </ul>
 
 <h3 id="newindevicetracker50" class="anchor"><a class="heading-anchor" href="#newindevicetracker50"><span></span></a>New in Device Tracker 5.0</h3>
@@ -433,6 +491,8 @@
 <li>New <a href="../config/#checkincheckoutdevice">Device Checkin Options</a> to select the method of checkin: manual, cradle, or reboot.</li>
 
 <li>New capability to play an audio alert if <a href="../use/#donotdisturbdndmode">Do Not Disturb (DND)</a> is enabled on the lost device being tracked.</li>
+
+<li>Known issue: <strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li>
 </ul>
 
 <h3 id="newindevicetracker42" class="anchor"><a class="heading-anchor" href="#newindevicetracker42"><span></span></a>New in Device Tracker 4.2</h3>
@@ -447,6 +507,8 @@
 <li>Fixed an intermittent issue when a user is unable to scan a barcode to checkout the device.</li>
 
 <li>Known Behavior: During a Google Play Services update, the Device Tracker app gets closed. Relaunch the Device Tracker app or reboot the device to continue tracking of the device.</li>
+
+<li>Known issue: <strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li>
 </ul>
 
 <h3 id="newindevicetracker41" class="anchor"><a class="heading-anchor" href="#newindevicetracker41"><span></span></a>New in Device Tracker 4.1</h3>
