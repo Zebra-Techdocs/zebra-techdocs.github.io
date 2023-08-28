@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.4
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.5
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-4','1-4','/enterprise-browser/3-4/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-5','1-4','/enterprise-browser/3-5/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/about">
+                            <a href="/enterprise-browser/3-5/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-5/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/tutorial/">
+                            <a href="/enterprise-browser/3-5/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/samples">
+                            <a href="/enterprise-browser/3-5/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide">
+                            <a href="/enterprise-browser/3-5/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/licensing">
+                            <a href="/enterprise-browser/3-5/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/migration">
+                            <a href="/enterprise-browser/3-5/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/configreference">
+                            <a href="/enterprise-browser/3-5/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/api">
+                            <a href="/enterprise-browser/3-5/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/download">
+                            <a href="/enterprise-browser/3-5/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/search">
+                            <a href="/enterprise-browser/3-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="intent" class="anchor"><a class="heading-anchor" href="#intent"><span></span></a>Intent</h1>
                                     <p>
                                             Enterprise Browser
-                                            3.4
+                                            3.5
                                     </p>
                                 </div>
                             </section>                    
@@ -311,18 +311,57 @@ Android</dd></dl></li><li>permission : <span class="text-info">STRING</span><p>P
 Android </p></li><li>action : <span class="text-info">STRING</span><p>Intent action. See  <a href="http://developer.android.com/reference/android/content/Intent.html#setAction(java.lang.String)">Android docs</a> for possible values. Use the Constant Value instead of the actual Constant Name. For example, for the Constant <a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_PICK">ACTION_PICK</a> use 'android.intent.action.PICK' instead.
 
  Platforms:
-Android </p></li><li>categories : <span class="text-info">ARRAY</span><p>List of intent categories. See  <a href="http://developer.android.com/reference/android/content/Intent.html#addCategory(java.lang.String)"> Android docs</a>  for possible values. Use the Constant Value instead of the actual Constant Name. For example, for the Constant  <a href="http://developer.android.com/reference/android/content/Intent.html#CATEGORY_HOME">CATEGORY_HOME</a>  use 'android.intent.category.HOME' instead. 
+Android </p></li><li>categories : <span class="text-info">ARRAY</span><p>List of intent categories. See  <a href="http://developer.android.com/reference/android/content/Intent.html#addCategory(java.lang.String)"> Android docs</a>  for possible values. Use the Constant Value instead of the actual Constant Name. For example, for the Constant  <a href="http://developer.android.com/reference/android/content/Intent.html#CATEGORY_HOME">CATEGORY_HOME</a>  use 'android.intent.category.HOME' instead. Platforms: Android </p></li>
 
- Platforms:
-Android </p></li><ul><li><i>Object</i> : <span class="text-info">STRING</span><p> </p></li></ul><li>appName : <span class="text-info">STRING</span><p>Explicit name of the application to run on the device. The platform will determine the value to use.
+<ul><li>
+    <i>Object</i> : <span class="text-info">STRING</span><p> </p></li></ul><li>appName : <span class="text-info">STRING</span><p>Explicit name of the application to run on the device. The platform will determine the value to use. On Android, use the application package name. On Windows use the application/executable name. For shared runtime applications, the application name is taken from the 'Name' attribute in the Config.xml file. 
+    </p></li>
 
- On Android, use the application package name. On Windows use the application/executable name. For shared runtime applications, the application name is taken from the 'Name' attribute in the Config.xml file. 
- </p></li><li>targetClass : <span class="text-info">STRING</span><p>Explicit name of the class in the application that will receive the intent. Must be specified if and only if 'appName' is defined. Platforms:
-Android </p></li><li>uri : <span class="text-info">STRING</span><p>Open the application associated with the URI. Behavior may be different on different platforms and on software installed. For example, open URL with 'http://' prefix usually executes the Web Browser installed on system and opens the URL in that browser. On Android, this is similar to  <a href="http://developer.android.com/reference/android/content/Intent.html#setData(android.net.Uri)">Intent.setData()</a>. For example, if sending a <a href="http://developer.android.com/guide/components/intents-common.html#Maps)">Map Intent</a>, you might set this value to something like 'geo:47.6,-122.3.'
- </p></li><li>mimeType : <span class="text-info">STRING</span><p>MIME type of data defined in the intent. For example, for Plain Text one would use 'text/plain.' On Android, this is similar to  <a href="http://developer.android.com/reference/android/content/Intent.html#setType(java.lang.String\))">Intent.setType</a>.
- </p></li><li>data : <span class="text-info">HASH</span><p>Data to be sent within the intent. On Android, this is similar to  <a href="http://developer.android.com/reference/android/content/Intent.html#putExtra(java.lang.String, java.lang.String\))">Intent.putExtra</a>, and 'data' should contain a HASH of Extra-String/Value pairs. The 'Value' type of the 'Extra' can be a String, Integer, Boolean, Double, Nested Bundle, Bundle Array, or Parcelable Array List. Other object types are not supported at this time. For sample code, please refer to examples section below. Use the full constant string 'android.intent.extra.TEXT' in place of <a href="http://developer.android.com/reference/android/content/Intent.html#EXTRA_TEXT">Intent.EXTRA_TEXT</a>.
+<li>targetClass: <span class="text-info">STRING</span><p>Explicit name of the class in the application that will receive the intent. Must be specified if and only if 'appName' is defined. Platforms:
+Android </p></li>
 
- </p></li></ul><li>callback : <span class="text-info">CallBackHandler</span></li></ul>
+<li>uri: <span class="text-info">STRING</span><p>Open the application associated with the URI. Behavior may be different on different platforms and on software installed. For example, open URL with 'http://' prefix usually executes the Web Browser installed on system and opens the URL in that browser. On Android, this is similar to  <a href="http://developer.android.com/reference/android/content/Intent.html#setData(android.net.Uri)">Intent.setData()</a>. For example, if sending a <a href="http://developer.android.com/guide/components/intents-common.html#Maps)">Map Intent</a>, you might set this value to something like <code>geo:47.6,-122.3.</code></p></li>
+
+<li>mimeType : <span class="text-info">STRING</span><p>MIME type of data defined in the intent. For example, for Plain Text one would use 'text/plain.' On Android, this is similar to  <a href="http://developer.android.com/reference/android/content/Intent.html#setType(java.lang.String\))">Intent.setType</a>.
+ </p></li>
+
+ <li>data : <span class="text-info">HASH</span><p>Data to be sent within the intent. On Android, this is similar to  <a href="http://developer.android.com/reference/android/content/Intent.html#putExtra(java.lang.String, java.lang.String\))">Intent.putExtra</a>, and 'data' should contain a HASH of Extra-String/Value pairs. The 'Value' type of the 'Extra' can be a String, Integer, Boolean, Double, Nested Bundle, Bundle Array, or Parcelable Array List. Other object types are not supported at this time. For sample code, please refer to examples section below. Use the full constant string 'android.intent.extra.TEXT' in place of <a href="http://developer.android.com/reference/android/content/Intent.html#EXTRA_TEXT">Intent.EXTRA_TEXT</a>.</p></li>
+
+ <li>pendingIntent: <span class="text-info">HASH</span><p>An optional attribute; hash map with pending intent-related parameters.</p></li>
+
+<ul><li>name: <span class="text-info">STRING</span><p>Name of pending intent to be sent.
+</p></li>
+
+ <li>requestCode: <span class="text-info">INETEGER</span><p>Private request code for the sender that will be associated with the result data when it is returned. The sender cannot modify this value, allowing the user to identify incoming results. The requestCode should be greater than 1000 for PendingIntent.</p></li>
+
+<li>flag: <span class="text-info">INTEGER</span><p>An optional attribute; hash map with pending intent-related parameters.</p>
+</li><li><p><b>Possible Values</b>:</p></li></ul>
+
+<ul>
+<li><p>Constant: <code>Intent.FLAG_UPDATE_CURRENT</code></p></li>
+<p>int:134217728</p>
+<p>Flag indicating that if the described PendingIntent already exists, then keep it but replace its extra data with what is in the new intent.</p>
+
+<li>Constant: <code>Intent.FLAG_ONE_SHOT</code>
+<p>int:1073741824</p>
+<p>Flag indicating that this PendingIntent can be used only once.</p></li>
+
+<li>Constant: <code>Intent.FLAG_NO_CREATE</code><p></p>
+<p>int:536870912</p>
+<p>Flag indicating that if the described PendingIntent does not already exist, then simply return null instead of creating it.</p></li>
+
+<li>Constant: <code>Intent.FLAG_IMMUTABLE</code>
+<p>int:67108864</p>
+<p>Flag indicating that the created PendingIntent should be immutable. This means that the additional intent argument passed to the send methods to fill in unpopulated properties of this intent will be ignored.</p></li>
+
+<li>Constant: <code>Intent.FLAG_CANCEL_CURRENT</code>
+<p>int:268435456</p>
+<p>Flag indicating that if the described PendingIntent already exists, the current one should be canceled before generating a new one.</p></li><p></p>
+
+<li>callback : <span class="text-info">CallBackHandler</span></li>
+</ul>
+
+<p></p></ul><p></p><p></p><p></p><p></p><p></p><p></p>
 
 <h4 id="callback" class="anchor"><a class="heading-anchor" href="#callback"><span></span></a>Callback</h4>
 
@@ -356,6 +395,22 @@ Android </p></li></ul></ul><p></p>
 <li><code>EB.Intent.send(<span class="text-info">HASH</span> params)</code> </li></ul>
 </li>
 </ul>
+
+<!-- 8/16/23- replaced above with below, which didn't work with content above it. 
+per eng TUT-84059
+
+#### Callback
+Async Callback Returning Parameters: HASH
+
+* responseCode : INTEGER<br>
+Response code passed to Android `Activity.setResult()` method. [RESULT_OK](http://developer.android.com/reference/android/app/Activity.html#RESULT_OK) = -1 <i class="fa fa-external-link" style="color:#3498DB;"></i>. See [Android docs](http://developer.android.com/reference/android/app/Activity.html#setResult(int)) <i class="fa fa-external-link" style="color:#3498DB;"></i> for more information. 
+ * Other attributes, such as 'uri' may be returned depending on the Intent that was triggered. Possible parameters include the same params that are used in this '`send(params)`' method. 
+* Platforms: Android
+* requestCode: INTEGER
+ * The requestCode matching to the pending intent callback.
+ * Note: This callback hash will additionally contain the key value pairs passed inside pending intent callback. The 'Value' type of the 'Extra' can be a String, Integer, Boolean, Double and Nested Bundles
+
+ -->
 
 <hr>
 
@@ -618,6 +673,27 @@ EB.Intent.send(params, intentReceived);
 
 </code></pre>
 
+<h3 id="sendingdatawithingapendingintent" class="anchor"><a class="heading-anchor" href="#sendingdatawithingapendingintent"><span></span></a>Sending Data Withing a PendingIntent</h3>
+
+<pre class="prettyprint"><code>
+function sendPendingIntent()
+{
+    var pendingintent= { "name": 'pendingIntent',  "requestCode":1000,  "flag":EB.Intent.FLAG_UPDATE_CURRENT};
+    var data= {'TOKEN' :token,'APPLICATION_PACKAGE':'com.zebra.mdna.enterprisebrowser'};
+    var params = new parameters(EB.Intent.BROADCAST, "", "com.example.myapp.my_intent_action", "", "com.example.myapp", "", "", "", data, pendingintent);
+    EB.Intent.send(params, pendingIntentCallback);
+}
+function pendingIntentCallback(param)     
+{  
+   console.log('data',param);    
+   alert(param.bundle_params.USER_ID);  
+   console.log('actionName',param.actionName);        
+   var displayStr = "Pending Intent callback received: actiionName" + param['actionName']+"<br>name: "+param['name']+"<br>reportImage: "+param['reportImage']+"   
+       <br>bundle_extra: "+param.bundle_params['USER_ID']+"<br>nested_bundle_extra: "+param.bundle_params.extra_bundle['Name'];  
+ }
+
+</code></pre>
+
 <h3 id="passingextrasasnestedbundles" class="anchor"><a class="heading-anchor" href="#passingextrasasnestedbundles"><span></span></a>Passing Extras as Nested Bundles</h3>
 
 <p><strong>In some scenarios it might be preferable to pass intent extras as nested bundles or parcelable array objects or lists</strong>. Enterprise Browser supports nested bundles as a value type, and they can be created using Java or JavaScript. Examples of all are below. </p>
@@ -693,7 +769,7 @@ EB.Intent.send(params, intentReceived);
                                         
 
 
-                                    </div>
+                                    </ul></div>
                                 </div>
 
                             </div>

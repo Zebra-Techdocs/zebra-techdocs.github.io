@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.4
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.5
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-4','1-4','/enterprise-browser/3-4/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-5','1-4','/enterprise-browser/3-5/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/about">
+                            <a href="/enterprise-browser/3-5/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-5/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/tutorial/">
+                            <a href="/enterprise-browser/3-5/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/samples">
+                            <a href="/enterprise-browser/3-5/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide">
+                            <a href="/enterprise-browser/3-5/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/licensing">
+                            <a href="/enterprise-browser/3-5/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/migration">
+                            <a href="/enterprise-browser/3-5/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/guide/configreference">
+                            <a href="/enterprise-browser/3-5/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/api">
+                            <a href="/enterprise-browser/3-5/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/download">
+                            <a href="/enterprise-browser/3-5/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-4/search">
+                            <a href="/enterprise-browser/3-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="enterprise-browser-setup" class="anchor"><a class="heading-anchor" href="#enterprise-browser-setup"><span></span></a>Enterprise Browser Setup</h1>
                                     <p>
                                             Enterprise Browser
-                                            3.4
+                                            3.5
                                     </p>
                                 </div>
                             </section>                    
@@ -563,22 +563,27 @@ If present on the device, licenses are automatically reapplied when Enterprise B
 
 
 <ul>
-<li><strong>New Android restrictions prohibit the TC58, TC73, TC78, ET40, ET45, TC15 (and other forthcoming devices using 6490 and 6375 platforms) from supporting the adb “push” command</strong> for the deployment of files to the device. This prevents deployment of EB configuration for developer use cases. </li>
+<li><strong>New Android restrictions prohibit use of the adb “push” command</strong> for the deployment of files to some devices.</li>
 
-<li><strong>To manually deploy EB configuration files</strong>, copy files using a desktop file explorer to the following location on the device:<br>
-&nbsp;&nbsp;&nbsp;<code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br></li>
-
-<li><strong>To mass deploy an EB</strong> <code>config.xml</code> <strong>file to</strong> <code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code>
-using “Deploy file” feature of File Manager, administrator must use the "<strong>TargetApplicationAndFileName</strong>"  parameter value as:<br>
-<code>com.zebra.mdna.enterprisebrowser/config.xml</code> when a profile is created. <code>Learn more???</code><br></li>
-
-<li><strong>To mass deploy any other EB configuration files to</strong>:<br><code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br>
-using “Deploy file” feature of File Manager, administrator must use the "<strong>TargetApplicationAndFileName</strong>" parameter value as<br> <code>com.zebra.mdna.enterprisebrowser/[subdir if required]/[configuration file name]</code><br> when a Profile is created. <br></li></ul>
+<li>This affects all Zebra 4490-, 5340-, 6375-, and 6490-platform devices. <strong><a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">See device list</a></strong>. </li></ul>
 </li>
 
-<li><strong>Administrators can continue to mass-deploy EB configuration files to</strong>:<br>
-<code>/enterprise/device/enterprisebrowser/</code><br> on the device.<br></li>
+<li><strong>Administrators can continue to mass-deploy EB configuration files to</strong><br>
+<code>/enterprise/device/enterprisebrowser/</code> on all devices.<br></li>
 </ul>
+
+<!-- 8/23/23 removed per eng TUT-86535
+
+ This prevents the deployment functions of Zebra's [Config Editor](../ConfigEditor) and [Shortcut Creator](../ShortcutCreator) utilities from working. 
+ * **To manually deploy EB configuration and/or shortcut files**, <u>copy files using a desktop file explorer</u> to the following device location:<br>
+&nbsp;&nbsp;&nbsp;`/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/`<br>
+
+ * **To mass deploy an EB** `config.xml` **file to** `/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/`
+using “Deploy file” feature of File Manager, administrator must use the "**TargetApplicationAndFileName**"  parameter value as:<br>
+ `com.zebra.mdna.enterprisebrowser/config.xml` when a profile is created.<br>
+ * **To mass deploy any other EB configuration files to**:<br>`/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/`<br>
+using “Deploy file” feature of File Manager, administrator must use the "**TargetApplicationAndFileName**" parameter value as<br> `com.zebra.mdna.enterprisebrowser/[subdir if required]/[configuration file name]`<br> when a Profile is created. <br>
+ -->
 
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#FFA500;"></i> <strong>Zebra recommendations</strong>:<br>
 • <strong>Back up user data</strong> before any installation or upgrade operation.<br>
@@ -641,22 +646,27 @@ using “Deploy file” feature of File Manager, administrator must use the "<st
 
 
 <ul>
-<li><strong>New Android restrictions prohibit the TC58, TC73, TC78, ET40, ET45, TC15 (and other forthcoming devices using 6490 and 6375 platforms) from supporting the adb “push” command</strong> for the deployment of files to the device. This prevents deployment of EB configuration for developer use cases. </li>
+<li><strong>New Android restrictions prohibit use of the adb “push” command</strong> for the deployment of files to some devices.</li>
 
-<li><strong>To manually deploy EB configuration files</strong>, copy files using a desktop file explorer to the following location on the device:<br>
-&nbsp;&nbsp;&nbsp;<code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br></li>
+<li>This affects all Zebra 4490-, 5340-, 6375-, and 6490-platform devices. <strong><a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">See device list</a></strong>. </li>
 
-<li><strong>To mass deploy an EB</strong> <code>config.xml</code> <strong>file to</strong> <code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code>
-using “Deploy file” feature of File Manager, administrator must use the "<strong>TargetApplicationAndFileName</strong>"  parameter value as:<br>
-<code>com.zebra.mdna.enterprisebrowser/config.xml</code> when a profile is created. <code>Learn more???</code><br></li>
+<li>This disables the deployment functions of Zebra's <a href="../ConfigEditor">Config Editor</a> and <a href="../ShortcutCreator">Shortcut Creator</a> utilities. </li>
 
-<li><strong>To mass deploy any other EB configuration files to</strong>:<br><code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br>
-using “Deploy file” feature of File Manager, administrator must use the "<strong>TargetApplicationAndFileName</strong>" parameter value as<br> <code>com.zebra.mdna.enterprisebrowser/[subdir if required]/[configuration file name]</code><br> when a Profile is created. <br></li></ul>
+<li><strong>To manually deploy EB configuration and/or shortcut files</strong>, <u>copy files using a desktop file explorer</u> to the following device location:<br>
+&nbsp;&nbsp;&nbsp;<code>/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/</code><br></li></ul>
 </li>
 
-<li><strong>Administrators can continue to mass-deploy EB configuration files to</strong>:<br>
-<code>/enterprise/device/enterprisebrowser/</code><br> on the device.<br></li>
+<li><strong>Administrators can continue to mass-deploy EB configuration files to</strong><br>
+<code>/enterprise/device/enterprisebrowser/</code> on the device.<br></li>
 </ul>
+
+<!-- 8/23/23 removed per eng TUT-86535
+ * **To mass deploy an EB** `config.xml` **file to** `/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/`
+using “Deploy file” feature of File Manager, administrator must use the "**TargetApplicationAndFileName**"  parameter value as:<br>
+ `com.zebra.mdna.enterprisebrowser/config.xml` when a profile is created.<br>
+ * **To mass deploy any other EB configuration files to**:<br>`/sdcard/Android/data/com.zebra.mdna.enterprisebrowser/`<br>
+using “Deploy file” feature of File Manager, administrator must use the "**TargetApplicationAndFileName**" parameter value as<br> `com.zebra.mdna.enterprisebrowser/[subdir if required]/[configuration file name]`<br> when a Profile is created. <br>
+ -->
 
 <hr>
 
@@ -887,6 +897,13 @@ $ adb devices
 <h2 id="launchenterprisebrowser" class="anchor"><a class="heading-anchor" href="#launchenterprisebrowser"><span></span></a>Launch Enterprise Browser</h2>
 
 <p>After installation and first launch, an Enterprise Browser app icon will appear <strong>in the all-apps section or "App Drawer" of Android devices</strong>. Versions prior to Enterprise Browser 1.5 launch with default runtime settings as defined in the <code>Config.xml</code> file on the device. Enterprise Browser 1.5 and later can be launched with a pre-configured <code>Config.xml</code> file and optionally a pre-configured <code>keycodemapping.xml</code> file. See the <a href="../configreference">Config.xml Reference</a> for information about configuring the <code>Config.xml</code> file.  </p>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>NOTE</strong>: After first launch, the <code>Config.xml</code> file is moved from:<br>
+   <code>/enterprise/device/enterprisebrowser</code> folder on the device<br>
+  &nbsp;&nbsp;&nbsp;<strong>~TO~</strong><br>
+  <code>/enterprise/device/enterprisebrowser/backup</code> on the device.<br></p>
+</blockquote>
 
 <p>With default settings, the startup screen appears similar to the image below: </p>
 
