@@ -1020,6 +1020,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/rxlogger/5-4':
         case '/rxlogger/6-0':
         case '/rxlogger/7-0':
+        case '/rxlogger/13-0':
             ddl_doc.options.length = 0;
             for (i=0; i < rxlogger_5_4_text.length; i++) {
                 createOption(ddl_doc, rxlogger_5_4_text[i], rxlogger_5_4_val[i]);
