@@ -109,7 +109,6 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-        <div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <h4 id="-a-newer-version-of-this-documentation-is-available-see-the-latest" class="anchor"><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> A newer version of this product and documentation are available.  <a href="https://techdocs.zebra.com/devicetracker" class="btn btn-danger">See the latest</a></h4></div>
     </header><!--/header-->
 <div class="container-fluid">
     <section id="blog">
@@ -278,6 +277,14 @@
 
 <hr>
 
+<h2 id="importantnote" class="anchor"><a class="heading-anchor" href="#importantnote"><span></span></a>Important Note</h2>
+
+<ul>
+<li><strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker client application cannot communicate with the server as long as the device stays locked. The device remains disconnected and cannot be tracked until the user unlocks it to communicate with the server. This behavior applies to all Zebra Android 13 devices and Android 11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API utilized by the server which does not take into affect until the user unlocks the device.</li>
+</ul>
+
+<hr>
+
 <h2 id="newindevicetracker50" class="anchor"><a class="heading-anchor" href="#newindevicetracker50"><span></span></a>New in Device Tracker 5.0</h2>
 
 <ul>
@@ -288,8 +295,6 @@
 <li>New <a href="../config/#checkincheckoutdevice">Device Checkin Options</a> to select the method of checkin: manual, cradle, or reboot.</li>
 
 <li>New capability to play an audio alert if <a href="../use/#donotdisturbdndmode">Do Not Disturb (DND)</a> is enabled on the lost device being tracked.</li>
-
-<li>Known issue: <strong>When the device is configured with a PIN, Password, or Pattern lock <em>and is rebooted,</em></strong> the Device Tracker application cannot communicate with the Firestore server while the device remains locked. The device must be unlocked to establish communication with the server. This behavior applies to all Zebra A13 devices and A11 devices with FBE (file-based encryption) enabled. A viable solution to ensure proper functionality post-reboot involves configuring the device with a Swipe lock or no lock at all. This issue is caused by the Firebase Authentication API which does not take into affect until the user unlocks the device.</li>
 </ul>
 
 <hr>
