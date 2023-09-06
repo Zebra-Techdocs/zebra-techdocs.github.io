@@ -64,7 +64,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.8
+                                            2.9
                         </p>
 
                     </ul>
@@ -75,27 +75,27 @@
 
 
                         <li>
-                            <a href="/ddt/2-8/guide/about">
+                            <a href="/ddt/2-9/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/usage">
+                            <a href="/ddt/2-9/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/configuration">
+                            <a href="/ddt/2-9/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/criteria">
+                            <a href="/ddt/2-9/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/managed-config">
+                            <a href="/ddt/2-9/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/search">
+                            <a href="/ddt/2-9/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="about-device-diagnostic-tool" class="anchor"><a class="heading-anchor" href="#about-device-diagnostic-tool"><span></span></a>About Device Diagnostic Tool</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.8
+                                            2.9
                                     </p>
                                 </div>
                             </section>                    
@@ -282,7 +282,41 @@
 
 <p>Download DDT from the <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Support Portal</a>.</p>
 
-<h2 id="newin28" class="anchor"><a class="heading-anchor" href="#newin28"><span></span></a>New in 2.8</h2>
+<hr>
+
+<h2 id="newin29" class="anchor"><a class="heading-anchor" href="#newin29"><span></span></a>New in 2.9</h2>
+
+<ul>
+<li>New <strong><a href="../configuration/#buttonconfigurationfile">configuration file for Button Test</a> to support remapped physical buttons</strong> (scan trigger, push-to-talk, volume up/down) on the device.</li>
+
+<li><strong>For Zebra DNA Cloud solution installations:</strong>
+
+
+<ul>
+<li>DDT is now added to Zebra Collection in ZDNA Cloud.</li>
+
+<li>DDT supports deployment, installation, and configuration through ZDNA console.</li></ul>
+</li>
+
+<li><strong>Newly supported devices in this release: TC22, TC27, ET60.</strong> See <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Support Portal</a> for the list of supported devices.</li>
+
+<li><strong>Resolved Issues:</strong>
+
+
+<ul>
+<li>Button Test now supports remapped keycode for Push-To-Talk button.</li>
+
+<li>Notification of DDT running is not displayed after reboot on Android 13 devices.</li></ul>
+</li>
+
+<li><strong>Known Issue:</strong> On ET60 devices, the Button Test is not supported with the default button configuration file. To resolve this, the <a href="../configuration/#buttonconfigurationfile">buttons_config.xml</a> configuration file must be modified to include ET60.</li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin28" class="anchor"><a class="heading-anchor" href="#newin28"><span></span></a>New in 2.8</h3>
 
 <ul>
 <li>New Android 13 device support; see <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Support Portal</a> for supported devices.</li>
@@ -293,18 +327,16 @@
 
 <li>The package name for DDT is now changed from <code>com.symbol.selfdiagnostics</code> to <code>com.zebra.mdna.selfdiagnostics</code>. Due to this change, uninstallation of any prior version of DDT is required before installing this latest version.</li>
 
-<li>Older DDT versions and package names are deprecated. </li>
+<li>Older DDT versions and package names are deprecated.</li>
 
 <li>On Android 11 or higher, DDT now stores its configuration file in a <a href="../configuration/#securedeployment">secure storage location</a> rather than the enterprise partition via <a href="/ssm">Secure Storage Manager</a>.</li>
 
 <li>DDT is now available on Google Play and <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Zebra Support Portal</a>.</li>
 
-<li>Fixed issue: The Battery test now supports threshold value for Power Precision batteries. </li>
+<li>Fixed issue: The Battery test now supports threshold value for Power Precision batteries.</li>
 
 <li>Known issue: When running more than one test and viewing the results in the <a href="https://www.zebra.com/us/en/services/visibilityiq.html">VisibilityIQ</a> dashboard, the start times are the same across the different tests. Similarly, the end times are also the same across the different tests.</li>
 </ul>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="newin27" class="anchor"><a class="heading-anchor" href="#newin27"><span></span></a>New in 2.7</h3>
 
@@ -355,7 +387,7 @@
 
 <li>New feature to <a href="../usage/#schedulejobs">schedule jobs</a> for device tests.</li>
 
-<li>New <a href="../configuration/#configuretests">battery threshold value</a> to set the maximum charge cycle count of the battery that triggers "Need to replace battery" in <strong>Battery Health.</strong></li>
+<li>New <a href="../configuration/#testconfiguration">battery threshold value</a> to set the maximum charge cycle count of the battery that triggers "Need to replace battery" in <strong>Battery Health.</strong></li>
 
 <li>Fixed issue: On devices with large screens, such as tablets (e.g. ET51/ET56, L10) and vehicle mounted computers (e.g. VC80x, VC8300), both portrait and landscape modes are now supported.</li>
 
@@ -453,6 +485,8 @@
 <li>When the app is running and the EMM command is executed to run the test remotely, if the user tries to launch the app manually after the test completes, the app may encounter unexpected behavior. In this case the user must manually restart Device Diagnostic Tool to recover.</li></ul>
 </li>
 </ul>
+
+<hr>
 
 <h2 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h2>
 
@@ -629,6 +663,8 @@ The following table lists the supported GMS devices, except for MC33 which only 
 <li><strong>Setting persistence -</strong> Upon initial app install, any setting changes made through the UI persist since configuration.xml does not exist. However, after exporting the .xml file, any changes in the UI no longer persist until the .xml file is imported into the device.</li>
 </ul>
 
+<hr>
+
 <h2 id="importantusagenotes" class="anchor"><a class="heading-anchor" href="#importantusagenotes"><span></span></a>Important Usage Notes</h2>
 
 <ul>
@@ -644,20 +680,18 @@ The following table lists the supported GMS devices, except for MC33 which only 
 <ul>
 <li>In the WWAN test details screen, "Device ID" is not visible.</li>
 
-<li>In the History.log file, "Device ID" and "Device Serial#" is not visible.</li></ul>
+<li>In the History.log file, "Device ID" and "Device Serial#" are not visible.</li></ul>
 </li>
 
-<li><strong>Android 13 limitations</strong> due to security restrictions:
+<li><strong>Android 13 limitation</strong> due to security restrictions:
 
 
 <ul>
-<li>The adb “push” command for deployment of files to the device is no longer supported due to new Android restrictions.  </li>
-
-<li>To manually deploy a configuration file, use a desktop file browser to copy the file to the following location on the device: <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics/</code> </li></ul>
+<li>The adb “push” command for deployment of files to the device is no longer supported on <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">SD6490 and SD6375 platform devices</a> due to new Android restrictions. To manually deploy a configuration file, use a desktop file browser to copy the file to the following location on the device: <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics/</code></li></ul>
 </li>
 </ul>
 
-<h2 id="br" class="anchor"><a class="heading-anchor" href="#br"><span></span></a><br></h2>
+<hr>
 
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 

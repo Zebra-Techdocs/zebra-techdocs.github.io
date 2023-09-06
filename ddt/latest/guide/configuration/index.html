@@ -64,7 +64,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.8
+                                            2.9
                         </p>
 
                     </ul>
@@ -75,27 +75,27 @@
 
 
                         <li>
-                            <a href="/ddt/2-8/guide/about">
+                            <a href="/ddt/2-9/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/usage">
+                            <a href="/ddt/2-9/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/configuration">
+                            <a href="/ddt/2-9/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/criteria">
+                            <a href="/ddt/2-9/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/managed-config">
+                            <a href="/ddt/2-9/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/search">
+                            <a href="/ddt/2-9/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.8
+                                            2.9
                                     </p>
                                 </div>
                             </section>                    
@@ -266,14 +266,7 @@
 
 
 <ul>
-<li><strong>Configuration import path -</strong> specifies the file path for the configuration file:
-
-
-<ul>
-<li>For Android 11 or higher: <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/configuration.xml</code></li>
-
-<li>For Android 10 or lower: <code>/enterprise/usr/deviceselftest/configuration.xml</code></li></ul>
-</li>
+<li><strong>Configuration import path -</strong> specifies the file path for the configuration file: - For Android 11 or higher: <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/configuration.xml</code> - For Android 10 or lower: <code>/enterprise/usr/deviceselftest/configuration.xml</code></li>
 
 <li><strong>Log output and configuration export path -</strong> specifies the folder path for the log files and exported configuration file: <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/files</code></li></ul>
 </li>
@@ -311,7 +304,7 @@
 
 <h2 id="configurationfile" class="anchor"><a class="heading-anchor" href="#configurationfile"><span></span></a>Configuration File</h2>
 
-<p>To configure Device Diagnostic Tool via a configuration file, which can be deployed to multiple devices, modify <code>configuration.xml</code> manually using any text editor. The existing tag format must be maintained. Alternatively, options are configurable through <strong><a href="#settings">Settings</a></strong> or <strong><a href="#configuretests">Configure Tests</a></strong> in the user interface, except for the options specified below that are only configurable in <code>configuration.xml</code>:</p>
+<p>To configure Device Diagnostic Tool via a configuration file, which can be deployed to multiple devices, modify <code>configuration.xml</code> manually using any text editor. The existing tag format must be maintained. Alternatively, options are configurable through <strong><a href="#settings">Settings</a></strong> or <strong><a href="#testconfiguration">Configure Tests</a></strong> in the user interface, except for the options specified below that are only configurable in <code>configuration.xml</code>:</p>
 
 <ul>
 <li><strong>admin_mode –</strong> If set to <em>true</em>, sets the app to admin mode allowing access to the app settings and test configurations. Default value = <em>true</em>.</li>
@@ -353,7 +346,7 @@
 
 <p>In compliance with Android security mandates starting with Android 11, Zebra implemented <a href="/ssm">Secure Storage Manager (SSM)</a>, a mechanism for securely sharing files and/or data from an originating app to a target app. Due to this new security, direct file access is no longer permitted, and minor changes are required to ANY app intended to receive data shared through SSM.</p>
 
-<p>For security purposes, starting from Android 11 Zebra recommends to deploy the configuration file to DDT via SSM using the following path: <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics</code> 
+<p>For security purposes, starting from Android 11 Zebra recommends to deploy the configuration file to DDT via SSM using the following path: <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics</code>
 Although DDT still supports deployment of the configuration file to the following enterprise path, this will be deprecated in a future version of DDT: <code>/enterprise/usr/deviceselftest/</code></p>
 
 <p>Methods to securely deploy the configuration file:</p>
@@ -364,7 +357,7 @@ Although DDT still supports deployment of the configuration file to the followin
 <li><strong>Mass deployment -</strong> deploy the configuration file to <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics</code> using the “Deploy file” feature of File Manager from StageNow. The administrator must use TargetApplicationAndFileName param value as <code>com.zebra.mdna.selfdiagnostics/configuration.xml</code> when creating the StageNow profile. See <a href="/stagenow/latest/csp/file/#file-action">File Action</a>.</li>
 </ul>
 
-<h2 id="configuretests" class="anchor"><a class="heading-anchor" href="#configuretests"><span></span></a>Configure Tests</h2>
+<h2 id="testconfiguration" class="anchor"><a class="heading-anchor" href="#testconfiguration"><span></span></a>Test Configuration</h2>
 
 <p>Tests are configured either through the user interface or the <code>configuration.xml</code> file.</p>
 
@@ -528,7 +521,29 @@ When text values are modified, such as <b>Test Timeout</b> or <b>Ping Address</b
 
 <p>Refer to <a href="../criteria">Test Criteria</a> section for more information.</p>
 
-<h2 id="-1" class="anchor"><a class="heading-anchor" href="#-1"><span></span></a><!-- --></h2>
+<h2 id="buttonconfigurationfile" class="anchor"><a class="heading-anchor" href="#buttonconfigurationfile"><span></span></a>Button Configuration File</h2>
+
+<p>For devices running Android 11 or higher that have physical buttons (such as scan trigger, push-to-talk, volume up/down) remapped in the device system, administrators must assign the key code value to correspond with the value used by the device system in the button configuration file <code>buttons_config.xml</code> for the <a href="../usage/#buttontest">Button Test</a> to pass successfully.</p>
+
+<p>To assign the key code of the remapped physical button in the button configuration file:</p>
+
+<ol>
+<li><p>Download <a href="buttons_config.xml" download="">buttons_config.xml</a> and open it with a text editor.</p></li>
+
+<li><p>Find the corresponding XML tag for the device model, for example for ET60:</p>
+
+<pre class="prettyprint"><code>&lt;ET60&gt;
+    &lt;PTTBTN&gt;312&lt;/PTTBTN&gt;
+    &lt;SCANBTN&gt;311&lt;/SCANBTN&gt;
+    &lt;VOLUP&gt;115&lt;/VOLUP&gt;
+    &lt;VOLDWN&gt;114&lt;/VOLDWN&gt;
+&lt;/ET60&gt;
+</code></pre></li>
+
+<li><p>Replace the key value of the remapped physical button with the desired value. For example, if the Push-To-Talk button on the ET60 is remapped to the scan button, replace <code>&lt;PTTBTN&gt;312&lt;/PTTBTN&gt;</code> with <code>&lt;PTTBTN&gt;311&lt;/PTTBTN&gt;</code>.</p></li>
+
+<li><p>Deploy the updated file through <a href="/oemconfig">OEMConfig</a> or <a href="/stagenow">StageNow</a> to the following directory on the device: <code>/com.zebra.mdna.selfdiagnostics</code></p></li>
+</ol>
 
 <hr>
 

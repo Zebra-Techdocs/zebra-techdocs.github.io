@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Configuration">
-    <title>Configuration - Zebra Technologies TechDocs</title>
+    <meta title="Using Device Diagnostic Tool">
+    <title>Using Device Diagnostic Tool - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            2.8
+                                            2.9
                         </p>
 
                     </ul>
@@ -75,27 +75,27 @@
 
 
                         <li>
-                            <a href="/ddt/2-8/guide/about">
+                            <a href="/ddt/2-9/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/usage">
+                            <a href="/ddt/2-9/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/configuration">
+                            <a href="/ddt/2-9/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/criteria">
+                            <a href="/ddt/2-9/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/guide/managed-config">
+                            <a href="/ddt/2-9/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/2-8/search">
+                            <a href="/ddt/2-9/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -123,8 +123,8 @@
                                 <li><a onclick="changeLanguage('ddt','ddt/ddt-jp')"><img src="/images/flags/img-flag-japan.png" style="display:inline!important;" alt="JP - 日本語"> JP - 日本語</a></li>
                                 <li><a onclick="changeLanguage('ddt','ddt/ddt-pt')"><img src="/images/flags/img-flag-portugal.png" style="display:inline!important;" alt="PT - Português"> PT - Português</a></li>
                           </ul>
-                        </li>     
-                        -->               
+                        </li>   
+                        -->                 
                         
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
@@ -148,7 +148,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Configuration</strong></li>
+                            <li><strong>Using Device Diagnostic Tool</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -234,10 +234,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
+                                    <h1 id="using-device-diagnostic-tool" class="anchor"><a class="heading-anchor" href="#using-device-diagnostic-tool"><span></span></a>Using Device Diagnostic Tool</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            2.8
+                                            2.9
                                     </p>
                                 </div>
                             </section>                    
@@ -252,285 +252,394 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>This section discusses configuring settings, tests and reporting options for Device Diagnostic Tool.</p>
+<p>Device Diagnostic Tool supports two modes of operation:</p>
 
-<h2 id="settings" class="anchor"><a class="heading-anchor" href="#settings"><span></span></a>Settings</h2>
+<ol>
+<li><strong>Admin mode -</strong> The administrator can access app settings, modify test configurations and run each individual test. This is the default mode.</li>
 
-<p>The <strong>Settings</strong> screen provides the file path to import/export the configuration file and allows for configuration of the history and status log files. Access settings by tapping on the options menu at the top right of the main screen, then select <strong>Settings</strong>:</p>
-
-<p><img style="height:350px" src="settings.png"></p>
-
-<p><em>Application settings</em>
-<br></p>
-
-<ul>
-<li><strong>File path:</strong>
-
-
-<ul>
-<li><strong>Configuration import path -</strong> specifies the file path for the configuration file:
-
-
-<ul>
-<li>For Android 11 or higher: <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/configuration.xml</code></li>
-
-<li>For Android 10 or lower: <code>/enterprise/usr/deviceselftest/configuration.xml</code></li></ul>
-</li>
-
-<li><strong>Log output and configuration export path -</strong> specifies the folder path for the log files and exported configuration file: <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/files</code></li></ul>
-</li>
-
-<li><strong>Server Details:</strong>
-
-
-<ul>
-<li><strong>Protocol -</strong> specifies the server protocol</li>
-
-<li><strong>IP Address -</strong> specifies the IP address of the server</li>
-
-<li><strong>UserName -</strong> specifies the user name to login to the server</li></ul>
-</li>
-
-<li><strong>Status log -</strong> editable text field for the file name of the status log. Contains information about the tests conducted with any associated parameters and configuration changes from the <strong>Configure Tests</strong> screen. Located in <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/files</code>.</li>
-
-<li><strong>History log -</strong> editable text field for the history log, containing information about the test results. Generated when performing a full test from the main screen. Located in <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/files</code>.</li>
-
-<li><strong>Log File Max Size (MB) -</strong> editable text field to specify the maximum file size for the log files.</li>
-
-<li><strong>Import -</strong> imports a configuration file located in the configuration import path:
-
-
-<ul>
-<li>For Android 11 or higher: <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/</code></li>
-
-<li>For Android 10 or lower: <code>/enterprise/usr/deviceselftest/configuration.xml</code></li></ul>
-</li>
-
-<li><strong>Export -</strong> exports <code>configuration.xml</code> from configurations set in the <strong>Configure Tests</strong> screen to folder location <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/files</code>. Once exported, deploy the configuration to other devices by copying the .xml file to the import path <code>/enterprise/usr/deviceselftest</code> then tap the <strong>Import</strong> button in the <strong>Settings</strong> screen. Copy the file by using Android Debug Bridge (adb) or <a href="/stagenow">StageNow</a> with <a href="/mx/filemgr">File Manager</a>.</li>
-</ul>
-
-<h2 id="" class="anchor"><a class="heading-anchor" href="#"><span></span></a><!-- --></h2>
-
-<h2 id="configurationfile" class="anchor"><a class="heading-anchor" href="#configurationfile"><span></span></a>Configuration File</h2>
-
-<p>To configure Device Diagnostic Tool via a configuration file, which can be deployed to multiple devices, modify <code>configuration.xml</code> manually using any text editor. The existing tag format must be maintained. Alternatively, options are configurable through <strong><a href="#settings">Settings</a></strong> or <strong><a href="#configuretests">Configure Tests</a></strong> in the user interface, except for the options specified below that are only configurable in <code>configuration.xml</code>:</p>
-
-<ul>
-<li><strong>admin_mode –</strong> If set to <em>true</em>, sets the app to admin mode allowing access to the app settings and test configurations. Default value = <em>true</em>.</li>
-
-<li><strong>allow_individual_test_for_user -</strong> If set to <em>true</em>, the non-admin user can run the tests individually instead of running all tests at once.</li>
-
-<li><strong>allow_individual_log_for_user -</strong> If set to <em>true</em>, the non-admin user can generate an individual result log file for each test instead of a single log file containing all test results.</li>
-
-<li><strong>continue_testing_on_failure -</strong> If set to <em>true</em>, the test automatically proceeds to the next section test until all tests are completed, even if the previous section test fails. Default value = <em>false</em>.</li>
-
-<li><strong>upload_only_on_failure -</strong> If set to <em>true</em>, result test logs are uploaded to the server only after a test failure. If <em>false</em>, uploads logs based on the specified test schedule.</li>
-
-<li><strong>show_extra_data -</strong> If set to <em>true</em>, informational data is displayed in the test results page. Refer to Test Criteria section to see the affected informational data. Default value = <em>true</em>.</li>
-
-<li><strong>debug –</strong> If set to <em>true</em>, application logging is displayed in logcat for debugging purposes. Default value = <em>true</em>.</li>
-
-<li><strong>close_on_result_acknowledge -</strong> If set to <em>true</em>, the application closes when all tests have passed. If any test fails, the app does not close. Default value = <em>false</em>.
+<li><strong>User mode -</strong> The user is restricted to only run tests. There is no access to app settings, test configurations nor individual tests. To set user mode, disable <i>admin_mode</i> as referenced in the <a href="../configuration#configurationfile">Configuration</a> section.
 <br></li>
-</ul>
+</ol>
 
-<p>Sample settings content in configuration.xml:</p>
+<h2 id="launchtheapp" class="anchor"><a class="heading-anchor" href="#launchtheapp"><span></span></a>Launch the App</h2>
 
-<pre class="prettyprint"><code>      &lt;settings&gt;
-          &lt;admin_mode&gt;true&lt;/admin_mode&gt;
-          &lt;continue_testing_on_failure&gt;true&lt;/continue_testing_on_failure&gt;
-          &lt;upload_only_on_failure&gt;true&lt;/upload_only_on_failure&gt;
-          &lt;show_extra_data&gt;true&lt;/show_extra_data&gt;
-          &lt;debug&gt;true&lt;/debug&gt;
-          &lt;close_on_result_acknowledge&gt;false&lt;/close_on_result_acknowledge&gt;
-          &lt;status_log_name&gt;status.log&lt;/status_log_name&gt;
-          &lt;history_log_name&gt;history.log&lt;/history_log_name&gt;
-          &lt;log_file_max_size_mb&gt;25&lt;/log_file_max_size_mb&gt;
-      &lt;/settings&gt;
-</code></pre>
+<p>Run Device Diagnostic Tool using one of the following methods:</p>
 
-<p>See <a href="#xmlfile">XML File</a> for test configuration and import/export steps.</p>
+<ol>
+<li><strong>Manually using the User Interface</strong> - The user launches Device Diagnostic Tool and runs the tests manually. See <a href="#userinterface">User Interface</a> section below.</li>
 
-<h3 id="securedeployment" class="anchor"><a class="heading-anchor" href="#securedeployment"><span></span></a>Secure Deployment</h3>
+<li><strong>Remotely with an EMM (Enterprise Mobility Management) system</strong> - Launch Device Diagnostic Tool in the background and generate a log using command: <br><code>adb shell am broadcast -n "com.zebra.mdna.selfdiagnostics/com.symbol.selfdiagnostics.SESReceiver"</code>
+<br></li>
+</ol>
 
-<p>In compliance with Android security mandates starting with Android 11, Zebra implemented <a href="/ssm">Secure Storage Manager (SSM)</a>, a mechanism for securely sharing files and/or data from an originating app to a target app. Due to this new security, direct file access is no longer permitted, and minor changes are required to ANY app intended to receive data shared through SSM.</p>
+<p>Only one of the methods should be used to run Device Diagnostic Tool, otherwise unexpected behavior can occur.</p>
 
-<p>For security purposes, starting from Android 11 Zebra recommends to deploy the configuration file to DDT via SSM using the following path: <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics</code> 
-Although DDT still supports deployment of the configuration file to the following enterprise path, this will be deprecated in a future version of DDT: <code>/enterprise/usr/deviceselftest/</code></p>
+<h2 id="devicetests" class="anchor"><a class="heading-anchor" href="#devicetests"><span></span></a>Device Tests</h2>
 
-<p>Methods to securely deploy the configuration file:</p>
-
-<ul>
-<li><strong>Manual deployment -</strong> copy the file using a desktop file explorer to the following location on the device: <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics</code></li>
-
-<li><strong>Mass deployment -</strong> deploy the configuration file to <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics</code> using the “Deploy file” feature of File Manager from StageNow. The administrator must use TargetApplicationAndFileName param value as <code>com.zebra.mdna.selfdiagnostics/configuration.xml</code> when creating the StageNow profile. See <a href="/stagenow/latest/csp/file/#file-action">File Action</a>.</li>
-</ul>
-
-<h2 id="configuretests" class="anchor"><a class="heading-anchor" href="#configuretests"><span></span></a>Configure Tests</h2>
-
-<p>Tests are configured either through the user interface or the <code>configuration.xml</code> file.</p>
-
-<h3 id="xmlfile" class="anchor"><a class="heading-anchor" href="#xmlfile"><span></span></a>XML File</h3>
-
-<p>The <code>configuration.xml</code> file contains all tests within the <code>&lt;tests&gt;</code> tag. Each individual test is enclosed in the <code>&lt;test&gt;</code> tag along with its related options. Configure each test and related test option(s) as needed by editing the XMl file. Sample WiFi test parameters:</p>
-
-<pre class="prettyprint"><code>    &lt;test name="WIFITEST" enabled="true"&gt;
-        &lt;sub_test name="MAC_ADDRESS" enabled="true" /&gt;
-        &lt;sub_test name="NETWORK_TEST" enabled="true"&gt;
-            &lt;parameter name="PING_ADDRESS" value="www.google.com" /&gt;
-        &lt;/sub_test&gt;
-    &lt;/test&gt;
-</code></pre>
-
-<p>See <a href="#configurationparameters">Configuration Parameters</a> for descriptions of each test and related options.</p>
-
-<h4 id="export" class="anchor"><a class="heading-anchor" href="#export"><span></span></a>Export</h4>
-
-<p>To export the configuration file, in the <a href="#settings">Settings</a> screen tap <strong>Export.</strong> The configuration is exported to <code>configuration.xml</code> located in <code>/storage/emulated/0/Android/data/com.zebra.mdna.selfdiagnostics/files</code>.</p>
-
-<h4 id="import" class="anchor"><a class="heading-anchor" href="#import"><span></span></a>Import</h4>
-
-<p>To import the configuration file, copy <code>configuration.xml</code> to the import folder <code>/enterprise/usr/deviceselftest/</code>. The changes are reflected in the <strong>Configure Tests</strong> <a href="#userinterface">user interface</a>.</p>
-
-<h3 id="userinterface" class="anchor"><a class="heading-anchor" href="#userinterface"><span></span></a>User Interface</h3>
-
-<p>Through the user interface, select the tests to be conducted and configure the test parameters. Access <strong>Configure Tests</strong> by tapping on the options menu at the top right of the main screen, then select <strong>Configure Tests</strong>:</p>
+<p>When launching the app for the first time, the main screen displays the tests available to run:</p>
 
 <table>
  <tbody><tr>
-     <td><img style="height:350px" src="configure-1.png"></td>
+     <td><img style="height:350px" src="mainscreen-1.png"></td>
      <td>&nbsp;&nbsp;&nbsp;</td>
-     <td><img style="height:350px" src="configure-2.png"></td>
-     <td>&nbsp;&nbsp;&nbsp;</td>
-     <td><img style="height:350px" src="configure-3.png"></td>
-     <td>&nbsp;&nbsp;&nbsp;</td>
-     <td><img style="height:350px" src="configure-4.png"></td>
+     <td><img style="height:350px" src="mainscreen-2.png"></td>
  </tr>
 </tbody></table>
 
-<p><em>Configure Tests</em>
+<p><em>Main screen</em>
 <br>
+If tests have already been conducted, the test name is followed by the date when the last test was conducted.
+<br></p>
+
+<p>Tap <strong>Run Tests</strong> from the main screen to execute all the tests. Test execution is based on the tests selected in the <strong>Configure Tests</strong> screen. Once the test is initiated, the user is prompted to perform additional actions during test execution of the following: Scanner Test, Button Test, Touch Screen Test, and Audio Test. It is recommended for all tests to be performed while the device is in normal use, i.e. not docked in a cradle or connected via USB to a computer. Once testing is complete, the results are displayed:
+<br></p>
+
+<p>&nbsp;&nbsp;&nbsp;<img align="left" style="height:25px" src="testpassed.png"><b>Pass -</b> Test executed and passed. Result passed test criteria.
 <br>
-Timeout values can be specified for tests that require user intervention. Once the specified time elapses (in seconds), execution moves to the next test selected if configured in the configuration.xml file.</p>
-
-<h4 id="configurationparameters" class="anchor"><a class="heading-anchor" href="#configurationparameters"><span></span></a>Configuration parameters:</h4>
-
-<ul>
-<li><strong>Scanner Test –</strong> checks whether the scanner is functioning
-
-
-<ul>
-<li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul>
-</li>
-
-<li><strong>Button Test –</strong> checks for the operation of push-to-talk, left or right scan trigger, volume up and volume down hard buttons on the device.
-
-
-<ul>
-<li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul>
-</li>
-
-<li><strong>Touch Screen Test –</strong> checks for operation of the device display screen
-
-
-<ul>
-<li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul>
-</li>
-
-<li><strong>Bluetooth Tests –</strong> tests the Bluetooth radio and returns Bluetooth related information
-
-
-<ul>
-<li><strong>Name –</strong> returns the Bluetooth name</li>
-
-<li><strong>Radio Power Cycle –</strong> checks for operability when turning the Bluetooth radio on/off</li>
-
-<li><strong>Functional/Non-functional –</strong> determines whether the Bluetooth radio can be enabled/disabled within a specified period of time. Returns functional if the Bluetooth radio is functional.</li>
-
-<li><strong>Discoverable/Connectable –</strong> checks if connectable or discoverable</li></ul>
-</li>
-
-<li><strong>WiFi Test –</strong> tests operation of the WiFi radio and returns WiFi related information
-
-
-<ul>
-<li><strong>MAC address –</strong> checks whether the MAC address is valid based on its format</li>
-
-<li><strong>Ping Address –</strong> specifies the domain name to perform the ping test</li>
-
-<li><strong>Network Test –</strong> pings the web address specified in the Ping Address field via WiFi and returns the amount of time it takes to receive a response</li></ul>
-</li>
-
-<li><strong>Battery Test –</strong> checks the battery status and returns battery related information
-
-
-<ul>
-<li><strong>Part Number –</strong> returns the battery part number</li>
-
-<li><strong>Serial Number –</strong> returns the battery serial number</li>
-
-<li><strong>Manufacture Date –</strong> returns the battery date of manufacture</li>
-
-<li><strong>Battery Health –</strong> returns the health of the battery, whether it needs to be decommissioned</li>
-
-<li><strong>Battery Threshold Value -</strong> sets the maximum charge cycle count of the battery to change the <strong>Battery Health</strong>. If this value is less than the actual charge cycle count of the battery, <strong>Battery Health</strong> is changed to "Need to replace battery." This applies only to <a href="https://www.zebra.com/us/en/products/accessories/powerprecision-battery-solutions.html">PowerPrecision</a> batteries. The default value is 400.</li></ul>
-</li>
-
-<li><strong>WWAN Test –</strong> tests operation of the WWAN radio and returns related WWAN information
-
-
-<ul>
-<li><strong>Sim State –</strong> checks whether the sim card is present</li>
-
-<li><strong>Voice State –</strong> checks the voice state of the sim card</li>
-
-<li><strong>Data State –</strong> checks the data state of the sim card</li></ul>
-</li>
-
-<li><strong>Audio Test –</strong> tests operation of the device microphone and speaker
-
-
-<ul>
-<li><strong>Test Timeout –</strong> specifies the time in seconds to wait for user input</li></ul>
-</li>
-
-<li><strong>SD Card Test -</strong> tests for presence/absence of external SD card and ability to read/write. The SD card must be mounted as portable storage in order to be detected.
-
-
-<ul>
-<li><strong>SD Card -</strong> checks for presence/absence of external SD card</li>
-
-<li><strong>Read -</strong> checks if SD card can be read</li>
-
-<li><strong>Write -</strong> checks if SD card can be written</li></ul>
-</li>
-
-<li><strong>USB Test -</strong> checks whether the device USB port is connected to a host with a cable
-
-
-<ul>
-<li><strong>USB Host Connected -</strong> checks whether device USB port is connected to a host with a cable</li>
-
-<li><strong>USB Accessory -</strong> checks whether device USB port is connected to an accessory (e.g. headset, SD card reader, etc.)</li>
-
-<li><strong>USB Modes -</strong> checks for the current selected modes</li></ul>
-</li>
-
-<li><strong>Network Test -</strong> tests whether the device can connect to a network (WLAN or WAN)
-
-
-<ul>
-<li><strong>URL -</strong> specifies the URL to perform the General Connectivity test</li>
-
-<li><strong>General Connectivity -</strong> makes an http request to the url specified in the URL field
+&nbsp;&nbsp;&nbsp;<img align="left" style="height:25px" src="testfailed.png"><b>Fail -</b>Test executed and did not meet the test criteria.
 <br>
-When text values are modified, such as <b>Test Timeout</b> or <b>Ping Address</b>, these values take effect as long as the app is running. When the app is closed and relaunched, the values retrieved from the configuration file take into effect.<p></p></li></ul>
+&nbsp;&nbsp;&nbsp;<img align="left" style="height:20px" src="testinfo.png"><b>Information -</b>Data retrieved and displayed.
+<br>
+Alternatively, in admin mode individual tests can be performed by tapping on the individual test category and then tapping <b>Run Tests</b>.
+<br></p>
+
+<p><strong>Test failed</strong> and <strong>test timed-out</strong> result to the same red hazard icon.
+<br></p>
+
+<p><strong>Help</strong> option is available by tapping on the top right menu of the main screen. This links to the <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/device-diagnostic-tool.html">Device Diagnostics Tool support portal</a>.
+<br><br></p>
+
+<h3 id="scannertest" class="anchor"><a class="heading-anchor" href="#scannertest"><span></span></a>Scanner Test</h3>
+
+<p>The user is prompted to scan a barcode. Results:</p>
+
+<ul>
+<li><strong>Scanner Test –</strong> displays barcode data</li>
+
+<li><strong>Label Type –</strong> displays barcode type or decoder scanned
+<br></li>
+</ul>
+
+<p><b>Note:</b> When performing the Scanner Test on TC55, the user must long press the scanner button for it to be detected.</p>
+
+<p><br></p>
+
+<h3 id="buttontest" class="anchor"><a class="heading-anchor" href="#buttontest"><span></span></a>Button Test</h3>
+
+<p>The user is prompted to press the hard buttons on the device: scan trigger (left or right), push-to-talk, volume up, and volume down. Results:</p>
+
+<ul>
+<li><strong>Button Test –</strong> <em>test successful</em>, <em>test failed</em>, or <em>test timed-out</em>
+<br></li>
+</ul>
+
+<p><b>If physical key buttons are remapped on the device,</b> the `button_config.xml` file must be updated with the appropriate key value and the file must be deployed to the device. See <a href="../configuration/#buttonconfigurationfile">Button Configuration File</a> for instructions.</p>
+
+<p><br></p>
+
+<h3 id="touchscreentest" class="anchor"><a class="heading-anchor" href="#touchscreentest"><span></span></a>Touch Screen Test</h3>
+
+<p>The user is prompted to touch each grid box on the screen</p>
+
+<ul>
+<li><strong>Touch Screen Test –</strong> <em>test successful</em>, <em>test failed</em>, or <em>test timed-out</em>
+<br><br></li>
+</ul>
+
+<h3 id="bluetoothtests" class="anchor"><a class="heading-anchor" href="#bluetoothtests"><span></span></a>Bluetooth Tests</h3>
+
+<p>Checks whether the Bluetooth radio is operable and returns Bluetooth related information. Results:</p>
+
+<ul>
+<li><strong>Name –</strong> displays the Bluetooth name</li>
+
+<li><strong>Radio Power Cycle –</strong> <em>test successful</em> or <em>test failed</em>. The state of the radio is preserved prior to this test.</li>
+
+<li><strong>Functional/Non-functional –</strong> <em>functional</em> or <em>non-functional</em></li>
+
+<li><strong>Discoverable/Connectable -</strong> <em>connectable</em>, <em>discoverable</em>, or <em>none</em>
+<br><br></li>
+</ul>
+
+<h3 id="wifitest" class="anchor"><a class="heading-anchor" href="#wifitest"><span></span></a>WiFi Test</h3>
+
+<p>Checks for operation of the WiFi radio and returns WiFi related information. Results:</p>
+
+<ul>
+<li><p><strong>MAC Address –</strong> <em>valid</em> or <em>invalid</em></p></li>
+
+<li><p><strong>Network Test –</strong> displays <em>connected</em> or <em>not connected</em>. Tests for connectivity through WiFi based on a ping request. Failure occurs if the WiFi is not connected to any network. The state of the radio is preserved prior to this test. If this test is successful, the following values are displayed:</p>
+
+<ul>
+<li><strong>strength –</strong> displays signal strength</li>
+
+<li><strong>ip –</strong> displays IP address</li>
+
+<li><strong>bssid –</strong> <em>valid</em> or <em>invalid</em></li>
+
+<li><strong>speed –</strong> displays connection speed
+  <!--
+  - **essid –** displays ESSID. To display the ESSID **on Android O and above,** _Location_ is required to be enabled in device settings due to Android restrictions. If _Location_ is not enabled, the user is prompted to enable it. If the user proceeds to run the test without _Location_ enabled, _ESSID_ returns "Location not enabled."
+    --></li></ul>
+
+<p><br></p></li>
+</ul>
+
+<h3 id="batterytest" class="anchor"><a class="heading-anchor" href="#batterytest"><span></span></a>Battery Test</h3>
+
+<p>Checks the battery status and returns battery related information. Results:</p>
+
+<ul>
+<li><strong>Part number –</strong> displays the part number</li>
+
+<li><strong>Serial number –</strong> displays the serial number</li>
+
+<li><strong>Manufacture date –</strong> displays the battery date of manufacture</li>
+
+<li><strong>Battery Health –</strong> displays the health of the battery as:
+
+
+<ul>
+<li><strong>Good –</strong> the battery is in a healthy state</li>
+
+<li><strong>Need to replace battery –</strong> the charge cycle count (for <a href="https://www.zebra.com/us/en/products/accessories/powerprecision-battery-solutions.html">PowerPrecision batteries</a>) or the setting retrieved from the internal Zebra framework (for <a href="https://www.zebra.com/us/en/products/accessories/powerprecision-battery-solutions.html">PowerPrecision+ batteries</a>) has reached the <a href="../configuration/#testconfiguration">Battery Threshold</a> value, indicating that the battery should be replaced with a new one soon.</li>
+
+<li><strong>Unknown –</strong> indicates a problem retrieving the battery health information</li></ul>
+</li>
+
+<li><strong>Voltage –</strong> displays the voltage</li>
+
+<li><strong>Current –</strong> displays the current</li>
+
+<li><strong>Temperature –</strong> displays the temperature</li>
+
+<li><strong>Level -</strong> displays the percentage (%) of remaining battery</li>
+
+<li><strong>Current Capacity -</strong> displays the amount of energy stored in the battery in mAh (milliampere hour). Only supported with <a href="https://www.zebra.com/us/en/products/accessories/powerprecision-battery-solutions.html">PowerPrecision+ batteries</a>.
+<br><br></li>
+</ul>
+
+<h3 id="wwantest" class="anchor"><a class="heading-anchor" href="#wwantest"><span></span></a>WWAN Test</h3>
+
+<p>Checks the operation of the WWAN radio and returns related WWAN information. Results:</p>
+
+<ul>
+<li><strong>Sim State –</strong> Airplane mode must be disabled. Displays one of the following values:
+
+
+<ul>
+<li><strong>Present –</strong> sim card is present</li>
+
+<li><strong>Absent –</strong> sim card is not present</li></ul>
+</li>
+
+<li><strong>Voice State -</strong> displays one of the following values:
+
+
+<ul>
+<li><strong>Voice in service</strong></li>
+
+<li><strong>Voice out of service</strong></li>
+
+<li><strong>Voice Emergency only</strong></li>
+
+<li><strong>Voice power off</strong></li>
+
+<li><strong>Unknown voice</strong></li></ul>
+</li>
+
+<li><strong>Data State –</strong> displays one of the following values:
+
+
+<ul>
+<li><strong>Data connected</strong></li>
+
+<li><strong>Data disconnected</strong></li>
+
+<li><strong>Data connecting</strong></li>
+
+<li><strong>Data suspended</strong></li>
+
+<li><strong>Unknown data</strong></li></ul>
+</li>
+
+<li><strong>WAN Type –</strong> displays the network type, such as: <em>LTE, 2G, 3G, 4G,</em> or <em>Not Available</em></li>
+
+<li><strong>Signal Strength –</strong> displays one of the following:
+
+
+<ul>
+<li><strong>Not applicable -</strong> SIM card absent</li>
+
+<li><strong>Unknown –</strong> device could be in airplane mode</li>
+
+<li><strong>Signal strength -</strong> in dBm</li></ul>
+</li>
+
+<li><strong>Phone Number –</strong> <em>valid</em> or <em>invalid</em>, depending on whether or not the phone number is exposed by the service provider.</li>
+
+<li><strong>Device ID –</strong> <em>valid</em> or <em>invalid</em>, depending on whether or not the device ID is exposed
+<br><br></li>
+</ul>
+
+<h3 id="audiotest" class="anchor"><a class="heading-anchor" href="#audiotest"><span></span></a>Audio Test</h3>
+
+<p>Checks for operation of the device microphone and speaker. Results:</p>
+
+<ul>
+<li><strong>Audio Test –</strong> <em>test successful</em> or <em>test failed</em>
+<br><br></li>
+</ul>
+
+<h3 id="sdcardtest" class="anchor"><a class="heading-anchor" href="#sdcardtest"><span></span></a>SD Card Test</h3>
+
+<p>Checks external SD card status and information. The SD card must be mounted as portable storage in order to be detected. If the SD card is mounted as internal storage, DDT does not detect it. This applies similarly when formatting SD cards - only SD cards formatted as portable storage are detected by DDT. Results:</p>
+
+<ul>
+<li><strong>SD Card -</strong> <em>present</em> or <em>absent</em></li>
+
+<li><strong>Read -</strong> <em>passed</em> or <em>not applicable</em></li>
+
+<li><strong>Write -</strong> <em>passed</em> or <em>not applicable</em></li>
+
+<li><strong>Total Space -</strong> amount of total space on SD card in GB or <em>not available</em></li>
+
+<li><strong>Free Space -</strong> amount of free space on SD card in GB or <em>not available</em></li>
+</ul>
+
+<p><br></p>
+
+<h3 id="usbtest" class="anchor"><a class="heading-anchor" href="#usbtest"><span></span></a>USB Test</h3>
+
+<p>Checks the functionality of the USB port on the device.</p>
+
+<ul>
+<li><strong>USB Host Connected –</strong> displays one of the following:
+
+
+<ul>
+<li><strong>Connected -</strong> device USB port is connected to a host with a cable</li>
+
+<li><strong>Not Connected –</strong> device USB port is not connected to a host</li></ul>
+</li>
+
+<li><strong>USB Accessory –</strong> displays one of the following:
+
+
+<ul>
+<li><strong>Connected -</strong> device USB port is connected to an accessory (e.g. headset, SD card reader, etc.)</li>
+
+<li><strong>Not Connected –</strong> device USB port is not connected to an accessory</li></ul>
+</li>
+
+<li><strong>USB Modes –</strong> displays one of the following:
+
+
+<ul>
+<li><strong>Charging -</strong> device is charging</li>
+
+<li><strong>PTP –</strong> Picture Transfer Protocol; transfers images from the connected host</li>
+
+<li><strong>File Transfer –</strong> transfers files from the connected host</li>
+
+<li><strong>MIDI –</strong> Musical Instrument Digital Interface; transfers music media from the connected host</li>
+
+<li><strong>No Modes -</strong> none of the modes</li></ul>
 </li>
 </ul>
 
-<p>Refer to <a href="../criteria">Test Criteria</a> section for more information.</p>
+<p><br></p>
 
-<h2 id="-1" class="anchor"><a class="heading-anchor" href="#-1"><span></span></a><!-- --></h2>
+<h3 id="networktest" class="anchor"><a class="heading-anchor" href="#networktest"><span></span></a>Network Test</h3>
+
+<p>Checks whether the device can connect to a WLAN or WAN network based on URL specified.</p>
+
+<ul>
+<li><strong>General connectivity -</strong> displays one of the following:
+
+
+<ul>
+<li><strong>Connected</strong></li>
+
+<li><strong>Not Connected</strong></li></ul>
+</li>
+</ul>
+
+<p><br></p>
+
+<h2 id="uploadlogs" class="anchor"><a class="heading-anchor" href="#uploadlogs"><span></span></a>Upload Logs</h2>
+
+<p>The configuration file and log files and can be uploaded on demand from the device to an FTP server. The files uploaded include: test result logs, configuration.xml, history log, and status log. To access this feature, from the main app screen tap the options menu at the top right and select <strong>Upload.</strong></p>
+
+<p>Upload screen options:</p>
+
+<ul>
+<li><strong>Protocol -</strong> FTP (default value), only option available</li>
+
+<li><strong>IP Address -</strong> enter the IP address of the FTP server (required)</li>
+
+<li><strong>UserName -</strong> enter the user name to login (required)</li>
+
+<li><strong>Delete File From Device -</strong> if enabled, deletes all files (configuration and log files) from the device after the upload is complete.</li>
+</ul>
+
+<p>If <a href="../configuration/#settings">Server Details</a> are entered in the Settings screen, these options are automatically populated and can be edited if necessary.</p>
+
+<p>After entering the appropriate information, tap <strong>Upload.</strong> Enter the FTP password when prompted. If successful, the files are uploaded to the FTP server in a .zip file with the file format <code>DDTLOG_[TimeStamp(ddMMyyyyHHmmss)]_[device_identifier].zip</code>, where:</p>
+
+<ul>
+<li><em>[TimeStamp(ddMMyyyyHHmmss)]</em> is the timestamp in 2 digit day, 2 digit month, 4 digit year, 2 digit hour, 2 digit minute and 2 digit seconds.</li>
+
+<li><em>[device_identifier]</em> is the unique identifier for the device, displaying one of the following based on the Android platform:
+
+
+<ul>
+<li><strong>UUID -</strong> applies to Android 10 and later devices</li>
+
+<li><strong>Serial number -</strong> applies to Android Oreo and earlier devices</li></ul>
+</li>
+</ul>
+
+<h2 id="schedulejobs" class="anchor"><a class="heading-anchor" href="#schedulejobs"><span></span></a>Schedule Jobs</h2>
+
+<p>Device tests can be scheduled to perform at a specified time. Once a job is scheduled, it automatically repeats at the specified time on a weekly basis. The scheduled job can be deleted after completion to prevent it from repeating again. Only device tests that do not involve user interaction can be scheduled. When a scheduled job is complete, it is logged in <code>/storage/emulated/0/Android/data/com.symbol.selfdiagnostics/files/history.log</code>.</p>
+
+<p>To schedule a job:</p>
+
+<ol>
+<li>From the main app screen tap the options menu at the top right and select <strong>Job Scheduler.</strong></li>
+
+<li>In the Job Scheduler screen, tap "+" button to create a job.</li>
+
+<li>Select the time in hours/minutes to perform the job.</li>
+
+<li>Select the device test to perform.</li>
+
+<li>Select the day of the week for the test to be performed.</li>
+
+<li>Tap the save icon at the top right.</li>
+</ol>
+
+<p>To modify an existing scheduled job:</p>
+
+<ol>
+<li>In the Job Scheduler screen, tap on a scheduled job listed.</li>
+
+<li>Make the necessary changes.</li>
+
+<li>Tap the save icon at the top right.</li>
+</ol>
+
+<p>To delete an existing scheduled job:</p>
+
+<ol>
+<li>In the Job Scheduler screen, tap on a scheduled job listed.</li>
+
+<li>Tap the trash icon at the top right.
+<br>
+<br>
+<!-- --></li>
+</ol>
 
 <hr>
 
@@ -539,9 +648,9 @@ When text values are modified, such as <b>Test Timeout</b> or <b>Ping Address</b
 <ul>
 <li><a href="../about">About Device Diagnostic Tool</a></li>
 
-<li><a href="../usage">Usage Guide</a></li>
-
 <li><a href="../criteria">Test Criteria</a></li>
+
+<li><a href="../configuration">Configuration</a></li>
 </ul><p></p>
                                         
 
