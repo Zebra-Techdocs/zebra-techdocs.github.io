@@ -144,11 +144,6 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
-        <h4><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> WARNING: A newer version of this product and documentation are available. <a href="/emdk-for-android" class="btn btn-danger">See the latest</a></h4>
-    </div>
-
     </header><!--/header-->
 <div class="container-fluid">
     <section id="blog">
@@ -314,7 +309,8 @@
                                 <li class="smartdocs-osx" data-value="9.2"><a>9.2</a></li>
                                 <li class="smartdocs-osx" data-value="10.0"><a>10.0</a></li>
                                 <li class="smartdocs-osx" data-value="10.5"><a>10.5</a></li>
-                                <li class="smartdocs-osx" data-value="11.0"><a>11.0</a></li>
+                                <li class="smartdocs-osx" data-value="11"><a>11.x</a></li>
+                                <li class="smartdocs-osx" data-value="13"><a>13.x</a></li>
                               </ul>
                               </li>
                         
@@ -360,6 +356,9 @@
                                 <li class="smartdocs-mx" data-value="11.5"><a>11.5</a></li>
                                 <li class="smartdocs-mx" data-value="11.6"><a>11.6</a></li>
                                 <li class="smartdocs-mx" data-value="11.7"><a>11.7</a></li>
+                                <li class="smartdocs-mx" data-value="11.8"><a>11.8</a></li>
+                                <li class="smartdocs-mx" data-value="11.9"><a>11.9</a></li>
+                                <li class="smartdocs-mx" data-value="13.1"><a>13.1</a></li>
                               </ul>
                               </li>
                         
@@ -368,6 +367,7 @@
                                   <a href="#" class="dropdown-toggle" id="smartdocs-api-selected" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Android: All <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li class="smartdocs-api" data-value=""><a>All</a></li>
+                                <li class="smartdocs-api" data-value="33"><a>Android 13 (API 33)</a></li>
                                 <li class="smartdocs-api" data-value="30"><a>Android 11 (API 30)</a></li>
                                 <li class="smartdocs-api" data-value="29"><a>Android 10 (API 29)</a></li>
                                 <li class="smartdocs-api" data-value="28"><a>9.0 Pie (API 28)</a></li>
@@ -391,7 +391,7 @@
                               <ul class="dropdown-menu">
                                 <li class="smartdocs-devicetype" data-value="A"><a href="/mx/compatibility">All Devices</a></li>
                                 <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/et40">ET40/ET45</a></li> 
-                                <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/tc2x">TC20/TC25</a></li> 
+                                <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/tc2x">TC21/TC26 (Pro-series)</a></li> 
                                 <li class="smartdocs-devicetype" data-value="A,B"><a href="/mx/ws50">WS50</a></li> 
                               </ul>
                               </li>
@@ -822,45 +822,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -883,7 +844,7 @@
   <li>Blocking the imager on Android L devices disables SimulScan. </li>
   </ul>
   
-  <p><strong>Capturing images from the Imager using Camera APIs is not supported on devices running Android 8.x Oreo</strong>.</p>
+  <p><strong>Capturing images from the Imager using Camera APIs is not supported on devices running Android 8.x Oreo</strong> or later.</p>
 </blockquote>
 
 <h3 id="mainfunctionality" class="anchor"><a class="heading-anchor" href="#mainfunctionality"><span></span></a>Main Functionality</h3>
@@ -999,6 +960,38 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="all-cameras-enabledisable"><a class="heading-anchor" href="#all-cameras-enabledisable"><span></span></a>All Cameras Enable/Disable</h2>
@@ -1018,10 +1011,15 @@
   <p><strong>Cameras and other imaging devices enabled or disabled previously by CameraMgr will remain in that state until explicitly commanded to do otherwise</strong>. </p>
 </blockquote>
 
+<!-- 7/14/23- removed per eng. changes; parm modified for A13 and now only partially deprecated. 
+icon_class: fa fa-mobile 
+icon_color: "color:#FA8829;"
+icon_tooltip: Deprecated. In devices running Android 13 and later, this feature is accessible only through Android Device Policy Manager (DPM) APIs.
+-->
+
 
 <p></p>
                                         <blockquote>
-                                        <p><b><u>Status</u>:</b> Deprecated. In devices running Android 13 and later, this feature is accessible only through Android Device Policy Manager (DPM) APIs.</p>
                                         <p><b>Parm Name:</b> UseAllCameras</p>
                                         <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
                                         
@@ -1048,7 +1046,7 @@
                                                 <td></td>
 
                                                 <td>
-                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature will be discontinued in devices running Android 13 and later." aria-hidden="true"></i></a>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature is discontinued in devices running Android 13 and later." aria-hidden="true"></i></a>
                                     </td>
 
 
@@ -1073,12 +1071,12 @@
                                             <tr data-osx="3.5" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-devicetype="A,C" data-api="" data-smartdoc="">
                                                 <td>1</td>
                                                 <td>Enable ALL Cameras</td>
-                                                <td>Enables all cameras and devices classified as cameras, allowing any camera to take pictures or otherwise acquire documents or images if an application exists on the device to do so.</td>
-                                                <td></td>
-
+                                                <td>Enables all cameras and peripherals classified as cameras, allowing any camera to take pictures or otherwise acquire documents or images if an application exists on the device to do so.</td>
                                                 <td>
-                                    <a href="/mx/overview/#iconkey"><i class="fa fa-mobile fa-lg" style="color:#FA8829;" data-toggle="tooltip" data-placement="top" title="Deprecated. In devices running Android 13 and later, this feature is accessible only through Android Device Policy Manager (DPM) APIs." aria-hidden="true"></i></a>
+                                    <i class="fa fa-info-circle" style="color:#108CED;" data-toggle="tooltip" data-placement="top" title="On devices running Android 13, this setting can be applied ONLY if ZebraDeviceManager is the Device Owner. If the device has no assigned DO, Zebra sets ZDM as the DO and applies the requested camera setting. All other scenarios result in error." aria-hidden="true"></i>
                                     </td>
+
+                                                <td></td>
 
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
@@ -1102,12 +1100,12 @@
                                             <tr data-osx="3.5" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.3" data-devicetype="A,C" data-api="" data-smartdoc="">
                                                 <td>2</td>
                                                 <td>Disable ALL Cameras</td>
-                                                <td>Disables all cameras and devices classified as cameras, preventing the device from taking pictures or otherwise acquiring documents or images, even if an application exists on the device to do so.</td>
-                                                <td></td>
-
+                                                <td>Disables all cameras and peripherals classified as cameras, preventing the device from taking pictures or otherwise acquiring documents or images, even if an application exists on the device to do so.</td>
                                                 <td>
-                                    <a href="/mx/overview/#iconkey"><i class="fa fa-mobile fa-lg" style="color:#FA8829;" data-toggle="tooltip" data-placement="top" title="Deprecated. In devices running Android 13 and later, this feature is accessible only through Android Device Policy Manager (DPM) APIs." aria-hidden="true"></i></a>
+                                    <i class="fa fa-info-circle" style="color:#108CED;" data-toggle="tooltip" data-placement="top" title="On devices running Android 13, this setting can be applied ONLY if ZebraDeviceManager is the Device Owner. If the device has no assigned DO, Zebra sets ZDM as the DO and applies the requested camera setting. All other scenarios result in error." aria-hidden="true"></i>
                                     </td>
+
+                                                <td></td>
 
 
                                         <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
@@ -1133,7 +1131,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -1303,30 +1300,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1573,28 +1546,62 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="imager-camera-enabledisable"><a class="heading-anchor" href="#imager-camera-enabledisable"><span></span></a>Imager Camera Enable/Disable</h2>
                                     <p class="">
 
-        </p><p>Controls whether the imager on the device, if so equipped, can be used to take pictures. If the device is not equipped with an imager or the ability to take pictures using the imager, use of this parm will return an error in the Result XML document.</p>
+        </p><p>Controls whether the imager on the device, if so equipped, can be used to take pictures. If the device is not equipped with an imager or the ability to take pictures using the imager, use of this parameter will return an error in the Result XML document.</p>
 
-<blockquote>
-  <p><strong>Notes</strong>:</p>
-  
-  <ul>
-  <li>Limited support for picture-taking using non-camera devices may be available on devices running Android L or higher.</li>
-  
-  <li>Blocking the imager on Android L devices disables SimulScan. </li>
-  </ul>
-</blockquote>
+<p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>Blocking the imager on devices running Android 5.x (Lollipop) disables SimulScan</strong>. </p>
 
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> Capturing images from the Imager using Camera APIs is not supported on devices running Android 8.x Oreo.</p>
-                                        <p><b><u>Status</u>:</b> Deprecated. This feature will be discontinued in devices running Android 13 and later.</p>
+                                        <p><b>Note:</b> Capturing images with the Imager using Camera APIs is not supported on devices running Android 8.x Oreo or later.</p>
+                                        <p><b><u>Status</u>:</b> DISCONTINUED. This feature is not supported on devices running Android 8.x or later.</p>
                                         <p><b>Shown if:</b> Use All Cameras is set to "Control Individual Cameras"</p>
                                         <p><b>Parm Name:</b> UseImagerCamera</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -1622,7 +1629,7 @@
                                                 <td></td>
 
                                                 <td>
-                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature will be discontinued in devices running Android 13 and later." aria-hidden="true"></i></a>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="DISCONTINUED. This feature is not supported on devices running Android 8.x or later." aria-hidden="true"></i></a>
                                     </td>
 
 
@@ -1651,7 +1658,7 @@
                                                 <td></td>
 
                                                 <td>
-                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature will be discontinued in devices running Android 13 and later." aria-hidden="true"></i></a>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="DISCONTINUED. This feature is not supported on devices running Android 8.x or later." aria-hidden="true"></i></a>
                                     </td>
 
 
@@ -1680,7 +1687,7 @@
                                                 <td></td>
 
                                                 <td>
-                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature will be discontinued in devices running Android 13 and later." aria-hidden="true"></i></a>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="DISCONTINUED. This feature is not supported on devices running Android 8.x or later." aria-hidden="true"></i></a>
                                     </td>
 
 
@@ -1707,22 +1714,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2696,6 +2687,42 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -2715,13 +2742,6 @@ filtering
         csp: "cameramgr",
         name: "Camera Manager",
         parms: [
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -2884,7 +2904,7 @@ filtering
                                 {
                                     code: "1",
                                     name: "Enable ALL Cameras",
-                                    description: "Enables all cameras and devices classified as cameras, allowing any camera to take pictures or otherwise acquire documents or images if an application exists on the device to do so.",
+                                    description: "Enables all cameras and peripherals classified as cameras, allowing any camera to take pictures or otherwise acquire documents or images if an application exists on the device to do so.",
                                     requires: {
                                         osx: "3.5",
                                         osxEnd: "",
@@ -2901,7 +2921,7 @@ filtering
                                 {
                                     code: "2",
                                     name: "Disable ALL Cameras",
-                                    description: "Disables all cameras and devices classified as cameras, preventing the device from taking pictures or otherwise acquiring documents or images, even if an application exists on the device to do so.",
+                                    description: "Disables all cameras and peripherals classified as cameras, preventing the device from taking pictures or otherwise acquiring documents or images, even if an application exists on the device to do so.",
                                     requires: {
                                         osx: "3.5",
                                         osxEnd: "",
@@ -2917,7 +2937,6 @@ filtering
                         
                         ]
                     },
-                    
                     
                     
                     
@@ -3040,30 +3059,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "Use All Cameras is set to &quot;Control Individual Cameras&quot;",
                             name: "UseRearCamera",
@@ -3124,6 +3119,48 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4132,12 +4169,38 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
         ]
     }
 
     console.log(JSON.stringify(mxJSON))
 </script>
 
+<!-- This makes ALL underlined text blue, not just hyperlinks 
+<style>
+u {color: #45AED6;}
+</style>
+
+ -->
  </div>
          <footer id="footer">
             <div class="container-fluid">
