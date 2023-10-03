@@ -836,6 +836,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/devicetracker/5-4':
         case '/devicetracker/5-5':
         case '/devicetracker/5-6':
+        case '/devicetracker/5-7':
             ddl_doc.options.length = 0;
             for (i=0; i < dt_5_2_text.length; i++) {
                 createOption(ddl_doc, dt_5_2_text[i], dt_5_2_val[i]);
