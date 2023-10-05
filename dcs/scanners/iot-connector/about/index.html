@@ -120,25 +120,23 @@
                                             <div class="service-box wow fadeInRight">
                                                 <div class="">
                                                     <h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-                                                    <p>The Zebra IoT Connector is a utility that will log scanner related events to a command prompt window and/or text file. The events that can be logged through the IoT Connector are defined in the file "IoTConnector-Config.xml" and their properties can be changed depending on need. The IoT Connector accesses scanner devices through the Zebra CoreScanner Service for Windows or Linux which must first be installed and running.</p>
-
-                                                    <p>IoT Connector bundled with Windows and Linux SDKs. </p>
+                                                    <p>The Zebra IoT Connector is a utility that will log scanner related events to an endpoint such as a command prompt or terminal window, and/or text file, HTTP instance or Windows Event log. The events that can be logged through the IoT Connector are defined in the file "IoTConnector-Config.xml" and their properties can be changed depending on need. The IoT Connector accesses scanner devices through the Zebra CoreScanner Service for Windows or Linux which must first be installed and running.</p>
 
                                                     <ol>
                                                         <li>The IoT Connector allows a 3rd party management console, like Microsoft's SCCM, to track scanner information including the scanner's health by parsing a IoT Connector generated log file.</li>
-                                                        <li>The IoT Connector will output a log file, one file per scanner/host.</li>
+                                                        <li>The IoT Connector will output log entries to a sink (endpoint) as defined in its IoTConnector-Config.xml file.</li>
                                                         <li>
-                                                            <p>The IoT Connector is configurable and can document one or all of the following information:</p>
+                                                            The IoT Connector is configurable and can document one or all of the following information:
                                                             <ol type="a">
                                                                 <li>Asset information</li>
-                                                                <li>Statistics for example battery charge level or UPCs scanned</li>
-                                                                <li>Firmware failures and or firmware success</li>
-                                                                <li>Parameter value(s) changed. Achieved by tracking parameter 616 (config file name changed to "Modified")</li>
+                                                                <li>Statistics (for example, battery charge level or number of UPCs scanned)</li>
+                                                                <li>Firmware update failures and/or firmware update success</li>
+                                                                <li>Configuration changes by tracking parameter 616 (Configuration Name change to "Modified")</li>
                                                                 <li>Scanned barcode data (all scanned items)</li>
-                                                                <li>Scan avoidance for MP7000</li>
+                                                                <li>Scan avoidance events from for MP7000</li>
                                                             </ol>
                                                         </li>
-                                                        <li>The IoT Connector can have its output stored locally on its host PC or output to a network shared folder.</li>
+                                                        <li>The IoT Connector can have its output stored locally on its host PC or output to a network shared folder, HTTP instance or Windows Event log.</li>
                                                     </ol>
                                                     
                                                     <hr>
@@ -367,7 +365,7 @@
                                                                 <p>Log file path can be given a network location to save log files.</p>
                                                                 <ul>
                                                                     <li>Eg: &lt;property key="log_file_path" value="\\10.225.123.31\Temp\iot-connector-logs" /></li>
-                                                                    <p><strong>NOTE:</strong> On Linux systems first mount the shared folder to current system. Then give the path of that location of the current system.</p>
+                                                                    <p><strong>NOTE:</strong> On Linux systems, first mount the shared folder on the host PC. Then specify the path of that location.</p>
                                                                 </ul>
                                                                 <p>Log file name can be customized to have system information when combined with the following options,</p>
                                                                 <ul>
@@ -398,19 +396,19 @@
                                                             <td>
                                                                 <p>This describe the elements to log. The supported sub tags are,</p>
                                                                 <ul>
-                                                                    <li><strong>get-statistics</strong> – options for statistics logging</li>
-                                                                    <li><strong>check-health</strong> – options for health logging</li>
-                                                                    <li><strong>on-agent-start-up</strong> – options for logging IoT Connector start up</li>
-                                                                    <li><strong>on-system-shutdown</strong>– options for logging system shutdown events</li>
-                                                                    <li><strong>on-attach</strong> – options</strong> for logging on a device attach</li>
+                                                                    <li><strong>get-statistics</strong> - options for statistics logging</li>
+                                                                    <li><strong>check-health</strong> - options for health logging</li>
+                                                                    <li><strong>on-agent-start-up</strong> - options for logging IoT Connector start up</li>
+                                                                    <li><strong>on-system-shutdown</strong> - options for logging system shutdown events</li>
+                                                                    <li><strong>on-attach</strong> - options</strong> for logging on a device attach</li>
                                                                     <li><strong>on-detach</strong> - options for logging on a device detach</li>
                                                                     <li><strong>on-barcode</strong> - options for logging on a barcode read</li>
                                                                     <li><strong>on-firmware-download-start</strong> - enable/disable firmware download start event logging</li>
                                                                     <li><strong>on-firmware-download-progress</strong> - enable/disable firmware download in progress events logging</li>
                                                                     <li><strong>on-firmware-download-end</strong> - enable/disable firmware download end event logging</li>
-                                                                    <li><strong>on-firmware-download-error</strong> – enable/disable firmware download error logging</li>
-                                                                    <li><strong>on-config-name-change</strong> - enable/disable config name change event logging</li>
-                                                                    <li><strong>on-non-decode-event</strong> - enable/disable none decode events logging</li>
+                                                                    <li><strong>on-firmware-download-error</strong> - enable/disable firmware download error logging</li>
+                                                                    <li><strong>on-config-name-change</strong> - enable/disable config name change event logging when used in conjunction with check-health</li>
+                                                                    <li><strong>on-non-decode-event</strong> - enable/disable non-decode event logging</li>
                                                                 </ul>
                                                                 <p>All these log elements can either be enabled or disabled using the attribute “enabled” in the tag.</p>
                                                             </td>
@@ -421,19 +419,19 @@
                                                         </tr>
                                                         <tr>
                                                             <td>check-health</td>
-                                                            <td>This contains options for health logging. The supported sub-tags are group tags.</td>
+                                                            <td>This contains options for device health logging. The supported sub-tags are group tags.</td>
                                                         </tr>
                                                         <tr>
                                                             <td>on-agent-start-up</td>
-                                                            <td>Occurs when the application is restarted.</td>
+                                                            <td>Occurs when the IoT Connector is restarted.</td>
                                                         </tr>
                                                         <tr>
                                                             <td>on-agent-shutdown</td>
-                                                            <td>logs when the IoT Connector is shutdown or when a system reboot is requested</td>
+                                                            <td>Occurs when the IoT Connector is shutdown or when a system reboot is requested.</td>
                                                         </tr>
                                                         <tr>
                                                             <td>on-attach</td>
-                                                            <td>Occurs when a device is attached to the system. </td>
+                                                            <td>Occurs when a device is attached to the system.</td>
                                                         </tr>
                                                         <tr>
                                                             <td>on-detach</td>
@@ -461,20 +459,20 @@
                                                         </tr>
                                                         <tr>
                                                             <td>on-config-name-change</td>
-                                                            <td>Occurs when a config name change event.</td>
+                                                            <td>Occurs on a Configuration Name change event when used in conjunction with check-health.</td>
                                                         </tr>
                                                         <tr>
                                                             <td>on-non-decode-event</td>
-                                                            <td>Occurs when a MP7xxx is enabled for non decode events.</td>
+                                                            <td>Occurs when a MP7xxx is enabled for non-decode events.</td>
                                                         </tr>
                                                         <tr>
                                                             <td>group</td>
                                                             <td>
                                                                 <p>The group tag is used to define a filter for scanners and to set up interval of occurrence. The supported attributes are,</p>
                                                                 <ul>
-                                                                    <li>Model – specify the model. Wild cards are supported (Eg: model = "DS*")</li>
-                                                                    <li>Serial – specify the serial number. Wild cards are supported (Eg: serial = "14075010502573")</li>
-                                                                    <li>Schedule – specify the time interval in cron job format. For more information refer link <a href="https://www.freeformatter.com/cron-expression-generator-quartz.html" target="blank">https://www.freeformatter.com/cron-expression-generator-quartz.html</a> (Eg: schedule = “0 0 0/8 * * *” – Log every 8 hours)</li>
+                                                                    <li>Model - specify the model. Wild cards are supported (Eg: model = "DS*")</li>
+                                                                    <li>Serial - specify the serial number. Wild cards are supported (Eg: serial = "14075010502573")</li>
+                                                                    <li>Schedule - specify the time interval in cron job format. For more information refer link <a href="https://www.freeformatter.com/cron-expression-generator-quartz.html" target="blank">https://www.freeformatter.com/cron-expression-generator-quartz.html</a> (Eg: schedule = “0 0 0/8 * * *” - Log every 8 hours)</li>
                                                                 </ul>
                                                                 <p>A group may contain additional scanner-attribute-ids tag to include additional data in the log file.</p>
                                                             </td>
