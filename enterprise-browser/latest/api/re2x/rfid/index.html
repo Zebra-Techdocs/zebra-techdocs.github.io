@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.5
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.6
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-5','1-4','/enterprise-browser/3-5/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-5','1-4','/enterprise-browser/3-6/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-5/guide/about">
+                            <a href="/enterprise-browser/3-6/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-6/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/tutorial/">
+                            <a href="/enterprise-browser/3-6/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/guide/samples">
+                            <a href="/enterprise-browser/3-6/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/guide">
+                            <a href="/enterprise-browser/3-6/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/guide/licensing">
+                            <a href="/enterprise-browser/3-6/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/guide/migration">
+                            <a href="/enterprise-browser/3-6/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/guide/configreference">
+                            <a href="/enterprise-browser/3-6/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/api">
+                            <a href="/enterprise-browser/3-6/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/download">
+                            <a href="/enterprise-browser/3-6/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-5/search">
+                            <a href="/enterprise-browser/3-6/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -251,21 +251,16 @@
 
 <p>The RFID Module provides access to functionality of the device's RFID reader, if so equipped. </p>
 
-<h4 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h4>
+<p><strong>Supported with the following readers and Android versions</strong>: <br>
+<img alt="" style="height:150px" src="EB_RFID_support.jpg">
+<br></p>
 
-<p>This module is supported only on the following Zebra devices: </p>
+<blockquote>
+  <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>See "Version Compatibility" for the full list of <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/enterprise-browser.html#:~:text=VERSION%203.5.0.7-,COMPATIBILITY,-%2B">supported Zebra peripherals</a></strong>.<br><br>
+  <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>The RFID module is not included with the standard EB installation</strong>, and might require a separate download and installation. <strong><a href="#remarks">See Remarks section</a></strong> for more information.</p>
+</blockquote>
 
-<ul>
-<li><strong>MC3190-Z and MC9190-Z</strong> RFID readers</li>
-
-<li><strong>MC33xx</strong> RFID reader</li>
-
-<li><strong>TC20 with RFD2000</strong> RFID sled</li>
-
-<li><strong>Any Zebra Android device</strong> connected to the Zebra RFD8500 Bluetooth RFID sled</li>
-</ul>
-
-<p><strong>Note</strong>: The RFID module is not included with the standard EB installation, and might require a separate download and installation. <a href="#remarks">See Remarks section</a> for more information.</p>
+<hr>
 
 <h2 id="syntax" class="anchor"><a class="heading-anchor" href="#syntax"><span></span></a>Syntax</h2>
 
@@ -335,7 +330,7 @@
     </tr>
     <tr>
         <td class="clsSyntaxCells clsOddRow"><b>performInventory <i class="fa fa-android" style="color:#a4c639;"></i> <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
-        <td class="clsSyntaxCells clsOddRow">Performs an inventory operation on the RFID reader, which is started and stopped according to the trigger settings implemented by the app. By default, starts an inventory operation immediately. There is no default stop trigger; an explicit "stop" call must be made. Tags are reported as part of the TagData Array in the tagEvent's JSON object. When the property "invMemBank" is set (to either Reserved, EPC, TID or User) prior to calling performInventory, the corresponding memory-bank's data also is read for the tags being inventoried. For inventoried tags, additional fields can be reported as part of tagEvent JSON by setting to true properties such as enableTagCRC, enableTagPC, enableTagSeenCount, enableTagRSSI, enableTagAntennaID, etc. As long as inventory operation is running, the plug-in cannot process those meta tags that could initiate an RFID operation such as performInventory, locateTag, readTag and other Access operations. The plug-in returns an error string indicating that it is busy and can perform other RFID operations only when the inventory is stopped.</td>
+        <td class="clsSyntaxCells clsOddRow">Performs an inventory operation on the RFID reader, which is started and stopped according to the trigger settings implemented by the app. By default, starts an inventory operation immediately. There is no default stop trigger; an explicit "stop" call must be made. Tags are reported as part of the TagData Array in the tagEvent's JSON object. When the property "invMemBank" is set (to either Reserved, EPC, TID or User) prior to calling performInventory, the corresponding memory-bank's data also is read for the tags being inventoried. For inventoried tags, additional fields can be reported as part of tagEvent JSON by setting to true properties such as enableTagCRC, enableTagPC, enableTagSeenCount, enableTagRSSI, enableTagAntennaID, etc. As long as inventory operation is running, the plug-in cannot process those meta tags that could initiate an RFID operation such as performInventory, locateTag, readTag and other Access operations. The plug-in returns an error string indicating that it is busy and can perform other RFID operations only when the inventory is stopped. <b>If inventory is running, the device user must stop the inventory operation before quitting the EB app</b>.</td>
     </tr>
     <tr>
         <td class="clsSyntaxCells clsEvenRow"><b>locateTag <i class="fa fa-android" style="color:#a4c639;"></i> <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
@@ -800,6 +795,18 @@
         <td class="clsSyntaxCells clsOddRow">Specifies the use of the start/stop trigger</td>
         <td class="clsSyntaxCells clsOddRow">false</td>
     </tr>
+    <tr>
+        <td class="clsSyntaxCells clsOddRow"><b>lowerTriggerType:[Value] <i class="fa fa-android" style="color:#a4c639;"></i></b></td>
+        <td class="clsSyntaxCells clsOddRow">RFID_SCAN, NO_ACTION</td>
+        <td class="clsSyntaxCells clsOddRow">   <a id="trigger"></a> Specifies the lower trigger button allowed for RFID inventory or no action.</td>
+        <td class="clsSyntaxCells clsOddRow">N/A</td>
+    </tr>
+    <tr>
+        <td class="clsSyntaxCells clsOddRow"><b>upperTriggerType:[Value] <i class="fa fa-android" style="color:#a4c639;"></i></b></td>
+        <td class="clsSyntaxCells clsOddRow">RFID_SCAN, NO_ACTION</td>
+        <td class="clsSyntaxCells clsOddRow">Specifies the upper trigger button allowed for RFID inventory or no action.</td>
+        <td class="clsSyntaxCells clsOddRow">N/A</td>
+    </tr>
 </tbody></table>
 
 <h2 id="events" class="anchor"><a class="heading-anchor" href="#events"><span></span></a>Events</h2>
@@ -1118,11 +1125,13 @@
 <h2 id="remarks" class="anchor"><a class="heading-anchor" href="#remarks"><span></span></a>Remarks</h2>
 
 <ol>
-<li>On devices running Android, rfid.connect can be called only after the enumRFIDevent callback is received by calling rfid.enumerate. </li>
+<li>On devices running Android, <code>rfid.connect</code> can be called only after the <code>enumRFIDevent</code> callback is received by calling <code>rfid.enumerate</code>. </li>
 
-<li>An Enterprise Browser application can connect to only one reader at one time. If a different reader is desired, the app must disconnect from the currently connected reader before connecting to a new one.</li>
+<li><strong>An EB app can connect only to one reader at one time</strong>. If a different reader is desired, the app must disconnect from the currently connected reader before connecting to a new one.</li>
 
-<li>An RFID reader can connect to only one application at one time. If a different RFID reader app is desired, the device user must either quit the previous application, or instruct the app to disconnect from the reader.</li>
+<li><strong>An RFID reader can connect to only one app at one time</strong>. If a different RFID reader app is desired, the device user must either quit the previous app, or instruct the app to disconnect from the reader.</li>
+
+<li><strong>If inventory is running, the device user must stop the inventory operation before quitting the EB app</strong>. </li>
 </ol>
 
 <h3 id="installation" class="anchor"><a class="heading-anchor" href="#installation"><span></span></a>Installation</h3>
