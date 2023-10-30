@@ -401,8 +401,8 @@
 				Zebra Print DNA printers running Link-OS<sup>&reg;</sup> to connect 
 		securely and communicate using the Link-OS Multiplatform SDK.</span></p>
 		<p class="text-body">You will need an SSL certificate in order to establish communications between your 
-		Websocket server and a Print DNA printer. You may use your own 
-		certificates or request and obtain a signed certificate from Zebra.  The following 
+		Websocket server and a Print DNA printer. Although you may request and obtain a signed certificate from Zebra, <b>we strongly recommend either creating and using your own self-signed certificates or obtaining them from a Publicly Trusted Certificate Authority.</b> That provides you with greater flexibility and control of the certificates and ongoing management of them. As Zebra is <i>not</i> a trusted certificate authority, there's no advantage to obtaining a Zebra signed certificate.
+		<br>The following 
 		sections describe the requirements and steps needed to create your own 
 		certificates or obtain one from Zebra.</p>
 		<p class="text-body">API documentation for the SDK Weblink support is included in the
@@ -420,8 +420,8 @@
 
             <div class="supported-platform-section">
 				<p class="text-body">This 
-				information has been updated due to changes in our certificate 
-				signing process and the ability to use self-signed or trusted CA 
+				information supercedes what's included in the v2.14.5198 SDK due to changes in our certificate 
+				signing process and the ability to use self-signed or publicly trusted CA 
 				signed certificates.</p>
 				<p style="margin:0in;" class="text-body">Prior 
 				to Link-OS version 4, our printers only contained an embedded 
@@ -461,12 +461,11 @@
 				<p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
 				<ul style="direction:ltr;unicode-bidi:embed;margin-top:0in;
  margin-bottom:0in" type="circle" class="text-body">
-					<li style="margin-top:0;margin-bottom:0;vertical-align:middle" class="text-body">Due to 
-					changes in our security policies and procedures, the time to 
+					<li style="margin-top:0;margin-bottom:0;vertical-align:middle" class="text-body">The time to 
 					sign and return certificate requests may take 7 – 10 days.</li>
 					<li style="margin-top:0;margin-bottom:0;vertical-align:middle" class="text-body">Zebra SHA-256 signed certificates have a 3 year expiration period and will need to be renewed prior to the expiration date.</li>
 				</ul>
-				<p class="note-style">&nbsp;<strong>Note</strong>: Zebra does not provide a notification service of certificate expiry.</p>
+				<p class="note-style">&nbsp;<strong>Note: Zebra does not provide a notification service of certificate expiry.</strong></p>
 				<ul style="direction:ltr;unicode-bidi:embed;margin-top:0in;
  margin-bottom:0in" type="circle" class="text-body">
 					<li style="margin-top:0;margin-bottom:0;vertical-align:middle" class="text-body">Where 
@@ -712,7 +711,7 @@ color:black">&nbsp;</p>
 				may be compromised.</p>
 				<ol>
 					<li value="6"><span class="text-body">Email the certificate request file (.csr file) to
- 				   <a href="mailto:softpm@zebra.com?subject=Weblink Certificate Signing Request">softpm@zebra.com</a></span></li>
+ 				   <a href="mailto:WTech@Zebra.com?subject=Weblink Certificate Signing Request">WTech@Zebra.com</a></span></li>
 					<li><span class="text-body">The certificate will be signed and sent back to you.</span></li>
 					<li><span class="text-body">Copy the zip file containing the signed certificate files to the zebra_certs 
 					folder.</span></li>
