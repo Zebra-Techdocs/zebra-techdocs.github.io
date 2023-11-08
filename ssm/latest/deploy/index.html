@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Documentation for Zebra Technologies developer tools and utilties, including EMDK for Android, EMDK for Xamarin, StageNow and Enterprise Browser.">
+    <meta name="author" content="Zebra Technologies">
+    <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
+    <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
+    <meta title="Using SSM with Zebra Apps">
+    <title>Using SSM with Zebra Apps - TechDocs</title>
+    <!-- core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--     
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+ -->    
+    <link href="/css/all.css" rel="stylesheet">
+    <link href="/css/v4-shims.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/owl.carousel.css" rel="stylesheet">
+    <link href="/css/owl.transitions.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/prettify.css" rel="stylesheet">
+    <link href="/css/bootstrap-treenav.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]--> 
+
+    <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
+    <link rel="shortcut icon" href="/favicon.ico">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-01QJCMQM9N"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-01QJCMQM9N');
+</script><script src="/js/jquery.js"></script></head><!--/head-->
+
+<!-- Google tag -->
+
+
+
+
+
+<body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
+
+    <header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:66px;float: inherit;
+    padding-right: 3px;"></a> 
+                    
+                   
+                </div>
+                <div class="collapse navbar-collapse navbar-left">
+                    <ul class="nav navbar-nav">
+                        <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
+                        <p class="navbar-text">
+                                            Secure Storage Manager
+                                            1.1
+                        </p>
+
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        
+
+
+                        <li>
+                            <a href="/ssm/1-1/guide/about">
+                                    About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ssm/1-1/guide/share-data">
+                                    Data Sharing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ssm/1-1/guide/share-files">
+                                    File Sharing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ssm/1-1/guide/deploy">
+                                    Deploy a File
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ssm/1-1/search">
+                                    <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        
+                        <!-- <li ><a href="/products">SDKs</a></li>
+                        <li ><a href="/samples">Samples</a></li>
+                        <li ><a href="/guides">Guides</a></li>
+                        <li ><a href="/tutorials">Tutorials</a></li>
+                        <li ><a href="/apis">APIs</a></li> -->
+                        <!-- <li><a href="#"><input type="text" class="st-default-search-input"></a></li> -->
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+<div class="container-fluid">
+    <section id="blog">
+        <div class="">
+            <section class="content-with-sidebar">
+            <div class="row">
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>Using SSM with Zebra Apps</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="using-ssm-with-zebra-apps" class="anchor"><a class="heading-anchor" href="#using-ssm-with-zebra-apps"><span></span></a>Using SSM with Zebra Apps</h1>
+                                    <p>
+                                            Secure Storage Manager
+                                            1.1
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
+                    <div id="mainContent" class="row">
+                        <div class="col-sm-12">
+                            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <!-- Start of guide -->
+                                <div class="service-box wow fadeInRight">
+                                    <div class="">
+
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p>This guide describes how to use Secure Storage Manager (SSM) for secure deployment of files for configuring Zebra apps and/or sharing data. Files can be deployed for use by other apps (or by the originating app itself) either through Zebra OEMConfig and StageNow, a company's own EMM or programmatically from within an application.</p>
+
+<h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
+
+<ul>
+<li><strong>Zebra device(s) running Android 11</strong> (or later)</li>
+
+<li><strong>Zebra MX 11.3</strong> (or later) on device (<a href="/mx/mx-version-on-device/">Which version is present?</a>)</li>
+
+<li><strong>A staging tool</strong> (e.g. OEMConfig, StageNow, EMM, etc.)</li>
+</ul>
+
+<h3 id="processsummary" class="anchor"><a class="heading-anchor" href="#processsummary"><span></span></a>Process Summary</h3>
+
+<ol>
+<li><strong>Create a Profile</strong> (in OEMConfig, StageNow, EMM, etc.) that deploys a file. </li>
+
+<li><strong>Set the Profile to deploy using File Manager</strong> "Deploy a file for an application" <a href="/mx/filemgr/#file-action">File Action</a> (requires MX 11.3 or later).</li>
+
+<li><strong>Enter the Target Application File Definition</strong> from the <a href="#zebraappdeploymentfiles">Zebra App Deployment Files table</a> (below) corresponding to the file Source* app.   </li>
+
+<li><strong>Enter the name of the signature file</strong> for the Source app (optional for StageNow deployment)<br>
+<i class="fa fa-check-circle" style="color:#27AE60;"></i> Zebra recommends this step for added security. <strong><a href="/sigtools">Learn more</a></strong>. </li>
+
+<li><strong>For Source Access Method</strong>: Select "File in the Device File System" </li>
+
+<li><strong>For Select Media type on a local Device</strong>: select "Others"</li>
+
+<li><strong>For Enter File Name</strong>: Enter the Source Path and File Name_†_ from the <a href="#zebraappdeploymentfiles">Zebra App Deployment Files table</a> (below)<br></li>
+</ol>
+
+<p><i><font size="2" color="DimGrey"> * The "Source" app is the Zebra app that's originating the file for sharing with others. Note that the <em>Source</em> app can be the same app as the one <em>consuming</em> the shared file, such as with many app-config files.</font></i> </p>
+
+<p><i><font size="2" color="DimGrey"> † Where appropriate, replace the example file name with the chosen file name.</font></i></p>
+
+<h3 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h3>
+
+<ul>
+<li><strong><a href="/datawedge/13-0/guide/programmers-guides/ssm/#datawedgeconfigfile">SSM and DataWedge</a></strong> | Secure deployment of files for DataWedge configuration and Profiles</li>
+
+<li><strong><a href="/zwc">SSM and WorkStation Connect</a></strong> | Secure deployment of files for Zebra Workstation Connect configuration and shortcuts</li>
+</ul>
+
+<hr>
+
+<!-- 
+### Deploy via StageNow 
+
+**Securely deploy a file using [StageNow](/stagenow/)**:
+
+1. Launch [StageNow](/stagenow/) on the host computer.
+2. In the StageNow home screen, click **Create New Profile** from the left-hand menu.
+<img alt="image" style="height:400px" src="stagenow-1.jpg"/>
+_Click image to enlarge; ESC to exit_.
+<br>
+
+3. Select MX version 11.3 or higher (for support of "Deploy a file to an app" option in File Manager). The MX version on the device should match this version selected. See [MX documentation](/mx/mx-version-on-device/) for instructions on how to check the version. 
+<img alt="image" style="height:400px" src="stagenow-2.jpg"/>
+_Click image to enlarge; ESC to exit_.
+<br>
+
+4. Select **Xpert Mode** from the list and click **Create.**
+<img alt="image" style="height:400px" src="stagenow-3.jpg"/>
+_Click image to enlarge; ESC to exit_.
+<br>
+
+5. Enter the profile name. Click **Start.**
+<img alt="image" style="height:250px" src="stagenow-4.jpg"/>
+_Click image to enlarge; ESC to exit_.
+<br>
+
+6. Scroll down and click the plus (+) sign next to **FileMgr.** This adds **FileMgr** to the Config tab on the right side. 
+<img alt="image" style="height:400px" src="stagenow-5.jpg"/> 
+_Click image to enlarge; ESC to exit_.
+<br>
+
+7. Click **Add.**
+<img alt="image" style="height:400px" src="stagenow-6.jpg"/> 
+_Click image to enlarge; ESC to exit_.
+<br>
+
+8. In the FileMgr settings, enter/select the following:
+
+    * **File Action:** _Deploy file for an application_
+    * **Target Application Field Definition:** `com.symbol.datawedge/ngsstemplate/TemplateName.xml`<br />
+    (Replace "TemplateName.xml" with your template XML file name.)
+
+    <img alt="image" style="height:450px" src="stagenow-7.jpg"/> 
+_Click image to enlarge; ESC to exit_.
+<br>
+
+9. Scroll down and select the following:
+    * **Source Access Method:** _File in the Device File System_
+
+    <img alt="image" style="height:450px" src="stagenow-8.jpg"/> 
+_Click image to enlarge; ESC to exit_.
+<br>
+
+10. Click on the ellpsis (...) next to **Source Path and File Name.** Enter/select the following, then click **OK:**
+    * **Media Type on a local Device:** _Others_
+    * **Enter File Name:** `/storage/emulated/0/Download/TemplateName.xml` <br />
+    (Replace "TemplateName.xml" with your template XML file name. _Make sure to use the device storage location `/storage/emulated/0/Download`._)
+    <img alt="image" style="height:400px" src="stagenow-9.0.jpg"/> 
+_Click image to enlarge; ESC to exit_.
+<br>
+
+11. Click **Continue.**
+<img alt="image" style="height:400px" src="stagenow-10.jpg"/> 
+_Click image to enlarge; ESC to exit_.
+<br>
+
+12. Click **Complete Profile.**
+<img alt="image" style="height:400px" src="stagenow-11.jpg"/> 
+_Click image to enlarge; ESC to exit_.
+<br>
+
+13. The device must be connected to the network during deployment. Use one of the following methods based on the desired tool to deploy the NG SimulScan template to the device:
+
+    * **StageNow:** Generate the barcode from the StageNow profile. Open StageNow client on the device and scan the barcode. 
+    * **EMM:** Export the StageNow XML file from the StageNow installation. Send the XML using either [OEMConfig](/oemconfig) or [MX](/mx/overview). 
+
+-->
+
+<hr>
+
+<!-- 
+### Deploy via Application
+
+To securely deploy the NG SimulScan programmatically with your application:
+
+1. In your AndroidManifest.xml file, add the following permissions:
+
+        <uses-permission android:name="com.zebra.securestoragemanager.securecontentprovider.PERMISSION.WRITE" />
+        <uses-permission android:name="com.zebra.securestoragemanager.securecontentprovider.PERMISSION.READ" />
+2. In your AndroidManifest.xml file, add the following queries which allows your application to interact with SSM:
+
+        <queries>
+            <package android:name="com.zebra.securestoragemanager" />
+            <provider android:authorities="com.zebra.securestoragemanager.securecontentprovider"/>
+        </queries>
+3. In your AndroidManifest.xml file, add the following code to define a FileProvider that allows your application to grant read permissions to files. Replace `com.your.package.name` with the actual package name of your application.
+
+        <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="com.your.package.name.provider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+            <meta-data 
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/provider_paths"/>
+        </provider>
+
+4. Within your application project, in the "xml" subfolder under the "res" parent folder, add a file named “provider_paths.xml" with the following content:
+
+        <?xml version="1.0" encoding="utf-8"?>
+            <paths xmlns:android="http://schemas.android.com/apk/res/android">
+            <root-path path="/data/tmp/public" name="public"/>
+            <root-path path="/enterprise/usr"  name="user"/>
+            <external-path path="." name="external_files"/>
+            <files-path path="." name="template"/>
+        </paths>
+
+5. Within your application project, create a directory (e.g. documentCaptureTemplates) inside the "assets" folder and copy your XML template within this folder.
+<img alt="image" style="height:300px" src="configdbs.png"/> 
+
+6. In your application, add a function called uploadTemplates(), which copies files from the "assets" directory and uploads them via the copy function copyFileViaSSM().
+
+        public void uploadTemplates() {
+
+            AssetManager assetManager = getAssets();
+            String[] files = null;
+            try {
+                files = assetManager.list(ASSET_TEMPLATE_DIR);
+            } catch (IOException e) {
+                Log.e(TAG, "Failed to get asset file list: " + e.getMessage());
+            }
+            if (files != null) {
+
+                for (String filename : files) {
+                    InputStream in = null;
+                    OutputStream out = null;
+
+                    try {
+                        in = assetManager.open(ASSET_TEMPLATE_DIR + "/" + filename);
+
+                        String outDir = getFilesDir().getAbsolutePath() + "/";
+
+                        File outFile = new File(outDir, filename);
+
+                        out = new FileOutputStream(outFile);
+
+                        copyFile(in, out);
+                        in.close();
+                        out.flush();
+                        out.close();
+
+                        copyFileViaSSM(outFile.getAbsolutePath(), "ngsstemplate");
+
+                    } 
+
+                    catch (IOException e) {
+                        Log.e("tag", "Failed to copy asset file: " + filename, e);
+                    }
+                }
+            } 
+
+            else {
+                Log.d(TAG, "asset file list is null");
+            }
+        }
+
+        private void copyFile(InputStream in, OutputStream out) throws IOException {
+
+            byte[] buffer = new byte[1024];
+            int read;
+            while ((read = in.read(buffer)) != -1) {
+                out.write(buffer, 0, read);
+            }
+        }
+
+        public void copyFileViaSSM(String sourcePath, String type) {
+
+            File file = new File(sourcePath);
+
+            Uri contentUri = FileProvider.getUriForFile(this, this.getPackageName() + ".provider", file);
+
+            this.getApplicationContext().grantUriPermission("com.zebra.securestoragemanager", contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION); // Needed to grant permission for SSM to read the uri
+
+            Uri cpUriQuery = Uri.parse(AUTHORITY_FILE + this.getPackageName());
+
+            try {
+                ContentValues values = new ContentValues();
+                values.put("target_app_package", String.format("{\"pkgs_sigs\": [{\"pkg\":\"%s\",\"sig\":\"%s\"}]}", "com.symbol.datawedge", signature));
+                values.put("data_name", String.valueOf(contentUri)); // Passes the content uri as a input source
+                values.put("data_type", "3");
+                values.put("data_value", "com.symbol.datawedge/" + type + "/" + file.getName()); // Replace “targetPath” with the package name of the target app that is accessing the deployed file (or retrieve the app package using context.getPackageName()) followed by "/" and the full path of the file, e.g. "context.getPackageName()/A.txt"
+
+                values.put("data_persist_required", false);
+                Uri createdRow = this.getContentResolver().insert(cpUriQuery, values);
+                Log.i(TAG, "SSM Insert File: " + createdRow.toString());
+
+            } 
+
+            catch (Exception e) {
+                Log.e(TAG, "SSM Insert File - error: " + e.getMessage() + "\n\n");
+            }
+
+        }
+7. Call the method uploadTemplates() to upload your template files from your asset folder to DataWedge.
+
+-----
+-->
+
+<h3 id="deployviaapplication" class="anchor"><a class="heading-anchor" href="#deployviaapplication"><span></span></a>Deploy via Application</h3>
+
+<p>This section describes how to use SSM to securely deploy a file to a device. A DataWedge Profile is used as an example. </p>
+
+<h4 id="intheappsandroidmanifestxmlfile" class="anchor"><a class="heading-anchor" href="#intheappsandroidmanifestxmlfile"><span></span></a>In the app's <code>AndroidManifest.xml</code> file:</h4>
+
+<ol>
+<li><p>Add the following permissions:</p>
+
+<pre class="prettyprint"><code>&lt;uses-permission android:name="com.zebra.securestoragemanager.securecontentprovider.PERMISSION.WRITE" /&gt;
+&lt;uses-permission android:name="com.zebra.securestoragemanager.securecontentprovider.PERMISSION.READ" /&gt;
+</code></pre></li>
+
+<li><p>Add the following queries to allow the app to interact with SSM:</p>
+
+<pre class="prettyprint"><code>&lt;queries&gt;
+    &lt;package android:name="com.zebra.securestoragemanager" /&gt;
+    &lt;provider android:authorities="com.zebra.securestoragemanager.securecontentprovider"/&gt;
+&lt;/queries&gt;
+</code></pre></li>
+
+<li><p>Add the following code to define a FileProvider that allows the app to grant read permissions to files. Replace <code>com.app.package.name</code> with the package name of the app.</p>
+
+<pre class="prettyprint"><code>&lt;provider
+    android:name="androidx.core.content.FileProvider"
+    android:authorities="com.your.package.name.provider"
+    android:exported="false"
+    android:grantUriPermissions="true"&gt;
+    &lt;meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/provider_paths"/&gt;
+&lt;/provider&gt;
+</code></pre></li>
+</ol>
+
+<h4 id="intheappsproject" class="anchor"><a class="heading-anchor" href="#intheappsproject"><span></span></a>In the app's project:</h4>
+
+<ol>
+<li><p>In the "xml" subfolder under the "res" parent folder, add a file named <code>provider_paths.xml</code> with the following content:</p>
+
+<pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;paths xmlns:android="http://schemas.android.com/apk/res/android"&gt;
+    &lt;root-path path="/data/tmp/public" name="public"/&gt;
+    &lt;root-path path="/enterprise/usr"  name="user"/&gt;
+    &lt;external-path path="." name="external_files"/&gt;
+    &lt;files-path path="." name="template"/&gt;
+&lt;/paths&gt;
+</code></pre></li>
+
+<li><p>Create a directory (e.g. ConfigDBs) inside the "assets" folder and copy the DataWedge Profile and/or config file within this folder:
+<img alt="image" style="height:300px" src="configdbs-2.png"> </p></li>
+
+<li><p>In the app, add a function called <code>uploadTemplates()</code>, which copies files from the "assets" directory and uploads them via the copy function <code>copyFileViaSSM()</code>.</p>
+
+<pre class="prettyprint"><code>
+public void uploadConfigDB(boolean isFullDB) {
+
+<pre><code>AssetManager assetManager = getAssets();
+String[] files = null;
+
+try {
+    files = assetManager.list(ASSET_DB_DIR);
+} 
+catch (IOException e) {
+    Log.e(TAG, "Failed to get asset file list: " + e.getMessage());
+}
+
+if (files != null) {
+
+    for (String filename : files) {
+
+        if (isFullDB &amp;amp;&amp;amp; filename.equals("datawedge.db"))
+        {
+            integrateFile(assetManager, filename);
+        } 
+        else if (!isFullDB &amp;amp;&amp;amp; filename.startsWith("dwprofile_"))
+        {
+            integrateFile(assetManager, filename);
+        }
+    }
+} 
+else {
+    Log.d(TAG, "asset file list is null");
+}
+</code></pre>
+
+}
+
+private void integrateFile(AssetManager assetManager, String filename) {
+    InputStream in = null;
+    OutputStream out = null;
+
+<pre><code>try {
+    in = assetManager.open(ASSET_DB_DIR + "/" + filename);
+
+    String outDir = getFilesDir().getAbsolutePath() + "/";
+    File outFile = new File(outDir, filename);
+
+    out = new FileOutputStream(outFile);
+
+    copyFile(in, out);
+    in.close();
+    out.flush();
+    out.close();
+
+    copyFileViaSSM(outFile.getAbsolutePath(), "config");
+
+} 
+catch (IOException e) {
+    Log.e("tag", "Failed to copy asset file: " + filename, e);
+}
+</code></pre>
+
+}
+
+private void copyFile(InputStream in, OutputStream out) throws IOException {
+    byte[] buffer = new byte[1024];
+    int read;
+    while ((read = in.read(buffer)) != -1) {
+        out.write(buffer, 0, read);
+    }
+}
+
+public void copyFileViaSSM(String sourcePath, String type) {
+
+<pre><code>File file = new File(sourcePath);
+
+Uri contentUri = FileProvider.getUriForFile(this, this.getPackageName() + ".provider", file);
+
+this.getApplicationContext().grantUriPermission("com.zebra.securestoragemanager", contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION); // Needed to grant permission for SSM to read the uri
+
+Uri cpUriQuery = Uri.parse(AUTHORITY_FILE + this.getPackageName());
+
+try {
+    ContentValues values = new ContentValues();
+    values.put("target_app_package", String.format("{\"pkgs_sigs\": [{\"pkg\":\"%s\",\"sig\":\"%s\"}]}", "com.symbol.datawedge", signature));
+    values.put("data_name", String.valueOf(contentUri)); // Passes the content uri as a input source
+    values.put("data_type", "3");
+    values.put("data_value", "com.symbol.datawedge/" + type + "/" + file.getName()); // Replace “targetPath” with the package name of the target app that is accessing the deployed file (or retrieve the app package using context.getPackageName()) followed by "/" and the full path of the file, e.g. "context.getPackageName()/A.txt"
+
+    values.put("data_persist_required", false);
+    Uri createdRow = this.getContentResolver().insert(cpUriQuery, values);
+    Log.i(TAG, "SSM Insert File: " + createdRow.toString());
+
+} 
+catch (Exception e) {
+    Log.e(TAG, "SSM Insert File - error: " + e.getMessage() + "\n\n");
+}
+</code></pre>
+
+}
+</code></pre></li>
+
+<li><p>Call the method <code>uploadConfigDB(boolean isFullDB)</code> to upload the configuration DB files from the asset folder to DataWedge.</p>
+
+<ul>
+<li>If uploading a full configuration DB, pass "true" for the "isFullDB" parameter </li>
+
+<li>If uploading a profile DB, pass "false" for the "isFullDB" parameter</li></ul></li>
+</ol>
+
+<hr>
+
+<h2 id="zebraappdeploymentfiles" class="anchor"><a class="heading-anchor" href="#zebraappdeploymentfiles"><span></span></a>Zebra App Deployment Files</h2>
+
+<p>Use the values below to deploy, share or consume files between and among Zebra apps on a device. </p>
+
+<p><iframe width="1200" height="250" frameborder="0" src="https://publish.smartsheet.com/e64c684b69bb4d3d9a9a9e68caee144a"></iframe> </p>
+
+<!-- 
+Licensing table (works fine)
+
+<IFRAME WIDTH=1080 HEIGHT=5600 FRAMEBORDER=0 SRC="https://app.smartsheet.com/b/publish?EQBCT=c1d258b4766942a3af7b5933feaa2ed9"></IFRAME>
+
+ -->
+
+<hr>
+
+<h3 id="alsosee-1" class="anchor"><a class="heading-anchor" href="#alsosee-1"><span></span></a>Also See</h3>
+
+<ul>
+<li><a href="../share-files">File Sharing with SSM</a></li>
+
+<li><a href="../share-data">Data Sharing with SSM</a></li>
+
+<li><a href="../api">SSM APIs</a></li>
+
+<li><a href="../api/#samplecodefordatasharing">SSM Code Samples</a></li>
+</ul><p></p>
+                                        
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-sm-6-->
+            </div>
+            </section>
+        </div>
+    </section>    
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+					</div>
+					<div class="modal-body">
+						<div id="modalImg">
+						
+						</div>
+					</div>
+			</div>
+		  </div>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                    </div>
+                     <!--
+                     <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div> -->
+                 </div>
+            </div>
+        </footer>
+    
+    <!--/#footer 
+        10/25/18 removed <footer id="footer" class="navbar-fixed-bottom">
+    -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>
