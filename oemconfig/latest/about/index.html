@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             OEMConfig
-                                            11.9
+                                            13.1
                         </p>
 
                     </ul>
@@ -81,32 +81,27 @@
 
 
                         <li>
-                            <a href="/oemconfig/11-9/about">
+                            <a href="/oemconfig/13-1/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/11-9/setup">
+                            <a href="/oemconfig/13-1/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/11-9/mc">
-                                    Managed Configs (Legacy)
+                            <a href="/oemconfig/13-1/mc">
+                                    Managed Configs
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/11-9/mc2">
-                                    Managed Configs (A11+)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/oemconfig/11-9/faq">
+                            <a href="/oemconfig/13-1/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/11-9/search">
+                            <a href="/oemconfig/13-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -222,7 +217,7 @@
                                     <h1 id="about-oemconfig" class="anchor"><a class="heading-anchor" href="#about-oemconfig"><span></span></a>About OEMConfig</h1>
                                     <p>
                                             OEMConfig
-                                            11.9
+                                            13.1
                                     </p>
                                 </div>
                             </section>                    
@@ -235,7 +230,7 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h4 id="whatsnewinoemconfig119whatsnewinv119" class="anchor"><a class="heading-anchor" href="#whatsnewinoemconfig119whatsnewinv119"><span></span></a><a href="#whatsnewinv119">What's new in OEMConfig 11.9</a></h4>
+                                        <p></p><h4 id="whatsnewinoemconfig131whatsnewinv131" class="anchor"><a class="heading-anchor" href="#whatsnewinoemconfig131whatsnewinv131"><span></span></a><a href="#whatsnewinv131">What's new in OEMConfig 13.1</a></h4>
 
 <h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
@@ -251,14 +246,72 @@
 
 <hr>
 
-<h2 id="whatsnewinv119" class="anchor"><a class="heading-anchor" href="#whatsnewinv119"><span></span></a>What's New in v11.9</h2>
+<h2 id="whatsnewinv131" class="anchor"><a class="heading-anchor" href="#whatsnewinv131"><span></span></a>What's New in v13.1</h2>
 
-<blockquote>
-  <p><i class="fa fa-hand-paper-o fa-5x" style="color:#FF0000;"></i><br><font size="5" color="red">&nbsp;STOP!!</font><br>
-  <strong><u>There are now TWO versions of Zebra OEMConfig</u></strong>. Be sure to use the correct version for the devices being targeted.<br> </p>
-</blockquote>
+<p>• <strong>Supports MX 13.1, adding the following major features and enhancements</strong>:</p>
+
+<ul>
+<li><strong>Access Manager adds the ability to</strong>: 
+
+
+<ul>
+<li>Pre-grant, pre-deny or defer to the user <a href="../mc/#pkgConfig.package.packagePermissions.packagePermission">access to "Dangerous Permissions"</a>.</li>
+
+<li>Allow the Android system to <a href="../mc/#pkgConfig.package.packageFeatureVariances.packageFeatureVariance">automatically control permission to seldom-used apps</a>.</li></ul>
+</li>
+
+<li><strong>Network Connection Manager is a new CSP introduced with MX 11.9</strong> that allows an administrator to set preferences for connecting to cellular (WWAN) and Wi-Fi (WLAN) networks to help ensure that devices use the optimal network at all times. Features from this CSP are implemented in a OEMConfig group called <a href="../mc/#networkconnectionconfiguration">Network Connection Configuration</a>. They are: 
+
+
+<ul>
+<li><a href="../mc/#wirelessAndNetworkConfig.wirelessNetworkConfig.wNCAllowedAccessPoints">Allowed Access Points</a>, which accepts a list of APs to allow in order of priority.</li>
+
+<li><a href="../mc/#wirelessAndNetworkConfig.wirelessNetworkConfig.wNCRefreshInterval">Connection Refresh Interval</a>, which sets a time interval (in seconds) to wait before comparing the quality of the current connection against an AP from the Allowed Access Points list.</li>
+
+<li><a href="../mc/#wirelessAndNetworkConfig.wirelessNetworkConfig.wNCMinimumWLAN">Signal level to connect WLAN</a>, which sets the minimum signal level (in dBm) for connection to a Wi-Fi (WLAN) network.</li>
+
+<li><a href="../mc/#wirelessAndNetworkConfig.wirelessNetworkConfig.wNCMinimumWWAN">Signal level to connect WWAN</a>, which sets the minimum signal level (in dBm) for connection to a cellular (WWAN) network. </li></ul>
+</li>
+
+<li><strong>Power Manager adds the ability to</strong>: <br>
+
+
+<ul>
+<li><a href="../mc/#systemConfig.powerConfig.powerRecoveryModeAccess">Set Recovery Mode Access</a> to features that could compromise a device.</li></ul>
+</li>
+
+<li><strong>UI Manager adds the ability to</strong>: 
+
+
+<ul>
+<li><a href="../mc/#uiConfig.uiGeneralConfig.uiElementConfig.uiElementDoNotDisturb">Turn on/off Do Not Disturb</a> mode on a device. </li>
+
+<li><a href="../mc/#uiConfig.uiGeneralConfig.uiFeaturesConfig.uiFeatureInterAppSharing">Enable/disable Inter-app sharing</a> on a device. </li>
+
+<li><a href="../mc/#uiConfig.uiGeneralConfig.uiElementConfig.uiElementImmersiveMode">Show/hide Immersive Mode pop-up</a> warning.</li>
+
+<li><a href="../mc/#uiConfig.uiTouchPanelConfig.touchAndHoldDelay">Configure Touch-and-Hold delay</a> for key long-presses. </li>
+
+<li><a href="../mc/#uiConfig.uiGeneralConfig.uiGCSSWorkflows">Create Workflows to auto-launch</a> one or more apps.</li>
+
+<li><a href="../mc/#uiConfig.uiGeneralConfig.uiGCSSWorkflows.uiGCSSWorkflow.uiGCSSWFApp1PackageName">Allocate screen-sharing percentage</a> for Workflow apps. </li></ul>
+</li>
+
+<li><strong>Wi-Fi adds the ability to</strong>: 
+
+
+<ul>
+<li><a href="../mc/#wirelessAndNetworkConfig.wlanConfig.wlanFTM.wlanFTMLocationUpdateMode">Allow an administrator to select the FTM intervals</a>, a preference for the frequency of updates to the Fine Timing Measurement Location on a device.</li></ul>
+</li>
+</ul>
+
+<p><i><font size="2" color="DimGrey"> <b>NOTE</b>: Some features implemented with OEMConfig 13.1 were introduced with MX 11.9.</font></i> </p>
 
 <hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="addedinv119" class="anchor"><a class="heading-anchor" href="#addedinv119"><span></span></a>Added in v11.9</h3>
 
 <h4 id="zebraoemconfigpoweredbymxmay2023" class="anchor"><a class="heading-anchor" href="#zebraoemconfigpoweredbymxmay2023"><span></span></a>"Zebra OEMConfig Powered by MX" (May 2023)</h4>
 
@@ -431,8 +484,6 @@
 </ul>
 
 <hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h2 id="addedinv115" class="anchor"><a class="heading-anchor" href="#addedinv115"><span></span></a>Added in v11.5</h2>
 
