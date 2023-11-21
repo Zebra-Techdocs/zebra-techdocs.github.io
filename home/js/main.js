@@ -1078,6 +1078,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
             break;
         // Wireless Insights
         case '/vas-sdk/1-0':
+        case '/vas-sdk/2-0'
             ddl_doc.options.length = 0;
             for (i=0; i < vas_1_0_text.length; i++) {
                 createOption(ddl_doc, vas_1_0_text[i], vas_1_0_val[i]);
