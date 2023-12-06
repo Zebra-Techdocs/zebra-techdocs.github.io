@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.6
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.7
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-5','1-4','/enterprise-browser/3-6/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-5','1-4','/enterprise-browser/3-7/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/about">
+                            <a href="/enterprise-browser/3-7/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-7/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/tutorial/">
+                            <a href="/enterprise-browser/3-7/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/samples">
+                            <a href="/enterprise-browser/3-7/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide">
+                            <a href="/enterprise-browser/3-7/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/licensing">
+                            <a href="/enterprise-browser/3-7/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/migration">
+                            <a href="/enterprise-browser/3-7/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/configreference">
+                            <a href="/enterprise-browser/3-7/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/api">
+                            <a href="/enterprise-browser/3-7/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/download">
+                            <a href="/enterprise-browser/3-7/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/search">
+                            <a href="/enterprise-browser/3-7/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -345,7 +345,7 @@
         <td class="clsSyntaxCells clsEvenRow">Returns a boolean value (1 or 0) representing the radio power state via radioPowerStateEvent.</td>
     </tr>
     <tr>
-        <td class="clsSyntaxCells clsOddRow"><b>addPreFilter <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
+        <td class="clsSyntaxCells clsOddRow"><b>addPreFilter <i class="fa fa-android" style="color:#a4c639;"></i>* <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
         <td class="clsSyntaxCells clsOddRow">Adds a pre-configured filter to the currently selected antenna. Used to sort out the subset of tags to participate in the next RFID operations. Multiple preFilters can be added, limited by the RFID reader. Each should be referenced by a unique value (which should be assigned to preFilterID property) before calling addPreFilter method.</td>
     </tr>
     <tr>
@@ -353,7 +353,7 @@
         <td class="clsSyntaxCells clsEvenRow">Deletes a pre-filter of the index set by preFilterID property.</td>
     </tr>
     <tr>
-        <td class="clsSyntaxCells clsOddRow"><b>clearPreFilters <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
+        <td class="clsSyntaxCells clsOddRow"><b>clearPreFilters <i class="fa fa-android" style="color:#a4c639;"></i>* <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
         <td class="clsSyntaxCells clsOddRow">Deletes ALL preFilters</td>
     </tr>
     <tr>
@@ -413,6 +413,8 @@
         <td class="clsSyntaxCells clsOddRow">gets the result of the last access operation in the lastAccessResultEvent. The result consists of numbers of tags on which the last access operation succeeded and failed. Note that this method can give valid results only after a operationCompleteEvent is received indicating that the last operation has ended.</td>
     </tr>
 </tbody></table>
+
+<p><i><font size="2" color="DimGrey"> * Supported only on devices running Android 11 or later.</font></i></p>
 
 <h2 id="parameters" class="anchor"><a class="heading-anchor" href="#parameters"><span></span></a>Parameters</h2>
 
@@ -568,31 +570,31 @@
         <td class="clsSyntaxCells clsOddRow">SELECT_NOT_UNSELECT</td>
     </tr>
     <tr>
-        <td class="clsSyntaxCells clsEvenRow"><b>preFilterBitCount:[Value] <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
+        <td class="clsSyntaxCells clsEvenRow"><b>preFilterBitCount:[Value] <i class="fa fa-android" style="color:#a4c639;"></i>* <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
         <td class="clsSyntaxCells clsEvenRow">Number of applicable bits in the filterHexPattern</td>
         <td class="clsSyntaxCells clsEvenRow">Used to specify the number of bits within the preFilterHexPattern to match in a subsequent call to addFilter().</td>
         <td class="clsSyntaxCells clsEvenRow">N/A</td>
     </tr>
     <tr>
-        <td class="clsSyntaxCells clsOddRow"><b>preFilterBitOffset:[Value] <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
+        <td class="clsSyntaxCells clsOddRow"><b>preFilterBitOffset:[Value] <i class="fa fa-android" style="color:#a4c639;"></i>* <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
         <td class="clsSyntaxCells clsOddRow">Offset from the start of the memory bank in bits</td>
-        <td class="clsSyntaxCells clsOddRow">Used to specify the offset into the memory bank (position) applicable to a subsequent call to addFilter().</td>
-        <td class="clsSyntaxCells clsOddRow">32</td>
+        <td class="clsSyntaxCells clsOddRow">Used to specify the offset into the memory bank (position) applicable to a subsequent call to addFilter().<br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> EPC memory consists of 16-bit Cyclic Redundancy Check (CRC-16) error detection code, a 16-bit Protocol Control (PC) followed by tag data that must be considered when defining the preFilterBitOffset value for a preFilter. When considering CRC and PC bits, a typical RFID tag will have the tag data starting from the 32nd bit. Hence to filter by a hex pattern present in the tag data section of EPC memory, the tag bit value must be offset by 32. For example: If the hex pattern to be searched starts at tag data bit 0, set the preFilterBitOffset to 32.</td>
+        <td class="clsSyntaxCells clsOddRow">0</td>
     </tr>
     <tr>
-        <td class="clsSyntaxCells clsEvenRow"><b>preFilterHexPattern:[Value] <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
+        <td class="clsSyntaxCells clsEvenRow"><b>preFilterHexPattern:[Value] <i class="fa fa-android" style="color:#a4c639;"></i>* <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
         <td class="clsSyntaxCells clsEvenRow">Hex Pattern</td>
         <td class="clsSyntaxCells clsEvenRow">Used to specify a hex pattern to apply in a subsequent call to addFilter().</td>
         <td class="clsSyntaxCells clsEvenRow">N/A</td>
     </tr>
     <tr>
-        <td class="clsSyntaxCells clsOddRow"><b>preFilterID:[Value] <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
+        <td class="clsSyntaxCells clsOddRow"><b>preFilterID:[Value] <i class="fa fa-android" style="color:#a4c639;"></i>* <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
         <td class="clsSyntaxCells clsOddRow">unsigned integer</td>
         <td class="clsSyntaxCells clsOddRow">Used to specify the ID of the filter to apply in a subsequent call to addFilter() or deleteFilter().</td>
         <td class="clsSyntaxCells clsOddRow">N/A</td>
     </tr>
     <tr>
-        <td class="clsSyntaxCells clsEvenRow"><b>preFilterMemBank:[Value] <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
+        <td class="clsSyntaxCells clsEvenRow"><b>preFilterMemBank:[Value] <i class="fa fa-android" style="color:#a4c639;"></i>* <i class="fa fa-windows" style="color:#357EC7;"></i></b></td>
         <td class="clsSyntaxCells clsEvenRow">Reserved, EPC, TID, User</td>
         <td class="clsSyntaxCells clsEvenRow">Used to specify the memory bank to apply in a subsequent call to addFilter().</td>
         <td class="clsSyntaxCells clsEvenRow">EPC</td>
@@ -808,6 +810,8 @@
         <td class="clsSyntaxCells clsOddRow">N/A</td>
     </tr>
 </tbody></table>
+
+<p><i><font size="2" color="DimGrey"> * Supported only on devices running Android 11 or later.</font></i></p>
 
 <h2 id="events" class="anchor"><a class="heading-anchor" href="#events"><span></span></a>Events</h2>
 

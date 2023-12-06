@@ -51,10 +51,10 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.6
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Enterprise Browser 3.7
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                                <li><a onclick="changeVersion('3-5','1-4','/enterprise-browser/3-6/guide/about')">Enterprise Browser 1.4</a></li>
+                                <li><a onclick="changeVersion('3-5','1-4','/enterprise-browser/3-7/guide/about')">Enterprise Browser 1.4</a></li>
                           </ul>
                         </li>                    
                     </ul>
@@ -65,47 +65,47 @@
 
 
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/about">
+                            <a href="/enterprise-browser/3-7/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/gettingstarted/">
+                            <a href="/enterprise-browser/3-7/guide/gettingstarted/">
                                     Start Here
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/tutorial/">
+                            <a href="/enterprise-browser/3-7/tutorial/">
                                     Tutorials
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/samples">
+                            <a href="/enterprise-browser/3-7/guide/samples">
                                     Sample Apps
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide">
+                            <a href="/enterprise-browser/3-7/guide">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/licensing">
+                            <a href="/enterprise-browser/3-7/guide/licensing">
                                     License
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/migration">
+                            <a href="/enterprise-browser/3-7/guide/migration">
                                     Migrate
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/guide/configreference">
+                            <a href="/enterprise-browser/3-7/guide/configreference">
                                     Config.xml
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/api">
+                            <a href="/enterprise-browser/3-7/api">
                                     APIs
                             </a>
                         </li>
@@ -115,12 +115,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/download">
+                            <a href="/enterprise-browser/3-7/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/enterprise-browser/3-6/search">
+                            <a href="/enterprise-browser/3-7/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="configxml-reference" class="anchor"><a class="heading-anchor" href="#configxml-reference"><span></span></a>Config.xml Reference</h1>
                                     <p>
                                             Enterprise Browser
-                                            3.6
+                                            3.7
                                     </p>
                                 </div>
                             </section>                    
@@ -254,13 +254,13 @@
 
 <p>The default <code>Config.xml</code> file for Android devices is displayed below, followed by explanations of all tags and parameter settings for Android and Windows Mobile/CE. The EB <code>Config.xml</code> can be edited with an ordinary text editor or with the <a href="../ConfigEditor">Config Editor utility</a> included with the installation of Enterprise Browser 1.3 and later. </p>
 
-<h3 id="iclassfafaexclamationcircleariahiddentruestylecolorff0000iimportant" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationcircleariahiddentruestylecolorff0000iimportant"><span></span></a><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> IMPORTANT</h3>
+<h3 id="iclassfafaexclamationtrianglestylecolorffa500imxusernotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500imxusernotes"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> MX User Notes:</h3>
 
-<blockquote>
-  <p><strong><u>On devices running Android 10</u></strong>: Some EB device-setting parameters are executed through the <a href="https://techdocs.zebra.com/mx/overview/">MX Framework</a>, Zebra's device management layer. If an EB app containing such parameters is executed immediately after a device is booted, some or all of the instructions could fail if the MX Framework isn't ready in time to receive them. To prevent such failures, <strong><u>Zebra recommends waiting 20 seconds after a device starts up before launching any EB app</u></strong> containing one or more of the configuration parameters listed below. </p>
-</blockquote>
+<ul>
+<li><strong><u>On devices running Android 10</u></strong>: Some EB device-setting parameters are executed through the <a href="https://techdocs.zebra.com/mx/overview/">MX Framework</a>, Zebra's device management layer. If an EB app containing such parameters is executed immediately after a device is booted, some or all of the instructions could fail if the MX Framework isn't ready in time to receive them. To prevent such failures, <strong><u>Zebra recommends waiting 20 seconds after a device starts up before launching any EB app</u></strong> containing one or more of the configuration parameters listed below.<br></li>
 
-<h4 id="mxbasedconfigparameters" class="anchor"><a class="heading-anchor" href="#mxbasedconfigparameters"><span></span></a>MX-based Config Parameters:</h4>
+<li><strong>MX-based Config Parameters</strong>: 
+
 
 <ul>
 <li><a href="#hidesystembar">HideSystemBar</a></li>
@@ -271,7 +271,10 @@
 
 <li><a href="#setbackkeydisable">setBackKeyDisable</a></li>
 
-<li><a href="#setrecentappdisable">setRecentAppDisable</a></li>
+<li><a href="#setrecentappdisable">setRecentAppDisable</a></li></ul>
+</li>
+
+<li><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> <u><strong>IMPORTANT</strong></u>: <strong>For organizations using MX to configure Enterprise Browser parameters</strong>: Zebra recommends a setting of '0' in the <code>Config.XML</code> file for any parameter listed above that is to be configured with MX. Any other value causes the corresponding MX setting(s) to be reversed whenever an EB app is minimized or closed.</li>
 </ul>
 
 <hr>
