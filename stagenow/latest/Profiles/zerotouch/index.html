@@ -11,8 +11,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Device Owner Transfer">
-    <title>Device Owner Transfer - TechDocs</title>
+    <meta title="Zero Touch Wizard">
+    <title>Zero Touch Wizard - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!--     
@@ -176,7 +176,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Device Owner Transfer</strong></li>
+                            <li><strong>Zero Touch Wizard</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -262,7 +262,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="device-owner-transfer" class="anchor"><a class="heading-anchor" href="#device-owner-transfer"><span></span></a>Device Owner Transfer</h1>
+                                    <h1 id="zero-touch-wizard" class="anchor"><a class="heading-anchor" href="#zero-touch-wizard"><span></span></a>Zero Touch Wizard</h1>
                                     <p>
                                             StageNow
                                             5.11
@@ -278,132 +278,78 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
-
-<p><strong>This guide covers the transfer of device ownership from the Zebra Device Manager (ZDM) to an Enterprise Mobility Management (EMM) system</strong> without the loss of user-installed apps or data.</p>
-
-<blockquote>
-  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>If losing non-factory data is not a concern</strong>, a <a href="../csp/power/#factoryreset">Factory Reset</a> might be the simplest way to remove any existing device ownership in preparation for enrollment into a company's own EMM system.<br> <br>
-  <i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <b><font size="4" color="red">IMPORTANT:</font></b><br></p>
-  
-  <ul>
-  <li><strong>If a device was previously enrolled in <a href="/zebradna">Zebra DNA Cloud</a>, a <a href="../csp/power/#factoryreset">Factory Reset</a> MUST be performed on the device</strong> before it can be enrolled into any third-party EMM. Zebra recommends backing up device data before performing this action.  </li>
-  
-  <li><strong>Enrollment in a third-party EMM <u>blocks app installation from unknown sources, including Zebra apps</u></strong> unless <em>unblocked</em> by the EMM.<br></li>
-  </ul>
-</blockquote>
+                                        <p></p><p>Use this Wizard to configure the network settings of a "factory fresh" or factory-reset device to enable connection to the internet through Ethernet, Wi-Fi or a non-public cellular APN. This enables the device to access internet-based Google Zero Touch servers, which perform Device Owner Enrollment in an Enterprise Mobile Management (EMM) system, rendering the device manageable with minimal user interaction. <strong>Settings entered in this Wizard can be persisted on the device</strong> following an Enterprise Reset, further automating subsequent enrollments. </p>
 
 <h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
 
 <ul>
-<li><strong>StageNow 5.8</strong> (or later) on Windows PC</li>
+<li><strong>StageNow 4.2</strong> or later</li>
 
-<li><strong>Zebra device(s) running Android 11 or later</strong></li>
+<li>Zebra device(s) running <strong>Android 8.x Oreo</strong> (or later) with <strong>MX 10</strong> (or later)</li>
 
-<li><strong>MX 11.5</strong> or later on device(s)</li>
-
-<li><strong>Company's EMM DPC</strong> <code>packagename</code> and <code>classname</code></li>
+<li><strong>EMM with Zero Touch support</strong> and credentials</li>
 </ul>
 
-<h3 id="whatsadpc" class="anchor"><a class="heading-anchor" href="#whatsadpc"><span></span></a>What's a DPC?</h3>
-
-<p>On devices running Android in an enterprise, the <strong>device policy controller (DPC) acts as an intermediary between a company's EMM and the device itself, responsible for enforcing device policies issued by system administrators</strong>. The DPC can prevent certain apps from being installed and/or launched, and controls which Android features and device peripherals can be used. The DPC can perform many other duties, including separation of data and apps for work and personal use on a device. </p>
-
-<blockquote>
-  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>A device can have only one DPC</strong>, and if also the Device Owner (DO), it has ultimate authority over all device actions.<br><br>
-  <i class="fa fa-hand-paper-o fa-lg" style="color:#FF0000;"></i> Unless otherwise noted, the term <strong>"Device Owner" refers NOT to a person or business entity, but to a software agent</strong> running on the device that controls its activities.</p>
-</blockquote>
-
 <hr>
 
-<h2 id="transferownership" class="anchor"><a class="heading-anchor" href="#transferownership"><span></span></a>Transfer Ownership</h2>
-
-<h3 id="isetzdmasdo" class="anchor"><a class="heading-anchor" href="#isetzdmasdo"><span></span></a>I. Set ZDM as DO</h3>
-
-<p>The first step in transferring ownership from ZDM to an EMM's device policy controller (DPC) is to ensure that ZDM is the device owner. <strong>Zebra can transfer ownership ONLY from its own DPC</strong>. </p>
-
-<ol>
-<li>In StageNow, <strong>create a new Profile targeting MX 11.5</strong> (or later).</li>
-
-<li><strong>Add the Intent CSP</strong> to the Profile.</li>
-
-<li><strong>Select "EnrollDeviceOwner"</strong> from the Intent Action parameter. </li>
-
-<li><strong>Enter ZDM details</strong>: <br>
-&nbsp;&nbsp;&nbsp;&nbsp; a. PackageName: <code>com.zebra.devicemanager</code><br> 
-&nbsp;&nbsp;&nbsp;&nbsp; b. ClassName: <code>com.zebra.devicemanager.policy.devadmin.DevAdminReceiver</code><br> 
-&nbsp;&nbsp;&nbsp;&nbsp; c. Bundle data: Do nothing<br> </li>
-
-<li><strong>Generate and scan the barcode</strong> to set ZDM as the DO. </li>
-</ol>
-
-<h4 id="samplexml" class="anchor"><a class="heading-anchor" href="#samplexml"><span></span></a>Sample XML</h4>
-
-<p><strong>Set Zebra Device Manager as the Device Owner</strong>:</p>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt;  
-&lt;characteristic version="9.2" type="Intent"&gt; 
-    &lt;parm name="Action" value="EnrollDeviceOwner" /&gt; 
-    &lt;parm name="Package" value="com.symbol.devicemanager" /&gt; 
-    &lt;parm name="Class" value=" com.zebra.devicemanager.policy.devadmin.DevAdminReceiver " /&gt; 
- &lt;/characteristic&gt; 
-&lt;/wap-provisioningdoc&gt; 
-</code></pre>
+<h3 id="usingzerotouchwizard" class="anchor"><a class="heading-anchor" href="#usingzerotouchwizard"><span></span></a>Using Zero Touch Wizard</h3>
 
 <blockquote>
-  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Intended for sample purposes only</strong>. Zebra recommends using ONLY machine-generated XML for testing and deployment. </p>
+  <p><code>IMPORTANT:</code> <strong>The Zero Touch Wizard does NOT prevent the Android Setup Wizard from running</strong> on a new device when first booted, or when rebooting immediately after a Factory or Enterprise reset.<br><strong>How to manually <a href="../wipedevice/#setupwizardmanualbypass">bypass the Android Setup Wizard</a></strong>.</p>
 </blockquote>
 
-<h3 id="iitransferdotoemm" class="anchor"><a class="heading-anchor" href="#iitransferdotoemm"><span></span></a>II. Transfer DO to EMM</h3>
-
-<p><strong>To transfer ownership from ZDM to the EMM's DCP, follow the same steps as in section I.</strong>, substituting the EMM's DCP <code>packagename</code> and <code>classname</code>, and entering <code>bundledata</code> (if any) as a string or Json file. </p>
+<p><strong>NOTE</strong>: To create a single Profile that can be used to stage multiple devices with different settings, <a href="../../dynamicstaging/#usingdynamicstaging">enable Dynamic Staging</a>.  </p>
 
 <ol>
-<li>In StageNow, <strong>create a new Profile targeting MX 11.5</strong> (or later).</li>
+<li>From the StageNow Home screen, <strong>click "Create new Profile"</strong> to bring up the Wizards list.<br> 
+Then <strong>select "Configure Zero Touch Network"</strong> to start the Wizard:
+<img alt="image" style="height:450px" src="sn42_ztw_00.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-<li><strong>Add the Intent CSP</strong> to the Profile.</li>
+<li><strong>Select the network type</strong> for connecting the device to the internet.<br>
+<strong>NOTE</strong>: Only one network type may be selected: <br>
+<img alt="image" style="height:350px" src="sn42_ztw_02.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-<li><strong>Select "EnrollDeviceOwner"</strong> from the Intent Action parameter. </li>
+<li><strong>Enter the settings</strong> for configuring the device for LAN connectivity. <br>
+<strong>NOTE: On devices with MX 10.2 (or later)</strong>, StageNow 5.0.2 (and later) offers the following additional network options for selection:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>RF band</strong> (2.4GHz, 5.0GHz or Auto)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Fine Timing Measurement</strong> (FTM) (enable/disable)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Network type</strong> (PSK/PEAP)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>PEAP/MSCHAPV2 options</strong> (if PEAP is the Network type)<br>
+<img alt="image" style="height:400px" src="sn42_ztw_03.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-<li><strong>Enter EMM's DPC details</strong>: <br>
-&nbsp;&nbsp;&nbsp;&nbsp; a. PackageName: <code>net.vendor.controlApp.androidwork</code><br> 
-&nbsp;&nbsp;&nbsp;&nbsp; b. ClassName: <code>net.vendor.controlApp.admin.DeviceAdminAgent</code><br> 
-&nbsp;&nbsp;&nbsp;&nbsp; c. DOJsonData: Json File<br> 
-&nbsp;&nbsp;&nbsp;&nbsp; d. DOJsonFileData: [paste Json data into field]<br> </li>
+<li><strong>Select Persistence preference</strong>, then <strong>click Continue</strong>: <br>
+<img alt="image" style="height:350px" src="sn42_ztw_04.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
 
-<li><strong>Generate and scan the barcode</strong> to set the EMM's DPC as the DO. </li>
+<li><strong>Click "+ Expand"</strong> to review settings, if desired.<br>
+Then <strong>click "Complete Profiles"</strong> to continue: 
+<img alt="image" style="height:350px" src="sn42_ztw_05.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
+
+<li><strong>Select deployment preferences</strong>, including barcode or USB/SD (<code>.bin</code> file) and barcode type as applicable): 
+<img alt="image" style="height:350px" src="sn42_ztw_06.png">
+<em>Click image to enlarge; ESC to exit</em>.<br>
+<br></li>
+
+<li><strong>Test Profile</strong> to confirm desired behavior.<br>
+Then <strong>click Publish</strong> to make the Profile available to StageNow operators.  </li>
+
+<li><strong>Select Export method</strong> as needed.  </li>
 </ol>
 
-<h4 id="samplexml-1" class="anchor"><a class="heading-anchor" href="#samplexml-1"><span></span></a>Sample XML</h4>
-
-<p><strong>Set EMM's DPC as the Device Owner</strong>:</p>
-
-<pre class="prettyprint"><code>
-&lt;wap-provisioningdoc&gt; 
-  &lt;characteristic version="10.5" type="Intent"&gt; 
-    &lt;parm name="Action" value="EnrollDeviceOwner" /&gt; 
-    &lt;parm name="Package" value="net.vendor.controlApp.androidwork" /&gt; 
-    &lt;parm name="Class" value="net.vendor.controlApp.admin.DeviceAdminAgent" /&gt; 
-    &lt;parm name="DOJsonData" value="Json File" /&gt; 
-    &lt;parm name="DOJsonFileData" value="IHsNCiJhbmRyb2lkLmFwcC5leHRyYS5QUk9WSVNJT05JTkdfREVWSUNFX0FETUlOX0NPTVBPTkVOVF9OQU1FIjoNCiJuZXQuc290aS5tb2JpY29udHJvbC5hbmRyb2lkd29yay9uZXQuc290aS5tb2JpY29udHJvbC5hZG1pbi5EZXZpY2VBZG1pbkFkYXB0ZXIiLA0KImFuZHJvaWQuYXBwLmV4dHJhLlBST1ZJU0lPTklOR19ERVZJQ0VfQURNSU5fU0lHTkFUVVJFX0NIRUNLU1VNIjoNCiJobjhtU05KTVBjb3ZXYm5uV3JiLXVNcFdaak5sTnAtanlWXzJBLVdodW1jPVxuIiwNCiJhbmRyb2lkLmFwcC5leHRyYS5QUk9WSVNJT05JTkdfREVWSUNFX0FETUlOX1BBQ0tBR0VfRE9XTkxPQURfTE9DQVRJT04iOg0KImh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9ZG93bmxvYWQmaWQ9MUt4UHFnZzV5eWk5QVU1YnRLRi1nMEk3NXRoVGR5R2FrIiwNCiJhbmRyb2lkLmFwcC5leHRyYS5QUk9WSVNJT05JTkdfU0tJUF9FTkNSWVBUSU9OIjoiZmFsc2UiLA0KImFuZHJvaWQuYXBwLmV4dHJhLlBST1ZJU0lPTklOR19BRE1JTl9FWFRSQVNfQlVORExFIjp7DQoiZW5yb2xsbWVudElkIjoiV0VXVVhWNzkiDQp9DQp9DQoNCgkNCg==" /&gt; 
-  &lt;/characteristic&gt; 
-&lt;/wap-provisioningdoc&gt; 
-</code></pre>
+<h4 id="theprofileisnowreadyfordeployment" class="anchor"><a class="heading-anchor" href="#theprofileisnowreadyfordeployment"><span></span></a>The Profile is now ready for deployment.</h4>
 
 <blockquote>
-  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Intended for sample purposes only</strong>. Zebra recommends using ONLY machine-generated XML for testing and deployment. </p>
-</blockquote>
-
-<hr>
-
-<h2 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h2>
-
-<ul>
-<li><strong><a href="https://zebra-stage.github.io/stagenow/5-11/stagingprofiles/#icreateaprofile">Creating a StageNow Profile</a> |</strong> Step-by-step guide to Profile creation and usage</li>
-
-<li><strong><a href="https://zebra-stage.github.io/stagenow/5-11/smartprofile/">Creating Smart Profiles</a> |</strong> Guide for automating OS-update Profiles </li>
-</ul><p></p>
+  <p><code>IMPORTANT NOTES:</code><br> • <strong>The Zero Touch Wizard does NOT prevent the Android Setup Wizard from running</strong> on a new device when first booted, or when rebooting immediately after a Factory or Enterprise reset.<br><strong>How to manually <a href="../wipedevice/#setupwizardmanualbypass">bypass the Android Setup Wizard</a></strong>. <br> • <strong>A Zero Touch Profile no longer functions for Zero Touch enrollment</strong> if saved and imported onto the same or a different host workstation. </p>
+</blockquote><p></p>
                                         
 
 
