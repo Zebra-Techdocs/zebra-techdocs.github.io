@@ -229,7 +229,7 @@
                                     <div class="">
 
                                         <p></p><blockquote>
-  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>PAGE UPDATED: Sep. 28, 2023</strong></p>
+  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>PAGE UPDATED: Jan 31, 2024</strong></p>
 </blockquote>
 
 <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -241,10 +241,21 @@
 <ul>
 <li><a href="#android13migrationprocess">Android 13 Migration Process</a> - Use this method if special action for data preservation is required.</li>
 
-<li><a href="#android13quickupgrade">Android 13 Quick Upgrade</a> - Use this method if data preservation is <em>NOT</em> required, or if special action is <em>NOT</em> required to preserve data.
-<!-- 
-**The first section of this document covers the migration process to handle scenarios in which special action to achieve <u>data preservation is required.</u>** If data preservation is ***NOT*** required, or if **special action is _NOT_ required to preserve data**, then [skip to the A13 Quick Upgrade (data loss)](#a13quickupgradedataloss) section of this document for Zebra's alternative simpler upgrade process.--></li>
+<li><a href="#android13quickupgrade">Android 13 Quick Upgrade</a> - Use this method if data preservation is <em>NOT</em> required, or if special action is <em>NOT</em> required to preserve data.</li>
 </ul>
+
+<blockquote>
+  <p><strong>IMPORTANT</strong>:<br></p>
+  
+  <ul>
+  <li><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Use of managed configurations requires</strong> the latest version of <strong><a href="https://play.google.com/store/apps/details?id=com.zebra.enrollmentmgr">Zebra Enrollment Manager</a> from Google Play</strong>.</li>
+  
+  <li><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>Devices running Android 11 or later <em>SHOULD NOT</em> install the Zebra Common Transport Layer (CTL) from Google Play</strong>; the tool is preinstalled and self-updating.<br></li>
+  </ul>
+</blockquote>
+
+<!-- 
+**The first section of this document covers the migration process to handle scenarios in which special action to achieve <u>data preservation is required.</u>** If data preservation is ***NOT*** required, or if **special action is _NOT_ required to preserve data**, then [skip to the A13 Quick Upgrade (data loss)](#a13quickupgradedataloss) section of this document for Zebra's alternative simpler upgrade process.-->
 
 <!--
 > <i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> **This process is NOT NECESSARY for devices that comply with [Common Criteria Certification](https://www.zebra.com/us/en/cpn/common-criteria-certification.html)**.<br> 
@@ -723,11 +734,14 @@ When finished, <strong>tap "Proceed" and then "Save XML"</strong> to store the G
 
 <li><strong>Install File Guardian</strong> on the device using the chosen method (EMM, StageNow + AppMgr, etc.).</li>
 
-<li><strong>Launch File Guardian</strong> and use the tool to perform an assessment on the device (as in <a href="#step18">Step 18</a>, above).
+<li><strong>If using StageNow or an EMM</strong>, send the broadcast intent action:
 
 
 <ul>
-<li>If using an EMM, the EMM device agent should broadcast the <code>com.zebra.intent.action.START_COARSE_ESTIMATE</code> intent action.</li></ul>
+<li><code>com.zebra.intent.action.START_COARSE_ESTIMATE</code><br>
+and specify the component:</li>
+
+<li><code>com.zebra.fileutility/com.zebra.fileutility.StandardOsCalculation</code></li></ul>
 </li>
 
 <li>Upon receiving the intent, File Guardian will consume the GC file and perform the assessment in two phases:
@@ -752,7 +766,10 @@ When finished, <strong>tap "Proceed" and then "Save XML"</strong> to store the G
 <i class="fa fa-check-circle" style="color:#27AE60;"></i> Some EMMs can be configured through rules to monitor a file on the device and display test results in the EMM console.</li>
 </ol>
 
-<!-- MORE INFO TO COME from ENG
+<!-- 1/11/24- removed from step 4, above per eng. 
+**Launch File Guardian** and use the tool to perform an assessment on the device (as in [Step 18](#step18), above).
+
+MORE INFO TO COME from ENG
 
 DO NOT CLICK THE ICON (an error results, with the message: "This app is not meant to be opened") 
 
@@ -963,7 +980,7 @@ EMM admin is starting FOTA from their EMM console. FOTA logic instructs admin to
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
