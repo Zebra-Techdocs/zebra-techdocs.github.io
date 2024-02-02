@@ -91,13 +91,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-0/usage">
-                                    User Guide
+                            <a href="/identityguardian/1-0/mc">
+                                    Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-0/mc">
-                                    Managed Configurations
+                            <a href="/identityguardian/1-0/usage">
+                                    User Guide
                             </a>
                         </li>
                         <li>
@@ -237,30 +237,81 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Zebra's <strong><a href="https://www.zebra.com/identityguardian">Identity Guardian</a></strong> enables secure and personalized user access to mobile devices by combining biometric authentication with multifactor login protocols. Facial biometrics unlock the mobile devices securely, regardless of whether they are shared or personally assigned. For users who prefer alternatives to facial biometrics, a unique barcode or PIN offers secure access options.</p>
+<p>Zebra's <strong><a href="https://www.zebra.com/identityguardian">Identity Guardian</a></strong> 
+offers a secure login solution for both enterprise shared or personally assigned mobile computers. It not only facilitates access to devices but also ensures the protection and privacy of both user and corporate data.</p>
 
-<!--Zebra's **[Identity Guardian](https://www.zebra.com/identityguardian)** simplifies device authentication by combining facial biometric recognition, multifactor login, and Single Sign-On (SSO) for a personalized role-based experience. It utilizes facial biometrics to unlock mobile devices securely, regardless of whether they are shared or personally assigned. If facial biometrics is not the preferred choice, a unique barcode or PIN offers an alternative secure access method.-->
+<!--Zebra's **[Identity Guardian](https://www.zebra.com/identityguardian)** simplifies device authentication by combining facial biometric recognition, multifactor login, and Single Sign-On (SSO) for a personalized role-based experience. It utilizes facial biometrics to unlock mobile devices securely, regardless of whether they are shared or personally assigned. If facial biometrics is not the preferred choice, a unique barcode or PIN offers an alternative secure access method.  enables secure and personalized user access to mobile devices by combining biometric authentication with multifactor login protocols. Facial biometrics unlock the mobile devices securely, regardless of whether they are shared or personally assigned. For users who prefer alternatives to facial biometrics, a unique barcode or PIN offers secure access options.
+-->
 
-<p>Identity Guardian ensures full protection of user data. In a <a href="../usage/#shareddevice">shared device model,</a> user data is securely encrypted in a personal barcode, which can be created using facial recognition and simply discarded to remove personal data. For <a href="../usage/#personallyassigneddevice">personally assigned devices,</a> user data is secured within the Android framework, inaccessible even to the organization.</p>
+<p>In a <a href="../usage/#shareddevice">shared device environment,</a> user data is securely encrypted and encapsulated within a personal barcode, generated via facial recognition and can be easily discarded to erase personal data. On <a href="../usage/#personallyassigneddevice">personally assigned devices,</a> the user data is securely embedded within the Android framework, making it inaccessible even to the organization.</p>
 
 <p>Key benefits of Identity Guardian:</p>
 
 <ul>
-<li><strong>User Data Protection -</strong> Multiple layers of protection safeguard employee personal data. </li>
+<li><strong>User Data Protection -</strong> Multiple layers of protection ensure that employee data is protected, while employees have control over their data. </li>
 
-<li><strong>Biometric authentication -</strong> Facial biometrics delivers a seamless and highly secure method for unlocking mobile devices. </li>
+<li><strong>Application Authentication -</strong> Integration with identity providers (IdPs) simplifies authentication by only requiring users to log in once and then leveraging single sign-on (SSO) to streamlines the process.</li>
 
-<li><strong>Multifactor Authentication -</strong> Confirm user identity by requiring more than one verification factor.</li>
+<li><strong>Facial Biometrics -</strong> Users seamlessly and securely unlock their mobile device using facial biometrics. </li>
 
-<li><strong>Application Support -</strong> Integration with industry leading Identity Providers (IdPs) for simplified authentication via Single Sign On (SSO) streamlines the process, requiring users to log in only once.</li>
+<li><strong>Multifactor Login -</strong> For enhaanced security, users can be prompted to provide multiple authentication factors to sign into a device: facial recognition, user passcode, and/or SSO authentication</li>
 
-<li><strong>Enhanced Accountability -</strong> Leveraging the Zebra DNA Cloud platform, administrators gain insight into user activities by tracking who has signed in and out of devices. This is a unique feature not found in shared PIN or Passcode systems.</li>
+<li><strong>Accountability -</strong> Empowers administrators with comprehensive visibility into devices and their associated users.</li>
+
+<li><strong>Personalization -</strong> Enables organizations to customize on-device experiences that are specifically tailored to align with the roles of the users.</li>
 </ul>
 
 <!-- With identity provider (IdP) integration, Identity Guardian simplifies application authentication. Users only need to sign in once using [SSO](../setup). After that, SSO manages the rest of the application sign-ins, streamlining the process.
 
 Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or Enterprise Mobility Mangement (EMM), organizations can customize device controls and access dashboard visibility into device usage, including who has signed in/out of a device, usage times, etc. enforcing user accountability. 
 -->
+
+<hr>
+
+<h2 id="mainfeatures" class="anchor"><a class="heading-anchor" href="#mainfeatures"><span></span></a>Main Features</h2>
+
+<p>Identity Guardian main features:</p>
+
+<ul>
+<li>Supports user enrollment and authentication for shared and personally-assigned devices </li>
+
+<li>Multi-factor authentication support: 
+
+
+<ul>
+<li>Facial biometric authentication </li>
+
+<li>User passcode authentication </li>
+
+<li>SSO authentication using Microsoft Entra ID or PingID</li></ul>
+</li>
+
+<li>Supports other apps and device events that invoke the lock screen</li>
+
+<li>Installation and configuration can be performed through Zebra DNA Cloud</li>
+
+<li>Device usage details and user information is visible from the Zebra DNA Cloud console</li>
+</ul>
+
+<hr>
+
+<h2 id="usagenotes" class="anchor"><a class="heading-anchor" href="#usagenotes"><span></span></a>Usage Notes</h2>
+
+<ul>
+<li>Screen lock in Android device settings must be set to “None.” Other types of screen locks, such as swipe or pin, are not supported. </li>
+
+<li>When using the 42Gears EMM system, apps installed via ZDNA in app update mode must be assigned as high priority.  </li>
+
+<li>While performing facial biometric authentication on a Zebra ET45, the device must not be rotated.  </li>
+</ul>
+
+<hr>
+
+<h2 id="knownissues" class="anchor"><a class="heading-anchor" href="#knownissues"><span></span></a>Known Issues</h2>
+
+<ul>
+<li><strong>If Microsoft Entra ID is used as the SSO provider, Microsoft applications such as Teams, Word, etc., are not using the shared log-in session to facilitate single sign-on.</strong> Consequently, users are required to re-enter their login credentials when using these Microsoft apps. </li>
+</ul>
 
 <hr>
 

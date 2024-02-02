@@ -91,13 +91,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-0/usage">
-                                    User Guide
+                            <a href="/identityguardian/1-0/mc">
+                                    Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-0/mc">
-                                    Managed Configurations
+                            <a href="/identityguardian/1-0/usage">
+                                    User Guide
                             </a>
                         </li>
                         <li>
@@ -237,9 +237,11 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Administrators set up Identity Guardian usage policies and controls through <a href="../mc/">Managed Configurations</a> using either <a href="/zebradna">Zebra DNA Cloud</a> or Enterprise Mobility Management (EMM). This enables organizations to customize device restrictions and access. It also provides administrators dashboard visibility into usage details like user sign-in/sign-out events and usage times. This oversight helps enforce user accountability. </p>
+<p><strong>Through either <a href="/zebradna">Zebra DNA Cloud</a> or Enterprise Mobility Management (EMM), administrators establish usage policies and controls for Identity Guardian via <a href="../mc/">Managed Configurations</a>.</strong> This enables companies to personalize device restrictions and access. Additionally, administrators gain insight into usage details such as user sign-in/sign-out events and usage times through a dashboard, promoting user accountability. </p>
 
-<p>Identity Guardian simplifies application authentication with identity provider (IdP) integration. Users only need to sign in once using <a href="#sso">SSO</a>. After that, SSO manages the rest of the application sign-ins, streamlining the process.</p>
+<p><strong>Identity Guardian streamlines application authentication by integrating with the identity provider (IdP).</strong> Users need only to sign in once with <a href="#sso">single sign-on (SSO)</a>, which then handles subsequent application sign-ins, streamlining the process.</p>
+
+<p><strong>It is necessary to install Identity Guardian app on the devices.</strong></p>
 
 <hr>
 
@@ -248,47 +250,422 @@
 <p>Identity Guardian requirements:</p>
 
 <ul>
-<li>Zebra devices running <strong>Android 11 or higher</strong> are supported.</li>
+<li>Zebra devices running <strong>Android 11 or higher</strong> are supported. See Zebra Support Portal for the supported devices. <font color="red"><i>Link to be added upon product release.</i></font></li>
 
-<li>For <strong>biometric authentication,</strong> a front-facing camera is required</li>
+<li>For <strong>biometric authentication,</strong> a front-facing camera is required on the device</li>
 
 <li><strong>Licenses:</strong>
 
 
 <ul>
-<li>An <strong>Identity Guardian license</strong> is required for advanced features including facial biometric authentication, Single Sign-On (SSO) support and device API support. See <a href="/licensing">Mobility DNA licensing</a> for information on how to obtain and apply the license.</li>
+<li>An <strong>Identity Guardian license</strong> is required for advanced features including facial biometric authentication, Single Sign-On (SSO) support and device API support. Deploy Zebra Identity Guardian licenses using <a href="/mx/licensemgr">Zebra License Manager</a>.</li>
 
 <li>Zebra Professional-series devices require a <strong><a href="/licensing">Mobility DNA Enterprise license</a></strong> for basic functionality</li></ul>
 </li>
 </ul>
 
+<p>SSO requirement: </p>
+
+<ul>
+<li>Support is available for <strong>integration with both Microsoft Entra ID (formerly Azure Active Directory) and PingID platforms</strong> with OAUTH and OAUTH+OIDC authentication protocols.</li>
+</ul>
+
 <hr>
 
-<h2 id="installation" class="anchor"><a class="heading-anchor" href="#installation"><span></span></a>Installation</h2>
+<h2 id="download" class="anchor"><a class="heading-anchor" href="#download"><span></span></a>Download</h2>
 
-<p>Download and install Identity Guardian from the Zebra support portal. <font color="red"><i>Link will be added upon product release.</i></font></p>
+<p>Download and install Identity Guardian from the Zebra support portal. <font color="red"><i>Link to be added upon product release.</i></font></p>
 
 <hr>
 
 <h2 id="sso" class="anchor"><a class="heading-anchor" href="#sso"><span></span></a>SSO</h2>
 
-<p>Identity Guardian integrates with Identity Providers (IdPs) simplifying authentication by only requiring users to log in once, and then leveraging Single Sign-On (SSO) to streamline the process. This single login grants users to gain access to multiple applications, eliminating the need to keep track of multiple logins for each app.</p>
+<p>Identity Guardian integrates with identity providers (IdPs) simplifying authentication by only requiring users to log in once, and then leveraging single sign-on (SSO) to streamline the process. This single login grants users to gain access to multiple applications, eliminating the need to keep track of multiple logins for each app. There are 2 types of IdPs supported: Microsoft Entra ID and PingID.</p>
 
-<blockquote>
-  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Integrations with both Microsoft Entra ID (formerly Azure Active Directory) and PingID platforms are available, with support provided for the OAUTH and OAUTH + OIDC authentication protocols.</p>
-</blockquote>
+<h3 id="microsoftentraid" class="anchor"><a class="heading-anchor" href="#microsoftentraid"><span></span></a>Microsoft Entra ID</h3>
 
-<p><font color="red"><i>Instructions to be provided upon product release.</i></font></p>
+<p>This section provides guidance to integrate Identity Guardian with Microsoft Entra ID (formerly Azure Active Directory):</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#iregisterzebraidentityguardian">I. Register Zebra Identity Guardian</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#iiconfiguressoforshareddevices">II. Configure SSO for Shared Devices</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#iiiconfiguremicrosoftauthenticatorapp">III. Configure Microsoft Authenticator App</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ivconfigurezebraidentityguardianapp">IV. Configure Zebra Identity Guardian App</a><br></p>
+
+<p><br></p>
+
+<h4 id="iregisterzebraidentityguardian" class="anchor"><a class="heading-anchor" href="#iregisterzebraidentityguardian"><span></span></a>I. Register Zebra Identity Guardian</h4>
+
+<p><strong>To establish a trust relationship between Identity Guardian and the Microsoft identity platform, register Zebra Identity Guardian</strong> as an Android application in Microsoft Entra ID (IdP). <em>Consult Microsoft's documentation for guidance on registering an application with the Microsoft identity platform.</em></p>
+
+<p>Please ensure to enter or select the following when registering Identity Guardian:</p>
+
+<ul>
+<li>For the supported account type, select "Single tenant." 
+<img alt="image" style="height:525px" src="single-tenant.png"></li>
+
+<li>When configuring the Android app, enter the following:
+
+
+<ul>
+<li><strong>Package name:</strong> com.zebra.mdna.els</li>
+
+<li><strong>Signature hash:</strong> KqmK9tYXpw+eW2lke7US3iG9EAQ=
+<img alt="image" style="height:450px" src="config-android-app.png"></li></ul>
+</li>
+
+<li>Download the code sample and save the file as <code>auth_config_single_account.json</code>. This will be used in a subsequent step to configure the app settings on the device.
+<img alt="image" style="height:450px" src="download-code-sample.png">
+<br></li>
+</ul>
+
+<h4 id="iiconfiguressoforshareddevices" class="anchor"><a class="heading-anchor" href="#iiconfiguressoforshareddevices"><span></span></a>II. Configure SSO for Shared Devices</h4>
+
+<p><strong>If Microsoft Authenticator is used for single sign-on (SSO) on shared devices, it is possible to integrate a third-party device compliance partner solution with Microsoft Intune.</strong> This allows for the collection of device compliance data in conjunction with Intune's own compliance results. The combined data can be used to formulate access policies, providing enhanced protection for your organization and its data. Examples of third-party device compliance partners include solutions such as SOTI MobiControl, VMware Workspace ONE UEM (formerly AirWatch), and others. <em>Consult your EMM or Microsoft's documentation for guidance on adding a third-party device compliance partner in Intune.</em></p>
+
+<p><br></p>
+
+<h4 id="iiiconfiguremicrosoftauthenticatorapp" class="anchor"><a class="heading-anchor" href="#iiiconfiguremicrosoftauthenticatorapp"><span></span></a>III. Configure Microsoft Authenticator App</h4>
+
+<p><strong>For optimal use of shared device mode with SSO through Microsoft Authenticator, ensure the Microsoft Authenticator app is installed on the devices.</strong> This facilitates automatic SSO single sign-in and single sign-out across apps on the device.</p>
+
+<p>To install and configure Microsoft Authenticator app:</p>
+
+<ol>
+<li><p>Download and install the Microsoft Authenticator app from Google Play via an EMM, such as SOTI MobiControl or VMware Workspace ONE UEM.</p></li>
+
+<li><p>In the EMM, enable <strong>Shared Device Mode</strong> and enter the <strong>Shared Device Mode Tenant Identifier</strong> (obtained from the Microsoft Entra ID).</p>
+
+<p><img alt="image" style="height:400px" src="managed-config-shared-device.png"></p>
+
+<p><em>SOTI MobiControl Managed App Config</em>
+<br></p></li>
+</ol>
+
+<h4 id="ivconfigurezebraidentityguardianapp" class="anchor"><a class="heading-anchor" href="#ivconfigurezebraidentityguardianapp"><span></span></a>IV. Configure Zebra Identity Guardian App</h4>
+
+<p><strong>To enable user access to the device through SSO, install and set up Identity Guardian on the devices:</strong></p>
+
+<ol>
+<li>Deploy and install Zebra Identity Guardian app on the devices.</li>
+
+<li>Launch the app using an EMM. <em>This step must be performed at least once.</em></li>
+
+<li>Enter the <a href="../mc">Managed Configuration</a> settings for the app via your EMM:
+
+
+<ul>
+<li>Select the application mode:
+
+
+<ul>
+<li><strong>Application Mode:</strong> Authentication
+<img alt="image" style="height:375px" src="managed-config-app-mode.jpg">
+<em>zDNA Cloud Managed Config</em></li></ul>
+</li>
+
+<li>Configure the Verification Setup to validate the user access:
+
+
+<ul>
+<li><strong>Primary Authentication Factor:</strong> SSO</li>
+
+<li><strong>Secondary Authentication Factor:</strong> [Select FACE, PASSCODE, SSO or NONE]</li>
+
+<li><strong>Fallback Authentication Factor:</strong> [Select FACE, PASSCODE, NONE, SSO or ADMIN BYPASS PASSCODE]</li>
+
+<li><strong>Primary Authentication Timeout:</strong> [Enter value in ms, e.g. "300000"]</li>
+
+<li><strong>Fallback Authentication Timeout:</strong> [Enter value in ms, e.g. "300000"]
+<img alt="image" style="height:450px" src="managed-config-verification-setup.jpg">
+<em>zDNA Cloud Managed Config</em></li></ul>
+</li>
+
+<li>Configure the Lock-screen Event options:
+
+
+<ul>
+<li><strong>On Unlock:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On Reboot:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On AC power connected:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On AC power disconnected:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On device manual check in:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On user change: Verification Setup:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+<img alt="image" style="height:400px" src="managed-config-lock-screen.jpg">
+<em>zDNA Cloud Managed Config</em></li></ul>
+</li></ul>
+</li>
+
+<li>Configure the SSO Authentication Configuration for the app to communicate with Microsoft SSO to authenticate the user:
+
+
+<ul>
+<li><strong>Single Sign On Provider:</strong> Microsoft</li>
+
+<li><strong>Authentication Protocol:</strong> OAuth 2.0 (OIDC)</li>
+
+<li><strong>Scope:</strong> [Enter the string based on the SSO server settings]</li>
+
+<li><strong>Configuration Settings:</strong> [Enter the following string, but replace "client_id" and "authority_url" with your values from <code>auth_config_single_account.json</code> file downloaded from step I.]
+<pre class="prettify prettyprint"><code>
+            {
+                "client_id" : "[ENTER YOUR CLIENT ID]",
+                "authorization_user_agent" : "DEFAULT",
+                "redirect_uri" : "msauth://com.zebra.mdna.els/KqmK9tYXpw%2BeW2lke7US3iG9EAQ%3D",
+                "account_mode" : "SINGLE",
+                "broker_redirect_uri_registered": true,
+                "shared_device_mode_supported": true,
+                "authorities" : [
+                    {
+                        "type": "AAD",
+                        "authority_url": "[ENTER YOUR AUTHORITY URL]"
+                    }  
+                ]
+            }
+        </code>
+</pre>
+<img alt="image" style="height:450px" src="managed-config-sso-ms.jpg">
+<em>zDNA Cloud Managed Config</em></li></ul>
+</li></ul>
+</li>
+
+<li>If mapping the SSO response to application-specific roles, enter the following (see <a href="../mc">Managed Configurations</a> for more information):
+
+
+<ul>
+<li><strong>Configuration Role Identification -</strong> Enables the recognition and mapping of the Single Sign-On (SSO) response to application-specific roles. Click <strong>Add Role Identifier</strong> as needed.
+
+
+<ul>
+<li><strong>Role Identifier -</strong> Establishes links between roles in SSO responses and their corresponding roles within the Identity Guardian app.
+
+
+<ul>
+<li><strong>Identity Guardian Role Name -</strong> Enter the Identity Guardian user role to be assigned based on SSO response during user sign-in </li>
+
+<li><strong>Key-value Pair for Role Assignment -</strong> Add one or more SSO key-value pairs to identify and map users to a predefined Identity Guardian user role. Click <strong>Add SSO Key-Value Pair</strong> as needed.
+
+
+<ul>
+<li><strong>SSO Key-Value Pair -</strong> Choose whether the SSO response, which contains the user key and values, should be mapped to a corresponding user role in Identity Guardian
+
+
+<ul>
+<li><strong>SSO Key -</strong> Enter the SSO key to map it to an Identity Guardian role.</li>
+
+<li><strong>SSO Value -</strong> Enter the SSO value(s) to map to the Identity Guardian role. Use commas to separate multiple entries.
+<img alt="image" style="height:450px" src="managed-config-roleID.jpg">
+<em>zDNA Cloud Managed Config</em></li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li>
+
+<li>See <a href="../mc">Managed Configurations</a> to configure any other non-SSO settings.</li>
+
+<li>Deploy the Managed Configurations to the devices through your EMM. </li>
+</ol>
+
+<p>When a device gets updated with the new configurations, Zebra Identity Guardian activates the lock screen. The user is then required to authenticate themselves using Single Sign-On (SSO) to gain access to the device. See <a href="../usage/">User Guide</a> for more information.</p>
 
 <hr>
 
-<h2 id="zdnacloud" class="anchor"><a class="heading-anchor" href="#zdnacloud"><span></span></a>ZDNA Cloud</h2>
+<h3 id="pingid" class="anchor"><a class="heading-anchor" href="#pingid"><span></span></a>PingID</h3>
 
-<p>Prior to device setup, configure Identity Guardian via <a href="../mc/">Managed Configurations</a> through <a href="/zebradna">Zebra DNA Cloud</a>. This determines the method of device use (shared or personally assigned), user enrollment, and authentication method (facial biometric, passcode, and/or PIN).</p>
+<p>This section provides guidance to integrate Identity Guardian with PingID.</p>
 
-<p><img alt="image" style="height:450px" src="zdna-myapps.jpg"></p>
+<p><strong>To enable user access to the device through SSO, install and set up Identity Guardian on the devices:</strong></p>
 
-<p>See <a href="/zebradna/latest/usage/#myapps">ZDNA Cloud documentation</a> for a guide on how to configure Identity Guardian.</p>
+<ol>
+<li>Deploy and install Zebra Identity Guardian app on the devices.</li>
+
+<li>Launch the app using an EMM. <em>This step must be performed at least once.</em></li>
+
+<li>Enter the <a href="../mc">Managed Configuration</a> settings for the app via your EMM:
+
+
+<ul>
+<li>Select the application mode:
+
+
+<ul>
+<li><strong>Application Mode:</strong> Authentication
+<img alt="image" style="height:375px" src="managed-config-app-mode.jpg">
+<em>zDNA Cloud Managed App Config</em></li></ul>
+</li>
+
+<li>Configure the Verification Setup to validate the user access:
+
+
+<ul>
+<li><strong>Primary Authentication Factor:</strong> SSO</li>
+
+<li><strong>Secondary Authentication Factor:</strong> [Select FACE, PASSCODE, or NO_COMPARISON]</li>
+
+<li><strong>Fallback Authentication Factor:</strong> [Select FACE, PASSCODE, NONE, SSO or ADMIN BYPASS PASSCODE]</li>
+
+<li><strong>Primary Authentication Timeout:</strong> [Enter value in ms, e.g. "300000"]</li>
+
+<li><strong>Fallback Authentication Timeout:</strong> [Enter value in ms, e.g. "300000"]
+<img alt="image" style="height:450px" src="managed-config-verification-setup.jpg">
+<em>zDNA Cloud Managed Config</em></li></ul>
+</li>
+
+<li>Configure the Lock-screen Event options:
+
+
+<ul>
+<li><strong>On Unlock:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On Reboot:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On AC power connected:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On AC power disconnected:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On device manual check in:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On user change: Verification Setup:</strong> 
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+<img alt="image" style="height:400px" src="managed-config-lock-screen.jpg">
+<em>zDNA Cloud Managed Config</em></li></ul>
+</li></ul>
+</li>
+
+<li>Configure the SSO Authentication Configuration:
+
+
+<ul>
+<li><strong>Single Sign On Provider:</strong> PingId</li>
+
+<li><strong>Authentication Protocol:</strong> OAuth 2.0 (OIDC)</li>
+
+<li><strong>Scope:</strong> openid email profile</li>
+
+<li><strong>Userid Identifier:</strong> [Specify the user key for identifying the signed-in user]</li>
+
+<li><strong>Configuration Settings:</strong> [Enter the specified string, but replace the following values with those from your own SSO response: logoutURL, logoutURL, tokenURL, authorizationURL, clientId, userInfoUrl]
+<pre class="prettify prettyprint"><code>
+                {
+                    "redirectURI" : "com.zebra.mdna.els:/loginComplete",
+                    "logoutURL" : "[enter your logout URL]",
+                    "logoutURL" : "[enter your revoke URL]",
+                    "tokenURL" : "[enter your token URL]",
+                    "authorizationURL" : "[enter your authorization URL]",
+                    "clientAuthType" : 0,
+                    "clientId" : "[enter your clientID]",
+                    "certificatePhrase" : "",
+                    "userInfoUrl" : "[enter your serInfo URL]",
+                    "certificate" : ""
+                }
+            </code>
+</pre>
+<img alt="image" style="height:450px" src="managed-config-sso-ping.jpg">
+<em>zDNA Cloud Managed App Config</em></li></ul>
+</li></ul>
+</li>
+
+<li>If mapping the SSO response to application-specific roles, enter the following (see <a href="../mc">Managed Configurations</a> for more information):
+
+
+<ul>
+<li><strong>Configuration Role Identification -</strong> Enables the recognition and mapping of the Single Sign-On (SSO) response to application-specific roles. Click <strong>Add Role Identifier</strong> as needed.
+
+
+<ul>
+<li><strong>Role Identifier -</strong> Establishes links between roles in SSO responses and their corresponding roles within the Identity Guardian app.
+
+
+<ul>
+<li><strong>Identity Guardian Role Name -</strong> Enter the Identity Guardian user role to be assigned based on SSO response during user sign-in </li>
+
+<li><strong>Key-value Pair for Role Assignment -</strong> Add one or more SSO key-value pairs to identify and map users to a predefined Identity Guardian user role. Click <strong>Add SSO Key-Value Pair</strong> as needed.
+
+
+<ul>
+<li><strong>SSO Key-Value Pair -</strong> Choose whether the SSO response, which contains the user key and values, should be mapped to a corresponding user role in Identity Guardian
+
+
+<ul>
+<li><strong>SSO Key -</strong> Enter the SSO key to map it to an Identity Guardian role.</li>
+
+<li><strong>SSO Value -</strong> Enter the SSO value(s) to map to the Identity Guardian role. Use commas to separate multiple entries.
+<img alt="image" style="height:450px" src="managed-config-roleID.jpg">
+<em>zDNA Cloud Managed Config</em></li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li>
+
+<li>See <a href="../mc">Managed Configurations</a> to configure any other non-SSO settings.</li>
+
+<li>Deploy the Managed Configurations to the devices through your EMM. </li>
+</ol>
+
+<p>When a device gets updated with the new configurations, Zebra Identity Guardian activates the lock screen. The user is then required to authenticate themselves using Single Sign-On (SSO) to gain access to the device. See <a href="../usage/">User Guide</a> for more information.</p>
 
 <hr>
 
