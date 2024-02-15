@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            3.7
+                                            3.9
                         </p>
 
                     </ul>
@@ -81,32 +81,37 @@
 
 
                         <li>
-                            <a href="/zebradna/3-7/about">
+                            <a href="/zebradna/3-9/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/setup">
+                            <a href="/zebradna/3-9/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/usage">
+                            <a href="/zebradna/3-9/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/licensing">
+                            <a href="/zebradna/3-9/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/faq">
+                            <a href="/zebradna/3-9/design">
+                                    Design
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/zebradna/3-9/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/search">
+                            <a href="/zebradna/3-9/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -222,7 +227,7 @@
                                     <h1 id="using-zebra-dna-cloud" class="anchor"><a class="heading-anchor" href="#using-zebra-dna-cloud"><span></span></a>Using Zebra DNA Cloud</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            3.7
+                                            3.9
                                     </p>
                                 </div>
                             </section>                    
@@ -334,7 +339,28 @@
 
 <hr>
 
-<h3 id="deviceactionsindividual" class="anchor"><a class="heading-anchor" href="#deviceactionsindividual"><span></span></a>Device Actions (individual)</h3>
+<h3 id="columnselection" class="anchor"><a class="heading-anchor" href="#columnselection"><span></span></a>Column Selection</h3>
+
+<p><strong>ZDNA 3.2 introduced the ability to select which columns to show/hide on most device-listing screens</strong>. When the feature is available, a Column Selection button appears on the screen as seen below: <br>
+<img alt="image" style="height:350px" src="32_column_select.jpg">
+<em>Click image to enlarge; ESC to exit</em>. 
+<br></p>
+
+<h4 id="toselectcolumns" class="anchor"><a class="heading-anchor" href="#toselectcolumns"><span></span></a>To Select Columns:</h4>
+
+<ol>
+<li><strong>Click the Column Selection button</strong> to display the current selections (default = all).</li>
+
+<li><strong>Select a column to show/hide</strong> by checking/unchecking its checkbox. Results are displayed immediately. </li>
+
+<li><strong>Click "Done" to preserve the selections</strong> for later use. <strong>See note, below</strong>. </li>
+</ol>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Clicking away from the Column Selection box dismisses the box, temporarily displaying the latest selections. After clicking away from the screen, temporary changes are lost. Upon return, the last-saved column selections are displayed. If no preferences were previously saved, all columns are displayed (default). </p>
+
+<hr>
+
+<h3 id="deviceactions" class="anchor"><a class="heading-anchor" href="#deviceactions"><span></span></a>Device Actions</h3>
 
 <p><strong>From the My Devices screen, the following actions can be executed remotely</strong> on enrolled device(s): 
 <img alt="image" style="height:350px" src="Device actions.png">
@@ -362,25 +388,6 @@
 </ul>
 
 <p><i><font size="1" color="grey">* Has no effect if user changed passcode before ZDNA enrollment. To regain control, perform an Enterprise Reset and re-enroll device.<br>✝︎ Deleted devices could remain visible in deployment detail documents if the device was selected for deployment before being deleted.<br>‡ DNA Cloud 2.5 (or later) required for proper operation.</font></i></p>
-
-<h3 id="columnselection" class="anchor"><a class="heading-anchor" href="#columnselection"><span></span></a>Column Selection</h3>
-
-<p><strong>ZDNA 3.2 introduced the ability to select which columns to show/hide on most device-listing screens</strong>. When the feature is available, a Column Selection button appears on the screen as seen below: <br>
-<img alt="image" style="height:350px" src="32_column_select.jpg">
-<em>Click image to enlarge; ESC to exit</em>. 
-<br></p>
-
-<h4 id="toselectcolumns" class="anchor"><a class="heading-anchor" href="#toselectcolumns"><span></span></a>To Select Columns:</h4>
-
-<ol>
-<li><strong>Click the Column Selection button</strong> to display the current selections (default = all).</li>
-
-<li><strong>Select a column to show/hide</strong> by checking/unchecking its checkbox. Results are displayed immediately. </li>
-
-<li><strong>Click "Done" to preserve the selections</strong> for later use. <strong>See note, below</strong>. </li>
-</ol>
-
-<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Clicking away from the Column Selection box dismisses the box, temporarily displaying the latest selections. After clicking away from the screen, temporary changes are lost. Upon return, the last-saved column selections are displayed. If no preferences were previously saved, all columns are displayed (default). </p>
 
 <hr>
 
@@ -598,6 +605,27 @@
 <blockquote>
   <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>Zebra recommends re-checking <a href="../setup/#iconfigurenetwork">required network settings</a></strong> if troubles persist. </p>
 </blockquote>
+
+<hr>
+
+<h3 id="searchdevices" class="anchor"><a class="heading-anchor" href="#searchdevices"><span></span></a>Search Devices</h3>
+
+<p>ZDNA 3.8 and later allows admins to search for enrolled devices by the categories shown below (see image). </p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Search text must begin with the first character(s) of the string being searched</strong>. For example, searches by "Model" for TC-type device models must begin with "TC" to produce usable results. </p>
+
+<p><img alt="image" style="height:350px" src="38_device_search.jpg">
+ <em>Click image to enlarge; ESC to exit</em>.</p>
+
+<!-- 
+#### Search Categories
+
+* **Model**
+* **Device Name**
+* **Device Group**
+* **Serial Number**
+* **IMEI number** 
+ -->
 
 <hr>
 
@@ -972,7 +1000,7 @@
 
 <!-- 
 ALSO SEE PPC DEF'Ns (explanations)
-https://techdocs.zebra.com/ppc/3-7/guide/about/
+https://techdocs.zebra.com/ppc/3-9/guide/about/
 
 See EPIC:
 https://jira.zebra.com/browse/DLM-8112
@@ -1046,7 +1074,8 @@ https://jira.zebra.com/browse/DLM-8112
 When finished uploading files <strong>click Next</strong> to proceed: <br>
 <img alt="image" style="height:350px" src="zva_03b.png">
 <em>Click image to enlarge; ESC to exit.</em>
-<br></p></li>
+<br>
+<a id="appsetup6"></a></p></li>
 
 <li><p><strong>Enter a Name and Description</strong> for the profile or use the auto-generated name.<br>
 <strong>Click "Next"</strong> to proceed: 
@@ -1500,6 +1529,37 @@ formerly above ^ android_update_09a.png
 
 <hr>
 
+<h2 id="designstudio" class="anchor"><a class="heading-anchor" href="#designstudio"><span></span></a>Design Studio</h2>
+
+<p><strong>Zebra Design Studio is a suite of tools for customizing Zebra's Android apps and deploying those customizations through an enterprise</strong>, all from within the Zebra DNA Cloud console. </p>
+
+<p><img alt="image" style="height:236px" src="39design_studio.jpg">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<blockquote>
+  <p><a href="../design">See Design Studio guides</a></p>
+</blockquote>
+
+<!-- FROM MARKETING DOC: 
+Zebra-built software keyboard supports custom keys and layouts as well as industry-specific dictionaries to improve input speed and accuracy. 
+
+Title Description – ‘Customize Zebra solutions using Design Studio tools and build features personalized for your workforce.’
+
+Enterprise Keyboard – ‘Zebra-built software keyboard supports custom keys and layouts as well as industry-specific dictionaries to improve input speed and accuracy.’
+
+Enterprise Home Screen – ‘Zebra’s Android launcher controls access to apps and settings on Zebra devices, with easy administration through a point-and-click UI.’
+
+Enterprise Browser – ‘Fully customizable web browser for building apps with HTML and JavaScript that can scan and print on Zebra devices.’
+
+
+from /ekd
+Enterprise Keyboard Designer (EKD) is a free GUI tool for Windows that can be used to create customized key layouts to enhance an application and enable efficient and accurate data entry. 
+
+-->
+
+<hr>
+
 <h2 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h2>
 
 <ul>
@@ -1568,7 +1628,7 @@ _Click image to enlarge; ESC to exit._
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">

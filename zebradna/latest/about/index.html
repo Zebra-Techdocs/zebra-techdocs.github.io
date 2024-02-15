@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            3.7
+                                            3.9
                         </p>
 
                     </ul>
@@ -81,32 +81,37 @@
 
 
                         <li>
-                            <a href="/zebradna/3-7/about">
+                            <a href="/zebradna/3-9/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/setup">
+                            <a href="/zebradna/3-9/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/usage">
+                            <a href="/zebradna/3-9/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/licensing">
+                            <a href="/zebradna/3-9/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/faq">
+                            <a href="/zebradna/3-9/design">
+                                    Design
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/zebradna/3-9/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/search">
+                            <a href="/zebradna/3-9/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -222,7 +227,7 @@
                                     <h1 id="about-zebra-dna-cloud" class="anchor"><a class="heading-anchor" href="#about-zebra-dna-cloud"><span></span></a>About Zebra DNA Cloud</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            3.7
+                                            3.9
                                     </p>
                                 </div>
                             </section>                    
@@ -235,7 +240,7 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h4 id="whatsnewinzebradnacloud37newinzdna37" class="anchor"><a class="heading-anchor" href="#whatsnewinzebradnacloud37newinzdna37"><span></span></a><a href="#newinzdna37">What's new in Zebra DNA Cloud 3.7</a></h4>
+                                        <p></p><h4 id="whatsnewinzebradnacloud39newinzdna39" class="anchor"><a class="heading-anchor" href="#whatsnewinzebradnacloud39newinzdna39"><span></span></a><a href="#newinzdna39">What's new in Zebra DNA Cloud 3.9</a></h4>
 
 <h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
@@ -248,12 +253,24 @@
 
 <hr>
 
-<h2 id="newinzdna37" class="anchor"><a class="heading-anchor" href="#newinzdna37"><span></span></a>New in ZDNA 3.7</h2>
+<h2 id="newinzdna39" class="anchor"><a class="heading-anchor" href="#newinzdna39"><span></span></a>New in ZDNA 3.9</h2>
 
 <ul>
-<li><strong>Changes to group and device names are now reflected across all deployed Profiles</strong> and connected areas</li>
+<li><strong>Introduces <a href="../design/ekd_usage">Enterprise Keyboard Design Studio</a></strong>, the first in a series of <a href="../usage/#designstudio">Design Studio components</a> for customizing Zebra apps from within DNA Cloud:
+<img alt="image" style="height:236px" src="39design_studio.jpg">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></li>
 
-<li><strong>The Service Set Identifier (SSID) field supports additional special characters</strong> for Wi-Fi connection names.<br>Now supports (- . % $ # &amp; _ @) characters in addition to spaces and alpha-numerics. </li>
+<li><strong>Implements “company friendly” portal identification</strong>:
+
+
+<ul>
+<li>A new drop-down menu on the right-hand side of ZDNA Cloud is visible to tenant owners and administrative users, and enables easy access to the company name associated with their server. This allows quick reference when reporting issues to a support team. </li>
+
+<li>The 8-digit alphanumeric ID is unique to each tenant and is mapped to the organization’s Company ID in the ZDNA database. </li></ul>
+</li>
+
+<li><strong>The “Replace Battery” status indicator has been removed</strong>, addressing a reporting discrepancy between devices and the ZDNA portal.  </li>
 </ul>
 
 <hr>
@@ -345,7 +362,18 @@
 <ul>
 <li>ZDNA enrollment can require 5-10 min. to complete on device(s). </li>
 
-<li>The “Enterprise” Wi-Fi Security Mode is not supported.  </li></ul>
+<li>The “Enterprise” Wi-Fi Security Mode is not supported.  </li>
+
+<li>Devices with builds indicated below might see the following error after ZDNA enrollment with StageNow:
+<img alt="image" style="height:350px" src="39_A13_post-enroll_error.png">
+<em>Click image to enlarge; ESC to exit</em>.</li>
+
+<li><strong>SMD660</strong> devices with <code>HE_FULL_UPDATE_13-22-18.00-TG-U00-STD-HEL-04</code> (<strong>Nov. 2023</strong> or later) </li>
+
+<li><strong>6490, 5430</strong> devices with <code>AT_FULL_UPDATE_13-17-29.00-TG-U00-STD-ATH-04</code> (<strong>Dec. 2023</strong> or later)</li>
+
+<li><strong>6375</strong> devices with <code>13-21-05.00-TG-U00-STD-GSE-04</code> <strong>~OR~</strong> <code>13-21-05.00-TG-U00-STD-GRT-04</code> (<strong>Sep. 2023</strong> or later)<br>
+<strong><a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">See Zebra device models by platform</a></strong></li></ul>
 </li>
 
 <li><strong>When first booting (or rebooting from either a cold boot or hard reset)</strong>, all Zebra devices running Android 13 (or later) must be unlocked (using PIN, password or pattern) before the DNA Cloud client app can launch. Also applies to 6490- and 6375-platform devices running Android 11.  </li>
@@ -377,6 +405,145 @@
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
+<h3 id="addedinzdna38" class="anchor"><a class="heading-anchor" href="#addedinzdna38"><span></span></a>Added in ZDNA 3.8</h3>
+
+<ul>
+<li>With DNA Cloud 3.8.2, the <a href="../usage/#zebracollection">Zebra Collection</a> included Identity Guardian, Zebra's secure login solution for shared and personally assigned mobile computers in the enterprise. </li>
+
+<li>ZDNA 3.8 added a <strong><a href="../usage/#searchdevices">New search function</a> in My Devices page</strong> to quickly locate devices by device category.
+<img alt="image" style="height:350px" src="38_device_search.jpg">
+<em>Click image to enlarge; ESC to exit</em>.</li>
+</ul>
+
+<hr>
+
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-1" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-1"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+
+<table class="facelift" align="center" style="width:25%" border="1" padding="5px">
+<tbody><tr bgcolor="#dce8ef">
+</tr></tbody></table><table class="table table-striped">
+ <tbody><tr>
+<th>Device Platform (models)</th>
+<th>Required Update</th>
+</tr>
+
+<tr>
+<td>6375 (ET40, ET45)</td>
+<td><code>11-13-14.00-RG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td>6375 (TC15)</td>
+<td><code>11-14-13.00-RG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td>6490 (TC53, TC58)</td>
+<td><code>11-12-31.00-RG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td>6490 (TC73, TC78)</td>
+<td><code>11-17-16.00-RG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td>SDM660 (all; <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">see device list)</a></td>
+<td><code>11-26-05.00-RG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td>WS50</td>
+<td><code>11-19-19.00-RN-U00</code> (or later)</td>
+</tr>
+</tbody></table>
+
+
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-1" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-1"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+
+<table class="facelift" align="center" style="width:25%" border="1" padding="5px">
+<tbody><tr bgcolor="#dce8ef">
+</tr></tbody></table><table class="table table-striped">
+ <tbody><tr>
+<th>Device Platform (models)</th>
+<th>Required Update</th>
+</tr>
+
+<tr>
+<td>5430 (TC22, TC27)</td>
+<td><code>13-14-21.00-TG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td>6375 (ET40, ET45, TC15)</td>
+<td><code>13-21-05.00-TG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td>6490 (TC53, TC58, TC73, TC78)</td>
+<td><code>13-14-21.00-TG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td>SDM660 (all; <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">see device list)</a></td>
+<td><code>13-18-19.00-TG-U00</code> (or later)</td>
+</tr>
+
+</tbody></table>
+
+
+<p><i class="fa fa-check-circle" style="color:#27AE60;"></i> See all <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/dna-cloud.html">devices supported by Zebra DNA Cloud</a><br>
+<i class="fa fa-check-circle" style="color:#27AE60;"></i> See all <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">Zebra devices by platform</a></p>
+
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iknownissues-1" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iknownissues-1"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>KNOWN ISSUES</strong></h4>
+
+<ul>
+<li><strong>On devices running Android 13</strong>: <br>
+
+
+<ul>
+<li>ZDNA enrollment can require 5-10 min. to complete on device(s). </li>
+
+<li>The “Enterprise” Wi-Fi Security Mode is not supported.  </li></ul>
+</li>
+
+<li><strong>When first booting (or rebooting from either a cold boot or hard reset)</strong>, all Zebra devices running Android 13 (or later) must be unlocked (using PIN, password or pattern) before the DNA Cloud client app can launch. Also applies to 6490- and 6375-platform devices running Android 11.  </li>
+
+<li><strong>Configuring NFC settings sometimes displays an error</strong> despite being applied properly on the device. </li>
+
+<li><strong>When creating a managed configuration for Enterprise Keyboard</strong>, remapping a programmable key requires two backslash ("\") characters (rather than one, as documented). </li>
+
+<li><strong>Zebra ET40, ET45 and TC15 devices running Android 13</strong>: <em><u>falsely report failure</u></em> (as seen below) when using StageNow for ZDNA enrollment. Administrators are instructed to <strong>clear the failure message(s) and confirm enrollment in the ZDNA console</strong>. A LifeGuard update for this issue will be released by the OS team later this year.
+<img alt="image" style="height:250px" src="35_ET40_enroll_issue.png">
+<em>Click image to enlarge; ESC to exit</em>.</li>
+
+<li><strong>SDM660 devices running Android 11</strong>: DNA Cloud <strong><u>does NOT support</u></strong> the these device-OS update packages: 
+
+
+<ul>
+<li><code>HE_FULL_UPDATE_11-13-13.00-RG-U26-STD-HEL-04.zip</code></li>
+
+<li><code>HE_FULL_UPDATE_11-13-13.00-RG-U00-STD-HEL-04.zip</code></li>
+
+<li><code>HE_FULL_UPDATE_11-13-13.00-RG-U12-STD-HEL-04.zip</code>
+<br></li></ul>
+</li>
+</ul>
+
+<p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>ADVISORY</strong>: Apps installed using ZDNA or a company’s own EMM system must be managed using ZDNA or that EMM system. Attempting to subsequently manage such apps with Google Play could result in violations of the <a href="https://play.google.com/about/play-terms/index.html#:~:text=Updates.%20Google,be%20prevented%20entirely.">Google Play Terms of Service</a>.</p>
+
+<hr>
+
+<h3 id="newinzdna37" class="anchor"><a class="heading-anchor" href="#newinzdna37"><span></span></a>New in ZDNA 3.7</h3>
+
+<ul>
+<li><strong>Changes to group and device names are now reflected across all deployed Profiles</strong> and connected areas</li>
+
+<li><strong>The Service Set Identifier (SSID) field supports additional special characters</strong> for Wi-Fi connection names.<br>Now supports (- . % $ # &amp; _ @) characters in addition to spaces and alpha-numerics. </li>
+</ul>
+
+<hr>
+
 <h3 id="addedinzdna36" class="anchor"><a class="heading-anchor" href="#addedinzdna36"><span></span></a>Added in ZDNA 3.6</h3>
 
 <ul>
@@ -389,7 +556,7 @@
 
 <hr>
 
-<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-1" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-1"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-2" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-2"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
@@ -426,7 +593,7 @@
 </tbody></table>
 
 
-<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-1" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-1"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-2" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-2"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
@@ -489,7 +656,7 @@
 <!-- 11/7/23- DLM-28844 below replaced with above, per PO
 **IMPORTANT**: Device-setup Profiles created for DNA Cloud 3.4 or earlier are compatible **ONLY** with devices using the Aug. 2022 LifeGuard Update (or later) and ZDNA 3.4 client software. **Such Profiles CANNOT be used to enroll devices with DNA Cloud 3.5**; a new device-setup Profile is required.-->
 
-<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-2" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-2"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-3" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-3"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
@@ -526,7 +693,7 @@
 </tbody></table>
 
 
-<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-2" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-2"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-3" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-3"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
@@ -595,7 +762,7 @@ Ritu: "these are currently done as POC" in this sprint
 
 <hr>
 
-<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-3" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-3"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-4" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-4"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
@@ -632,7 +799,7 @@ Ritu: "these are currently done as POC" in this sprint
 </tbody></table>
 
 
-<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-3" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-3"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-4" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-4"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
@@ -678,7 +845,7 @@ Ritu: "these are currently done as POC" in this sprint
 
 <hr>
 
-<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-4" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-4"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-5" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid11uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-5"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 11</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
@@ -715,7 +882,7 @@ Ritu: "these are currently done as POC" in this sprint
 </tbody></table>
 
 
-<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-4" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-4"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-5" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired-5"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
@@ -1302,7 +1469,7 @@ Enterprise Browser 3.4 (and...EHS (record screeching) NOT addded to the Zebra co
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">

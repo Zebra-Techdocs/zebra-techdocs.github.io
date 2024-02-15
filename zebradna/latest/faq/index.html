@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            3.7
+                                            3.9
                         </p>
 
                     </ul>
@@ -81,32 +81,37 @@
 
 
                         <li>
-                            <a href="/zebradna/3-7/about">
+                            <a href="/zebradna/3-9/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/setup">
+                            <a href="/zebradna/3-9/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/usage">
+                            <a href="/zebradna/3-9/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/licensing">
+                            <a href="/zebradna/3-9/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/faq">
+                            <a href="/zebradna/3-9/design">
+                                    Design
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/zebradna/3-9/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-7/search">
+                            <a href="/zebradna/3-9/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -222,7 +227,7 @@
                                     <h1 id="frequently-asked-questions" class="anchor"><a class="heading-anchor" href="#frequently-asked-questions"><span></span></a>Frequently Asked Questions</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            3.7
+                                            3.9
                                     </p>
                                 </div>
                             </section>                    
@@ -252,7 +257,7 @@
 <p><strong>To enroll such devices</strong>:</p>
 
 <ol>
-<li><strong>Apply the Android 11 August, 2023, <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard Update</a></strong>.</li>
+<li><strong>Apply the Android 11 August, 2023, <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard Update</a></strong> (or later).</li>
 
 <li>In ZDNA Android Updates section, <strong>select and apply “Update to the Latest”</strong> to apply the newest OS and patch versions.<br>
 <strong>ZDNA then performs one or both of the following actions</strong>, depending on device status:<br>
@@ -267,7 +272,7 @@
 
 <li><strong>Enrollment barcodes must be created with ZDNA 3.5</strong> (or later); earlier versions are not compatible. </li>
 
-<li>Devices still unsupported after undergoing this process appear in My Devices listings with limited capabilities.<br><strong>Such devices also might be shown with a status of "In Progress"</strong> for an indefinite period.  </li>
+<li>Devices still unsupported after undergoing this process appear in My Devices listings with limited capabilities.<br><strong>Such devices also might be shown with a status of "In-Progress"</strong> for an indefinite period.  </li>
 </ul>
 
 <blockquote>
@@ -444,13 +449,28 @@
 
 <hr>
 
-<h3 id="whydosomeofmyappliedprofilesremaininprogress" class="anchor"><a class="heading-anchor" href="#whydosomeofmyappliedprofilesremaininprogress"><span></span></a>Why do some of my applied Profiles remain "In-Progress?"</h3>
+<h3 id="whydosomeappliedprofilescontinuetodisplayinprogressstatus" class="anchor"><a class="heading-anchor" href="#whydosomeappliedprofilescontinuetodisplayinprogressstatus"><span></span></a>Why do some applied Profiles continue to display "In-Progress" status?</h3>
+
+<p>Certain conditions cause the status of a deployment to remain "In-Progress" for extended periods. This includes deployment of managed configurations targeting apps that have not implemented a feedback channel. In such scenarios, ZDNA updates the status to "Success" after 24 hours. Many such issues similarly resolve on their own; others require intervention. Some common scenarios are listed below. </p>
+
+<h4 id="resolveontheirown" class="anchor"><a class="heading-anchor" href="#resolveontheirown"><span></span></a>Resolve on their own:</h4>
+
+<ul>
+<li>Enrollment of devices running Android 13 (5-10 min.)</li>
+
+<li>Deployment of managed configurations to devices while offline or otherwise unresponsive (up to 24 hrs)</li>
+
+<li>Enrollment of devices with some older LifeGuard updates (times vary) &nbsp;&nbsp;<a href="#whycantsomenewandorfactoryresetdevicesbemanagedafterzdnaenrollment">Learn more</a></li>
+</ul>
+
+<h4 id="interventionrequired" class="anchor"><a class="heading-anchor" href="#interventionrequired"><span></span></a>Intervention Required:</h4>
+
+<p>If the status of a Profile remains "In-Progress" for longer than 24 hours, a loop condition might exist in the Profile. 
+If the selected option was "Primary Data" (see image, below), the status of that Profile will never reach "Success" because device data was erased before the ZDNA client app could report that the job had completed successfully. <strong>Re-enrolling the device perpetuates this endless loop</strong>. </p>
 
 <p><img alt="image" style="height:350px" src="data_wipe_status.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p>
-
-<p>If the status of a Profile remains "In-Progress" for a long period of time, check for a "Wipe Data Option" in the Profile. If the selected option was "Primary Data" (see image, above), the status of that Profile will never reach "Success" because device data was erased before the ZDNA client app could report that the job had completed successfully. <strong>Re-enrolling the device perpetuates this endless loop</strong>. </p>
 
 <p><strong>To resolve this issue, remove the Profile before re-enrolling effected devices</strong>. </p>
 
@@ -556,7 +576,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
