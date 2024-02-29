@@ -11,8 +11,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Preparing for MX Transition">
-    <title>Preparing for MX Transition - TechDocs</title>
+    <meta title="OEMConfig Setup">
+    <title>OEMConfig Setup - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!--     
@@ -69,7 +69,8 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            Android Platform Transition
+                                            OEMConfig
+                                            13.2
                         </p>
 
                     </ul>
@@ -80,52 +81,32 @@
 
 
                         <li>
-                            <a href="/flux/about">
-                                    About Transition
+                            <a href="/oemconfig/13-2/about">
+                                    About
                             </a>
                         </li>
                         <li>
-                            <a href="/mx/overview">
-                                    About MX
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/mx">
-                                    MX Feature Matrix
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/flux/setup">
+                            <a href="/oemconfig/13-2/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/flux/query">
-                                    Query Device
+                            <a href="/oemconfig/13-2/mc">
+                                    Managed Configs (Legacy)
                             </a>
                         </li>
                         <li>
-                            <a href="/flux/delegation">
-                                    Delegate Access
+                            <a href="/oemconfig/13-2/mc2">
+                                    Managed Configs (A13+)
                             </a>
                         </li>
                         <li>
-                            <a href="/flux/usage">
-                                    Architecture
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/flux/faq">
+                            <a href="/oemconfig/13-2/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/flux/api">
-                                    APIs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/flux/search">
+                            <a href="/oemconfig/13-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -152,7 +133,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Preparing for MX Transition</strong></li>
+                            <li><strong>OEMConfig Setup</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -238,9 +219,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="preparing-for-mx-transition" class="anchor"><a class="heading-anchor" href="#preparing-for-mx-transition"><span></span></a>Preparing for MX Transition</h1>
+                                    <h1 id="oemconfig-setup" class="anchor"><a class="heading-anchor" href="#oemconfig-setup"><span></span></a>OEMConfig Setup</h1>
                                     <p>
-                                            Android Platform Transition
+                                            OEMConfig
+                                            13.2
                                     </p>
                                 </div>
                             </section>                    
@@ -255,45 +237,98 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>Zebra has selected Android 11 as the "transitional" OS version</strong>. Zebra devices running Android 11 will accept the old and the new methods of device configuration (XML and JavaScript). This is intended to allow organizations to continue using current methods while gradually converting to the new methods of staging, persistence, and data and file sharing being introduced. <strong>Zebra devices running Android 13 (and later) might NOT accept XML for device configuration, be it through scanning XML barcodes, XML pushed to devices by an Enterprise Mobility Management (EMM) system or embedded within an EMDK app</strong>. </p>
+<p>Zebra OEMConfig is an administrative tool for performing Actions and settings configurations on Zebra devices running Android. OEMConfig works with Zebra's <a href="/mx/overview">Mobility Extensions Management System (known simply as MX)</a>, an XML-based communication framework for managing the capabilities and behaviors of Zebra devices. </p>
 
-<p>Zebra's device OS architecture is undergoing a major transformation that will effect nearly all device systems and processes, including device and Zebra value-added apps and features. </p>
+<p>OEMConfig is not pre-installed on Zebra devices; it must be installed through the Google Play store before it can be used to perform Actions and configure settings. These activities are typically done using an Enterprise Mobility Management (EMM) or Unified Endpoint Management (UEM) system.</p>
 
-<h3 id="effecteddevices" class="anchor"><a class="heading-anchor" href="#effecteddevices"><span></span></a>Effected Devices</h3>
-
-<p>The devices listed below are currently shipping with Android 11 and/or can be upgraded to Android 11. When testing Zebra's new processes, success on these devices also should be successful on devices with Android 13.</p>
+<h3 id="systemrequirements" class="anchor"><a class="heading-anchor" href="#systemrequirements"><span></span></a>System Requirements</h3>
 
 <ul>
-<li>CC60x</li>
+<li><strong>Fully managed Zebra device(s)</strong> running Android 7.x (Nougat) or higher</li>
 
-<li>EC30</li>
+<li><strong>MX 9.1 or higher*</strong> on device(s) is recommended. <a href="/mx/mx-version-on-device">Which version is installed?</a></li>
 
-<li>EC50</li>
-
-<li>ET51</li>
-
-<li>L10</li>
-
-<li>MC22</li>
-
-<li>MC33x</li>
-
-<li>MC33ax</li>
-
-<li>PS20</li>
-
-<li>TC21</li>
-
-<li>TC52</li>
-
-<li>TC72</li>
-
-<li>VC83</li>
-
-<li>WT6300</li>
+<li>A <a href="../faq/#qwhatsauem">UEM or EMM</a> system with support for <a href="../faq">OEMConfig-compliant admin tools</a></li>
 </ul>
 
-<hr><p></p>
+<p><i><font size="2" color="black"> *OEMConfig runs on devices with <strong>MX versions <u>older</u> than MX 9.1</strong>, but attempting to access newer MX features not implemented in older MX versions will result in error(s).</font></i>
+<i><font size="2" color="black"> See the <a href="/mx">MX Feature Matrix</a> for a complete list of features in each MX version.</font></i></p>
+
+<!-- 
+&#42;_The OEMConfig app runs on devices with **MX versions <u>older</u> than 9.1**. However, attempting to access newer MX features not implemented in older MX versions will result in error(s). See the [MX Feature Matrix](/mx) for a complete list of features in each MX version_. 
+ -->
+
+<h3 id="downloadandinstall" class="anchor"><a class="heading-anchor" href="#downloadandinstall"><span></span></a>Download and install</h3>
+
+<p>The exact process for setting up an EMM console to use Zebra OEMConfig varies widely depending on the device management system in use. For EMMs compatible with the Google Play system, the generally required steps are listed below. </p>
+
+<h5 id="emmgeneralsetup" class="anchor"><a class="heading-anchor" href="#emmgeneralsetup"><span></span></a>EMM General Setup:</h5>
+
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.zebra.oemconfig.common&amp;hl=en_US">Download OEMConfig app</a> from Google Play Store  </li>
+
+<li>Point EMM console to Zebra schema to display data-driven UI for configuring Zebra devices</li>
+
+<li>Create <em>Transaction(s)</em> using <a href="../mc">Managed Configurations</a> described in schema</li>
+
+<li>Push <code>OEMConfig.apk</code> to the Zebra device(s) to be configured</li>
+
+<li>Push <em>Transaction(s)</em> to device(s) for consumption by OEMConfig tool</li>
+</ul>
+
+<h5 id="usingclouddpc" class="anchor"><a class="heading-anchor" href="#usingclouddpc"><span></span></a>Using CloudDPC?</h5>
+
+<p>For EMMs that use the Android Management APIs and Google's CloudDPC device policy controller as their EMM agent, Google offers an option to define a JSON document that specifies a set of <code>.apk</code>s to be installed, Managed Configurations to be applied to those <code>.apk</code>s, and other non-application-oriented management operations. In such a case, some of the steps above would happen together in a way that might not be obvious to the administrator or console operator.</p>
+
+<h5 id="abouttheschema" class="anchor"><a class="heading-anchor" href="#abouttheschema"><span></span></a>About The Schema</h5>
+
+<p>Every <code>.apk</code> that supports Managed Configurations must provide a schema, which defines the Managed Configurations supported by that <code>.apk</code>. The Play Store provides server-to-server APIs that allow an EMM server to acquire the schema from the Play Store for the published <code>.apk</code>. There's more about schemas on the <a href="../faq">FAQ page</a>.</p>
+
+<!-- ##### Other EMMs; AOSP, GMS-restricted Devices
+1. Download OEMConfig from the [Zebra Support Portal](http://zebra.com/support); the Zebra schema and other required files are automatically included. 
+3. Push `OEMConfig.apk` to the Zebra device(s) to be configured.
+4. Point the EMM to the Zebra schema to display the Zebra data-driven UI for configuring Zebra devices. 
+5. Create *Transaction(s)* using the [Managed Configurations](../mc) described in the Zebra schema.
+6. Push *Transaction(s)* to device(s). 
+ -->
+
+<hr>
+
+<h2 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also See</h2>
+
+<ul>
+<li><strong><a href="../faq">FAQ</a></strong> | Frequently asked questions about OEMConfig </li>
+
+<li><strong><a href="../mc">OEMConfig Managed Configurations</a></strong> | Descriptions of all configurable functions</li>
+</ul>
+
+<!-- 
+
+**Managed Configurations can**:
+
+* Be defined and published by any application developer. 
+* Be used by an app to configure its own settings. 
+* Be used by an EMM agent **<u>to configure device settings</u>**. 
+* Be discovered and acted upon by an EMM agent or server.
+* Be used by an EMM Server through its EMM agent and a data-driven UI.
+
+
+**<u>The major advantage of the [AEDO+ZMC](../port/#unsigneddodaagentzmc) method is universality</u>; it allows a single agent to work with <u>any</u> Android device in the future**, regardless of brand. In the past, EMM vendors were required to develop and maintain multiple agents to support the proprietary management mechanisms required for each brand of device they chose to target. 
+
+<img alt="image" style="height:350px" src="../port/timeline.jpg"/>
+_Click image to enlarge_. 
+<br>
+
+> **IMPORTANT NOTES**: <br>
+* **Zebra devices running Android 7.x Nougat and 8.x Oreo support DA <u>and</u> DO agents**.
+* **Agents for Oreo (and later) must be <u>unsigned</u>**; Zebra devices running Android 8.x and later do not support signed agents.
+> * Porting options described in the EMMTK include features implemented in [MX 8.1 and MX 8.2](/mx) ([See function map](../functionmap)).
+> * **Support for MX ends with Android 9.x Pie**; devices running Android Pie must use [unsigned DO/DA+ZMC](../port/#unsigneddodaagentzmc) agents.
+
+MAYBE: 
+Since the release of Android Enterprise, capabilities once accessible only through MX can now be controlled by an agent designated as a "Android Enterprise Device Owner" (AEDO) using standardized Android APIs. Functions not configurable through an Android API can be handled using OEMConfig, which interfaces with MX through the Android Managed Configuration mechanism. 
+
+--><p></p>
                                         
 
 
