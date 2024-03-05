@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             OEMConfig
-                                            13.1
+                                            13.2
                         </p>
 
                     </ul>
@@ -81,32 +81,32 @@
 
 
                         <li>
-                            <a href="/oemconfig/13-1/about">
+                            <a href="/oemconfig/13-2/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/13-1/setup">
+                            <a href="/oemconfig/13-2/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/13-1/mc">
+                            <a href="/oemconfig/13-2/mc">
                                     Managed Configs (Legacy)
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/13-1/mc2">
+                            <a href="/oemconfig/13-2/mc2">
                                     Managed Configs (A13+)
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/13-1/faq">
+                            <a href="/oemconfig/13-2/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/oemconfig/13-1/search">
+                            <a href="/oemconfig/13-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -222,7 +222,7 @@
                                     <h1 id="zebra-managed-configurations" class="anchor"><a class="heading-anchor" href="#zebra-managed-configurations"><span></span></a>Zebra Managed Configurations</h1>
                                     <p>
                                             OEMConfig
-                                            13.1
+                                            13.2
                                     </p>
                                 </div>
                             </section>                    
@@ -238,22 +238,7 @@
 <!--                                     <p>
                                     </p> -->
 
-                                        <p><!-- we probably don't need this anymore; there's only ONE schema moving forward 
-
-2/3/24- apparently we do. PO asking where it went! 
-
-<b><font size="5" color="red">For devices with <u>Android 13 and NEWER ONLY</u></font></b><br>
-This guide documents managed configurations using the ***Redesigned Schema*** for current Zebra devices and the **"Zebra OEMConfig Powered by MX"** utility. **[Learn more](../faq/#qwhatislegacyzebraoemconfig)**.
-
-#### Use this guide if: 
-* **Targeting devices with <u>Android 13 or later</u>** <br>
-*<u>AND</u>...*
-* **All desired features were present in <u>MX 11.5 or later</u>** <br>
-*<u>AND</u>...*
-* **The OEMConfig package name for this schema is** `com.zebra.oemconfig.release`
-<br>-->
-
-</p><p><b><font size="5" color="red"> For devices with <u>Android 11 and OLDER</u></font></b><br>
+                                        <p></p><p><b><font size="5" color="red"> For devices with <u>Android 11 and OLDER</u></font></b><br>
 This guide documents managed configurations of the <strong><em>Original Schema</em></strong> for current and legacy Zebra devices. <a href="../faq/#qwhatislegacyzebraoemconfig">Learn more</a>.</p>
 
 <h4 id="usethisguideif" class="anchor"><a class="heading-anchor" href="#usethisguideif"><span></span></a>Use this guide if:</h4>
@@ -268,14 +253,12 @@ This guide documents managed configurations of the <strong><em>Original Schema</
 </ul>
 
 <blockquote>
-  <p><a href="../mc2">Go to New schema docs</a></p>
+  <p><a href="../mc2">Go to new schema docs (for devices with Android 13 and later)</a></p>
 </blockquote>
 
 <p><br></p>
 
 <hr>
-
-<p>--&gt;</p>
 
 <p><b><font size="6" color="black"> Terms in this Guide</font></b></p>
 
@@ -527,9 +510,22 @@ This guide documents managed configurations of the <strong><em>Original Schema</
 
 <p>The above terms have been defined here because they may be generally used throughout this document. Additional terms will be defined in subsequent sections of this document as needed to clarify concepts and usage specific to those sections.</p>
 
-<p><a id="appConfig"></a></p>
+<h2 id="reversingasetting" class="anchor"><a class="heading-anchor" href="#reversingasetting"><span></span></a>Reversing a Setting</h2>
+
+<p>Managed configurations work to configure devices by pushing a bundle of parameter settings to the target device. <strong>To change or undo any previously configured setting, simply resend the same bundle with a new setting, or omit the setting entirely and resend</strong> to return the managed configuration to its default.  </p>
+
+<!-- 
+## Reversing a Setting
+
+To reverse a setting, simply remove the code that configured the setting to begin with. 
+
+Just as class and feature variances are selected and added to a managed configuration bundle and pushed to devices to configure that device's settings, so too can they be removed from a bundle and pushed to devices to "unconfigure" them, reversing the previous setting. 
+
+ -->
 
 <hr>
+
+<p><a id="appConfig"></a></p>
 
 <h2 id="applicationconfiguration" class="anchor"><a class="heading-anchor" href="#applicationconfiguration"><span></span></a>Application Configuration</h2>
 
