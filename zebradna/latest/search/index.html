@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            3.9
+                                            3.10
                         </p>
 
                     </ul>
@@ -81,37 +81,37 @@
 
 
                         <li>
-                            <a href="/zebradna/3-9/about">
+                            <a href="/zebradna/3-10/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-9/setup">
+                            <a href="/zebradna/3-10/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-9/usage">
+                            <a href="/zebradna/3-10/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-9/licensing">
+                            <a href="/zebradna/3-10/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-9/design">
+                            <a href="/zebradna/3-10/design">
                                     Design
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-9/faq">
+                            <a href="/zebradna/3-10/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/3-9/search">
+                            <a href="/zebradna/3-10/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -214,7 +214,7 @@
             last: false
         }
         var results = [];
-        $.getJSON( "/zebradna/3-9/index.json", function( data ) {
+        $.getJSON( "/zebradna/3-10/index.json", function( data ) {
           json_data = data;
           console.log("got data");
           fuse = new Fuse(json_data, { keys: ["title", "keywords"] });
@@ -237,7 +237,7 @@
               $("#btn-loading").show()
               $("#btn-search").hide();
               
-              var product_version = "/zebradna/3-9/index.json".replace("/index.json","");
+              var product_version = "/zebradna/3-10/index.json".replace("/index.json","");
                 var q = $("#query").val();
                 var url="https://www.google.com/search?q=site:techdocs.zebra.com" + product_version + "+"+q;
                 window.open(url);
