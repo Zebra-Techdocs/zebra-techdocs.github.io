@@ -64,7 +64,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Diagnostic Tool
-                                            3.0
+                                            3.1
                         </p>
 
                     </ul>
@@ -75,27 +75,27 @@
 
 
                         <li>
-                            <a href="/ddt/3-0/guide/about">
+                            <a href="/ddt/3-1/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/3-0/guide/usage">
+                            <a href="/ddt/3-1/guide/usage">
                                     Using Device Diagnostic Tool
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/3-0/guide/configuration">
+                            <a href="/ddt/3-1/guide/configuration">
                                     Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/3-0/guide/criteria">
+                            <a href="/ddt/3-1/guide/criteria">
                                     Test Criteria
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/3-0/guide/managed-config">
+                            <a href="/ddt/3-1/guide/managed-config">
                                     Managed Config
                             </a>
                         </li>
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/ddt/3-0/search">
+                            <a href="/ddt/3-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="about-device-diagnostic-tool" class="anchor"><a class="heading-anchor" href="#about-device-diagnostic-tool"><span></span></a>About Device Diagnostic Tool</h1>
                                     <p>
                                             Device Diagnostic Tool
-                                            3.0
+                                            3.1
                                     </p>
                                 </div>
                             </section>                    
@@ -278,6 +278,8 @@
 <li><strong>Network Test</strong> - checks whether the device can connect to a network (WLAN or WAN)</li>
 
 <li><strong>Keyboard Test</strong> - checks for physical key or button functionality, outputting the keycode value when the key or button is pressed</li>
+
+<li><strong>Camera Test</strong> - checks for camera functionality, enabling a user to capture an image with the device's rear camera and assess the image quality</li>
 </ul>
 
 <p>For more information on each test, refer to <a href="../criteria">Test Criteria.</a></p>
@@ -286,15 +288,21 @@
 
 <hr>
 
-<h2 id="newin30" class="anchor"><a class="heading-anchor" href="#newin30"><span></span></a>New in 3.0</h2>
+<h2 id="newin31" class="anchor"><a class="heading-anchor" href="#newin31"><span></span></a>New in 3.1</h2>
 
 <ul>
-<li>New <strong><a href="../usage/#keyboardtest">Keyboard Test</a></strong> to validate physical key or button functionality. It outputs the keycode value when a physical key or button is pressed by the user, validating its functionality.</li>
+<li>New <strong><a href="../usage/#cameratest">Camera Test</a></strong> to verify camera functionality. It enables a user to capture an image with the device's rear camera and assess the image quality.</li>
 </ul>
 
 <hr>
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin30" class="anchor"><a class="heading-anchor" href="#newin30"><span></span></a>New in 3.0</h3>
+
+<ul>
+<li>New <strong><a href="../usage/#keyboardtest">Keyboard Test</a></strong> to validate physical key or button functionality. It outputs the keycode value when a physical key or button is pressed by the user, validating its functionality.</li>
+</ul>
 
 <h3 id="newin29" class="anchor"><a class="heading-anchor" href="#newin29"><span></span></a>New in 2.9</h3>
 
@@ -698,8 +706,10 @@ The following table lists the supported GMS devices, except for MC33 which only 
 
 
 <ul>
-<li>The adb “push” command for deployment of files to the device is no longer supported on <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">SD6490 and SD6375 platform devices</a> due to new Android restrictions. To manually deploy a configuration file, use a desktop file browser to copy the file to the following location on the device: <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics/</code></li></ul>
+<li>New Android restrictions prohibit <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">SD6490 and SD6375 platform devices</a> from supporting the adb “push” command for deployment of files to the devices. To manually deploy a configuration file, use a desktop file browser to copy the file to the following location on the device: <code>/sdcard/Android/data/com.zebra.mdna.selfdiagnostics/</code></li></ul>
 </li>
+
+<li><strong>Camera Test -</strong> When DDT is brought back to the foreground from the background, both the camera test and timeout period are reset.</li>
 </ul>
 
 <hr>
