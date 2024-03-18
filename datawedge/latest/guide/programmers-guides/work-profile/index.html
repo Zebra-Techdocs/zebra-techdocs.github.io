@@ -10,8 +10,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Usage Notes and Behavior">
-    <title>Usage Notes and Behavior - Zebra Technologies TechDocs</title>
+    <meta title="Work Profile">
+    <title>Work Profile - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -158,7 +158,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Usage Notes and Behavior</strong></li>
+                            <li><strong>Work Profile</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -244,7 +244,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="usage-notes-and-behavior" class="anchor"><a class="heading-anchor" href="#usage-notes-and-behavior"><span></span></a>Usage Notes and Behavior</h1>
+                                    <h1 id="work-profile" class="anchor"><a class="heading-anchor" href="#work-profile"><span></span></a>Work Profile</h1>
                                     <p>
                                             DataWedge
                                             13.0
@@ -262,65 +262,105 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>This section discusses use of DataWedge and its behavior in particular circumstances.</p>
+<p>Formerly known as Corporate-Owned, Personally Enabled (COPE) mode, <em>Android work profile</em> enables organizations to enforce corporate policies and restrictions while keeping personal data private. It supports the utilization of a single device for both work and personal use. Work profile ensures the protection and privacy of corporate data while keeping personal applications separate and private, thereby maintaining end-user privacy.</p>
+
+<p>Devices provisioned with work profile offer the convenience of switching between work or personal profile use. <em>To use DataWedge in work profile, both DataWedge and the scanning framework must be enabled as system applications within the work profile.</em></p>
+
+<blockquote>
+  <p><b>Zebra recommends device administrators to control DataWedge access and configuration in the work profile by utilizing <a href="/mx/datawedgemgr">DataWedge Manager CSP.</a></b> This includes preventing a user from accessing the DataWedge UI and preventing automatic import of configuration files. </p>
+</blockquote>
 
 <hr>
 
-<h2 id="usagenotes" class="anchor"><a class="heading-anchor" href="#usagenotes"><span></span></a>Usage Notes</h2>
+<h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
+
+<ul>
+<li>Zebra Android 13 devices or higher</li>
+
+<li>DataWedge v13.0.210 or higher</li>
+</ul>
+
+<hr>
+
+<h2 id="enabledatawedge" class="anchor"><a class="heading-anchor" href="#enabledatawedge"><span></span></a>Enable DataWedge</h2>
+
+<p>For DataWedge to operate in work profile mode, DataWedge and the scanning framework must be enabled as system apps within the work profile. Follow the steps below to perform this. These steps may vary depending on the enterprise mobility management (EMM) system in use.</p>
 
 <ol>
-<li><p><strong>When the device is suspended, it takes a few milliseconds to release all the resources.</strong> DataWedge releases the resources once it receives the Screen Off notification. Until this notification is received, DataWedge continues to function (e.g. scanning) for a short period of time despite the device being suspended.</p></li>
+<li>Open Device Policy Controller from your EMM.</li>
 
-<li><p><strong>A graphical keyboard is not displayed when DataWedge, also known as ZebraCommonIME, is selected as a keyboard or IME (Input Method Editor) from the Virtual Keyboard settings on the device.</strong> DataWedge (ZebraCommonIME) keyboard is <strong><em>only</em></strong> used by DataWedge to output keystroke data and should not be selected as the default IME, otherwise unexpected behavior can occur.</p></li>
+<li>Under Policy management, tap <strong>Enable system apps.</strong>
+<img alt="image" style="height:350px" src="enable-system-apps.png"></li>
 
-<li><p><strong>After a device reboot, DataWedge starts after receiving the LOCKED_BOOT_COMPLETED intent.</strong> Calling DataWedge intent APIs before the LOCKED_BOOT_COMPLETED intent may cause unexpected behavior as DataWedge is still not started yet. Calling DataWedge intent APIs soon after receiving the LOCKED_BOOT_COMPLETED intent may also cause unexpected behavior as DataWedge may still be in the initialization process. It is recommended to wait for a few seconds after receiving the LOCKED_BOOT_COMPLETED intent before calling any DataWedge intent APIs.</p></li>
+<li>Tap <strong>DataWedge.</strong>
+<img alt="image" style="height:350px" src="enable-dw.png"></li>
 
-<li><p><strong>Delay in scanning after a device reboot</strong>. DataWedge requires a brief period of time to initialize after device reboot due to waiting for a response to be received from the initialization of the scanning subsystem, causing scanning to be inactive from DataWedge during this time frame.</p></li>
+<li>Tap <strong>Enable system apps</strong> again.
+<img alt="image" style="height:350px" src="enable-system-apps.png"></li>
 
-<li><p><strong>When Data Capture Plus icon is displayed by DataWedge on top of another application,</strong> Android displays a silent notification in the notification area. Users can hide the Data Capture Plus icon by tapping on this notification and disabling the “Allow display over other apps” option. If a user decides to disable this option, even though Data Capture Plus is enabled in DataWedge, it does not display on the screen.</p></li>
+<li>Tap <strong>Scanning Framework.</strong>
+<img alt="image" style="height:350px" src="enable-scanning-fw.jpg"></li>
 
-<li><p><strong>On devices running Android 13 or later, DataWedge is compatible with Android work profile.</strong> This is applicable to both personally owned devices and <strong>corporate-owned Android enterprise devices,</strong> formally known as <strong>Corporate-Owned, Personally Enabled (COPE)</strong> devices.</p></li>
+<li>The work profile now has DataWedge and the scanning framework enabled. Both DataWedge and DWDemo are visible within the work profile. 
+<img alt="image" style="height:350px" src="work-profile.jpg"></li>
+</ol>
 
-<li><p>If both DataWedge and DWDemo are launched, <strong>only the most recent app opened is visible in the recent apps screen</strong> in Android. For example, if DataWedge is launched first and then DWDemo is launched, only DWDemo is seen in the recent apps screen.</p></li>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <b>Note: After enabling DataWedge in the work profile, immediate attempts to open it may not be successful</b>  due to the loading time it requires. However, subsequent attempts should open it successfully.</p>
 
-<li><p><strong>DataWedge is not supported for Ephemeral users.</strong></p></li>
+<hr>
 
-<li><p>In Android 13 and higher, when opening the recent apps screen after launching an app associated with a DataWedge profile, <strong>the DataWedge profile remains active while in the recent apps screen.</strong> This was not the case with older Android versions.</p></li>
+<h2 id="datawedgesupportedfeatures" class="anchor"><a class="heading-anchor" href="#datawedgesupportedfeatures"><span></span></a>DataWedge Supported Features</h2>
 
-<li><p>The following log message is displayed in Android logcat when the scanner status changes and when an intent is broadcasted to the Intent Action from DataWedge's Intent Output. This log message is intentional and does not affect any functionality.</p>
+<p>DataWedge only supports the following features in work profile:</p>
 
-<pre class="prettyprint"><code>Sending non-protected broadcast com.symbol.datawedge.api.NOTIFICATION_ACTION from system &lt;pid&gt;:com.zebra.zvahelper/&lt;id&gt; pkg com.zebra.zvahelper
-Sending non-protected broadcast &lt;Intent Output Action&gt; from system &lt;pid&gt;:com.zebra.zvahelper/&lt;id&gt; pkg com.zebra.zvahelper
-</code></pre></li>
+<ul>
+<li><strong><a href="../../input/barcode">Barcode Input</a> –</strong> Scanning barcodes via an internal imager</li>
+
+<li><strong><a href="../../input/voice/">Voice Input</a> -</strong> Voice-to-data capture</li>
+
+<li><strong><a href="../../output/keystroke/">Keystroke Output</a> –</strong> Dispatch the scanned data via Keystrokes </li>
+
+<li><strong><a href="../../output/intent/">Intent Output</a> -</strong> Dispatch the scanned data via Intents </li>
+
+<li><strong><a href="../../output/ip/">IP Output</a> -</strong> Dispatch the scanned data to a specified IP address using TCP or UDP</li>
+
+<li><strong><a href="../../input/dcp/">Data Capture Plus</a> –</strong> On-screen button to trigger scanning </li>
+
+<li><strong><a href="../../process/adf/">ADF</a> –</strong> Advanced data formatting rules</li>
+
+<li><strong><a href="../../process/bdf/">BDF</a> –</strong> Basic data formatting rules</li>
+
+<li><strong><a href="../../settings/#deployment">Import/Export DataWedge configurations</a></strong></li>
+
+<li><strong><a href="../../admin/#massdeployment">Mass deployment</a></strong></li>
+</ul>
+
+<hr>
+
+<h2 id="limitations" class="anchor"><a class="heading-anchor" href="#limitations"><span></span></a>Limitations</h2>
+
+<p>Limitations of DataWedge in work profile:</p>
+
+<ol>
+<li>Since <strong>SD card support</strong> is no longer available starting with Android 13, the SD card file path cannot be used to copy the exported DataWedge configuration file to a host PC.</li>
+
+<li>The following <strong>DataWedge features are <em>not supported</em> in work profile:</strong>
+
+
+<ul>
+<li>Serial Input</li>
+
+<li>Scanning using the Launcher profile</li></ul>
+</li>
 </ol>
 
 <hr>
 
-<h2 id="multiusersupport" class="anchor"><a class="heading-anchor" href="#multiusersupport"><span></span></a>Multi-User Support</h2>
+<h2 id="personalprofilebehavior" class="anchor"><a class="heading-anchor" href="#personalprofilebehavior"><span></span></a>Personal Profile Behavior</h2>
 
-<p>DataWedge supports the use of multiple Android user accounts on a single device, enabling separate user profiles to maintain data privacy.</p>
+<p>After enabling DataWedge and the scanning framework in the work profile, DataWedge remains visible in the personal profile but will not be functional. This is due to the fact that DataWedge can operate in only one profile at a time. For DataWedge to function in the personal profile, a factory reset is required.</p>
 
-<p>Features and functionality:</p>
-
-<ul>
-<li><strong>If DataWedge is enabled, its functionality applies only for the active user</strong> - Each user has a separate DataWedge process running. DataWedge usage and functionality only applies for the active user.</li>
-
-<li><strong>Any DataWedge profile change only affects the single user</strong> - A DataWedge configuration or profile change by a user (through DataWedge UI or profile import) only applies to that specific user and does not affect any other users.</li>
-
-<li><strong>Camera scanning functions only for the primary (admin) user</strong> - Camera scanning is not available for secondary (non-primary) users.</li>
-
-<li><strong>Bluetooth scanner disconnects when switching between primary user and other users</strong> - This applies to profiles which have a Bluetooth scanner enabled. If the primary user is active, when switching to a different user with an active profile that also enables a Bluetooth scanner, the Bluetooth scanner disconnects and does not automatically re-connect to the device. The non-primary user needs to press the reset button on the Zebra Bluetooth scanner to reconnect, even if it shows that the Bluetooth scanner is connected to the device.</li>
-
-<li><strong>No external SD card access</strong> - If multiple Android user accounts exist, users cannot access the external SD card. This prevents the ability to export or import the Datawedge configuration database files from the SD card.</li>
-
-<li><strong>Limited folder access</strong> - Each user profile has its own folder structure that is not accessible from a different user. Therefore, a user cannot access the exported DataWedge configuration database of another user, preventing the ability to import/export configurations across users.</li>
-
-<li><strong>"DataWedge not ready" message after switching users following device reboot</strong> - When switching from a primary user to a secondary user for the first time after reboot, after attempting to open DataWedge or DWDemo the message "DataWedge not ready" may display. There could be a delay since DataWedge does not start until the BOOT_COMPLETED intent is received.</li>
-
-<li><strong>Multiple scanners</strong> - Use of <a href="../../input/barcode/#scannerselection">multiple scanners</a> with multiple Android user accounts may result to unexpected behavior.</li>
-
-<li><strong>Barcode scanning is not supported</strong> in multi-user mode on ET40/ET45, TC15, and TN28 devices.</li>
-</ul>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <b>Note: If DataWedge was in use in the personal profile just before it is enabled in the work profile, it will automatically shut down in the personal profile.</b> This occurs because DataWedge becomes inoperative in the personal profile after being enabled in the work profile.</p>
 
 <hr><p></p>
                                         
