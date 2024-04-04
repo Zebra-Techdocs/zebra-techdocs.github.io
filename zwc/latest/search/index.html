@@ -80,27 +80,27 @@
 
 
                         <li>
-                            <a href="/zwc/2-0/about">
+                            <a href="/zwc/3-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/2-0/setup">
+                            <a href="/zwc/3-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/2-0/usage">
+                            <a href="/zwc/3-0/usage">
                                     Usage Notes
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/2-0/faq">
+                            <a href="/zwc/3-0/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/2-0/search">
+                            <a href="/zwc/3-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -203,7 +203,7 @@
             last: false
         }
         var results = [];
-        $.getJSON( "/zwc/2-0/index.json", function( data ) {
+        $.getJSON( "/zwc/3-0/index.json", function( data ) {
           json_data = data;
           console.log("got data");
           fuse = new Fuse(json_data, { keys: ["title", "keywords"] });
@@ -226,7 +226,7 @@
               $("#btn-loading").show()
               $("#btn-search").hide();
               
-              var product_version = "/zwc/2-0/index.json".replace("/index.json","");
+              var product_version = "/zwc/3-0/index.json".replace("/index.json","");
                 var q = $("#query").val();
                 var url="https://www.google.com/search?q=site:techdocs.zebra.com" + product_version + "+"+q;
                 window.open(url);
@@ -322,7 +322,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">

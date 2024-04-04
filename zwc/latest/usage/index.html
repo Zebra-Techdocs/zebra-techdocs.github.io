@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra Workstation Connect
-                                            2.0
+                                            3.0
                         </p>
 
                     </ul>
@@ -81,27 +81,27 @@
 
 
                         <li>
-                            <a href="/zwc/2-0/about">
+                            <a href="/zwc/3-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/2-0/setup">
+                            <a href="/zwc/3-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/2-0/usage">
+                            <a href="/zwc/3-0/usage">
                                     Usage Notes
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/2-0/faq">
+                            <a href="/zwc/3-0/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/2-0/search">
+                            <a href="/zwc/3-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -217,7 +217,7 @@
                                     <h1 id="usage-notes" class="anchor"><a class="heading-anchor" href="#usage-notes"><span></span></a>Usage Notes</h1>
                                     <p>
                                             Zebra Workstation Connect
-                                            2.0
+                                            3.0
                                     </p>
                                 </div>
                             </section>                    
@@ -246,6 +246,8 @@
 <li><strong>Mobile apps that run in full-screen mode on the device by default run in full-screen mode on the secondary screen</strong>. </li>
 
 <li><strong>Apps designed to open only in the primary screen will open there even if launched from the ALL APPS button in the secondary screen</strong>. If app interaction is desired on the secondary screen, open the app in primary and select “Move to Desktop” from its icon in the task bar to move it to the secondary screen. </li>
+
+<li><strong>If an app is launched from the desktop and moved to a device running Android 11</strong>, launching the app again from the desktop causes the app to be executed on the device.</li>
 
 <li><strong>App pop-ups and/or sub-menus are sometimes partially obscured by the Desktop task bar</strong> when the app is maximized, requiring manual adjustment to the app’s window size or location to view all functions. </li>
 
@@ -320,12 +322,25 @@
 * ****Changes to screen resolution and density made through the Display Settings UI on the device temporarily override settings configured by an administrator** (reverting to admin-defined settings at the next docking). If no such admin-defined settings exist, **user-defined settings remain on the device until changed by a user or admin**, even if ZWC is removed and reinstalled.  
 -->
 
-<!-- 12/13/23- commented per eng. TUT-89730
+<h3 id="android13" class="anchor"><a class="heading-anchor" href="#android13"><span></span></a>Android 13</h3>
 
-### Android 13
+<ul>
+<li><strong>If an app is launched from the desktop and moved to the device</strong>, launching the app again from the desktop causes the app to be executed on the desktop.</li>
 
+<li><strong>The external monitor goes blank while setting a PIN/Password</strong> through the Settings panel on the device; when exiting the Settings app, behavior of the external monitor returns to normal.  </li>
+
+<li><strong>Device users should be instructed NOT to stop the ZWC foreground service</strong> from the notification pull-down, which is now possible on devices running Android 13. Doing so will result in unpredictable or unwanted Workstation Connect behavior.  </li>
+
+<li><strong>The “Hot-Seat” taskbar feature appears only on the device</strong> if the device is docked while in Mirror Mode or switched from Desktop to Mirror Mode while docked.</li>
+</ul>
+
+<!-- 3/21/24- TUT-90791
+* **Screen brightness on primary (device) and external screens** are controlled separately by default. 
+
+3/25/24- TUT-95487 replaced by top line, above
 * **If an app is launched from the external monitor and moved to the device**, launching the app again from the external monitor causes the app's UI to appear and be operable on the monitor. App activities are mirrored on the device, but the app cannot be operated from there. 
- -->
+
+-->
 
 <hr>
 
@@ -427,6 +442,8 @@ _Click to enlarge; ESC to exit._
 <li><strong><a href="https://www.zebra.com/content/dam/zebra_new_ia/en-us/manuals/software/workstation-connect/wsc-ig-en.pdf">Workstation Connect Installation Guide (pdf)</a></strong> | Installing the ZWC solution manually, or using Zebra StageNow or an EMM system</li>
 
 <li><strong><a href="https://www.zebra.com/content/dam/zebra_new_ia/en-us/manuals/software/workstation-connect/wsc-ug-en.pdf">Workstation Connect User Guide (pdf)</a></strong> | Desktop Mode set-up and usage</li>
+
+<li><strong><a href="https://developer.zebra.com/blog/streamlining-workstation-connect-configuration-step-step-guide-developers">Streamlining Workstation Connect Configuration</a></strong> | A Step-by-Step Guide for Developers</li>
 </ul>
 
 <hr><p></p>
@@ -463,7 +480,7 @@ _Click to enlarge; ESC to exit._
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
