@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.1
+                                            1.2
                         </p>
 
                     </ul>
@@ -81,37 +81,37 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-1/about">
+                            <a href="/identityguardian/1-2/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/setup">
+                            <a href="/identityguardian/1-2/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/licensing">
+                            <a href="/identityguardian/1-2/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/mc">
+                            <a href="/identityguardian/1-2/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/usage">
+                            <a href="/identityguardian/1-2/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/api">
+                            <a href="/identityguardian/1-2/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/search">
+                            <a href="/identityguardian/1-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -227,7 +227,7 @@
                                     <h1 id="managed-configurations" class="anchor"><a class="heading-anchor" href="#managed-configurations"><span></span></a>Managed Configurations</h1>
                                     <p>
                                             Identity Guardian
-                                            1.1
+                                            1.2
                                     </p>
                                 </div>
                             </section>                    
@@ -285,7 +285,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td>APPLICATION_MODE</td>
 <td>ENROLLMENT (default)<br>AUTHENTICATION<br>PERSONALLY_ASSIGNED</td>
 <td>ENROLLMENT (default)<br>AUTHENTICATION<br>PERSONALLY ASSIGNED</td>
-<td><b>Enrollment -</b> Creates barcodes to enroll users of shared devices<br><b>Authentication -</b> Sets the app for daily use on shared devices; may be used with SSO<br><b>Personally Assigned -</b>Sets the app for a single user on a dedicated device; may be used with SSO</td>
+<td><b>Enrollment -</b> Creates a barcode to enroll users of <i>shared devices</i><br><b>Authentication -</b> Sets the app for daily use on <i>shared devices;</i> may be used with SSO<br><b>Personally Assigned -</b> Sets the app for a single user on a <i>personally assigned device;</i> may be used with SSO</td>
 </tr>
 
 <tr>
@@ -482,11 +482,23 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <p>Configure Identity Guardian for user verification and authentication. Create up to four unique authentication schemes, and define the specific options for each one. Then, for any given event option, choose the appropriate authentication scheme to apply. Each authentication scheme includes the following:</p>
 
 <ul>
-<li><strong>Primary Authentication Factor -</strong> The initial method used to confirm identity.</li>
+<li><strong>Primary Authentication Factor -</strong> The first method used to verify a user's identity. 
 
-<li><strong>Secondary Authentication Factor -</strong> An optional second verification step that becomes mandatory when activated, establishing a two-factor authentication process.</li>
 
-<li><strong>Fallback Authentication Method -</strong> The alternate method employed for authentication if the primary method fails.</li>
+<ul>
+<li>If <em>primary authentication fails and secondary authentication is not activated,</em> the fallback authentication method is triggered. </li>
+
+<li>If <em>secondary authentication is enabled and activated,</em> then it is triggered.</li></ul>
+</li>
+
+<li><strong>Secondary Authentication Factor -</strong> This is an optional, but mandatory when activated, second method of verification, thereby establishing a two-factor authentication process. 
+
+
+<ul>
+<li>If <em>secondary authentication fails,</em> then fallback authentication is activated.</li></ul>
+</li>
+
+<li><strong>Fallback Authentication Method -</strong> This is an alternate method used for verification when the primary or secondary authentication methods fail.</li>
 </ul>
 
 <p><font color="#5A9EC4"><i>Note: Colored rows indicate a parent option.</i></font></p>
@@ -527,7 +539,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td>authenticationScheme1ComparisonSource</td>
 <td>NONE<br>BARCODE<br>DEVICE STORAGE</td>
 <td>NONE<br>BARCODE (default)<br>DEVICE STORAGE</td>
-<td>For <i>shared devices,</i> select BARCODE. The user is prompted to scan their unique barcode for authentication before proceeding with the primary authentication method. <br>For <i>personal devices,</i> select DEVICE STORAGE. The user is prompted to proceed with the primary authentication method. <br>For neither, select NONE.</td>
+<td><b>For <i>shared devices,</i> select BARCODE.</b> The user is prompted to scan their unique barcode for authentication before proceeding with the primary authentication method. <br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br>For neither, select NONE.</td>
 </tr>
 
 <tr>
@@ -601,7 +613,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td>authenticationScheme2ComparisonSource</td>
 <td>NONE<br>BARCODE<br>DEVICE STORAGE</td>
 <td>NONE<br>BARCODE (default)<br>DEVICE STORAGE</td>
-<td>For <i>shared devices,</i> select BARCODE. The user is prompted to scan their unique barcode for authentication before proceeding with the primary authentication method. <br>For <i>personal devices,</i> select DEVICE STORAGE. The user is prompted to proceed with the primary authentication method. <br>For neither, select NONE.</td>
+<td><b>For <i>shared devices,</i> select BARCODE.</b> The user is prompted to scan their unique barcode for authentication before proceeding with the primary authentication method. <br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br>For neither, select NONE.</td>
 </tr>
 
 <tr>
@@ -675,7 +687,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td>authenticationScheme3ComparisonSource</td>
 <td>NONE<br>BARCODE<br>DEVICE STORAGE</td>
 <td>NONE<br>BARCODE (default)<br>DEVICE STORAGE</td>
-<td>For <i>shared devices,</i> select BARCODE. The user is prompted to scan their unique barcode for authentication before proceeding with the primary authentication method. <br>For <i>personal devices,</i> select DEVICE STORAGE. The user is prompted to proceed with the primary authentication method. <br>For neither, select NONE.</td>
+<td><b>For <i>shared devices,</i> select BARCODE.</b> The user is prompted to scan their unique barcode for authentication before proceeding with the primary authentication method. <br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br>For neither, select NONE.</td>
 </tr>
 
 <tr>
@@ -749,7 +761,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td>authenticationScheme4ComparisonSource</td>
 <td>NONE<br>BARCODE<br>DEVICE STORAGE</td>
 <td>NONE<br>BARCODE (default)<br>DEVICE STORAGE</td>
-<td>For <i>shared devices,</i> select BARCODE. The user is prompted to scan their unique barcode for authentication before proceeding with the primary authentication method. <br>For <i>personal devices,</i> select DEVICE STORAGE. The user is prompted to proceed with the primary authentication method. <br>For neither, select NONE.</td>
+<td><b>For <i>shared devices,</i> select BARCODE.</b> The user is prompted to scan their unique barcode for authentication before proceeding with the primary authentication method. <br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br>For neither, select NONE.</td>
 </tr>
 
 <tr>
@@ -804,6 +816,36 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td>[Integer]</td>
 <td>Integer (default=20000)</td>
 <td>Set the timeout (in milliseconds) for fallback authentication</td>
+</tr>
+
+<!-- Authentication Data Storage Options -->
+
+<tr>
+<td>Authentication Data Storage</td>
+<td></td>
+<td>temporaryDataConfiguration</td>
+<td></td>
+<td></td>
+<td>Configure settings to allow temporary storage of user authentication data on the device, facilitating a one-time barcode scan for initial use on shared devices. This eliminates the need for repeated barcode scans during events such as device unlocking, rebooting, and connecting or disconnecting from power. If configured, subsequent device access will prompt for primary/secondary authentication. Barcode scans remain manadtory whenever a user manually logs out from Identity Guardian, or a new user signs in following the previous user's sign out. <b>NOTE:</b> If <b>Force Logout</b> is enabled, a barcode scan is prompted for every triggered event.
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Store Authentication Data</td>
+<td>enableTempStorageTimeout</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
+<td>Choose whether to enable temporary storge of user authentication data on the device for the specified Storage Period. This eliminates the need for rescanning a barcode after the initiaal one-time scan on shared devices.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Storage Period</td>
+<td>tempStorageTimeout</td>
+<td>Integer 1 to 12</td>
+<td>Integer 1 to 12 (default)</td>
+<td>Select the length of time (in hours) to temporarily store user authentication data on the device to facilitate a one-time barcode scan for initial use on shared devices. After the time elapses, the lock screen appears on the device and authentication data is deleted upon expiration.</td>
 </tr>
 
 <!-- LockScreen Show Options -->
@@ -1002,7 +1044,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td></td>
 <td>On Lock</td>
 <td>forceLogout_on_lock</td>
-<td>0<br>1</td>
+<td>1<br>0</td>
 <td>true<br>false (default)</td>
 <td>Choose whether to automatically logout the user when the device screen locks.</td>
 </tr>
@@ -1011,7 +1053,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td></td>
 <td>On Reboot</td>
 <td>forceLogout_on_reboot</td>
-<td>0<br>1</td>
+<td>1<br>0</td>
 <td>true<br>false (default)</td>
 <td>Choose whether to automatically logout the user when the device reboots</td>
 </tr>
@@ -1020,7 +1062,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td></td>
 <td>On AC power connected</td>
 <td>forceLogout_on_ac_power_connected</td>
-<td>0<br>1</td>
+<td>1<br>0</td>
 <td>true<br>false (default)</td>
 <td>Choose whether to automatically logout the user when the device is connected to AC power</td>
 </tr>
@@ -1029,7 +1071,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <td></td>
 <td>On AC power disconnected</td>
 <td>forceLogout_on_ac_power_disconnected</td>
-<td>0<br>1</td>
+<td>1<br>0</td>
 <td>true<br>false (default)</td>
 <td>Choose whether to automatically logout the user when the device is disconnected from AC power</td>
 </tr>

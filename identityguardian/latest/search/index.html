@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.1
+                                            1.2
                         </p>
 
                     </ul>
@@ -81,37 +81,37 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-1/about">
+                            <a href="/identityguardian/1-2/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/setup">
+                            <a href="/identityguardian/1-2/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/licensing">
+                            <a href="/identityguardian/1-2/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/mc">
+                            <a href="/identityguardian/1-2/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/usage">
+                            <a href="/identityguardian/1-2/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/api">
+                            <a href="/identityguardian/1-2/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/search">
+                            <a href="/identityguardian/1-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -214,7 +214,7 @@
             last: false
         }
         var results = [];
-        $.getJSON( "/[identityguardian]/1-1/index.json", function( data ) {
+        $.getJSON( "/[identityguardian]/1-2/index.json", function( data ) {
           json_data = data;
           console.log("got data");
           fuse = new Fuse(json_data, { keys: ["title", "keywords"] });
@@ -237,7 +237,7 @@
               $("#btn-loading").show()
               $("#btn-search").hide();
               
-              var product_version = "/[identityguardian]/1-1/index.json".replace("/index.json","");
+              var product_version = "/[identityguardian]/1-2/index.json".replace("/index.json","");
                 var q = $("#query").val();
                 var url="https://www.google.com/search?q=site:techdocs.zebra.com" + product_version + "+"+q;
                 window.open(url);

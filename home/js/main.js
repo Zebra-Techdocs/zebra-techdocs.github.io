@@ -1017,6 +1017,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         // Identity Guardian
         case '/identityguardian/1-0':
         case '/identityguardian/1-1':
+        case '/identityguardian/1-2':
             ddl_doc.options.length = 0;
             for (i=0; i < ig_1_0_text.length; i++) {
                 createOption(ddl_doc, ig_1_0_text[i], ig_1_0_val[i]);

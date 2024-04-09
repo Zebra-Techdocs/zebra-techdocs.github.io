@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.1
+                                            1.2
                         </p>
 
                     </ul>
@@ -81,37 +81,37 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-1/about">
+                            <a href="/identityguardian/1-2/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/setup">
+                            <a href="/identityguardian/1-2/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/licensing">
+                            <a href="/identityguardian/1-2/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/mc">
+                            <a href="/identityguardian/1-2/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/usage">
+                            <a href="/identityguardian/1-2/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/api">
+                            <a href="/identityguardian/1-2/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-1/search">
+                            <a href="/identityguardian/1-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -227,7 +227,7 @@
                                     <h1 id="about-identity-guardian" class="anchor"><a class="heading-anchor" href="#about-identity-guardian"><span></span></a>About Identity Guardian</h1>
                                     <p>
                                             Identity Guardian
-                                            1.1
+                                            1.2
                                     </p>
                                 </div>
                             </section>                    
@@ -299,7 +299,43 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 
 <hr>
 
-<h2 id="newin11" class="anchor"><a class="heading-anchor" href="#newin11"><span></span></a>New in 1.1</h2>
+<h2 id="newin12" class="anchor"><a class="heading-anchor" href="#newin12"><span></span></a>New in 1.2</h2>
+
+<ul>
+<li><strong>Integration of Zebra <a href="/devicetracker">Device Tracker</a> with Identity Guardian client.</strong> Device Tracker v6.2 now offers full support for Identity Guardian to collect device checkin/checkout data and single sign-on (SSO) support. </li>
+
+<li><strong>Retrieve multifactor authentication information from the <a href="../api/#retrieveusersession">Current and Previous User Session API</a>.</strong></li>
+
+<li><strong>Preview a new feature, <a href="../mc/#authenticationconfiguration">Authentication Data Storage</a>, allowing for temporary storage of user authentication data on the device, eliminating the need for repeated barcode scans on a shared device.</strong> A one-time scan is sufficient for initial use. Depending on the admin configuration, subsequent device access may prompt primary/secondary authentication. Full functionality of this feature will be available in the upcoming release of Identity Guardian.</li>
+
+<li><strong>Added support for MC9300, MC9400, MC3300, PS20J, L10A, TC8300, VC8300, and WS50.</strong> See the <a href="https://www.zebra.com/us/en/support-downloads/software/utilities/identity-guardian.html">Zebra Support Portal</a> for the list of supported devices.</li>
+
+<li><strong>Resolved Issues:</strong>
+
+
+<ul>
+<li>Enhanced Identity Guardian blocking screen behavior to appear quicker after device reboot.</li>
+
+<li>Resolved an issue where Identity Guardian’s managed configuration was not loading from the EMM UI.</li>
+
+<li>Ping Identity SSO configurations now consistently function with Identity Guardian when set up from EMMs.</li></ul>
+</li>
+
+<li><strong>Known Issue:</strong> 
+
+
+<ul>
+<li><strong>If a device's authentication is configured to a mode that does not require a barcode scan, it may intermittently display the message "Scan to Unlock" instead of simply "Unlock".</strong> This obstructs the function of other authentication methods. A workaround is to lock and then unlock the device, which restores the functionality of alternative authentication modes.</li>
+
+<li><strong>On TC22 or TC27 devices, occasionally an error message may appear requiring the MDNA license following a device restart.</strong></li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin11" class="anchor"><a class="heading-anchor" href="#newin11"><span></span></a>New in 1.1</h3>
 
 <ul>
 <li><strong>Introduced <a href="../mc/#ssomapping">SSO Mapping</a> managed configuration</strong> encompassing options related to SSO user role mapping, originally part of SSO Authentication Configuration.</li>
