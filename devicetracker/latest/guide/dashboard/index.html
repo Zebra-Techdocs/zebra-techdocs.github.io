@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            6.1
+                                            6.2
                         </p>
 
                     </ul>
@@ -75,37 +75,37 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicetracker/6-1/guide/about">
+                            <a href="/devicetracker/6-2/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/getstarted">
+                            <a href="/devicetracker/6-2/guide/getstarted">
                                         Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/setup">
+                            <a href="/devicetracker/6-2/guide/setup">
                                         Installation
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/config">
+                            <a href="/devicetracker/6-2/guide/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/use">
+                            <a href="/devicetracker/6-2/guide/use">
                                         Track Devices
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/dashboard">
+                            <a href="/devicetracker/6-2/guide/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/faq">
+                            <a href="/devicetracker/6-2/guide/faq">
                                         FAQ
                             </a>
                         </li>
@@ -115,7 +115,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/search">
+                            <a href="/devicetracker/6-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -225,7 +225,7 @@
                                     <h1 id="dashboard" class="anchor"><a class="heading-anchor" href="#dashboard"><span></span></a>Dashboard</h1>
                                     <p>
                                             Device Tracker
-                                            6.1
+                                            6.2
                                     </p>
                                 </div>
                             </section>                    
@@ -294,7 +294,7 @@
 
 <li><strong>Never Connected –</strong> Number of devices that are registered but never connected to the server.</li>
 
-<li><strong>Checked Out -</strong> Number of devices that have been <a href="../use/#devicecheckout">checked out</a> by a user.</li>
+<li><strong>Checked Out -</strong> Number of devices that have been checked out by a user with Identity Guardian.</li>
 
 <li><strong>Low Battery –</strong> Number of devices that have reached the low power threshold, requiring attention for it to be charged prior to battery depletion.</li>
 
@@ -337,7 +337,7 @@
 
 <li><strong>Device Model -</strong> Model number of the device.</li>
 
-<li><strong>Accessory -</strong>  Model name and serial number of the accessory (e.g. Bluetooth scanner) separated by an underscore (_). <a href="../config/#bluetoothscanners">Track Bluetooth Scanners</a> must be enabled under <strong>Settings.</strong>  The text color indicates the accessory status in relation to the mobile device: 
+<li><strong>Accessory -</strong> Model name and serial number of the accessory (e.g. Bluetooth scanner) separated by an underscore (_). <a href="../config/#bluetoothscanners">Track Bluetooth Scanners</a> must be enabled under <strong>Settings.</strong> The text color indicates the accessory status in relation to the mobile device:
 
 
 <ul>
@@ -350,11 +350,11 @@
 
 <li><strong>Site -</strong> Assigned site of the mobile device.</li>
 
-<li><strong>Map View -</strong> A GPS pin icon is displayed if the GPS device location is known. Click on the pin icon to display the GPS coordinaates and mapped location of the device.</li>
+<li><strong>Map View -</strong> A GPS pin icon is displayed if the GPS device location is known. Click on the pin icon to display the GPS coordinates and mapped location of the device.</li>
 
 <li><strong>Location -</strong> Device location based on the access point (AP) it is connected to. Displays either the AP friendly name or MAC address (if AP friendly name is not assigned)</li>
 
-<li><strong>Checked Out By -</strong> Current user that checked out the device.</li>
+<li><strong>Checked Out By -</strong> If <a href="/identityguardian">Identity Guardian</a> is in use, it displays the current user that checked out the device.</li>
 
 <li><strong>Last User -</strong> Last user that checked out the device.</li>
 
@@ -366,9 +366,9 @@
 
 <li><strong>Charging -</strong> Charging (device is connected to a power supply and charging) or Not Charging (device is not connected to a power supply).</li>
 
-<li><strong>Last Check In -</strong> The elapsed time since the last device check-in.</li>
+<li><strong>Last Check In -</strong> The elapsed time since the last device check-in, if Identity Guardian is in use.</li>
 
-<li><strong>Checked Out At -</strong> Time stamp when the device was last checked out.</li>
+<li><strong>Checked Out At -</strong> Time stamp when the device was last checked out, if Identity Guardian is in use.</li>
 
 <li><strong>Last Reported -</strong> Time stamp the device last reported to the server.</li>
 </ul>
@@ -401,8 +401,6 @@
 
 <li><strong>Mark Device as InService -</strong> The device status is changed from <strong>To Be Found</strong> back to <strong>In Service.</strong></li>
 
-<li><strong>Checkin Device -</strong> Checks in the <a href="#checkout">checked out</a> device(s).</li>
-
 <li><strong>Play Sound -</strong> Remotely play a sound on the lost or misplaced device to aid in finding it.</li>
 
 <li><strong>Add Notes -</strong> A dialog box appears prompting to enter notes or comments for the selected device(s).</li>
@@ -410,14 +408,18 @@
 <li><strong>Recommission Device -</strong> Changes the device(s) status from the <strong>Decommissioned</strong> state (i.e. removed from the active device license pool) and <a href="#recommissionadevice">recommissions</a> the device back to the <strong>In Service</strong> state.</li>
 
 <li><strong>Decommission Device -</strong> Removes the device(s) from the active device pool and places it out-of-service with the <a href="#decommissionadevice">Decommissioned</a> status.
+<!-- // REMOVED in 6.2
+- **Checkin Device -** Checks in the [checked out](#checkout) device(s).
+--></li>
+</ul>
+
 <!--  // REMOVED IN 5.1 GA
 - **Start Finding -** Begins the device search process. Refer to [Find a Device](../use/#findadevice). This is visible only if the device is marked **To Be Found.** During the device search, click one of the following when appropriate:
   _ **Stop Finding -** Stops the device search process; changes the state of the device from **Being Found** back to **To Be Found** so another device can initiate the finding process.
   _ **Play Sound -** Emits a sound from the device being located; listen and follow the sound to locate the device.
   _ **Found -** Indicates the device is successfully located after conducting the device search.
   _ **Cannot Find -** Indicates the device could not be found after the search was conducted
-  --></li>
-</ul>
+  -->
 
 <p>Select a single device from the devices table to display the <strong>Device Details</strong> providing the following information:</p>
 
@@ -499,7 +501,7 @@
 
 <li><strong>Display ON -</strong> Displays true or false if the device is on (may be active) or off (inactive), respectively.</li>
 
-<li><strong>Checked Out By -</strong> The current user that has checked out the device.
+<li><strong>Checked Out By -</strong> If <a href="/identityguardian">Identity Guardian</a> is in use, it displays the current user that has checked out the device.
 <img alt="image" style="height:450px" src="admin-device-details.png">
 <i>Mobile Devices - Device Details</i></li>
 </ul>
@@ -527,8 +529,6 @@
 
 <li><strong>Mark Device as InService -</strong> The device status is changed from <strong>To Be Found</strong> back to <strong>In Service.</strong></li>
 
-<li><strong>Checkin Device -</strong> Checks in the <a href="#checkout">checked out</a> device(s).</li>
-
 <li><strong>Add Notes -</strong> A dialog box appears prompting to enter notes or comments for the selected device(s).</li>
 
 <li><strong>Decommission Device -</strong> Removes the device(s) from the active device pool and places it out-of-service with the <a href="#decommissionadevice">Decommissioned</a> status.</li>
@@ -550,6 +550,10 @@
 <li><strong>Cannot Find -</strong> Indicates the device could not be found after the search was conducted</li></ul>
 </li>
 </ul>
+
+<!-- // REMOVED IN 6.2
+- **Checkin Device -** Checks in the [checked out](#checkout) device(s).
+-->
 
 <p><br></p>
 
@@ -586,8 +590,6 @@
 <p>Map Based Locationing is reported or updated when any of the following events occur:</p>
 
 <ul>
-<li>Device checkin/checkout</li>
-
 <li>Device reboot</li>
 
 <li>Device connects to a network</li>
@@ -893,7 +895,7 @@
 
 <li><strong>Never Connected –</strong> Number of devices that are registered but never connected to the server.</li>
 
-<li><strong>Checked Out -</strong> Number of devices that have been <a href="../use/#devicecheckout">checked out</a> by a user.</li>
+<li><strong>Checked Out -</strong> Number of devices that have been checked out by a user with Identity Guardian.</li>
 
 <li><strong>Low Battery –</strong> Number of devices that have reached the low power threshold, requiring attention for it to be charged prior to battery depletion.</li>
 
@@ -938,7 +940,7 @@
 
 <li><strong>Site -</strong> Assigned site of the mobile device.</li>
 
-<li><strong>Accessory -</strong> Model name and serial number of the accessory (e.g. Bluetooth scanner) separated by an underscore (_). <a href="../config/#bluetoothscanners">Track Bluetooth Scanners</a> must be enabled under <strong>Settings.</strong>  The text color indicates the accessory status in relation to the mobile device: 
+<li><strong>Accessory -</strong> Model name and serial number of the accessory (e.g. Bluetooth scanner) separated by an underscore (_). <a href="../config/#bluetoothscanners">Track Bluetooth Scanners</a> must be enabled under <strong>Settings.</strong> The text color indicates the accessory status in relation to the mobile device:
 
 
 <ul>
@@ -949,13 +951,13 @@
 <li><strong>Black -</strong> The accessory <em>was previously</em> paired and connected with the device but is <strong>no longer</strong> paired and connected, e.g. when the accessory is placed on a charged cradle. As a result of being unpaired, the accessory is removed from the <a href="../use/#bluetoothscanners">My Bluetooth Scanner</a> section of the device client app.</li></ul>
 </li>
 
-<li><strong>Map View -</strong> A GPS pin icon is displayed if the GPS device location is known. Click on the pin icon to display the GPS coordinaates and mapped location of the device.</li>
+<li><strong>Map View -</strong> A GPS pin icon is displayed if the GPS device location is known. Click on the pin icon to display the GPS coordinates and mapped location of the device.</li>
 
 <li><strong>Location -</strong> Device location based on the access point (AP) it is connected to. Displays either the AP friendly name or MAC address (if AP friendly name is not assigned)</li>
 
-<li><strong>Checked Out By -</strong> Current user that checked out the device.</li>
+<li><strong>Checked Out By -</strong> If <a href="/identityguardian">Identity Guardian</a> is in use, it displays the current user that checked out the device.</li>
 
-<li><strong>Last Used By -</strong> Last user that checked out the device.</li>
+<li><strong>Last Used By -</strong> Last user that checked out the device, if Identity Guardian is in use.</li>
 
 <li><strong>Status -</strong> Status of the mobile device: In Service, To Be Found, Finding, Found, Cannot Find, Decommissioned, Unlicensed</li>
 
@@ -965,9 +967,9 @@
 
 <li><strong>Charging -</strong> Charging (device is connected to a power supply and charging) or Not Charging (device is not connected to a power supply).</li>
 
-<li><strong>Last Check In -</strong> The elapsed time since the last device check-in.</li>
+<li><strong>Last Check In -</strong> The elapsed time since the last device check-in, if Identity Guardian is in use.</li>
 
-<li><strong>Checked Out At -</strong> Time stamp when the device was last checked out.</li>
+<li><strong>Checked Out At -</strong> Time stamp when the device was last checked out, if Identity Guardian is in use.</li>
 
 <li><strong>Last Reported -</strong> Time stamp the device last reported to the server.</li>
 </ul>
@@ -1050,7 +1052,7 @@
 
 <li><strong>Display ON -</strong> Displays true or false if the device is on (may be active) or off (inactive), respectively.</li>
 
-<li><strong>Checked Out By -</strong> The current user that has checked out the device.</li>
+<li><strong>Checked Out By -</strong> If <a href="/identityguardian">Identity Guardian</a> is in use, it displays the current user that has checked out the device.</li>
 </ul>
 
 <p><img alt="image" style="height:400px" src="mgr-device-details.png">
@@ -1067,14 +1069,16 @@
 
 <li><strong>Mark Device as InService -</strong> The device status is changed from <strong>To Be Found</strong> back to <strong>In Service.</strong></li>
 
-<li><strong>Checkin Device -</strong> Checks in the <a href="#checkout">checked out</a> device(s).</li>
-
 <li><strong>Add Notes -</strong> A dialog box appears prompting to enter notes or comments for the selected device(s).</li>
 
 <li><strong>Recommission Device -</strong> Changes the device(s) status from the <strong>Decommissioned</strong> state (i.e. removed from the active device license pool) and <a href="#recommissionadevice">recommissions</a> the device back to the <strong>In Service</strong> state.</li>
 
 <li><strong>Decommission Device -</strong> Removes the device(s) from the active device pool and places it out-of-service with the <a href="#decommissionadevice">Decommissioned</a> status.</li>
 </ul>
+
+<!-- // REMOVED IN 6.2
+- **Checkin Device -** Checks in the [checked out](#checkout) device(s).
+-->
 
 <p>The <strong>Actions</strong> menu is accessible from the <em>Mobile Devices</em> screen after selecting a device or from the <em>Device Details</em> screen.</p>
 
@@ -1518,11 +1522,12 @@ Above the mobile device table, the **Actions** menu provides the following optio
 <br></li>
 </ul>
 
+<!-- 
+
 <p>If <a href="../config/#checkincheckoutdevice">Device Checkout</a> is enabled:</p>
 
-<ul>
-<li><strong>Checked Out –</strong> filters devices that are checked-out by users after scanning their user barcode, associating the user to the device.</li>
-</ul>
+
+- **Checked Out –** filters devices that are checked-out by users after scanning their user barcode, associating the user to the device. -->
 
 <p><img alt="image" style="height:350px" src="dashboard.png">
 <i>Dashboard</i>
@@ -1822,7 +1827,7 @@ To perform a device search:</p>
 
 <li><strong>Status -</strong> device status (To Be Found, Being Found, etc.) when the device was moved into the current site</li>
 
-<li><strong>Checked Out By -</strong> user who checked out the device during its movement into the current site</li>
+<li><strong>Checked Out By -</strong> user who checked out the device during its movement into the current site, if <a href="/identityguardian">Identity Guardian</a> is in use</li>
 
 <li><strong>Last Site -</strong> previous site from where the device moved from</li>
 
@@ -1830,7 +1835,7 @@ To perform a device search:</p>
 
 <li><strong>Status -</strong> device status (To Be Found, Being Found, etc.) when the device was moved out of the previous site</li>
 
-<li><strong>Checked Out By -</strong> user who checked out the device during its movement out of the previous site</li></ul>
+<li><strong>Checked Out By -</strong> user who checked out the device during its movement out of the previous site, if <a href="/identityguardian">Identity Guardian</a> is in use</li></ul>
 </li>
 
 <li><strong>Moved Out:</strong>
@@ -1843,7 +1848,7 @@ To perform a device search:</p>
 
 <li><strong>Status -</strong> device status (To Be Found, Being Found, etc.) when the device was moved out of the previous site</li>
 
-<li><strong>Checked Out By -</strong> user who checked out the device during its movement out of the previous site</li>
+<li><strong>Checked Out By -</strong> user who checked out the device during its movement out of the previous site, if <a href="/identityguardian">Identity Guardian</a> is in use</li>
 
 <li><strong>Current site -</strong> site where device is currently located</li>
 
@@ -1851,7 +1856,7 @@ To perform a device search:</p>
 
 <li><strong>Status -</strong> device status (To Be Found, Being Found, etc.) when the device was moved into the current site</li>
 
-<li><strong>Checked Out By -</strong> user who checked out the device during its movement into the current site</li>
+<li><strong>Checked Out By -</strong> user who checked out the device during its movement into the current site, if <a href="/identityguardian">Identity Guardian</a> is in use</li>
 
 <li><strong>Last Site -</strong> previous site the device moved from</li></ul>
 </li>
@@ -1899,7 +1904,7 @@ To identify the devices that are still checked out, see [End of Day Device Detai
 
 <li><strong>Disconnected -</strong> Number of devices that lost connection to the server</li>
 
-<li><strong>Checked Out -</strong> Number of devices checked out by users and presumed to be in use</li>
+<li><strong>Checked Out -</strong> Number of devices checked out by users (with <a href="/identityguardian">Identity Guardian</a>) and presumed to be in use</li>
 
 <li><strong>Low Battery -</strong> Number of devices that have reached the low power threshold, requiring attention for it to be charged prior to battery depletion.</li>
 
@@ -2001,7 +2006,7 @@ Data displayed:
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--

@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            6.1
+                                            6.2
                         </p>
 
                     </ul>
@@ -75,37 +75,37 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicetracker/6-1/guide/about">
+                            <a href="/devicetracker/6-2/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/getstarted">
+                            <a href="/devicetracker/6-2/guide/getstarted">
                                         Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/setup">
+                            <a href="/devicetracker/6-2/guide/setup">
                                         Installation
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/config">
+                            <a href="/devicetracker/6-2/guide/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/use">
+                            <a href="/devicetracker/6-2/guide/use">
                                         Track Devices
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/dashboard">
+                            <a href="/devicetracker/6-2/guide/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/faq">
+                            <a href="/devicetracker/6-2/guide/faq">
                                         FAQ
                             </a>
                         </li>
@@ -115,7 +115,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/search">
+                            <a href="/devicetracker/6-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -225,7 +225,7 @@
                                     <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
                                     <p>
                                             Device Tracker
-                                            6.1
+                                            6.2
                                     </p>
                                 </div>
                             </section>                    
@@ -240,7 +240,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>The Device Tracker web portal allows administrators to manage devices, access points (APs) and sites, and to generate reports of managed assets. For Device Tracker operation, administrators must <a href="#managedevices">register devices</a>, <a href="#manageaccesspoints">register access points</a> and <a href="#managesites">register sites</a> prior to use. This can be performed manually or by uploading data through a .CSV file.</p>
+<p>The Device Tracker web portal empowers administrators to manage devices, access points (APs) and sites, as well as generate reports of managed assets. For Device Tracker to operate, administrators must <a href="#managedevices">register devices</a>, <a href="#manageaccesspoints">access points</a> and <a href="#managesites">sites</a> prior to use. This can be performed manually or by importing data via a .CSV file. The portal also offers additional configuration options such as <a href="#automation">automation</a>, <a href="#notifications">notifications</a>, <a href="#mapbasedlocationing">map-based location tracking</a> and <a href="#bluetoothscanners">Bluetooth scanners</a>.</p>
 
 <h4 id="systemparameters" class="anchor"><a class="heading-anchor" href="#systemparameters"><span></span></a>System Parameters:</h4>
 
@@ -311,10 +311,6 @@
 
 <li><a href="#devicetositeassignment">Configure Device-to-Site Assignment</a> (optional)</li>
 
-<li><a href="#checkincheckoutdevice">Configure Device Checkin/Checkout</a> (optional)</li>
-
-<li><a href="#checkoutbarcodeprefix">Set Barcode Prefix</a> (optional)</li>
-
 <li><a href="#automation">Configure Workflow Automation</a> (optional)</li>
 
 <li><a href="#reports">Generate Reports</a> (optional)</li>
@@ -328,6 +324,10 @@
 
 <li>All Manager and Associate capabilities</li>
 </ul>
+
+<!-- // Removed
+- [Set Barcode Prefix](#checkoutbarcodeprefix) (optional)
+- [Configure Device Checkin/Checkout](#checkincheckoutdevice) (optional) -->
 
 <h3 id="managerrole" class="anchor"><a class="heading-anchor" href="#managerrole"><span></span></a>Manager Role</h3>
 
@@ -363,8 +363,6 @@
 <p>User/Associate functions and capabilities presented through the Device Tracker web portal:</p>
 
 <ul>
-<li><a href="../use/#devicecheckout">Device Checkout/Checkin</a></li>
-
 <li><a href="../use/#finddevice">View marked devices</a> for retrieval ("To Be Found")</li>
 
 <li><a href="../use/#finddevice">Find devices</a> using the BLE proximity meter and audio chirp</li>
@@ -372,17 +370,22 @@
 <li><a href="../use/#finddevice">Mark devices as found or cannot be found</a></li>
 </ul>
 
+<!-- // REMOVED
+- [Device Checkout/Checkin](../use/#devicecheckout) -->
+
 <hr>
 
 <h2 id="singlesignonsso" class="anchor"><a class="heading-anchor" href="#singlesignonsso"><span></span></a>Single Sign-On (SSO)</h2>
 
-<p>Optionally, Device Tracker can integrate with some single sign-on (SSO) systems for mapping SSO roles to Device Tracker portal dashboards, and for authenticating device access for managers and administrators using their corporate login credentials. Enterprise Login Screen also can be used to control device access by associates, who can check out devices using their corporate login credentials to track custody and provide accountability for devices.</p>
+<p>Device Tracker can optionally be integrated with single sign-on (SSO) systems, allowing device access through corporate user login credentials.</p>
 
-<p>There are three levels of Device Tracker access based on user role: administrator, manager, and associate. SSO activation allows administrators and managers to log into Device Tracker with their SSO credentials and gain access to their respective <a href="../dashboard">dashboards</a> on the device and web portal. For other users, there is no change in Device Tracker client app access when logging in with their SSO credentials; after logging in, the <a href="../use/#markdevicetofind">To Be Found</a> screen is seen when the client app is launched. SSO credentials are <em>not</em> used for user accountability, only for user authentication to gain device access.</p>
+<p><strong>There are three levels of Device Tracker access based on user role: administrator, manager, and associate.</strong> Through the integration of SSO roles with Device Tracker, managers and administrators can access their respective Device Tracker <a href="../dashboard">dashboards</a> using their corporate login credentials. For other users, there is no change in Device Tracker client app access when logging in with their SSO credentials; after logging in, the <a href="../use/#markdevicetofind">To Be Found</a> screen is seen when the client app is launched. <strong>In this scenario, SSO credentials are utilized solely for user authentication to gain device access, <em>not for establishing user accountability.</em></strong> This means that there is no device custody tracking - the authenticated user is not associated with the device.</p>
 
-<p><strong>To enforce user accountability and prevent device access until the user logs in with their SSO credentials, install <a href="#enterpriseloginscreenels">Enterprise Login Screen (ELS).</a></strong> User accountability associates the user to the device based on login so the administrator can track device ownership.</p>
+<p><strong><a href="/identityguardian">Identity Guardian</a>, which requires a separate installation from Device Tracker, offers a solution for managing device access and tracking device custody,</strong> with integrated support from Device Tracker. It ensures secure and personalized access to devices through facial biometric authentication and multi-factor login. By enabling users to sign in with their corporate credentials, <strong>Identity Guardian simplifies the tracking of device custody tracking and promotes user accountability.</strong></p>
 
-<p><strong><em>PingFederate (OAuth 2.0 with PKCE or Mutual-TLS) has been validated for Device Tracker.</em></strong> When SSO is integrated, it uses OAuth 2.0 with PKCE by default. For integration with Mutual-TLS client certificates, see <a href="#mutualtlscertificategenerationdeployment">Mutual-TLS Certificate Generation &amp; Deployment</a>.</p>
+<blockquote>
+  <p><b><em>Device Tracker is compatible with both Ping Identity (supporting OAuth 2.0 with PKCE or Mutual-TLS) and Microsoft Entra ID (supporting client secret or Mutual-TLS).</em></b> For integration with Mutual-TLS client certificates, refer to <a href="#mutualtlscertificategenerationdeployment">Mutual-TLS Certificate Generation &amp; Deployment</a>.</p>
+</blockquote>
 
 <p><strong>Notes:</strong></p>
 
@@ -447,75 +450,138 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MVG8sf07o44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 
-<p><em>Video: Learn how to configure SSO for user authentication and map roles for role-based access to Device Tracker.</em></p>
+<p><em>Video: Learn how to set up SSO for user authentication and map SSO roles for Device Tracker integration with the PingFederate SSO provider.</em></p>
 
 <p>Refer to the video above or follow these steps to integrate SSO with Device Tracker - <b><i>it is important to perform the step to <a href="#step-add-sso-user">create an SSO user</a>:</i></b></p>
 
 <ol>
-<li><p>In the browser, launch the Device Tracker web portal using the URL supplied. Login using the super administrator credentials provided by Zebra. Enter the <strong>User ID</strong> and <strong>Password.</strong> Click <strong>Log In.</strong>
-<img alt="image" style="height:250px" src="portal-login.png"></p></li>
+<li>In the browser, launch the Device Tracker web portal using the URL supplied. Login using the super administrator credentials provided by Zebra. Enter the <strong>User ID</strong> and <strong>Password.</strong> Click <strong>Log In.</strong>
+<img alt="image" style="height:250px" src="portal-login.png"></li>
 
-<li><p>After login, click <strong>Settings &gt; Single Sign On Integration (SSO).</strong>
-<img alt="image" style="height:150px" src="sso-toggle.png"></p></li>
+<li>After login, click <strong>Settings &gt; Single Sign On Integration (SSO).</strong></li>
 
-<li><p>Toggle <strong>Disabled</strong> to enable SSO integration with OAuth 2.0 Protocol. The SSO configuration page appears.
-<img alt="image" style="height:400px" src="sso-params.jpg"></p></li>
+<li>In the SSO Provider dropdown, select the appropriate provier: 
 
-<li><p>For <strong>Client Authentication Type,</strong> select one of the following:</p>
 
 <ul>
-<li><strong>None -</strong> Select this option for PKCE client authentication. If selected, <strong>Proof Key For Code Exchange</strong> is enabled.</li>
+<li>Ping Identity</li>
 
-<li><strong>Client TLS Certificate -</strong> Select this option for Client TLS Certificate client authentication. If selected, <strong>Proof Key For Code Exchange</strong> is disabled.</li></ul></li>
+<li>Microsoft
+<img alt="image" style="height:550px" src="sso.jpg"></li></ul>
+</li>
 
-<li><p>Enter the appropriate information for all fields based on the SSO server settings. If using role-based mapping, enter the information under the <strong>Map SSO Provided Responses</strong> section based on your SSO parameters:</p>
+<li>Select/enter the following:
 
-<ul>
-<li><strong>UserID Parameter -</strong> user ID or user name parameter that is configured in SSO and returned from the SSO response upon authenticating the user</li>
-
-<li><strong>Use SSO Defined Roles -</strong> if enabled, uses role-based mapping to automatically map the administrator and manager user roles based on roles defined in your SSO. If disabled, the admin and manager users must be defined in the <a href="../config/#manageusers">Manage Users</a> section. Zebra recommends to enable this option to leverage the roles that exist through your SSO and avoid the need to manage users through Device Tracker.</li>
-
-<li><strong>Site Location -</strong> site parameter that determines the location or site of the user</li>
-
-<li><strong>Admin Role Parameter -</strong> parameter that identifies whether the user is an admin</li>
-
-<li><strong>Admin Roles -</strong> names of the admin roles</li>
-
-<li><strong>Manager Role Parameter -</strong> parameter that identifies whether the user is a manager</li>
-
-<li><strong>Manager Roles -</strong> names of the manager roles
-<img alt="image" style="height:500px" src="sso-map.jpg"></li></ul></li>
-
-<li><p>Register the following by entering the Client ID:</p>
 
 <ul>
-<li>Web Portal</li>
+<li>For <strong>Client Authentication Type,</strong> select one of the following:
 
-<li>Device Tracker Mobile Client</li>
 
-<li>Enterprise Login Screen Mobile Client</li></ul></li>
+<ul>
+<li><strong>None -</strong> Applies for PKCE client authentication. If selected, <strong>Proof Key For Code Exchange</strong> is enabled.</li>
 
-<li><p>Scroll to the bottom of the page and click <strong>Validate.</strong></p></li>
+<li><strong>Client TLS Certificate -</strong> <em>Applies for Ping Identity only,</em> for client TLS Certificate client authentication. If selected, <strong>Proof Key For Code Exchange</strong> is disabled.</li>
 
-<li><p><em>Make sure pop-up windows are not blocked in the browser.</em> During the validation process, a status window appears followed by a login prompt - <strong>it is important to enter your login credentials</strong> to complete the validation process.</p></li>
+<li><strong>Client Secret -</strong> <em>Applies for Microsoft only,</em> string value used in place of a certificate to identify itself.</li></ul>
+</li>
 
-<li><p>When validation is successful, a confirmation prompt appears asking if you would like to activate SSO.</p></li>
+<li><strong>Authorization Scope -</strong> Specify the access needed.</li>
 
-<li><p>Click <strong>Yes.</strong></p></li>
+<li>Enter the appropriate information for all <strong>SSO Endpoint URL</strong> fields based on the SSO server settings. </li>
 
-<li><p>A confirmation message appears indicating successful SSO configuration activation.
-<img alt="image" src="sso-success.png"></p></li>
+<li>If using role-based mapping, enter the information under the <strong>Map SSO Provided Responses</strong> section based on your SSO parameters:
 
-<li><p><span id="step-add-sso-user"><b>Important: The admin must add at least one SSO admin user.</b> See <a href="#ssouser">Add SSO User</a>. Otherwise, if the admin logs out before adding the SSO admin user, no admin user can login due to the lack of an SSO admin user registered.</span></p></li>
 
-<li><p>Sign out from the non-SSO session. In the top right, click on the signout icon.
-<img alt="image" style="height:250px" src="non-sso-logout.png"></p></li>
+<ul>
+<li><strong>UserID Parameter -</strong> User ID or user name parameter that is configured in SSO and returned from the SSO response upon authenticating the user</li>
 
-<li><p>The SSO login page appears. Enter the user credentials to login. Click <strong>Sign In.</strong></p></li>
+<li><strong>Use SSO Defined Roles -</strong> If enabled, uses role-based mapping to automatically map the administrator and manager user roles based on roles defined in your SSO. If disabled, the admin and manager users must be defined in the <a href="../config/#manageusers">Manage Users</a> section. Zebra recommends to enable this option to leverage the roles that exist through your SSO and avoid the need to manage users through Device Tracker.</li>
 
-<li><p>Click on <strong>Settings &gt; Single Sign On Integration (SSO).</strong> The <strong>SSO Activation Status</strong> shows <strong>Activated.</strong>
-<img alt="image" style="height:200px" src="sso-activated.png"></p></li>
+<li><strong>Site Location -</strong> Site parameter that determines the location or site of the user</li>
+
+<li><strong>Admin Role Parameter -</strong> Parameter that identifies whether the user is an admin</li>
+
+<li><strong>Admin Roles -</strong> Names of the admin roles</li>
+
+<li><strong>Manager Role Parameter -</strong> Parameter that identifies whether the user is a manager</li>
+
+<li><strong>Manager Roles -</strong> Names of the manager roles</li></ul>
+</li>
+
+<li>Register the web portal by entering the following:
+
+
+<ul>
+<li><strong>Client ID</strong> </li>
+
+<li><strong>Redirect URI</strong> </li></ul>
+</li>
+
+<li>Click <strong>Validate.</strong>
+<img alt="image" style="height:600px" src="sso-2.jpg"></li></ul>
+</li>
+
+<li><strong>Make sure pop-up windows are <em>not</em> blocked in the browser.</strong> During the validation process, a status window appears followed by a login prompt. <strong>It is important to enter your login credentials</strong> to complete the validation process.</li>
+
+<li>When validation is successful, a confirmation prompt appears asking if you would like to activate SSO.</li>
+
+<li>Click <strong>Yes.</strong></li>
+
+<li>A confirmation message appears indicating successful SSO configuration activation.
+<img alt="image" src="sso-success.png"></li>
+
+<li><span id="step-add-sso-user"><i class="fa fa-exclamation-circle" style="color:rgb(255, 0, 0);"></i> <b>IMPORTANT: <i>The admin must add at least <u>one</u> SSO admin user.</i></b> See <a href="#ssouser">Add SSO User</a>. Otherwise, if the admin logs out before adding the SSO admin user, no admin user can login due to the lack of an SSO admin user registered.</span></li>
+
+<li>Sign out from the non-SSO session. In the top right, click on the signout icon.
+<img alt="image" style="height:400px" src="non-sso-logout.jpg"></li>
+
+<li>The SSO login page appears. Enter the user credentials to login. Click <strong>Sign In.</strong></li>
+
+<li>Click on <strong>Settings &gt; Single Sign On Integration (SSO).</strong> The <strong>SSO Activation Status</strong> shows <strong>Activated.</strong>
+<img alt="image" style="height:375px" src="sso-activated.png"></li>
 </ol>
+
+<!-- // REMOVED IN 6.2, NEW UI
+1. In the browser, launch the Device Tracker web portal using the URL supplied. Login using the super administrator credentials provided by Zebra. Enter the **User ID** and **Password.** Click **Log In.**
+   <img alt="image" style="height:250px" src="portal-login.png" />
+2. After login, click **Settings > Single Sign On Integration (SSO).**
+   <img alt="image" style="height:150px" src="sso-toggle.png" />
+3. Toggle **Disabled** to enable SSO integration with OAuth 2.0 Protocol. The SSO configuration page appears.
+   <img alt="image" style="height:400px" src="sso-params.jpg" />
+4. For **Client Authentication Type,** select one of the following:
+
+   - **None -** Select this option for PKCE client authentication. If selected, **Proof Key For Code Exchange** is enabled.
+   - **Client TLS Certificate -** Select this option for Client TLS Certificate client authentication. If selected, **Proof Key For Code Exchange** is disabled.
+
+5. Enter the appropriate information for all fields based on the SSO server settings. If using role-based mapping, enter the information under the **Map SSO Provided Responses** section based on your SSO parameters:
+
+   - **UserID Parameter -** user ID or user name parameter that is configured in SSO and returned from the SSO response upon authenticating the user
+   - **Use SSO Defined Roles -** if enabled, uses role-based mapping to automatically map the administrator and manager user roles based on roles defined in your SSO. If disabled, the admin and manager users must be defined in the [Manage Users](../config/#manageusers) section. Zebra recommends to enable this option to leverage the roles that exist through your SSO and avoid the need to manage users through Device Tracker.
+   - **Site Location -** site parameter that determines the location or site of the user
+   - **Admin Role Parameter -** parameter that identifies whether the user is an admin
+   - **Admin Roles -** names of the admin roles
+   - **Manager Role Parameter -** parameter that identifies whether the user is a manager
+   - **Manager Roles -** names of the manager roles
+     <img alt="image" style="height:500px" src="sso-map.jpg" />
+
+6. Register the following by entering the Client ID:
+
+   - Web Portal
+   - Device Tracker Mobile Client
+
+7. Scroll to the bottom of the page and click **Validate.**
+8. _Make sure pop-up windows are not blocked in the browser._ During the validation process, a status window appears followed by a login prompt - **it is important to enter your login credentials** to complete the validation process.
+9. When validation is successful, a confirmation prompt appears asking if you would like to activate SSO.
+10. Click **Yes.**
+11. A confirmation message appears indicating successful SSO configuration activation.
+    <img alt="image" src="sso-success.png" />
+12. <span id="step-add-sso-user"><b>Important: The admin must add at least one SSO admin user.</b> See <a href="#ssouser">Add SSO User</a>. Otherwise, if the admin logs out before adding the SSO admin user, no admin user can login due to the lack of an SSO admin user registered.</span>
+13. Sign out from the non-SSO session. In the top right, click on the signout icon.
+    <img alt="image" style="height:250px" src="non-sso-logout.png" />
+14. The SSO login page appears. Enter the user credentials to login. Click **Sign In.**
+15. Click on **Settings > Single Sign On Integration (SSO).** The **SSO Activation Status** shows **Activated.**
+    <img alt="image" style="height:200px" src="sso-activated.png" />
+-->
 
 <!--  // NOTE: Not in 5.1 GA.
 ### Site Name Configuration
@@ -528,105 +594,79 @@ To configure the SSO Site Name parameter:
 4. Click on **Validate.**
 -->
 
-<h3 id="enterpriseloginscreenels" class="anchor"><a class="heading-anchor" href="#enterpriseloginscreenels"><span></span></a>Enterprise Login Screen (ELS)</h3>
+<!-- // REMOVE ELS STARTING FROM 6.2
+### Enterprise Login Screen (ELS)
 
-<p><em>Enterprise Login Screen (ELS) (pre-release)</em> is an optional mobile application that works in conjunction with SSO. It blocks device access until the user logs in with their SSO credentials. These login credentials are passed to Device Tracker for accountability and the appropriate Device Tracker screen is displayed to the users based on their role:</p>
+_Enterprise Login Screen (ELS) (pre-release)_ is an optional mobile application that works in conjunction with SSO. It blocks device access until the user logs in with their SSO credentials. These login credentials are passed to Device Tracker for accountability and the appropriate Device Tracker screen is displayed to the users based on their role:
 
-<ul>
-<li><strong>Administrators -</strong> the admin dashboard displays data across all sites in the organization</li>
+- **Administrators -** the admin dashboard displays data across all sites in the organization
+- **Managers -** the manager dashboard displays data specific for their assigned site
+- **Associates -** users are presented with the **To Be Found** screen listing devices flagged for retrieval
 
-<li><strong>Managers -</strong> the manager dashboard displays data specific for their assigned site</li>
+See [requirements for ELS](../setup/#devicerequirements) and [instructions on ELS installation](../setup).
 
-<li><strong>Associates -</strong> users are presented with the <strong>To Be Found</strong> screen listing devices flagged for retrieval</li>
-</ul>
+When ELS is launched, it grants access to the custom SSO login screen. After the user logs in with their SSO credentials, the user is associated to the device for accountability. When the user logs out, the user is disassociated from the device and the ELS screen is displayed, preventing access to the device until the user logs in. 
 
-<p>See <a href="../setup/#devicerequirements">requirements for ELS</a> and <a href="../setup">instructions on ELS installation</a>.</p>
+<img alt="image" style="height:350px" src="els.jpg"/>
 
-<p>When ELS is launched, it grants access to the custom SSO login screen. After the user logs in with their SSO credentials, the user is associated to the device for accountability. When the user logs out, the user is disassociated from the device and the ELS screen is displayed, preventing access to the device until the user logs in. <!-- See <a href="#setup">Install &amp; Setup</a> for instructions to install ELS.--></p>
+_Enterprise Login Screen_
 
-<p><img alt="image" style="height:350px" src="els.jpg"></p>
+In the Enterprise Login Screen, tap **Sign in** for the custom SSO login screen to appear, prompting the user to login with their SSO credentials.
 
-<p><em>Enterprise Login Screen</em></p>
+**Notes:**
 
-<p>In the Enterprise Login Screen, tap <strong>Sign in</strong> for the custom SSO login screen to appear, prompting the user to login with their SSO credentials.</p>
-
-<p><strong>Notes:</strong></p>
-
-<ul>
-<li><strong>When using an EMM (Enterprise Mobility Management)</strong> system:
-
-
-<ul>
-<li>The EMM must allow ELS and Google Chrome to run on the device. Optionally, the administrator can hide Chrome in the launcher app home screen on the device.</li>
-
-<li>For security, the administrator can allow navigation only to the SSO URL to block all other URL access.</li></ul>
-</li>
-
-<li><strong>When using AirWatch:</strong>
+- **When using an EMM (Enterprise Mobility Management)** system:
+  - The EMM must allow ELS and Google Chrome to run on the device. Optionally, the administrator can hide Chrome in the launcher app home screen on the device.
+  - For security, the administrator can allow navigation only to the SSO URL to block all other URL access.
+- **When using AirWatch:**
+  - Attended Mode does not function with ELS.
+  - There is a limitation using ELS with the floating home button; the user is able to access the AirWatch home screen when tapping the button. If it is required to have ELS block device access, do not enable the floating home button in AirWatch.
 
 
-<ul>
-<li>Attended Mode does not function with ELS.</li>
-
-<li>There is a limitation using ELS with the floating home button; the user is able to access the AirWatch home screen when tapping the button. If it is required to have ELS block device access, do not enable the floating home button in AirWatch.</li></ul>
-</li>
-</ul>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C7_Ely-WUyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-
-<p><em>Video: Learn how to use ELS and set a passcode</em></p>
-
-<h4 id="elsconfiguration" class="anchor"><a class="heading-anchor" href="#elsconfiguration"><span></span></a>ELS Configuration</h4>
-
-<p>To configure ELS, it is part of the <a href="#ssointegration">SSO Integration</a>. The Enterprise Login Screen Mobile Client must be registered.</p>
-
-<h4 id="bypasspasscodeconfiguration" class="anchor"><a class="heading-anchor" href="#bypasspasscodeconfiguration"><span></span></a>Bypass Passcode Configuration</h4>
-
-<p>Enterprise Login Screen (ELS) can be bypassed by using a bypass passcode that allows a user to gain device access without SSO. This is useful in unexpected situations when they are not able to login with their SSO credentials, such as if the SSO server is down or the WiFi network is down. The administrator creates a passcode with an associated group name and supplies this passcode to the user to enter into the device for access to be granted.</p>
-
-<p>Requirements for login bypass:</p>
-
-<ul>
-<li>SSO must be activated</li>
-
-<li><a href="#checkincheckoutdevice">Checkin/Checkout</a> must be enabled</li>
-
-<li>Enterprise Login Screen is installed</li>
-</ul>
-
-<p>To set a passcode:</p>
-
-<ol>
-<li>Login as administrator to the web portal.</li>
-
-<li>Go to Settings &gt; SSO.</li>
-
-<li>Scroll to the Passcodes section located at the bottom of the page.</li>
-
-<li>Click <strong>Add.</strong></li>
-
-<li>Enter the following:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C7_Ely-WUyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-<ul>
-<li><strong>Name -</strong> to aid in identifying the user</li>
+_Video: Learn how to use ELS and set a passcode_
 
-<li><strong>Passcode -</strong> the passcode cannot contain special characters, such as <code>: = # { } [ ] : ; / \</code></li></ul>
-</li>
+#### ELS Configuration
 
-<li>Click <strong>Confirm.</strong></li>
-</ol>
+To configure ELS, it is part of the [SSO Integration](#ssointegration). The Enterprise Login Screen Mobile Client must be registered.
+
+#### Bypass Passcode Configuration
+
+Enterprise Login Screen (ELS) can be bypassed by using a bypass passcode that allows a user to gain device access without SSO. This is useful in unexpected situations when they are not able to login with their SSO credentials, such as if the SSO server is down or the WiFi network is down. The administrator creates a passcode with an associated group name and supplies this passcode to the user to enter into the device for access to be granted.
+
+Requirements for login bypass:
+
+- SSO must be activated
+- [Checkin/Checkout](#checkincheckoutdevice) must be enabled
+- Enterprise Login Screen is installed
+
+To set a passcode:
+
+1. Login as administrator to the web portal.
+2. Go to Settings > SSO.
+3. Scroll to the Passcodes section located at the bottom of the page.
+4. Click **Add.**
+5. Enter the following:
+   - **Name -** to aid in identifying the user
+   - **Passcode -** the passcode cannot contain special characters, such as `: = # { } [ ] : ; / \`
+6. Click **Confirm.**
+
 
 <table>
-  <tbody><tr>
-    <td><img alt="image" style="height:400px" src="passcode-add-1.jpg"></td>
+  <tr>
+    <td><img alt="image" style="height:400px" src="passcode-add-1.jpg" /></td>
     <td> &nbsp; &nbsp; &nbsp; &nbsp; </td>
-    <td><img alt="image" style="height:200px" src="passcode-add-2.jpg"></td>
+    <td><img alt="image" style="height:200px" src="passcode-add-2.jpg" /></td>
   </tr>
   <tr>
     <td><i>Add new passcode with group name</i></td>
   </tr>
-</tbody></table>
+</table>
+
+
+-->
 
 <hr>
 
@@ -1483,7 +1523,7 @@ Sample device .CSV file content:</p>
 <li><p>Check the box next to the device to modify. The <strong>Actions</strong> menu appears.</p></li>
 
 <li><p>From the <strong>Actions</strong> dropdown, select the desired action based on the Edit or Tracking category (options may vary depending on the state of the device):
-<img alt="image" style="" src="modify-device-manual.png">
+<img alt="image" style="" src="modify-device-manual.jpg">
 <strong>Edit:</strong></p>
 
 <ul>
@@ -1501,8 +1541,6 @@ Sample device .CSV file content:</p>
 <li><strong>Mark Device for Finding -</strong> This changes the device(s) status to <strong>To Be Found</strong>, placing the device in the <strong>To Be Found</strong> list used in the device search process.</li>
 
 <li><strong>Mark Device as InService -</strong> The device status is changed from <strong>To Be Found</strong> back to <strong>In Service.</strong></li>
-
-<li><strong>Checkin Device -</strong> Checks in the <a href="#checkout">checked out</a> device(s).</li>
 
 <li><strong>Add Notes -</strong> A dialog box appears prompting to enter notes or comments for the selected device(s).</li>
 
@@ -1721,87 +1759,75 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <p><br></p>
 
-<hr>
+<!--
+---
 
-<h2 id="checkincheckoutdevice" class="anchor"><a class="heading-anchor" href="#checkincheckoutdevice"><span></span></a>Checkin/Checkout Device</h2>
+## Checkin/Checkout Device
 
-<p>Device Checkin/Checkout is an <em>optional</em> feature that maintains user accountability of the device, associating the device to the user that checks out the device. When enabled, a user cannot access the device until either scanning a user barcode or entering SSO credentials (if SSO is activated and ELS is installed) to checkout the device.</p>
+Device Checkin/Checkout is an _optional_ feature that maintains user accountability of the device, associating the device to the user that checks out the device. When enabled, a user cannot access the device until either scanning a user barcode or entering SSO credentials (if SSO is activated and ELS is installed) to checkout the device.
 
-<p>Checkin/Checkout scenarios:</p>
+Checkin/Checkout scenarios:
 
-<ul>
-<li><strong>Checkout:</strong> At the start of a work shift, the user checks-out the device by scanning their unique barcode or entering the SSO user credentials. This associates the user with the device, which is visible in the <a href="../use/#deviceinformation">device information</a>.</li>
+- **Checkout:** At the start of a work shift, the user checks-out the device by scanning their unique barcode or entering the SSO user credentials. This associates the user with the device, which is visible in the [device information](../use/#deviceinformation).
+- **Checkin:** At the end of a work shift, the user checks-in the device depending on the [Device Checkin Option](../config/#devicecheckinoptions) selected. After checkin, the user is no longer associated with the device.
 
-<li><strong>Checkin:</strong> At the end of a work shift, the user checks-in the device depending on the <a href="../config/#devicecheckinoptions">Device Checkin Option</a> selected. After checkin, the user is no longer associated with the device.</li>
-</ul>
+<img alt="image" style="height:400px" src="app-config.jpg"/>
 
-<p><img alt="image" style="height:400px" src="app-config.jpg"></p>
+_Configure Checkin/Checkout_
 
-<p><em>Configure Checkin/Checkout</em></p>
+See the following subsections for more information on each of the Checkin/Checkout options.
 
-<p>See the following subsections for more information on each of the Checkin/Checkout options.</p>
+### Enable Checkin/Checkout
 
-<h3 id="enablecheckincheckout" class="anchor"><a class="heading-anchor" href="#enablecheckincheckout"><span></span></a>Enable Checkin/Checkout</h3>
+Checkin/Checkout is disabled by default. To enable device checkout, access the web portal by entering the URL provided by Zebra in a [supported browser](../setup/#webportalrequirements).
 
-<p>Checkin/Checkout is disabled by default. To enable device checkout, access the web portal by entering the URL provided by Zebra in a <a href="../setup/#webportalrequirements">supported browser</a>.</p>
+1. Log in to the web portal as an administrator.
+2. Click **Settings** in the left menu.
+3. Under Settings, click **Checkin/Checkout.**
+4. Enable **Checkin/Checkout**. Related options are displayed and described in the sections that follow.
 
-<ol>
-<li>Log in to the web portal as an administrator.</li>
+### Checkout Barcode Prefix
 
-<li>Click <strong>Settings</strong> in the left menu.</li>
+_(Optional)_ When barcode scanning is used for checkin/checkout (SSO is not activated), a barcode prefix can be specified to restrict checkout to only scan barcodes that begin with the specified prefix in the form of a character string. If the barcode scanned does not contain the prefix, checkout is not successful. [Checkin/Checkout](#enablecheckincheckout) must be enabled. Keep this field blank to accept all barcodes without a prefix.
 
-<li>Under Settings, click <strong>Checkin/Checkout.</strong></li>
+When generating a barcode with the prefix, the specified prefix is followed by the username identifier. The following is a sample barcode containing prefix “NGDTRK-” and username “JohnDoe”:
+<img alt="image" style="height:80px" src="barcode-prefix.png"/>
+_Sample barcode with prefix and username: "NGDTRK-JohnDoe"_
 
-<li>Enable <strong>Checkin/Checkout</strong>. Related options are displayed and described in the sections that follow.</li>
-</ol>
+### Maximum Checkout Time
 
-<h3 id="checkoutbarcodeprefix" class="anchor"><a class="heading-anchor" href="#checkoutbarcodeprefix"><span></span></a>Checkout Barcode Prefix</h3>
+_(Optional)_ Enter the maximum time (in hours) for the device to be checked out when [Checkin/Checkout](#enablecheckincheckout) is enabled. When the specified time elapses, both the checked-out device user name and the amount of time the user is checked out is flagged in red on the device dashboard, providing visibility to the administrator.
 
-<p><em>(Optional)</em> When barcode scanning is used for checkin/checkout (SSO is not activated), a barcode prefix can be specified to restrict checkout to only scan barcodes that begin with the specified prefix in the form of a character string. If the barcode scanned does not contain the prefix, checkout is not successful. <a href="#enablecheckincheckout">Checkin/Checkout</a> must be enabled. Keep this field blank to accept all barcodes without a prefix.</p>
+_Maximum Checkout Time_ is affected by the option **[Automatically Mark Devices "To Be Found"](#configureautomationsettings)** based on the rule that includes "maximum checkout time reached". To automatically force the device to checkin when reaching the **Maximum Checkout Time,** see [Force Checkin](#forcecheckin)
 
-<p>When generating a barcode with the prefix, the specified prefix is followed by the username identifier. The following is a sample barcode containing prefix “NGDTRK-” and username “JohnDoe”:
-<img alt="image" style="height:80px" src="barcode-prefix.png">
-<em>Sample barcode with prefix and username: "NGDTRK-JohnDoe"</em></p>
+<img alt="image" style="height:350px" src="max-checkout-time.png"/>
 
-<h3 id="maximumcheckouttime" class="anchor"><a class="heading-anchor" href="#maximumcheckouttime"><span></span></a>Maximum Checkout Time</h3>
+_Maximum checkout time reached_
 
-<p><em>(Optional)</em> Enter the maximum time (in hours) for the device to be checked out when <a href="#enablecheckincheckout">Checkin/Checkout</a> is enabled. When the specified time elapses, both the checked-out device user name and the amount of time the user is checked out is flagged in red on the device dashboard, providing visibility to the administrator.</p>
+#### Force Checkin
 
-<p><em>Maximum Checkout Time</em> is affected by the option <strong><a href="#configureautomationsettings">Automatically Mark Devices "To Be Found"</a></strong> based on the rule that includes "maximum checkout time reached". To automatically force the device to checkin when reaching the <strong>Maximum Checkout Time,</strong> see <a href="#forcecheckin">Force Checkin</a></p>
+_(Optional)_ **Force Checkin** automatically checks in devices when the maximum checkout time is reached. This applies when SSO is in use with Enterprise Login Screen. When the specified **Maximum Checkout Time** is reached, the device user is warned with a notification alert that the device will be checked in after the snooze time is elapsed. After the device reaches the snooze time, it is automatically checked in. This is useful if the user forgets to checkin the device after the work shift. It is required for **[Snooze Time](#snoozetime)** to be specified.
 
-<p><img alt="image" style="height:350px" src="max-checkout-time.png"></p>
+##### Snooze Time
 
-<p><em>Maximum checkout time reached</em></p>
+**Snooze Time** specifies the amount of time (in minutes) to extend the **Maximum Checkout Time.** This is mandatory if **Force Checkin** is enabled. When the **Maximum Checkout Time** is reached, an alert notification is sent to the device warning the user that the device will be checked in after the specified snooze time elapses. This allows the user extra time to complete their task when the **Maximum Checkout Time** is reached.
 
-<h4 id="forcecheckin" class="anchor"><a class="heading-anchor" href="#forcecheckin"><span></span></a>Force Checkin</h4>
+### Device Checkin Options
 
-<p><em>(Optional)</em> <strong>Force Checkin</strong> automatically checks in devices when the maximum checkout time is reached. This applies when SSO is in use with Enterprise Login Screen. When the specified <strong>Maximum Checkout Time</strong> is reached, the device user is warned with a notification alert that the device will be checked in after the snooze time is elapsed. After the device reaches the snooze time, it is automatically checked in. This is useful if the user forgets to checkin the device after the work shift. It is required for <strong><a href="#snoozetime">Snooze Time</a></strong> to be specified.</p>
+Select one or more of the **Device Checkin Options** to specify the action that triggers a [device checkin](../use/#checkin) after a device is checked out:
 
-<h5 id="snoozetime" class="anchor"><a class="heading-anchor" href="#snoozetime"><span></span></a>Snooze Time</h5>
+- **Manual -** the user navigates to the options menu (top right) from the main screen of Device Tracker and selects **Check-In Device**
+- **Device Cradle -** the user places the device on a powered cradle to checkin the device
+- **Device Reboot -** the user reboots the device to checkin; required if Checkin/Checkout is enabled
+- **App API -** device checkin can be integrated with the Line of Business (LOB) application by calling the Device Tracker checkin API when the user logs out from the LOB app. When the checkin request is received by Device Tracker, it performs the the device checkin and displays the device checkout screen for the next user to checkout the device. Add the following code in the LOB app to checkin the device:
 
-<p><strong>Snooze Time</strong> specifies the amount of time (in minutes) to extend the <strong>Maximum Checkout Time.</strong> This is mandatory if <strong>Force Checkin</strong> is enabled. When the <strong>Maximum Checkout Time</strong> is reached, an alert notification is sent to the device warning the user that the device will be checked in after the specified snooze time elapses. This allows the user extra time to complete their task when the <strong>Maximum Checkout Time</strong> is reached.</p>
+        Intent signOutIntent = new Intent();
+        signOutIntent.setAction("com.zebra.mdna.devicetrackercloud.SIGNOUT_OF_DEVICE");
+        signOutIntent.setPackage("com.zebra.mdna.devicetrackercloud");
+        sendBroadcast(signOutIntent);
 
-<h3 id="devicecheckinoptions" class="anchor"><a class="heading-anchor" href="#devicecheckinoptions"><span></span></a>Device Checkin Options</h3>
-
-<p>Select one or more of the <strong>Device Checkin Options</strong> to specify the action that triggers a <a href="../use/#checkin">device checkin</a> after a device is checked out:</p>
-
-<ul>
-<li><p><strong>Manual -</strong> the user navigates to the options menu (top right) from the main screen of Device Tracker and selects <strong>Check-In Device</strong></p></li>
-
-<li><p><strong>Device Cradle -</strong> the user places the device on a powered cradle to checkin the device</p></li>
-
-<li><p><strong>Device Reboot -</strong> the user reboots the device to checkin; required if Checkin/Checkout is enabled</p></li>
-
-<li><p><strong>App API -</strong> device checkin can be integrated with the Line of Business (LOB) application by calling the Device Tracker checkin API when the user logs out from the LOB app. When the checkin request is received by Device Tracker, it performs the the device checkin and displays the device checkout screen for the next user to checkout the device. Add the following code in the LOB app to checkin the device:</p>
-
-<pre class="prettyprint"><code>Intent signOutIntent = new Intent();
-signOutIntent.setAction("com.zebra.mdna.devicetrackercloud.SIGNOUT_OF_DEVICE");
-signOutIntent.setPackage("com.zebra.mdna.devicetrackercloud");
-sendBroadcast(signOutIntent);
-</code></pre></li>
-</ul>
-
-<p>After device checkin from any of the above methods, the checkout screen appears prompting the user to scan a barcode to gain device access. By default, the first 3 options are selected and App API is unselected.</p>
+After device checkin from any of the above methods, the checkout screen appears prompting the user to scan a barcode to gain device access. By default, the first 3 options are selected and App API is unselected.
+-->
 
 <hr>
 
@@ -1826,13 +1852,19 @@ sendBroadcast(signOutIntent);
 <li><p>Set the <strong>Device Thresholds:</strong></p>
 
 <ul>
-<li><strong>Low battery threshold -</strong> Specify the percentage (%) of battery capacity when the device reaches the Low Battery condition. If no value is specified, it defaults to the device’s low battery threshold.</li>
+<li><strong>Low Battery Threshold -</strong> Specify the percentage (%) of battery capacity when the device reaches the Low Battery condition. If no value is specified, it defaults to the device’s low battery threshold.</li>
 
-<li><strong>Device idle -</strong> Enable this option to track a device when it is stationary, or it has not physically moved. Specify the amount of time (in minutes) for the device to remain stationary before it is considered Idle. Default value: 15; minimum value: 5; maximum value: 10000.</li>
+<li><strong>Maximum Checkout Time (in Hrs) -</strong> Set the maximum checkout time in hours. When the set time is reached, the device is flagged in red on the dashboard for visibility to the administrator. </li>
 
-<li><strong>Maximum checkout time -</strong> Set the maximum checkout time (in hours). When the set time is reached, the device is flagged in red on the dashboard for visibility to the administrator. See <a href="#maximumcheckouttime">Maximum Checkout Time</a>.</li></ul></li>
+<li><strong>Device Idle -</strong> Enable this option to monitor a device when it is stationary, or when there is no physical movement detected by the accelerometer. 
 
-<li><p><strong>Automatically Mark Devices "To Be Found" -</strong> Enable this option and select the state(s) or combination of states for the device to be automatically marked "To be Found" when the selected state(s) is reached, rather than performing this manually. If a combination of states are selected, <em>all conditions</em> must be met for the device to be automatically marked <strong>To Be Found.</strong> If the selected state(s) is not reached, the device remains off the <strong>To Be Found</strong> list. Available states and combination of states:</p>
+
+<ul>
+<li><strong>Device Idle Threshold Time -</strong> Specify the duration in minutes that the device should remain stationary before it is categorized as <em>Idle</em>. Default value: 15; minimum value: 5; maximum value: 10000.</li></ul>
+
+<p></p></li></ul><p></p></li>
+
+<li><p><strong>Automatically Mark Devices "To Be Found" -</strong> Enable this option and select the state(s) or combination of states for the device to be automatically marked <strong>To Be Found</strong> when the selected state(s) is reached, rather than performing this manually. If a combination of states are selected, <em>all conditions</em> must be met for the device to be automatically marked <strong>To Be Found.</strong> If the selected state(s) is not reached, the device remains off the <strong>To Be Found</strong> list. Available states and combination of states:</p>
 
 <ul>
 <li>Checked out, low battery and not charging</li>
@@ -1851,17 +1883,19 @@ sendBroadcast(signOutIntent);
 
 <li>Disconnected</li></ul>
 
-<p>After a device has been automatically marked <strong>To Be Found</strong> based on the above selection, if the device state changes and no longer satisfies the selected state(s), then <strong>To Be Found</strong> is removed from the device.</p>
+<p>After a device has been automatically marked <strong>To Be Found</strong> based on the above selection, if the device state changes and no longer satisfies the selected state(s), then <strong>To Be Found</strong> is removed from the device.</p></li>
+</ol>
 
 <blockquote>
-  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Important:</strong> During the finding process, before marking the device as <strong>Found,</strong> <u><i>make sure one of the selected conditions is NOT satisfied</i></u> (e.g. checkin the device if <strong>Checked out</strong> is selected, or charge the device if "not charging" is selected). Otherwise, the device will return back to the <strong>To Be Found</strong> state after it is marked <strong>Found.</strong></p>
-</blockquote></li>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Important:</strong> During the finding process, before marking the device as <strong>Found,</strong> <u><i>make sure one of the selected conditions is NOT satisfied</i></u> (e.g. charge the device if "not charging" is selected). Otherwise, the device will return back to the <strong>To Be Found</strong> state after it is marked <strong>Found.</strong></p>
+</blockquote>
 
-<li><p><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked <strong>Found.</strong> This eliminates the need to manually perform this action.</p></li>
+<ol>
+<li><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked <strong>Found.</strong> This eliminates the need to manually perform this action.</li>
 
-<li><p><strong>Automatically set "To Be Found" device to "In Service" upon checkout" -</strong> Enable this option to automatically place the device back <strong>In Service</strong> when a device in the <strong>To Be Found</strong> state is checked out. There is no need for the device to remain in the <strong>To Be Found</strong> state since the user has checked out the device.</p></li>
+<li><strong>Automatically set "To Be Found" device to "In Service" upon checkout" -</strong> Enable this option to automatically place the device back <strong>In Service</strong> when a device in the <strong>To Be Found</strong> state is checked out. There is no need for the device to remain in the <strong>To Be Found</strong> state since the user has checked out the device.</li>
 
-<li><p>Click on <strong>Save.</strong></p></li>
+<li>Click on <strong>Save.</strong></li>
 </ol>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PpAZCBn170U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
@@ -2034,7 +2068,21 @@ sendBroadcast(signOutIntent);
 
 <h2 id="mapbasedlocationing" class="anchor"><a class="heading-anchor" href="#mapbasedlocationing"><span></span></a>Map Based Locationing</h2>
 
-<p><strong>Map Based Locationing</strong> provides GPS coordinates of the device, whether located indoors or outdoors, and maps the device location. <em>This feature is only supported on Android GMS devices.</em></p>
+<p><strong>Map Based Locationing</strong> provides the GPS coordinates of a device, regardless of whether it is located indoors or outdoors. It maps the device location, even when it is not connected to an access point. <em>This feature is only supported on Android GMS devices.</em></p>
+
+<p>The device location is updated based on the following events:</p>
+
+<ul>
+<li>Rebooting the device</li>
+
+<li>Establishing a connection to a Wi-Fi or cellular network</li>
+
+<li>Changes in the device charging state</li>
+
+<li>Low battery (at this point, the device location continues to update for every 2% battery drain)</li>
+
+<li>Manual refresh (e.g. from the web portal)</li>
+</ul>
 
 <p>To enable Map Based Locationing:</p>
 
@@ -2249,7 +2297,7 @@ There are 2 methods to capture logging: StageNow or EMM.</br<br></p>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--

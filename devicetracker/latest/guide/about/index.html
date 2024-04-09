@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Tracker
-                                            6.1
+                                            6.2
                         </p>
 
                     </ul>
@@ -75,37 +75,37 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/devicetracker/6-1/guide/about">
+                            <a href="/devicetracker/6-2/guide/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/getstarted">
+                            <a href="/devicetracker/6-2/guide/getstarted">
                                         Get Started
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/setup">
+                            <a href="/devicetracker/6-2/guide/setup">
                                         Installation
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/config">
+                            <a href="/devicetracker/6-2/guide/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/use">
+                            <a href="/devicetracker/6-2/guide/use">
                                         Track Devices
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/dashboard">
+                            <a href="/devicetracker/6-2/guide/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/guide/faq">
+                            <a href="/devicetracker/6-2/guide/faq">
                                         FAQ
                             </a>
                         </li>
@@ -115,7 +115,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/devicetracker/6-1/search">
+                            <a href="/devicetracker/6-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -225,7 +225,7 @@
                                     <h1 id="about-device-tracker" class="anchor"><a class="heading-anchor" href="#about-device-tracker"><span></span></a>About Device Tracker</h1>
                                     <p>
                                             Device Tracker
-                                            6.1
+                                            6.2
                                     </p>
                                 </div>
                             </section>                    
@@ -290,7 +290,7 @@
 
 <li><a href="../config/#mapbasedlocationing">Locate devices</a> based on GPS coordinates and pinpoint device location on a map.</li>
 
-<li>Track and locate <a href="../config/#bluetoothscanners">Bluetooth scanners</a>. Optionally, <strong>Virtual Tethering</strong> warns users when a paired Bluetooth scanner approaches the edge of the Bluetooth range from its connected host device. </li>
+<li>Track and locate <a href="../config/#bluetoothscanners">Bluetooth scanners</a>. Optionally, <strong>Virtual Tethering</strong> warns users when a paired Bluetooth scanner approaches the edge of the Bluetooth range from its connected host device.</li>
 </ul>
 
 <hr>
@@ -305,7 +305,38 @@
 
 <hr>
 
-<h2 id="newindevicetracker61" class="anchor"><a class="heading-anchor" href="#newindevicetracker61"><span></span></a>New in Device Tracker 6.1</h2>
+<h2 id="newindevicetracker62" class="anchor"><a class="heading-anchor" href="#newindevicetracker62"><span></span></a>New in Device Tracker 6.2</h2>
+
+<ul>
+<li><strong>Migrated Checkin/Checkout feature to Zebra <a href="/identityguardian">Identity Guardian</a></strong> for collection of checkin/checkout data and single sign-on (SSO) support. Identity Guardian offers enhanced user checkin/checkout and secure device access through various authentication methods such as unique user barcode scanning, PIN passcodes and SSO. This simplifies device custody tracking and promotes user accountability. <em>Enterprise Login Screen (ELS) is now replaced with Identity Guardian.</em>
+
+
+<ul>
+<li>Due to the migration of the Checkin/Checkout feature to Identity Guardian, <em>Application Settings</em> has been removed from the Device Tracker web portal menu. </li>
+
+<li>Devices with Device Tracker client version 6.1 or earlier still support the legacy SSO and checkin/checkout features, though these configurations will not be accessible via the Device Tracker 6.2 web portal. </li></ul>
+</li>
+
+<li><strong>Introduced <a href="../config/#singlesignonsso">single sign-on (SSO)</a> support</strong> for Microsoft Entra ID (formerly Azure Active Directory) with client secret and TLS certification authentication types.</li>
+
+<li><strong>Resolved Issues:</strong>
+
+
+<ul>
+<li><strong>When Enterprise Keyboard is set as the input method on a device,</strong> numeric values can now be correctly entered for a keyword search by device name.</li>
+
+<li><strong>End of Day reports can now be generated successfully when migrating site data from a Device Tracker version earlier than 5.3.</strong> </li></ul>
+</li>
+
+<li><strong>Known Issue:</strong> <strong>When the Site Assignment setting is changed from "Automatically assign devices to a connected AP's site" to "IP Range Configuration" or vice versa,</strong> devices are not automatically moved to the new site.
+<!-- - **Added support for RS2100 [Bluetooth Scanner](../config/#bluetoothscanners).** --></li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newindevicetracker61" class="anchor"><a class="heading-anchor" href="#newindevicetracker61"><span></span></a>New in Device Tracker 6.1</h3>
 
 <ul>
 <li><strong>Introducing the new <a href="../dashboard/">Productivity Dashboard,</a> which displays a graphical representation of the number of lost and found devices, the average duration devices remain lost and the average recovery time for devices.</strong> This provides a quick overview of Device Tracker's efficiency in tracking and locating devices, especially when contrasting the metrics of a single site against those at a company-wide level.
@@ -324,11 +355,11 @@
 <li><strong>Connected Accessories</strong> report option is now available when <a href="../config/#managesites">managing sites</a>.</li></ul>
 </li>
 
-<li><strong>Resolved Issues:</strong> 
+<li><strong>Resolved Issues:</strong>
 
 
 <ul>
-<li>Fixed a UI issue where <strong>the value in the “Last User” column overlapped with the value in the “Status” column</strong> in the Mobile Devices dashboard in the web portal. </li>
+<li>Fixed a UI issue where <strong>the value in the “Last User” column overlapped with the value in the “Status” column</strong> in the Mobile Devices dashboard in the web portal.</li>
 
 <li>When licenses are renewed before expiration, <strong>the web portal now displays an accurate license count.</strong></li></ul>
 </li>
@@ -339,10 +370,6 @@
 <!-- ***MOVED TO NEXT RELEASE***
 - **New Productivity dashboard to display a graphical representation of Device Tracker use** including statistics of devices in Lost/Found states, the time taken to locate devices, and the amount of time devices are in lost state. Data can be viewed based on site and compared against company averages.
 -->
-
-<hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="newindevicetracker60" class="anchor"><a class="heading-anchor" href="#newindevicetracker60"><span></span></a>New in Device Tracker 6.0</h3>
 
@@ -369,14 +396,11 @@
 <ul>
 <li>When Checkin/Checkout is enabled, <strong>the user name is now consistently cleared in the "Checked Out By" field</strong> from the web portal after a device is inserted into a charging cradle.</li>
 
-<li><strong>Devices are no longer set "To Be Found" when a device that reached the idle threshold is removed from the charging cradle and both the following conditions are met:</strong>
+<li><strong>Devices are no longer set "To Be Found" when a device that reached the idle threshold is removed from the charging cradle and both the following conditions are met:</strong></li>
 
-
-<ul>
 <li>Checkin/Checkout is enabled</li>
 
-<li>Any automation rule that includes "not charging" is selected under "Automatically Mark Devices <strong>To Be Found</strong>"</li></ul>
-</li>
+<li>Any automation rule that includes "not charging" is selected under "Automatically Mark Devices <strong>To Be Found</strong>"</li>
 
 <li><strong>Fixed issue where the checkout screen was intermittently not appearing</strong> after device reboot when using SOTI MobiControl EMM (Enterprise Mobility Management) in lockdown mode.</li></ul>
 </li>
