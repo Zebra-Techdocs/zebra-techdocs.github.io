@@ -669,6 +669,8 @@ function populateDropdown (ddl_ver, ddl_doc) {
     // SSM
     var ssm_1_0_text = ['About', 'Using SSM', 'APIs'];
     var ssm_1_0_val = ['/guide/about', '/guide/use', '/guide/api'];
+    var ssm_1_1_text = ['About', 'Data Sharing', 'File Sharing', 'Deploy a File'];
+    var ssm_1_1_val = ['/guide/about', '/guide/share-data', '/guide/share-files', 'guide/deploy'];
     // StageNow
     var sn_5_0_text = ['About', 'Get Started', 'Profiles', 'Wizards', 'Settings', 'Setting Types', 'Guides', 'Troubleshoot'];
     var sn_5_0_val = ['/about', '/gettingstarted', '/stagingprofiles', '/ProfileWizards', '/settingconfig', '/settingtypes', '/stagingguides', '/troubleshooting'];
@@ -1057,6 +1059,12 @@ function populateDropdown (ddl_ver, ddl_doc) {
             ddl_doc.options.length = 0;
             for (i=0; i < ssm_1_0_text.length; i++) {
                 createOption(ddl_doc, ssm_1_0_text[i], ssm_1_0_val[i]);
+            }
+            break;
+        case '/ssm/1-1':
+            ddl_doc.options.length = 0;
+            for (i=0; i < ssm_1_1_text.length; i++) {
+                createOption(ddl_doc, ssm_1_1_text[i], ssm_1_1_val[i]);
             }
             break;
         // StageNow
