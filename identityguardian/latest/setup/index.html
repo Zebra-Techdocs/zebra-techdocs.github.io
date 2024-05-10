@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.2
+                                            1.3
                         </p>
 
                     </ul>
@@ -81,37 +81,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-2/about">
+                            <a href="/identityguardian/1-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/setup">
+                            <a href="/identityguardian/1-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/licensing">
+                            <a href="/identityguardian/1-3/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/mc">
+                            <a href="/identityguardian/1-3/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/usage">
+                            <a href="/identityguardian/1-3/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/api">
+                            <a href="/identityguardian/1-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/search">
+                            <a href="/identityguardian/1-3/faq">
+                                    FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/identityguardian/1-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -227,7 +232,7 @@
                                     <h1 id="setup" class="anchor"><a class="heading-anchor" href="#setup"><span></span></a>Setup</h1>
                                     <p>
                                             Identity Guardian
-                                            1.2
+                                            1.3
                                     </p>
                                 </div>
                             </section>                    
@@ -242,7 +247,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Install and configure <strong>Identity Guardian</strong> via <a href="/zebradna">Zebra DNA Cloud</a> (My Apps &gt; Zebra Collection), <a href="/stagenow">Zebra StageNow,</a> or your organization's own Enterprise Mobility Management (EMM) system. Administrators establish usage policies and controls for Identity Guardian via <a href="../mc/">Managed Configurations</a>. This enables companies to personalize device restrictions and access. </p>
+<p>Install and configure <strong>Identity Guardian</strong> via <a href="/zebradna">Zebra DNA Cloud</a> (My Apps &gt; Zebra Collection), <a href="/stagenow">Zebra StageNow,</a> or your organization's own Enterprise Mobility Management (EMM) system. Administrators establish usage policies and controls for Identity Guardian via <a href="../mc/">Managed Configurations</a>. This enables companies to personalize device restrictions and access.</p>
 
 <p>Through <a href="../usage/#zdnacloud">Zebra DNA Cloud's</a> dashboard, administrators gain insight into user activities such as sign-in/sign-out events and usage durations, promoting user accountability.</p>
 
@@ -260,7 +265,7 @@
 <li>For Android 13, download <a href="./safe-mode-A13.zip" download="">here.</a></li></ul>
 </li>
 
-<li><strong>When using the 42Gears EMM system,</strong> apps installed via Zebra DNA in app update mode must be set as high priority.</li>
+<li><strong>When using the 42Gears EMM system,</strong> apps installed via Zebra DNA Cloud in app update mode must be set as high priority.</li>
 </ul>
 
 <hr>
@@ -287,7 +292,8 @@
 
 <li>After installation on the device, <strong>Identity Guardian <em>must</em> be launched for the configurations to be applied.</strong></li>
 
-<li>Support is available for <strong>integration with both Microsoft Entra ID (formerly Azure Active Directory) and PingID platforms</strong> with OAUTH and OAUTH+OIDC authentication protocols.</li>
+<li><strong>Single sign-on (SSO) support:</strong> Compatibility with Microsoft Entra ID (formerly Azure Active Directory) and PingID platforms using OAUTH and OAUTH+OIDC authentication protocols. 
+<!-- - **Single sign-on (SSO) support:** Compatibility with Microsoft Entra ID (formerly Azure Active Directory), PingID and OKTA platforms using OAUTH and OAUTH+OIDC authentication protocols. --></li>
 </ul>
 
 <hr>
@@ -331,7 +337,7 @@
 
 
 <ul>
-<li><strong>For <em>shared devices,</em></strong> create two distinct profiles: 
+<li><strong>For <em>shared devices,</em></strong> create two distinct profiles:
 
 
 <ul>
@@ -363,12 +369,12 @@
 
 <h3 id="zebradnacloud" class="anchor"><a class="heading-anchor" href="#zebradnacloud"><span></span></a>Zebra DNA Cloud</h3>
 
-<p>This section provides video demonstrations to guide through the process of setting up Identity Guardian, in this case on a shared device, using the Zebra DNA Console.  </p>
+<p>This section provides video demonstrations to guide through the process of setting up Identity Guardian, in this case on a shared device, using the Zebra DNA Console.</p>
 
-<p>For shared devices, two separate configuration profiles can be created based on the <strong>Application Mode</strong> selected under the <strong>Usage Mode</strong> section: </p>
+<p>For shared devices, two separate configuration profiles can be created based on the <strong>Application Mode</strong> selected under the <strong>Usage Mode</strong> section:</p>
 
 <ul>
-<li><strong>Enrollment -</strong> Use this mode if facial biometrics is utilized to create unique user barcodes for authentication. </li>
+<li><strong>Enrollment -</strong> Use this mode if facial biometrics is utilized to create unique user barcodes for authentication.</li>
 
 <li><strong>Authentication -</strong> This configures the authentication methods employed for users to sign into the device.</li>
 </ul>
@@ -377,7 +383,7 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q_ip86rQzak?si=PFDRNZOgWAFS74HG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 
-<p><strong>Note:</strong> For <em>personally assigned devices,</em> select <strong>Personally Assigned</strong> from <strong>Application Mode</strong> under the <strong>Usage Mode</strong> section. This creates a profile encompaassing both enrollment and authentication configurations. </p>
+<p><strong>Note:</strong> For <em>personally assigned devices,</em> select <strong>Personally Assigned</strong> from <strong>Application Mode</strong> under the <strong>Usage Mode</strong> section. This creates a profile encompaassing both enrollment and authentication configurations.</p>
 
 <p><br></p>
 
@@ -405,18 +411,18 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FPuqEzwKtII?si=WJhC9CVXr2nNypxG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 
-<p><strong>Note:</strong> For <em>personally assigned devices,</em> select <strong>Personally Assigned</strong> from <strong>Application Mode</strong> under the <strong>Usage Mode</strong> section. This creates a profile encompassing both enrollment and authentication configurations. </p>
+<p><strong>Note:</strong> For <em>personally assigned devices,</em> select <strong>Personally Assigned</strong> from <strong>Application Mode</strong> under the <strong>Usage Mode</strong> section. This creates a profile encompassing both enrollment and authentication configurations.</p>
 
 <h3 id="42gearssuremdm" class="anchor"><a class="heading-anchor" href="#42gearssuremdm"><span></span></a>42Gears SureMDM</h3>
 
-<p>This videos walks through the process of setting up Identity Guardian using SureMDM by 42Gears, specifically for <em>personally assigned devices.</em> It provides a guide to deploy the Identity Guardian APK file, automatically launch the app, and create a  policy to configure the desired settings for enrollment and authentication on <em>personally assigned devices.</em></p>
+<p>This videos walks through the process of setting up Identity Guardian using SureMDM by 42Gears, specifically for <em>personally assigned devices.</em> It provides a guide to deploy the Identity Guardian APK file, automatically launch the app, and create a policy to configure the desired settings for enrollment and authentication on <em>personally assigned devices.</em></p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nZvkedIM3yM?si=qilQeoHclssDjoHW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 
-<p><strong>Note:</strong> For <em>shared devices,</em> create two separate configuration profiles according to the selected <strong>Application Mode</strong> under the <strong>Usage Mode</strong> section: </p>
+<p><strong>Note:</strong> For <em>shared devices,</em> create two separate configuration profiles according to the selected <strong>Application Mode</strong> under the <strong>Usage Mode</strong> section:</p>
 
 <ul>
-<li><strong>Enrollment -</strong> Use this mode if facial biometrics is utilized to create unique user barcodes for authentication. </li>
+<li><strong>Enrollment -</strong> Use this mode if facial biometrics is utilized to create unique user barcodes for authentication.</li>
 
 <li><strong>Authentication -</strong> This configures the authentication methods employed for users to sign into the device.</li>
 </ul>
@@ -425,7 +431,18 @@
 
 <h2 id="sso" class="anchor"><a class="heading-anchor" href="#sso"><span></span></a>SSO</h2>
 
-<p>Identity Guardian integrates with identity providers (IdPs) simplifying authentication by only requiring users to log in once, and then leveraging single sign-on (SSO) to streamline the process. This single login grants users to gain access to multiple applications, eliminating the need to keep track of multiple logins for each app. There are 2 types of IdPs supported: Microsoft Entra ID and PingID. For authenticating users with SSO, the Microsoft Authenticator and Custom Chrome Tabs are supported to communicate with SSO as the broker. </p>
+<p>Identity Guardian integrates with identity providers (IdPs) simplifying authentication by only requiring users to log in once, and then leveraging single sign-on (SSO) to streamline the process. This single login grants users to gain access to multiple applications, eliminating the need to keep track of multiple logins for each app. </p>
+
+<p>Supported identity providers:</p>
+
+<ul>
+<li><a href="#microsoftentraid">Microsoft Entra ID</a></li>
+
+<li><a href="#pingid">PingID</a>
+<!-- * [Okta](#okta) --></li>
+</ul>
+
+<p>For authenticating users with SSO, the Microsoft Authenticator and Custom Chrome Tabs are supported to communicate with SSO as the broker.</p>
 
 <p>See <a href="#requirements">SSO Requirements</a>.</p>
 
@@ -494,25 +511,21 @@
 <p><strong>To enable user access to the device through SSO, install and set up Identity Guardian on the devices:</strong></p>
 
 <ol>
-<li>Deploy and install Zebra Identity Guardian app on the devices.</li>
+<li><p>Deploy and install Zebra Identity Guardian app on the devices.</p></li>
 
-<li>Launch the app using an EMM. <em>This step must be performed at least once.</em></li>
+<li><p>Launch the app using an EMM. <em>This step must be performed at least once.</em></p></li>
 
-<li>Enter the <a href="../mc">Managed Configuration</a> settings for the app via your EMM:
-
-
-<ul>
-<li>Select the application mode:
-
+<li><p>Enter the <a href="../mc">Managed Configuration</a> settings for the app via your EMM:</p>
 
 <ul>
+<li><p>Select the application mode:</p>
+
+<p></p><ul>
 <li><strong>Application Mode:</strong> Authentication
 <img alt="image" style="height:375px" src="managed-config-app-mode.jpg">
-<em>zDNA Cloud Managed Config</em></li></ul>
-</li>
+<em>zDNA Cloud Managed Config</em></li></ul><p></p></li>
 
-<li>Configure the Verification Setup to validate the user access:
-
+<li><p>Configure the Verification Setup to validate the user access:</p>
 
 <ul>
 <li><strong>Primary Authentication Factor:</strong> SSO</li>
@@ -525,49 +538,57 @@
 
 <li><strong>Fallback Authentication Timeout:</strong> [Enter value in ms, e.g. "300000"]
 <img alt="image" style="height:450px" src="managed-config-verification-setup.jpg">
-<em>zDNA Cloud Managed Config</em></li></ul>
-</li>
+<em>zDNA Cloud Managed Config</em></li></ul></li>
 
-<li>Configure the Lock-screen Event options:
+<li><p>Configure the Lock-screen Event options:</p>
 
+<p></p><ul>
+<li><strong>On Unlock:</strong></li></ul><p></p>
 
-<ul>
-<li><strong>On Unlock:</strong></li>
+<p></p><ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
+<p></p><p></p></li><p></p><p></p>
 
-<li><strong>On Reboot:</strong></li>
+<p></p><li><strong>On Reboot:</strong></li><p></p>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
+<p></p><ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+<p></p></ul></li><p></p>
 
-<li><strong>On AC power connected:</strong></li>
+<p></p><li><strong>On AC power connected:</strong></li><p></p>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
+<p></p><ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+<p></p>
 
-<li><strong>On AC power disconnected:</strong></li>
+<p></p><li><strong>On AC power disconnected:</strong></li><p></p>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
+<p></p><ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+<p></p>
 
-<li><strong>On device manual check in:</strong></li>
+<p></p><li><strong>On device manual check in:</strong></li><p></p>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
+<p></p><ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+<p></p>
 
-<li><strong>On user change:</strong> - <strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+<p></p><li><strong>On user change:</strong> - <strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]
 <img alt="image" style="height:400px" src="managed-config-lock-screen.jpg">
-<em>zDNA Cloud Managed Config</em></li></ul>
-</li>
+<em>zDNA Cloud Managed Config</em></li><p></p>
 
-<li>Configure the SSO Authentication Configuration for the app to communicate with Microsoft SSO to authenticate the user:
+<li><p>Configure the SSO Authentication Configuration for the app to communicate with Microsoft SSO to authenticate the user:</p>
 
+<p></p><ul>
+<li><strong>Single Sign On Provider:</strong> Microsoft</li></ul><p></p>
 
-<ul>
-<li><strong>Single Sign On Provider:</strong> Microsoft</li>
+<p></p></li><li><strong>Authentication Protocol:</strong> OAuth 2.0 (OIDC)</li><p></p>
 
-<li><strong>Authentication Protocol:</strong> OAuth 2.0 (OIDC)</li>
+<p></p><li><strong>Scope:</strong> [Enter the string based on the SSO server settings]</li><p></p>
 
-<li><strong>Scope:</strong> [Enter the string based on the SSO server settings]</li>
+<p></p><p></p><li><strong>Configuration Settings:</strong> [Enter the following string, but replace "client_id" and "authority_url" with your values from <code>auth_config_single_account.json</code> file downloaded from step I.]</li><p></p>
 
-<li><strong>Configuration Settings:</strong> [Enter the following string, but replace "client_id" and "authority_url" with your values from <code>auth_config_single_account.json</code> file downloaded from step I.]
 <pre class="prettify prettyprint"><code>
                {
                    "client_id" : "[ENTER YOUR CLIENT ID]",
@@ -585,41 +606,36 @@
                }
           </code>
 </pre>
-<img alt="image" style="height:450px" src="managed-config-sso-ms.jpg">
-<em>zDNA Cloud Managed Config</em></li></ul>
-</li></ul>
-</li>
 
-<li>If mapping the SSO response to application-specific roles, enter the following (see <a href="../mc">Managed Configurations</a> for more information):
+<p><img alt="image" style="height:450px" src="managed-config-sso-ms.jpg">
+<em>zDNA Cloud Managed Config</em></p><p></p><p></p>
 
+<li><p>If mapping the SSO response to application-specific roles, enter the following (see <a href="../mc">Managed Configurations</a> for more information):</p>
 
-<ul>
-<li><strong>Configuration Role Identification -</strong> Enables the recognition and mapping of the Single Sign-On (SSO) response to application-specific roles. Click <strong>Add Role Identifier</strong> as needed.
+<p></p><ul>
+<li><strong>Configuration Role Identification -</strong> Enables the recognition and mapping of the Single Sign-On (SSO) response to application-specific roles. Click <strong>Add Role Identifier</strong> as needed.</li></ul><p></p>
 
+<p></p><ul>
+<li><strong>Role Identifier -</strong> Establishes links between roles in SSO responses and their corresponding roles within the Identity Guardian app.</li></ul><p></p>
 
-<ul>
-<li><strong>Role Identifier -</strong> Establishes links between roles in SSO responses and their corresponding roles within the Identity Guardian app.</li>
+<p></p></li><li><strong>Identity Guardian Role Name -</strong> Enter the Identity Guardian user role to be assigned based on SSO response during user sign-in</li><p></p>
 
-<li><strong>Identity Guardian Role Name -</strong> Enter the Identity Guardian user role to be assigned based on SSO response during user sign-in</li>
+<p></p><li><strong>Key-value Pair for Role Assignment -</strong> Add one or more SSO key-value pairs to identify and map users to a predefined Identity Guardian user role. Click <strong>Add SSO Key-Value Pair</strong> as needed.</li><p></p>
 
-<li><strong>Key-value Pair for Role Assignment -</strong> Add one or more SSO key-value pairs to identify and map users to a predefined Identity Guardian user role. Click <strong>Add SSO Key-Value Pair</strong> as needed.
+<p></p><ul>
+<li><strong>SSO Key-Value Pair -</strong> Choose whether the SSO response, which contains the user key and values, should be mapped to a corresponding user role in Identity Guardian</li></ul><p></p>
 
+<p></p><li><strong>SSO Key -</strong> Enter the SSO key to map it to an Identity Guardian role.</li><p></p>
 
-<ul>
-<li><strong>SSO Key-Value Pair -</strong> Choose whether the SSO response, which contains the user key and values, should be mapped to a corresponding user role in Identity Guardian</li>
-
-<li><strong>SSO Key -</strong> Enter the SSO key to map it to an Identity Guardian role.</li>
-
-<li><strong>SSO Value -</strong> Enter the SSO value(s) to map to the Identity Guardian role. Use commas to separate multiple entries.
+<p></p><li><strong>SSO Value -</strong> Enter the SSO value(s) to map to the Identity Guardian role. Use commas to separate multiple entries.
 <img alt="image" style="height:450px" src="managed-config-roleID.jpg">
-<em>zDNA Cloud Managed Config</em></li></ul>
-</li></ul>
-</li></ul>
-</li>
+<em>zDNA Cloud Managed Config</em></li>
+<p></p>
+<p></p>
 
-<li>See <a href="../mc">Managed Configurations</a> to configure any other non-SSO settings.</li>
+<li><p>See <a href="../mc">Managed Configurations</a> to configure any other non-SSO settings.</p></li>
 
-<li>Deploy the Managed Configurations to the devices through your EMM.</li>
+<li><p>Deploy the Managed Configurations to the devices through your EMM.</p></li>
 </ol>
 
 <p>When a device gets updated with the new configurations, Zebra Identity Guardian activates the lock screen. The user is then required to authenticate themselves using Single Sign-On (SSO) to gain access to the device. See <a href="../usage/">User Guide</a> for more information.</p>
@@ -671,25 +687,40 @@
 
 
 <ul>
-<li><strong>On Unlock:</strong></li>
+<li><strong>On Unlock:</strong>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
 
-<li><strong>On Reboot:</strong></li>
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
+<li><strong>On Reboot:</strong>
 
-<li><strong>On AC power connected:</strong></li>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
 
-<li><strong>On AC power disconnected:</strong></li>
+<li><strong>On AC power connected:</strong>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
 
-<li><strong>On device manual check in:</strong></li>
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
 
-<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li>
+<li><strong>On AC power disconnected:</strong>
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
+
+<li><strong>On device manual check in:</strong>
+
+
+<ul>
+<li><strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]</li></ul>
+</li>
 
 <li><strong>On user change:</strong> - <strong>Verification Setup:</strong> [Enter the desired authentication scheme, e.g. "Verification Setup1"]
 <img alt="image" style="height:400px" src="managed-config-lock-screen.jpg">
@@ -711,16 +742,16 @@
 <li><strong>Configuration Settings:</strong> [Enter the specified string, but replace the following values with those from your own SSO response: logoutURL, revokeURL, tokenURL, authorizationURL, clientId, userInfoUrl]
 <pre class="prettify prettyprint"><code>
        {
-       "redirectURI" : "com.zebra.mdna.els:/loginComplete",
-       "logoutURL" : "[enter your logout URL]",
-       "revokeURL" : "[enter your revoke URL]",
-       "tokenURL" : "[enter your token URL]",
-       "authorizationURL" : "[enter your authorization URL]",
-       "clientAuthType" : 0,
-       "clientId" : "[enter your clientID]",
-       "certificatePhrase" : "",
-       "userInfoUrl" : "[enter your serInfo URL]",
-       "certificate" : ""
+            "redirectURI" : "com.zebra.mdna.els:/loginComplete",
+            "logoutURL" : "[enter your logout URL]",
+            "revokeURL" : "[enter your revoke URL]",
+            "tokenURL" : "[enter your token URL]",
+            "authorizationURL" : "[enter your authorization URL]",
+            "clientAuthType" : 0,
+            "clientId" : "[enter your clientID]",
+            "certificatePhrase" : "",
+            "userInfoUrl" : "[enter your userInfo URL]",
+            "certificate" : ""
        }
        </code>
 </pre>
@@ -762,6 +793,126 @@
 </ol>
 
 <p>When a device gets updated with the new configurations, Zebra Identity Guardian activates the lock screen. The user is then required to authenticate themselves using Single Sign-On (SSO) to gain access to the device. See <a href="../usage/">User Guide</a> for more information.</p>
+
+<!-- 
+### Okta
+
+This section provides guidance to integrate Identity Guardian with Okta. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[I. Register Zebra Identity Guardian](#registerzebraidentityguardian-2)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[II. Configure Zebra Identity Guardian App](#iiconfigurezebraidentityguardianapp)<br />
+<br />
+
+#### I. Register Zebra Identity Guardian
+
+1. In the Okta web portal, create a new application. From the left menu, select **Applications > Applications.** Click on **Create App Integration.**
+    <img alt="image" style="height:450px" src="okta-apps.jpg" />
+2. Select **OIDC,** then select **Native Application.** Click **Next.**
+    <img alt="image" style="height:500px" src="okta-create-app.jpg" />
+3. Perform the following: 
+    - Enter the **App integration name.** 
+    - Select **Authorization Code** as the **Grant type.**  
+    - If needed, select **Refresh Token.** This option renews the access token every hour. Without it, the access token expires after an hour, resulting in a forced logout.
+    - For **Sign-in redirect URIs** and **Sign-out redirect URIs,** enter the following: `com.zebra.mdna.els:/loginComplete`
+    <img alt="image" style="height:450px" src="okta-new-native-app.jpg" />
+4. Perform the following: 
+    - For **Controlled access,** select **Allow everyone in your organization to access.** Then select **Enable immediate access with Federation Broker Mode.**
+    - Click **Save.**
+    <img alt="image" style="height:400px" src="okta-new-native-app-2.jpg" />
+5. If needed, add an authorization server from **Security > API.**
+    <img alt="image" style="height:450px" src="okta-api.jpg" />
+6. If needed, add scopes in the authorization server.
+    <img alt="image" style="height:450px" src="okta-add-scopes.jpg" />
+7. Add claims to the authorization server.
+    <img alt="image" style="height:450px" src="okta-add-claim.jpg" />
+8. In the **Settings** tab of the authorization server, click to open the **Metadata URI.**
+    <img alt="image" style="height:450px" src="okta-metadata-uri.jpg" />
+8. Metadata is displayed, similar to the following:
+    <img alt="image" style="height:450px" src="okta-metadata.jpg" />
+9. Record the following values needed in the next section:
+    * authorizationScope
+    * end_session_endpoint (logoutURL)
+    * token_endpoint (tokenURL)
+    * authorization_endpoint (authorizationURL)
+    * userInfoUrl 
+    * revokeURL (revocation_endpoint)
+<br />
+<br />
+
+#### II. Configure Zebra Identity Guardian App
+
+**To enable user access to the device through SSO, install and set up Identity Guardian on the devices:**
+
+1. Deploy and install Zebra Identity Guardian app on the devices.
+2. Launch the app using an EMM. _This step must be performed at least once._
+3. Enter the [Managed Configuration](../mc) settings for the app via your EMM:
+   - Select the application mode:
+     - **Application Mode:** Authentication
+       <img alt="image" style="height:375px" src="managed-config-app-mode.jpg" />
+       _zDNA Cloud Managed Config_
+   - Configure the Verification Setup to validate the user access:
+     - **Primary Authentication Factor:** SSO
+     - **Secondary Authentication Factor:** [Select FACE, PASSCODE, SSO or NONE]
+     - **Fallback Authentication Factor:** [Select FACE, PASSCODE, NONE, SSO or ADMIN BYPASS PASSCODE]
+     - **Primary Authentication Timeout:** [Enter value in ms, e.g. "300000"]
+     - **Fallback Authentication Timeout:** [Enter value in ms, e.g. "300000"]
+       <img alt="image" style="height:450px" src="managed-config-verification-setup.jpg" />
+       _zDNA Cloud Managed Config_
+   - Configure the Lock-screen Event options:
+        - **On Unlock:**
+            - **Verification Setup:** [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+        - **On Reboot:**
+            - **Verification Setup:** [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+        - **On AC power connected:**
+            - **Verification Setup:** [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+        - **On AC power disconnected:**
+            - **Verification Setup:** [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+        - **On device manual check in:**
+            - **Verification Setup:** [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+        - **On user change:** - **Verification Setup:** [Enter the desired authentication scheme, e.g. "Verification Setup1"]
+        <img alt="image" style="height:400px" src="managed-config-lock-screen.jpg" />
+       _zDNA Cloud Managed Config_
+   - Configure the SSO Authentication Configuration for the app to communicate with Microsoft SSO to authenticate the user:
+     - **Single Sign On Provider:** Okta
+     - **Authentication Protocol:** OAuth 2.0 (OIDC)
+     - **Scope:** [Enter the string based on the SSO server settings, e.g. "openid email profile offline_access"]
+     - **Configuration Settings:** [Enter the following string, but replace "authorizationScope", "logoutURL", "tokenURL", "client_id", "authorizationURL", "userInfoUrl", and "revokeURL" with your values seen from Metadata URI from step I.]
+       <pre class="prettify">
+          <code>
+            {
+                "authorizationScope": "[enter the string based on the SSO server settings, e.g. "openid email profile offline_access"]",
+                "redirectURI" : "com.zebra.mdna.els:/loginComplete", 
+                "logoutURL" : "[enter your logout URL]", 
+                "tokenURL" : "[enter your token URL]", 
+                "authorizationURL" : "[enter your authorization URL]", 
+                "clientAuthType" : 0, 
+                "clientId" : "[enter your client ID]", 
+                "certificatePhrase" : "", 
+                "userInfoUrl" : "[enter your userInfo URL]",
+                "revokeURL" : "[enter your revoke URL]", 
+                "certificate" : "", 
+                "clientSecret":"", 
+                "enablePKCE": true
+            }
+          </code>
+       </pre>
+       <img alt="image" style="height:450px" src="zdna-ig-sso.jpg" />
+       _zDNA Cloud Managed Config_
+4. If mapping the SSO response to application-specific roles, enter the following (see [Managed Configurations](../mc) for more information):
+   - **Configuration Role Identification -** Enables the recognition and mapping of the Single Sign-On (SSO) response to application-specific roles. Click **Add Role Identifier** as needed.
+     - **Role Identifier -** Establishes links between roles in SSO responses and their corresponding roles within the Identity Guardian app.
+       - **Identity Guardian Role Name -** Enter the Identity Guardian user role to be assigned based on SSO response during user sign-in
+       - **Key-value Pair for Role Assignment -** Add one or more SSO key-value pairs to identify and map users to a predefined Identity Guardian user role. Click **Add SSO Key-Value Pair** as needed.
+         - **SSO Key-Value Pair -** Choose whether the SSO response, which contains the user key and values, should be mapped to a corresponding user role in Identity Guardian
+           - **SSO Key -** Enter the SSO key to map it to an Identity Guardian role.
+           - **SSO Value -** Enter the SSO value(s) to map to the Identity Guardian role. Use commas to separate multiple entries.
+             <img alt="image" style="height:450px" src="managed-config-roleID.jpg" />
+             _zDNA Cloud Managed Config_
+5. See [Managed Configurations](../mc) to configure any other non-SSO settings.
+6. Deploy the Managed Configurations to the devices through your EMM.
+
+When a device gets updated with the new configurations, Zebra Identity Guardian activates the lock screen. The user is then required to authenticate themselves using Single Sign-On (SSO) to gain access to the device. See [User Guide](../usage/) for more information.
+-->
 
 <hr>
 
@@ -948,6 +1099,8 @@
 <li><a href="../mc">Managed Configurations</a></li>
 
 <li><a href="../api/">APIs</a></li>
+
+<li><a href="../faq/">FAQ</a></li>
 </ul><p></p>
                                         
 

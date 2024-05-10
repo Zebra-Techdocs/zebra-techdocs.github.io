@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.2
+                                            1.3
                         </p>
 
                     </ul>
@@ -81,37 +81,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-2/about">
+                            <a href="/identityguardian/1-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/setup">
+                            <a href="/identityguardian/1-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/licensing">
+                            <a href="/identityguardian/1-3/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/mc">
+                            <a href="/identityguardian/1-3/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/usage">
+                            <a href="/identityguardian/1-3/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/api">
+                            <a href="/identityguardian/1-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/search">
+                            <a href="/identityguardian/1-3/faq">
+                                    FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/identityguardian/1-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -227,7 +232,7 @@
                                     <h1 id="managed-configurations" class="anchor"><a class="heading-anchor" href="#managed-configurations"><span></span></a>Managed Configurations</h1>
                                     <p>
                                             Identity Guardian
-                                            1.2
+                                            1.3
                                     </p>
                                 </div>
                             </section>                    
@@ -244,7 +249,7 @@
 
 <p><strong>Managed configurations are part of a specification developed by Google and the Android community.</strong> They allow for remote configuration of installed applications and devices via any Enterprise Mobility Management (EMM) system, like <a href="/zebradna">Zebra DNA Cloud</a>, that supports this specification.</p>
 
-<p><strong>Identity Guardian offers multiple setting categories, each associated with a specific bundle.</strong> <em>Specific parameters for each configuration are outlined in the tables within this guide.</em> These settings include the device usage method (either shared or personally assigned), device enrollment, and user authentication. User authentication specifies both the comparison source (like barcode  for shared devices, or device storage for personal devices) and authentication methods (such as SSO,facial biometrics or passcode).</p>
+<p><strong>Identity Guardian offers multiple setting categories, each associated with a specific bundle.</strong> <em>Specific parameters for each configuration are outlined in the tables within this guide.</em> These settings include the device usage method (either shared or personally assigned), device enrollment, and user authentication. User authentication specifies both the comparison source (like barcode for shared devices, or device storage for personal devices) and authentication methods (such as SSO,facial biometrics or passcode).</p>
 
 <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <b>Use with Enterprise Home Screen:</b> <br>
 Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs">Enterprise Home Screen (EHS)</a>.</strong> If EHS is in use, ensure that the roles defined are consistent with those specified for Identity Guardian.</p>
@@ -256,7 +261,7 @@ Identity Guardian can be used in conjunction with Zebra's <strong><a href="/ehs"
 <!--
 For more information about configuring Zebra devices with managed configurations, see [Zebra OEMConfig](/oemconfig). -->
 
-<!-- 
+<!--
 <i><font size="2" color="DimGrey"> &dagger; The Identity Guardian management UI varies slightly depending on the EMM system in use.</font></i> -->
 
 <blockquote>
@@ -491,16 +496,16 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <p>Configure Identity Guardian for user verification and authentication. Create up to four unique authentication schemes, and define the specific options for each one. Then, for any given event option, choose the appropriate authentication scheme to apply. Each authentication scheme includes the following:</p>
 
 <ul>
-<li><strong>Primary Authentication Factor -</strong> The first method used to verify a user's identity. 
+<li><strong>Primary Authentication Factor -</strong> The first method used to verify a user's identity.
 
 
 <ul>
-<li>If <em>primary authentication fails and secondary authentication is not activated,</em> the fallback authentication method is triggered. </li>
+<li>If <em>primary authentication fails and secondary authentication is not activated,</em> the fallback authentication method is triggered.</li>
 
 <li>If <em>secondary authentication is enabled and activated,</em> then it is triggered.</li></ul>
 </li>
 
-<li><strong>Secondary Authentication Factor -</strong> This is an optional, but mandatory when activated, second method of verification, thereby establishing a two-factor authentication process. 
+<li><strong>Secondary Authentication Factor -</strong> This is an optional, but mandatory when activated, second method of verification, thereby establishing a two-factor authentication process.
 
 
 <ul>
@@ -835,7 +840,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>temporaryDataConfiguration</td>
 <td></td>
 <td></td>
-<td>Configure settings to allow temporary storage of user authentication data on the device, facilitating a one-time barcode scan for initial use on shared devices. This eliminates the need for repeated barcode scans during events such as device unlocking, rebooting, and connecting or disconnecting from power. If configured, subsequent device access will prompt for primary/secondary authentication. Barcode scans remain manadtory whenever a user manually logs out from Identity Guardian, or a new user signs in following the previous user's sign out. <b>NOTE:</b> If <b>Force Logout</b> is enabled, a barcode scan is prompted for every triggered event.
+<td>Configure settings to allow temporary storage of user authentication data on the device, facilitating a one-time barcode scan for initial use on shared devices. This eliminates the need for repeated barcode scans during events such as device unlock, reboot, and connect/disconnect from power. If configured, subsequent device access will prompt for primary or secondary authentication. Barcode scans remain mandatory whenever a user manually logs out from Identity Guardian, or a new user signs in following the previous user's sign out. <br><b>NOTE:</b> If <b>Force Logout</b> is enabled, a barcode scan is prompted for every triggered event.
 </td>
 </tr>
 
@@ -855,6 +860,33 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Integer 1 to 12</td>
 <td>Integer 1 to 12 (default)</td>
 <td>Select the length of time (in hours) to temporarily store user authentication data on the device to facilitate a one-time barcode scan for initial use on shared devices. After the time elapses, the lock screen appears on the device and authentication data is deleted upon expiration.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Snooze Time</td>
+<td>tempStorageSnoozeTimeout</td>
+<td>Integer 30 to 300</td>
+<td>Integer 30 to 300 (Default: 120)</td>
+<td>Enter the time duration (in seconds) to postpone the display of the lock screen and removal of user authentication data from temporary storage. </td>
+</tr>
+
+<tr>
+<td></td>
+<td>Timeout Delay Title</td>
+<td>tempStorageSnoozeTitle</td>
+<td>[String]</td>
+<td>[enter string]</td>
+<td>Enter the title for the device lock warning notification before user authentication data is removed from temporary storage.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Timeout Delay Description</td>
+<td>tempStorageSnoozeDescription</td>
+<td>[String]</td>
+<td>[enter string]</td>
+<td>Enter the alert message for the device lock notification, warning the user that the device will be locked soon, triggering the removal of user authentication data from temporary storage.</td>
 </tr>
 
 <!-- LockScreen Show Options -->
@@ -1454,6 +1486,8 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <li><a href="../usage">User Guide</a></li>
 
 <li><a href="../api">APIs</a></li>
+
+<li><a href="../faq/">FAQ</a></li>
 </ul><p></p>
                                         
 

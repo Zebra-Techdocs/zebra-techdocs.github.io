@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.2
+                                            1.3
                         </p>
 
                     </ul>
@@ -81,37 +81,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-2/about">
+                            <a href="/identityguardian/1-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/setup">
+                            <a href="/identityguardian/1-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/licensing">
+                            <a href="/identityguardian/1-3/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/mc">
+                            <a href="/identityguardian/1-3/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/usage">
+                            <a href="/identityguardian/1-3/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/api">
+                            <a href="/identityguardian/1-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/search">
+                            <a href="/identityguardian/1-3/faq">
+                                    FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/identityguardian/1-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -227,7 +232,7 @@
                                     <h1 id="about-identity-guardian" class="anchor"><a class="heading-anchor" href="#about-identity-guardian"><span></span></a>About Identity Guardian</h1>
                                     <p>
                                             Identity Guardian
-                                            1.2
+                                            1.3
                                     </p>
                                 </div>
                             </section>                    
@@ -247,7 +252,7 @@
 <p>There are 2 modes of operation:</p>
 
 <ul>
-<li>In the <a href="../usage/#shareddevice">shared devices</a> mode, user data is securely encrypted and contained within a personalized barcode. This barcode is generated through facial recognition or a passcode set by the user and can be easily discarded to erase personal data. </li>
+<li>In the <a href="../usage/#shareddevice">shared devices</a> mode, user data is securely encrypted and contained within a personalized barcode. This barcode is generated through facial recognition or a passcode set by the user and can be easily discarded to erase personal data.</li>
 
 <li>In the <a href="../usage/#personallyassigneddevice">personally assigned device</a> mode, user data is securely embedded within the Android framework, making it inaccessible even to the organization.</li>
 </ul>
@@ -305,10 +310,44 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 
 <hr>
 
-<h2 id="newin12" class="anchor"><a class="heading-anchor" href="#newin12"><span></span></a>New in 1.2</h2>
+<h2 id="newin13" class="anchor"><a class="heading-anchor" href="#newin13"><span></span></a>New in 1.3</h2>
 
 <ul>
-<li><strong>Integration of Zebra <a href="/devicetracker">Device Tracker</a> with Identity Guardian client.</strong> Device Tracker v6.2 now offers full support for Identity Guardian to collect device checkin/checkout data and single sign-on (SSO) support. </li>
+<li><strong>Now available for download from Google Play.</strong></li>
+
+<li>The <strong><a href="../mc/#authenticationconfiguration">Authentication Data Storage</a> feature, formerly a preview, is now officially available.</strong> It provides temporary storage for user barcode data, requiring just a single scan for initial usage during a work shift. Based on admin configurations, device access may trigger primary and secondary authentication. </li>
+
+<li><strong>Resolved Issues:</strong>
+
+
+<ul>
+<li><strong>Resolved an intermittent issue where devices displayed a “Scan to Unlock” button on the blocking screen instead of the “Unlock” button</strong> when device authentication was set to a mode that does not require the end user to scan a barcode. </li>
+
+<li><strong>Resolved an issue where end user was not able to login to the device using Admin Bypass Passcode as the fallback authentication.</strong></li>
+
+<li><strong>On TC22 or TC27 devices, an error message no longer appears requiring the MDNA license following a device restart.</strong></li></ul>
+</li>
+
+<li><strong>Known Issues:</strong> 
+
+
+<ul>
+<li><strong>Uninstalling Identity Guardian from the blocking screen disables the home button on the device.</strong> To remedy this, either reinstall Identity Guardian or set it to enrollment mode before uninstallation.</li>
+
+<li><strong>When installing Identity Guardian in enrollment mode from VMWare Workspace ONE UEM (AirWatch) EMM,</strong> the authentication screen may appear instead of the expected enrollment screen.
+<!-- - **Added single sign-on (SSO) authentication support for [OKTA](../setup/#okta) identity provider (iDP).**
+--></li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin12" class="anchor"><a class="heading-anchor" href="#newin12"><span></span></a>New in 1.2</h3>
+
+<ul>
+<li><strong>Integration of Zebra <a href="/devicetracker">Device Tracker</a> with Identity Guardian client.</strong> Device Tracker v6.2 now offers full support for Identity Guardian to collect device checkin/checkout data and single sign-on (SSO) support.</li>
 
 <li><strong>Retrieve multifactor authentication information from the <a href="../api/#retrieveusersession">Current and Previous User Session API</a>.</strong></li>
 
@@ -327,7 +366,7 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 <li>Ping Identity SSO configurations now consistently function with Identity Guardian when set up from EMMs.</li></ul>
 </li>
 
-<li><strong>Known Issue:</strong> 
+<li><strong>Known Issues:</strong>
 
 
 <ul>
@@ -336,10 +375,6 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 <li><strong>On TC22 or TC27 devices, occasionally an error message may appear requiring the MDNA license following a device restart.</strong></li></ul>
 </li>
 </ul>
-
-<hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="newin11" class="anchor"><a class="heading-anchor" href="#newin11"><span></span></a>New in 1.1</h3>
 
@@ -388,6 +423,8 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 <li><a href="../mc">Managed Configurations</a></li>
 
 <li><a href="../api/">APIs</a></li>
+
+<li><a href="../faq/">FAQ</a></li>
 </ul><p></p>
                                         
 

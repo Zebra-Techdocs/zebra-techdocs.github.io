@@ -11,8 +11,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="User Guide">
-    <title>User Guide - TechDocs</title>
+    <meta title="Frequently Asked Questions">
+    <title>Frequently Asked Questions - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!--     
@@ -143,7 +143,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>User Guide</strong></li>
+                            <li><strong>Frequently Asked Questions</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -229,7 +229,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="user-guide" class="anchor"><a class="heading-anchor" href="#user-guide"><span></span></a>User Guide</h1>
+                                    <h1 id="frequently-asked-questions" class="anchor"><a class="heading-anchor" href="#frequently-asked-questions"><span></span></a>Frequently Asked Questions</h1>
                                     <p>
                                             Identity Guardian
                                             1.3
@@ -245,275 +245,86 @@
                                 <div class="service-box wow fadeInRight">
                                     <div class="">
 
-                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+                                        <p></p><h2 id="usersigninauthentication" class="anchor"><a class="heading-anchor" href="#usersigninauthentication"><span></span></a>User Sign-In/Authentication</h2>
 
-<p>Identity Guardian offers 2 types of models for secure and personalized device access:</p>
+<h3 id="qifthedevicelosesnetworkconnectivitycanusersstillsignintothedevice" class="anchor"><a class="heading-anchor" href="#qifthedevicelosesnetworkconnectivitycanusersstillsignintothedevice"><span></span></a>Q: If the device loses network connectivity, can users still sign into the device?</h3>
 
-<ul>
-<li><strong><a href="#shareddevice">Shared Device</a> -</strong> A device that is designated for use by multiple individuals. User data is securely encrypted and encapsulated within a personal barcode, generated via facial recognition and can be easily discarded to erase personal data.</li>
+<p>Network connectivity is not required for the user to sign into the device, with the exception of SSO authentication. Since the idP manages SSO, it necessitates a network connection. The device itself handles the comparison and logic for barcode, facial recognition, and passcode entry.</p>
 
-<li><strong><a href="#personallyassigneddevice">Personally Assigned Device</a> -</strong> A device that is issued and allocated specifically to an individual for their dedicated use. User data is securely embedded within the Android framework, making it inaccessible even to the organization.</li>
-</ul>
+<h3 id="qisabarcoderequiredforuserauthentication" class="anchor"><a class="heading-anchor" href="#qisabarcoderequiredforuserauthentication"><span></span></a>Q: Is a barcode required for user authentication?</h3>
 
-<p>After the administrator <a href="../setup/#configuration">configures</a> Identity Guardian, setup the user profiles based on the method of access. For users who opt into using facial biometrics, Identity Guardian provides Terms and Conditions to the user, which they must accept to use the biometric portion of the solution. The Terms &amp; Conditions may be customized by the administrator through ZDNA.</p>
+<p>Shared devices require a barcode to store user data for authentication. The only exception is when single sign-on (SSO) is implemented, eliminating the need for a barcode. However, for personally assigned devices, barcodes are not utilized. Instead, user data is securely stored within the isolated storage of Identity Guardian on the Android platform.</p>
 
-<hr>
+<h3 id="qwhatiftheshareddeviceuserlosestheirbarcode" class="anchor"><a class="heading-anchor" href="#qwhatiftheshareddeviceuserlosestheirbarcode"><span></span></a>Q: What if the shared device user loses their barcode?</h3>
 
-<h2 id="shareddevice" class="anchor"><a class="heading-anchor" href="#shareddevice"><span></span></a>Shared Device</h2>
+<p>If the user of a shared device loses their barcode, the only way to recover is to retrieve the barcode from the designated folder on the device: <code>/enterprise/usr/Profiles</code></p>
 
-<p>In <strong>shared device</strong> environments where multiple users share a single device, Identity Guardian ensures secure and personalized access. It simplifies the authentication process, granting users complete control over their data without storing personal information on the device or cloud. This is achieved by <strong>providing each user with a unique, encrypted barcode that stores their personal data.</strong> Furthermore, <strong>for enhanced security, multifactor authentication can be configured, which could include a passcode, facial biometrics, and/or single sign-on (SSO).</strong> Alternatively, SSO can be established as the primary authentication instead of issuing individual barcodes.</p>
+<h3 id="qifthedeviceissharedamongmultipleusersinasingleshiftforexampleonenursegrabsanothernursesdevicetoassistwithapatienthowdoiknowthathandoffhasoccurred" class="anchor"><a class="heading-anchor" href="#qifthedeviceissharedamongmultipleusersinasingleshiftforexampleonenursegrabsanothernursesdevicetoassistwithapatienthowdoiknowthathandoffhasoccurred"><span></span></a>Q: If the device is shared among multiple users in a single shift – for example, one nurse grabs another nurse’s device to assist with a patient – how do I know that handoff has occurred?</h3>
 
-<p>Shared devices are capable of recognizing an unlimited number of registered users. A user's predefined organizational role can be used to offer personalized experiences on shared devices. Each user's data is encrypted and stored within a unique barcode, located in the <code>/enterprise/usr/Profiles</code> folder, which the user can control. Users can simply discard the barcode to remove their personal data. Optionally, facial biometrics can be utilized to generate this barcode. For temporary user profiles, barcodes can be set to automatically expire at a specified date and time.</p>
+<p>To ensure a smooth device handoff, a policy incorporating user authentication via barcode and biometric scan (or passcode entry) should be implemented to ensure accountability. This facilitates an automatic profile transition, granting users access to their unique profiles and apps. However, this is only possible if the device screen is locked. Thus, new users receiving a device with an unlocked screen must lock and authenticate themselves. Clear communication of this procedure through the organization's policy is essential for adherence to proper handoff protocol.</p>
 
-<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> If a user loses their barcode, it can only be retrieved from the device, from folder: <code>/enterprise/usr/Profiles</code>.</p>
+<h3 id="qifanadminbypasscodeisusedhowisuseraccountabilitytracked" class="anchor"><a class="heading-anchor" href="#qifanadminbypasscodeisusedhowisuseraccountabilitytracked"><span></span></a>Q: If an admin bypass code is used, how is user accountability tracked?</h3>
 
-<p><img alt="image" style="height:200px" src="shared-workflow.jpg"></p>
+<p>If the primary and/or secondary authentication methods fail, and an admin bypass code is implemented as a fallback, user accountability is not possible because no user is logged in during this process.</p>
 
-<h3 id="userenrollment" class="anchor"><a class="heading-anchor" href="#userenrollment"><span></span></a>User Enrollment</h3>
+<h3 id="qwhatarethepinpasscodecharacterentryrestrictions" class="anchor"><a class="heading-anchor" href="#qwhatarethepinpasscodecharacterentryrestrictions"><span></span></a>Q: What are the PIN/passcode character entry restrictions?</h3>
 
-<p>Before users can sign in or authenticate to the shared device, they are required to first register with Identity Guardian. The enrollment profile is created and deployed by administrators, who then launch Identity Guardian on the shared device. For more details, see <a href="../setup/#emm">EMM Setup</a>. Organizations can designate a specific device for user enrollment and may choose to guide the user through this initial setup. The options made available to users during the on-device enrollment process may differ, depending on the <a href="../mc/#enrollmentconfiguration">Enrollment Configurations</a> set by the administrator.</p>
+<p>This is defined by the administrator when setting up the passcode rules in the Enrollment Configuration.</p>
 
-<p>To enroll users on shared devices:</p>
+<h3 id="qhowdoesidentityguardiansupportroles" class="anchor"><a class="heading-anchor" href="#qhowdoesidentityguardiansupportroles"><span></span></a>Q: How does Identity Guardian support roles?</h3>
 
-<ol>
-<li>In Identity Guardian, tap <strong>Start.</strong>
-<img alt="image" style="height:350px" src="welcome.png"></li>
-
-<li>(Optional) This is a 6 digit PIN set by the administrator. Tap <strong>Continue.</strong>
-<img alt="image" style="height:350px" src="corp-pin.png"></li>
-
-<li>Setup ID and passcode:
-
-
-<ul>
-<li>Enter ID or email</li>
-
-<li>(Optional) Select the appropriate user role (options vary based on your adminstrator setup)</li>
-
-<li>(Optional) Enter the expiration date for the barcode. This applies for temporary users.</li>
-
-<li>Create a passcode based on the requirements set by the administrator.</li>
-
-<li>Re-enter the passcode
-<img alt="image" style="height:350px" src="setup-shared.png"></li></ul>
-</li>
-
-<li>(Optional) Capture facial biometrics. <em>If opting out, tap <strong>Skip</strong> and skip to step 7 below.</em> Otherwise, tap <strong>Add</strong> and continue with the subsequent steps.
-<img alt="image" style="height:350px" src="face-capture.png"></li>
-
-<li>Read the Terms &amp; Conditions. Tap <strong>Confirm</strong> to accept.
-<img alt="image" style="height:350px" src="t&amp;c.png"></li>
-
-<li>Position your face within the device screen for the photo capture. Capture 1 to 3 facial photos that may vary based on the individual's look, for example, with eyeglasses, hat, etc. Confirm the photo capture(s). Tap <strong>Add</strong> to capture additional photos. Tap <strong>Next</strong> when done.
-<img alt="image" style="height:350px" src="face-capture-added.png"></li>
-
-<li>The barcode is generated. Tap <strong>Next.</strong>
-<img alt="image" style="height:350px" src="barcode.png"></li>
-
-<li>Tap <strong>Save</strong> to save the profile.
-<img alt="image" style="height:350px" src="setup-complete-shared.png"></li>
-
-<li>Tap <strong>Continue.</strong> The enrollment profile creation is complete.
-<img alt="image" style="height:350px" src="congrats-shared.png"></li>
-</ol>
-
-<p>Upon completion of user enrollment on the shared device, the administrator proceeds to deploy the authentication profile, which enbles users to <a href="../usage/#devicesignin">sign into the device</a>.</p>
+<p>Since Identity Guardian can include a user’s role, a unique launcher experience can be created based on different user roles through the Zebra <a href="/ehs">Enterprise Home Screen (EHS)</a> application. Administrators can define multiple layouts tailored to specific roles, ensuring a personalized experience upon device login.</p>
 
 <hr>
 
-<h2 id="personallyassigneddevice" class="anchor"><a class="heading-anchor" href="#personallyassigneddevice"><span></span></a>Personally Assigned Device</h2>
+<h2 id="facialbiometrics" class="anchor"><a class="heading-anchor" href="#facialbiometrics"><span></span></a>Facial Biometrics</h2>
 
-<p>In <strong>personally assigned device</strong> environments where individual devices are assigned to specific users, these <strong>users retain control over their encrypted personal data,</strong> with the ability to delete it as needed. This is achieved by safeguarding user data with the Android framework - <strong>the data is stored within Identity Guardian's isolated storage,</strong> located within Android's access-controlled application platform. This ensures that even the organiztion itself cannot access the data.</p>
+<h3 id="qisfacialbiometricsrequired" class="anchor"><a class="heading-anchor" href="#qisfacialbiometricsrequired"><span></span></a>Q: Is facial biometrics required?</h3>
 
-<p>Identity Guardian integrates with identity providers (IdPs) to streamline the authentication process. It uses the single sign-on (SSO) system, which requires users to authenticate just once. This system not only manages security but also simplifies the process, <em>allowing users to access multiple applications in a single log-in session.</em> <strong>For enhanced security, administrators have the option to customize multifactor authentication settings, which could include a passcode, facial biometrics, and/or SSO.</strong> In contrast to <em>shared devices,</em> <em>personally assigned devices</em> do not utilize barcodes.</p>
+<p>Your administrator can opt to enforce other forms of authentication other than facial biometrics, for example passcode or SSO. This applies to both shared or personally assigned devices.</p>
 
-<p><img alt="image" style="height:200px" src="personal-workflow.jpg"></p>
+<h3 id="qaredeviceusersinformedtheyareoptingintobiometrics" class="anchor"><a class="heading-anchor" href="#qaredeviceusersinformedtheyareoptingintobiometrics"><span></span></a>Q: Are device users informed they are opting into biometrics?</h3>
 
-<!-- Subsequent device unlocks, reboot, etc. requires user entry based on setup : PIN, facial recognition, etc. -->
+<p>Yes, Identity Guardian provides a Terms and Conditions disclaimer to the user that they must accept to use the biometric portion of the solution.</p>
 
-<h3 id="userenrollment-1" class="anchor"><a class="heading-anchor" href="#userenrollment-1"><span></span></a>User Enrollment</h3>
+<h3 id="qcanicustomizethetermsauseragreestowhenusingbiometric" class="anchor"><a class="heading-anchor" href="#qcanicustomizethetermsauseragreestowhenusingbiometric"><span></span></a>Q: Can I customize the terms a user agrees to when using Biometric?</h3>
 
-<p>Follow the instructions below for user enrollment:</p>
-
-<ol>
-<li>Open <strong>Identity Guardian.</strong></li>
-
-<li>Tap <strong>Start.</strong>
-<img alt="image" style="height:350px" src="welcome.png"></li>
-
-<li>Enter corporate PIN. This is a 6 digit PIN set by the administrator. Tap <strong>Continue.</strong>
-<img alt="image" style="height:350px" src="corp-pin.png"></li>
-
-<li>Setup ID and passcode, then tap <strong>Next.</strong>
-
-
-<ul>
-<li>Enter ID or email</li>
-
-<li>(Optional) Select the appropriate user role (options vary based on setup by your adminstrator)</li>
-
-<li>Create a passcode, which can contain up to 6 alphanumeric characters.</li>
-
-<li>Re-enter the passcode.
-<img alt="image" style="height:350px" src="setup-personal.png"></li></ul>
-</li>
-
-<li>(Optional) Capture facial biometrics. <em>If opting out, tap <strong>Skip</strong> and skip to step 7 below.</em> Otherwise, tap <strong>Add</strong> and continue with the subsequent steps.
-<img alt="image" style="height:350px" src="face-capture.png"></li>
-
-<li>Read the Terms &amp; Conditions. Tap <strong>Confirm</strong> to accept.
-<img alt="image" style="height:350px" src="t&amp;c.png"></li>
-
-<li>To add a facial photo, tap <strong>Add.</strong> Position your face within the device screen for the photo capture. Capture 1 to 3 facial photos that may vary based on the individual's look, for example, with eyeglasses, hat, etc. Confirm the photo capture(s). Tap <strong>Add</strong> to capture additional photos. Tap <strong>Next</strong> when done.
-<img alt="image" style="height:350px" src="face-capture-added.png"></li>
-
-<li>Tap <strong>Save</strong> to save the profile.
-<img alt="image" style="height:350px" src="setup-complete-personal.png"></li>
-
-<li>Tap <strong>Continue.</strong> The profile creation is complete.
-<img alt="image" style="height:350px" src="congrats-personal.png"></li>
-</ol>
-
-<h3 id="editprofile" class="anchor"><a class="heading-anchor" href="#editprofile"><span></span></a>Edit Profile</h3>
-
-<p>To edit a profile on a personally assigned device:</p>
-
-<ol>
-<li>Open Zebra Biometric app.</li>
-
-<li>Enter your passcode.
-<img alt="image" style="height:350px" src="edit-enterpasscode.png"></li>
-
-<li>Select the item to edit:
-
-
-<ul>
-<li>ID &amp; Passcode</li>
-
-<li>Face Recognition
-<img alt="image" style="height:350px" src="edit-select.png"></li></ul>
-</li>
-
-<li>If <strong>ID &amp; Passcode</strong> is selected, make the appropriate edits and tap <strong>Save:</strong>
-
-
-<ul>
-<li><strong>Role -</strong> select the desired role</li>
-
-<li><strong>Passcode -</strong> enter the current passcode and the new passcode
-<img alt="image" style="height:350px" src="edit-id-and-passcode.png"></li></ul>
-</li>
-
-<li>If <strong>Face Recognition</strong> is selected, delete the existing facial photo and replace it by capturing a new photo.
-<img alt="image" style="height:350px" src="edit-face.png"></li>
-</ol>
-
-<h3 id="deleteprofile" class="anchor"><a class="heading-anchor" href="#deleteprofile"><span></span></a>Delete Profile</h3>
-
-<p>To delete a profile on a personally assigned device:</p>
-
-<ol>
-<li>Open Zebra Biometric app.</li>
-
-<li>Enter your passcode.
-<img alt="image" style="height:350px" src="edit-enterpasscode.png"></li>
-
-<li>Tap on the menu icon at the top right and select <strong>Delete Profile.</strong>
-<img alt="image" style="height:350px" src="delete-profile.png"></li>
-</ol>
-
-<p>After the profile is deleted, the enrollment screen appears to re-enroll the device and authenticate the user.</p>
+<p>Yes, an organization can include their own custom Terms and Conditions alongside Zebra’s.</p>
 
 <hr>
 
-<h2 id="devicesignin" class="anchor"><a class="heading-anchor" href="#devicesignin"><span></span></a>Device Sign In</h2>
+<h2 id="datasecurity" class="anchor"><a class="heading-anchor" href="#datasecurity"><span></span></a>Data Security</h2>
 
-<p>After a user is enrolled, the authentication screen is displayed on the device. This screen also appears based on the lock-screen event options defined by the administrator in the managed configurations. These options can be triggered from various events such as when a user signs out, locks or reboots the device.</p>
+<h3 id="qwhereisdeviceuserdatastored" class="anchor"><a class="heading-anchor" href="#qwhereisdeviceuserdatastored"><span></span></a>Q: Where is device user data stored?</h3>
 
-<p>To sign in a device, tap <strong>Unlock.</strong>
-<img alt="image" style="height:350px" src="lock-screen.png">
-The device prompts the user to authenticate via the primary authentication method selected by the administrator, such as facial biometric or passcode entry. If the primary authentication method fails, the secondary authentication method is presented for the user to execute. Unlicensed devices present a passcode to be entered rather than requesting for a facial biometric.</p>
+<p>For shared Zebra Android devices, the user data is stored in an encrypted barcode that the user holds and manages. For personally assigned devices, user data is encrypted and stored in the Identity Guardian app’s sandbox within the Android framework, which is protected and only accessible by the app.</p>
 
-<p><strong>If Microsoft Authenticator app is in use,</strong> perform the following after the user unlocks the screen:</p>
+<h3 id="qhowdoweensurethebarcodeencryptionisunique" class="anchor"><a class="heading-anchor" href="#qhowdoweensurethebarcodeencryptionisunique"><span></span></a>Q: How do we ensure the barcode encryption is unique?</h3>
 
-<ol>
-<li>The Microsoft Authenticator app is launched prompting for user authentication. Enter the login credentials:</li>
-</ol>
-
-<table>
-    <tbody><tr>
-        <td><img alt="image" style="height:350px" src="authenticator-app-username.png"></td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><img alt="image" style="height:350px" src="authenticator-app-passwd.png"></td>
-    </tr>
-</tbody></table>
-
-<ol>
-<li>After authentication is successful, the user gains access to the device.</li>
-
-<li>When a user launches any app that utilizes Microsoft Authenticator app as broker, the app automatically signs in without prompting for user name or password.</li>
-</ol>
-
-<h3 id="userauthenticationscenarios" class="anchor"><a class="heading-anchor" href="#userauthenticationscenarios"><span></span></a>User Authentication Scenarios</h3>
-
-<p><strong>This video demonstrates various scenarios of user device authentication.</strong> In this example, one group of authentication settings is applied to a <em>shared device</em> with the following configurations:</p>
-
-<ul>
-<li><strong>Comparison source:</strong> Barcode</li>
-
-<li><strong>Primary authentication:</strong> SSO</li>
-
-<li><strong>Secondary authentication:</strong> Passcode</li>
-
-<li><strong>Fallback authentication:</strong> Admin bypass passcode</li>
-</ul>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SGTOuzPMF-k?si=4DsWxyzL8LPi5ZvC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<p>Organizations can use their own key to encrypt the data, ensuring only their devices can read the barcode data.</p>
 
 <hr>
 
-<h2 id="devicesignout" class="anchor"><a class="heading-anchor" href="#devicesignout"><span></span></a>Device Sign Out</h2>
+<h2 id="deviceusagevisibility" class="anchor"><a class="heading-anchor" href="#deviceusagevisibility"><span></span></a>Device Usage Visibility</h2>
 
-<p>Sign Out only applies to shared devices. To sign out a device, perform one of the following:</p>
+<h3 id="qwhatvisibilitydoeszebradnacloudprovideintodeviceusageviaidentityguardian" class="anchor"><a class="heading-anchor" href="#qwhatvisibilitydoeszebradnacloudprovideintodeviceusageviaidentityguardian"><span></span></a>Q: What visibility does Zebra DNA Cloud provide into device usage via Identity Guardian?</h3>
 
-<ul>
-<li>Open Identity Guardian app (Zebra Biometric) and tap <strong>Sign out.</strong>
-<img alt="image" style="height:350px" src="app-signout.png"></li>
-
-<li>Lock the device.</li>
-
-<li>Restart the device (if configured by the administrator).</li>
-</ul>
-
-<p>After a device is signed out, the lock screen is visible:
-<img alt="image" style="height:350px" src="lock-screen.png"></p>
-
-<hr>
-
-<h2 id="zdnacloud" class="anchor"><a class="heading-anchor" href="#zdnacloud"><span></span></a>ZDNA Cloud</h2>
-
-<p>With the <a href="/zebradna">Zebra DNA Cloud</a> platform, Identity Guardian provides administrators with visibility into user activities. This includes the ability to track who has signed in and out of devices, the security measures in place, usage times, and more. Additionally, administrators have the ability to expire users, reset PIN passcodes, and override screen locks.</p>
-
-<p><img alt="image" style="height:450px" src="zdna-device-users.jpg"></p>
-
-<p>For more information, see the <a href="https://techdocs.zebra.com/zebradna/latest/usage/">ZDNA Cloud</a> documentation.</p>
+<p>The <a href="/zebradna">Zebra DNA Cloud</a> has visibility into which users have device access profiles, including information on when these profiles were created, last used, and the specific device(s) they were utilized on, among other data points.</p>
 
 <hr>
 
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
 <ul>
-<li><a href="../about">About Identity Guardian</a></li>
-
 <li><a href="../licensing/">Licensing</a></li>
 
 <li><a href="../setup">Setup</a></li>
 
+<li><a href="../usage">User Guide</a></li>
+
 <li><a href="../mc">Managed Configurations</a></li>
 
 <li><a href="../api/">APIs</a></li>
-
-<li><a href="../faq/">FAQ</a></li>
 </ul><p></p>
                                         
 

@@ -658,6 +658,8 @@ function populateDropdown (ddl_ver, ddl_doc) {
     // Identity Guardian
     var ig_1_0_text = ['About', 'Setup', 'Managed Configurations', 'UserGuide', 'APIs'];
     var ig_1_0_val = ['/about', '/setup', '/mc','/usage','/apis'];
+    var ig_1_3_text = ['About', 'Setup', 'Managed Configurations', 'UserGuide', 'APIs', 'FAQ'];
+    var ig_1_3_val = ['/about', '/setup', '/mc','/usage','/apis', '/faq'];
     // OEMConfig
     var oemconfig_11_5_text = ['About', 'Setup', 'Managed Configs (Legacy)', 'Managed Configs (A11+)', 'FAQ'];
     var oemconfig_11_5_val = ['/about', '/setup', '/mc', '/mc2', '/faq'];
@@ -1023,6 +1025,12 @@ function populateDropdown (ddl_ver, ddl_doc) {
             ddl_doc.options.length = 0;
             for (i=0; i < ig_1_0_text.length; i++) {
                 createOption(ddl_doc, ig_1_0_text[i], ig_1_0_val[i]);
+            }
+            break;        
+        case '/identityguardian/1-3':
+            ddl_doc.options.length = 0;
+            for (i=0; i < ig_1_3_text.length; i++) {
+                createOption(ddl_doc, ig_1_3_text[i], ig_1_3_val[i]);
             }
             break;        
         // OEMConfig

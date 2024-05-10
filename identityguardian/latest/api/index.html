@@ -70,7 +70,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.2
+                                            1.3
                         </p>
 
                     </ul>
@@ -81,37 +81,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-2/about">
+                            <a href="/identityguardian/1-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/setup">
+                            <a href="/identityguardian/1-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/licensing">
+                            <a href="/identityguardian/1-3/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/mc">
+                            <a href="/identityguardian/1-3/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/usage">
+                            <a href="/identityguardian/1-3/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/api">
+                            <a href="/identityguardian/1-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-2/search">
+                            <a href="/identityguardian/1-3/faq">
+                                    FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/identityguardian/1-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -227,7 +232,7 @@
                                     <h1 id="apis" class="anchor"><a class="heading-anchor" href="#apis"><span></span></a>APIs</h1>
                                     <p>
                                             Identity Guardian
-                                            1.2
+                                            1.3
                                     </p>
                                 </div>
                             </section>                    
@@ -361,20 +366,20 @@
     Cursor cursor = cr.query(URI_USER_CURRENT_SESSION, null, null, null, null);
 </code></pre>
 
-<p>The 'cursor' is given in JSON format where each key is accompanied by a series of possible values separated by '/'  and custom values enclosed in '[ ]' in the key-value pair: </p>
+<p>The 'cursor' is given in JSON format where each key is accompanied by a series of possible values separated by '/' and custom values enclosed in '[ ]' in the key-value pair:</p>
 
 <pre class="prettyprint"><code>    {
         "signin_time": "[time stamp]",
         "user_role":"[string]",
         "user_id":"[string]",
         "signout_time":"[time stamp]",
-        "authenticationFactors": 
+        "authenticationFactors":
         {
             "SchemaVersion": "1.0"
             "factors":[
                 {
                     "FactorType": "PRIMARYPRIMARYFACTOR",
-                    "Factor": "PASSCODE/FACE/SSO/NO_COMPARISON",                    
+                    "Factor": "PASSCODE/FACE/SSO/NO_COMPARISON",
                     "Status": "EXECUTED/EXECUTED BUT NOT CONSIDERED/TIMEDOUT"
                 },
                 {
@@ -386,7 +391,7 @@
                     "FactorType": "FALLBACKFACTOR1",
                     "Factor": "PASSCODE/FACE/SSO/ADMINBYPASS/NONE",
                     "Status": "EXECUTED/TIMEDOUT/USERSKIPPED"
-                }            
+                }
             ]
             "EventType": "PreviousUser/CurrentUser",
             "lockScreenEventType": "on_reboot/on_unlock/on_user_change/ac_power_connected/ac_power_disconnected/on_devicemanual_checkin/on_forcelock"
@@ -485,16 +490,16 @@
         "user_role":"Manager",
         "user_id":"manager@gmail.com",
         "signout_time":null,
-        "authenticatedFactors": 
+        "authenticatedFactors":
         {
             "schemaVersion":"1.0",
             "factors":
             [
                 {
-                    "factor":"FACE", 
+                    "factor":"FACE",
                     "factorType":"PRIMARYPRIMARYFACTORY",
                     "status":"EXECUTED",
-                }   
+                }
                 {
                     "factor":"PASSCODE",
                     "factorType":"PRIMARYSECONDARYFACTOR1",
@@ -504,7 +509,7 @@
             "eventType":"CurrentUser",
             "lockScreenEventType":"on_unlock"
         }
-        "barcode_id":"1709030550634ADFODBD", 
+        "barcode_id":"1709030550634ADFODBD",
         "signed_in_state":"1"
     }
 </code></pre>
@@ -514,67 +519,67 @@
 <ul>
 <li><p>Primary authentication is successful, secondary authentication is successful:</p>
 
-<pre class="prettyprint"><code>"factors": [ 
-    { 
-        "FactorType": "PRIMARYPRIMARYFACTOR", 
-        "Status": "EXECUTED" 
-    }, 
-    { 
-        "FactorType": "PRIMARYSECONDARYFACTOR1", 
-        "Status": "EXECUTED" 
-    } 
+<pre class="prettyprint"><code>"factors": [
+    {
+        "FactorType": "PRIMARYPRIMARYFACTOR",
+        "Status": "EXECUTED"
+    },
+    {
+        "FactorType": "PRIMARYSECONDARYFACTOR1",
+        "Status": "EXECUTED"
+    }
 ],
 </code></pre></li>
 
 <li><p>Primary authentication timed out, fallback authentication is successful:</p>
 
-<pre class="prettyprint"><code>"factors": [ 
-    { 
-        "FactorType": "PRIMARYPRIMARYFACTOR", 
-        "Status": "TIMEDOUT" 
-    }, 
-    { 
-        "FactorType": "FALLBACKFACTOR1", 
-        "Status": "EXECUTED" 
-    } 
+<pre class="prettyprint"><code>"factors": [
+    {
+        "FactorType": "PRIMARYPRIMARYFACTOR",
+        "Status": "TIMEDOUT"
+    },
+    {
+        "FactorType": "FALLBACKFACTOR1",
+        "Status": "EXECUTED"
+    }
 ],
 </code></pre></li>
 
 <li><p>Primary authentication is successful, secondary authentication timed out, fallback authentication timed out:</p>
 
-<pre class="prettyprint"><code>"factors": [ 
-    { 
-        "FactorType": "PRIMARYPRIMARYFACTOR", 
-        "Status": "EXECUTED BUT NOT CONSIDERED" 
-    }, 
-    { 
+<pre class="prettyprint"><code>"factors": [
+    {
+        "FactorType": "PRIMARYPRIMARYFACTOR",
+        "Status": "EXECUTED BUT NOT CONSIDERED"
+    },
+    {
         "Factor":"PASSCODE"
-        "FactorType": "PRIMARYSECONDARYFACTOR1", 
-        "Status": "TIMEDOUT" 
-    }, 
-    { 
-        "FactorType": "FALLBACKFACTOR1", 
-        "Status": "EXECUTED" 
-    } 
+        "FactorType": "PRIMARYSECONDARYFACTOR1",
+        "Status": "TIMEDOUT"
+    },
+    {
+        "FactorType": "FALLBACKFACTOR1",
+        "Status": "EXECUTED"
+    }
 ],
 </code></pre></li>
 
 <li><p>Primary authentication is successful for SSO, secondary authentication is skipped by user, fallback authentication is successful:</p>
 
-<pre class="prettyprint"><code>"factors": [ 
-    { 
-        "FactorType": "PRIMARYPRIMARYFACTOR", 
+<pre class="prettyprint"><code>"factors": [
+    {
+        "FactorType": "PRIMARYPRIMARYFACTOR",
         "Factor":"SSO",
-        "Status": "EXECUTED BUT NOT CONSIDERED" 
-    }, 
-    { 
-        "FactorType": "PRIMARYSECONDARYFACTOR1", 
-        "Status": "USERSKIPPED" 
-    }, 
-    { 
-        "FactorType": "FALLBACKFACTOR1", 
-        "Status": "EXECUTED" 
-    } 
+        "Status": "EXECUTED BUT NOT CONSIDERED"
+    },
+    {
+        "FactorType": "PRIMARYSECONDARYFACTOR1",
+        "Status": "USERSKIPPED"
+    },
+    {
+        "FactorType": "FALLBACKFACTOR1",
+        "Status": "EXECUTED"
+    }
 ],
 </code></pre></li>
 </ul>
@@ -591,7 +596,7 @@
     Cursor cursor = cr.query(URI_PREVIOUS_USER_SESSION , null, null, null, null);
 </code></pre>
 
-<p>The 'cursor' is given in JSON format where each key is accompanied by a series of possible values separated by '/'  and custom values enclosed in '[ ]' in the key-value pair: </p>
+<p>The 'cursor' is given in JSON format where each key is accompanied by a series of possible values separated by '/' and custom values enclosed in '[ ]' in the key-value pair:</p>
 
 <pre class="prettyprint"><code>    {
         "signin_time": "[time stamp]",
@@ -604,7 +609,7 @@
             [
                 {
                     "FactorType": "PRIMARYPRIMARYFACTOR",
-                    "Factor": "PASSCODE/FACE/SSO/NO_COMPARISON",                    
+                    "Factor": "PASSCODE/FACE/SSO/NO_COMPARISON",
                     "Status": "EXECUTED/EXECUTED BUT NOT CONSIDERED/TIMEDOUT"
                 },
                 {
@@ -715,16 +720,16 @@
         "user_role":"Warehouse",
         "user_id":"John Doe",
         "signout_time":"2023-10-04 11:19.068+0530",
-        "authenticatedFactors": 
+        "authenticatedFactors":
         {
             "schemaVersion":"1.0",
             "factors":
             [
                 {
-                    "factor":"FACE", 
+                    "factor":"FACE",
                     "factorType":"PRIMARYPRIMARYFACTORY",
                     "status":"EXECUTED",
-                }   
+                }
                 {
                     "factor":"PASSCODE",
                     "factorType":"PRIMARYSECONDARYFACTOR1",
@@ -734,7 +739,7 @@
             "eventType":"CurrentUser",
             "lockScreenEventType":"on_unlock"
         }
-        "barcode_id":"1693820652113F736CAB", 
+        "barcode_id":"1693820652113F736CAB",
         "signed_in_state":"0"
     }
 </code></pre>
@@ -744,67 +749,67 @@
 <ul>
 <li><p>Primary authentication is successful, secondary authentication is successful:</p>
 
-<pre class="prettyprint"><code>"factors": [ 
-    { 
-        "FactorType": "PRIMARYPRIMARYFACTOR", 
-        "Status": "EXECUTED" 
-    }, 
-    { 
-        "FactorType": "PRIMARYSECONDARYFACTOR1", 
-        "Status": "EXECUTED" 
-    } 
+<pre class="prettyprint"><code>"factors": [
+    {
+        "FactorType": "PRIMARYPRIMARYFACTOR",
+        "Status": "EXECUTED"
+    },
+    {
+        "FactorType": "PRIMARYSECONDARYFACTOR1",
+        "Status": "EXECUTED"
+    }
 ],
 </code></pre></li>
 
 <li><p>Primary authentication timed out, fallback authentication is successful:</p>
 
-<pre class="prettyprint"><code>"factors": [ 
-    { 
-        "FactorType": "PRIMARYPRIMARYFACTOR", 
-        "Status": "TIMEDOUT" 
-    }, 
-    { 
-        "FactorType": "FALLBACKFACTOR1", 
-        "Status": "EXECUTED" 
-    } 
+<pre class="prettyprint"><code>"factors": [
+    {
+        "FactorType": "PRIMARYPRIMARYFACTOR",
+        "Status": "TIMEDOUT"
+    },
+    {
+        "FactorType": "FALLBACKFACTOR1",
+        "Status": "EXECUTED"
+    }
 ],
 </code></pre></li>
 
 <li><p>Primary authentication is successful, secondary authentication timed out, fallback authentication is successful:</p>
 
-<pre class="prettyprint"><code>"factors": [ 
-    { 
-        "FactorType": "PRIMARYPRIMARYFACTOR", 
-        "Status": "EXECUTED BUT NOT CONSIDERED" 
-    }, 
-    { 
+<pre class="prettyprint"><code>"factors": [
+    {
+        "FactorType": "PRIMARYPRIMARYFACTOR",
+        "Status": "EXECUTED BUT NOT CONSIDERED"
+    },
+    {
         "Factor":"PASSCODE"
-        "FactorType": "PRIMARYSECONDARYFACTOR1", 
-        "Status": "TIMEDOUT" 
-    }, 
-    { 
-        "FactorType": "FALLBACKFACTOR1", 
-        "Status": "EXECUTED" 
-    } 
+        "FactorType": "PRIMARYSECONDARYFACTOR1",
+        "Status": "TIMEDOUT"
+    },
+    {
+        "FactorType": "FALLBACKFACTOR1",
+        "Status": "EXECUTED"
+    }
 ],
 </code></pre></li>
 
 <li><p>Primary authentication is successful for SSO, secondary authentication is skipped by user, fallback authentication is successful:</p>
 
-<pre class="prettyprint"><code>"factors": [ 
-    { 
-        "FactorType": "PRIMARYPRIMARYFACTOR", 
+<pre class="prettyprint"><code>"factors": [
+    {
+        "FactorType": "PRIMARYPRIMARYFACTOR",
         "Factor":"SSO",
-        "Status": "EXECUTED BUT NOT CONSIDERED" 
-    }, 
-    { 
-        "FactorType": "PRIMARYSECONDARYFACTOR1", 
-        "Status": "USERSKIPPED" 
-    }, 
-    { 
-        "FactorType": "FALLBACKFACTOR1", 
-        "Status": "EXECUTED" 
-    } 
+        "Status": "EXECUTED BUT NOT CONSIDERED"
+    },
+    {
+        "FactorType": "PRIMARYSECONDARYFACTOR1",
+        "Status": "USERSKIPPED"
+    },
+    {
+        "FactorType": "FALLBACKFACTOR1",
+        "Status": "EXECUTED"
+    }
 ],
 </code></pre></li>
 </ul>
@@ -1026,6 +1031,8 @@
 <li><a href="../usage">User Guide</a></li>
 
 <li><a href="../mc">Managed Configurations</a></li>
+
+<li><a href="../faq/">FAQ</a></li>
 </ul><p></p>
                                         
 
