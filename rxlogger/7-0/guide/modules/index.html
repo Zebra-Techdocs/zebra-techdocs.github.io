@@ -294,24 +294,31 @@
 
 <p>Controls collection of data from Android's "application not responding" (ANR) events. Event data is copied directly from the Android system and saved in a file called <code>trace.txt</code> or some variant thereof. For example, the ANR event for a post-loaded app would be similar to <code>trace-&lt;app_package_name&gt;.txt</code>.</p>
 
-<table class="facelift" style="width:80%" border="1" padding="5px">
+<table class="facelift" style="width:100%" border="1" padding="5px">
   <tbody><tr bgcolor="#dce8ef">
     <th>Name</th>
-     <th>Description</th>
+    <th>Description</th>
     <th>Type</th>
     <th>Default Value</th>
   </tr>
   <tr>
       <td>Enable Module</td>
-   <td>Enable or disable collection of ANR files</td>
-   <td>Boolean</td>
+    <td>Enable or disable collection of ANR files</td>
+    <td>Boolean</td>
     <td>true</td>
   </tr>
   <tr>
-      <td>Log path</td>
-   <td>The storage path for ANR files</td>
-   <td>String</td>
-    <td>&lt;RxLogger_Path&gt;/anr/</td>
+      <td>Log Path</td>
+    <td>The storage path for ANR files</td>
+    <td>String</td>
+    <td>&lt;RxLogger_Path&gt;/anr/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+      <td>Secure Log Path</td>
+    <td>The storage path for secure ANR files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/anr/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
 </tbody></table>
 
@@ -347,7 +354,14 @@
       <td>Log path</td>
    <td>The storage path for BTSnooplog files</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;/btsnooplog/</td>
+    <td>&lt;RxLogger_Path&gt;/btsnooplog/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure BTSnooplog files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/btsnooplog/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
   <tr>
       <td>Select Trace Level</td>
@@ -380,7 +394,14 @@
       <td>Log path</td>
    <td>The storage path for kernel logs</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;</td>
+    <td>&lt;RxLogger_Path&gt;/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure kernel files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
   <tr>
       <td>Kernel Log filename</td>
@@ -465,9 +486,15 @@
       <td>Log path</td>
    <td>The storage path for logcat logs</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;</td>
+    <td>&lt;RxLogger_Path&gt;/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
   </tr>
-  <tr>
+    <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure logcat files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
+  </tr><tr>
       <td>Enable main logcat</td>
    <td>Enable or disable the collection of the main buffer</td>
    <td>Boolean</td>
@@ -713,6 +740,13 @@
    <td>String</td>
     <td></td>
   </tr>
+  <tr>
+      <td>Choose Logcat Buffer Size</td>
+    <td>Select the logcat buffer size: 256K, 1M, 4M, 8M, 16M<br><b>Note:</b> For Android 11, the default is 4MB.
+    </td>
+    <td>List</td>
+    <td>Default – Index 0</td>
+  </tr>
 </tbody></table>
 
 <hr>
@@ -746,7 +780,14 @@
       <td>Log path</td>
    <td>The storage path for LTS files</td>
    <td>String</td>
-    <td>&lt;SDcard&gt;/RxLoggerLTS/</td>
+    <td>&lt;RxLogger_Path&gt;/RxLoggerLTS/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure LTS files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/RxLoggerLTS/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
 </tbody></table>
 
@@ -779,7 +820,14 @@
       <td>Log path</td>
    <td>The storage path for Qxdm files</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;/qxdm/logs/</td>
+    <td>&lt;RxLogger_Path&gt;/qxdm/logs/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure Qxdm files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/qxdm/logs/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
   <tr>
       <td>Qxdm Log Size (MB)</td>
@@ -795,7 +843,7 @@
   </tr>
     <tr>
       <td>Choose Log Filter</td>
-   <td>Select the log filter that Qxdm needs to process: <b>Default, Battery, User Defined</b> (from &lt;RxLogger_Path&gt;/qxdm/cfg/Custom_filter.cfg) <br><b>Note:</b> The Battery filter only appears on TC15, TC53/TC58, TC73/TC78, TN28 and ET40/ET45 devices.</td>
+   <td>Select the log filter that Qxdm needs to process: <b>Default-Lite, Default, Battery, Audio, User Defined</b> (from &lt;RxLogger_Path&gt;/qxdm/cfg/Custom_filter.cfg) <br><br><b>Note:</b><br>&nbsp;&nbsp;• The <b>Default-Lite</b> filter is <i>not available</i> on SD660-platform devices, see <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">Zebra Platform Devices</a>.<br>&nbsp;&nbsp;• The <b>Battery</b> filter only appears on TC15, TC53/TC58, TC73/TC78, TN28 and ET40/ET45 devices.</td>
    <td>List</td>
     <td>Default – Index 0</td>
   </tr>
@@ -842,7 +890,14 @@
       <td>Log path</td>
    <td>The storage path for Ramoops files</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;/ramoops/</td>
+    <td>&lt;RxLogger_Path&gt;/ramoops/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure Ramoops files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/ramoops/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
   <tr>
       <td>Base filename</td>
@@ -904,7 +959,14 @@
       <td>Log path</td>
    <td>The storage path for Resource files</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;</td>
+    <td>&lt;RxLogger_Path&gt;/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure Resource files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
   <tr>
       <td>Resource log Interval (sec)</td>
@@ -984,7 +1046,7 @@
 
 <h3 id="batterypower" class="anchor"><a class="heading-anchor" href="#batterypower"><span></span></a>Battery Power</h3>
 
-<p>The availability of battery power data in the resource .CSV file (shown as columns) is based on the RxLogger version:</p>
+<p>The presence of battery power data in the resource .CSV file (displayed in columns) is dependent on the version of RxLogger. The minimum required version is specified as follows:</p>
 
 <table class="facelift" style="width:80%" border="1" padding="5px">
   <tbody><tr bgcolor="#dce8ef">
@@ -1523,7 +1585,14 @@
       <td>Log path</td>
    <td>The storage path for Snapshot logs</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;/snapshots/</td>
+    <td>&lt;RxLogger_Path&gt;/snapshots/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure Snapshot files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/snapshots/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
   <tr>
       <td>Log filename</td>
@@ -1638,6 +1707,54 @@
    <td>Boolean</td>
     <td>false</td>
   </tr>
+
+  <tr><td>ISub</td>
+   <td>Captures information regarding SIM cards and the mobile network subscription</td>
+   <td>Boolean</td>
+    <td>false</td>
+  
+  </tr><tr>
+      <td>Telephony Debug Service</td>
+   <td>System service responsible for capturing debug information related to telephony services and cellular network connectivity. <i>This is only visible in <a href="../settings/#securemode">Secure Mode</a>.</i></td>
+   <td>Boolean</td>
+    <td>false</td>
+  </tr>
+  <tr>
+      <td>Telephony Registry</td>
+   <td>Captures state of telephony-related components and services</td>
+   <td>Boolean</td>
+    <td>false</td>
+  </tr>
+  <tr>
+      <td>Telecom</td>
+   <td>Collects telephony-related functionality, such as making and receiving calls, handling SIM cards, and managing call logs</td>
+   <td>Boolean</td>
+    <td>false</td>
+  </tr>
+  <tr>
+      <td>Isms</td>
+   <td>Captures information about the SMS (Short Message Service) functionality through the Isms interface</td>
+   <td>Boolean</td>
+    <td>false</td>
+  </tr>
+  <tr>
+      <td>Location</td>
+   <td>Captures detailed information about the device's location providers, location requests, and other location-related details</td>
+   <td>Boolean</td>
+    <td>false</td>
+  </tr>
+  <tr>
+      <td>Phone</td>
+   <td>Captures information about the phone state, call-related details, signal strength, network information and other phone-related details</td>
+   <td>Boolean</td>
+    <td>false</td>
+  </tr>
+  <tr>
+      <td>Carrier Config</td>
+   <td>Captures detailed information about the configuration settings that are applied by the device for a specific carrier</td>
+   <td>Boolean</td>
+    <td>false</td>
+  </tr>
 </tbody></table>
 
 <hr>
@@ -1663,7 +1780,14 @@
       <td>Log path</td>
    <td>The storage path for tcpdump logs</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;/tcpdump/</td>
+    <td>&lt;RxLogger_Path&gt;/tcpdump/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure tcpdump files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/tcpdump/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
   <tr>
       <td>Base filename</td>
@@ -1710,7 +1834,14 @@
       <td>Log path</td>
    <td>The storage path for tombstone logs</td>
    <td>String</td>
-    <td>&lt;RxLogger_Path&gt;/tombstone/</td>
+    <td>&lt;RxLogger_Path&gt;/tombstone/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;RxLogger_Path&gt;</td>
+  </tr>
+  <tr>
+    <td>Secure Log Path</td>
+    <td>The storage path for secure tombstone files</td>
+    <td>String</td>
+    <td>&lt;Secure_RxLogger_Path&gt;/tombstone/<br><br>See <a href="../settings/#logs">Logs</a> for the expanded path represented by &lt;Secure_RxLogger_Path&gt;
+    </td>
   </tr>
 </tbody></table>
 
@@ -1744,6 +1875,60 @@
 <p><i>Backup via RxLogger main screen (left) or RxUtility (right)</i>
 <br>
 <br></p>
+
+<h3 id="securebackup" class="anchor"><a class="heading-anchor" href="#securebackup"><span></span></a>Secure Backup</h3>
+
+<p>When <a href="../settings/#securemode">Secure Mode</a> is enabled, backups create password-protected .zip files of RxLogger logs. These logs could aid in diagnosing issues. The .zip files are named with the date and time of the backup, and stored in <code>/&lt;Secure_RxLogger_Path&gt;/SecureBackup-&lt;date&gt;-&lt;HHMMSS&gt;.zip</code>. </p>
+
+<p><code>&lt;Secure_RxLogger_Path&gt;</code> can be one of the following:</p>
+
+<ul>
+<li><strong>Internal storage path:</strong> <i>/sdcard/Android/data/com.symbol.rxlogger/RxLogger/secure/log_data/</i></li>
+
+<li><strong>External storage path:</strong> <i>/storage/<uuid>/Android/data/com.symbol.rxlogger/RxLogger/secure/log_data/</uuid></i></li>
+</ul>
+
+<p>Backup is initiated through any of the following methods:</p>
+
+<ul>
+<li><strong>RxLogger -</strong> Select <strong>BackupNow</strong> from the top right menu on the main screen and provide a password.</li>
+
+<li><strong>RxLogger Utility -</strong> Tap the round save icon or chat head (not removable by long press), and input a password.</li>
+
+<li><strong>Android shell -</strong> Use the BackupNow broadcast intent with password via <code>com.symbol.rxlogger.intent.action.BACKUP_NOW_SHELL</code>.</li>
+
+<li><strong>Third party app -</strong> Use the BackupNow broadcast intent with token and password via <code>com.symbol.rxlogger.intent.action.BACKUP_NOW</code>. The third-party app attempting to start RxLogger via intent is required to send a token as an extra. The token is requested from Zebra Device Manger with the delelagtion scope, see <a href="https://techdocs.zebra.com/flux/delegation/">Using Delegation Scopes</a>. 
+
+
+<ul>
+<li>Key for Token: “token”</li>
+
+<li>Key for Password: “password”</li>
+
+<li>Delegation scope: delegation-zebra-com.symbol.secure-rxlogger</li></ul>
+</li>
+</ul>
+
+<p>Passwords must be at least 8 characters long and include an uppercase letter, a lowercase letter, a digit and a special character such as <code>@#$%^&amp;*+-=!</code>.</p>
+
+<table>
+  <tbody><tr>
+   <td>
+     <img style="height:350px" src="../utility/toggle_chat_head.jpg">
+   </td>
+   <td> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+   </td>
+   <td>
+     <img style="height:350px" src="../utility/main_screen.jpg">
+   </td>
+  </tr>
+</tbody></table>
+
+<p><i>Backup via RxLogger main screen (left) or RxUtility (right)</i>
+<br>
+<br></p>
+
+<p>When attempting to open the backup .zip file, the user is prompted to enter the password that was initially set for the file.</p>
 
 <hr>
 
@@ -1791,7 +1976,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2023 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <!--
                     <div class="col-sm-2">
