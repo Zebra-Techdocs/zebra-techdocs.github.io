@@ -791,6 +791,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/devicecentral/3-4':
         case '/devicecentral/4-0':
         case '/devicecentral/4-1':
+        case '/devicecentral/4-2':
             ddl_doc.options.length = 0;
             for (i=0; i < dc_3_0_text.length; i++) {
                 createOption(ddl_doc, dc_3_0_text[i], dc_3_0_val[i]);
