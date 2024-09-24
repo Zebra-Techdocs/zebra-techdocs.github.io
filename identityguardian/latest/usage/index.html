@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.4
+                                            1.5
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-4/about">
+                            <a href="/identityguardian/1-5/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/setup">
+                            <a href="/identityguardian/1-5/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/licensing">
+                            <a href="/identityguardian/1-5/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/mc">
+                            <a href="/identityguardian/1-5/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/usage">
+                            <a href="/identityguardian/1-5/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/api">
+                            <a href="/identityguardian/1-5/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/faq">
+                            <a href="/identityguardian/1-5/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/search">
+                            <a href="/identityguardian/1-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="user-guide" class="anchor"><a class="heading-anchor" href="#user-guide"><span></span></a>User Guide</h1>
                                     <p>
                                             Identity Guardian
-                                            1.4
+                                            1.5
                                     </p>
                                 </div>
                             </section>                    
@@ -248,31 +248,44 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Identity Guardian offers 2 types of models for secure and personalized device access:</p>
+<p>Administrators must <a href="../setup/#configuration">configure</a> Identity Guardian and set up profiles tailored for either <a href="../setup/#shareddevice">shared</a> or <a href="../setup/#personallyassigneddevice">personally assigned</a> devices.</p>
+
+<p>All users are required to complete a one-time enrollment process on their device before they can authenticate and sign in. For users choosing to utilize facial biometrics, Identity Guardian presents customizable Terms and Conditions, which must be accepted to proceed with this method. Once enrollment is complete, users can sign in and sign out of the device as needed.</p>
+
+<p>Additional features include:</p>
 
 <ul>
-<li><strong><a href="#shareddevice">Shared Device</a> -</strong> A device that is designated for use by multiple individuals. User data is securely encrypted and encapsulated within a personal barcode, generated via facial recognition and can be easily discarded to erase personal data.</li>
+<li><strong><a href="#guardiansafe">Guardian Safe</a>:</strong> Save and manage app login credentials</li>
 
-<li><strong><a href="#personallyassigneddevice">Personally Assigned Device</a> -</strong> A device that is issued and allocated specifically to an individual for their dedicated use. User data is securely embedded within the Android framework, making it inaccessible even to the organization.</li>
+<li><strong>Lock Screen Enhancements:</strong> <a href="#alternatesignin">Alternate sign-in</a>, <a href="#custommessage">custom messages</a>, <a href="#autounlock">auto-unlock</a> and <a href="#adminbypass">admin bypass</a> features</li>
 </ul>
-
-<p>After the administrator <a href="../setup/#configuration">configures</a> Identity Guardian, setup the user profiles based on the method of access. For users who opt into using facial biometrics, Identity Guardian provides Terms and Conditions to the user, which they must accept to use the biometric portion of the solution. The Terms &amp; Conditions may be customized by the administrator through ZDNA.</p>
 
 <hr>
 
-<h2 id="shareddevice" class="anchor"><a class="heading-anchor" href="#shareddevice"><span></span></a>Shared Device</h2>
+<h2 id="userenrollment" class="anchor"><a class="heading-anchor" href="#userenrollment"><span></span></a>User Enrollment</h2>
 
-<p>In <strong>shared device</strong> environments where multiple users share a single device, Identity Guardian ensures secure and personalized access. It simplifies the authentication process, granting users complete control over their data without storing personal information on the device or cloud. This is achieved by <strong>providing each user with a unique, encrypted barcode that stores their personal data.</strong> Furthermore, <strong>for enhanced security, multifactor authentication can be configured, which could include a passcode, facial biometrics, and/or single sign-on (SSO).</strong> Alternatively, SSO can be established as the primary authentication instead of issuing individual barcodes.</p>
+<p>The user enrollment procedure varies depending on the device access method:</p>
 
-<p>Shared devices are capable of recognizing an unlimited number of registered users. A user's predefined organizational role can be used to offer personalized experiences on shared devices. Each user's data is encrypted and stored within a unique barcode, located in the <code>/enterprise/usr/Profiles</code> folder, which the user can control. Users can simply discard the barcode to remove their personal data. Optionally, facial biometrics can be utilized to generate this barcode. For temporary user profiles, barcodes can be set to automatically expire at a specified date and time.</p>
+<ul>
+<li>Shared Device</li>
 
-<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> If a user loses their barcode, it can only be retrieved from the device, from folder: <code>/enterprise/usr/Profiles</code>.</p>
+<li>Personally Assigned Device</li>
+</ul>
 
-<p><img alt="image" style="height:200px" src="shared-workflow.jpg"></p>
+<p><br></p>
 
-<h3 id="userenrollment" class="anchor"><a class="heading-anchor" href="#userenrollment"><span></span></a>User Enrollment</h3>
+<h3 id="shareddevice" class="anchor"><a class="heading-anchor" href="#shareddevice"><span></span></a>Shared Device</h3>
 
-<p>Before users can sign in or authenticate to the shared device, they are required to first register with Identity Guardian. The enrollment profile is created and deployed by administrators, who then launch Identity Guardian on the shared device. For more details, see <a href="../setup/#emm">EMM Setup</a>. Organizations can designate a specific device for user enrollment and may choose to guide the user through this initial setup. The options made available to users during the on-device enrollment process may differ, depending on the <a href="../mc/#enrollmentconfiguration">Enrollment Configurations</a> set by the administrator.</p>
+<p>Before users can sign in or authenticate on a shared device, they must first register with Identity Guardian. Administrators create and deploy the enrollment profile, then launch Identity Guardian on the shared device to initiate the enrollment process. Alternatively, a designated device may be used for user enrollment, with administrators optionally guiding users through this initial setup.</p>
+
+<p>The options available to users during the on-device enrollment process vary based on the <a href="../mc/#enrollmentconfiguration">Enrollment Configurations</a> set by the administrator.
+For more details on how to apply the settings, see the <a href="../setup/#emm">EMM Setup</a> section.</p>
+
+<p>Administrators also need to create and deploy an authentication profile to enable users to authenticate on their shared devices after enrolllment is complete.</p>
+
+<p><br></p>
+
+<h4 id="adminguided" class="anchor"><a class="heading-anchor" href="#adminguided"><span></span></a>Admin-Guided</h4>
 
 <p>To enroll users on shared devices:</p>
 
@@ -318,23 +331,71 @@
 <img alt="image" style="height:350px" src="congrats-shared.png"></li>
 </ol>
 
-<p>Upon completion of user enrollment on the shared device, the administrator proceeds to deploy the authentication profile, which enbles users to <a href="../usage/#devicesignin">sign into the device</a>.</p>
+<p>Upon completion of user enrollment on the shared device, the administrator proceeds to deploy the authentication profile, which enbles users to <a href="../usage/#signin">sign into the device</a>.</p>
 
-<hr>
+<p><br></p>
 
-<h2 id="personallyassigneddevice" class="anchor"><a class="heading-anchor" href="#personallyassigneddevice"><span></span></a>Personally Assigned Device</h2>
+<!-- // MOVED TO IG 1.6
+#### Self-Guided
 
-<p>In <strong>personally assigned device</strong> environments where individual devices are assigned to specific users, these <strong>users retain control over their encrypted personal data,</strong> with the ability to delete it as needed. This is achieved by safeguarding user data with the Android framework - <strong>the data is stored within Identity Guardian's isolated storage,</strong> located within Android's access-controlled application platform. This ensures that even the organiztion itself cannot access the data.</p>
+Administrators can enable users to self-enroll directly on the lock screen of _shared devices_ configured for authentication mode. This allows users to enroll and then authenticate immediately on the same device, streamlining the process by eliminating the need to apply an enrollment mode policy before the authentication policy. User enrollment leverages SSO authentication to verify user identity.
 
-<p>Identity Guardian integrates with identity providers (IdPs) to streamline the authentication process. It uses the single sign-on (SSO) system, which requires users to authenticate just once. This system not only manages security but also simplifies the process, <em>allowing users to access multiple applications in a single log-in session.</em> <strong>For enhanced security, administrators have the option to customize multifactor authentication settings, which could include a passcode, facial biometrics, and/or SSO.</strong> In contrast to <em>shared devices,</em> <em>personally assigned devices</em> do not utilize barcodes.</p>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <b>Note:</b> SSO is required as a verification method under <a href="../mc/#authenticationconfiguration"><b>Authentication Configuration</b></a> in Managed Configurations.
 
-<p><img alt="image" style="height:200px" src="personal-workflow.jpg"></p>
+<br />
 
-<!-- Subsequent device unlocks, reboot, etc. requires user entry based on setup : PIN, facial recognition, etc. -->
+##### Admin Setup
 
-<h3 id="userenrollment-1" class="anchor"><a class="heading-anchor" href="#userenrollment-1"><span></span></a>User Enrollment</h3>
+Configure [Managed Configurations](../mc):
 
-<p>Follow the instructions below for user enrollment:</p>
+1. **Lock Screen Configuration:** Expand **Lock Screen Menu > Allow Self Enrollment.**
+   - Enable **Secure Self Enrollment** and set it to **true.**
+   - Enable **User Verification** and select **SSO.**
+2. Save the changes.
+
+##### Usage
+
+1. **Self-Enrollment:**
+   - On the lock screen, tap the menu icon in the top right corner and select **Enroll User.**
+     <img alt="image" style="height:350px"  src="lock-screen-enroll-user.jpg" />
+   - Enter the user's SSO login credentials.
+     <img alt="image" style="height:400px"  src="sso-login.jpg" />
+   - Provide the requested information for enrollment, then tap **Next**:
+     - **Employee ID or Email -** This is populated based on the user ID entered in the SSO login screen
+     - **Role -** This is populated based on the user ID entered and their role mapped in their SSO provider.
+     - **Create Passcode -** Enter a passcode to create.
+     - **Re-enter Passcode -** Enter the same passcode again.
+         <table>
+             <tr>
+                 <td><img alt="image" style="height:350px" style="border:1px solid black;" src="self-enroll.jpg" /></td>
+                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                 <td><img alt="image" style="height:350px" style="border:1px solid black;" src="self-enroll-2.jpg" /></td>
+             </tr>
+         </table>
+   - Tap **Add.**
+     <img alt="image" style="height:400px"  src="self-enroll-3.jpg" />
+   - Tap **Confirm** to accept the Terms & Conditions, then perform a facial capture. Tap **Next.**
+     <img alt="image" style="height:400px"  src="self-enroll-4.jpg" />
+2. **Generate Enrollment Barcode:** The user enrollment barcode is generated and is saved to the device for future access.
+   <img alt="image" style="height:400px"  src="self-enroll-barcode.jpg" />
+3. **Complete Enrollment:**
+   - Tap **Save** to complete enrollment.
+     <img alt="image" style="height:400px"  src="self-enroll-barcode.jpg" />
+   - Tap **Continue.**
+     <img alt="image" style="height:400px"  src="self-enroll-complete.jpg" />
+   - The lock screen appears again. The user can now authenticate to the device.
+     <img alt="image" style="height:400px"  src="lock-screen.jpg" />
+
+<br />
+-->
+
+<h3 id="personallyassigneddevice" class="anchor"><a class="heading-anchor" href="#personallyassigneddevice"><span></span></a>Personally Assigned Device</h3>
+
+<p>Before users can sign in or authenticate on a personally assigned device, they must first register with Identity Guardian. Administrators create and deploy the personally assigned profile, then launch Identity Guardian on the device to initiate the enrollment process. The options available to users during the on-device enrollment process may vary based on the <a href="../mc/#enrollmentconfiguration">Enrollment Configurations</a> set by the administrator.For more details on how to apply the settings, see the <a href="../setup/#emm">EMM Setup</a> section.</p>
+
+<p>After the enrollment process, the user is immediately presented with the authentication screen.</p>
+
+<p>To enroll users on personally assigned devices:</p>
 
 <ol>
 <li>Open <strong>Identity Guardian.</strong></li>
@@ -375,7 +436,9 @@
 <img alt="image" style="height:350px" src="congrats-personal.png"></li>
 </ol>
 
-<h3 id="editprofile" class="anchor"><a class="heading-anchor" href="#editprofile"><span></span></a>Edit Profile</h3>
+<p><br></p>
+
+<h4 id="editprofile" class="anchor"><a class="heading-anchor" href="#editprofile"><span></span></a>Edit Profile</h4>
 
 <p>To edit a profile on a personally assigned device:</p>
 
@@ -409,9 +472,11 @@
 <img alt="image" style="height:350px" src="edit-face.png"></li>
 </ol>
 
-<h3 id="deleteprofile" class="anchor"><a class="heading-anchor" href="#deleteprofile"><span></span></a>Delete Profile</h3>
+<p><br></p>
 
-<p>To delete a profile on a personally assigned device:</p>
+<h4 id="deleteprofile" class="anchor"><a class="heading-anchor" href="#deleteprofile"><span></span></a>Delete Profile</h4>
+
+<p>To delete a user profile on a personally assigned device:</p>
 
 <ol>
 <li>Open Zebra Biometric app.</li>
@@ -423,23 +488,25 @@
 <img alt="image" style="height:350px" src="delete-profile.png"></li>
 </ol>
 
-<p>After the profile is deleted, the enrollment screen appears to re-enroll the device and authenticate the user.</p>
+<p>After the user profile is deleted, the enrollment screen appears for a user to re-enroll to the device and authenticate the user.</p>
 
 <hr>
 
-<h2 id="devicesignin" class="anchor"><a class="heading-anchor" href="#devicesignin"><span></span></a>Device Sign In</h2>
+<h2 id="signinauthentication" class="anchor"><a class="heading-anchor" href="#signinauthentication"><span></span></a>Sign In (Authentication)</h2>
 
-<p>After a user is enrolled, the authentication screen is displayed on the device. This screen also appears based on the lock-screen event options defined by the administrator in the managed configurations. These options can be triggered from various events such as when a user signs out, locks or reboots the device.</p>
+<p>After a user is enrolled, the authentication screen is displayed on the device. This screen also appears based on the <a href="../mc/#authenticationconfiguration">Lock-screen Event</a> options defined by the administrator in the Managed Configurations. These options can be triggered from various events such as when a user signs out, locks or reboots the device.</p>
 
-<p>To sign in a device, tap <strong>Unlock.</strong>
-<img alt="image" style="height:350px" src="lock-screen.png">
-The device prompts the user to authenticate via the primary authentication method selected by the administrator, such as facial biometric or passcode entry. If the primary authentication method fails, the secondary authentication method is presented for the user to execute. Unlicensed devices present a passcode to be entered rather than requesting for a facial biometric.</p>
+<p>To sign in or authenticate to a device, tap <strong>Unlock.</strong>
+<img alt="image" style="height:350px" src="lock-screen.png"></p>
+
+<p>The device prompts the user to authenticate based on the <a href="../mc/#authenticationconfiguration">Authentication Configuration</a> defined by the admin. The designated primary authentication method is presented first. If the primary authentication method fails, the designated secondary authentication method is presented. The fallback authentication is presented if the primary authentication fails and no secondary authentication is defined, or both primary and secondary authentication fails. Unlicensed devices present a passcode to be entered rather than requesting for a facial biometric.</p>
+
+<h4 id="microsoftauthenticator" class="anchor"><a class="heading-anchor" href="#microsoftauthenticator"><span></span></a>Microsoft Authenticator</h4>
 
 <p><strong>If Microsoft Authenticator app is in use,</strong> perform the following after the user unlocks the screen:</p>
 
 <ol>
-<li>The Microsoft Authenticator app is launched prompting for user authentication. Enter the login credentials:</li>
-</ol>
+<li><p>The Microsoft Authenticator app is launched prompting for user authentication. Enter the login credentials:</p>
 
 <table>
     <tbody><tr>
@@ -447,13 +514,161 @@ The device prompts the user to authenticate via the primary authentication metho
         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td><img alt="image" style="height:350px" src="authenticator-app-passwd.png"></td>
     </tr>
-</tbody></table>
+</tbody></table></li>
+
+<li><p>After authentication is successful, the user gains access to the device.</p></li>
+
+<li><p>When a user launches any app that utilizes Microsoft Authenticator app as broker, the app automatically signs in without prompting for user name or password.</p></li>
+</ol>
+
+<p><br></p>
+
+<h3 id="nonidentityguardianbarcode" class="anchor"><a class="heading-anchor" href="#nonidentityguardianbarcode"><span></span></a>Non-Identity Guardian Barcode</h3>
+
+<p>A user barcode, known as a Legacy Barcode, can be used to authenticate users even if it was not generated by Identity Guardian. This is useful in organizations where user barcodes already exist. These barcodes must be 1D and have a defined prefix. Upon scanning, the prefix is disregarded, and the user name serves as the identifier. When the device is locked, the user name is prominently displayed on the lock screen.</p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i><strong>Note:</strong> <b>Legacy Barcode</b> is <em>not</em> encrypted and, therefore, not secure. For shared devices, Zebra recommends using encrypted barcodes for secure authentication. See <a href="../mc">Managed Configurations</a> for more information.</p>
+
+<p><br></p>
+
+<h5 id="adminsetup" class="anchor"><a class="heading-anchor" href="#adminsetup"><span></span></a>Admin Setup</h5>
+
+<p>Configure <a href="../mc">Managed Configurations</a>:</p>
 
 <ol>
-<li>After authentication is successful, the user gains access to the device.</li>
+<li><strong>Authentication Configuration -</strong> Expand <strong>User Verification Methods:</strong>
 
-<li>When a user launches any app that utilizes Microsoft Authenticator app as broker, the app automatically signs in without prompting for user name or password.</li>
+
+<ul>
+<li><strong>Verification Setup</strong>
+
+
+<ul>
+<li>Enable <strong>Comparison Source</strong> and select <strong>LEGACY BARCODE.</strong></li>
+
+<li>Under <strong>Primary Authentication Method:</strong></li>
+
+<li>Enable <strong>Primary Authentication Factor</strong> and set this to <strong>NO_COMPARISON.</strong></li>
+
+<li>Enable <strong>Secondary Authentication Factor</strong> and set this to <strong>NONE.</strong></li>
+
+<li>Enable <strong>Fallback Authentication Method</strong> and set this to <strong>NONE.</strong></li></ul>
+</li>
+
+<li><strong>Legcy Barcode Options:</strong>
+
+
+<ul>
+<li>Enable <strong>Legacy Barcode Prefix</strong> and enter the prefix used to validate the barcode. The barcode must begin with this prefix, otherwise the user will not be authenticated. Without a prefix, the user will not be authenticated.</li></ul>
+</li></ul>
+</li>
+
+<li>Save the changes.</li>
 </ol>
+
+<p><br></p>
+
+<h5 id="usage" class="anchor"><a class="heading-anchor" href="#usage"><span></span></a>Usage</h5>
+
+<ol>
+<li>On the lock screen, tap the <strong>Scan to Unlock</strong> button.
+<img alt="image" style="height:350px" src="scan-to-unlock-1.jpg"></li>
+
+<li>Scan the user barcode. The user gains access to the device.
+<img alt="image" style="height:350px" src="scan-to-unlock-2.jpg"></li>
+
+<li>Lock the device. The user name is displayed in the lock screen.
+<img alt="image" style="height:350px" src="scan-to-unlock-3.jpg"></li>
+</ol>
+
+<p><br></p>
+
+<h3 id="adminbypass" class="anchor"><a class="heading-anchor" href="#adminbypass"><span></span></a>Admin Bypass</h3>
+
+<p>A user can bypass authentication by entering the <strong>Admin Bypass Passcode,</strong> useful for situations where authentication credentials are forgotten. Access is granted provided the user has received the bypass passcode from an admin. While this feature allows device access, it does not track user accountability. It offers a direct method to enter the passcode, as opposed to the alternative fallback authentication (part of the <a href="../mc/#authenticationconfiguration">Authentication Configuration</a> scheme), which requires multiple failed authentication attempts.</p>
+
+<p><br></p>
+
+<h4 id="adminsetup-1" class="anchor"><a class="heading-anchor" href="#adminsetup-1"><span></span></a>Admin Setup</h4>
+
+<p>Configure <a href="../mc">Managed Configurations</a>:</p>
+
+<ol>
+<li><strong>Lock Screen Configuration:</strong> Expand <strong>Lock-screen Menu.</strong>
+
+
+<ul>
+<li>Enable <strong>Enable Admin Bypass Passcode on Lock screen</strong> and set it to <strong>true.</strong></li></ul>
+</li>
+
+<li>Save the changes.</li>
+</ol>
+
+<p><br></p>
+
+<h4 id="usage-1" class="anchor"><a class="heading-anchor" href="#usage-1"><span></span></a>Usage</h4>
+
+<ol>
+<li>In the lock screen, tap the menu icon in the top right corner and select <strong>Admin Bypass.</strong>
+<img alt="image" style="height:350px" src="lock-screen-admin-bypass.jpg"></li>
+
+<li>Enter the Admin Bypass Passcode provided by your administrator and tap <strong>Unlock.</strong>
+<img alt="image" style="height:350px" src="admin-bypass.jpg"></li>
+
+<li>The user gains device access.</li>
+</ol>
+
+<p><br></p>
+
+<h3 id="alternatesignin" class="anchor"><a class="heading-anchor" href="#alternatesignin"><span></span></a>Alternate Sign-In</h3>
+
+<p><strong>Alternate Sign-In</strong>, also known as <strong>Alternative Login,</strong> enables users of <em>shared devices</em> to log in as diffeerent users. This feature is useful for scenarios involving temporary users or those who do not have full-time access, ensuring user accountability is tracked.</p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <b>Note:</b> The user <em>must</em> be enrolled on the device before using the alternate sign-in method.</p>
+
+<p><br></p>
+
+<h4 id="adminsetup-2" class="anchor"><a class="heading-anchor" href="#adminsetup-2"><span></span></a>Admin Setup</h4>
+
+<p>Configure <a href="../mc">Managed Configurations</a>:</p>
+
+<ol>
+<li><strong>Authentication Configuration -</strong> Expand <strong>Lock-screen Event Options:</strong>
+
+
+<ul>
+<li><strong>On Unlock</strong> / <strong>OnReboot</strong> / <strong>On AC power connected</strong> / <strong>On AC power disconnected</strong> / <strong>On device manual checkin</strong> / <strong>On user change</strong>
+
+
+<ul>
+<li>Enable <strong>Alternative Verification Setup</strong> and select the desired Verification Setup that specifies the authentication required for the alternate login.</li></ul>
+</li></ul>
+</li>
+
+<li><strong>Lock Screen Configuration -</strong> Expand <strong>Lock Screen Menu:</strong>
+
+
+<ul>
+<li>Enable <strong>Customize Alternative Login Button</strong> and enter a name for the button designated for alternate login.</li></ul>
+</li>
+
+<li>Save the changes.</li>
+</ol>
+
+<p><br></p>
+
+<h4 id="usage-2" class="anchor"><a class="heading-anchor" href="#usage-2"><span></span></a>Usage</h4>
+
+<ol>
+<li>On the lock screen, tap the button with the customized text located above the <strong>Unlock</strong> button. The text on this button is based on the admin configuration.
+<img alt="image" style="height:350px" src="alternate-login.jpg"></li>
+
+<li>Scan the user barcode and perform facial authentication.</li>
+
+<li>The user gains device access.</li>
+</ol>
+
+<p><br></p>
 
 <h3 id="userauthenticationscenarios" class="anchor"><a class="heading-anchor" href="#userauthenticationscenarios"><span></span></a>User Authentication Scenarios</h3>
 
@@ -473,7 +688,7 @@ The device prompts the user to authenticate via the primary authentication metho
 
 <hr>
 
-<h2 id="devicesignout" class="anchor"><a class="heading-anchor" href="#devicesignout"><span></span></a>Device Sign Out</h2>
+<h2 id="signout" class="anchor"><a class="heading-anchor" href="#signout"><span></span></a>Sign Out</h2>
 
 <p>Sign Out only applies to shared devices. To sign out a device, perform one of the following:</p>
 
@@ -491,6 +706,451 @@ The device prompts the user to authenticate via the primary authentication metho
 
 <p>After a device is signed out, the lock screen is visible:
 <img alt="image" style="height:350px" src="lock-screen.png"></p>
+
+<hr>
+
+<h2 id="lockdevice" class="anchor"><a class="heading-anchor" href="#lockdevice"><span></span></a>Lock Device</h2>
+
+<p>This section discusses features designed to enhance user experience and security on the device lock screen.</p>
+
+<h3 id="custommessage" class="anchor"><a class="heading-anchor" href="#custommessage"><span></span></a>Custom Message</h3>
+
+<p>A user can create a custom message to display on the lock screen, which can be useful in various scenarios. For <em>shared device</em> users, it allows them to leave instructions for the next user. For <em>personally assigned device</em> users, it can serve as a device identifier or a personal reminder. This custom message remains visible to all users when they sign in or sign out of the device.</p>
+
+<p><br></p>
+
+<h4 id="adminsetup-3" class="anchor"><a class="heading-anchor" href="#adminsetup-3"><span></span></a>Admin Setup</h4>
+
+<p>Configure <a href="../mc">Managed Configurations</a>:</p>
+
+<ol>
+<li><strong>Lock Screen Configuration -</strong> Expand <strong>Custom Lock Screen Message:</strong>
+
+
+<ul>
+<li>Enable <strong>Allow Custom Lock Screen Message</strong> and set it to <strong>true.</strong></li>
+
+<li>Enable <strong>Custom Lock Screen Message Source</strong> and select <strong>App Specific.</strong></li></ul>
+</li>
+
+<li>Save the changes.</li>
+</ol>
+
+<p><br></p>
+
+<h4 id="usage-3" class="anchor"><a class="heading-anchor" href="#usage-3"><span></span></a>Usage</h4>
+
+<p>To create or edit a custom message on the lock screen:</p>
+
+<ol>
+<li><strong>Sign in</strong> to the device to gain device access.
+<img alt="image" style="height:400px" src="lock-screen-user.jpg"></li>
+
+<li><strong>Open Identity Guardian</strong> from the apps menu.
+<img alt="image" style="height:350px" src="ig-home.png"></li>
+
+<li>From the top right, tap on the message icon to <strong>access the message settings.</strong>
+<img alt="image" style="height:350px" src="ig-custom-message.jpg"></li>
+
+<li><strong>Enter the message</strong> to display on the lock screen, then tap <strong>Save.</strong>
+<img alt="image" style="height:350px" src="lock-screen-message.jpg"></li>
+
+<li><strong>Lock the device.</strong> The custom message is now displayed on the lock screen.
+<img alt="image" style="height:350px" src="lock-screen-message-displayed.jpg"></li>
+</ol>
+
+<p><br></p>
+
+<h3 id="autounlock" class="anchor"><a class="heading-anchor" href="#autounlock"><span></span></a>Auto-Unlock</h3>
+
+<p><strong>Auto-Unlock</strong> seemlessly unlocks the device using facial authentication, eliminating need to tap a button on the lock screen. With this feature enabled, users are immediately prompted to scan their face for authentication when unlocking the device, bypssing the extra step.</p>
+
+<!-- When initially unlocking, users are prompted to tap the button to unlock. -->
+
+<p><strong>Requirements:</strong></p>
+
+<ul>
+<li><strong>Face</strong> must be configured for <a href="../mc/#authenticationconfiguration">primary authentication</a>.</li>
+
+<li>For <em>shared devices,</em> <strong><a href="../mc/#authenticationconfiguration">Authentication Data Storage</a></strong> must be enabled (not required for <em>personally assigned devices</em>).</li>
+</ul>
+
+<p><br></p>
+
+<h4 id="adminsetup-4" class="anchor"><a class="heading-anchor" href="#adminsetup-4"><span></span></a>Admin Setup</h4>
+
+<p>Configure <a href="../mc">Managed Configurations</a>:</p>
+
+<ol>
+<li><strong>Lock Screen Configuration -</strong> Expand <strong>User Verification Methods:</strong>
+
+
+<ul>
+<li><strong>Verification Setup1:</strong>
+
+
+<ul>
+<li>Enable <strong>Comparison Source</strong> and select <strong>BARCODE.</strong></li>
+
+<li>Expand <strong>Primary Authentication Method.</strong> Enable <strong>Primary Authentication Factor</strong> and select <strong>FACE.</strong></li></ul>
+</li></ul>
+</li>
+
+<li><strong>Lock Screen Configuration -</strong> Expand <strong>Auto Unlock:</strong>
+
+
+<ul>
+<li>Enable <strong>On Unlock</strong> and select <strong>true.</strong></li></ul>
+</li>
+
+<li>Save the changes.</li>
+</ol>
+
+<p><br></p>
+
+<h4 id="usage-4" class="anchor"><a class="heading-anchor" href="#usage-4"><span></span></a>Usage</h4>
+
+<ol>
+<li>On the lock screen, tap the unlock button:
+
+
+<ul>
+<li>For shared devices: <strong>Scan to Unlock</strong></li>
+
+<li>For personally assigned devices: <strong>Unlock</strong>
+<img alt="image" style="height:400px" src="scan-to-unlock.jpg"></li></ul>
+</li>
+
+<li>Scan the user barcode and then scan the user's face for facial authentication. The barcode scan is needed for first-time authentication.</li>
+
+<li>The user gains access to the device.</li>
+</ol>
+
+<p><strong>Subsequent Unlock Attempts:</strong>
+When unlocking the device (e.g. pressing the power button or swiping to unlock), the user is immediately prompted to scan their face for authentication, bypassing the need to tap the unlock button.</p>
+
+<hr>
+
+<h2 id="guardiansafe" class="anchor"><a class="heading-anchor" href="#guardiansafe"><span></span></a>Guardian Safe</h2>
+
+<blockquote>
+  <p><strong>Early Access Preview:</strong> The <strong>Guardian Safe</strong> feature is provided as an <em>Early Access Preview.</em> As such, please note that this feature is subject to change in future Identity Guardian releases. Please contact Zebra support for Guardian Safe activation on ZDNA Cloud.</p>
+</blockquote>
+
+<p><strong>Guardian Safe</strong> securely stores user credentials after a single entry on the login screen, automatically populating them for future logins within applications. This streamlines the login process for <em>shared devices</em> in both SSO and non-SSO environments, thereby enhancing productivity and security. Once Guardian Safe is enabled, any application with a login screen will prompt the user to save their  credentials, if they are not already saved.</p>
+
+<p><strong>Features:</strong></p>
+
+<ul>
+<li>Securely store credentials (user names and passwords) for both native and web applications (Microsoft Edge and Google Chrome)</li>
+
+<li>Save credentials directly from the login screen of any application </li>
+
+<li>Automatically populate user and password fields with saved credentials</li>
+
+<li>Designate specific apps as "ignored," preventing their credentials from being saved</li>
+
+<li>View a list of apps with saved credentials and ignored apps</li>
+
+<li>Modify or delete saved credentials</li>
+</ul>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <b>Important Notes:</b></p>
+
+<ul>
+<li><strong>Lost Barcodes:</strong> If an Identity Guardian user barcode is lost, all stored information in Guardian Safe cannot be accessed using a newly created enrollment barcode. Consequently, new passwords need to be saved again for all applications.</li>
+
+<li><strong>Supported Authentication Values:</strong> Only applications with user ID and password fields are supported. Applications requiring OTP (one-time password) fields are <em>not</em> supported. Acceptable values for the user ID can vary by application and may include values such as an email address, phone number or user name.</li>
+</ul>
+
+<p><strong>Requirements:</strong></p>
+
+<ul>
+<li>Internet access</li>
+
+<li><a href="../licensing/">Identity Guardian license</a></li>
+
+<li>ZDNA Cloud activation of Guardian Safe by Zebra support</li>
+</ul>
+
+<p><strong>Prerequisites:</strong></p>
+
+<ul>
+<li><strong>ZDNA Cloud Registration and Guardian Safe Feature Activation:</strong>
+
+
+<ul>
+<li>Register with Zebra.com based on the instructions provided in <a href="/zebradna/latest/setup/#iiregisterwithzebracom">ZDNA Cloud Setup</a>. </li>
+
+<li>Login to your ZDNA Cloud instance. After successful login, send the email ID registered in the ZDNA Cloud instance to your Zebra representative to activate the Guardian Safe preview feature.</li></ul>
+</li>
+
+<li><strong>Device Enrollment:</strong> Ensure the device is enrolled and connected to <a href="../setup/#overview">Zebra DNA Cloud</a>.</li>
+
+<li><strong>Set Authentication Scheme:</strong> The administrator must establish an <a href="../mc/#authenticationconfiguration">authentication scheme</a> that includes a barcode in combination with either facial biometrics or a user passcode. Additionally, <u>the user enrollment barcode that includes Guardian Safe MUST be regenerated.</u></li>
+
+<li><strong>Enable Temporary Data Storage:</strong> Enable this option in <a href="../mc/#authenticationconfiguration">Authentication Configuration</a> from Managed Configurations.</li>
+</ul>
+
+<p><br></p>
+
+<h3 id="enableguardiansafe" class="anchor"><a class="heading-anchor" href="#enableguardiansafe"><span></span></a>Enable Guardian Safe</h3>
+
+<p>Enable Guardian Safe through <a href="../mc/#guardiansafeconfiguration">Guardian Safe Configuration</a> in Managed Configurations and configure the other available options as needed. Once enabled, Accessibility Service permission must be granted to allow user credentials to be automatically populated. </p>
+
+<!--  // NEEDED FOR NEXT RELEASE
+
+### Enable Guardian Safe
+
+**Guardian Safe** is enabled through ZDNA Cloud and the [Guardian Safe Configuration](../mc/#guardiansafeconfiguration) in Managed Configurations. Once enabled, Accessibility Service permission must be granted to allow user credentials to be automatically populated. 
+
+**To enable Guardian Safe:**
+1. Login to [Zebra DNA Cloud](/zebradna). 
+2. Click the user icon at the top right corner and select **My Services** from the menu.
+    <img alt="image" style="height:400px"  src="zdna-user-menu.jpg" />
+3. Toggle to enable Guardian Safe.
+    <img alt="image" style="height:400px"  src="zdna-my-services.png" />
+4. When creating the Managed Configurations profile, under [Guardian Safe Configuration](../mc/#guardiansafeconfiguration) enable Guardian Safe and configure the other available options as needed.
+-->
+
+<p><strong>Choose <u>one</u> of the following methods to grant Accessibility Service permission:</strong></p>
+
+<ul>
+<li><p><strong>Automatically Grant Accessibility Permission -</strong> The administrator can enable the <strong>Automatically Grant Accessibilty Permission</strong> option in <a href="../mc/#guardiansafeconfiguration">Guardian Safe Configuration</a> under Managed Configurations. Once this option is enabled, the Guardian Safe Settings screen will display <strong>Use Accessibility: On/Off</strong> as grayed out, making it non-changeable by the user and no user interaction is required.</p></li>
+
+<li><p><strong>Manually Grant Accessibility Permission -</strong> User intervention is required to accept the required permission. The user should follow these steps:</p>
+
+<ol>
+<li>Open Identity Guardian.
+<img alt="image" style="height:350px" src="ig-home.png"></li>
+
+<li>Tap the menu icon in the top right corner and select <strong>Guardian Safe.</strong>
+<img alt="image" style="height:350px" src="ig-gs.png"></li>
+
+<li>Scan the Identity Guardian user barcode. Perform a facial biometric scan or enter the user passcode.</li>
+
+<li>Tap the menu icon in the top right corner and select <strong>Settings.</strong>
+<img alt="image" style="height:350px" src="guardian-safe-settings.png"></li>
+
+<li>Grant the <strong>Android Accessibility Service</strong> permission for Identity Guardian:
+
+
+<ul>
+<li>Toggle to enable <strong>Use Accessibility: On/Off.</strong>
+<img alt="image" style="height:350px" src="accessibility.png"></li>
+
+<li>When the Accessibility Service Disclosure statement appears, tap <strong>Accept.</strong> 
+<img alt="image" style="height:400px" src="gs-service-disclosure.png"></li>
+
+<li>In the Accessibility screen, tap <strong>Identity Guardian.</strong>
+<img alt="image" style="height:350px" src="accessibility-main.jpg"></li>
+
+<li>Enable <strong>Use Identity Guardian.</strong>
+<img alt="image" style="height:350px" src="accessibility-use-ig.jpg"></li>
+
+<li>Tap <strong>Allow.</strong>
+<img alt="image" style="height:350px" src="accessibility-ig-control.jpg"></li>
+
+<li>Tap <strong>Back</strong> continuously until Guardian Safe is closed.</li></ul>
+</li></ol></li>
+</ul>
+
+<p><br></p>
+
+<h3 id="savecredentials" class="anchor"><a class="heading-anchor" href="#savecredentials"><span></span></a>Save Credentials</h3>
+
+<p>To save user app login credentials:</p>
+
+<ol>
+<li>Open an app with a login screen (containing a user ID and password field) </li>
+
+<li>Tap the password field.
+<img alt="image" style="height:350px" src="dt-login.png"></li>
+
+<li>A prompt appears asking if the user would like to save their credentials. Tap <strong>Yes.</strong> 
+(If <strong>No</strong> is selected, the user credentials are not saved, requiring the user to manually enter their credentials each time they log in to the app.)
+<img alt="image" style="height:350px" src="dt-save-credentials.png"> </li>
+
+<li>The <strong>Guardian Safe</strong> input screen appears. Enter the user credentials and tap <strong>Save Credentials.</strong>
+<img alt="image" style="height:350px" src="dt-gs.png"> </li>
+
+<li>The user login credentials are now saved and will automatically populate in future login attempts when tapping the user name or password field.</li>
+</ol>
+
+<!--
+To save passwords in launcher app:
+1.    In the Identity Guardian lock screen, unlock the device by tapping “Unlock”.
+2.    Scan the user barcode, then perform facial scan.  If user authentication is successful, the login screen for the launcher app appears.
+3.    When focus is placed in the password field, the user is prompted with the question whether they want to save the password. Select one of the following:
+    - **Yes -** the subsequent logins will have the user name (if entered) and password prepopulated.
+    - **Ignore -** the user name and password are not saved and the user is prompted to enter their credentials for every login.
+        - **Ignore Permanently –** If selected, the user is no longer prompted to save the password for all subsequent login attempts.
+4.    The user is prompted to enter their login credentials. Enter the user name and password, then tap Save Credentials.
+5.    The user gains device access.
+
+To save passwords in native and web apps:
+1.    In the app login screen, when the user taps the password field a popup message appears inquiring whether the user would like to save their password. Select one of the following:
+    - **Yes -** the subsequent logins will have the user name (if entered) and password prepopulated.
+    - **Ignore -** the user name and password are not saved and the user is prompted to enter their credentials for every login.
+2.    The login screen appears for the user to enter their login credentials. Enter the user name and password, then ap Save Credentials.
+    - If Yes was selected in the previous step, subsequent login attempts will have the user name and password prepopulated.
+    - If Ignore was selected, the user name and password are not saved and the user is prompted to enter their credentials for every login.
+
+To change a saved password:
+1.    In the app login screen, tap the arrow icon in the password field.
+2.    The user is prompted to enter the original password and new password. -->
+
+<p><br></p>
+
+<h3 id="autopopulatecredentials" class="anchor"><a class="heading-anchor" href="#autopopulatecredentials"><span></span></a>Auto-Populate Credentials</h3>
+
+<p>After an application's login credentials are <a href="#savecredentials">saved</a>, subsequent login attempts will automatically populate the credentials in the login screen.</p>
+
+<ol>
+<li>Open an app where the login credentials have previously been saved.
+<img alt="image" style="height:350px" src="dt-login.png"></li>
+
+<li>Tap the user name or password field on the login screen. The user is prompted to authenticate via facial biometric scan or passcode entry.</li>
+
+<li>Upon successful authentication, the login credentials are automatically populated in the respective fields.
+<img alt="image" style="height:350px" src="dt-login-populate.png"></li>
+
+<li>Tap the sign-in button to access the app.</li>
+</ol>
+
+<p><br></p>
+
+<h3 id="viewapps" class="anchor"><a class="heading-anchor" href="#viewapps"><span></span></a>View Apps</h3>
+
+<p>To view apps with login credentials saved in Guardian Safe:</p>
+
+<ol>
+<li>Open Identity Guardian.
+<img alt="image" style="height:350px" src="ig-home.png"></li>
+
+<li>Tap the menu icon in the top right corner and select <strong>Guardian Safe.</strong>
+<img alt="image" style="height:350px" src="ig-gs.png"></li>
+
+<li>Scan the Identity Guardian user barcode. Perform facial authentication or enter the user passcode.</li>
+
+<li>A list of apps with saved passwords appear in the <strong>Saved Credentials</strong> tab.
+<img alt="image" style="height:350px" src="saved-credentials.png"></li>
+</ol>
+
+<p><br></p>
+
+<h3 id="ignoredapps" class="anchor"><a class="heading-anchor" href="#ignoredapps"><span></span></a>Ignored Apps</h3>
+
+<p>Prevent Guardian Safe from saving login credentials from specific apps by designating them as <strong>Ignored Apps:</strong></p>
+
+<ol>
+<li>Open an app in the login screen.
+<img alt="image" style="height:350px" src="dt-login.png"></li>
+
+<li>When prompted to save the user credentials during login, tap <strong>No.</strong>
+<img alt="image" style="height:350px" src="dt-no-save.png"></li>
+
+<li>The user is directed back to the login screen and the login credentials are not saved. 
+<img alt="image" style="height:350px" src="dt-login-ignored.png"></li>
+</ol>
+
+<p>Future login attempts in this app will no longer trigger Guardian Safe to offer saving the login credentials and the Guardian Safe floating quick access button is no longer present. Additionally, the app is now listed under the <strong>Ignored Apps</strong> tab in <strong>Guardian Safe.</strong></p>
+
+<p>To view all <strong>Ignored Apps:</strong></p>
+
+<ol>
+<li>Open Identity Guardian.
+<img alt="image" style="height:350px" src="ig-home.png"></li>
+
+<li>Tap the menu icon in the top right corner and select <strong>Guardian Safe.</strong>
+<img alt="image" style="height:350px" src="ig-gs.png"></li>
+
+<li>Scan the Identity Guardian user barcode. Perform facial authentication or enter the user passcode.</li>
+
+<li>Tap the <strong>Ignored Apps</strong> tab. A list of ignored apps is displayed.
+<img alt="image" style="height:350px" src="dt-ignored-app.png"></li>
+</ol>
+
+<p><br></p>
+
+<h3 id="editcredentials" class="anchor"><a class="heading-anchor" href="#editcredentials"><span></span></a>Edit Credentials</h3>
+
+<p>There are two methods to modify an app's login credentials saved within Guardian Safe:</p>
+
+<ul>
+<li>Using <strong>Guardian Safe's floating quick access button</strong> on the app's login screen</li>
+
+<li>Through <strong>Guardian Safe</strong> directly with Identity Guardian</li>
+</ul>
+
+<p><strong>Floating Quick Access Button:</strong>
+To edit the login credentials for an app using the Guardian Safe floating quick access button:</p>
+
+<ol>
+<li>In the app's login screen, tap on the Guardian Safe floating quick access icon.
+<img alt="image" style="height:350px" src="dt-quick-icon.png"></li>
+
+<li>Guardian Safe appears, allowing for the user name or password to be changed. Make the desired changes and tap <strong>Save Credentials.</strong>
+<img alt="image" style="height:350px" src="dt-gs.png"></li>
+
+<li>The updated credentials are now saved.</li>
+
+<li>Future login attempts in the app will automatically be populated with the updated login credentials.</li>
+</ol>
+
+<p><strong>Guardian Safe:</strong>
+To edit the login credentials for an app through Guardian Safe:</p>
+
+<ol>
+<li>Open Identity Guardian.
+<img alt="image" style="height:350px" src="ig-home.png"></li>
+
+<li>Tap the menu icon in the top right corner and select <strong>Guardian Safe.</strong>
+<img alt="image" style="height:350px" src="ig-gs.png"></li>
+
+<li>Scan the Identity Guardian user barcode, then perform facial authentication or enter the user passcode.</li>
+
+<li>In the <strong>Saved Credentials</strong> tab, find the app to modify. Tap its hamburger menu on the right and select <strong>Edit.</strong>
+<img alt="image" style="height:350px" src="edit-credentials.png"></li>
+
+<li>Edit the user name and/or password.</li>
+
+<li>Tap <strong>Save Credentials.</strong>
+<img alt="image" style="height:350px" src="dt-gs.png"></li>
+
+<li>Future login attempts in the app will automatically be populated with the updated login credentials.</li>
+</ol>
+
+<p><br></p>
+
+<h3 id="deletecredentials" class="anchor"><a class="heading-anchor" href="#deletecredentials"><span></span></a>Delete Credentials</h3>
+
+<p>To delete app login credentials saved in Guardian Safe:</p>
+
+<ol>
+<li>Open Identity Guardian.
+<img alt="image" style="height:350px" src="ig-home.png"></li>
+
+<li>Tap the menu icon in the top right corner and select <strong>Guardian Safe.</strong>
+<img alt="image" style="height:350px" src="ig-gs.png"></li>
+
+<li>Scan the user's Identity Guardian barcode, then perform facial authentication or enter the user passcode.</li>
+
+<li>The apps with passwords saved are listed. In the <strong>Saved Credentials</strong> tab, find the app to modify the credentials. Tap its hamburger menu on the right and select <strong>Delete.</strong>
+<img alt="image" style="height:350px" src="delete-credentials.png"></li>
+
+<li>Tap <strong>Yes</strong> in the confirmation message. 
+<img alt="image" style="height:350px" src="delete-credentials-confirm.png"></li>
+
+<li>The app is removed from the list.
+<img alt="image" style="height:350px" src="deleted-credentials.png"></li>
+</ol>
+
+<p><br></p>
+
+<h3 id="deleteusers" class="anchor"><a class="heading-anchor" href="#deleteusers"><span></span></a>Delete Users</h3>
+
+<p>Users can be removed from the <strong>Device Users</strong> section in <a href="/zebradna/latest/setup/#iiimanageusersroles">ZDNA Cloud</a>. When a user is deleted, all saved application credentials and the user enrollment barcode are removed. To regain access, The barcode <em>must</em> be regenerated for the same user. </p>
 
 <hr>
 

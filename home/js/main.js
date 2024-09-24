@@ -1029,17 +1029,14 @@ function populateDropdown (ddl_ver, ddl_doc) {
             }
             break;        
         case '/identityguardian/1-3':
+        case '/identityguardian/1-4':
+        case '/identityguardian/1-5':
             ddl_doc.options.length = 0;
             for (i=0; i < ig_1_3_text.length; i++) {
                 createOption(ddl_doc, ig_1_3_text[i], ig_1_3_val[i]);
             }
             break;     
-        case '/identityguardian/1-3':
-            ddl_doc.options.length = 0;
-            for (i=0; i < ig_1_3_text.length; i++) {
-                createOption(ddl_doc, ig_1_3_text[i], ig_1_3_val[i]);
-            }
-            break;        
+        
         // OEMConfig
         case '/oemconfig/11-5':
             ddl_doc.options.length = 0;

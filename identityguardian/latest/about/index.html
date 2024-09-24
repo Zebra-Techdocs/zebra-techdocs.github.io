@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.4
+                                            1.5
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-4/about">
+                            <a href="/identityguardian/1-5/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/setup">
+                            <a href="/identityguardian/1-5/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/licensing">
+                            <a href="/identityguardian/1-5/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/mc">
+                            <a href="/identityguardian/1-5/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/usage">
+                            <a href="/identityguardian/1-5/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/api">
+                            <a href="/identityguardian/1-5/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/faq">
+                            <a href="/identityguardian/1-5/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/search">
+                            <a href="/identityguardian/1-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="about-identity-guardian" class="anchor"><a class="heading-anchor" href="#about-identity-guardian"><span></span></a>About Identity Guardian</h1>
                                     <p>
                                             Identity Guardian
-                                            1.4
+                                            1.5
                                     </p>
                                 </div>
                             </section>                    
@@ -248,15 +248,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>Zebra <strong><a href="https://www.zebra.com/identityguardian">Identity Guardian</a></strong> offers a solution for implementing authentication strategies, facilitating user access to devices. Catering to both enterprise-shared and personally assigned mobile computers, it offers a secure login method that ensures easy device access while maintaining user and corporate data security. Utilizing facial biometrics and single sign-on (SSO) compatibility, it provides seamless and secure access to devices and applications.</p>
-
-<p>There are 2 modes of operation:</p>
-
-<ul>
-<li>In the <a href="../usage/#shareddevice">shared devices</a> mode, user data is securely encrypted and contained within a personalized barcode. This barcode is generated through facial recognition or a passcode set by the user and can be easily discarded to erase personal data.</li>
-
-<li>In the <a href="../usage/#personallyassigneddevice">personally assigned device</a> mode, user data is securely embedded within the Android framework, making it inaccessible even to the organization.</li>
-</ul>
+<p>Zebra <strong><a href="https://www.zebra.com/identityguardian">Identity Guardian</a></strong> streamlines the implementation of authentication strategies, enabling seamless user access to devices. Designed for both enterprise-shared and personally assigned mobile computers, it offers a secure login method that facilitates effortless device access while safeguarading user and corporate data. By leveraging facial biometrics and single sign-on (SSO) compatibility, it provides seamless and secure access to both devices and applications.</p>
 
 <!--Zebra's **[Identity Guardian](https://www.zebra.com/identityguardian)** simplifies device authentication by combining facial biometric recognition, multifactor login, and Single Sign-On (SSO) for a personalized role-based experience. It utilizes facial biometrics to unlock mobile devices securely, regardless of whether they are shared or personally assigned. If facial biometrics is not the preferred choice, a unique barcode or PIN offers an alternative secure access method.  enables secure and personalized user access to mobile devices by combining biometric authentication with multifactor login protocols. Facial biometrics unlock the mobile devices securely, regardless of whether they are shared or personally assigned. For users who prefer alternatives to facial biometrics, a unique barcode or PIN offers secure access options.
 -->
@@ -270,7 +262,7 @@
 
 <li><strong>Facial Biometrics -</strong> Users seamlessly and securely unlock their mobile device using facial biometrics.</li>
 
-<li><strong>Multifactor Login -</strong> For enhaanced security, users can be prompted to provide multiple authentication factors to sign into a device: facial recognition, user passcode, and/or SSO authentication</li>
+<li><strong>Multifactor Login -</strong> For enhanced security, users can be prompted to provide multiple authentication factors to sign into a device: facial recognition, user passcode, and/or SSO authentication</li>
 
 <li><strong>Accountability -</strong> Empowers administrators with comprehensive visibility into devices and their associated users.</li>
 
@@ -311,14 +303,59 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 
 <hr>
 
-<h2 id="newin14" class="anchor"><a class="heading-anchor" href="#newin14"><span></span></a>New in 1.4</h2>
+<h2 id="newin15" class="anchor"><a class="heading-anchor" href="#newin15"><span></span></a>New in 1.5</h2>
 
 <ul>
-<li>The new <a href="../mc/#lockscreenconfiguration">Lock Screen Configuration</a> feature allows specific applications to appear in the foreground while the device is locked. To activate this feature, administrators should navigate to <a href="../mc/#lockscreenconfiguration">Lock Screen Configuration</a> in Managed Configurations, enable “Apps Allowed On Lock Screen” and configure the associated application settings, including Application Details, Package Name and Activity Name. Zebra recommends restricting this feature to specific apps, such as the phone app for receiving calls.</li>
+<li><strong>Now supports <a href="../setup/#okta">OKTA</a> single sign-on (SSO) provider using OAuth 2.0 (OIDC) protocol for SSO authentication.</strong></li>
 
-<li>During user enrollment, users can now create a numeric-only passcode instead of an alphanumeric one. To enable this, administrators should select “Numeric” for the “Passcode Type” under <a href="../mc/#enrollmentconfiguration">Passcode Rules</a> in Managed Configurations.</li>
+<li><strong>Now supports <a href="../usage/#alternatesignin">alternate sign-in</a> methods from the lock screen,</strong> enabling admins to choose between different authentication workflows for granting device access.</li>
 
-<li>The username is now visible in the <a href="../usage/#devicesignin">lock screen</a>, in addition to the device name and serial number.
+<li><strong>Users can now create a <a href="../usage/#custommessage">custom message</a> to display on the lock screen.</strong></li>
+
+<li><strong><a href="../usage/#adminbypass">Admin Bypass</a> login is added to the Identity Guardian lock menu</strong> along with fallback authentication supported in earlier versions.</li>
+
+<li><strong>An enhanced user experience allows users to unlock the device using facial authentication without user interaction.</strong> This <a href="../usage/#autounlock">Auto-Unlock</a> feature elimintes the need to press the Unlock button in the lock screen.</li>
+
+<li><strong>Non-Identity Guardian barcodes can now be used as a comparison source.</strong> This allows users to scan <a href="../usage/#nonidentityguardianbarcode">non-Identity Guardian barcodes</a> for device sign-in. Optionally, admins can add a prefix to validate the barcode. Zebra recommends using Identity Guardian-generated barcodes for maximum security.</li>
+
+<li><strong>Early Access Preview:</strong> 
+
+
+<ul>
+<li><strong>New <a href="../usage/#guardiansafe">Guardian Safe</a></strong> feature securely stores user credentials after a single entry on the login screen of any application, automatically filling in the credentials for future logins. <strong>Note:</strong> Use of Guardian Safe requires an Identity Guardian license and activation by Zebra support. </li></ul>
+</li>
+
+<li><strong>Known Issues:</strong>
+
+
+<ul>
+<li><strong>Uninstalling Identity Guardian from the lock screen disables the home button on the device.</strong> To remedy this, either reinstall Identity Guardian or set it to enrollment mode before uninstallation.</li>
+
+<li><strong>When installing Identity Guardian in enrollment mode from VMWare Workspace ONE UEM (AirWatch) EMM via Google Play, the authentication screen may appear instead of the expected enrollment screen.</strong> To prevent this, install, and configure the application from the VMWare private app store instead of the public Play store.</li>
+
+<li><strong>When using Microsoft Entra ID for single sign-on (SSO), a new user is not automatically logged into Microsoft Associated apps following the sign out of a previous user.</strong> To address this, users can either relaunch the Microsoft Associates apps or enter the newly logged in user ID when prompted, ensuring a successful login.</li>
+
+<li><strong>A user authentication error may occur intermittently if a user attempts to cancel SSO authentication and then tries to re-authenticate.</strong> To resolve this, click on any button on the error screen to dismiss the error, allowing the user to proceed further.</li>
+
+<li><strong>When PingFed is used for single sign-on (SSO) and Identity Guardian is upgraded, users may experience a one-time issue where they cannot sign out from Identity Guardian on a shared device.</strong> This is overcome by rebooting the device, docking it on a cradle, or locking/unlocking the device based on the configuration set by the system administrator. This issue does not recur after the first sign-out attempt.</li></ul>
+</li>
+</ul>
+
+<!-- // MOVED TO IG 1.6
+- **New secure [self-enrollment](../usage/#selfguided) of new users from the Identity Guardian lock screen on devices configured for authentication mode.** This eliminates the need for switching the application mode between Enrollment and Authentication. -->
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin14" class="anchor"><a class="heading-anchor" href="#newin14"><span></span></a>New in 1.4</h3>
+
+<ul>
+<li>The <strong>new <a href="../mc/#lockscreenconfiguration">Lock Screen Configuration</a> feature allows specific applications to appear in the foreground while the device is locked.</strong> To activate this feature, administrators should navigate to <a href="../mc/#lockscreenconfiguration">Lock Screen Configuration</a> in Managed Configurations, enable “Apps Allowed On Lock Screen” and configure the associated application settings, including Application Details, Package Name and Activity Name. Zebra recommends restricting this feature to specific apps, such as the phone app for receiving calls.</li>
+
+<li><strong>During user enrollment, users can now create a numeric-only passcode instead of an alphanumeric one.</strong> To enable this, administrators should select “Numeric” for the “Passcode Type” under <a href="../mc/#enrollmentconfiguration">Passcode Rules</a> in Managed Configurations.</li>
+
+<li>The user name is now visible in the <a href="../usage/#signin">lock screen</a>, in addition to the device name and serial number.
 <img alt="image" style="height:250px" src="lock-screen-user.png"></li>
 
 <li><strong>Resolved Issues:</strong>
@@ -346,17 +383,10 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 </li>
 </ul>
 
-<!-- - **Added single sign-on (SSO) authentication support for [OKTA](../setup/#okta) identity provider (iDP).**
--->
-
-<hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
-
 <h3 id="newin13" class="anchor"><a class="heading-anchor" href="#newin13"><span></span></a>New in 1.3</h3>
 
 <ul>
-<li><strong>Now available for download from Google Play.</strong></li>
+<li><strong>Google Play Availability and Auto-Updates:</strong> Starting with Identity Guardian 1.3, the app is now available for download from <a href="../setup/#download">Google Play</a> as well as the <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/identity-guardian.html">Zebra Support Portal</a>.</li>
 
 <li>The <strong><a href="../mc/#authenticationconfiguration">Authentication Data Storage</a> feature, formerly a preview, is now officially available.</strong> It provides temporary storage for user barcode data, requiring just a single scan for initial usage during a work shift. Based on admin configurations, device access may trigger primary and secondary authentication.</li>
 

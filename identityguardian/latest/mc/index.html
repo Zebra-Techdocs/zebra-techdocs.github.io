@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.4
+                                            1.5
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-4/about">
+                            <a href="/identityguardian/1-5/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/setup">
+                            <a href="/identityguardian/1-5/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/licensing">
+                            <a href="/identityguardian/1-5/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/mc">
+                            <a href="/identityguardian/1-5/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/usage">
+                            <a href="/identityguardian/1-5/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/api">
+                            <a href="/identityguardian/1-5/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/faq">
+                            <a href="/identityguardian/1-5/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-4/search">
+                            <a href="/identityguardian/1-5/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="managed-configurations" class="anchor"><a class="heading-anchor" href="#managed-configurations"><span></span></a>Managed Configurations</h1>
                                     <p>
                                             Identity Guardian
-                                            1.4
+                                            1.5
                                     </p>
                                 </div>
                             </section>                    
@@ -396,7 +396,47 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>enrollmentKey</td>
 <td>[string]</td>
 <td>[enter enrollment key]</td>
-<td>Enter the encrypted public key for enrollment. Use <a href="/det/1-0/guide/about/">Data Encryption Tool</a> to encrypt this key, which is used for encrypting biometric data and is only applicable for shared devices.</td>
+<td>Enter the encrypted public key for enrollment. This key encrypts biometric data and is applicable only to shared devices. See <a href="#generateenrollmentkey">Generate Enrollment Key</a> for instructions. <b>Zebra recommends using of customer-specific keys for enhanced security.</b></td>
+</tr>
+
+<tr bgcolor="#D9E7ED">
+<td>Custom T&amp;C Configuration</td>
+<td>customTCConfiguration</td>
+<td></td>
+<td></td>
+<td>Configure Custom T&amp;C for application</td>
+</tr>
+
+<tr>
+<td>Display Custom T&amp;C</td>
+<td>showCustomTC</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
+<td>Select whether to display a custom Terms &amp; Conditions tab</td>
+</tr>
+
+<tr>
+<td>T&amp;C Tab Title</td>
+<td>customTCTitle</td>
+<td>[string]</td>
+<td>[enter T&amp;C title]</td>
+<td>Enter a title for the Terms &amp; Conditions tab</td>
+</tr>
+
+<tr>
+<td>Custom T&amp;C Content</td>
+<td>customTCContent</td>
+<td>[string]</td>
+<td>[enter T&amp;C content]</td>
+<td>Enter content to be displayed on the custom Terms &amp; Conditions tab</td>
+</tr>
+
+<tr>
+<td>Custom T&amp;C URL</td>
+<td>customTCUrl</td>
+<td>[string]</td>
+<td>[enter T&amp;C url]</td>
+<td>Enter a URL that contains custom and/or additional Terms &amp; Conditions information</td>
 </tr>
 
 <tr bgcolor="#D9E7ED">
@@ -455,48 +495,35 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Select the minimum number symbols or special characters to accept for the passcode. Acceptable symbols are: <code>!,@,#,$,%,^,&amp;,,-,_,?,</code></td>
 </tr>
 
-<tr bgcolor="#D9E7ED">
-<td>Custom T&amp;C Configuration</td>
-<td>customTCConfiguration</td>
-<td></td>
-<td></td>
-<td>Configure Custom T&amp;C for application</td>
-</tr>
-
-<tr>
-<td>Display Custom T&amp;C</td>
-<td>showCustomTC</td>
-<td>1<br>0</td>
-<td>true<br>false (default)</td>
-<td>Select whether to display a custom Terms &amp; Conditions tab</td>
-</tr>
-
-<tr>
-<td>T&amp;C Tab Title</td>
-<td>customTCTitle</td>
-<td>[string]</td>
-<td>[enter T&amp;C title]</td>
-<td>Enter a title for the Terms &amp; Conditions tab</td>
-</tr>
-
-<tr>
-<td>Custom T&amp;C Content</td>
-<td>customTCContent</td>
-<td>[string]</td>
-<td>[enter T&amp;C content]</td>
-<td>Enter content to be displayed on the custom Terms &amp; Conditions tab</td>
-</tr>
-
-<tr>
-<td>Custom T&amp;C URL</td>
-<td>customTCUrl</td>
-<td>[string]</td>
-<td>[enter T&amp;C url]</td>
-<td>Enter a URL that contains custom and/or additional Terms &amp; Conditions information</td>
-</tr>
-
 </tbody></table>
 
+
+<h4 id="generateenrollmentkey" class="anchor"><a class="heading-anchor" href="#generateenrollmentkey"><span></span></a>Generate Enrollment Key</h4>
+
+<p>To generate the encrypted key value for the public key, use the <a href="/det/1-0/guide/about/">Data Encryption Tool</a> with the following command:</p>
+
+<pre class="prettyprint"><code>    JAVA -jar DataSecurity-1.0.jar -d &lt;data&gt; -p com.zebra.mdna.els -s &lt;IDG_SIGNATURE&gt;
+</code></pre>
+
+<p>Instructions for running the command:</p>
+
+<ol>
+<li><p>Download <a href="/det/1-0/guide/about/DataWecurity-1.0.zip">DataSecurity-1.0.zip</a> and extract the file <code>DataSecurity-1.0.jar</code>. </p></li>
+
+<li><p>Replace <code>&lt;IDG_SIGNATURE&gt;</code> with the following:</p>
+
+<pre class="prettyprint"><code>MIIFnDCCA4QCCSMxNhM5AtLv+TANBgkqhkiG9w0BAQsFADCBpDELMAkGA1UEBhMCVVMxETAPBgNVBAgMCE5ldyBZb3JrMRMwEQYDVQQHDApIb2x0c3ZpbGxlMSEwHwYDVQQKDBhaZWJyYSBUZWNobm9sb2dpZXMsIEluYy4xJDAiBgNVBAsMG0VudGVycHJpc2UgTW9iaWxlIENvbXB1dGluZzEkMCIGA1UEAwwbQW5kcm9pZCBQcml2aWxlZ2VkIEtleSBSb290MB4XDTIzMDExMjE0MjMzMloXDTQ4MDIxNTE0MjMzMlowezELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5ZMRMwEQYDVQQHDApIb2x0c3ZpbGxlMR8wHQYDVQQKDBZaZWJyYSBUZWNobm9sb2dpZXMgSW5jMQwwCgYDVQQLDANFTUMxGzAZBgNVBAMMEmNvbS56ZWJyYS5tZG5hLmVsczCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAO76NKGh9xzN/bOQnWonV8qs7BFXWnzqGJ4OS2A2hKyacE6e8hnA9vXXhZ/wa1lc93mM4wVI1dMCD3z7yF3643EB3zJ3qxtD/CmyIQjImuo2Pyd0awnmS1W9tJjQISRS45sN9B9ThYk6oX4TIh7/5Pr9q+rTayP9zpoHjK7PestODwaY3FccSmLQ3nmO+xqi5KxqDZZHAYfKj5krUx3GEKq2Pj3A4iDii0RjopXtSVvP7+R+UO+Vw0KnVhhwtC9W1yQkuwl6pcK8gE9hxsFWDzWGqZbw4NCpjtg8hW9Th5p3Xy7lRWLpJhWGh4IWMmCgPNzYyZ4Alms27owG/viCsSKyDnyIpFPSO0Pmq790ccGY6APL/jzUV9J9lqFM/Fa03uuxWY0PI2OoSYnvJP4NO88BNU/iekhuYjIHkKegJLnPdTF2FwnHJWJa96dgKo9ATO4lIhMZ/iMV3ifAekfZM20Yf38bKa7ylI8TNmBOA+Y3MEp7u8txrJDD7gZ6r4cdDTMz843V21Ckby4uAzX1+tjEuVLgd7ZssJzFuKeKp8ZEreEoTJYH1/1xK49M3XKBzyYJVDV23CwsuVkdsoxCk5Mzq4TBo1SHLTV3Ar2NaDVNYzoj/xuVnHSbmx/ErTDvX6d1BvvcvORL6bHEKlsUXs+KNeB49kzXFPkCdcU1NGx1AgMBAAEwDQYJKoZIhvcNAQELBQADggIBAJYVo2ka0tSqsCegqYllTicTehz3X2aOw5vZ6FAA1RlEsCU0S7A+H+n1jUfzoWNjlRKvBmvZnSitLXOSIDKrQnGyqlGTbwDHXhkfzsv/dSCumAFzPKfhCfZ85hSbgHt25S0+QKzCTVtDB1EVE/CGae7kBHCJQaEM+SVA3yor47Wglf0Wi3L1uQiSfdOrySic/2/FrSiI8Uu/LBvAIXuESmWJWcnOHt1zQiuADqB3Uv5falpgSTzOpcBglxVLS1WN8nZTWfkSk1yRDKMXCmsmFSJPEauzmcVtLQjmWoA7mlifY65/qMF5Bm0zIXU9N3B2braxB3oUZ7JkHmWBMPzenUjLuAQSvoGOZfbjHnMIy0T5hqc2RlDW90521oaHFwhpY1giYBFdDilC1YKF2OrGAIo8A+BIcvI4vN+3uBtofJFr/jRV0CSxNZxIr+a5lpUv6ronoBPd8LNuL8TYezbcbFity7RQHZDK9U4N/eEaift94MZY9M7PyAml7HEW2DUOEfBzwfd0EkyaPVhTvHsV3IxMASw285cDhR8JtFvDDnGE1ztXoQS80Ed6OB/HXGd92Ss3rk6t1ZVcVW+gZo4ovzqpAL9rEsH/vQO3DKoYaIHv2ZSxriSOVhyE1tOlQkYwoRymSx5A30l5l+t2GZLlOS4eySwQ7vS54+mUom9ZTHs2
+</code></pre></li>
+
+<li><p>Replace <code>&lt;data&gt;</code> with your public certificate key. </p></li>
+
+<li><p>Run the following command with the replaced values from the previous steps:</p>
+
+<pre class="prettyprint"><code>JAVA -jar DataSecurity-1.0.jar -d &lt;data&gt; -p com.zebra.mdna.els -s &lt;IDG_SIGNATURE&gt;
+</code></pre></li>
+
+<li><p>Copy the resulting encrypted public key value and paste it into <strong>Enrollment Key</strong> in the Manage Configuration.</p></li>
+</ol>
 
 <hr>
 
@@ -560,9 +587,10 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td></td>
 <td>Comparison Source</td>
 <td>authenticationScheme1ComparisonSource</td>
-<td>NONE<br>BARCODE<br>DEVICE STORAGE</td>
-<td>NONE<br>BARCODE (default)<br>DEVICE STORAGE</td>
-<td><b>For <i>shared devices,</i> select BARCODE.</b> Users are then prompted to scan their unique barcode before proceeding with the primary authentication method. However, <b>if <i>shared devices</i> are using SSO as the <i>primary authentication method</i> without a barcode, select NONE.</b><br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br></td>
+<td>NONE<br>BARCODE<br>DEVICE STORAGE<br>LEGACY BARCODE</td>
+<td>NONE<br>BARCODE (default)<br>DEVICE STORAGE<br>LEGACY BARCODE</td>
+<td><b>For either <i>shared devices</i> or <i>personal devices to accept simple 1D user barcodes that are not encrypted,</i></b> select <b><a href="../usage/#simpleuserbarcode">LEGACY BARCODE</a></b>. <b>Legacy Barcode Prefix</b> is required under <i>Verification Setup.</i><br><br>
+<b>For <i>shared devices,</i> select BARCODE.</b> Users are then prompted to scan their unique, encrypted barcode before proceeding with the primary authentication method. However, <b>if <i>shared devices</i> are using SSO as the <i>primary authentication method</i> without a barcode, select NONE.</b><br><br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br></td>
 </tr>
 
 <tr>
@@ -619,6 +647,24 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Set the timeout (in milliseconds) for fallback authentication</td>
 </tr>
 
+<tr>
+<td></td>
+<td>Legacy Barcode Options</td>
+<td>authenticationScheme1legacyBarcodeOptions</td>
+<td>bundle</td>
+<td></td>
+<td>Settings for Legacy Barcode Option</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Legacy Barcode Prefix</td>
+<td>authenticationScheme1legacyBarcodePrefix</td>
+<td>string</td>
+<td>[enter string]</td>
+<td>Enter the prefix required for validating the scanned user barcode. Without the prefix, the user cannot be authenticated.</td>
+</tr>
+
 <!-- setup 2 -->
 
 <tr bgcolor="#D9E7ED">
@@ -633,10 +679,11 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <tr>
 <td></td>
 <td>Comparison Source</td>
-<td>authenticationScheme2ComparisonSource</td>
-<td>NONE<br>BARCODE<br>DEVICE STORAGE</td>
-<td>NONE<br>BARCODE (default)<br>DEVICE STORAGE</td>
-<td><b>For <i>shared devices,</i> select BARCODE.</b> Users are then prompted to scan their unique barcode before proceeding with the primary authentication method. However, <b>if <i>shared devices</i> are using SSO as the <i>primary authentication method</i> without a barcode, select NONE.</b><br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br></td>
+<td>authenticationScheme1ComparisonSource</td>
+<td>NONE<br>BARCODE<br>DEVICE STORAGE<br>LEGACY BARCODE</td>
+<td>NONE<br>BARCODE (default)<br>DEVICE STORAGE<br>LEGACY BARCODE</td>
+<td><b>For either <i>shared devices</i> or <i>personal devices to accept simple 1D user barcodes that are not encrypted,</i></b> select <b><a href="../usage/#simpleuserbarcode">LEGACY BARCODE</a></b>. <b>Legacy Barcode Prefix</b> is required under <i>Verification Setup.</i><br><br>
+<b>For <i>shared devices,</i> select BARCODE.</b> Users are then prompted to scan their unique, encrypted barcode before proceeding with the primary authentication method. However, <b>if <i>shared devices</i> are using SSO as the <i>primary authentication method</i> without a barcode, select NONE.</b><br><br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br></td>
 </tr>
 
 <tr>
@@ -693,9 +740,23 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Set the timeout (in milliseconds) for fallback authentication</td>
 </tr>
 
-<!-- setup 3 -->
+<tr>
+<td></td>
+<td>Legacy Barcode Options</td>
+<td>authenticationScheme1legacyBarcodeOptions</td>
+<td>bundle</td>
+<td></td>
+<td>Settings for Legacy Barcode Option</td>
+</tr>
 
-<tr bgcolor="#D9E7ED">
+<tr>
+<td></td>
+<td>Legacy Barcode Prefix</td>
+<td>authenticationScheme1legacyBarcodePrefix</td>
+<td>string</td>
+<td 3="" <!--="" setup="" --="">
+
+</td></tr><tr bgcolor="#D9E7ED">
 <td></td>
 <td>Verification Setup3</td>
 <td>authenticationScheme3</td>
@@ -707,10 +768,11 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <tr>
 <td></td>
 <td>Comparison Source</td>
-<td>authenticationScheme3ComparisonSource</td>
-<td>NONE<br>BARCODE<br>DEVICE STORAGE</td>
-<td>NONE<br>BARCODE (default)<br>DEVICE STORAGE</td>
-<td><b>For <i>shared devices,</i> select BARCODE.</b> Users are then prompted to scan their unique barcode before proceeding with the primary authentication method. However, <b>if <i>shared devices</i> are using SSO as the <i>primary authentication method</i> without a barcode, select NONE.</b><br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br></td>
+<td>authenticationScheme1ComparisonSource</td>
+<td>NONE<br>BARCODE<br>DEVICE STORAGE<br>LEGACY BARCODE</td>
+<td>NONE<br>BARCODE (default)<br>DEVICE STORAGE<br>LEGACY BARCODE</td>
+<td><b>For either <i>shared devices</i> or <i>personal devices to accept simple 1D user barcodes that are not encrypted,</i></b> select <b><a href="../usage/#simpleuserbarcode">LEGACY BARCODE</a></b>. <b>Legacy Barcode Prefix</b> is required under <i>Verification Setup.</i><br><br>
+<b>For <i>shared devices,</i> select BARCODE.</b> Users are then prompted to scan their unique, encrypted barcode before proceeding with the primary authentication method. However, <b>if <i>shared devices</i> are using SSO as the <i>primary authentication method</i> without a barcode, select NONE.</b><br><br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br></td>
 </tr>
 
 <tr>
@@ -767,9 +829,23 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Set the timeout (in milliseconds) for fallback authentication</td>
 </tr>
 
-<!-- setup 4 -->
+<tr>
+<td></td>
+<td>Legacy Barcode Options</td>
+<td>authenticationScheme1legacyBarcodeOptions</td>
+<td>bundle</td>
+<td></td>
+<td>Settings for Legacy Barcode Option</td>
+</tr>
 
-<tr bgcolor="#D9E7ED">
+<tr>
+<td></td>
+<td>Legacy Barcode Prefix</td>
+<td>authenticationScheme1legacyBarcodePrefix</td>
+<td>string</td>
+<td 4="" <!--="" setup="" --="">
+
+</td></tr><tr bgcolor="#D9E7ED">
 <td></td>
 <td>Verification Setup4</td>
 <td>authenticationScheme4</td>
@@ -781,10 +857,11 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <tr>
 <td></td>
 <td>Comparison Source</td>
-<td>authenticationScheme4ComparisonSource</td>
-<td>NONE<br>BARCODE<br>DEVICE STORAGE</td>
-<td>NONE<br>BARCODE (default)<br>DEVICE STORAGE</td>
-<td><b>For <i>shared devices,</i> select BARCODE.</b> Users are then prompted to scan their unique barcode before proceeding with the primary authentication method. However, <b>if <i>shared devices</i> are using SSO as the <i>primary authentication method</i> without a barcode, select NONE.</b><br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br></td>
+<td>authenticationScheme1ComparisonSource</td>
+<td>NONE<br>BARCODE<br>DEVICE STORAGE<br>LEGACY BARCODE</td>
+<td>NONE<br>BARCODE (default)<br>DEVICE STORAGE<br>LEGACY BARCODE</td>
+<td><b>For either <i>shared devices</i> or <i>personal devices to accept simple 1D user barcodes that are not encrypted,</i></b> select <b><a href="../usage/#simpleuserbarcode">LEGACY BARCODE</a></b>. <b>Legacy Barcode Prefix</b> is required under <i>Verification Setup.</i><br><br>
+<b>For <i>shared devices,</i> select BARCODE.</b> Users are then prompted to scan their unique, encrypted barcode before proceeding with the primary authentication method. However, <b>if <i>shared devices</i> are using SSO as the <i>primary authentication method</i> without a barcode, select NONE.</b><br><br><b>For <i>personal devices,</i> select DEVICE STORAGE.</b> The user is prompted to proceed with the primary authentication method. <br></td>
 </tr>
 
 <tr>
@@ -841,9 +918,23 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Set the timeout (in milliseconds) for fallback authentication</td>
 </tr>
 
-<!-- Authentication Data Storage Options -->
+<tr>
+<td></td>
+<td>Legacy Barcode Options</td>
+<td>authenticationScheme1legacyBarcodeOptions</td>
+<td>bundle</td>
+<td></td>
+<td>Settings for Legacy Barcode Option</td>
+</tr>
 
 <tr>
+<td></td>
+<td>Legacy Barcode Prefix</td>
+<td>authenticationScheme1legacyBarcodePrefix</td>
+<td>string</td>
+<td <!--="" authentication="" data="" storage="" options="" --="">
+
+</td></tr><tr>
 <td>Authentication Data Storage</td>
 <td></td>
 <td>temporaryDataConfiguration</td>
@@ -926,6 +1017,15 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Verification Setup1 (default)<br>Verification Setup2<br>Verification Setup3<br>Verification Setup4<br>None</td>
 <td>Select the verification required following a device event that unlocks the screen</td>
 </tr>
+
+<tr>
+<td></td>
+<td>Alternative Verification Setup</td>
+<td>on_unlock</td>
+<td>authenticationScheme1<br>authenticationScheme2<br>authenticationScheme3<br>authenticationScheme4<br>NONE</td>
+<td>Verification Setup1 <br>Verification Setup2<br>Verification Setup3<br>Verification Setup4<br>None (default)</td>
+<td>Select the verification required for Alternative Login after the device unlocks</td>
+</tr>
 <!-- // Removed per TUT-92679
 <tr>
 <td></td>
@@ -953,6 +1053,15 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Verification Setup1<br>Verification Setup2 (default)<br>Verification Setup3<br>Verification Setup4<br>None</td>
 <td>Select the verification required after a device reboot</td>
 </tr>
+
+<tr>
+<td></td>
+<td>Alternative Verification Setup</td>
+<td>on_reboot</td>
+<td>authenticationScheme1<br>authenticationScheme2<br>authenticationScheme3<br>authenticationScheme4<br>NONE</td>
+<td>Verification Setup1 <br>Verification Setup2<br>Verification Setup3<br>Verification Setup4<br>None (default)</td>
+<td>Select the verification required for Alternative Login after the device unlocks</td>
+</tr>
 <!-- // Removed per TUT-92679
 <tr>
 <td></td>
@@ -979,6 +1088,15 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>authenticationScheme1<br>authenticationScheme2<br>authenticationScheme3<br>authenticationScheme4<br>NONE</td>
 <td>Verification Setup1<br>Verification Setup2<br>Verification Setup3 (default)<br>Verification Setup4<br>None</td>
 <td>Select the verification required upon connection to AC power</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Alternative Verification Setup</td>
+<td>on_ac_power_connected</td>
+<td>authenticationScheme1<br>authenticationScheme2<br>authenticationScheme3<br>authenticationScheme4<br>NONE</td>
+<td>Verification Setup1 <br>Verification Setup2<br>Verification Setup3<br>Verification Setup4<br>None (default)</td>
+<td>Select the verification required for Alternative Login after the device unlocks</td>
 </tr>
 
 <!-- // Removed per TUT-92679
@@ -1010,6 +1128,15 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Select the verification required upon disconnection from AC power</td>
 </tr>
 
+<tr>
+<td></td>
+<td>Alternative Verification Setup</td>
+<td>on_ac_power_disconnected</td>
+<td>authenticationScheme1<br>authenticationScheme2<br>authenticationScheme3<br>authenticationScheme4<br>NONE</td>
+<td>Verification Setup1 <br>Verification Setup2<br>Verification Setup3<br>Verification Setup4<br>None (default)</td>
+<td>Select the verification required for Alternative Login after the device unlocks</td>
+</tr>
+
 <!-- // Removed per TUT-92679
 <tr>
 <td></td>
@@ -1039,6 +1166,15 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Select the verification required when a user manually signs in to the device</td>
 </tr>
 
+<tr>
+<td></td>
+<td>Alternative Verification Setup</td>
+<td>on_device_manual_checkin</td>
+<td>authenticationScheme1<br>authenticationScheme2<br>authenticationScheme3<br>authenticationScheme4<br>NONE</td>
+<td>Verification Setup1 <br>Verification Setup2<br>Verification Setup3<br>Verification Setup4<br>None (default)</td>
+<td>Select the verification required for Alternative Login after the device unlocks</td>
+</tr>
+
 <!-- // Removed per TUT-92679
 <tr>
 <td></td>
@@ -1066,6 +1202,15 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>authenticationScheme1<br>authenticationScheme2<br>authenticationScheme3<br>authenticationScheme4<br>NONE</td>
 <td>Verification Setup1<br>Verification Setup2<br>Verification Setup3 (default)<br>Verification Setup4<br>None</td>
 <td>Select the verification required when a new user signs in to the device</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Alternative Verification Setup</td>
+<td>on_device_manual_checkin</td>
+<td>authenticationScheme1<br>authenticationScheme2<br>authenticationScheme3<br>authenticationScheme4<br>NONE</td>
+<td>Verification Setup1 <br>Verification Setup2<br>Verification Setup3<br>Verification Setup4<br>None (default)</td>
+<td>Select the verification required for Alternative Login after the device unlocks</td>
 </tr>
 
 <!-- // Removed per TUT-92679
@@ -1163,7 +1308,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>authenticationKey</td>
 <td></td>
 <td></td>
-<td>Enter the encrypted private key for decryption. Use <a href="/det/1-0/guide/about/">Data Encryption Tool</a> to encrypt your public key. This is used to decrypt the biometric data and only applies to shared devices.<!-- Enter authentication decrypt key --></td>
+<td>Enter the encrypted private key. This key decrypts the biometric data and is applicable only to shared devices.See <a href="#generateauthenticationkey">Generate Authentication Key</a> for instructions. <b>Zebra recommends using of customer-specific keys for enhanced security.</b></td>
 </tr>
 
 <tr>
@@ -1211,7 +1356,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Enter the message for the device lock warning notification</td>
 </tr>
 
-<tr>
+<tr bgcolor="#D9E7ED">
 <td>Admin Bypass Passcode</td>
 <td></td>
 <td>adminSpecifiedPIN</td>
@@ -1249,6 +1394,33 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 
 </tbody></table>
 
+
+<h4 id="generateauthenticationkey" class="anchor"><a class="heading-anchor" href="#generateauthenticationkey"><span></span></a>Generate Authentication Key</h4>
+
+<p>To generate the encrypted key value for the private key, use the <a href="/det/1-0/guide/about/">Data Encryption Tool</a> with the following command:</p>
+
+<pre class="prettyprint"><code>    JAVA -jar DataSecurity-1.0.jar -d &lt;data&gt; -p com.zebra.mdna.els -s &lt;IDG_SIGNATURE&gt;
+</code></pre>
+
+<p>Instructions for running the command:</p>
+
+<ol>
+<li><p>Download <a href="/det/1-0/guide/about/DataWecurity-1.0.zip">DataSecurity-1.0.zip</a> and extract the file <code>DataSecurity-1.0.jar</code>. </p></li>
+
+<li><p>Replace <code>&lt;IDG_SIGNATURE&gt;</code> with the following:</p>
+
+<pre class="prettyprint"><code>MIIFnDCCA4QCCSMxNhM5AtLv+TANBgkqhkiG9w0BAQsFADCBpDELMAkGA1UEBhMCVVMxETAPBgNVBAgMCE5ldyBZb3JrMRMwEQYDVQQHDApIb2x0c3ZpbGxlMSEwHwYDVQQKDBhaZWJyYSBUZWNobm9sb2dpZXMsIEluYy4xJDAiBgNVBAsMG0VudGVycHJpc2UgTW9iaWxlIENvbXB1dGluZzEkMCIGA1UEAwwbQW5kcm9pZCBQcml2aWxlZ2VkIEtleSBSb290MB4XDTIzMDExMjE0MjMzMloXDTQ4MDIxNTE0MjMzMlowezELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5ZMRMwEQYDVQQHDApIb2x0c3ZpbGxlMR8wHQYDVQQKDBZaZWJyYSBUZWNobm9sb2dpZXMgSW5jMQwwCgYDVQQLDANFTUMxGzAZBgNVBAMMEmNvbS56ZWJyYS5tZG5hLmVsczCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAO76NKGh9xzN/bOQnWonV8qs7BFXWnzqGJ4OS2A2hKyacE6e8hnA9vXXhZ/wa1lc93mM4wVI1dMCD3z7yF3643EB3zJ3qxtD/CmyIQjImuo2Pyd0awnmS1W9tJjQISRS45sN9B9ThYk6oX4TIh7/5Pr9q+rTayP9zpoHjK7PestODwaY3FccSmLQ3nmO+xqi5KxqDZZHAYfKj5krUx3GEKq2Pj3A4iDii0RjopXtSVvP7+R+UO+Vw0KnVhhwtC9W1yQkuwl6pcK8gE9hxsFWDzWGqZbw4NCpjtg8hW9Th5p3Xy7lRWLpJhWGh4IWMmCgPNzYyZ4Alms27owG/viCsSKyDnyIpFPSO0Pmq790ccGY6APL/jzUV9J9lqFM/Fa03uuxWY0PI2OoSYnvJP4NO88BNU/iekhuYjIHkKegJLnPdTF2FwnHJWJa96dgKo9ATO4lIhMZ/iMV3ifAekfZM20Yf38bKa7ylI8TNmBOA+Y3MEp7u8txrJDD7gZ6r4cdDTMz843V21Ckby4uAzX1+tjEuVLgd7ZssJzFuKeKp8ZEreEoTJYH1/1xK49M3XKBzyYJVDV23CwsuVkdsoxCk5Mzq4TBo1SHLTV3Ar2NaDVNYzoj/xuVnHSbmx/ErTDvX6d1BvvcvORL6bHEKlsUXs+KNeB49kzXFPkCdcU1NGx1AgMBAAEwDQYJKoZIhvcNAQELBQADggIBAJYVo2ka0tSqsCegqYllTicTehz3X2aOw5vZ6FAA1RlEsCU0S7A+H+n1jUfzoWNjlRKvBmvZnSitLXOSIDKrQnGyqlGTbwDHXhkfzsv/dSCumAFzPKfhCfZ85hSbgHt25S0+QKzCTVtDB1EVE/CGae7kBHCJQaEM+SVA3yor47Wglf0Wi3L1uQiSfdOrySic/2/FrSiI8Uu/LBvAIXuESmWJWcnOHt1zQiuADqB3Uv5falpgSTzOpcBglxVLS1WN8nZTWfkSk1yRDKMXCmsmFSJPEauzmcVtLQjmWoA7mlifY65/qMF5Bm0zIXU9N3B2braxB3oUZ7JkHmWBMPzenUjLuAQSvoGOZfbjHnMIy0T5hqc2RlDW90521oaHFwhpY1giYBFdDilC1YKF2OrGAIo8A+BIcvI4vN+3uBtofJFr/jRV0CSxNZxIr+a5lpUv6ronoBPd8LNuL8TYezbcbFity7RQHZDK9U4N/eEaift94MZY9M7PyAml7HEW2DUOEfBzwfd0EkyaPVhTvHsV3IxMASw285cDhR8JtFvDDnGE1ztXoQS80Ed6OB/HXGd92Ss3rk6t1ZVcVW+gZo4ovzqpAL9rEsH/vQO3DKoYaIHv2ZSxriSOVhyE1tOlQkYwoRymSx5A30l5l+t2GZLlOS4eySwQ7vS54+mUom9ZTHs2
+</code></pre></li>
+
+<li><p>Replace <code>&lt;data&gt;</code> with your private certificate key. </p></li>
+
+<li><p>Run the following command with the replaced values from the previous steps:</p>
+
+<pre class="prettyprint"><code>JAVA -jar DataSecurity-1.0.jar -d &lt;data&gt; -p com.zebra.mdna.els -s &lt;IDG_SIGNATURE&gt;
+</code></pre></li>
+
+<li><p>Copy the resulting encrypted private key value and paste it into <strong>Authentication Key</strong> in the Manage Configuration.</p></li>
+</ol>
 
 <hr>
 
@@ -1307,7 +1479,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>Single Sign On Provider</td>
 <td>ssoProvider</td>
 <td>Microsoft<br>PingId</td>
-<td>Microsoft (default)<br>PingId</td>
+<td>Microsoft (default)<br>PingId<br>Okta</td>
 <td>Select the SSO provider in use</td>
 </tr>
 
@@ -1340,7 +1512,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>ssoUseridIdentifier</td>
 <td>[string]</td>
 <td>[enter string]</td>
-<td>Specify the user key for identifying the signed-in user, which is displayed in the zDNA Cloud and retrievable from the API. The user key, which could be a username, preferred username, or employee ID, can be found in the ID token or user information from the SSO response.</td>
+<td>Specify the user key for identifying the signed-in user, which is displayed in the zDNA Cloud and retrievable from the API. The user key, which could be a user name, preferred user name, or employee ID, can be found in the ID token or user information from the SSO response.</td>
 </tr>
 
 <!--
@@ -1487,9 +1659,11 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 
 <p>Configure the behavior of Identity Guardian when the device is in locked mode.</p>
 
+<!-- <table class="facelift" align="center" style="width:80%" border="1" padding="5px"> -->
+
 <p><font color="#5A9EC4"><i>Note: Colored rows indicate a parent option.</i></font></p>
 
-<table class="facelift" align="center" style="width:80%" border="1" padding="5px">
+<table align="center" style="width:80%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
 </tr></tbody></table><table class="table table-striped">
 <tbody><tr>
@@ -1501,19 +1675,19 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 </tr>
 
 <tr>
-<td>Apps Allowed On Lock Screen</td>
+<td bgcolor="#D9E7ED">Apps Allowed On Lock Screen</td>
 <td>allowPackagesToRunOnTopOfIG</td>
 <td>1<br>0</td>
 <td>true<br>false</td>
-<td>Enables the selection of specific applications to be displayed on the device's lock screen, allowing these apps to continue operating even when the device is locked. This should be restricted to certain apps, such as the phone app, which allows phone calls to be received.</td>
+<td>Enables the selection of specific applications to be displayed on the device's lock screen, allowing these apps to continue operating even when the device is locked. This should be restricted to certain apps, such as the phone app, which allows phone calls to be received. Tap <b>Add Application Details</b> to add multiple apps.</td>
 </tr>
 
-<tr bgcolor="#D9E7ED">
+<tr>
 <td>Application Details</td>
 <td>allowListPackageBundle</td>
 <td>1<br>0</td>
 <td>true<br>false</td>
-<td>Choose whether to display this app in the foreground of the device lock screen</td>
+<td>Choose whether to display this app in the foreground of the device lock screen.</td>
 </tr>
 
 <tr>
@@ -1521,7 +1695,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>allowListPackageName</td>
 <td>[string]</td>
 <td>[enter string]</td>
-<td>Enter the applicaation's package name to display in the foreground of the lock screen, for example, "com.android.your-app"</td>
+<td>Enter the application's package name to display in the foreground of the lock screen, for example, "com.android.your-app"</td>
 </tr>
 
 <tr>
@@ -1529,7 +1703,143 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>allowListActivityName</td>
 <td>[string]</td>
 <td>[enter string]</td>
-<td>Enter the app activity name to display in the foreground of the lock screen, for example, "com.android.your-aapp.appActivity"</td>
+<td>Enter the app activity name to display in the foreground of the lock screen, for example, "com.android.your-app.appActivity"</td>
+</tr>
+
+<tr>
+<td bgcolor="#D9E7ED">Custom Lock Screen Message</td>
+<td>lockScreenMessageConfigurations</td>
+<td>bundle</td>
+<td>bundle</td>
+<td>Allow users to include a custom message on the device lock screen. This custom message remains visible to all users when they sign in or sign out of the device.</td>
+</tr>
+
+<tr>
+<td>Allow Custom Lock Screen Message</td>
+<td>enableLockScreenMessage</td>
+<td>bool</td>
+<td>true<br>false (default)</td>
+<td>Choose whether to enable the option for users to add a custom message on the device lock screen. If enabled, this option appears in the message settings within Identity Guardian.</td>
+</tr>
+
+<tr>
+<td>Custom Lock Screen Message Source</td>
+<td>lockScreenType</td>
+<td>choice</td>
+<td>App Specific</td>
+<td>Choose the source of the custom lock screen message. Currently only a single source is available.</td>
+</tr>
+
+<tr>
+<td bgcolor="#D9E7ED">Lock Screen Menu</td>
+<td>lockScreenMenuOptions</td>
+<td>bundle</td>
+<td>bundle</td>
+<td>Enable to allow options to be accessible from the top right menu on the lock screen.</td>
+</tr>
+
+<tr>
+<td>Lock Screen Menu</td>
+<td>lockScreenMenuOptions</td>
+<td>bundle</td>
+<td>bundle</td>
+<td>Enable to allow options to be accessible from the top right menu on the lock screen.</td>
+</tr>
+
+<tr bgcolor="#D9E7ED">
+<td>Allow Self Enrollment</td>
+<td>enrollUserConfigurations</td>
+<td></td>
+<td></td>
+<td>Enable this option to allow users to self-enroll in Identity Guardian directly from the device lock screen. This applies only to shared devices.</td>
+</tr>
+
+<tr>
+<td>Secure Self Enrollment</td>
+<td>enableEnrollUser</td>
+<td>bool</td>
+<td>true<br>false (default)</td>
+<td>Enable this option to allow users to self-enroll in Identity Guardian directly from the device lock screen.</td>
+</tr>
+
+<tr>
+<td>User Verification</td>
+<td>enrollUserAuthType</td>
+<td>choice</td>
+<td>SSO</td>
+<td>Select the authentication method used to validate a user. Currently, only SSO is available.</td>
+</tr>
+
+<tr>
+<td>Enable Admin Bypass Passcode on Lock screen</td>
+<td>enableAdminByPassPassCode</td>
+<td>bool</td>
+<td>true<br>false (default)</td>
+<td>Choose to enable the admin bypass passcode option on the lock screen.</td>
+</tr>
+
+<tr>
+<td>Customize Alternative Login Button</td>
+<td>alternateLoginBtnText</td>
+<td>[string]</td>
+<td>Alternative Login (default)</td>
+<td>Enter a custom title to replace the default title for the alternate login button on the lock screen. The title must be between 4 and 20 characters in length. If less than 4 characters are entered, the default title "Alternative Login" is used. If more than 20 characters are entered, any characters beyond the 20-character limit will be truncated. </td>
+</tr>
+
+<tr bgcolor="#D9E7ED">
+<td>Auto Unlock</td>
+<td>autoUnlockConfigurations</td>
+<td>bundle</td>
+<td>bundle</td>
+<td>Enable this option to allow users to automatically initiate face, passcode, or SSO authentication when unlocking the device, eliminating the need to tap the sign-in button.</td>
+</tr>
+
+<tr>
+<td>On Unlock</td>
+<td>enableAutoUnlockOnDeviceUnlock</td>
+<td>bool</td>
+<td>true<br>false (default)</td>
+<td>Select whether to automatically initiate face/passcode/sso detection and unlock the device if the signed-in user presses the power button.</td>
+</tr>
+
+</tbody></table>
+
+
+<hr>
+
+<h2 id="guardiansafeconfiguration" class="anchor"><a class="heading-anchor" href="#guardiansafeconfiguration"><span></span></a>Guardian Safe Configuration</h2>
+
+<p>Configure Guardian Safe for storing user application credentials.</p>
+
+<!-- <table class="facelift" align="center" style="width:80%" border="1" padding="5px"> -->
+
+<!-- <font color="#5A9EC4"><i>Note: Colored rows indicate a parent option.</i></font> -->
+
+<table align="center" style="width:80%" border="1" padding="5px">
+<tbody><tr bgcolor="#dce8ef">
+</tr></tbody></table><table class="table table-striped">
+<tbody><tr>
+<th>Configuration Name</th>
+<th>Key</th>
+<th>Value(s)</th>
+<th>Display Name</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Guardian Safe</td>
+<td>enableGuardianSafe</td>
+<td>ENABLE<br>DISABLE (default)</td>
+<td>ENABLE<br>DISABLE (default)</td>
+<td>Select whether users can store app credentials in Guardian Safe.</td>
+</tr>
+
+<tr>
+<td>Automatically Grant Accessibility Permission</td>
+<td>autoEnableAccessibilityPermission</td>
+<td>ENABLE<br>DISABLE (default)</td>
+<td>ENABLE<br>DISABLE (default)</td>
+<td>Select whether to automatically grant the Accessibility Service permissions required by Guardian Safe. If enabled, the admin accepts the permissions on behalf of the user, thereby eliminating the need for the user to manually accept the permissions. If disabled, users need to manually grant the permissions when prompted.</td>
 </tr>
 
 </tbody></table>
