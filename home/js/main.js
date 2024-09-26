@@ -616,6 +616,8 @@ function populateDropdown (ddl_ver, ddl_doc) {
     var dt_5_1_val = ['/guide/about', '/guide/setup', '/guide/config', '/guide/use', '/guide/dashboard', '/guide/faq'];
     var dt_5_2_text = ['About', 'Get Started', 'Installation', 'Configuration', 'Track Devices', 'Dashboard', 'FAQ'];
     var dt_5_2_val = ['/guide/about', '/guide/getstarted', '/guide/setup', '/guide/config', '/guide/use', '/guide/dashboard', '/guide/faq'];
+    var dt_6_2_text = ['About', 'Quick Start', 'Installation', 'Configuration', 'Track Devices', 'Dashboard', 'FAQ'];
+    var dt_6_2_val = ['/guide/about', '/guide/getstarted', '/guide/setup', '/guide/config', '/guide/use', '/guide/dashboard', '/guide/faq'];
     // Dex Scan & Pair
     var dex_1_8_text = ['About', 'Installation', 'Configuration'];
     var dex_1_8_val = ['/guide/about', '/guide/install', '/guide/configuration'];
@@ -854,10 +856,15 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/devicetracker/5-7':
         case '/devicetracker/6-0':
         case '/devicetracker/6-1':
-        case '/devicetracker/6-2':
             ddl_doc.options.length = 0;
             for (i=0; i < dt_5_2_text.length; i++) {
                 createOption(ddl_doc, dt_5_2_text[i], dt_5_2_val[i]);
+            }
+            break;
+        case '/devicetracker/6-2':
+            ddl_doc.options.length = 0;
+            for (i=0; i < dt_6_2_text.length; i++) {
+                createOption(ddl_doc, dt_6_2_text[i], dt_6_2_val[i]);
             }
             break;
         // Dex Scan & Pair
