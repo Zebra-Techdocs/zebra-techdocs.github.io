@@ -81,27 +81,27 @@
 
 
                         <li>
-                            <a href="/zwc/3-1/about">
+                            <a href="/zwc/4-1/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/3-1/setup">
+                            <a href="/zwc/4-1/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/3-1/usage">
+                            <a href="/zwc/4-1/usage">
                                     Usage Notes
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/3-1/faq">
+                            <a href="/zwc/4-1/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/3-1/search">
+                            <a href="/zwc/4-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -204,7 +204,7 @@
             last: false
         }
         var results = [];
-        $.getJSON( "/zwc/3-1/index.json", function( data ) {
+        $.getJSON( "/zwc/4-1/index.json", function( data ) {
           json_data = data;
           console.log("got data");
           fuse = new Fuse(json_data, { keys: ["title", "keywords"] });
@@ -227,7 +227,7 @@
               $("#btn-loading").show()
               $("#btn-search").hide();
               
-              var product_version = "/zwc/3-1/index.json".replace("/index.json","");
+              var product_version = "/zwc/4-1/index.json".replace("/index.json","");
                 var q = $("#query").val();
                 var url="https://www.google.com/search?q=site:techdocs.zebra.com" + product_version + "+"+q;
                 window.open(url);
