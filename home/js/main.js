@@ -497,7 +497,7 @@ function selectDoc(prod_id, doc_id) {
             ver = $("#link-os-version").val();
             doc = $("#link-os-doc").val();
             break;
-        case 'btn-mdna-license': // Mobile Parcel
+        case 'btn-mdna-license': 
             ver = "";   // no version
             doc = $("#mdna-license-doc").val();
             break;
@@ -662,6 +662,9 @@ function populateDropdown (ddl_ver, ddl_doc) {
     var ig_1_0_val = ['/about', '/setup', '/mc','/usage','/apis'];
     var ig_1_3_text = ['About', 'Setup', 'Managed Configurations', 'UserGuide', 'APIs', 'FAQ'];
     var ig_1_3_val = ['/about', '/setup', '/mc','/usage','/apis', '/faq'];
+    // Mobile Parcel
+    var mp_1_0_text = ['About', 'APIs', 'Sample'];
+    var mp_1_0_val = ['/about', '/api', '/sample'];
     // OEMConfig
     var oemconfig_11_5_text = ['About', 'Setup', 'Managed Configs (Legacy)', 'Managed Configs (A11+)', 'FAQ'];
     var oemconfig_11_5_val = ['/about', '/setup', '/mc', '/mc2', '/faq'];
@@ -1044,6 +1047,17 @@ function populateDropdown (ddl_ver, ddl_doc) {
             }
             break;     
         
+        // Mobile Parcel
+        case '/mobile-parcel/1-3':
+        case '/mobile-parcel/1-2':
+        case '/mobile-parcel/1-1':
+        case '/mobile-parcel/1-0':
+            mp_doc.options.length = 0;
+            for (i=0; i < mp_1_0_text.length; i++) {
+                createOption(mp_doc, mp_1_0_text[i], mp_1_0_val[i]);
+            }
+            break;
+
         // OEMConfig
         case '/oemconfig/11-5':
             ddl_doc.options.length = 0;
