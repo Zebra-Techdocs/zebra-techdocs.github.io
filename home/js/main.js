@@ -1005,6 +1005,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/enterprise-browser/3-0':
         case '/enterprise-browser/3-2':
         case '/enterprise-browser/3-3':
+        case '/enterprise-browser/5-0':
             ddl_doc.options.length = 0;
             for (i=0; i < eb_2_0_text.length; i++) {
                 createOption(ddl_doc, eb_2_0_text[i], eb_2_0_val[i]);
