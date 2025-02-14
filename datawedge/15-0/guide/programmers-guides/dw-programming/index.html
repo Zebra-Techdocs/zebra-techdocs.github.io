@@ -262,7 +262,7 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>This section provides guidance on how to use <a href="../../api">DataWedge Intent APIs</a> to capture, process, and deliver data to an application. An application accesses the DataWedge API by sending an intent to query or modify a configuration. Changes can take place at runtime if supported by the API. The action and data of the intent specifies which DataWedge API function to perform. Multiple API calls can be sent as extras using a single intent action.Function prototype:</p>
+<p>This section provides guidance on how to use <a href="../../api">DataWedge Intent APIs</a> to capture, process, and deliver data to an application. An application accesses the DataWedge API by sending an intent to query or modify a configuration. Changes can take place at runtime if supported by the API. The action and data of the intent specifies which DataWedge API function to perform. Multiple API calls can be sent as extras using a single intent action. Function prototype:</p>
 
 <pre class="prettyprint"><code>Intent i = new Intent();
 i.setAction("com.symbol.datawedge.api.ACTION");
@@ -323,9 +323,65 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 <h3 id="general" class="anchor"><a class="heading-anchor" href="#general"><span></span></a>General</h3>
 
 <ul>
-<li><strong>Scanning performance optimization:</strong> To improve scanning performance, Zebra recommends disabling all Decoders not required by the app(s) associated with a given Profile.</li>
+<li><p><strong>Scanning performance optimization:</strong> To improve scanning performance, Zebra recommends disabling all Decoders not required by the app(s) associated with a given Profile.</p></li>
 
-<li><strong>Profile configuration across multiple apps:</strong> DataWedge is a global service and any application on the device can interact with it to configure any profile. Therefore, care should be taken if multiple applications are trying to modify the same set of profiles.</li>
+<li><p><strong>Invoking DataWedge Intent APIs after a reboot:</strong> After a device reboot, DataWedge may require a few seconds to initialize before it is ready to accept intent requests. Zebra recommends using <a href="../api/getdatawedgestatus/">Get DataWedge Status</a> API to verify whether DataWedge is enabled before setting any configuration or altering scanner parameters to ensure successful operation.</p></li>
+
+<li><p><strong>Dynamically change scanner configurations based on business needs:</strong> 
+To dynamically change scanner configurations, use the <a href="../api/switchscannerparams/">Switch Scanner Params</a> API, which allows temporary adjustments to scanner parameters without modifying the existing DataWedge profile. This API is particularly beneficial for applications that must swiftly adapt to changing conditions while meeting scanning requirements.</p>
+
+<p>Steps to dynamically change scanner configurations:</p>
+
+<ol>
+<li><p><strong>Register for Notifications -</strong> By <a href="../api/registerfornotification/">registering for notifications</a>, the application can receive real-time updates on the scanner status (e.g., IDLE, WAITING, SCANNING, DISABLED) during data capture operations. This includes updates on successful or failed scans, as well as when the scanner is enabled or disabled.</p></li>
+
+<li><p><strong>Register for Scanner Status Notifications -</strong> The scanner must be in an IDLE state before invoking the Switch Scanner Params API. This can be verified by registering for notifications. It is also important to check the <code>PROFILE_NAME</code> extra to ensure the scanner status aligns with the intended profile. Below is a sample code snippet:</p>
+
+<pre class="prettyprint"><code>case NOTIFICATION_TYPE_SCANNER_STATUS:
+    Log.d(TAG, "SCANNER_STATUS: status: " + b.getString("STATUS") + ", profileName: " + b.getString("PROFILE_NAME"));
+
+<pre><code>if (b.getString("STATUS").equals("IDLE") &amp;amp;&amp;amp; b.getString("PROFILE_NAME").equals("myprofile")) {
+    //Scanner is enabled for the profile. Do something here.
+} 
+else {
+    //Ignore the status event             
+}
+</code></pre>
+
+</code></pre>
+
+<p>For more information, see the <a href="../api/registerfornotification/#examplecode">example code</a> for registering notifications.</p></li>
+
+<li><p><strong>Switch Scanner Parameters -</strong> Once the scanner status is confirmed as IDLE, use the <a href="../api/switchscannerparams/">Switch Scanner Params</a> API to change the scanner parameters. </p></li></ol></li>
+
+<li><p><strong>Synchronize DataWedge Intent API calls in multithreaded applications:</strong> When developing applications that interact with DataWedge Intent APIs, synchronization is crucial due to the asynchronous nature of intents. This guide highlights the potential issues arising from unsynchronized API calls, strategies to prevent them, and best practices for implementing synchronized intent handling.</p>
+
+<p><strong>Problem Description:</strong> Without proper synchronization, using DataWedge Intent APIs can lead to critical issues. When multiple threads or processes make API calls simultaneously, it can lead to:</p>
+
+<ul>
+<li>Concurrent API calls resulting in unpredictable results due to the lack of guaranteed execution order.</li>
+
+<li>Requests being processed out of order, causing inconsistent application states.</li>
+
+<li>Inconsistent data states within the application, resulting to errors or unexpected behavior.</li></ul>
+
+<p><strong>Solution - Best Practices for Synchronizing DataWedge Intent APIs:</strong> Given the asynchronous nature of intents, developers must ensure synchronization when calling DataWedge intent APIs. </p>
+
+<ul>
+<li>For applications with multiple activities or fragments:
+
+
+<ul>
+<li>Register a broadcast receiver in the global context of the application to handle intents related to DataWedge status (e.g., API Result Notifications, Profile Switch, Scanner Status, DataWedge status). </li>
+
+<li>Spawn a dedicated thread or coroutine in the global context to manage intent API calls.</li>
+
+<li>Execute Intent API calls through this dedicated thread.<br>
+<strong>Note:</strong> The application must handle intent results and application states to determine subsequent API calls. </li></ul>
+
+<p></p></li><p></p>
+
+<p></p><li>In single-activity applications, intents can be dispatched via the main thread. Make sure to listen for results from the calling Intent API and update application states to decide which API to call next.</li><p></p></ul><p></p></li>
 </ul>
 
 <h3 id="datacapture" class="anchor"><a class="heading-anchor" href="#datacapture"><span></span></a>Data Capture</h3>
@@ -335,8 +391,8 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 
 <li>For situations that require <strong>rapid changes between suspend/resume status,</strong> use Scanner Input Plugin and register for SCANNER_STATUS notifications. When the scanner is activated (for example from a profile configuration or from RESUME_PLUGIN or ENABLE_PLUGIN intent API), SCANNER_STATUS broadcasts the WAITING and SCANNING states, rotating between each depending on whether scanning is taking place. For the app to suspend scanning, act only when in the SCANNING and WAITING states - when these states are broadcasted, use SUSPEND_PLUGIN parameter to remain in the suspended state and keep the scanner unusable. Once scanning is suspended, SCANNER_STATUS broadcasts the IDLE state. Use RESUME_PLUGIN to re-activate the scanner.</li>
 
-<li><strong>Capture data and photos in a single app:</strong> It is possible to take pictures and capture barcode data using the same application if the application was designed with this in mind.</li>
-</ul>
+<li><strong>Capture data and photos in a single app:</strong> It is possible to take pictures and capture barcode data using the same application if the application was designed with this in mind.
+
 
 <ol>
 <li>Add separate Activities in the app: one for barcode scanning and another for picture taking.</li>
@@ -354,10 +410,9 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 
 <li>When the app is used for scanning, the default DataWedge profile will come into effect.</li>
 
-<li>For accessing specific decoders, processing rules or other special scanning needs, a second DataWedge Profile can be created and associated with the barcode scanning activity of the app.</li>
-</ol>
+<li>For accessing specific decoders, processing rules or other special scanning needs, a second DataWedge Profile can be created and associated with the barcode scanning activity of the app.</li></ol>
+</li>
 
-<ul>
 <li><strong>Data dispatched too quickly:</strong> If data is being dispatched too quickly for the application to accept, such as when using terminal emulation apps, this can be addressed by adding a delay between each character sent to the app with the use of <code>keystroke_character_delay</code> in <a href="../../api/setconfig">Set Config</a>. Refer to Keystroke Output Parameters section and example code provided in section “Configure an inter-character delay”. This parameter should be used with caution as it can negatively affect application performance.</li>
 
 <li>When using <a href="../../api/overview">DataWedge intent APIs</a> to <strong>query DataWedge for information</strong> (such as Get Active Profile), the app must register to receive the result with a filter that identifies the action and category of the result intent.</li>
@@ -366,6 +421,8 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
 <h3 id="profiles" class="anchor"><a class="heading-anchor" href="#profiles"><span></span></a>Profiles</h3>
 
 <ul>
+<li><strong>Profile configuration across multiple apps:</strong> DataWedge is a global service and any application on the device can interact with it to configure any profile. Therefore, care should be taken if multiple applications are trying to modify the same set of profiles.</li>
+
 <li><strong>Existence of duplicate Associated Apps when importing profiles:</strong> If a duplicate <a href="../../gettingstarted">Associated App</a> exists between a current profile and a profile being imported, the profile being imported will not take into effect. For example, if current profile A is configured with an associated app and that same app is associated with profile B, when importing profile B the import does not take into effect due to the duplication. This similarly applies if an app is listed in the <a href="../../settings">Disabled App List</a> and that same app is an Associated App in a profile being imported - the import does not take into effect and the app remains on the Disabled App List.</li>
 
 <li><strong>Activity/app association with profiles:</strong> A single profile can be associated with one or more activities or apps. However, an activity or app can be associated with only one profile. If there is a requirement to associate an activity or app to more than one profile, this can be addressed with SWITCH_TO_PROFILE, which does not specify any associated apps. <br>
@@ -418,7 +475,7 @@ i.putExtra(EXTRA_DATA, "&lt;parameter&gt;");
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                     <div class="col-sm-2">
                         <!--
