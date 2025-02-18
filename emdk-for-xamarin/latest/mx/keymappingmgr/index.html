@@ -70,7 +70,7 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            EMDK For Xamarin
+                                            EMDK For MAUI/Xamarin
                                             9.0
                         </p>
 
@@ -247,7 +247,7 @@
                                     <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Queries from MX are not supported on Zebra devices running Android 11 or later. <u><a href="/flux/query">See alternative method</a></u>.</p>
 
 
-                                    EMDK For Xamarin
+                                    EMDK For MAUI/Xamarin
                                      - 9.0
                                     <p></p>
                                 </div>
@@ -362,6 +362,9 @@
                                 <li class="smartdocs-mx" data-value="13.3"><a>13.3</a></li>
                                 <li class="smartdocs-mx" data-value="13.4"><a>13.4</a></li>
                                 <li class="smartdocs-mx" data-value="13.5"><a>13.5</a></li>
+                                <li class="smartdocs-mx" data-value="14.0"><a>14.0</a></li>
+                                <li class="smartdocs-mx" data-value="14.1"><a>14.1</a></li>
+                                <li class="smartdocs-mx" data-value="14.2"><a>14.2</a></li>
                               </ul>
                               </li>
                         
@@ -828,8 +831,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -884,7 +885,7 @@
 <li>Do nothing</li></ul>
 </li>
 
-<li>Send a key-code after double-pressing a scan trigger</li>
+<li>Send a key-code or launch an app after double-pressing a scan trigger</li>
 
 <li>Reset all Key mappings to factory default values</li>
 </ul>
@@ -898,7 +899,9 @@
 <h3 id="querynotice" class="anchor"><a class="heading-anchor" href="#querynotice"><span></span></a>Query Notice</h3>
 
 <blockquote>
-  <p><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> MX-based query functions have been discontinued in Zebra devices running Android 11 and later. <strong>Only programmatic queries are supported</strong>. </p>
+  <p><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> <strong>Only programmatic queries are supported on devices running Android 11 and later</strong>. MX-based query functions were discontinued in Zebra devices with Android 11 and later.  </p>
+  
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong><u>The broadcast receiver code varies depending on the LifeGuard update installed on the device</u> for programmatic access to the active key modifier list</strong>. </p>
 </blockquote>
 
 <p><strong>To retrieve the active key modifier list programmatically</strong>:</p>
@@ -911,20 +914,39 @@
 
 <p><strong>2. Create a broadcast receiver</strong> in the app:</p>
 
+<h4 id="deviceswithlifeguardupdate11260500rgu00minimumlgrequiredforthisfeature" class="anchor"><a class="heading-anchor" href="#deviceswithlifeguardupdate11260500rgu00minimumlgrequiredforthisfeature"><span></span></a>Devices with LifeGuard Update <code>11-26-05.00-RG-U00</code> (minimum LG required for this feature):</h4>
+
 <pre class="prettyprint"><code>    
     IntentFilter intentFilter = new IntentFilter();
     intentFilter.addAction("com.zebra.intent.action.ACTIVE_MODIFIER_LIST");
     registerReceiver(receiver,intentFilter,"zebra.permission.KEY_EVENT_SERVICE",null);
 
-              private BroadcastReceiver receiver = new BroadcastReceiver() {
-                     @Override
-                     public void onReceive(Context context, Intent intent) {
-                             if(intent.getAction() == "com.zebra.intent.action.ACTIVE_MODIFIER_LIST"){
-                                List&lt;String&gt; list= intent.getStringArrayListExtra("activeModifiersList");
-                                Log.d("Active modifier list"," List "+list);
-                             }
-                     }
+            private BroadcastReceiver receiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    if(intent.getAction() == "com.zebra.intent.action.ACTIVE_MODIFIER_LIST"){
+                    List&lt;String&gt; list= intent.getStringArrayListExtra("activeModifiersList");
+                    Log.d("Active modifier list"," List "+list);
+                    }
+                }
+            };
+</code></pre>
 
+<h4 id="deviceswithlifeguardupdate11312700rgu00orlater" class="anchor"><a class="heading-anchor" href="#deviceswithlifeguardupdate11312700rgu00orlater"><span></span></a>Devices with LifeGuard Update <code>11-31-27.00-RG-U00</code> or later:</h4>
+
+<pre class="prettyprint"><code>    
+    IntentFilter intentFilter = new IntentFilter();
+    intentFilter.addAction("com.zebra.intent.action.ACTIVE_MODIFIER_LIST");
+    registerReceiver(receiver,intentFilter,"zebra.permission.KEY_EVENT_SERVICE",null);
+
+            private BroadcastReceiver receiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    if(intent.getAction() == "com.zebra.intent.action.ACTIVE_MODIFIER_LIST") {
+                    Map&lt;String,String&gt; list= (Map&lt;String, String&gt;) intent.getSerializableExtra("activeModifiersList");
+                    Log.d("Active modifier list"," List "+list);
+                    }
+                }
             };
 </code></pre>
 
@@ -936,10 +958,6 @@
     intent.setPackage("com.zebra.keyeventservice");
     sendBroadcast(intent);
 </code></pre>
-
-<blockquote>
-  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>This feature requires Android 11 and LifeGuard Update</strong> <code>11-26-05.00-RG-U00</code> (or later).</p>
-</blockquote>
 
 <hr>
 
@@ -1310,6 +1328,8 @@ B1, P1/P2/P3 are new addition, which is just different label.
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="action"><a class="heading-anchor" href="#action"><span></span></a>Action</h2>
@@ -1544,41 +1564,18 @@ B1, P1/P2/P3 are new addition, which is just different label.
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="key-identifier"><a class="heading-anchor" href="#key-identifier"><span></span></a>Key Identifier</h2>
                                     <p class="">
 
-        <!-- // REMOVED FROM ABOVE SECTION UNTIL RELEASE OF EM45
-    - code: TOP_BUTTON
-      mx: "13.5"
-      devicetype: A
-      name: Top Button
-      description: Recessed button on top of the Zebra EM45 for use as an "emergency" call button
-    - code: RIGHT_BUTTON
-      mx: "13.5"
-      devicetype: A
-      name: Right Button
-      description: Button on the right side of the Zebra EM45 
--->
-
-</p><p>Used to identify the Key for which an Override-Key Mapping will be added or modified. To add or modify an Override Mapping for a Key, enter the <strong>Option</strong> (Key Identifier) listed in the table below that matches the friendly <strong>Name</strong> and <strong>Description</strong> of the Key to be mapped.</p>
+        </p><p>Used to identify the device Key or button for which an Override-Key Mapping will be added or modified. To add or modify an Override Mapping for a Key, enter the <strong>Option</strong> (Key Identifier) listed in the table below that matches the friendly <strong>Name</strong> and <strong>Description</strong> of the Key to be mapped.</p>
 
 <blockquote>
-  <p><strong>Not all devices have Keys for every Key Identifier in the table</strong>. Attempts to add an Override Mapping for a Key that is not present on a device will produce an error in the Result XML. For a list of supported Keys on a specific device, query* the KeyMappingMgr for Key Identifiers (see Queries, below) or refer to the device documentation. For known deviations from these standards, <strong>see the <a href="#standardsanddeviations">Standards and Deviations section</a></strong> of the Overview at the top of this page. </p>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Not all devices have Keys for every Key Identifier in the table</strong>. Attempts to add an Override Mapping for a Key that is not present on a device will produce an error in the Result XML. For a list of supported Keys on a specific device, query* the KeyMappingMgr for Key Identifiers (see Queries, below) or refer to the device documentation. For known deviations from these standards, <strong>see the <a href="#standardsanddeviations">Standards and Deviations section</a></strong> of the Overview at the top of this page. </p>
 </blockquote>
 
 <p>*<em>Query functions have been discontinued in Zebra devices running Android 11 and later</em>. </p>
-
-<!-- 2/10/21 removed from NAV_OK, CL, FN at req. of PDM
-info: Applies to MC20 devices only. 
-5/19/21- returned modified statement: info: Applies only to MC20 and similarly equipped devices.
--->
 
 
 <p></p>
@@ -3800,11 +3797,152 @@ info: Applies to MC20 devices only.
                                                 
                                             </tr>
                                             
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="13.5" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>TOP_BUTTON</td>
+                                                <td>Top Button</td>
+                                                <td>Recessed button on top of the Zebra EM45 for use as an "emergency" call button</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 13.5+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="13.5" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>RIGHT_BUTTON</td>
+                                                <td>Right Button</td>
+                                                <td>Button on the right side of the Zebra EM45</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 13.5+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.2" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>CHANNEL_SWITCH</td>
+                                                <td>Channel Switch</td>
+                                                <td>Upper button on the left side of TC58X devices for switching push-to-talk communication channels</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.2" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>ALERT_BUTTON</td>
+                                                <td>Alert Button</td>
+                                                <td>Red button on top of the Zebra TC58X for use as an "emergency" call button</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
                                             
                                         </tbody></table>
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -9249,58 +9387,36 @@ info: Applies to MC20 devices only.
                                                 
                                             </tr>
                                             
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.2" data-devicetype="A,C" data-api="" data-smartdoc="">
+                                                <td>10044</td>
+                                                <td>Channel Switch</td>
+                                                <td></td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A,C -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
                                             
                                         </tbody></table>
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -9661,13 +9777,6 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="key-mode-behaviors"><a class="heading-anchor" href="#key-mode-behaviors"><span></span></a>Key Mode Behaviors</h2>
@@ -9926,6 +10035,53 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="advanced"><a class="heading-anchor" href="#advanced"><span></span></a>Advanced</h2>
@@ -10014,22 +10170,6 @@ info: Applies to MC20 devices only.
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -10175,13 +10315,6 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="ctrl-state"><a class="heading-anchor" href="#ctrl-state"><span></span></a>CTRL State</h2>
@@ -10310,6 +10443,14 @@ info: Applies to MC20 devices only.
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -10446,9 +10587,6 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="shift-state"><a class="heading-anchor" href="#shift-state"><span></span></a>Shift State</h2>
@@ -10577,8 +10715,6 @@ info: Applies to MC20 devices only.
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -11246,6 +11382,11 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="include-additional-flags"><a class="heading-anchor" href="#include-additional-flags"><span></span></a>Include Additional Flags</h2>
@@ -11303,6 +11444,8 @@ info: Applies to MC20 devices only.
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -11589,13 +11732,6 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="application-launch"><a class="heading-anchor" href="#application-launch"><span></span></a>Application Launch</h2>
@@ -11671,17 +11807,12 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="double-trigger-mode"><a class="heading-anchor" href="#double-trigger-mode"><span></span></a>Double-trigger Mode</h2>
                                     <p class="">
 
-        </p><p>Controls whether the designated key-code is sent whenever a double-press of any scan trigger is detected on the device. </p>
+        </p><p>Controls whether a key-code is sent or an app shortcut is launched when a double-press of any scan trigger is detected on the device. </p>
 
 
 <p></p>
@@ -11755,10 +11886,10 @@ info: Applies to MC20 devices only.
                                                 
                                             </tr>
                                             
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A,B" data-api="" data-smartdoc="">
                                                 <td>2</td>
-                                                <td>Don't send a key-code</td>
-                                                <td>Stops the sending of a key-code when a scan-trigger double-press is detected.</td>
+                                                <td>Remove double-trigger mapping</td>
+                                                <td>Remove assigned key-codes related to double-presses of a scan trigger.</td>
                                                 <td></td>
 
                                                 <td></td>
@@ -11773,7 +11904,31 @@ info: Applies to MC20 devices only.
                                                 <td>
                                                     
 
-                                                        <p>MX: 11.4+ </p>
+                                                        <p>MX: 14.0+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>3</td>
+                                                <td>Launch application</td>
+                                                <td>Launches the designated app shortcut whenever a double-press of a scan trigger is detected.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
                                                     
                                                 </td> 
                                                 
@@ -11784,6 +11939,13 @@ info: Applies to MC20 devices only.
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -11864,6 +12026,8 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="double-trigger-key-code"><a class="heading-anchor" href="#double-trigger-key-code"><span></span></a>Double-trigger Key Code</h2>
@@ -11896,9 +12060,6 @@ info: Applies to MC20 devices only.
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -11957,18 +12118,38 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="double-trigger-launch-activity-name"><a class="heading-anchor" href="#double-trigger-launch-activity-name"><span></span></a>Double-trigger Launch Activity Name</h2>
+                                    <p class="">
+
+        </p><p>Used to enter an the name of the app to launch when a double-press of any scan trigger is detected.</p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>String containing the name of an app or app shortcut on the device</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> Double Trigger Mode is "Launch application"</p>
+                                        <p><b>Parm Name:</b> DoubleTriggerLaunchActivityName</p>
+                                        <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 14.0+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+                                </div> 
                                     
                                     
                                     
@@ -14109,6 +14290,45 @@ info: Applies to MC20 devices only.
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -14286,11 +14506,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -15898,8 +16113,117 @@ filtering
 
                                 },
                         
+                                {
+                                    code: "TOP_BUTTON",
+                                    name: "Top Button",
+                                    description: "Recessed button on top of the Zebra EM45 for use as an &quot;emergency&quot; call button",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "13.5",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "RIGHT_BUTTON",
+                                    name: "Right Button",
+                                    description: "Button on the right side of the Zebra EM45",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "13.5",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "CHANNEL_SWITCH",
+                                    name: "Channel Switch",
+                                    description: "Upper button on the left side of TC58X devices for switching push-to-talk communication channels",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "ALERT_BUTTON",
+                                    name: "Alert Button",
+                                    description: "Red button on top of the Zebra TC58X for use as an &quot;emergency&quot; call button",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -19609,55 +19933,25 @@ filtering
 
                                 },
                         
+                                {
+                                    code: "10044",
+                                    name: "Channel Switch",
+                                    description: "",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -19936,13 +20230,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "The Action value is &quot;Remap a key&quot; and Choose a key to modify is not &quot;None&quot;",
                             name: "BlueBehavior,OrangeBehavior,GreyBehavior,DiamondBehavior,ShiftBehavior,ControlBehavior",
@@ -20119,6 +20406,53 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "The Action value is &quot;Remap a key&quot; and Choose a key to modify is not &quot;None&quot; and the Key Behavior for the Mapping Table is &quot;Send key-code&quot;",
                             name: "BaseKeyCodeAdvanced,BlueKeyCodeAdvanced,OrangeKeyCodeAdvanced,GreyKeyCodeAdvanced,ShiftKeyCodeAdvanced,ControlKeyCodeAdvanced,DiamondKeyCodeAdvanced",
@@ -20162,22 +20496,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -20255,13 +20573,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "The Action value is &quot;Remap a key&quot; and Choose a key to modify is not &quot;None&quot; and the Key Behavior is &quot;Send key-code&quot; and Advanced is &quot;True&quot;",
                             name: "BaseKeyCodeCtrlState,BlueKeyCodeCtrlState,OrangeKeyCodeCtrlState,GreyKeyCodeCtrlState,ShiftKeyCodeCtrlState,ControlKeyCodeCtrlState",
@@ -20322,6 +20633,14 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -20390,9 +20709,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
                     {
                             presentif: "The Action value is &quot;Remap a key&quot; and Choose a key to modify is not &quot;None&quot; and the Key Behavior is &quot;Send key-code&quot; and Advanced is &quot;True&quot;",
                             name: "BaseKeyCodeShiftState,BlueKeyCodeShiftState,OrangeKeyCodeShiftState,GreyKeyCodeShiftState,ShiftKeyCodeShiftState,ControlKeyCodeShiftState",
@@ -20453,8 +20769,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
                     
                     
                     
@@ -20710,6 +21024,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -20729,6 +21048,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     
                     
@@ -20907,13 +21228,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -20933,11 +21247,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -21004,12 +21313,29 @@ filtering
                         
                                 {
                                     code: "2",
-                                    name: "Don&#x27;t send a key-code",
-                                    description: "Stops the sending of a key-code when a scan-trigger double-press is detected.",
+                                    name: "Remove double-trigger mapping",
+                                    description: "Remove assigned key-codes related to double-presses of a scan trigger.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
-                                        mx: "11.4",
+                                        mx: "14.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "3",
+                                    name: "Launch application",
+                                    description: "Launches the designated app shortcut whenever a double-press of a scan trigger is detected.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
                                         api: "",
                                         osxSpecific: "",
                                         osxSpecificList: "",
@@ -21021,6 +21347,13 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -21088,6 +21421,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -21114,9 +21449,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -21136,6 +21468,52 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "14.0",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A"
+                        },
+
+                            presentif: "Double Trigger Mode is &quot;Launch application&quot;",
+                            name: "DoubleTriggerLaunchActivityName",
+                            pivotal: "Yes",
+                        
+                        
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -21462,7 +21840,7 @@ u {color: #45AED6;}
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">

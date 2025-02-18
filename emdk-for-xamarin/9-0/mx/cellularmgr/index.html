@@ -70,7 +70,7 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
-                                            EMDK For Xamarin
+                                            EMDK For MAUI/Xamarin
                                             9.0
                         </p>
 
@@ -247,7 +247,7 @@
                                     <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> Queries from MX are not supported on Zebra devices running Android 11 or later. <u><a href="/flux/query">See alternative method</a></u>.</p>
 
 
-                                    EMDK For Xamarin
+                                    EMDK For MAUI/Xamarin
                                      - 9.0
                                     <p></p>
                                 </div>
@@ -362,6 +362,9 @@
                                 <li class="smartdocs-mx" data-value="13.3"><a>13.3</a></li>
                                 <li class="smartdocs-mx" data-value="13.4"><a>13.4</a></li>
                                 <li class="smartdocs-mx" data-value="13.5"><a>13.5</a></li>
+                                <li class="smartdocs-mx" data-value="14.0"><a>14.0</a></li>
+                                <li class="smartdocs-mx" data-value="14.1"><a>14.1</a></li>
+                                <li class="smartdocs-mx" data-value="14.2"><a>14.2</a></li>
                               </ul>
                               </li>
                         
@@ -838,20 +841,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -970,6 +959,10 @@
 
 
 <ul>
+<li>Configuring a device "mostly" for Voice or Data (and EPS-only attach mode)</li>
+
+<li>DSDS call "auto-subscription" SIM preference</li>
+
 <li>Network-type restrictions</li>
 
 <li>Cellular services (all)</li>
@@ -1175,15 +1168,113 @@
                                     
                                     
                                     
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="sim-socket-usage-enabledisable"><a class="heading-anchor" href="#sim-socket-usage-enabledisable"><span></span></a>SIM Socket Usage Enable/Disable</h2>
+                                    <p class="">
+
+        </p><p>Controls whether the device user can change the selected SIM Socket using the Select SIM Socket parameter. When Disabled, the SIM Socket cannot be selected by the device user. <strong>Supported on specific Zebra devices only</strong>.</p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Note:</b> DEPRECATED: Feature to be discontinued in a future MX version. Supported only on WWAN-enabled devices with more than one SIM socket.</p>
+                                        <p><b>Parm Name:</b> SimSocketUsage</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
                                     
                                     
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to user control over SIM Socket selection; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 6.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>Enable</td>
+                                                <td>Enables the device user to control which SIM Socket is used.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 6.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>2</td>
+                                                <td>Disable</td>
+                                                <td>Prevents the user from changing the selected SIM Socket.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 6.2+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+                                </div> 
                                     
                                     
                                     
@@ -1325,113 +1416,40 @@
                                 </div> 
                                     
                                     
-                                        <div class="">
-                                    
-                                    <h2 class="anchor" id="sim-socket-usage-enabledisable"><a class="heading-anchor" href="#sim-socket-usage-enabledisable"><span></span></a>SIM Socket Usage Enable/Disable</h2>
-                                    <p class="">
-
-        </p><p>Controls whether the device user can change the selected SIM Socket using the Select SIM Socket parameter. When Disabled, the SIM Socket cannot be selected by the device user. <strong>Supported on specific Zebra devices only</strong>.</p>
-
-
-<p></p>
-                                        <blockquote>
-                                        <p><b>Note:</b> DEPRECATED: This feature will be discontinued in a future MX version. Supported only on WWAN-enabled devices with more than one SIM socket.</p>
-                                        <p><b>Parm Name:</b> SimSocketUsage</p>
-                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
-                                        
-
-                                        
-                                        </blockquote>
                                     
                                     
-                                    <div>
-                                        <table class="table">
-                                            <tbody><tr>
-                                                <th>Option</th>
-                                                <th>Name</th>
-                                                <th>Description</th>
-                                           <!-- <th>Model</th> -->
-                                                <th>Note</th>
-                                                <th>Status</th>
-                                                <th>Requires</th>
-                                            </tr>
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A,B" data-api="" data-smartdoc="">
-                                                <td>0</td>
-                                                <td>Do not change</td>
-                                                <td>This value (or the absence of this parm from the XML) causes no change to user control over SIM Socket selection; any previously selected setting is retained.</td>
-                                                <td></td>
-
-                                                <td></td>
-
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
-                                                    All
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 6.2+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A,B" data-api="" data-smartdoc="">
-                                                <td>1</td>
-                                                <td>Enable</td>
-                                                <td>Enables the device user to control which SIM Socket is used.</td>
-                                                <td></td>
-
-                                                <td></td>
-
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
-                                                    All
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 6.2+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-devicetype="A,B" data-api="" data-smartdoc="">
-                                                <td>2</td>
-                                                <td>Disable</td>
-                                                <td>Prevents the user from changing the selected SIM Socket.</td>
-                                                <td></td>
-
-                                                <td></td>
-
-
-                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
-                                        
-<!--                                                <td> 
-                                                    All
-                                                </td>
- -->                                                
-                                                <td>
-                                                    
-
-                                                        <p>MX: 6.2+ </p>
-                                                    
-                                                </td> 
-                                                
-                                            </tr>
-                                            
-                                            
-                                        </tbody></table>
-                                    </div>	
                                     
-                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1706,28 +1724,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="data-roaming-enabledisable"><a class="heading-anchor" href="#data-roaming-enabledisable"><span></span></a>Data Roaming Enable/Disable</h2>
@@ -1856,6 +1852,11 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="data-roaming-onoff"><a class="heading-anchor" href="#data-roaming-onoff"><span></span></a>Data Roaming On/Off</h2>
@@ -1966,6 +1967,45 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2263,37 +2303,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="cellular-data-limit-enabledisable"><a class="heading-anchor" href="#cellular-data-limit-enabledisable"><span></span></a>Cellular Data Limit Enable/Disable</h2>
@@ -2404,6 +2413,12 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2560,6 +2575,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="cellular-data-limit-value"><a class="heading-anchor" href="#cellular-data-limit-value"><span></span></a>Cellular Data Limit Value</h2>
@@ -2593,6 +2610,7 @@
                                     
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -2692,7 +2710,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-cellular-data-warning"><a class="heading-anchor" href="#set-cellular-data-warning"><span></span></a>Set Cellular Data Warning</h2>
@@ -2726,12 +2743,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2940,6 +2951,10 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3175,8 +3190,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="incoming-calls-enabledisable"><a class="heading-anchor" href="#incoming-calls-enabledisable"><span></span></a>Incoming Calls Enable/Disable</h2>
@@ -3283,6 +3296,7 @@
                                     </div>	
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -3398,12 +3412,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="11.9" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="emergency-callback-window"><a class="heading-anchor" href="#emergency-callback-window"><span></span></a>Emergency Callback Window</h2>
@@ -3437,6 +3445,9 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3602,7 +3613,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="plmn-lock-ui-showhide"><a class="heading-anchor" href="#plmn-lock-ui-showhide"><span></span></a>PLMN Lock UI Show/Hide</h2>
@@ -3716,6 +3726,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="dual-sim-dual-standby-enabledisable"><a class="heading-anchor" href="#dual-sim-dual-standby-enabledisable"><span></span></a>Dual-SIM Dual Standby Enable/Disable</h2>
@@ -3726,7 +3738,7 @@
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> DEPRECATED: This feature will be discontinued in a future MX version. Supported only on WWAN-enabled SD660-platform devices with dual SIM slot running Android 8.x Oreo or Android 10. Not supported on L10a devices. Changing this setting requires reboot on devices running Android 10 or older.</p>
+                                        <p><b>Note:</b> DEPRECATED: Feature to be discontinued in a future MX version. Supported only on WWAN-enabled SD660-platform devices with dual SIM slot running Android 8.x Oreo or Android 10. Not supported on L10a devices. Changing this setting requires reboot on devices running Android 10 or older.</p>
                                         <p><b>Parm Name:</b> DsdsUsage</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -3859,6 +3871,9 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="dsds-features-checkbox"><a class="heading-anchor" href="#dsds-features-checkbox"><span></span></a>DSDS Features (checkbox)</h2>
@@ -3873,7 +3888,6 @@
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> Supported only on L10, TC57 and TC77 devices running Android 8.x Oreo or Android 10.</p>
                                         <p><b>Parm Name:</b> DSDSFeatures</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
                                         
@@ -3959,17 +3973,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="dsds-automatic-selection"><a class="heading-anchor" href="#dsds-automatic-selection"><span></span></a>DSDS Automatic Selection</h2>
@@ -3980,7 +3983,6 @@
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> Supported only on L10, TC57 and TC77 devices running Android 8.x Oreo or Android 10.</p>
                                         <p><b>Shown if:</b> DSDS Features checkbox is "checked"</p>
                                         <p><b>Parm Name:</b> DsdsAutoService</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -4093,6 +4095,19 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="dsds-sim-subscription"><a class="heading-anchor" href="#dsds-sim-subscription"><span></span></a>DSDS SIM Subscription</h2>
@@ -4103,7 +4118,6 @@
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> Supported only on L10, TC57 and TC77 devices running Android 8.x Oreo or Android 10.</p>
                                         <p><b>Shown if:</b> DSDS Features checkbox is "checked" and DSDS Auto-service is set to "Enable"</p>
                                         <p><b>Parm Name:</b> PreferredSimSubscription</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -4189,6 +4203,10 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.2" data-api="26" data-smartdoc="">
 
                                     <h2 class="anchor" id="out-of-service-timer"><a class="heading-anchor" href="#out-of-service-timer"><span></span></a>Out-of-Service Timer</h2>
@@ -4205,7 +4223,6 @@
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> Supported only on L10, TC57 and TC77 devices running Android 8.x Oreo or Android 10.</p>
                                         <p><b>Shown if:</b> DSDS Features checkbox is "checked" and DSDS Auto-service is set to "Enable"</p>
                                         <p><b>Parm Name:</b> OOSTimer</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -4236,23 +4253,18 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="dsds-call-subscription"><a class="heading-anchor" href="#dsds-call-subscription"><span></span></a>DSDS Call Subscription</h2>
                                     <p class="">
 
-        </p><p>Allows selection of the SIM subscription to be used as "preferred" for voice calls when automatic SIM selection is NOT used. </p>
+        </p><p>Allows selection of the SIM subscription to be "preferred" for voice calls <strong>when <a href="#dsds-automatic-selection">DSDS automatic selection</a> is <u>DISABLED</u></strong>. </p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>This parameter causes no attempt to change subscriptions if the preferred SIM subscription goes out of service</strong>. To enable auto-switching, see <a href="#dsds-call-auto-subscription">DSDS Call Auto-subscription</a> parameter. </p>
 
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> Supported only on L10, TC57 and TC77 devices running Android 8.x Oreo or Android 10.</p>
                                         <p><b>Shown if:</b> DSDS Features checkbox is "checked" and DSDS Auto-service is set to "Disable"</p>
                                         <p><b>Parm Name:</b> DSDSCallSubscription</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -4397,6 +4409,7 @@
                                     
                                     
                                     
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="dsds-message-subscription"><a class="heading-anchor" href="#dsds-message-subscription"><span></span></a>DSDS Message Subscription</h2>
@@ -4407,7 +4420,6 @@
 
 <p></p>
                                         <blockquote>
-                                        <p><b>Note:</b> Supported only on L10, TC57 and TC77 devices running Android 8.x Oreo or Android 10.</p>
                                         <p><b>Shown if:</b> DSDS Features checkbox is "checked" and DSDS Auto-service is set to "Disable"</p>
                                         <p><b>Parm Name:</b> DSDSMessageSubscription</p>
                                         <!-- <p><b>Pivotal Parm:</b> No</p> -->
@@ -4535,13 +4547,116 @@
                                 </div> 
                                     
                                     
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="dsds-call-auto-subscription"><a class="heading-anchor" href="#dsds-call-auto-subscription"><span></span></a>DSDS Call Auto-subscription</h2>
+                                    <p class="">
+
+        </p><p>Allows selection of the SIM subscription to be used as "preferred" for outgoing voice calls <strong>when <a href="#dsds-automatic-selection">DSDS automatic selection</a> is <u>ENABLED</u></strong>. This can help reduce service interruptions if the preferred SIM goes out of service and another service is available using a second installed SIM. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> DSDS Auto Service is set to "Enable"</p>
+                                        <p><b>Parm Name:</b> DSDSCallAutoSubscription</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
                                     
                                     
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>SIM1</td>
+                                                <td>Sets SIM1 as the preferred subscription for outgoing calls.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>2</td>
+                                                <td>SIM2</td>
+                                                <td>Sets SIM2 as the preferred subscription for outgoing calls.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
                                     
-                                    
-                                    
-                                    
-                                    
+                                </div> 
                                     
                                     
                                     
@@ -4637,6 +4752,19 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -4749,7 +4877,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="device-admin-network-lock"><a class="heading-anchor" href="#device-admin-network-lock"><span></span></a>Device Admin Network Lock</h2>
@@ -4839,43 +4966,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="26" data-smartdoc="">
-
-                                    <h2 class="anchor" id="retry-count"><a class="heading-anchor" href="#retry-count"><span></span></a>Retry Count</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the maximum number of failed attempts to unlock the device, after which the unlock feature is disabled and a service technician is required to re-enable it. </p>
-
-<p><strong>Parm value input rules</strong>: </p>
-
-<ul>
-<li>String from 1–2 characters </li>
-</ul>
-
-
-<p></p>
-                                        <blockquote>
-                                        <p><b>Note:</b> Supported on WWAN-enabled SDM660-platform devices only.</p>
-                                        <p><b>Shown if:</b> DA Network Lock is "Lock" or "Unlock"</p>
-                                        <p><b>Parm Name:</b> RetryCount</p>
-                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
-                                        <p><b>Requires:</b> 
-                                            </p><ul>
-                                                <li>MX: 9.2+ </li>
-                                                <li>Android API: 26+ </li>
-                                           </ul>
-                                        <p></p>
-                                        
-
-                                        
-                                        </blockquote>
-                                    
-                                    
-                                    
-                                </div> 
                                     
                                         <div class="">
                                     
@@ -4973,10 +5063,40 @@
                                     
                                 </div> 
                                     
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="26" data-smartdoc="">
+
+                                    <h2 class="anchor" id="retry-count"><a class="heading-anchor" href="#retry-count"><span></span></a>Retry Count</h2>
+                                    <p class="">
+
+        </p><p>Used to enter the maximum number of failed attempts to unlock the device, after which the unlock feature is disabled and a service technician is required to re-enable it. </p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>String from 1–2 characters </li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Note:</b> Supported on WWAN-enabled SDM660-platform devices only.</p>
+                                        <p><b>Shown if:</b> DA Network Lock is "Lock" or "Unlock"</p>
+                                        <p><b>Parm Name:</b> RetryCount</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 9.2+ </li>
+                                                <li>Android API: 26+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
                                     
                                     
                                     
-                                    
+                                </div> 
                                     
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="26" data-smartdoc="">
@@ -5018,6 +5138,11 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="26" data-smartdoc="">
 
                                     <h2 class="anchor" id="enter-iccid"><a class="heading-anchor" href="#enter-iccid"><span></span></a>Enter ICCID</h2>
@@ -5052,6 +5177,7 @@
                                     
                                     
                                 </div> 
+                                    
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="" data-smartdoc="">
 
@@ -5088,7 +5214,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -5202,7 +5327,6 @@
                                     
                                     
                                     
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="mno-lock-action"><a class="heading-anchor" href="#mno-lock-action"><span></span></a>MNO Lock Action</h2>
@@ -5289,6 +5413,7 @@
                                     
                                 </div> 
                                     
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="26" data-smartdoc="">
 
                                     <h2 class="anchor" id="mno-certificate-key"><a class="heading-anchor" href="#mno-certificate-key"><span></span></a>MNO Certificate Key</h2>
@@ -5329,6 +5454,10 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                         <div class="">
@@ -5419,9 +5548,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="26" data-smartdoc="">
 
                                     <h2 class="anchor" id="mno-unlock-code"><a class="heading-anchor" href="#mno-unlock-code"><span></span></a>MNO Unlock Code</h2>
@@ -5456,6 +5582,8 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -5526,9 +5654,6 @@
                                 </div> 
                                     
                                     
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="26" data-smartdoc="">
 
                                     <h2 class="anchor" id="mno-retry-count"><a class="heading-anchor" href="#mno-retry-count"><span></span></a>MNO Retry Count</h2>
@@ -5563,7 +5688,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -5605,6 +5729,7 @@
                                     
                                 </div> 
                                     
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="9.2" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="service-tech-certificate-key"><a class="heading-anchor" href="#service-tech-certificate-key"><span></span></a>Service Tech Certificate Key</h2>
@@ -5644,6 +5769,8 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
                                     
                                         <div class="">
                                     
@@ -5730,7 +5857,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -5936,6 +6062,9 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="esim-features-checkbox"><a class="heading-anchor" href="#esim-features-checkbox"><span></span></a>eSIM Features (checkbox)</h2>
@@ -6023,6 +6152,10 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -6140,11 +6273,6 @@
                                     
                                 </div> 
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="esim-slot-id"><a class="heading-anchor" href="#esim-slot-id"><span></span></a>eSIM Slot ID</h2>
@@ -6233,6 +6361,9 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -6404,6 +6535,7 @@
                                     
                                 </div> 
                                     
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.0" data-api="26" data-smartdoc="">
 
                                     <h2 class="anchor" id="profile-nickname"><a class="heading-anchor" href="#profile-nickname"><span></span></a>Profile Nickname</h2>
@@ -6438,6 +6570,9 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.0" data-api="26" data-smartdoc="">
@@ -6476,8 +6611,6 @@
                                 </div> 
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.0" data-api="26" data-smartdoc="">
 
                                     <h2 class="anchor" id="updated-profile-nickname"><a class="heading-anchor" href="#updated-profile-nickname"><span></span></a>Updated Profile Nickname</h2>
@@ -6512,6 +6645,7 @@
                                     
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -6631,7 +6765,6 @@
                                 </div> 
                                     
                                     
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.0" data-api="26" data-smartdoc="">
 
                                     <h2 class="anchor" id="sm-dp-address"><a class="heading-anchor" href="#sm-dp-address"><span></span></a>SM-DP+ Address</h2>
@@ -6701,7 +6834,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -6798,6 +6930,10 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="sm-dp-slot-id"><a class="heading-anchor" href="#sm-dp-slot-id"><span></span></a>SM-DP+ Slot ID</h2>
@@ -6886,6 +7022,8 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
                                     
                                     
                                     
@@ -6999,6 +7137,7 @@
                                     </div>	
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -7353,6 +7492,7 @@
                                     
                                 </div> 
                                     
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="network-mode-features-onoff"><a class="heading-anchor" href="#network-mode-features-onoff"><span></span></a>Network Mode Features On/Off</h2>
@@ -7460,6 +7600,9 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                         <div class="">
@@ -7602,8 +7745,6 @@
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="5gnr-mode-setting-onoff"><a class="heading-anchor" href="#5gnr-mode-setting-onoff"><span></span></a>5GNR Mode Setting On/Off</h2>
@@ -7725,6 +7866,8 @@
                                     </div>	
                                     
                                 </div> 
+                                    
+                                    
                                     
                                         <div class="">
                                     
@@ -7848,7 +7991,6 @@
                                 </div> 
                                     
                                     
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="5g-new-radio-slot-id"><a class="heading-anchor" href="#5g-new-radio-slot-id"><span></span></a>5G New Radio Slot ID</h2>
@@ -7941,6 +8083,7 @@
                                     </div>	
                                     
                                 </div> 
+                                    
                                     
                                         <div class="">
                                     
@@ -8054,7 +8197,7 @@
 
 <h4 id="populatedmccmnclist" class="anchor"><a class="heading-anchor" href="#populatedmccmnclist"><span></span></a>Populated mccmnc list</h4>
 
-<pre class="prettyprint">
+<p><code>
 
     {
 
@@ -8078,11 +8221,11 @@
 
     }
 
-</pre>
+</code></p>
 
 <h4 id="unpopulatedmccmnclist" class="anchor"><a class="heading-anchor" href="#unpopulatedmccmnclist"><span></span></a>Unpopulated mccmnc list</h4>
 
-<pre class="prettyprint">
+<p><code>
 
 {
 
@@ -8099,7 +8242,7 @@
 
     }
 
-</pre>
+</code></p>
 
 
 <p></p>
@@ -8121,6 +8264,211 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="device-mode"><a class="heading-anchor" href="#device-mode"><span></span></a>Device Mode</h2>
+                                    <p class="">
+
+        </p><p>Used to select the communications mode most appropriate for the intended purpose of the device. <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Data-centric mode is required if the network provider allows only Evolved Packet System (EPS) attach mode</strong>. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Parm Name:</b> DeviceMode</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>Voice-centric</td>
+                                                <td>Configures the device for mostly voice calls calls.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A,B" data-api="" data-smartdoc="">
+                                                <td>2</td>
+                                                <td>Data-centric</td>
+                                                <td>Configures the device for mostly data usage; required if network provider uses EPS-only attach mode.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+                                                    All
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="device-mode-slot-id"><a class="heading-anchor" href="#device-mode-slot-id"><span></span></a>Device Mode Slot ID</h2>
+                                    <p class="">
+
+        </p><p>Used to select the to SIM slot to which to apply the selected Device Mode. </p>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Note:</b> Supported only on WWAN-enabled devices with more than one SIM socket.</p>
+                                        <p><b>Shown if:</b> Device Mode is NOT set to "Do not change"</p>
+                                        <p><b>Parm Name:</b> DeviceModeSlotId</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A" data-api="34" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>SIM1</td>
+                                                <td>Applies the selected Device Mode to SIM1.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
+                                                        <p>Android API: 34+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="14.0" data-devicetype="A" data-api="34" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>SIM2</td>
+                                                <td>Applies the selected Device Mode to SIM2.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 14.0+ </p>
+                                                        <p>Android API: 34+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -8245,10 +8593,6 @@
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                 </div><!--/.container-->
@@ -8473,29 +8817,66 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    {
+                            presentif: "",
+                            name: "SimSocketUsage",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to user control over SIM Socket selection; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "6.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "Enable",
+                                    description: "Enables the device user to control which SIM Socket is used.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "6.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "2",
+                                    name: "Disable",
+                                    description: "Prevents the user from changing the selected SIM Socket.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "6.2",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
                     
                     
                     
@@ -8583,66 +8964,40 @@ filtering
                     },
                     
                     
-                    {
-                            presentif: "",
-                            name: "SimSocketUsage",
-                            pivotal: "No",
-                        
-                        
-                        listitems: [
-                                {
-                                    code: "0",
-                                    name: "Do not change",
-                                    description: "This value (or the absence of this parm from the XML) causes no change to user control over SIM Socket selection; any previously selected setting is retained.",
-                                    requires: {
-                                        osx: "",
-                                        osxEnd: "",
-                                        mx: "6.2",
-                                        api: "",
-                                        osxSpecific: "",
-                                        osxSpecificList: "",
-                                        osxExclude: "",
-                                        osxExcludeEnd: ""
-                                    },
-
-                                },
-                        
-                                {
-                                    code: "1",
-                                    name: "Enable",
-                                    description: "Enables the device user to control which SIM Socket is used.",
-                                    requires: {
-                                        osx: "",
-                                        osxEnd: "",
-                                        mx: "6.2",
-                                        api: "",
-                                        osxSpecific: "",
-                                        osxSpecificList: "",
-                                        osxExclude: "",
-                                        osxExcludeEnd: ""
-                                    },
-
-                                },
-                        
-                                {
-                                    code: "2",
-                                    name: "Disable",
-                                    description: "Prevents the user from changing the selected SIM Socket.",
-                                    requires: {
-                                        osx: "",
-                                        osxEnd: "",
-                                        mx: "6.2",
-                                        api: "",
-                                        osxSpecific: "",
-                                        osxSpecificList: "",
-                                        osxExclude: "",
-                                        osxExcludeEnd: ""
-                                    },
-
-                                },
-                        
-                        ]
-                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -8856,28 +9211,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "DataRoamingUsage",
@@ -8951,6 +9284,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "DataRoamingState",
@@ -9011,6 +9349,45 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -9258,37 +9635,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "CellularDataLimitUsage",
@@ -9349,6 +9695,12 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -9446,6 +9798,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -9465,6 +9819,7 @@ filtering
                         
                         
                     },
+                    
                     
                     
                     
@@ -9523,7 +9878,6 @@ filtering
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "",
@@ -9543,12 +9897,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -9727,6 +10075,10 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
                     {
                             presentif: "Background Data Usage is set to &quot;Enable&quot;",
                             name: "BackgroundDataState",
@@ -9842,8 +10194,6 @@ filtering
                     
                     
                     
-                    
-                    
                     {
                             presentif: "",
                             name: "IncomingCalls",
@@ -9904,6 +10254,7 @@ filtering
                         
                         ]
                     },
+                    
                     
                     
                     
@@ -9973,12 +10324,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -9998,6 +10343,9 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -10102,7 +10450,6 @@ filtering
                     
                     
                     
-                    
                     {
                             presentif: "",
                             name: "ShowPlmnLock",
@@ -10163,6 +10510,8 @@ filtering
                         
                         ]
                     },
+                    
+                    
                     
                     
                     
@@ -10262,6 +10611,9 @@ filtering
                     
                     
                     
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "DSDSFeatures",
@@ -10305,17 +10657,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -10399,6 +10740,19 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "DSDS Features checkbox is &quot;checked&quot; and DSDS Auto-service is set to &quot;Enable&quot;",
                             name: "PreferredSimSubscription",
@@ -10452,6 +10806,10 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -10471,12 +10829,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -10586,6 +10938,7 @@ filtering
                     
                     
                     
+                    
                     {
                             presentif: "DSDS Features checkbox is &quot;checked&quot; and DSDS Auto-service is set to &quot;Disable&quot;",
                             name: "DSDSMessageSubscription",
@@ -10665,13 +11018,66 @@ filtering
                     },
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    {
+                            presentif: "DSDS Auto Service is set to &quot;Enable&quot;",
+                            name: "DSDSCallAutoSubscription",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "SIM1",
+                                    description: "Sets SIM1 as the preferred subscription for outgoing calls.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "2",
+                                    name: "SIM2",
+                                    description: "Sets SIM2 as the preferred subscription for outgoing calls.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
                     
                     
                     
@@ -10722,6 +11128,19 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -10780,7 +11199,6 @@ filtering
                     
                     
                     
-                    
                     {
                             presentif: "",
                             name: "DeviceAdminNetworkLock",
@@ -10829,28 +11247,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    {
-                        requires: {
-                            osx: "",
-                            osxEnd: "",
-                            mx: "9.2",
-                            api: "26",
-                            osxSpecific: "",
-                            osxSpecificList: "",
-                            osxExclude: "",
-                            osxExcludeEnd: "",
-                            devicetype: "A"
-                        },
-
-                            presentif: "DA Network Lock is &quot;Lock&quot; or &quot;Unlock&quot;",
-                            name: "RetryCount",
-                            pivotal: "No",
-                        
-                        
-                    },
-                    
                     {
                             presentif: "",
                             name: "SvcAdvancedFeatures",
@@ -10895,10 +11291,25 @@ filtering
                         ]
                     },
                     
-                    
-                    
-                    
-                    
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "9.2",
+                            api: "26",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A"
+                        },
+
+                            presentif: "DA Network Lock is &quot;Lock&quot; or &quot;Unlock&quot;",
+                            name: "RetryCount",
+                            pivotal: "No",
+                        
+                        
+                    },
                     
                     
                     {
@@ -10925,6 +11336,11 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -10945,6 +11361,7 @@ filtering
                         
                     },
                     
+                    
                     {
                         requires: {
                             osx: "",
@@ -10964,7 +11381,6 @@ filtering
                         
                         
                     },
-                    
                     
                     
                     
@@ -11020,7 +11436,6 @@ filtering
                     
                     
                     
-                    
                     {
                             presentif: "",
                             name: "MNOLockAction",
@@ -11065,6 +11480,7 @@ filtering
                         ]
                     },
                     
+                    
                     {
                         requires: {
                             osx: "",
@@ -11084,6 +11500,10 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
                     
                     
                     {
@@ -11129,9 +11549,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
                     
                     
                     
@@ -11188,6 +11605,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -11207,9 +11626,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
                     
                     
                     {
@@ -11235,7 +11651,6 @@ filtering
                     
                     
                     
-                    
                     {
                         requires: {
                             osx: "",
@@ -11256,6 +11671,7 @@ filtering
                         
                     },
                     
+                    
                     {
                         requires: {
                             osx: "",
@@ -11275,6 +11691,8 @@ filtering
                         
                         
                     },
+                    
+                    
                     
                     {
                             presentif: "",
@@ -11319,7 +11737,6 @@ filtering
                         
                         ]
                     },
-                    
                     
                     
                     
@@ -11439,6 +11856,9 @@ filtering
                     
                     
                     
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "eSIMFeatures",
@@ -11482,6 +11902,10 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -11549,11 +11973,6 @@ filtering
                         ]
                     },
                     
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "eSIM Features checkbox is &quot;checked&quot; AND Add Profile is &quot;Use Activation Code&quot;",
                             name: "eSimSlotId",
@@ -11597,6 +12016,9 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -11696,6 +12118,7 @@ filtering
                         ]
                     },
                     
+                    
                     {
                         requires: {
                             osx: "",
@@ -11715,6 +12138,9 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     {
@@ -11738,8 +12164,6 @@ filtering
                     },
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -11759,6 +12183,7 @@ filtering
                         
                         
                     },
+                    
                     
                     
                     
@@ -11824,7 +12249,6 @@ filtering
                     },
                     
                     
-                    
                     {
                         requires: {
                             osx: "",
@@ -11864,7 +12288,6 @@ filtering
                         
                         
                     },
-                    
                     
                     
                     
@@ -11916,6 +12339,10 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
                     {
                             presentif: "eSIM Features checkbox is &quot;checked&quot; AND Add Profile is &quot;Use Activation Code&quot;",
                             name: "SmdpSlotId",
@@ -11959,6 +12386,8 @@ filtering
                         
                         ]
                     },
+                    
+                    
                     
                     
                     
@@ -12022,6 +12451,7 @@ filtering
                         
                         ]
                     },
+                    
                     
                     
                     
@@ -12232,6 +12662,7 @@ filtering
                         ]
                     },
                     
+                    
                     {
                             presentif: "",
                             name: "PreferredNetworkModeFeatures",
@@ -12292,6 +12723,9 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
                     
                     
                     {
@@ -12375,8 +12809,6 @@ filtering
                     
                     
                     
-                    
-                    
                     {
                             presentif: "",
                             name: "Preferred5GNRModeFeatures",
@@ -12437,6 +12869,8 @@ filtering
                         
                         ]
                     },
+                    
+                    
                     
                     {
                             presentif: "Preferred 5G NR Mode Features is set to &quot;Turn on&quot;",
@@ -12500,7 +12934,6 @@ filtering
                     },
                     
                     
-                    
                     {
                             presentif: "Preferred 5G NR Mode Features is set to &quot;Turn On&quot;",
                             name: "Preferred5GNRModeSlotId",
@@ -12544,6 +12977,7 @@ filtering
                         
                         ]
                     },
+                    
                     
                     {
                             presentif: "",
@@ -12612,6 +13046,116 @@ filtering
                         
                     },
                     
+                    
+                    
+                    {
+                            presentif: "",
+                            name: "DeviceMode",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "Voice-centric",
+                                    description: "Configures the device for mostly voice calls calls.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "2",
+                                    name: "Data-centric",
+                                    description: "Configures the device for mostly data usage; required if network provider uses EPS-only attach mode.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
+                    
+                    
+                    
+                    
+                    
+                    {
+                            presentif: "Device Mode is NOT set to &quot;Do not change&quot;",
+                            name: "DeviceModeSlotId",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "SIM1",
+                                    description: "Applies the selected Device Mode to SIM1.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
+                                        api: "34",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "SIM2",
+                                    description: "Applies the selected Device Mode to SIM2.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "14.0",
+                                        api: "34",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
                     
                     
                     
@@ -12736,7 +13280,7 @@ u {color: #45AED6;}
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
