@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.6
+                                            1.7
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-6/about">
+                            <a href="/identityguardian/1-7/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/setup">
+                            <a href="/identityguardian/1-7/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/licensing">
+                            <a href="/identityguardian/1-7/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/mc">
+                            <a href="/identityguardian/1-7/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/usage">
+                            <a href="/identityguardian/1-7/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/api">
+                            <a href="/identityguardian/1-7/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/faq">
+                            <a href="/identityguardian/1-7/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/search">
+                            <a href="/identityguardian/1-7/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="about-identity-guardian" class="anchor"><a class="heading-anchor" href="#about-identity-guardian"><span></span></a>About Identity Guardian</h1>
                                     <p>
                                             Identity Guardian
-                                            1.6
+                                            1.7
                                     </p>
                                 </div>
                             </section>                    
@@ -303,7 +303,62 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 
 <hr>
 
-<h2 id="newin16" class="anchor"><a class="heading-anchor" href="#newin16"><span></span></a>New in 1.6</h2>
+<h2 id="newin17" class="anchor"><a class="heading-anchor" href="#newin17"><span></span></a>New in 1.7</h2>
+
+<ul>
+<li><strong>Enhanced Identity Guardian functionality without <a href="../licensing/">licenses</a>.</strong> For devices without a valid Identity Guardian license, the application will no longer restrict access with the default free passcode authentication method, even if premium authentication features like facial recognition and SSO are applied.</li>
+
+<li><strong>The new <a href="../usage/#clearapplicationdata">Clear Application Data</a> feature removes application storage data to reset business applications to their default state,</strong> ensuring that subsequent users cannot access a previous user’s information.</li>
+
+<li><strong>The new <a href="../usage/#globalsignout">Global Sign-Out</a> feature automatically signs users out of Identity Guardian</strong> whenever a user signs out from any SSO-enabled application on the device in shared mode. This is only supported with Microsoft Entra ID.</li>
+
+<li><strong>Enhanced the user interface to notify users of unsuccessful face captures during user enrollment.</strong>
+<img alt="image" style="height:325px" src="./facial-capture-failed.png"></li>
+
+<li><strong>Integrated Microsoft Authentication Library v5.8.2</strong> for improved SSO authentication with the Microsoft Entra provider, offering enhanced security and compatibility with the latest Microsoft identity platform features. </li>
+
+<li><strong>Resolved Issues:</strong>
+
+
+<ul>
+<li>The Identity Guardian application now properly updates all user information during enrollment and authentication in the ZDNA Cloud console.</li>
+
+<li>Fixed an issue where facial authentication would fail if the device was rotated during facial capture.</li>
+
+<li>Temporarily stored barcode data is now correctly cleared after the selected storage period, even when the device is in Doze mode.</li>
+
+<li>The Auto-Populate feature for SSO credentials now functions properly during device authentication on personally assigned devices.</li></ul>
+</li>
+
+<li><strong>Known Issues:</strong>
+
+
+<ul>
+<li><strong>After adding the Identity Guardian package name under “Apps Allowed on Lock Screen,” users cannot access the Guardian Safe app list on the device.</strong></li>
+
+<li><strong>Uninstalling Identity Guardian from the lock screen disables the home button on the device.</strong> To remedy this, either reinstall Identity Guardian or set it to enrollment mode before uninstallation.</li>
+
+<li><strong>When installing Identity Guardian in enrollment mode from VMWare Workspace ONE UEM (AirWatch) EMM via Google Play, the authentication screen might appear instead of the expected enrollment screen.</strong> To prevent this, install, and configure the application from the VMWare private app store instead of the public play store.</li>
+
+<li><strong>When using Microsoft Entra ID for single sign-on (SSO), a new user is not automatically logged into Microsoft Associated apps following the sign out of a previous user.</strong> To address this, users can either relaunch the Microsoft Associate apps or enter the newly logged in user ID when prompted, ensuring a successful login.</li>
+
+<li><strong>A user authentication error might occur intermittently if a user attempts to cancel SSO authentication and then tries to re-authenticate.</strong> To resolve this, click on any button on the error screen to dismiss the error, allowing the user to proceed further.</li>
+
+<li><strong>When PingFed is used for single sign-on (SSO) and Identity Guardian is upgraded, users might experience a one-time issue preventing them from signing in on a shared device.</strong> This is overcome by rebooting the device, docking it on a cradle, or locking/unlocking the device based on the configuration set by the system administrator. This issue does not recur after the first sign-out attempt.</li>
+
+<li><strong>Single Sign-On (SSO) credentials are not automatically populated during the Identity Guardian login process</strong> on devices set up in shared mode with the Microsoft Authenticator app using Microsoft Entra ID SSO. To address this, activate both "Guardian Safe" and "Auto Fill for SSO" in the <a href="../mc/#guardiansafeconfiguration">Guardian Safe Configuration</a>.</li>
+
+<li><strong>Users may experience a brief delay in password autofill when using the "Auto Fill for SSO" or "Guardian Safe" features,</strong> particularly after a device reboot or when the device wakes from a low-power state (doze mode). To minimize this impact, allow a few seconds after the device restarts or wakes up before attempting to log in. </li>
+
+<li><strong>When using the Microsoft Authenticator app in shared mode for Microsoft Entra ID single sign-on (SSO), users may be unable to modify credentials saved in Identity Guardian.</strong> To resolve this, remove the existing app entry from the Guardian Safe list. On the next app login attempt, the user is prompted to save their credentials, allowing them to update their credentials afterward. </li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin16" class="anchor"><a class="heading-anchor" href="#newin16"><span></span></a>New in 1.6</h3>
 
 <ul>
 <li><strong>The <a href="../usage/#guardiansafe">Guardian Safe</a> feature is now officially released.</strong> It securely stores user credentials after a single entry on the login screen of any application, automatically filling in the credentials for future logins. <strong>Note:</strong> Use of Guardian Safe requires an Identity Guardian license.</li>
@@ -312,7 +367,7 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 
 <li><strong>Now securely <a href="../usage/#selfenrollment">self-enroll</a> new users directly from the Identity Guardian lock screen on devices configured for Authentication mode, using SSO for identity verification.</strong> This eliminates the need for switching the application mode between Enrollment and Authentication.</li>
 
-<li><strong>Early Access Preview:</strong> 
+<li><strong>Early Access Preview:</strong>
 <strong>The <a href="../usage/#printsharebarcode">Identity Guardian QR Print (IGQRPrint)</a> app facilitates the immediate printing and sharing of barcodes after user enrollment, simplifying the process.</strong> To use this feature, a separate IGQR print application must be installed.</li>
 
 <li><strong>The new <a href="../usage/#proxymode">Proxy Mode</a> feature allows third-party apps to notify Identity Guardian of user check-in/check-out events,</strong> enabling this information to be shared with other Zebra apps like <a href="/devicetracker">Device Tracker</a> for user accountability. It is designed for organizations that use their own blocking screen apps for device access, who wish to track user accountability across Zebra apps.</li>
@@ -344,7 +399,7 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 </li>
 </ul>
 
-<h3 id="newin161" class="anchor"><a class="heading-anchor" href="#newin161"><span></span></a>New in 1.6.1</h3>
+<h4 id="newin161" class="anchor"><a class="heading-anchor" href="#newin161"><span></span></a>New in 1.6.1</h4>
 
 <ul>
 <li><strong>New security enhancement -</strong> A demo mode message will appear on the Identity Guardian <a href="../usage/#signinauthentication">lock screen</a> if devices are not provisioned with the organization’s own encryption keys for <a href="../mc/#enrollmentconfiguration">user enrollment</a> and <a href="../mc/#authenticationconfiguration">authentication</a>. This applies to shared device environments where the authentication scheme includes a barcode combined with facial biometrics or a user PIN/passcode.</li>
@@ -362,10 +417,6 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 <li><strong>Users with devices that only have the camera scanner enabled can now consistently scan Identity Guardian barcodes</strong> to successfully log in on shared devices.</li></ul>
 </li>
 </ul>
-
-<hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="newin15" class="anchor"><a class="heading-anchor" href="#newin15"><span></span></a>New in 1.5</h3>
 
@@ -474,7 +525,7 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 <ul>
 <li><strong>Integration of Zebra <a href="/devicetracker">Device Tracker</a> with Identity Guardian client.</strong> Device Tracker v6.2 now offers full support for Identity Guardian to collect device checkin/checkout data and single sign-on (SSO) support.</li>
 
-<li><strong>Retrieve multifactor authentication information from the <a href="../api/#retrieveusersession">Current and Previous User Session API</a>.</strong></li>
+<li><strong>Retrieve multifactor authentication information from the <a href="../api/#getusersession">Current and Previous User Session API</a>.</strong></li>
 
 <li><strong>Preview a new feature, <a href="../mc/#authenticationconfiguration">Authentication Data Storage</a>, allowing for temporary storage of user authentication data on the device, eliminating the need for repeated barcode scans on a shared device.</strong> A one-time scan is sufficient for initial use. Depending on the admin configuration, subsequent device access may prompt primary/secondary authentication. Full functionality of this feature will be available in the upcoming release of Identity Guardian.</li>
 
@@ -584,7 +635,7 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">

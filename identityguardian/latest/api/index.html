@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.6
+                                            1.7
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-6/about">
+                            <a href="/identityguardian/1-7/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/setup">
+                            <a href="/identityguardian/1-7/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/licensing">
+                            <a href="/identityguardian/1-7/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/mc">
+                            <a href="/identityguardian/1-7/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/usage">
+                            <a href="/identityguardian/1-7/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/api">
+                            <a href="/identityguardian/1-7/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/faq">
+                            <a href="/identityguardian/1-7/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-6/search">
+                            <a href="/identityguardian/1-7/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="apis" class="anchor"><a class="heading-anchor" href="#apis"><span></span></a>APIs</h1>
                                     <p>
                                             Identity Guardian
-                                            1.6
+                                            1.7
                                     </p>
                                 </div>
                             </section>                    
@@ -300,7 +300,7 @@
   </tr>
 
   <tr>
-    <td><a href="#startauthentication">Start Authentication</a></td>
+       <td><a href="#startauthentication">Start Authentication</a></td>
     <td>Activates Identity Guardian’s user authentication screen to confirm user credentials for device access.</td>
     <td>Used when Identity Guardian is employed for application-level authentication instead of device-level.</td>
   </tr>
@@ -483,7 +483,7 @@
 <h4 id="sampleresponse" class="anchor"><a class="heading-anchor" href="#sampleresponse"><span></span></a>Sample Response</h4>
 
 <pre class="prettyprint"><code>    {
-        state: “SHOWN”, 
+        state: “SHOWN”,
         lastchangedtimestamp:”MM:DD:YY HH:MM:SS”
     }
 </code></pre>
@@ -532,7 +532,7 @@
   </tr>
 
   <tr>
-    <td>authenticationFactors</td>
+       <td>authenticationFactors</td>
     <td>JSON object</td>
     <td>Authentication Mode</td>
     <td>[Returns authentication factor details. See <a href="#sampleauthenticationresults">Sample Authentication Results</a> below.]</td>
@@ -540,7 +540,7 @@
   </tr>
 
   <tr>
-    <td>adminByPassFactors</td>
+       <td>adminByPassFactors</td>
     <td>Array</td>
     <td>Authentication Mode</td>
     <td>[Returns authentication factor details. See <a href="#sampleauthenticationresults">Sample Authentication Results</a> below.]</td>
@@ -548,7 +548,7 @@
   </tr>
 
   <tr>
-    <td>alternateFactors</td>
+       <td>alternateFactors</td>
     <td>Array</td>
     <td>Authentication Mode</td>
     <td>[Returns authentication factor details. See <a href="#sampleauthenticationresults">Sample Authentication Results</a> below.]</td>
@@ -556,7 +556,7 @@
   </tr>
 
   <tr>
-    <td>factor</td>
+       <td>factor</td>
     <td>String</td>
     <td>Authentication Mode</td>
     <td>Specifies the type of authentication used:<br>&nbsp;&nbsp;&nbsp;• <b>PASSCODE</b><br>&nbsp;&nbsp;&nbsp;• <b>FACE</b><br>&nbsp;&nbsp;&nbsp;• <b>SSO</b><br>&nbsp;&nbsp;&nbsp;</td>
@@ -564,7 +564,7 @@
   </tr>
 
   <tr>
-    <td>factorType</td>
+       <td>factorType</td>
     <td>String</td>
     <td>Authentication Mode</td>
     <td>Defines the level of authentication used: <br>&nbsp;&nbsp;&nbsp;• <b>PRIMARYPRIMARYFACTOR -</b> Primary authentication<br>&nbsp;&nbsp;&nbsp;• <b>PRIMARYSECONDARYFACTOR1 -</b> Secondary authentication<br>&nbsp;&nbsp;&nbsp;• <b>FALLBACKFACTOR1 -</b>Fallback authentication</td>
@@ -572,7 +572,7 @@
   </tr>
 
   <tr>
-    <td>status</td>
+       <td>status</td>
     <td>String</td>
     <td>Both</td>
     <td>Current authentication status: <br><b>&nbsp;&nbsp;&nbsp;• EXECUTED -</b>  Successful authentication<br><b>&nbsp;&nbsp;&nbsp;• EXECUTED BUT NOT CONSIDERED -</b> Primary authentication was successful but secondary authentication failed<br><b>&nbsp;&nbsp;&nbsp;• TIMEDOUT -</b> The authentication request timed out<br><b>&nbsp;&nbsp;&nbsp;• USERSKIPPED -</b>The user bypassed the SSO login prompt by pressing the back button, resulting to fallback authentication</td>
@@ -580,7 +580,7 @@
   </tr>
 
   <tr>
-    <td>eventType</td>
+       <td>eventType</td>
     <td>String</td>
     <td>Both</td>
     <td>Specifies the event that occurred: <br><b>&nbsp;&nbsp;&nbsp;• Login -</b> The user logged in to the device<br><b>&nbsp;&nbsp;&nbsp;• Logout -</b> The user logged out from the device</td>
@@ -588,7 +588,7 @@
   </tr>
 
   <tr>
-    <td>isSSOInformationAvailable</td>
+       <td>isSSOInformationAvailable</td>
     <td>Boolean</td>
     <td>Both</td>
     <td>Availability of Single Sign-On (SSO) data: <b>&nbsp;&nbsp;&nbsp;• 1 -</b>  SSO information is available; <code>ssoInformation</code> can be parsed for details<br><b>&nbsp;&nbsp;&nbsp;• 0 -</b> SSO information is not available<br></td>
@@ -596,7 +596,7 @@
   </tr>
 
   <tr>
-    <td>schemaVersion</td>
+       <td>schemaVersion</td>
     <td>String</td>
     <td>Both</td>
     <td>[Version of the authentication factors schema]</td>
@@ -684,7 +684,7 @@
   </tr>
 
   <tr>
-    <td>storageType</td>
+       <td>storageType</td>
     <td>String</td>
     <td>Authentication Mode</td>
     <td>Type of storage used for authentication:<br>&nbsp;&nbsp;&nbsp;• <b>BARCODE -</b> For shared devices<br><b>&nbsp;&nbsp;&nbsp;• DEVICE -</b> For personal devices</td>
@@ -692,7 +692,7 @@
   </tr>
 
   <tr>
-    <td>logOutInformation</td>
+       <td>logOutInformation</td>
     <td>JSON object</td>
     <td>Both</td>
     <td>[Parent key]</td>
@@ -804,7 +804,7 @@
   </tr>
 
   <tr>
-    <td>errorCode</td>
+       <td>errorCode</td>
     <td>Integer</td>
     <td>Both</td>
     <td>0</td>
@@ -813,9 +813,270 @@
 
 </tbody></table>
 
-<p><strong>Note:</strong> The following keys are returned in EPOCH date/time format: enrollmentCreatedOn, enrollmentExpiryDate and userLoginTime. </p>
+<!-- // Original table w/1st 2 rows altered
 
-<!-- 
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Supported Mode</th>
+    <th>Description/Value (Authentication Mode)</th>
+    <th>Description/Value (Proxy Mode)</th>
+  </tr>
+
+  <tr>
+       <td>authenticationFactors</td>
+    <td>JSON object</td>
+    <td>Authentication Mode</td>
+    <td>[Returns authentication factor details. See <a href="#sampleauthenticationresults">Sample Authentication Results</a> below.]</td>
+    <td style="background-color:#d1cccb;">N/A</td>
+  </tr>
+
+  <tr>
+       <td>factor</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>Specifies the type of authentication used:<br />&nbsp;&nbsp;&nbsp;• <b>PASSCODE</b><br />&nbsp;&nbsp;&nbsp;• <b>FACE</b><br />&nbsp;&nbsp;&nbsp;• <b>SSO</b><br />&nbsp;&nbsp;&nbsp;• <b>ADMINBYPASS</b><br />&nbsp;&nbsp;&nbsp;• <b>NONE -</b> Applies to "PRIMARYSECONDARYFACTOR1" and "FALLBACKFACTOR1" FactorType<br />&nbsp;&nbsp;&nbsp;• <b>NO_COMPARISON - Applies to "PRIMARYPRIMARYFACTOR" FactorType</b></td>
+  </tr>
+
+  <tr>
+       <td>factorType</td>
+    <td>String</td>
+    <td>Authentication</td>
+    <td>Defines the level of authentication used: <br />&nbsp;&nbsp;&nbsp;• <b>PRIMARYPRIMARYFACTOR -</b> Primary authentication<br />&nbsp;&nbsp;&nbsp;• <b>PRIMARYSECONDARYFACTOR1 -</b> Secondary authentication<br />&nbsp;&nbsp;&nbsp;• <b>FALLBACKFACTOR1 -</b>Fallback authentication</td>
+  </tr>
+
+  <tr>
+       <td>status</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>Current authentication status: <br /><b>&nbsp;&nbsp;&nbsp;• EXECUTED -</b>  Successful authentication<br /><b>&nbsp;&nbsp;&nbsp;• EXECUTED BUT NOT CONSIDERED -</b> Primary authentication was successful but secondary authentication failed<br /><b>&nbsp;&nbsp;&nbsp;• TIMEDOUT -</b> The authentication request timed out<br /><b>&nbsp;&nbsp;&nbsp;• USERSKIPPED -</b>The user bypassed the SSO login prompt by pressing the back button, resulting to fallback authentication</td>
+  </tr>
+
+  <tr>
+       <td>schemaVersion</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>[Version of the authentication factors schema]</td>
+  </tr>
+
+  <tr>
+    <td>enrollmentInformation</td>
+    <td>JSON object</td>
+    <td>Authentication</td>
+    <td>(parent key)</td>
+  </tr>
+
+  <tr>
+    <td>enrollmentCreatedOn</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>[Timestamp when the barcode was created, in EPOCH time, e.g., 1737983880029]</td>
+  </tr>
+
+  <tr>
+    <td>enrollmentCreatedOnDeviceModel</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>[Device model on which the barcode was created, e.g., TC58]</td>
+  </tr>
+
+  <tr>
+    <td>enrollmentCreatedOnDeviceModel</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>[Serial number of device where the barcode was created]</td>
+  </tr>
+
+  <tr>
+    <td>enrollmentExpiryDate</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>[Expiration date of the barcode, in EPOCH time, e.g., 1738156680000]</td>
+  </tr>
+
+  <tr>
+    <td>enrollmentId</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>Unique identifier for the barcode, e.g., 1237983906027D4BA34E</td>
+  </tr>
+
+  <tr>
+    <td>enrollmentType</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>Type of enrollment: <br />&nbsp;&nbsp;&nbsp;• <b>BARCODE</b><br />&nbsp;&nbsp;&nbsp;• <b>DEVICE</b></td>
+  </tr>
+
+  <tr>
+    <td>securityTypes</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>Types of security mechanism in use: <br />&nbsp;&nbsp;&nbsp;• <b>FACE</b><br />&nbsp;&nbsp;&nbsp;• <b>PASSCODE</b><br />&nbsp;&nbsp;&nbsp;• <b>SSO</b></td>
+  </tr>
+
+  <tr>
+       <td>storageType</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>Type of storage used for authentication:<br />&nbsp;&nbsp;&nbsp;• <b>BARCODE -</b> For shared devices<br /><b>&nbsp;&nbsp;&nbsp;• DEVICE -</b> For personal devices</td>
+  </tr>
+
+  <tr>
+       <td>errorCode</td>
+    <td>integer</td>
+    <td>Proxy</td>
+    <td>Status code indicating success or failure: <br />&nbsp;&nbsp;&nbsp;• <b>0 -</b>Success<br />&nbsp;&nbsp;&nbsp;• <b>1 -</b> Failure</td>
+  </tr>
+
+  <tr>
+       <td>eventType</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>Specifies the event that occurred: <br /><b>&nbsp;&nbsp;&nbsp;• Login</b><br /><b>&nbsp;&nbsp;&nbsp;• Logout</b></td>
+  </tr>
+
+  <tr>
+       <td>lockScreenEventType</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>Specifies the event that triggered the lock screen: <br /><b>&nbsp;&nbsp;&nbsp;• on_lock -</b> The user locked the device.<br /><b>&nbsp;&nbsp;&nbsp;• manual_logout -</b> The user manually signed out using the <b>Sign out</b> button in Identity Guardian<br /><b>&nbsp;&nbsp;&nbsp;• user_change -</b> The user signed out and another user signed in.<br /><b>&nbsp;&nbsp;&nbsp;• onAcPowerConnect -</b>The device was connected to a power source.<br /><b>&nbsp;&nbsp;&nbsp;• onACPowerDisconnect -</b>The device was disconnected from a power source.</td>
+  </tr>
+
+  <tr>
+       <td>isSSOInformationAvailable</td>
+    <td>integer</td>
+    <td>Proxy</td>
+    <td>Availability of single sign-on (SSO) data: <br /><b>&nbsp;&nbsp;&nbsp;• 1 -</b> SSO information is available;<code>ssoInformation</code> can be parsed for details<br /><b>&nbsp;&nbsp;&nbsp;• 0 -</b> SSO information is not available</td>
+  </tr>
+
+  <tr>
+    <td>logOutInformation</td>
+    <td>JSON object</td>
+    <td>Proxy</td>
+    <td>(parent key)</td>
+  </tr>
+
+  <tr>
+    <td>logoutReason</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>Specifies the event that triggered the user logout: <br /><b>&nbsp;&nbsp;&nbsp;• on_lock -</b> The user locked the device.<br /><b>&nbsp;&nbsp;&nbsp;• manual_logout -</b> The user manually signed out using the <b>Sign out</b> button in Identity Guardian<br /><b>&nbsp;&nbsp;&nbsp;• user_change -</b> The user signed out and another user signed in.<br /><b>&nbsp;&nbsp;&nbsp;• onAcPowerConnect -</b>The device was connected to a power source.<br /><b>&nbsp;&nbsp;&nbsp;• onACPowerDisconnect -</b>The device was disconnected from a power source.</td>
+  </tr>
+
+  <tr>
+    <td>userLoginTime</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>[Timestamp when user signed in, in EPOCH format, e.g., 1738247487590]</td>
+  </tr>
+
+  <tr>
+    <td>userLogoutTime</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>[Timestamp when user logged out in EPOCH format]</td>
+  </tr>
+
+  <tr>
+    <td>loginInformation</td>
+    <td>JSON object</td>
+    <td>Proxy</td>
+    <td>(parent key)</td>
+  </tr>
+
+  <tr>
+    <td>userLoginTime</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>[Timestamp when user logged out in EPOCH format]</td>
+  </tr>
+
+  <tr>
+       <td>schemaVersion</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>[Version of the schema, e.g., 2.0]</td>
+  </tr>
+
+  <tr>
+    <td>ssoInformation</td>
+    <td>JSON object</td>
+    <td>Proxy</td>
+    <td>(parent key)</td>
+  </tr>
+
+  <tr>
+    <td>ssoAccessToken</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>[Access token for Single Sign-On]</td>
+  </tr>
+
+  <tr>
+    <td>ssoDataReceivedFromIDP</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>[Data received from Identity Provider]</td>
+  </tr>
+
+  <tr>
+    <td>ssoIDToken</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>[Single Sign-On ID token]</td>
+  </tr>
+
+  <tr>
+    <td>ssoProvider</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>Single Sign-On provider in use: <br /><b>&nbsp;&nbsp;&nbsp;• PingId</b><br /><b>&nbsp;&nbsp;&nbsp;• Microsoft</b><br /><b>&nbsp;&nbsp;&nbsp;• OKTA</b></td>
+  </tr>
+
+  <tr>
+    <td>status</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>Indicates the API response outcome: <br /><b>&nbsp;&nbsp;&nbsp;• SUCCESS</b><br /><b>&nbsp;&nbsp;&nbsp;• FAILED</b></td>
+  </tr>
+
+  <tr>
+    <td>userInformation</td>
+    <td>JSON object</td>
+    <td>Proxy</td>
+    <td>(parent key)</td>
+  </tr>
+
+  <tr>
+    <td>userId</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>Identifier for the user signed into the device, e.g., user1@zebra.com</td>
+  </tr>
+
+  <tr>
+    <td>userRole</td>
+    <td>string</td>
+    <td>Authentication</td>
+    <td>[Role identifier based on data from the SSO provider]</td>
+  </tr>
+
+  <tr>
+    <td>userLoggedInState</td>
+    <td>string</td>
+    <td>Proxy</td>
+    <td>User login status on the device: <br /><b>&nbsp;&nbsp;&nbsp;• 1 -</b> User is signed in or has checked out the device, updating the userLoginTime <br /><b>&nbsp;&nbsp;&nbsp;• 0 -</b> User is signed out or has checked in the device, updating the userLogoutTime</td>
+  </tr>
+
+</table>
+
+-->
+
+<p><strong>Note:</strong> The following keys are returned in EPOCH date/time format: enrollmentCreatedOn, enrollmentExpiryDate and userLoginTime.</p>
+
+<!--
 Example response for a user logged into the device:
 
         {
@@ -1244,7 +1505,7 @@ Example response for a user logged into the device:
 
 </tbody></table>
 
-<p><strong>Note:</strong> The following keys are returned in date/time format as "yyyy-MM-dd HH:mm.sss": userLoginTime, userLogoutTime, and barcodeCreatedOn. </p>
+<p><strong>Note:</strong> The following keys are returned in date/time format as "yyyy-MM-dd HH:mm.sss": userLoginTime, userLogoutTime, and barcodeCreatedOn.</p>
 
 <p>Example response when a user logs into the device in authentication mode:</p>
 
@@ -1293,7 +1554,7 @@ Example response for a user logged into the device:
 </code></pre>
 
 <!--
-**The `cursor` result is returned as a JSON string format.** If the `cursor` is null or empty, no user is signed into the device. The result includes an **authentication factors** section, detailing the multifactor authentication factors, each represented as an object. 
+**The `cursor` result is returned as a JSON string format.** If the `cursor` is null or empty, no user is signed into the device. The result includes an **authentication factors** section, detailing the multifactor authentication factors, each represented as an object.
 
 **`Cursor` model:** This outlines keys with their possible values (values are separated by '/' and custom values enclosed in '[ ]'):
 
@@ -1301,9 +1562,9 @@ Example response for a user logged into the device:
             "schemaVersion": "2.0",
             "status": "SUCCESS",
             "errorcode": 0,
-            "userLoggedInState": "1", 
+            "userLoggedInState": "1",
             "eventType":"Login/Logout",
-            "isSSOInformationAvailable":"1",  
+            "isSSOInformationAvailable":"1",
             "loginInformation":
             {
                 "userLoginTime":"[EPOC time]",
@@ -1312,19 +1573,19 @@ Example response for a user logged into the device:
             "logOutInformation":
             {
                 "userLogoutTime":"[EPOC time]",
-                "logoutReason":"on_lock/manual_logout/user_change/onAcPowerConnect/onACPowerDisconnect" 
+                "logoutReason":"on_lock/manual_logout/user_change/onAcPowerConnect/onACPowerDisconnect"
             },
 
-            "userInformation": 
+            "userInformation":
             {
                 "userId": "test_user",
                 "userRole": "test_group"
             },
 
-            "authenticationFactors": 
-            {                   
+            "authenticationFactors":
+            {
                 {
-                    "schemaVersion":"2.0",    "factors": 
+                    "schemaVersion":"2.0",    "factors":
                     [
                         {
                             "factorType": "PRIMARYPRIMARYFACTOR",
@@ -1345,16 +1606,16 @@ Example response for a user logged into the device:
 
                         "eventType":"CurrentUser",
                         "lockScreenEventType":"on_unlock/manual_logout/user_change/onAcPowerConnect/onACPowerDisconnect"
-                    ]        
+                    ]
                 }
             },
 
-            "ssoInformation": 
+            "ssoInformation":
             {
                 "ssoProvider": "PingId/Microsoft/OKTA",
                 "ssoAccessToken": "[string]",
                 "ssoIDToken":"",
-                "ssoDataReceivedFromIDP": 
+                "ssoDataReceivedFromIDP":
                 {
 
                     "sub": "[user@company.com]",
@@ -1454,7 +1715,7 @@ Example response for a user logged into the device:
 - **enrollmentCreatedOnDeviceSerialNo -** Serial number of device used for barcode creation.
 -->
 
-<!-- 
+<!--
 - **signed_in_state -** Indicates a user's sign-in status on the device. This is mandatory.
   - **1 -** User is signed in or has checked out the device, updating the **signin_time**.
   - **0 -** User is signed out or checked in the device, updating the **signout_time**.
@@ -1463,11 +1724,11 @@ Example response for a user logged into the device:
 - **enrollmentInformation -** (Optional) Details about user enrollment, including enrollment type, security type, device model, etc.
 -->
 
-<!-- 
+<!--
 The Response is received by the caller application in the form of a bundle:
 * **RESULT:**
-    * If successful: `{ "status":"SUCCESS","message":"successfully executed" }`    
-    * If failed: `{ "status":"FAILURE","message":"[error description]" }`, where the "error description" is based on the type of error encountered. 
+    * If successful: `{ "status":"SUCCESS","message":"successfully executed" }`
+    * If failed: `{ "status":"FAILURE","message":"[error description]" }`, where the "error description" is based on the type of error encountered.
 -->
 
 <p><strong>Exceptions:</strong></p>
@@ -1592,18 +1853,18 @@ The Response is received by the caller application in the form of a bundle:
     }
 </code></pre>
 
-<!-- 
+<!--
 #### Sample Results
 
-**Sample return results for `cursor`:** 
+**Sample return results for `cursor`:**
 
         {
             "schemaVersion": "2.0",
             "status": "SUCCESS",
             "errorcode": 0,
-            "userLoggedInState": "1", 
+            "userLoggedInState": "1",
             "eventType":"Login",
-            "isSSOInformationAvailable":"1",  
+            "isSSOInformationAvailable":"1",
             "loginInformation":
             {
                 "userLoginTime":"1729232875461",
@@ -1612,19 +1873,19 @@ The Response is received by the caller application in the form of a bundle:
             "logOutInformation":
             {
                 "userLogoutTime":"1729232899461",
-                "logoutReason":"on_lock" 
+                "logoutReason":"on_lock"
             },
 
-            "userInformation": 
+            "userInformation":
             {
                 "userId": "user@company.com",
                 "userRole": "test_group"
             },
 
-            "authenticationFactors": 
-            {                   
+            "authenticationFactors":
+            {
                 {
-                    "schemaVersion":"1.0",    "factors": 
+                    "schemaVersion":"1.0",    "factors":
                     [
                         {
                             "factor": "FACE",
@@ -1640,16 +1901,16 @@ The Response is received by the caller application in the form of a bundle:
                     ],
 
                     "eventType":"CurrentUser",
-                    "lockScreenEventType":"on_unlock"                            
+                    "lockScreenEventType":"on_unlock"
                 }
             },
 
-            "ssoInformation": 
+            "ssoInformation":
             {
                 "ssoProvider": "PingId",
                 "ssoAccessToken": "12345abcde",
                 "ssoIDToken":"",
-                "ssoDataReceivedFromIDP": 
+                "ssoDataReceivedFromIDP":
                 {
 
                     "sub": "user@company.com",
@@ -1748,7 +2009,7 @@ The Response is received by the caller application in the form of a bundle:
     <td>Identifies the user who was authenticated: <br><b>&nbsp;&nbsp;&nbsp;• PreviousUser -</b> The user from the previous session.<br><b>&nbsp;&nbsp;&nbsp;• CurrentUser -</b> The user from the current session.</td>
   </tr>
 
-<!-- 
+<!--
   <tr>
        <td>authenticationScheme</td>
     <td>string</td>
@@ -1881,7 +2142,7 @@ The Response is received by the caller application in the form of a bundle:
             "deviceModel":"TC58",
             "logoutReason":"on_device_manual_checkin",
             "securityTypes":"PASSCODE",
-            "ssoAccessToken":"12345abcde",
+            "ssoAccessToken":"abcde12345. ",
             "ssoData":"{\"aud\":\"f46bf88f-e5a7-441d-bc19-096b2dacdde2\",\"iss\":\"https:\/\/login.microsoftonline.com\/fcefc790-f4eb-456b-86fa-0e8153bac15c\/v2.0\",\"iat\":1738296787,\"nbf\":1738296787,\"exp\":1738300687,\"aio\":\"AWQAm\/8ZAAAAmCTlSl+wuMlynM47fKj7nL1+7BZSgS0pxjxHji+gi4gL3xbx3mPoK2VQ7UzPwLhZgSzetL8cWPT48HIT85s5wSmLWHt6hLuGKzw9JQdnRkYlKezBcT5IGiF3717ocYRE\",\"name\":\"test.user\",\"oid\":\"d2da2d27-ae35-43eb-b3a2-b398890b50d9\",\"preferred_username\":\"test.user@zebra.com\",\"rh\":\"1.Ab4AkMfv_Ov0a0WG-g6BU7rBXI_4a_Sn5R1EvBkJay2s3eK-AL--AA.\",\"sid\":\"0013de09-e09d-39a2-c5ef-060305d43ea1\",\"sub\":\"E7p4Dj1EjzcGFiSF327esrZZBs66CRR45Lr-qH9tcAw\",\"tid\":\"fcefc790-f4eb-456b-86fa-0e8153bac15c\",\"uti\":\"MypFFrvIQEajJLVv3TKCAA\",\"ver\":\"2.0\"}",
             "ssoProvider":"Microsoft",
             "storageType":"BARCODE",
@@ -1935,7 +2196,7 @@ The Response is received by the caller application in the form of a bundle:
     }
 </code></pre>
 
-<!-- 
+<!--
 Sample code:
 
         Uri URI_PREVIOUS_USER_SESSION = Uri.parse("content://com.zebra.mdna.els.provider/previoussession");
@@ -2125,7 +2386,7 @@ The `cursor` is given in JSON format where each key is accompanied by a series o
 
 <p><strong>Content URI:</strong> &nbsp;&nbsp;<span style="font-family:'Courier New'">content://com.zebra.mdna.els.provider/currentsession</span></p>
 
-<p><strong>Input Keys:</strong> </p>
+<p><strong>Input Keys:</strong></p>
 
 <table class="facelift" style="width:100%" border="1" padding="5px">
   <tbody><tr bgcolor="#dce8ef">
@@ -2214,7 +2475,7 @@ The `cursor` is given in JSON format where each key is accompanied by a series o
 
 <p><strong>Content URI:</strong> &nbsp;&nbsp;<span style="font-family:'Courier New'">content://com.zebra.mdna.els.provider/currentsession</span></p>
 
-<p><strong>Input Keys:</strong> </p>
+<p><strong>Input Keys:</strong></p>
 
 <table class="facelift" style="width:100%" border="1" padding="5px">
   <tbody><tr bgcolor="#dce8ef">
@@ -2297,7 +2558,7 @@ The `cursor` is given in JSON format where each key is accompanied by a series o
     }
 </code></pre>
 
-<!-- 
+<!--
 **General Sample code:**
 
         Uri URI_USER_CURRENT_SESSION = Uri.parse("content://com.zebra.mdna.els.provider/currentsession");
@@ -2457,7 +2718,7 @@ The `cursor` is given in JSON format where each key is accompanied by a series o
             "authenticationFactors":"{\"schemaVersion\":\"1.0\",\"factors\":[{\"factor\":\"FACE\",\"factorType\":\"PRIMARYPRIMARYFACTOR\",\"status\":\"EXECUTED\"},{\"factor\":\"SSO\",\"factorType\":\"PRIMARYSECONDARYFACTOR1\",\"status\":\"EXECUTED\"}],\"eventType\":\"CurrentUser\",\"lockScreenEventType\":\"\"}",
             "barcodeId":"1739865839261241C0FF",
             "securityTypes":"PASSCODE,FACE",
-            "ssoAccessToken":"12345abcde",
+            "ssoAccessToken":"abcde12345",
             "ssoData":"{\"aud\":\"f46bf88f-e5a7-441d-bc19-096b2dacdde2\",\"iss\":\"https://login.microsoftonline.com/fcefc790-f4eb-456b-86fa-0e8153bac15c/v2.0\",\"iat\":1739987646,\"nbf\":1739987646,\"exp\":1739991546,\"aio\":\"AWQAm/8ZAAAARnEq5w9eYS5XuZD3mLC0Oj3ZEk7B5P2S1tHqMTir3iOzFsJesfokcttY3J0NJyzDA3nrILT4LnebsK74zA4zSrPP2Zt4MhivOClX+RtNiqwy7dHVDRes8Zuhef2CQw2Y\",\"name\":\"sujith.chakka\",\"oid\":\"d2da2d27-ae35-43eb-b3a2-b398890b50d9\",\"preferred_username\":\"sujith.chakka@zebrablr.onmicrosoft.com\",\"rh\":\"1.Ab4AkMfv_Ov0a0WG-g6BU7rBXI_4a_Sn5R1EvBkJay2s3eK-AL--AA.\",\"sid\":\"00217299-9dc2-713f-e49f-65fceaf50e08\",\"sub\":\"E7p4Dj1EjzcGFiSF327esrZZBs66CRR45Lr-qH9tcAw\",\"tid\":\"fcefc790-f4eb-456b-86fa-0e8153bac15c\",\"uti\":\"Gb8Qwz5knUatbiriY7ejAA\",\"ver\":\"2.0\"}",
             "ssoProvider":"Microsoft",
             "storageType":"BARCODE",
@@ -2495,7 +2756,7 @@ The `cursor` is given in JSON format where each key is accompanied by a series o
         if (response != null &amp;&amp; response.containsKey("RESULT")) {
             // Check if response is valid and contains the expected RESULT key
             provider_response.setText(response.getString("RESULT")); // Update UI with the response message
-            Log.i(TAG, "ZBA_LOCK STATE: " + response.getString("RESULT")); // Log the result 
+            Log.i(TAG, "ZBA_LOCK STATE: " + response.getString("RESULT")); // Log the result
         }
     }
 </code></pre>
@@ -2513,9 +2774,9 @@ The `cursor` is given in JSON format where each key is accompanied by a series o
 
 <h2 id="lockscreenmessage" class="anchor"><a class="heading-anchor" href="#lockscreenmessage"><span></span></a>Lock Screen Message</h2>
 
-<p><strong>Description:</strong> This API allows messages to be displayed on the Identity Guardian lock screen of a device, enabling communication of important information to users even when their devices are locked. Applications can create custom messages with specified titles, descriptions and severity types, and also configure the message's timeout duration and dismissibility. </p>
+<p><strong>Description:</strong> This API allows messages to be displayed on the Identity Guardian lock screen of a device, enabling communication of important information to users even when their devices are locked. Applications can create custom messages with specified titles, descriptions and severity types, and also configure the message's timeout duration and dismissibility.</p>
 
-<p><strong>Input Parameters:</strong> </p>
+<p><strong>Input Parameters:</strong></p>
 
 <table class="facelift" style="width:100%" border="1" padding="5px">
   <tbody><tr bgcolor="#dce8ef">
