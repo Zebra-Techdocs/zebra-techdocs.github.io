@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            5.1
+                                            5.2
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/zebradna/5-1/about">
+                            <a href="/zebradna/5-2/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-1/setup">
+                            <a href="/zebradna/5-2/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-1/usage">
+                            <a href="/zebradna/5-2/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-1/licensing">
+                            <a href="/zebradna/5-2/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-1/design">
+                            <a href="/zebradna/5-2/design">
                                     Design
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-1/support">
+                            <a href="/zebradna/5-2/support">
                                     Support
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-1/faq">
+                            <a href="/zebradna/5-2/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-1/search">
+                            <a href="/zebradna/5-2/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="frequently-asked-questions" class="anchor"><a class="heading-anchor" href="#frequently-asked-questions"><span></span></a>Frequently Asked Questions</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            5.1
+                                            5.2
                                     </p>
                                 </div>
                             </section>                    
@@ -247,8 +247,18 @@
                                     <div class="">
 
                                         <p></p><blockquote>
-  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>LAST UPDATED: Jan. 14, 2025</strong></p>
+  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>LAST UPDATED: Mar. 12, 2025</strong></p>
 </blockquote>
+
+<!-- 
+
+
+>>> UPDATE "LAST UPDATED" DATE!! <<<<
+>>> UPDATE "LAST UPDATED" DATE!! <<<< 
+>>> UPDATE "LAST UPDATED" DATE!! <<<<
+
+
+-->
 
 <p></p><h2 id="commonquestionsandknownissues" class="anchor"><a class="heading-anchor" href="#commonquestionsandknownissues"><span></span></a>Common Questions and Known Issues</h2>
 
@@ -260,20 +270,21 @@
 
 <hr>
 
-<!-- 1/3/25 new year, new undo: DLM-43823
-
-UPDATE "LAST UPDATED" DATE!! 
+<!-- 3/12/25- not yet deployed
 
 ### Q: Is there a dedicated URL for DNA Cloud users in Europe? 
 
-**Yes. New customers in Europe can now experience reduced latencies by using Zebra's new DNA Cloud URL**: 
+**Yes.&#42; <u>New DNA Cloud users in Europe</u> can now experience reduced latencies by using Zebra's EU-based DNA Cloud servers** at the address shown below. 
 
 * **[eu-dnacloud.zebra.com](https://eu-dnacloud.zebra.com/app/home)**
 
-<i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> **Servers in Europe and North America are NOT interchangeable**. Customer data stored on one server is NOT replicated to any other server. 
+<i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> **Servers in Europe and North America are NOT interchangeable**. Customer data stored on one server is NOT replicated on any other server. 
 
------
+<i><font size="1" color="grey">&#42; [Wireless Insights](../support/wirelessinsights/) is available only on servers in North America.</font></i>
+
  -->
+
+<hr>
 
 <h2 id="appdeployment" class="anchor"><a class="heading-anchor" href="#appdeployment"><span></span></a>App Deployment</h2>
 
@@ -620,13 +631,40 @@ Q: What steps should I take to prepare for these changes?
 OLD ANSWER
 **To prepare, download and install the latest image for your device(s)**. Zebra recommends testing the new process within your existing workflows, including device enrollment into an Enterprise Mobility Management system. 
 
+
+3/7/25- NEW NEW (to be edited)
+
+Auto Skip will happen only in below cases:
+
+* Bypass SUW via PowerMgr settings then DO enrollment with persistent then do enterprise reset
+ * After ER, SUW will be bypassed and DO will be re-enrolled  
+* Bypass SUW via PowerMgr then persist any settings via persistMgr then do enterprise reset
+ * After ER, SUW will be bypassed and reapply the persisted settings
+
+
  -->
 
 <hr>
 
-<h3 id="qifanenterpriseresetisperformedmustthedevicetogothroughthesetupwizard" class="anchor"><a class="heading-anchor" href="#qifanenterpriseresetisperformedmustthedevicetogothroughthesetupwizard"><span></span></a>Q: If an Enterprise Reset is performed, must the device to go through the setup wizard?</h3>
+<h3 id="qifanenterpriseresetisperformedmustthedevicetogothroughthesetupwizardagain" class="anchor"><a class="heading-anchor" href="#qifanenterpriseresetisperformedmustthedevicetogothroughthesetupwizardagain"><span></span></a>Q: If an Enterprise Reset is performed, must the device to go through the setup wizard again?</h3>
 
-<p><strong>That depends on persistence</strong>. If Setup Wizard data was configured to persist on the device, there is no need to repeat the Setup Wizard after an Enterprise Reset. <strong>Learn <a href="/mx/persistmgr/">about data persistence</a></strong>.</p>
+<p><strong>The answer depends on persistence</strong>. If Setup Wizard data was configured to persist on the device, there is no need to repeat the Setup Wizard after an Enterprise Reset. </p>
+
+<p><strong>To configure a device to automatically skip the Setup Wizard after an Enterprise Reset (ER)</strong>:</p>
+
+<ul>
+<li><strong>Use <a href="/mx/persistmgr/">Persist Manager</a> to store the following settings</strong>:
+
+
+<ul>
+<li><a href="/mx/powermgr/#setup-wizard-bypass">Power Manager SUW Bypass</a></li>
+
+<li>Device Owner (DO) enrollment<br>
+<strong>After the reset, SUW is bypassed and the DO is re-enrolled</strong> </li></ul>
+</li>
+</ul>
+
+<p><i class="fa fa-check-circle" style="color:#27AE60;"></i> Persist Manager can be used to store <strong><em>most</em></strong> settings to remain on the device following an Enterprise Reset. <strong>Learn more <a href="/mx/persistmgr/">about Persist Manager</a></strong>.</p>
 
 <hr>
 
@@ -656,7 +694,7 @@ OLD ANSWER
 
 <h3 id="qiamusinggooglezerotouchtoenrollmydevicesdoesthisimpactme" class="anchor"><a class="heading-anchor" href="#qiamusinggooglezerotouchtoenrollmydevicesdoesthisimpactme"><span></span></a>Q: I am using Google Zero Touch to enroll my devices. Does this impact me?</h3>
 
-<p><strong>The setup wizard bypass should NOT be used when devices are being enrolled via Google Zero Touch</strong>. Once a device has internet connectivity, Zero Touch will automatically start the setup process. </p>
+<p><strong>The setup wizard bypass should NOT be used when devices are being enrolled via Google Zero Touch</strong>. Once a device has internet connectivity, Zero Touch automatically starts the setup process. <strong>Following an Enterprise Reset on EMM-enrolled devices that persist enrollment</strong>, Google skips the Setup Wizard and applies the enrollment (and other persisted data) automatically as part of its Zero Touch process.</p>
 
 <hr>
 
