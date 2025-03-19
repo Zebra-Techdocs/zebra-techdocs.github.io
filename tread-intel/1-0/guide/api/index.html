@@ -1,0 +1,1834 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Documentation for Zebra Technologies developer tools and utiltiescomp including EMDK for Android, EMDK for Xamarin, StageNow, Enterprise Browser.">
+    <meta name="author" content="Zebra Technologies">
+    <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
+    <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
+    <meta title="Zebra Tread Intel API">
+    <title>Zebra Tread Intel API - Zebra Technologies TechDocs</title>
+    <!-- core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/owl.carousel.css" rel="stylesheet">
+    <link href="/css/owl.transitions.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css?version=3.2" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/prettify.css" rel="stylesheet">
+    <link href="/css/bootstrap-treenav.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]--> 
+
+  <!-- 3/1/19 - comment out per Rob  
+      <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script> 
+    -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<script src="/js/jquery.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-01QJCMQM9N"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-01QJCMQM9N');
+</script></head><!--/head-->
+
+
+<!-- Google tag -->
+
+
+
+<body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
+
+    <header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:66px;float: inherit;
+    padding-right: 3px;"></a> 
+                    
+                   
+                </div>
+                <div class="collapse navbar-collapse navbar-left">
+                    <ul class="nav navbar-nav">
+                        <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
+                        <p class="navbar-text">
+                                            Zebra Tread Intel
+                                            1.0
+                        </p>
+
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/tread-intel/1-0/guide/about">
+                                        About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/tread-intel/1-0/guide/api">
+                                        APIs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/tread-intel/1-0/search">
+                                    <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+<div class="container-fluid">
+    <section id="blog">
+        <div class="">
+            <section class="content-with-sidebar">
+            <div class="row">
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>Zebra Tread Intel API</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="zebra-tread-intel-api" class="anchor"><a class="heading-anchor" href="#zebra-tread-intel-api"><span></span></a>Zebra Tread Intel API</h1>
+                                    <p>
+                                            Zebra Tread Intel
+                                            1.0
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
+                    <div id="mainContent" class="row">
+                        <div class="col-sm-12">
+                            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <!-- Start of guide -->
+                                <div class="service-box wow fadeInRight">
+                                    <div class="">
+
+                                        <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p>Zebra Tread Intel API is designed based on the Android intent architecture, reducing library dependencies and integration time for app developers. To ensure the interface is secure, it uses explicit and pending intents. This document offers a comprehensive guide on accessing Zebra Tread Intel APIs. It describes the API components necessary for interaction and fulfills functional and non-functional requirements for applications that retrieving tread data from the reader accessory.</p>
+
+<p>APIs available:</p>
+
+<ul>
+<li><strong>INITIATE –</strong> Initiate Tread Reader framework session.</li>
+
+<li><strong>GET_PARAMS –</strong> Get the Tread Reader parameter values.</li>
+
+<li><strong>SET_PARAMS –</strong> Set the Tread Reader parameter values.</li>
+
+<li><strong>START –</strong> Start measurement and send data back to the application via pending intent.</li>
+
+<li><strong>VERSION –</strong> Get the Tread Reader framework version data.</li>
+
+<li><strong>CURRENT_STATE -</strong> Query the Tread Reader framework, connection state and framework state</li>
+
+<li><strong>ON_STATE_CHANGE -</strong> Register to receive notifications when the framework connection state or framework state changes.</li>
+
+<li><strong>RELEASE –</strong> Release the Tread Reader framework session.</li>
+</ul>
+
+<hr>
+
+<h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
+
+<p>The following requirements must be met to successfully invoke intent APIs and obtain readings from the Zebra Tread Intel.</p>
+
+<h3 id="addqueriestag" class="anchor"><a class="heading-anchor" href="#addqueriestag"><span></span></a>Add Queries Tag</h3>
+
+<p>For Android 13 devices and higher, add the <code>&lt;queries&gt;</code> tag in the <strong>AndroidManifest.xml</strong> of the Android application project. This defines the package name for the Zebra Tread Intel and is required to allow the Zebra Tread Intel API to communicate with the application.</p>
+
+<pre class="prettyprint"><code>&lt;queries&gt;
+    &lt;package android:name="com.zebra.intentapis" /&gt;
+&lt;/queries&gt;
+</code></pre>
+
+<h3 id="addconstants" class="anchor"><a class="heading-anchor" href="#addconstants"><span></span></a>Add Constants</h3>
+
+<p>Create a Java class named <code>IntentAPIConstantUtils</code> within the Android application project and add the code below. This helps manage and maintain consistent values throughout the project.</p>
+
+<pre class="prettyprint"><code>    public class IntentAPIConstantUtils {
+        public static final int TTDR_REQUEST_CODE = 10100;
+        public static final String TTDR_CALLBACK_RESPONSE = "TTDR_CALLBACK_RESPONSE";
+        public static final String TTDR_SDK_PACKAGE = "com.zebra.intentapis";
+        public static final String TTDR_INTENT_ACTION_INITIATE_READER = "com.zebra.intentapis.action.TTDR_INITIATE";
+        public static final String TTDR_INTENT_ACTION_CURRENT_STATE = "com.zebra.intentapis.action.TTDR_CURRENT_STATE";
+        public static final String TTDR_INTENT_ACTION_ON_STATE_CHANGE = "com.zebra.intentapis.action.TTDR_ON_STATE_CHANGE";
+        public static final String TTDR_INTENT_ACTION_START = "com.zebra.intentapis.action.TTDR_START";
+        public static final String TTDR_INTENT_ACTION_SET_PARAMS = "com.zebra.intentapis.action.TTDR_SET_PARAMS";
+        public static final String TTDR_INTENT_ACTION_GET_PARAMS = "com.zebra.intentapis.action.TTDR_GET_PARAMS";
+        public static final String TTDR_INTENT_ACTION_RELEASE = "com.zebra.intentapis.action.TTDR_READER_RELEASE";
+        public static final String TTDR_INTENT_ACTION_ERROR = "com.zebra.intentapis.action.TTDR_ERROR";
+        public static final String TTDR_INTENT_ACTION_VERSION = "com.zebra.intentapis.action.TTDR_VERSION";
+        public static final String TTDR_INTENT_ERROR_CODE = "TTDR_INTENT_ERROR_CODE";
+        public static final String TTDR_INTENT_ERROR_MESSAGE = "TTDR_INTENT_ERROR_MESSAGE";
+        public static final String TTDR_INTENT_ACTION_EXCEPTION = "com.zebra.intentapis.action.TTDR_EXCEPTION";
+        public static final String TTDR_INTENT_EXCEPTION_DESCRIPTION = "TTDR_INTENT_EXCEPTION_DESCRIPTION";
+        public static final String TTDR_INTENT_EXCEPTION_OCCURRED_ACTION = "TTDR_INTENT_EXCEPTION_OCCURRED_ACTION" ;
+        public static final String TTDR_ACTION = "TTDR_ACTION";
+        public static final String TTDR_ACTION_STATUS = "TTDR_ACTION_STATUS";
+        public static final String TTDR_ACTION_DATA = "TTDR_ACTION_DATA";
+        public static final int TTDR_ACTION_SUCCESS = -1;
+        public static final int TTDR_ACTION_FAILED = 0;
+        public static final String TTDR_FW_CONNECTION_STATE = "TTDR_FW_CONNECTION_STATE";
+        public static final String TTDR_FW_STATE = "TTDR_FW_STATE";
+        public static final String TTDR_FW_PARAM = "TTDR_FW_PARAM";
+        public static final String TTDR_FW_PARAM_VALUE = "TTDR_FW_PARAM_VALUE";
+    }
+</code></pre>
+
+<p><strong>NOTE:</strong> The constants from this Java class are referenced throughout this documentation. If necessary, these constants can be added to another class (e.g., a different Java class within your project that maintains constants) and referenced from there.</p>
+
+<hr>
+
+<h2 id="apiguide" class="anchor"><a class="heading-anchor" href="#apiguide"><span></span></a>API Guide</h2>
+
+<p>The following steps outline the process for using the APIs within the Zebra Tread Intel framework:</p>
+
+<ol>
+<li><strong>Initialize the Framework -</strong> Begin by invoking the <code>INITIATE</code> API to set up the Zebra Tread Intel framework for subsequent operations.</li>
+
+<li><strong>Configure Parameters -</strong> To meet specific requirements, use the <code>GET_PARAMS</code> and <code>SET_PARAMS</code> APIs to retrieve and configure the parameters of the framework.</li>
+
+<li><strong>Start Measurement -</strong> Use the <code>START</code> API to commence the measurement process and begin data acquisition based on the parameter configurations.</li>
+
+<li><strong>Check Version Compatibility -</strong> Call the <code>VERSION</code>API to obtain the framework’s version information and ensure compatibility.</li>
+
+<li><strong>Monitor Operational Status -</strong> Use the <code>CURRENT_STATE</code> API to monitor the framework’s real-time operational status, providing insights into its current state.</li>
+
+<li><strong>Manage Resources -</strong> At the end of the application lifecycle, ensure proper resource management by calling the <code>RELEASE</code> API. This action frees up resources and properly terminates the framework, preparing it for future sessions.</li>
+</ol>
+
+<p>This structured approach facilitates effective measurement and configuration, ensuring optimal performance and reliability. All return data, including tread data, state changes, errors and exceptions, are reported through the Android <code>onActivityResult()</code> method.</p>
+
+<p><strong>Note:</strong> For state change monitoring, register for notifications with <code>ON_STATE_CHANGE</code>.</p>
+
+<hr>
+
+<h2 id="initiate" class="anchor"><a class="heading-anchor" href="#initiate"><span></span></a>INITIATE</h2>
+
+<p><code>INITIATE</code> starts the Tread Reader service. Requirements include:</p>
+
+<ul>
+<li>It must be called <em>only once</em> within an application's lifecycle, before any other APIs. This ensures the Tread Reader APIs are enabled and can communicate with the application.</li>
+
+<li>It must be called using the <code>startForegroundService()</code> method to properly start the Tread Reader service.</li>
+
+<li>It must be called within the <code>onStart()</code> method.</li>
+</ul>
+
+<p><br></p>
+
+<h4 id="request" class="anchor"><a class="heading-anchor" href="#request"><span></span></a>Request</h4>
+
+<p>Use the following action:</p>
+
+<pre class="prettyprint"><code>    com.zebra.intentapis.action.TTDR_INITIATE
+</code></pre>
+
+<h5 id="requestkeys" class="anchor"><a class="heading-anchor" href="#requestkeys"><span></span></a>Request Keys</h5>
+
+<p>Add the following key to the intent:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_CALLBACK_RESPONSE</td>
+    <td>PendingIntent</td>
+    <td>Receives the response</td>
+  </tr>
+
+</tbody></table>
+
+<h5 id="samplecode" class="anchor"><a class="heading-anchor" href="#samplecode"><span></span></a>Sample code</h5>
+
+<p>The sample code below demonstrates how to initialize a reader by sending an intent with a specified action and sets up a callback mechanism using a <code>PendingIntent</code> to handle responses from the service.</p>
+
+<pre class="prettyprint"><code>    Intent intent = new Intent();
+    intent.setPackage(IntentAPIConstantUtils.TTDR_SDK_PACKAGE);
+    intent.setAction(IntentAPIConstantUtils.TTDR_INTENT_ACTION_INITIATE_READER);
+    PendingIntent pendingIntent = createPendingResult(IntentAPIConstantUtils.TTDR_REQUEST_CODE, new Intent(), PendingIntent.FLAG_UPDATE_CURRENT);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_CALLBACK_RESPONSE, pendingIntent);
+    startForegroundService(intent);
+</code></pre>
+
+<p><br></p>
+
+<h4 id="response" class="anchor"><a class="heading-anchor" href="#response"><span></span></a>Response</h4>
+
+<p>The key-value pairs below are received in the <code>onActivityResult()</code> method after invoking <code>INITIATE</code> API.</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_INITIATE</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_STATUS</td>
+    <td>Integer</td>
+    <td><b>-1</b> = Success<br><b>0</b> = Failed</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="exception" class="anchor"><a class="heading-anchor" href="#exception"><span></span></a>Exception</h4>
+
+<p>If the framework encounters an exception when invoking the <code>INITIATE</code> API, the <code>onActivityResult()</code> method will return the following key-value pairs.</p>
+
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_EXCEPTION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_INITIATE</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_NUMBER</td>
+    <td>Integer</td>
+    <td>Returns an integer value that represents the type of exception:<br>
+    &nbsp;&nbsp;&nbsp;• <b>1 = INVALID_CONTEXT -</b> Attempted to disable the reader when the Tread Reader object is not open.??<br>
+    &nbsp;&nbsp;&nbsp;• <b>2 = INVALID_STATE -</b> The Tread Reader object is not in the proper state to set parameters. Parameters can be set when the reader is connected to the mobile computer and not actively reading.<br>
+    &nbsp;&nbsp;&nbsp;• <b>3 = INVALID_PARAMETER_VALUE -</b> An invalid value was provided; e.g., a string value was passed when an integer was expected.<br>
+    &nbsp;&nbsp;&nbsp;• <b>4 = UNKNOWN_PARAMETER -</b> An unknown parameter was provided; e.g., a parameter was used that is not among the accepted options.<br>
+    &nbsp;&nbsp;&nbsp;• <b>5 = HARDWARE_ERROR -</b> Unable to communicate with the Zebra Tread Intel; e.g., the device may not be properly connected to the mobile computer.<br>
+    &nbsp;&nbsp;&nbsp;• <b>6 = REMOTE_COMMUNICATION_ERROR -</b> Unable to communicate with the framework; e.g., the framework is not initialized.<br>
+    &nbsp;&nbsp;&nbsp;• <b>7 = FRAMEWORK_ERROR -</b> The framework was terminated; e.g., Android might have terminated it due to low memory.<br>
+    <!-- 
+        <table class="facelift" border="1" padding="5px">
+            <tr>
+                <th>Integer</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><b>INVALID_CONTEXT -</b> Attempted to disable the reader when the Tread Reader object is not open.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><b>INVALID_STATE -</b> The Tread Reader Object is not in the proper state to set the parameters. Parameters can be set when the reader is connected to the mobile computer and not performing a read operation.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><b>INVALID_PARAMETER_VALUE -</b> An invalid value was provided; e.g., a string value was passed when an integer was expected.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><b>UNKNOWN_PARAMETER -</b> An unknown parameter was provided; e.g., a parameter was used that is not among the accepted options.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><b>HARDWARE_ERROR -</b> Unable to communicate with the Zebra Tread Intel; e.g., the device may not be properly connected to the mobile computer.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><b>REMOTE_COMMUNICATION_ERROR -</b> Unable to communicate with the framework; e.g., the framework is not initialized.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><b>FRAMEWORK_ERROR -</b> The framework was terminated; e.g., Android might have initiated this due to low memory.</td>
+            </tr>
+        </table>
+        -->
+    </td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>[Description of the exception that corresponds with the exception number; see TTDR_INTENT_EXCEPTION_NUMBER above.]</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="samplecode-1" class="anchor"><a class="heading-anchor" href="#samplecode-1"><span></span></a>Sample Code</h4>
+
+<p>This sample handles the response and includes exception handling.</p>
+
+<pre class="prettyprint"><code>    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == IntentAPIConstantUtils.TTDR_REQUEST_CODE) {
+            String mACTION = data.getStringExtra(IntentAPIConstantUtils.TTDR_ACTION);
+
+            if (Objects.equals(mACTION, IntentAPIConstantUtils.TDR_INTENT_ACTION_INITIATE_READER)){
+                int mACTION_STATUS = data.getIntExtra(IntentAPIConstantUtils.TTDR_ACTION_STATUS,0);
+                if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_SUCCESS) {
+                    Log.e(mACTION,"ACTION SUCCESS");
+                }
+                else if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_FAILED){
+                    Log.e(mACTION,"ACTION FAILED");
+                }
+            }
+
+            else if (Objects.equals(mACTION, IntentAPIConstantUtils.TTDR_INTENT_ACTION_EXCEPTION)) {
+                String mExceptionOccurredAction = data.getStringExtra(IntentAPIConstantUtils.TTDR_INTENT_EXCEPTION_OCCURRED_ACTION);
+                int mExceptionNumber = data.getIntExtra(IntentAPIConstantUtils.TTDR_INTENT_EXCEPTION_NUMBER,0);
+                String mExceptionDescription = data.getStringExtra(IntentAPIConstantUtils.TTDR_INTENT_EXCEPTION_DESCRIPTION);
+            }
+        }
+    }
+</code></pre>
+
+<p><br></p>
+
+<hr>
+
+<h2 id="start" class="anchor"><a class="heading-anchor" href="#start"><span></span></a>START</h2>
+
+<p><code>START</code> begins the Tread Reader measurement session, allowing the measurement of multiple tires within a single session. <em>Make sure that the Tread Reader framework is initiated and the Tread Reader accessory is connected to the device.</em></p>
+
+<p>When the Tread Reader is attached to the mobile computer, it interfaces with the device via USB. Use <code>CURRENT_STATE</code> to verify the USB connection status, or register with <code>ON_STATE_CHANGE</code> to receive notifications of any changes in the connection state.</p>
+
+<p><br></p>
+
+<h4 id="request-1" class="anchor"><a class="heading-anchor" href="#request-1"><span></span></a>Request</h4>
+
+<p>Use the following action:</p>
+
+<pre class="prettyprint"><code>com.zebra.intentapis.action.TTDR_START
+</code></pre>
+
+<h5 id="requestkeys-1" class="anchor"><a class="heading-anchor" href="#requestkeys-1"><span></span></a>Request Keys</h5>
+
+<p>Add the following key to the intent:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_CALLBACK_RESPONSE</td>
+    <td>PendingIntent</td>
+    <td>Receives the response</td>
+  </tr>
+</tbody></table>
+
+<h5 id="samplecode-2" class="anchor"><a class="heading-anchor" href="#samplecode-2"><span></span></a>Sample Code</h5>
+
+<p>This demonstrates how to send a broadcast intent with the action to start the measurement. By including a <code>PendingIntent</code>, it enables the receiving framework component to return a result to the original broadcast sender.</p>
+
+<pre class="prettyprint"><code>    Intent intent = new Intent();
+    intent.setAction(IntentAPIConstantUtils.TTDR_INTENT_ACTION_START);
+    PendingIntent currentStatePendingIntent = createPendingResult(IntentAPIConstantUtils.TTDR_REQUEST_CODE, new Intent(),
+    PendingIntent.FLAG_UPDATE_CURRENT);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_CALLBACK_RESPONSE, currentStatePendingIntent);
+    sendBroadcast(intent);
+</code></pre>
+
+<p><br></p>
+
+<h4 id="response-1" class="anchor"><a class="heading-anchor" href="#response-1"><span></span></a>Response</h4>
+
+<p>The following key-value pairs are received to the <code>onActivityResult()</code> method after invoking <code>START</code> API:</p>
+
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description/Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_START</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_STATUS</td>
+    <td>Integer</td>
+    <td>-1 = Success<br>0 = Failed</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_DATA</td>
+    <td>String</td>
+    <td>JSON formatted data containing the tire tread measurement. For each tire tread measurement, a dataset is returned based on the tread position (Inner, Center, Outer), with 3 parameters for each position. <br>
+    <table class="facelift" border="1" padding="5px">
+        <tbody><tr>
+            <td><b>position</b></td>
+            <td>A string indicating the tread depth position:<br>
+            &nbsp;&nbsp;&nbsp;• Outer<br>
+            &nbsp;&nbsp;&nbsp;• Center<br>
+            &nbsp;&nbsp;&nbsp;• Inner <br>
+            If more than 3 tire treads are present, the deepest tread in each position is measured. Only one set of data is returned for each position, taking into account all available tire treads.    
+            </td>
+        </tr>
+        <tr>
+            <td><b>metricTreadDepth</b></td>
+            <td>Tread depth measurement provided in millimeters (mm). To convert millimeters to inches, multiply by 0.03937. Example conversion:<br>
+            &nbsp;&nbsp;&nbsp;3.97 mm * 0.03937 = 0.1562989”  <br>
+            &nbsp;&nbsp;&nbsp;0.1562989” is equivalent to 5/32”<br>
+            Note: 1/32” = 0.03125”
+            </td>
+        </tr>
+        <tr>
+            <td><b>confidenceLevel</b></td>
+            <td>An integer value representing the confidence in the measurement taken, ranging from 0 to 100, with 0 being the lowest and 100 the highest confidence. This value varies based on factors like swipe speed, environmental conditions and tire complexity (e.g., tread geometry and patterns). <br><br>As a guideline, consider the following thresholds for confidence levels:<br>
+            &nbsp;&nbsp;&nbsp;• <b>81-100:</b> High confidence. Generally, the user swipe was controlled, and the tread measurement is reliable.<br>
+            &nbsp;&nbsp;&nbsp;• <b>61-80:</b> Acceptable measurement. A mid-range score may indicate degraded measurement quality due to tread geometry or user swipe behavior. For example, a narrow tread and fast swipe speed could lower the confidence factor below 80.<br>
+            &nbsp;&nbsp;&nbsp;• <b>0-60:</b> Lowest confidence. Levels 60 and below usually indicate unstable swipe behavior or larger-than-typical measurement variation.         
+            </td>
+        </tr>
+        <tr>
+            <td><b>status</b></td>
+            <td>Represents the status of the tread depth measurement, where errors may occur from improper scanning techniques or actual tire deformations. For proper scanning guidelines, refer to the Quick Start Guide. Status values include:<br>
+            &nbsp;&nbsp;&nbsp;• <b>ErrorCodeNone -</b> No error<br>
+            &nbsp;&nbsp;&nbsp;• <b>NotEnoughProfileDetected - </b> Insufficient profile detected in the ProfileGetter block<br>
+            &nbsp;&nbsp;&nbsp;• <b>NotEnoughEdgesFound -</b> Insufficient edges found in the EdgeDetector Block<br>
+            &nbsp;&nbsp;&nbsp;• <b>NoValidTireSurfaceDetected -</b> No valid tire surface or baseline detected in the BaselineGetter block<br>
+            &nbsp;&nbsp;&nbsp;• <b>NoFeaturesDetected -</b> No features detected in the FeatureDetector block<br>
+            &nbsp;&nbsp;&nbsp;• <b>LargeAngle -</b> Large angle outside of blocks<br>
+            &nbsp;&nbsp;&nbsp;• <b>MissingTreadInProfileCorelation -</b> Missing tread in profile correlation outside of blocks<br>
+            &nbsp;&nbsp;&nbsp;• <b>FrameworkDied -</b> Framework failure<br>
+            &nbsp;&nbsp;&nbsp;• <b>FrameworkUnableOpen -</b> Unable to open framework<br>
+            &nbsp;&nbsp;&nbsp;• <b>ScanError -</b>Scan error<br>
+            &nbsp;&nbsp;&nbsp;• <b>ScanSwipeTooFast -</b> Swiped too fast to get data<br>
+            &nbsp;&nbsp;&nbsp;• <b>ScanFailedToDetectEdgeOfTire -</b> Failed to detect tire edges<br>
+            &nbsp;&nbsp;&nbsp;• <b>ScanErraticSwipeMotion -</b> Erratic Swipe motion<br>
+            &nbsp;&nbsp;&nbsp;• <b>ScanSwipeFarFromTire -</b> Swiped too far from tire<br>
+            </td>
+        </tr>
+    </tbody></table>
+    </td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="exception-1" class="anchor"><a class="heading-anchor" href="#exception-1"><span></span></a>Exception</h4>
+
+<p>If the framework encounters an exception when invoking the <code>START</code> API, the <code>onActivityResult()</code> method will return the following key-value pairs.</p>
+
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_EXCEPTION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_START</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_NUMBER</td>
+    <td>Integer</td>
+    <td>Returns an integer value that represents the type of exception:<br>
+    &nbsp;&nbsp;&nbsp;• <b>1 = INVALID_CONTEXT -</b> Attempted to disable the reader when the Tread Reader object is not open.<br>
+    &nbsp;&nbsp;&nbsp;• <b>2 = INVALID_STATE -</b> The Tread Reader object is not in the proper state to set parameters. Parameters can be set when the reader is connected to the mobile computer and not actively reading.<br>
+    &nbsp;&nbsp;&nbsp;• <b>3 = INVALID_PARAMETER_VALUE -</b> An invalid value was provided; e.g., a string value was passed when an integer was expected.<br>
+    &nbsp;&nbsp;&nbsp;• <b>4 = UNKNOWN_PARAMETER -</b> An unknown parameter was provided; e.g., a parameter was used that is not among the accepted options.<br>
+    &nbsp;&nbsp;&nbsp;• <b>5 = HARDWARE_ERROR -</b> Unable to communicate with the Zebra Tread Intel; e.g., the device may not be properly connected to the mobile computer.<br>
+    &nbsp;&nbsp;&nbsp;• <b>6 = REMOTE_COMMUNICATION_ERROR -</b> Unable to communicate with the framework; e.g., the framework is not initialized.<br>
+    &nbsp;&nbsp;&nbsp;• <b>7 = FRAMEWORK_ERROR -</b> The framework was terminated; e.g., Android might have terminated it due to low memory.<br>
+    </td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>[Description of the exception that corresponds with the exception number; see TTDR_INTENT_EXCEPTION_NUMBER above.]</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="samplecode-3" class="anchor"><a class="heading-anchor" href="#samplecode-3"><span></span></a>Sample Code</h4>
+
+<p>This sample handles the response and includes exception handling.</p>
+
+<pre class="prettyprint"><code>    if (Objects.equals(mACTION, IntentAPIConstantUtils.TTDR_INTENT_ACTION_START)) {
+        int mACTION_STATUS = data.getIntExtra(IntentAPIConstantUtils.TTDR_ACTION_STATUS,0);
+        if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_SUCCESS ){
+            String jsonData = data.getStringExtra(IntentAPIConstantUtils.TTDR_ACTION_DATA);
+        }else if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_FAILED){
+            Log.e(mACTION, " - ACTION_FAILED");
+        }
+    }
+</code></pre>
+
+<p><br></p>
+
+<h4 id="sampleresponse" class="anchor"><a class="heading-anchor" href="#sampleresponse"><span></span></a>Sample Response</h4>
+
+<p>Sample JSON response of <code>TTDR_ACTION_DATA</code>:</p>
+
+<pre class="prettyprint"><code>    {"treadList":[{
+        "confidenceLevel":100,
+        "metricTreadDepth":12.057596,
+        "position":"Inner",
+        "status":"NoStatus"
+        },{
+        "confidenceLevel":100,
+        "metricTreadDepth":6.069351,
+        "position":"Center",
+        "status":"NoStatus"
+        },{
+        "confidenceLevel":100,
+        "metricTreadDepth":2.0375476,
+        "position":"Outer",
+        "status":"NoStatus"}]
+    }
+</code></pre>
+
+<!--
+#### Tread Data
+
+Tread data is received to the application as a list which contains tread depth readings on inner, center and outer treads in Json format, each object containing four attributes: confidenceLevel, metricTreadDepth, position, status.
+
+
+<table class="facelift" style="width:100%" border="1" padding="5px">
+  <tr bgcolor="#dce8ef">
+    <th>Attribute</th>
+    <th>Description/Value</th>
+  </tr>
+
+  <tr>
+       <td>metricTreadDepth</td>
+    <td>Tread Depth measurement provided in units of millimeters (mm). The host application can convert mm to inches by multiplying this variable by 0.03937.<br /> Example Conversation from mm to inches:<br />
+3.97 mm * 0.03937 = 0.1562989”<br />
+0.1562989” is equivalent to 5/32”<br />
+<b>Note:</b> 1/32” = 0.03125”<br /></td>
+  </tr>
+
+  <tr>
+       <td>position</td>
+    <td>Enum reporting the position of the Tread Depth</td>
+  </tr>
+
+  <tr>
+       <td>confidenceLevel</td>
+    <td>The confidence level indicates the reliability in the measurement taken, ranging from 0 to 100, with 0 representing the lowest confidence and 100 the highest. This value varies based on factors such as swipe speed, environmental conditions and the complexity of the tire (e.g., tread geometry and patterns). For example, scanning at a high speed may result in lower confidence levels. Use the following thresholds as a guide to assess the confidence level:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>81-100:</b> High confidence measurement, generally user swipe was controlled and tread measurement is reliable.<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>61-80:</b> Measurement is acceptable. A mid-range score may indicate that the measurement quality is degraded due to tread geometry and/or user swipe behavior. As an example, a narrow tread and fast swipe speed could create conditions where the confidence factor is lower than 80.<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>0-60:</b> Lowest confidence measurement. Levels 60 and lower usually indicate that the swipe behavior was not stable or larger than typical measurement variation.</td>
+  </tr>
+
+  <tr>
+       <td>status</td>
+    <td>Enum represents a status of the Tread Depth</td>
+  </tr>
+
+</table>
+
+
+
+#### Exception
+
+In the event that the framework throws an exception while invoking the START API, the following key-value pairs are received as a response to the onActivityResult() method.
+
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description/Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_EXCEPTION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_START</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_NUMBER</td>
+    <td>Integer</td>
+    <td>Integer value that assigns for segregates exception</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_DESCRIPTION</td>
+    <td>String</td>
+    <td>Description about the exception that occurred</td>
+  </tr>
+
+</table>
+
+
+<br />
+
+#### Sample Code
+
+        if (Objects.equals(mACTION, IntentAPIConstantUtils.TTDR_INTENT_ACTION_START)) {
+            int mACTION_STATUS = data.getIntExtra(IntentAPIConstantUtils.TTDR_ACTION_STATUS,0);
+            if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_SUCCESS) {
+                String jsonData = data.getStringExtra(IntentAPIConstantUtils.TTDR_ACTION_DATA);
+            }
+            else if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_FAILED) {
+                Log.e(mACTION, " - ACTION_FAILED");
+            }
+        }
+
+**Sample Response:**
+
+The response is delivered to the client application in JSON format.
+
+        {
+            "treadList":[{
+                "confidenceLevel":100,
+                "metricTreadDepth":12.057596,
+                "position":"Inner",
+                "status":"NoStatus"
+            },
+            {
+                "confidenceLevel":100,
+                "metricTreadDepth":6.069351,
+                "position":"Center",
+                "status":"NoStatus"
+            },
+            {
+                "confidenceLevel":100,
+                "metricTreadDepth":2.0375476,
+                "position":"Outer",
+                "status":"NoStatus"
+            }]
+        }
+
+
+-->
+
+<hr>
+
+<h2 id="getsetparameters" class="anchor"><a class="heading-anchor" href="#getsetparameters"><span></span></a>Get/Set Parameters</h2>
+
+<p>Retrieve or configure the following Zebra Tread Intel parameters using <a href="#get_params"><code>GET_PARAMS</code></a> and <a href="#set_params"><code>SET_PARAMS</code></a> APIs.</p>
+
+<table class="facelift" style="width:90%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Parameter (TTDR_FW_PARAM)</th>
+    <th>Return Type</th>
+    <th>Permissions</th>
+    <th>Description (TTDR_FW_PARAM_VALUE)</th>
+  </tr>
+
+  <tr>
+       <td>hardware_version</td>
+    <td>String</td>
+    <td>Read Only</td>
+    <td>Returns the Zebra Tread Intel hardware version.</td>
+  </tr>
+
+  <tr>
+       <td>sdk_version</td>
+    <td>String</td>
+    <td>Read Only</td>
+    <td>Returns the version of the SDK. This is updated with any change to the API or interface exposed by the SDK.</td>
+  </tr>
+
+  <tr>
+       <td>service_version</td>
+    <td>String</td>
+    <td>Read Only</td>
+    <td>Returns service version information, which is updated with changes to the tire tread reading algorithm or software changes associated with the reader framework.</td>
+  </tr>
+
+  <tr>
+       <td>firmware_version</td>
+    <td>String</td>
+    <td>Read Only</td>
+    <td>Returns the Zebra Tread Intel firmware version information, which is typically updated with service updates.</td>
+  </tr>
+
+  <tr>
+       <td>reswipe</td>
+    <td>String</td>
+    <td>Read / Write</td>
+    <td>Specifies whether the upcoming tread measurement session (i.e. START) is a secondary measurement, represented as a Boolean value passed as a String: <br>&nbsp;&nbsp;&nbsp;• <b>False</b> = (Default) Indicates a standard tread measurement session. This value is set following any Enable/Disable transition of the framework.<br>&nbsp;&nbsp;&nbsp;• <b>True</b> = Indicates a re-swipe measurement session. The tread reading framework uses data from the previous attempt, combining the best measurement candidates. The aggregated result is then returned to the application. <br><br><b>Note:</b> This parameter is temporary and only applies to the next call to START. After START is executed, the parameter resets to the default state, “False,” indicating a standard swipe. If a measurement session encounters an error during a re-swipe, it also resets to “False”. </td>
+  </tr>
+
+  <tr>
+       <td>scan_count</td>
+    <td>String</td>
+    <td>Read Only</td>
+    <td>Returns the total number of scans recorded from the Zebra Tread Intel accessory.</td>
+  </tr>
+
+  <tr>
+       <td>reader_timeout</td>
+    <td>String</td>
+    <td>Read / Write</td>
+    <td>Sets the scan duration of a scan:<br>&nbsp;&nbsp;&nbsp;• <b>0010</b> = Ultra-High, 3.1 seconds (2000 lines per scan) <br>&nbsp;&nbsp;&nbsp;• <b>0008</b> = High, 1.9 seconds (1200 lines per scan)<br>&nbsp;&nbsp;&nbsp;• <b>0004</b> = Mid (1000 lines per scan)<br>&nbsp;&nbsp;&nbsp;• <b>0002</b> = Low, 1.30 seconds (800 lines per scan) <br></td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h3 id="set_params" class="anchor"><a class="heading-anchor" href="#set_params"><span></span></a>SET_PARAMS</h3>
+
+<p><code>SET_PARAMS</code> configures the Tread Reader parameters based on the functionality desired. The following are required:</p>
+
+<ul>
+<li>The Tread Reader framework is initiated.</li>
+
+<li>The Tread Reader device is connected to the mobile computer.</li>
+</ul>
+
+<p><br></p>
+
+<h4 id="request-2" class="anchor"><a class="heading-anchor" href="#request-2"><span></span></a>Request</h4>
+
+<p>Use the following action:</p>
+
+<pre class="prettyprint"><code>    com.zebra.intentapis.action.TTDR_SET_PARAMS
+</code></pre>
+
+<h5 id="requestkeys-2" class="anchor"><a class="heading-anchor" href="#requestkeys-2"><span></span></a>Request Keys</h5>
+
+<p>Add the following key to the intent:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description/Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_CALLBACK_RESPONSE</td>
+    <td>PendingIntent</td>
+    <td>Receive the response</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_FW_PARAM</td>
+    <td>String</td>
+    <td>Respective parameter key, TTDR_FW_PARAM; see <a href="#getsetparameters">Get/Set Parameters table</a></td>
+  </tr>
+
+  <tr>
+       <td>TTDR_FW_PARAM_VALUE</td>
+    <td>String</td>
+    <td>Respective parameter value, TTDR_FW_PARAM_VALUE; see <a href="#getsetparameters">Get/Set Parameters table</a></td>
+  </tr>
+
+</tbody></table>
+
+<h5 id="samplecode-4" class="anchor"><a class="heading-anchor" href="#samplecode-4"><span></span></a>Sample Code</h5>
+
+<p>The sample code below demonstrates how to broadcast an intent with the action to set parameter values of the framework. By including a <code>PendingIntent</code>, it allows the receiving framework component to return to the original broadcast sender.</p>
+
+<pre class="prettyprint"><code>    Intent intent = new Intent(IntentAPIConstantUtils.TTDR_INTENT_ACTION_SET_PARAMS);
+    PendingIntent closeFrameworkPendingIntent = createPendingResult(IntentAPIConstantUtils.TTDR_REQUEST_CODE, new Intent(), PendingIntent.FLAG_UPDATE_CURRENT);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_CALLBACK_RESPONSE, closeFrameworkPendingIntent);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_FW_PARAM, param);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_FW_PARAM_VALUE, val);
+    sendBroadcast(intent);
+</code></pre>
+
+<p><br></p>
+
+<h4 id="response-2" class="anchor"><a class="heading-anchor" href="#response-2"><span></span></a>Response</h4>
+
+<p>The key-value pairs below are received in the <code>onActivityResult()</code> method after invoking <code>SET_PARAMS</code>:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_GET_PARAMS</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_STATUS</td>
+    <td>Integer</td>
+    <td><b>-1</b> = Success <br><b>0</b> = Failed</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="exception-2" class="anchor"><a class="heading-anchor" href="#exception-2"><span></span></a>Exception</h4>
+
+<p>If the framework encounters an exception, the <code>onActivityResult()</code> method will return the following key-value pairs.</p>
+
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_EXCEPTION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_SET_PARAMS</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_NUMBER</td>
+    <td>Integer</td>
+    <td>Returns an integer value that represents the type of exception:<br>
+    &nbsp;&nbsp;&nbsp;• <b>1 = INVALID_CONTEXT -</b> Attempted to disable the reader when the Tread Reader object is not open.<br>
+    &nbsp;&nbsp;&nbsp;• <b>2 = INVALID_STATE -</b> The Tread Reader object is not in the proper state to set parameters. Parameters can be set when the reader is connected to the mobile computer and not actively reading.<br>
+    &nbsp;&nbsp;&nbsp;• <b>3 = INVALID_PARAMETER_VALUE -</b> An invalid value was provided; e.g., a string value was passed when an integer was expected.<br>
+    &nbsp;&nbsp;&nbsp;• <b>4 = UNKNOWN_PARAMETER -</b> An unknown parameter was provided; e.g., a parameter was used that is not among the accepted options.<br>
+    &nbsp;&nbsp;&nbsp;• <b>5 = HARDWARE_ERROR -</b> Unable to communicate with the Zebra Tread Intel; e.g., the device may not be properly connected to the mobile computer.<br>
+    &nbsp;&nbsp;&nbsp;• <b>6 = REMOTE_COMMUNICATION_ERROR -</b> Unable to communicate with the framework; e.g., the framework is not initialized.<br>
+    &nbsp;&nbsp;&nbsp;• <b>7 = FRAMEWORK_ERROR -</b> The framework was terminated; e.g., Android might have terminated it due to low memory.<br>
+    </td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>[Description of the exception that corresponds with the exception number; see TTDR_INTENT_EXCEPTION_NUMBER above.]</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="samplecode-5" class="anchor"><a class="heading-anchor" href="#samplecode-5"><span></span></a>Sample Code</h4>
+
+<p>This sample handles the response and includes exception handling.</p>
+
+<pre class="prettyprint"><code>    if (Objects.equals(mACTION, IntentAPIConstantUtils.TTDR_INTENT_SET_PARAMS)) {
+        int mACTION_STATUS = data.getIntExtra(IntentAPIConstantUtils.TTDR_ACTION_STATUS,0);
+        if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_SUCCESS ){
+            Log.e(mACTION, " - ACTION_SCCESS");
+        }
+        else if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_FAILED){
+            Log.e(mACTION, " - ACTION_FAILED");
+        }
+    }
+</code></pre>
+
+<p><br></p>
+
+<h3 id="get_params" class="anchor"><a class="heading-anchor" href="#get_params"><span></span></a>GET_PARAMS</h3>
+
+<p><code>GET_PARAMS</code> retrieves configuration parameters from the Tread Reader framework. The following are required:</p>
+
+<ul>
+<li>The Tread Reader framework is initiated.</li>
+
+<li>The Tread Reader device is connected to the mobile computer.</li>
+</ul>
+
+<p><br></p>
+
+<h4 id="request-3" class="anchor"><a class="heading-anchor" href="#request-3"><span></span></a>Request</h4>
+
+<p>Use the following action:</p>
+
+<pre class="prettyprint"><code>    com.zebra.intentapis.action.TTDR_GET_PARAMS
+</code></pre>
+
+<h5 id="requestkeys-3" class="anchor"><a class="heading-anchor" href="#requestkeys-3"><span></span></a>Request Keys</h5>
+
+<p>Add the following key to the intent:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_CALLBACK_RESPONSE</td>
+    <td>PendingIntent</td>
+    <td>Receive the response</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_FW_PARAM</td>
+    <td>String</td>
+    <td>Respective parameter key, TTDR_FW_PARAM; see <a href="#getsetparameters">Get/Set Parameters table</a></td>
+  </tr>
+
+</tbody></table>
+
+<h5 id="samplecode-6" class="anchor"><a class="heading-anchor" href="#samplecode-6"><span></span></a>Sample Code</h5>
+
+<p>The sample code below demonstrates how to broadcast an intent with the action to retrieve parameter values of the framework.By including a <code>PendingIntent</code>, it allows the receiving framework component to return to the original broadcast sender.</p>
+
+<pre class="prettyprint"><code>    Intent intent = new Intent(IntentAPIConstantUtils.TTDR_INTENT_ACTION_GET_PARAMS);
+    PendingIntent closeFrameworkPendingIntent =
+    createPendingResult(IntentAPIConstantUtils.TTDR_REQUEST_CODE, new Intent(),
+    PendingIntent.FLAG_UPDATE_CURRENT);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_CALLBACK_RESPONSE, closeFrameworkPendingIntent);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_FW_PARAM, param);
+    sendBroadcast(intent);
+</code></pre>
+
+<p><br></p>
+
+<h4 id="response-3" class="anchor"><a class="heading-anchor" href="#response-3"><span></span></a>Response</h4>
+
+<p>The following key-value pairs are received to the <code>onActivityResult()</code> method after invoking <code>GET_PARAMS</code>:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_GET_PARAMS</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_STATUS</td>
+    <td>Integer</td>
+    <td><b>-1</b> = Success <br><b>0</b> = Failed</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_DATA</td>
+    <td>String</td>
+    <td>Requested parameter value in JSON format</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="exception-3" class="anchor"><a class="heading-anchor" href="#exception-3"><span></span></a>Exception</h4>
+
+<p>If the framework encounters an exception, the <code>onActivityResult()</code> method will return the following key-value pairs.</p>
+
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_EXCEPTION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_GET_PARAMS</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_NUMBER</td>
+    <td>Integer</td>
+    <td>Returns an integer value that represents the type of exception:<br>
+    &nbsp;&nbsp;&nbsp;• <b>1 = INVALID_CONTEXT -</b> Attempted to disable the reader when the Tread Reader object is not open.<br>
+    &nbsp;&nbsp;&nbsp;• <b>2 = INVALID_STATE -</b> The Tread Reader object is not in the proper state to set parameters. Parameters can be set when the reader is connected to the mobile computer and not actively reading.<br>
+    &nbsp;&nbsp;&nbsp;• <b>3 = INVALID_PARAMETER_VALUE -</b> An invalid value was provided; e.g., a string value was passed when an integer was expected.<br>
+    &nbsp;&nbsp;&nbsp;• <b>4 = UNKNOWN_PARAMETER -</b> An unknown parameter was provided; e.g., a parameter was used that is not among the accepted options.<br>
+    &nbsp;&nbsp;&nbsp;• <b>5 = HARDWARE_ERROR -</b> Unable to communicate with the Zebra Tread Intel; e.g., the device may not be properly connected to the mobile computer.<br>
+    &nbsp;&nbsp;&nbsp;• <b>6 = REMOTE_COMMUNICATION_ERROR -</b> Unable to communicate with the framework; e.g., the framework is not initialized.<br>
+    &nbsp;&nbsp;&nbsp;• <b>7 = FRAMEWORK_ERROR -</b> The framework was terminated; e.g., Android might have terminated it due to low memory.<br>
+    </td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>[Description of the exception that corresponds with the exception number; see TTDR_INTENT_EXCEPTION_NUMBER above.]</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="samplecode-7" class="anchor"><a class="heading-anchor" href="#samplecode-7"><span></span></a>Sample Code</h4>
+
+<p>This sample handles the response and includes exception handling.</p>
+
+<pre class="prettyprint"><code>    if (Objects.equals(mACTION, IntentAPIConstantUtils.TTDR_INTENT_GET_PARAMS)) {
+        int mACTION_STATUS = data.getIntExtra(IntentAPIConstantUtils.TTDR_ACTION_STATUS,0);
+        if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_SUCCESS ){
+            String paramJson = data.getStringExtra(IntentAPIConstantUtils.TTDR_ACTION_DATA);
+        }
+        else if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_FAILED){
+            Log.e(mACTION, " - ACTION_FAILED");
+        }
+    }
+</code></pre>
+
+<h4 id="sampleresponse-1" class="anchor"><a class="heading-anchor" href="#sampleresponse-1"><span></span></a>Sample Response</h4>
+
+<p>Response delivered in JSON format, for example:</p>
+
+<pre class="prettyprint"><code>    {"param":"reader_timeout", "paramVal:"002"}
+</code></pre>
+
+<hr>
+
+<h2 id="treadreaderstate" class="anchor"><a class="heading-anchor" href="#treadreaderstate"><span></span></a>Tread Reader State</h2>
+
+<p>Check the connection status of the Tread Reader and set up notifications for any state changes.</p>
+
+<h3 id="current_state" class="anchor"><a class="heading-anchor" href="#current_state"><span></span></a>CURRENT_STATE</h3>
+
+<p>The <code>CURRENT_STATE</code> API checks the connection status of the Tread Reader framework after initialization, ensuring that the Tread Reader accessory is properly connected to the device. <em>Make sure the Tread Reader framework is initiated.</em></p>
+
+<h3 id="on_state_change" class="anchor"><a class="heading-anchor" href="#on_state_change"><span></span></a>ON_STATE_CHANGE</h3>
+
+<p>The <code>ON_STATE_CHANGE</code> API enables the app to register for notifications regarding state changes, notifying of any modifications in the framework connection status or operational state. <em>Make sure the Tread Reader framework is initiated.</em></p>
+
+<p><br></p>
+
+<h4 id="request-4" class="anchor"><a class="heading-anchor" href="#request-4"><span></span></a>Request</h4>
+
+<p>Use the following actions for <code>CURRENT_STATE</code> or <code>ON_STATE_CHANGE</code>:</p>
+
+<pre class="prettyprint"><code>    com.zebra.intentapis.action.TTDR_CURRENT_STATE
+    com.zebra.intentapis.action.TTDR_ON_STATE_CHANGE
+</code></pre>
+
+<h5 id="requestkeys-4" class="anchor"><a class="heading-anchor" href="#requestkeys-4"><span></span></a>Request Keys</h5>
+
+<p>Add the following key to the intent for <code>CURRENT_STATE</code> or <code>ON_STATE_CHANGE</code>:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_CALLBACK_RESPONSE</td>
+    <td>PendingIntent</td>
+    <td>Receives the response</td>
+  </tr>
+
+</tbody></table>
+
+<h5 id="samplecode-8" class="anchor"><a class="heading-anchor" href="#samplecode-8"><span></span></a>Sample Code</h5>
+
+<p>This demonstrates how to send a broadcast intent with the action to check the framework status for <code>CURRENT_STATE</code> and <code>ON_STATE_CHANGE</code>. By attaching a <code>PendingIntent</code>, the receiving framework component can return a result to the original broadcast sender.</p>
+
+<pre class="prettyprint"><code>    private void getCurrentState(){
+        Intent intent = new Intent();
+        intent.setAction(IntentAPIConstantUtils.TTDR_INTENT_ACTION_CURRENT_STATE);
+        PendingIntent currentStatePendingIntent = createPendingResult(IntentAPIConstantUtils.TTDR_REQUEST_CODE, new Intent (), PendingIntent.FLAG_UPDATE_CURRENT);
+        intent.putExtra(IntentAPIConstantUtils.TTDR_CALLBACK_RESPONSE, currentStatePendingIntent);
+        sendBroadcast(intent);
+    }
+
+    private void checkForOnChangeState(){
+        Intent intent = new Intent();
+        intent.setAction(IntentAPIConstantUtils.TTDR_INTENT_ACTION_ON_STATE_CHANGE);
+        PendingIntent currentStatePendingIntent = createPendingResult(IntentAPIConstantUtils.TTDR
+        _REQUEST_CODE, new Intent(), PendingIntent.FLAG_UPDATE_CURRENT);
+        intent.putExtra(IntentAPIConstantUtils.TTDR_CALLBACK_RESPONSE, currentStatePendingIntent);
+        sendBroadcast(intent);
+    }
+</code></pre>
+
+<p><br></p>
+
+<h4 id="response-4" class="anchor"><a class="heading-anchor" href="#response-4"><span></span></a>Response</h4>
+
+<p>The <code>onActivityResult()</code> method receives the following key-value pairs after invoking the <code>CURRENT_STATE</code> and <code>ON_STATE_CHANGE</code> APIs, providing information on the framework’s state and connection status.</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_CURRENT_STATE<br>com.zebra.intentapis.action.TTDR_ON_STATE_CHANGE</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_FW_STATE</td>
+    <td>String</td>
+    <td>Returns the framework operational state:<br>&nbsp;&nbsp;&nbsp;• Disabled<br>&nbsp;&nbsp;&nbsp;• Enabled<br>&nbsp;&nbsp;&nbsp;• Acquiring<br>&nbsp;&nbsp;&nbsp;• Processing</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_FW_CONNECTION_STATE</td>
+    <td>String</td>
+    <td>Returns the framework connection state:<br>&nbsp;&nbsp;&nbsp;• Connected<br>&nbsp;&nbsp;&nbsp;• Disconnected</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="exception-4" class="anchor"><a class="heading-anchor" href="#exception-4"><span></span></a>Exception</h4>
+
+<p>If an exception occurs with <code>CURRENT_STATE</code> and <code>ON_STATE_CHANGE</code>, one of the following key-value pairs would be included in the response to the <code>onActivityResult()</code> method.</p>
+
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_EXCEPTION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_CURRENT_STATE<br>com.zebra.intentapis.action.TTDR_ON_STATE_CHANGE</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_NUMBER</td>
+    <td>Integer</td>
+    <td>Returns an integer value that represents the type of exception:<br>
+    &nbsp;&nbsp;&nbsp;• <b>1 = INVALID_CONTEXT -</b> Attempted to disable the reader when the Tread Reader object is not open.<br>
+    &nbsp;&nbsp;&nbsp;• <b>2 = INVALID_STATE -</b> The Tread Reader object is not in the proper state to set parameters. Parameters can be set when the reader is connected to the mobile computer and not actively reading.<br>
+    &nbsp;&nbsp;&nbsp;• <b>3 = INVALID_PARAMETER_VALUE -</b> An invalid value was provided; e.g., a string value was passed when an integer was expected.<br>
+    &nbsp;&nbsp;&nbsp;• <b>4 = UNKNOWN_PARAMETER -</b> An unknown parameter was provided; e.g., a parameter was used that is not among the accepted options.<br>
+    &nbsp;&nbsp;&nbsp;• <b>5 = HARDWARE_ERROR -</b> Unable to communicate with the Zebra Tread Intel; e.g., the device may not be properly connected to the mobile computer.<br>
+    &nbsp;&nbsp;&nbsp;• <b>6 = REMOTE_COMMUNICATION_ERROR -</b> Unable to communicate with the framework; e.g., the framework is not initialized.<br>
+    &nbsp;&nbsp;&nbsp;• <b>7 = FRAMEWORK_ERROR -</b> The framework was terminated; e.g., Android might have terminated it due to low memory.<br>
+    </td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>[Description of the exception that corresponds with the exception number; see TTDR_INTENT_EXCEPTION_NUMBER above.]</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="samplecode-9" class="anchor"><a class="heading-anchor" href="#samplecode-9"><span></span></a>Sample Code</h4>
+
+<p>This sample handles the response and includes exception handling for <code>CURRENT_STATE</code> and <code>ON_STATE_CHANGE</code>.</p>
+
+<pre class="prettyprint"><code>    if (Objects.equals(mACTION,IntentAPIConstantUtils.TTDR_INTENT_ACTION_CURRENT_STATE)) {
+        String mFW_STATE = data.getStringExtra(IntentAPIConstantUtils.TTDR_FW_STATE);
+        String mFW_CONNECTION_STATE = data.getStringExtra(IntentAPIConstantUtils.TTDR_FW_CONNECTION_STATE);
+    }
+    if (Objects.equals(mACTION,IntentAPIConstantUtils.TTDR_INTENT_ACTION_ON_STATE_CHANGE)) {
+        String mFW_STATE = data.getStringExtra(IntentAPIConstantUtils.TTDR_FW_STATE);
+        String mFW_CONNECTION_STATE = data.getStringExtra(IntentAPIConstantUtils.TTDR_FW_CONNECTION_STATE);
+    }
+</code></pre>
+
+<hr>
+
+<h2 id="version" class="anchor"><a class="heading-anchor" href="#version"><span></span></a>VERSION</h2>
+
+<p><code>VERSION</code> retrieves the version information of the Tread Reader framework. The following are required:</p>
+
+<ul>
+<li>The Tread Reader device is connected to the mobile computer.</li>
+
+<li>The Tread Reader framework is initiated before calling this API.</li>
+</ul>
+
+<p><br></p>
+
+<h4 id="request-5" class="anchor"><a class="heading-anchor" href="#request-5"><span></span></a>Request</h4>
+
+<p>Use the following action:</p>
+
+<pre class="prettyprint"><code>    com.zebra.intentapis.action.TTDR_VERSION
+</code></pre>
+
+<h5 id="requestkeys-5" class="anchor"><a class="heading-anchor" href="#requestkeys-5"><span></span></a>Request Keys</h5>
+
+<p>Add the following key to the intent:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_CALLBACK_RESPONSE</td>
+    <td>PendingIntent</td>
+    <td>Receives the response</td>
+  </tr>
+
+</tbody></table>
+
+<h5 id="samplecode-10" class="anchor"><a class="heading-anchor" href="#samplecode-10"><span></span></a>Sample Code</h5>
+
+<p>Send a broadcast intent with the action to query the framework versions. By attaching a <code>PendingIntent</code>, it allows the receiving framework component to send a result back to the original sender of the broadcast</p>
+
+<pre class="prettyprint"><code>    Intent intent = new Intent(IntentAPIConstantUtils.TTDR_INTENT_ACTION_VERSION);
+    PendingIntent closeFrameworkPendingIntent = createPendingResult(IntentAPIConstantUtils.TTDR_REQUEST_CODE, new Intent(), PendingIntent.FLAG_UPDATE_CURRENT);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_CALLBACK_RESPONSE, closeFrameworkPendingIntent);
+    sendBroadcast(intent);
+</code></pre>
+
+<h5 id="sampleresponse-2" class="anchor"><a class="heading-anchor" href="#sampleresponse-2"><span></span></a>Sample Response</h5>
+
+<p>Response delivered in JSON format:</p>
+
+<pre class="prettyprint"><code>{"algorithmVersion":"2.1.2.1","count":"437","firmwareVersion":"4.0","hardwareVersion":"Tread Intel 1, 8 MB","hardwareaccessoryVersion":"4.6.0.4","sdkVersion":"4.5.6.0","serialNumber":"242405251D0090","serviceVersion":"4.6.0.4"}
+</code></pre>
+
+<p>This table provides the description of each field returned in the response.</p>
+
+<table class="facelift" style="width:85%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Field</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>algorithmVersion</td>
+    <td>Returns the Zebra Tread Intel algorithm version information as a String.  </td>
+  </tr>
+
+  <tr>
+    <td>count</td>
+    <td>Returns the total number of scans recorded from the Zebra Tread Intel Accessory. For supported hardware, it returns the scan count value; for other accessories, it returns ‘Incompatible Hardware.’</td>
+  </tr>
+
+  <tr>
+    <td>firmwareVersion</td>
+    <td>Returns the Zebra Tread Intel firmware version information as a String. The firmware is managed internally by the service and is expected to be updated with service updates.</td>
+  </tr>
+
+  <tr>
+    <td>hardwareVersion</td>
+    <td>Returns the Zebra Tread Intel hardware accessory version information as a String.  </td>
+  </tr>
+  <tr>
+    <td>hardwareaccessoryVersion</td>
+    <td>Returns the Zebra Tread Intel software component version of the hardware accessory as a String.  </td>
+  </tr>
+  <tr>
+    <td>sdkVersion</td>
+    <td>Returns the SDK version, which is updated with any changes to the API or interfaces provided by the SDK.</td>
+  </tr>
+  <tr>
+    <td>serialNumber</td>
+    <td>Returns the serial number of the Zebra Tread Intel accessory as a String.  </td>
+  </tr>
+  <tr>
+    <td>serviceVersion</td>
+    <td>Returns the service version information as a String, updated with changes to the Tire Tread reading algorithm or software changes related to the reader framework.
+    </td>
+  </tr>
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="response-5" class="anchor"><a class="heading-anchor" href="#response-5"><span></span></a>Response</h4>
+
+<p>The following key-value pairs are received to the <code>onActivityResult()</code> method after invoking <code>VERSION</code> API:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_VERSION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_STATUS</td>
+    <td>Integer</td>
+    <td><b>-1</b> = Success <br><b>0</b> = Failed</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_DATA</td>
+    <td>String</td>
+    <td>[JSON formatted data which contains the version information]</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="exception-5" class="anchor"><a class="heading-anchor" href="#exception-5"><span></span></a>Exception</h4>
+
+<p>In the event that the framework throws an exception while invoking <code>VERSION</code> API, the following key-value pairs may be part of the response to the <code>onActivityResult()</code> method.</p>
+
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_EXCEPTION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_VERSION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_NUMBER</td>
+    <td>Integer</td>
+    <td>Returns an integer value that represents the type of exception:<br>
+    &nbsp;&nbsp;&nbsp;• <b>1 = INVALID_CONTEXT -</b> Attempted to disable the reader when the Tread Reader object is not open.<br>
+    &nbsp;&nbsp;&nbsp;• <b>2 = INVALID_STATE -</b> The Tread Reader object is not in the proper state to set parameters. Parameters can be set when the reader is connected to the mobile computer and not actively reading.<br>
+    &nbsp;&nbsp;&nbsp;• <b>3 = INVALID_PARAMETER_VALUE -</b> An invalid value was provided; e.g., a string value was passed when an integer was expected.<br>
+    &nbsp;&nbsp;&nbsp;• <b>4 = UNKNOWN_PARAMETER -</b> An unknown parameter was provided; e.g., a parameter was used that is not among the accepted options.<br>
+    &nbsp;&nbsp;&nbsp;• <b>5 = HARDWARE_ERROR -</b> Unable to communicate with the Zebra Tread Intel; e.g., the device may not be properly connected to the mobile computer.<br>
+    &nbsp;&nbsp;&nbsp;• <b>6 = REMOTE_COMMUNICATION_ERROR -</b> Unable to communicate with the framework; e.g., the framework is not initialized.<br>
+    &nbsp;&nbsp;&nbsp;• <b>7 = FRAMEWORK_ERROR -</b> The framework was terminated; e.g., Android might have terminated it due to low memory.<br>
+    </td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>[Description of the exception that corresponds with the exception number; see TTDR_INTENT_EXCEPTION_NUMBER above.]</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="sample" class="anchor"><a class="heading-anchor" href="#sample"><span></span></a>Sample</h4>
+
+<p>This sample handles the response and includes exception handling.</p>
+
+<pre class="prettyprint"><code>    if (Objects.equals(mACTION, IntentAPIConstantUtils.TTDR_INTENT_ACTION_VERSION)) {
+
+        int mACTION_STATUS = data.getIntExtra(IntentAPIConstantUtils.TTDR_ACTION_STATUS,0);
+        if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_SUCCESS)  {
+            String jsonData = data.getStringExtra(IntentAPIConstantUtils.TTDR_ACTION_DATA);
+
+        }
+        else if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_FAILED) {
+            Log.e(mACTION, " - ACTION_FAILED");
+        }
+    }
+</code></pre>
+
+<hr>
+
+<h2 id="release" class="anchor"><a class="heading-anchor" href="#release"><span></span></a>RELEASE</h2>
+
+<p><code>RELEASE</code> terminates the Tread Reader framework session. Zebra recommends invoking this API within <code>onStop()</code> where the application enters an inactive state.</p>
+
+<p><br></p>
+
+<h4 id="request-6" class="anchor"><a class="heading-anchor" href="#request-6"><span></span></a>Request</h4>
+
+<p>Use the following action:</p>
+
+<pre class="prettyprint"><code>com.zebra.intentapis.action.TTDR_RELEASE
+</code></pre>
+
+<h5 id="requestkeys-6" class="anchor"><a class="heading-anchor" href="#requestkeys-6"><span></span></a>Request Keys</h5>
+
+<p>Add the following key to the intent:</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_CALLBACK_RESPONSE</td>
+    <td>PendingIntent</td>
+    <td>Receives the response</td>
+  </tr>
+
+</tbody></table>
+
+<h5 id="samplecode-11" class="anchor"><a class="heading-anchor" href="#samplecode-11"><span></span></a>Sample Code</h5>
+
+<p>The sample code below demonstrates how to broadcast an intent with the action to release the framework. By including a <code>PendingIntent</code>, it allows the receiving framework component to return to the original broadcast sender.</p>
+
+<pre class="prettyprint"><code>    Intent intent = new Intent(IntentAPIConstantUtils.TTDR_INTENT_ACTION_RELEASE);
+    PendingIntent closeFrameworkPendingIntent = createPendingResult(IntentAPIConstantUtils.TTDR_REQUEST_CODE, new Intent(),
+    PendingIntent.FLAG_UPDATE_CURRENT);
+    intent.putExtra(IntentAPIConstantUtils.TTDR_CALLBACK_RESPONSE, closeFrameworkPendingIntent);
+    sendBroadcast(intent);
+</code></pre>
+
+<p><br></p>
+
+<h4 id="response-6" class="anchor"><a class="heading-anchor" href="#response-6"><span></span></a>Response</h4>
+
+<p>The key-value pairs below are received in the <code>onActivityResult()</code> method after invoking <code>RELEASE</code> API.</p>
+
+<table class="facelift" style="width:80%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_RELEASE</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION_STATUS</td>
+    <td>Integer</td>
+    <td><b>-1</b> = Success <br><b>0</b> = Failed</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="exception-6" class="anchor"><a class="heading-anchor" href="#exception-6"><span></span></a>Exception</h4>
+
+<p>If the framework encounters an exception when invoking the <code>RELEASE</code> API, the <code>onActivityResult()</code> method will return the following key-value pairs.</p>
+
+<table class="facelift" style="width:95%" border="1" padding="5px">
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Key</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+
+  <tr>
+       <td>TTDR_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_EXCEPTION</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>com.zebra.intentapis.action.TTDR_RELEASE</td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_NUMBER</td>
+    <td>Integer</td>
+    <td>Returns an integer value that represents the type of exception:<br>
+    &nbsp;&nbsp;&nbsp;• <b>1 = INVALID_CONTEXT -</b> Attempted to disable the reader when the Tread Reader object is not open.<br>
+    &nbsp;&nbsp;&nbsp;• <b>2 = INVALID_STATE -</b> The Tread Reader object is not in the proper state to set parameters. Parameters can be set when the reader is connected to the mobile computer and not actively reading.<br>
+    &nbsp;&nbsp;&nbsp;• <b>3 = INVALID_PARAMETER_VALUE -</b> An invalid value was provided; e.g., a string value was passed when an integer was expected.<br>
+    &nbsp;&nbsp;&nbsp;• <b>4 = UNKNOWN_PARAMETER -</b> An unknown parameter was provided; e.g., a parameter was used that is not among the accepted options.<br>
+    &nbsp;&nbsp;&nbsp;• <b>5 = HARDWARE_ERROR -</b> Unable to communicate with the Zebra Tread Intel; e.g., the device may not be properly connected to the mobile computer.<br>
+    &nbsp;&nbsp;&nbsp;• <b>6 = REMOTE_COMMUNICATION_ERROR -</b> Unable to communicate with the framework; e.g., the framework is not initialized.<br>
+    &nbsp;&nbsp;&nbsp;• <b>7 = FRAMEWORK_ERROR -</b> The framework was terminated; e.g., Android might have terminated it due to low memory.<br>
+    </td>
+  </tr>
+
+  <tr>
+       <td>TTDR_INTENT_EXCEPTION_OCCURRED_ACTION</td>
+    <td>String</td>
+    <td>[Description of the exception that corresponds with the exception number; see TTDR_INTENT_EXCEPTION_NUMBER above.]</td>
+  </tr>
+
+</tbody></table>
+
+<p><br></p>
+
+<h4 id="samplecode-12" class="anchor"><a class="heading-anchor" href="#samplecode-12"><span></span></a>Sample Code</h4>
+
+<p>This sample handles the response and includes exception handling.</p>
+
+<pre class="prettyprint"><code>    if (Objects.equals(mACTION, IntentAPIConstantUtils.TTDR_INTENT_ACTION_RELEASE)) {
+
+        int mACTION_STATUS = data.getIntExtra(IntentAPIConstantUtils.TTDR_ACTION_STATUS,0);
+        if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_SUCCESS ){
+            Log.e(mACTION,"ACTION_SUCCESS");
+        }
+        else if (mACTION_STATUS == IntentAPIConstantUtils.TTDR_ACTION_FAILED){
+            Log.e(mACTION,"ACTION_FAILED");
+        }
+    }
+</code></pre>
+
+<hr>
+
+<h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
+
+<ul>
+<li><a href="../about">About Zebra Tread Intel</a></li>
+</ul><p></p>
+                                        
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-sm-6-->
+            </div>
+            </section>
+        </div>
+    </section>    
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+					</div>
+					<div class="modal-body">
+						<div id="modalImg">
+						
+						</div>
+					</div>
+			</div>
+		  </div>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corp. and/or its affiliates.<br><a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                    </div>
+                    <div class="col-sm-2">
+                        <!--
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </footer><!--/#footer-->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<!-- 3/1/19 - comment out per Rob
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+-->
+
+
+</body></html>

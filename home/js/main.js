@@ -537,6 +537,10 @@ function selectDoc(prod_id, doc_id) {
             ver = $("#ssm-version").val();
             doc = $("#ssm-doc").val();
             break;
+        case 'btn-ti':
+            ver = $("#tread-intel-version").val();
+            doc = $("#tread-intel-doc").val();
+            break;
         case 'btn-uhm':
             ver = $("#uhm-version").val();
             doc = $("#uhm-doc").val();
@@ -685,6 +689,9 @@ function populateDropdown (ddl_ver, ddl_doc) {
     var sn_4_2_val = ['/about', '/gettingstarted', '/installing', '/stagingprofiles', '/ProfileWizards', '/settingconfig', '/settingtypes', '/stagingguides', '/troubleshooting'];
     var sn_2_8_text = ['About', 'Get Started', 'Install', 'Profiles', 'Wizards', 'Settings', 'Setting Types', 'Staging', 'Troubleshoot'];
     var sn_2_8_val = ['/about', '/gettingstarted', '/installing', '/stagingprofiles', '/ProfileWizards', '/settingconfig', '/settingtypes', '/stageclient', '/troubleshooting'];
+    // Tread Intel
+    var ti_1_0_text = ['About', 'API'];
+    var ti_1_0_val = ['/guide/about', '/guide/api'];
     // VAS-SDK
     var vas_1_0_text = ['About', 'API', 'Demo'];
     var vas_1_0_val = ['/guide/about', '/guide/api', '/guide/demo'];
@@ -1147,7 +1154,14 @@ function populateDropdown (ddl_ver, ddl_doc) {
                 createOption(ddl_doc, sn_5_0_text[i], sn_5_0_val[i]);
             }
             break;
-        // Wireless Insights
+        // Tread Intel
+        case '/tread-intel/1-0':        
+            ddl_doc.options.length = 0;
+            for (i=0; i < ti_1_0_text.length; i++) {
+                createOption(ddl_doc, ti_1_0_text[i], ti_1_0_val[i]);
+            }
+            break;
+        // VAS SDK
         case '/vas-sdk/1-0':
         case '/vas-sdk/2-0':
             ddl_doc.options.length = 0;
