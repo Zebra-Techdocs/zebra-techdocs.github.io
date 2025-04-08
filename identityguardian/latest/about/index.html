@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.7
+                                            2.0
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-7/about">
+                            <a href="/identityguardian/2-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/setup">
+                            <a href="/identityguardian/2-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/licensing">
+                            <a href="/identityguardian/2-0/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/mc">
+                            <a href="/identityguardian/2-0/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/usage">
+                            <a href="/identityguardian/2-0/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/api">
+                            <a href="/identityguardian/2-0/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/faq">
+                            <a href="/identityguardian/2-0/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/search">
+                            <a href="/identityguardian/2-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="about-identity-guardian" class="anchor"><a class="heading-anchor" href="#about-identity-guardian"><span></span></a>About Identity Guardian</h1>
                                     <p>
                                             Identity Guardian
-                                            1.7
+                                            2.0
                                     </p>
                                 </div>
                             </section>                    
@@ -303,7 +303,64 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 
 <hr>
 
-<h2 id="newin17" class="anchor"><a class="heading-anchor" href="#newin17"><span></span></a>New in 1.7</h2>
+<h2 id="newin20" class="anchor"><a class="heading-anchor" href="#newin20"><span></span></a>New in 2.0</h2>
+
+<ul>
+<li><strong>Introduced the <a href="../usage/#devicealarm">Device Alarm</a> feature, which activates when a device is disconnected from power without a user signing in within a specified timeout period.</strong> This feature aids in preventing device misplacement and loss.</li>
+
+<li><strong>Integrated Zebra Device Guardian with the Identity Guardian client.</strong> Device Tracker has been rebranded as <a href="/deviceguardian">Device Guardian</a>, which now fully supports Identity Guardian. This integration enables the collection of device check-in/check-out data and offers single sign-on (SSO) capabilities. <br>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> Identity Guardian will continue support for the Device Tracker application until the end of 2025. Customers are advised to transition to the Device Guardian application by that time.</li>
+
+<li><strong>Introduced a security enhancement that temporarily blocks device login for 5 minutes after multiple failed attempts with the <a href="../usage/#adminbypass">Admin Bypass</a> option.</strong></li>
+
+<li>Now supports Zebra devices with Android 14; see <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/identity-guardian.html#Ta-item-92f439149f-tab">Zebra Support Portal</a> for supported devices.</li>
+
+<li><strong>Resolved Issues:</strong>
+
+
+<ul>
+<li><strong>Resolved an issue where the “Enroll User” option was absent on the Identity Guardian lock screen</strong> when no user verification method was configured under Authentication Configuration in Managed Configuration through the EMM.</li>
+
+<li><strong>Modified Identity Guardian to accept empty values for the Legacy Barcode Prefix,</strong> permitting users to scan non-Identity Guardian barcodes without a specified prefix for device sign-in.</li></ul>
+</li>
+
+<li><strong>Known Issues:</strong>
+
+
+<ul>
+<li><strong>On Android 14 devices, the Guardian Safe and Autofill SSO features are not functioning consistently.</strong> To resolve this, manually disable and re-enable the Android Accessibility Service permission under the Guardian Safe settings menu.</li>
+
+<li><strong>Users are unable to answer a call from the notification bar if the Identity Guardian blocking screen is in the foreground,</strong> even if the application is in the allowed list to appear over the blocking screen. Ensure the Identity Guardian blocking screen is not active in the foreground when attempting to answer a call from the notification bar.</li>
+
+<li><strong>When Identity Guardian is configured with Single Sign-On authentication mode via VMware Workspace ONE UEM, the Chrome custom tab does not automatically close upon performing a manual sign-out operation.</strong> To restore the Identity Guardian blocking screen, either close the Chrome tab or manually relaunch the Identity Guardian application.</li>
+
+<li><strong>Single Sign-On (SSO) credentials are not automatically populated during the Identity Guardian login process</strong> for devices configured in shared mode using the Microsoft Authenticator app with Microsoft Entra ID SSO. To resolve this issue, enable both the Guardian Safe and Auto Fill for SSO options in the Guardian Safe configuration.</li>
+
+<li><strong>After adding the Identity Guardian package name under “Apps Allowed on Lock Screen,” users cannot access the Guardian Safe app list on the device.</strong></li>
+
+<li><strong>Uninstalling Identity Guardian from the lock screen disables the home button on the device.</strong> To remedy this, either reinstall Identity Guardian or set it to enrollment mode before uninstallation.</li>
+
+<li><strong>When installing Identity Guardian in enrollment mode from VMWare Workspace ONE UEM (AirWatch) EMM via Google Play, the authentication screen might appear instead of the expected enrollment screen.</strong> To prevent this, install, and configure the application from the VMWare private app store instead of the public play store.</li>
+
+<li><strong>When using Microsoft Entra ID for single sign-on (SSO), a new user is not automatically logged into Microsoft Associated apps following the sign out of a previous user.</strong> To address this, users can either relaunch the Microsoft Associate apps or enter the newly logged in user ID when prompted, ensuring a successful login.</li>
+
+<li><strong>A user authentication error might occur intermittently if a user attempts to cancel SSO authentication and then tries to re-authenticate.</strong> To resolve this, click on any button on the error screen to dismiss the error, allowing the user to proceed further.</li>
+
+<li><strong>When PingFed is used for single sign-on (SSO) and Identity Guardian is upgraded, users might experience a one-time issue preventing them from signing in on a shared device.</strong> This is overcome by rebooting the device, docking it on a cradle, or locking/unlocking the device based on the configuration set by the system administrator. This issue does not recur after the first sign-out attempt.</li>
+
+<li><strong>Single Sign-On (SSO) credentials are not automatically populated during the Identity Guardian login process</strong> on devices set up in shared mode with the Microsoft Authenticator app using Microsoft Entra ID SSO. To address this, activate both "Guardian Safe" and "Auto Fill for SSO" in the <a href="../mc/#guardiansafeconfiguration">Guardian Safe Configuration</a>.</li>
+
+<li><strong>Users may experience a brief delay in password autofill when using the "Auto Fill for SSO" or "Guardian Safe" features,</strong> particularly after a device reboot or when the device wakes from a low-power state (doze mode). To minimize this impact, allow a few seconds after the device restarts or wakes up before attempting to log in.</li>
+
+<li><strong>When using the Microsoft Authenticator app in shared mode for Microsoft Entra ID single sign-on (SSO), users may be unable to modify credentials saved in Identity Guardian.</strong> To resolve this, remove the existing app entry from the Guardian Safe list. On the next app login attempt, the user is prompted to save their credentials, allowing them to update their credentials afterward.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin17" class="anchor"><a class="heading-anchor" href="#newin17"><span></span></a>New in 1.7</h3>
 
 <ul>
 <li><strong>Enhanced Identity Guardian functionality without <a href="../licensing/">licenses</a>.</strong> For devices without a valid Identity Guardian license, the application will no longer restrict access with the default free passcode authentication method, even if premium authentication features like facial recognition and SSO are applied.</li>
@@ -315,7 +372,7 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 <li><strong>Enhanced the user interface to notify users of unsuccessful face captures during user enrollment.</strong>
 <img alt="image" style="height:325px" src="./facial-capture-failed.png"></li>
 
-<li><strong>Integrated Microsoft Authentication Library v5.8.2</strong> for improved SSO authentication with the Microsoft Entra provider, offering enhanced security and compatibility with the latest Microsoft identity platform features. </li>
+<li><strong>Integrated Microsoft Authentication Library v5.8.2</strong> for improved SSO authentication with the Microsoft Entra provider, offering enhanced security and compatibility with the latest Microsoft identity platform features.</li>
 
 <li><strong>Resolved Issues:</strong>
 
@@ -348,15 +405,11 @@ Using [managed configurations](../mc/) through Zebra’s DNA Cloud platform or E
 
 <li><strong>Single Sign-On (SSO) credentials are not automatically populated during the Identity Guardian login process</strong> on devices set up in shared mode with the Microsoft Authenticator app using Microsoft Entra ID SSO. To address this, activate both "Guardian Safe" and "Auto Fill for SSO" in the <a href="../mc/#guardiansafeconfiguration">Guardian Safe Configuration</a>.</li>
 
-<li><strong>Users may experience a brief delay in password autofill when using the "Auto Fill for SSO" or "Guardian Safe" features,</strong> particularly after a device reboot or when the device wakes from a low-power state (doze mode). To minimize this impact, allow a few seconds after the device restarts or wakes up before attempting to log in. </li>
+<li><strong>Users may experience a brief delay in password autofill when using the "Auto Fill for SSO" or "Guardian Safe" features,</strong> particularly after a device reboot or when the device wakes from a low-power state (doze mode). To minimize this impact, allow a few seconds after the device restarts or wakes up before attempting to log in.</li>
 
-<li><strong>When using the Microsoft Authenticator app in shared mode for Microsoft Entra ID single sign-on (SSO), users may be unable to modify credentials saved in Identity Guardian.</strong> To resolve this, remove the existing app entry from the Guardian Safe list. On the next app login attempt, the user is prompted to save their credentials, allowing them to update their credentials afterward. </li></ul>
+<li><strong>When using the Microsoft Authenticator app in shared mode for Microsoft Entra ID single sign-on (SSO), users may be unable to modify credentials saved in Identity Guardian.</strong> To resolve this, remove the existing app entry from the Guardian Safe list. On the next app login attempt, the user is prompted to save their credentials, allowing them to update their credentials afterward.</li></ul>
 </li>
 </ul>
-
-<hr>
-
-<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
 <h3 id="newin16" class="anchor"><a class="heading-anchor" href="#newin16"><span></span></a>New in 1.6</h3>
 

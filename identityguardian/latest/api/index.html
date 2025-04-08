@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            1.7
+                                            2.0
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/1-7/about">
+                            <a href="/identityguardian/2-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/setup">
+                            <a href="/identityguardian/2-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/licensing">
+                            <a href="/identityguardian/2-0/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/mc">
+                            <a href="/identityguardian/2-0/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/usage">
+                            <a href="/identityguardian/2-0/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/api">
+                            <a href="/identityguardian/2-0/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/faq">
+                            <a href="/identityguardian/2-0/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/1-7/search">
+                            <a href="/identityguardian/2-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="apis" class="anchor"><a class="heading-anchor" href="#apis"><span></span></a>APIs</h1>
                                     <p>
                                             Identity Guardian
-                                            1.7
+                                            2.0
                                     </p>
                                 </div>
                             </section>                    
@@ -253,7 +253,7 @@
 <ul>
 <li><strong>Scheme -</strong> Identifies the URI accessing a content source, typically represented as: <code>content://</code>.</li>
 
-<li><strong>Authority -</strong> The name of the provider authority, usually in the forma <code>packagename.provider</code>.</li>
+<li><strong>Authority -</strong> The name of the provider authority, usually in the form <code>packagename.provider</code>.</li>
 
 <li><strong>API -</strong> The path that differentiates the content data.</li>
 
@@ -383,14 +383,15 @@
 
 <p><strong>Procedure:</strong></p>
 
-<p>To allowlist Identity Guardian APIs in your app using StageNow:</p>
+<p>To allowlist Identity Guardian APIs in your app using StageNow:</p></li>
+</ul>
 
 <ol>
 <li><p>From the command line, navigate to the directory containing your .APK and "SigTools.jar.".</p></li>
 
 <li><p>Generate the certificate by executing the following command, replacing "LOB_app.apk" with your .APK file's name:</p>
 
-<pre class="prettyprint"><code>java -jar SigTools.jar getcert -inform apk -outform der -in LOB_app.apk -outfile app.crt
+<pre class="prettyprint"><code>  java -jar SigTools.jar getcert -inform apk -outform der -in LOB_app.apk -outfile app.crt
 </code></pre></li>
 
 <li><p>From your host system, open StageNow and click on <strong>Create New Profile.</strong></p></li>
@@ -398,13 +399,13 @@
 <li><p>Select the MX version that matches or exceeds the one on your device. Refer to the <a href="/mx/mx-version-on-device/">MX documentation</a> for guidance on how to determine the version.</p></li>
 
 <li><p>Select <strong>Expert Mode</strong> and click <strong>Create.</strong>
-<img alt="image" style="height:400px" src="sn-wizard.jpg"></p></li>
+  <img alt="image" style="height:400px" src="sn-wizard.jpg"></p></li>
 
 <li><p>Enter a profile name and click <strong>Start.</strong>
-<img alt="image" style="height:250px" src="sn-profile-name.png"></p></li>
+  <img alt="image" style="height:250px" src="sn-profile-name.png"></p></li>
 
 <li><p>Click the plus (+) sign next to <strong>AccessMgr.</strong> This adds AccessMgr to the Config tab on the right side. Click <strong>Add.</strong>
-<img alt="image" style="height:450px" src="sn-accessmgr.png"></p></li>
+  <img alt="image" style="height:450px" src="sn-accessmgr.png"></p></li>
 
 <li><p>Enter/select the following for <strong>AccessMgr:</strong></p>
 
@@ -433,14 +434,15 @@
 
 <li><span style="font-family:'Courier New'">content://com.zebra.mdna.els.provider/lockscreenaction/authenticationstatus</span> (Authentication Status)</li>
 
-<li><span style="font-family:'Courier New'">content://com.zebra.mdna.els.provider/lockscreenaction/logout</span> (Logout)</li></ul></li></ol>
+<li><span style="font-family:'Courier New'">content://com.zebra.mdna.els.provider/lockscreenaction/logout</span> (Logout)</li></ul>
 
-<p>After creating the StageNow profiles, use one of the following methods based on the desired tool for device deployment:</p>
+<p>After creating the StageNow profiles, use one of the following methods based on the desired tool for device deployment:</p></li>
+</ol>
 
 <ul>
 <li><strong>StageNow:</strong> Generate the barcode from the StageNow profile. Open StageNow client on the device and scan the barcode(s) generated from the installation, configuration and/or BLE profile.</li>
 
-<li><strong>EMM:</strong> Export each StageNow XML file from the StageNow installation, connection and BLE profiles. <em>Do not edit the XML file</em> - it can cause unexpected behavior. Send the XML using either <a href="/oemconfig">OEMConfig</a> or <a href="/mx/overview/">MX</a> to configure the app and grant all required permissions. The installation profile and server connectivity profile XML files must be used separately.</li></ul></li>
+<li><strong>EMM:</strong> Export each StageNow XML file from the StageNow installation, connection and BLE profiles. <em>Do not edit the XML file</em> - it can cause unexpected behavior. Send the XML using either <a href="/oemconfig">OEMConfig</a> or <a href="/mx/overview/">MX</a> to configure the app and grant all required permissions. The installation profile and server connectivity profile XML files must be used separately.</li>
 </ul>
 
 <hr>
@@ -1187,7 +1189,7 @@ Example response for a user logged into the device:
 <p>Sample response after a user authenticates and logs in to Identity Guardian in authentication mode:</p>
 
 <pre class="prettyprint"><code>    {
-        "authenticationFactors":{   
+        "authenticationFactors":{
             "adminByPassFactors": [],
             "alternateFactors": [],
             "factors":[
