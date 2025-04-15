@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            5.2
+                                            5.3
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/zebradna/5-2/about">
+                            <a href="/zebradna/5-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-2/setup">
+                            <a href="/zebradna/5-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-2/usage">
+                            <a href="/zebradna/5-3/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-2/licensing">
+                            <a href="/zebradna/5-3/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-2/design">
+                            <a href="/zebradna/5-3/design">
                                     Design
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-2/support">
+                            <a href="/zebradna/5-3/support">
                                     Support
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-2/faq">
+                            <a href="/zebradna/5-3/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/5-2/search">
+                            <a href="/zebradna/5-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="using-zebra-dna-cloud" class="anchor"><a class="heading-anchor" href="#using-zebra-dna-cloud"><span></span></a>Using Zebra DNA Cloud</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            5.2
+                                            5.3
                                     </p>
                                 </div>
                             </section>                    
@@ -475,28 +475,81 @@ PLAY STORE
 <h4 id="availableactions" class="anchor"><a class="heading-anchor" href="#availableactions"><span></span></a>Available Actions</h4>
 
 <ul>
-<li><strong>Remote Support -</strong> initiates a remote-control session with the device </li>
+<li><strong>Remote Support -</strong> initiates a remote-control session with the device.</li>
 
-<li><strong>Reboot Device -</strong> quits all apps and restarts the device </li>
+<li><strong>Reboot Device -</strong> quits all apps and restarts the device. </li>
 
-<li><strong>Lock Device -</strong> immediately activates the Lock Screen</li>
+<li><strong>Lock Device -</strong> immediately activates the Lock Screen.</li>
 
-<li><strong>Reset Device Passcode</strong>* <strong>-</strong> removes any existing swipe pattern, PIN or password </li>
+<li><strong>Reset Device Passcode</strong>* <strong>-</strong> removes any existing swipe pattern, PIN or password. </li>
 
-<li><strong>Submit XML</strong> <i>†</i> <strong>-</strong> presents a text box for pasting machine-generated XML and sending to selected device(s) for execution </li>
+<li><strong>Submit XML</strong> <i>†</i> <strong>-</strong> presents a text box for pasting machine-generated XML and sending to selected device(s) for execution. </li>
 
-<li><strong>Wipe Device -</strong> resets the device to its factory-fresh state, <strong>permanently erasing all user apps and data</strong></li>
+<li><strong>Wipe Device -</strong> resets the device to its factory-fresh state, <strong>permanently erasing all user apps and data</strong>.</li>
 
 <li><strong>Delete Device</strong> <i>‡</i> <strong>-</strong> removes zDNA client app from device, de-enrolls device from ZDNA system; other apps and settings on device remain unchanged.<br><strong>Optionally performs a Factory Reset</strong>, returning device to factory-fresh state.   </li>
 
-<li><strong>Update zDNA Client -</strong> checks the client app on the device and pushes an update, if necessary </li>
+<li><strong>Update zDNA Client -</strong> checks the client app on the device and pushes an update, if necessary. </li>
 
-<li><strong>Reapply -</strong> redeploys a settings Profile, usually after addressing "Issues" or a change of device availability (expires after 7 days)</li>
+<li><strong>Reapply -</strong> redeploys a settings Profile, usually after addressing "Issues" or a change of device availability (expires after 7 days).</li>
 
-<li><strong>Locate Device</strong>** <strong>-</strong> gathers GPS data from a selected device, opens a new tab and displays device location on a Google Map </li>
+<li><strong>Locate Device</strong>** <strong>-</strong> gathers GPS data from a selected device, opens a new tab and displays device location on a Google Map.</li>
+
+<li><strong>Export -</strong> writes device information from all devices in the My Devices section (10,000 max.) to a <code>.csv</code> file on the host computer. <a href="#exportmydevicesdata">See next section</a>.</li>
 </ul>
 
-<p><i><font size="1" color="grey">* Has no effect if user changed passcode before ZDNA enrollment. To regain control, perform an Enterprise Reset on device and re-enroll.<br>† No feedback is provided as to the success or failure of this action.<br>‡ Deleted devices could remain visible in deployment detail documents if the device was selected for deployment before being deleted.<br>** A license is required for this feature. Supported only on GMS devices without restrictions. Learn <a href="/mx/gmsmgr/#gmsrestrictedmode">about GMS Restricted Mode</a>.</font></i></p>
+<p><i><font size="1" color="grey">* Has no effect if user changed passcode before ZDNA enrollment. To regain control, perform an Enterprise Reset on device and re-enroll.<br>† No feedback is provided as to the success or failure of this action.<br>‡ Deleted devices could remain visible in deployment detail documents if the device was selected for deployment before being deleted.<br>** A license is required for this feature. Supported only on GMS devices without restrictions. Learn <a href="/mx/gmsmgr/#gmsrestrictedmode">about GMS Restricted Mode</a>. <b>NOT supported on WS50.</b></font></i></p>
+
+<hr>
+
+<h3 id="exportmydevicesdata" class="anchor"><a class="heading-anchor" href="#exportmydevicesdata"><span></span></a>Export My Devices Data</h3>
+
+<ol>
+<li><p><strong>On My Devices page, click the "Export" button</strong> to begin: 
+<img alt="image" style="height:350px" src="53_export_dialog.jpg">
+<em>The current export job status is displayed along with the two most recently completed export jobs (if applicable)</em>.<br> 
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+
+<li><p>Status changes from "In-Progress" to "Completed" once data collection is complete.<br> 
+<strong>Click "Download" to select a location for the completed data file</strong>: 
+<img alt="image" style="height:150px" src="53_export_saveAs.jpg">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></p></li>
+</ol>
+
+<p><i class="fa fa-check-circle" style="color:#27AE60;"></i> My Devices data for all devices (10,000 max.) is saved to a <code>.csv</code> file in the selected location for further processing and/or backup. Exports are subject to the behaviors listed below.</p>
+
+<h4 id="exportnotes" class="anchor"><a class="heading-anchor" href="#exportnotes"><span></span></a>Export Notes</h4>
+
+<ul>
+<li>Export function collects device information for all devices on the My Devices page (10,000 devices max.).</li>
+
+<li><strong>All device information is exported</strong> regardless of device selection, shown/hidden columns, filters, etc.</li>
+
+<li>The download button for each dataset is activated after all My Devices data is collected.  </li>
+
+<li><strong>The DNA Cloud system retains a maximum of three export-job files</strong>; older files are deleted automatically. </li>
+
+<li><strong>Data is saved as a</strong> <code>.csv</code> <strong>file</strong> to the selected location on the host computer.   </li>
+
+<li><strong>Export jobs are user-specific</strong>; each user sees only their own list of datasets.   </li>
+
+<li><strong>Export button is disabled</strong> if no My Devices data has been created. </li>
+
+<li><strong>File generation status messages</strong>: 
+
+
+<ul>
+<li><strong>In-Progress</strong>: The export file is being generated.</li>
+
+<li><strong>Failed</strong>: An error occurred while generating the export file. Try again. </li>
+
+<li><strong>Completed</strong>: The export file was generated successfully and is available for download. </li></ul>
+</li>
+
+<li>Attempting to initiate an export while another is "In-Progress" results in an error.   </li>
+</ul>
 
 <hr>
 
@@ -1207,7 +1260,7 @@ Android Updates
 
 <!-- 
 ALSO SEE PPC DEF'Ns (explanations)
-https://techdocs.zebra.com/ppc/5-2/guide/about/
+https://techdocs.zebra.com/ppc/5-3/guide/about/
 
 See EPIC:
 https://jira.zebra.com/browse/DLM-8112
@@ -1239,9 +1292,10 @@ https://jira.zebra.com/browse/DLM-8112
 
 <h3 id="zebracollection" class="anchor"><a class="heading-anchor" href="#zebracollection"><span></span></a>Zebra Collection</h3>
 
-<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Enrollment in a third-party EMM <u>blocks app installation (including Zebra apps) from unknown sources</u></strong> unless unblocked by the EMM.<br></p>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Enrollment in a third-party EMM <u>blocks app installation (including Zebra apps) from unknown sources</u></strong> unless unblocked by the EMM.<br>
+<i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>Zebra Collection apps must support the Android version on the device to which they are deployed</strong>.</p>
 
-<h4 id="zebracollectiontechdocs" class="anchor"><a class="heading-anchor" href="#zebracollectiontechdocs"><span></span></a>Zebra Collection TechDocs:</h4>
+<h4 id="linkstotechdocsforzebracollectionapps" class="anchor"><a class="heading-anchor" href="#linkstotechdocsforzebracollectionapps"><span></span></a>Links to TechDocs for Zebra Collection apps:</h4>
 
 <ul>
 <li><strong><a href="/devicecentral">Device Central</a></strong></li>
@@ -1284,17 +1338,20 @@ Alternatively, click "New Setup" to choose from a list of Zebra apps:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. <strong>Configure each parameter's options</strong> as needed, scrolling down if necessary.<br>
 <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Search box resets with any new input.<br>
 <i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>Changes to managed configurations DO NOT cause device reboot</strong> (ZDNA 3.1+).
-<img alt="image" style="height:350px" src="31_zva_mc.jpg">
-<em>Click image to enlarge; ESC to exit.</em>
-<br></p></li>
+<img alt="image" style="height:350px" src="31_zva_mc.jpg"></p></li>
+</ol>
 
+<p><em>Click image to enlarge; ESC to exit.</em>
+<br></p>
+
+<ol>
 <li><p><strong>To include configuration and/or data file(s)</strong>, scroll down (if needed) to expose app-related files dialog:
 <img alt="image" style="height:350px" src="zva_03a.png">
 <em>Click image to enlarge; ESC to exit.</em>
 <br></p></li>
 
 <li><p><strong>Enter the name of the configuration file and its desired location on the device</strong>.<br>
-<strong>Click "Upload"</strong> to store the file on zDNA Clound in preparation for deployment.<br>
+<strong>Click "Upload"</strong> to store the file on DNA Cloud in preparation for deployment.<br>
 When finished uploading files <strong>click Next</strong> to proceed: <br>
 <img alt="image" style="height:350px" src="zva_03b.png">
 <em>Click image to enlarge; ESC to exit.</em>
