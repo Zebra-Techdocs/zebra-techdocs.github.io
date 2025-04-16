@@ -453,6 +453,10 @@ function selectDoc(prod_id, doc_id) {
             ver = $("#dex-version").val();
             doc = $("#dex-doc").val();
             break;
+        case 'btn-dg': // Device Guardian
+            ver = $("#dg-version").val();
+            doc = $("#dg-doc").val();
+            break;
         case 'btn-dt': // Device Tracker
             ver = $("#dt-version").val();
             doc = $("#dt-doc").val();
@@ -609,6 +613,9 @@ function populateDropdown (ddl_ver, ddl_doc) {
     var ddt_1_1_val = ['/guide/about', '/guide/usage', '/guide/configuration', '/guide/criteria'];
     var ddt_2_5_text = ['About', 'User Guide', 'Installation', 'Configuration', 'Test Criteria', 'Managed Config'];
     var ddt_2_5_val = ['/guide/about', '/guide/usage', '/guide/setup', '/guide/configuration', '/guide/criteria', '/guide/managed-config'];
+    // Device Guardian
+    var dg_1_0_text = ['About', 'Quick Start', 'Installation', 'Configuration', 'Device Use', 'Dashboard', 'Access Management', 'APIs', 'FAQ'];
+    var dg_1_0_val = ['/guide/about', '/guide/getstarted', '/guide/setup', '/guide/config', '/guide/use', '/guide/dashboard', '/guide/dgam', '/guide/api', '/guide/faq'];
     // Device Tracker
     var dt_4_0_text = ['About', 'User Roles', 'Install & Administration', 'License', 'Device Management', 'Device Tracking'];
     var dt_4_0_val = ['/guide/about', '/guide/roles', '/guide/setup', '/guide/license', '/guide/mgmt', '/guide/use'];
@@ -835,6 +842,13 @@ function populateDropdown (ddl_ver, ddl_doc) {
                 createOption(ddl_doc, ddt_2_5_text[i], ddt_2_5_val[i]);
             }
             break;
+        // Device Guardian
+        case '/deviceguardian/1-0':
+            ddl_doc.options.length = 0;
+            for (i=0; i < dg_1_0_text.length; i++) {
+                createOption(ddl_doc, dg_1_0_text[i], dg_1_0_val[i]);
+            }
+            break;        
         // Device Tracker
         case '/devicetracker/4-0':
             ddl_doc.options.length = 0;
