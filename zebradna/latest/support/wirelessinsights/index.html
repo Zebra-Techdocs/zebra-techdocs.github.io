@@ -247,18 +247,25 @@
                                     <div class="">
 
                                         <p></p><blockquote>
-  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>LAST UPDATED: Mar. 12, 2025</strong></p>
+  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>LAST UPDATED: April 29, 2025</strong></p>
 </blockquote>
 
 <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>The Wireless Insights service provides real-time performance data for active Zebra Android devices, including Wi-Fi and cellular connection events, signal strength and service quality by carrier, device and/or device group</strong>. The service is part of the Zebra Collection in My Apps section and is free to use on supported devices without additional licensing.</p>
+<p><strong>Wireless Insights provides real-time performance data for active Zebra Android devices, including Wi-Fi and cellular connection events, signal strength, and service quality by carrier, device and/or device group</strong>. A Zebra device agent is required on any device from which data is desired; it can be installed from the <a href="../../usage/#zebracollection">Zebra Collection</a> or through a company's own EMM system. A license is required for production environments; trial licensing also is available.</p>
 
 <!-- 3/12/25 removed until EU server is deployed
 <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Wireless Insights is available only on DNA Cloud servers in North America. 
+
+4/25/25- replaced below wi_dashboard_overview.jpg
+
+put the below screens somewhere? 
+11_cell_insights_group.jpg
+11_wifi_insights_group.jpg
+
 -->
 
-<p><img alt="" style="height:350px" src="wi_dashboard_overview.jpg">
+<p><img alt="" style="height:350px" src="11_wi_dashboard_overview.jpg">
 <em>The Wireless Insights dashboard shows real-time Wi-Fi (top row) and cellular performance for active devices</em>.<br>
 <em>Click image to enlarge; ESC to exit</em>.
 <br></p>
@@ -269,15 +276,63 @@
 <li><strong>Wi-Fi performance</strong>: Any Zebra device running Android 13 or later </li>
 
 <li><strong>Cellular performance</strong>: A TC26 or any 6490-platform device running Android 13 or later</li>
+
+<li>MDNA Enterprise License for <a href="/licensing/about/#zebraprofessionalseriesdevices">Professional-series devices</a><br>
+<strong>See a list of <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">Zebra devices by platform</a></strong></li>
 </ul>
 
 <blockquote>
-  <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> See a list of <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">Zebra devices by platform</a></p>
+  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>Zebra strongly recommends applying the latest <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard update(s)</a></strong> for optimal performance of this tool (see below). </p>
 </blockquote>
+
+<h4 id="optimallgupdateforandroid13" class="anchor"><a class="heading-anchor" href="#optimallgupdateforandroid13"><span></span></a>Optimal LG Update for Android 13:</h4>
+
+<ul>
+<li><strong>4490</strong>: <code>NE_FULL_UPDATE_13-24-08.00-TG-U00-STD-NEM-04.zip</code></li>
+
+<li><strong>5340</strong>: <code>AT_FULL_UPDATE_13-34-23.00-TG-U00-STD-ATH-04.zip</code><i>*</i> </li>
+
+<li><strong>5340</strong>: <code>AT_FULL_UPDATE_13-36-10.00-TG-U00-STD-ATH-04.zip</code><i>†</i> </li>
+
+<li><strong>6375</strong>: Supports all devices with LifeGuard March 2025 update (or later)</li>
+
+<li><strong>6490</strong>: <code>AT_FULL_UPDATE_13-34-23.00-TG-U00-STD-ATH-04.zip</code> </li>
+
+<li><strong>SDM600</strong>: Supports all devices with LifeGuard March 2025 update (or later)<br>
+<i><font size="2" color="DimGrey"> * Support includes EM45, TC22 and TC27</font></i><br>
+<i><font size="2" color="DimGrey"> † Support includes KC50</font></i> </li>
+</ul>
+
+<h4 id="optimallgupdateforandroid14" class="anchor"><a class="heading-anchor" href="#optimallgupdateforandroid14"><span></span></a>Optimal LG Update for Android 14:</h4>
+
+<ul>
+<li><strong>4490</strong>: Not yet available </li>
+
+<li><strong>5340</strong>: <code>AT_FULL_UPDATE_14-20-14.00-UG-U45-STD-ATH-04.zip</code><i>‡</i></li>
+
+<li><strong>6375</strong>: <code>GO_FULL_UPDATE_14-09-18.00-UG-U00-STD-GSE-04.zip</code> </li>
+
+<li><strong>6490</strong>: <code>AT_FULL_UPDATE_14-20-14.00-UG-U45-STD-ATH-04.zip</code> </li>
+
+<li><strong>SDM660</strong>: <code>HE_FULL_UPDATE_14-23-05.00-UG-U00-STD-HEL-04.zip</code><br>
+<i><font size="2" color="DimGrey"> ‡ Support includes TC22 and TC27</font></i></li>
+</ul>
+
+<p><strong>See a list of <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">Zebra devices by platform</a></strong></p>
+
+<!-- when the docs are ready, add the following link to the section above: 
+
+wording subject to change: 
+
+><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> **Use of Wireless Insights without updating device BSPs** requires these [additional setup steps](/wireless-insights/z-agent/#delegationscope). 
+
+ -->
 
 <hr>
 
 <h2 id="usingwirelessinsights" class="anchor"><a class="heading-anchor" href="#usingwirelessinsights"><span></span></a>Using Wireless Insights</h2>
+
+<p>Before proceeding, please be sure to <strong><a href="#enablingwirelessinsights">enable Wireless Insights</a></strong>, (one-time requirement).  </p>
 
 <ol>
 <li><p><strong>Click "Support Tools"</strong> From the DNA Cloud Dashboard to expose available modules: 
@@ -351,7 +406,7 @@ Within that Group, <strong>click Wi-Fi or Cellular</strong> in a device row to v
 
 <h2 id="enablingwirelessinsights" class="anchor"><a class="heading-anchor" href="#enablingwirelessinsights"><span></span></a>Enabling Wireless Insights</h2>
 
-<p><strong>Wireless Insights requires an agent to be present on all devices</strong> from which wireless data is to be extracted. There's also a one-time configuration change in the "My Services" section of the DNA Cloud console. Details below. </p>
+<p><strong>DNA Cloud's Wireless Insights Dashboard requires the Zebra Wireless Insights agent to be present on all devices</strong> from which wireless data is to be extracted. There's also a one-time configuration change in the "My Services" section of the DNA Cloud console. Details are below. </p>
 
 <h4 id="tosetupwirelessinsights" class="anchor"><a class="heading-anchor" href="#tosetupwirelessinsights"><span></span></a>To Set Up Wireless Insights</h4>
 
@@ -372,9 +427,9 @@ In the Wireless Insights Service Info box, <strong>click "Enable" button</strong
 <br>
 <br></p></li>
 
-<li><p><strong>Click "Setup" button in "Wireless Insights"</strong> tile of the Zebra Collection. </p></li>
+<li><p>To install the Wireless Insights agent, <strong>click the "Setup" button in "Wireless Insights" tile</strong> of the Zebra Collection. </p></li>
 
-<li><p><strong>See <a href="../../usage/#zebracollection">Setting up a Zebra App</a></strong> for further instructions. </p></li>
+<li><p><strong>Follow the prompts to complete the installation</strong> or go to <a href="../../usage/#zebracollection">Setting up a Zebra App</a> for extra help. </p></li>
 </ol>
 
 <hr>
@@ -429,9 +484,7 @@ FROM EARLY VERSION OF RELEASE NOTES:
 - UI responsiveness is faster 
 - User has option to move event time graph using a slider 
 
- -->
-
-<hr><p></p>
+ --><p></p>
                                         
 
 

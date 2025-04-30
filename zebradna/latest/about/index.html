@@ -271,6 +271,46 @@
 
 <h2 id="newinzdna53" class="anchor"><a class="heading-anchor" href="#newinzdna53"><span></span></a>New in ZDNA 5.3</h2>
 
+<h3 id="april2025update" class="anchor"><a class="heading-anchor" href="#april2025update"><span></span></a>April 2025 Update</h3>
+
+<p><em>Applies to ZDNA 5.3.1</em></p>
+
+<p>• <strong>Adds support for EM45, KC50, PS30 and WT6400</strong> devices running Android 13 (<a href="#a13">See LifeGuard update requirements</a>, below)<br>
+• <strong>Includes <a href="../support/wirelessinsights">Wireless Insights 1.1</a></strong>, which delivers the following new features and enhancements: </p>
+
+<ul>
+<li><strong>Enhanced search functionality</strong> on Dashboard and Group Details pages</li>
+
+<li><strong>Sends email alerts based on predefined thresholds</strong> for Wi-Fi and cellular events</li>
+
+<li><strong>Enhances event-line graphing</strong>, including:
+
+
+<ul>
+<li>The ability to expand the event bar at a graph’s bottom</li>
+
+<li>Simplifies event bar movement for alignment with event locations</li>
+
+<li>New Y-axis more easily visualizes packet loss</li></ul>
+</li>
+
+<li>Default line-graph duration extended to one hour</li>
+
+<li><strong>Supplementary events can now be toggled</strong> on the Wi-Fi device details page</li>
+
+<li><strong>For cellular events, the timeline IRAT* X-axis order has been updated</strong> to IWLAN &gt; NR_SA &gt; LTE &gt; 3G</li>
+
+<li><strong>Adds “Roam retry started” and “Roam retry completed” events</strong> to the Wi-Fi device details page</li>
+
+<li><strong>Supports intents</strong> for configuring Analysis start/stop and setting Group Name  </li>
+
+<li><strong>Supports managed configurations</strong> for configuring My Services settings </li>
+</ul>
+
+<p><i><font size="1" color="DimGrey">* Inter-radio access technology (IRAT) functions include switching between Wi-Fi and cellular radios to maintain an active connection.</font></i> </p>
+
+<h3 id="alsonewin53" class="anchor"><a class="heading-anchor" href="#alsonewin53"><span></span></a>Also new in 5.3</h3>
+
 <ul>
 <li><strong>Introduces DNA Cloud client for devices running Android 14</strong><i>†</i></li>
 
@@ -335,6 +375,8 @@
 </tbody></table>
 
 
+<p><a id="a13"></a></p>
+
 <h4 id="iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iufordevicesrunningandroid13uminimumlifeguardsoftwareupdateshttpswwwzebracomusensupportdownloadslifeguardsecurityhtmlrequired"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <u>For devices running Android 13</u>, minimum <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard software updates</a> required:</h4>
 
 <table class="facelift" align="center" style="width:25%" border="1" padding="5px">
@@ -351,8 +393,13 @@
 </tr>
 
 <tr>
-<td>4490 (TC58e) <b><code>NEW!</code></b></td>
+<td><b>4490 (PS30, TC58e, WT6400) <code>NEW!</code></b></td>
 <td><code>13-26-13.00-TG-U00</code> (or later)</td>
+</tr>
+
+<tr>
+<td><b>5430 (EM45, KC50) <code>NEW!</code></b></td>
+<td><code>13-39-18.00-TG-U00</code> (or later)</td>
 </tr>
 
 <tr>
@@ -429,6 +476,13 @@
 <br></li>
 </ul>
 
+<!-- removed from below per PdM, not added to resolved, but.
+
+* **`NEW:` A renamed Group still appears with its original name in Group pop-ups**.
+
+* **`NEW:` In some cases, the license "IN USE" counter is incremented despite failure to allocate license(s) to a device**.<br>**TO REMEDY**: Change the licensing allocation preference from "Auto assignment" to any other setting (e.g. "By device model"). **[More info](../licensing/#iiiaddandapplylicenses)**.  
+-->
+
 <hr>
 
 <p><a id="knownissues"></a></p>
@@ -446,11 +500,7 @@
 <i class="fa fa-check-circle" style="color:#27AE60;"></i> Profiles newly created with ZDNA 5.3 are unaffected.</li></ul>
 </li>
 
-<li><strong><code>NEW:</code> A renamed Group still appears with its original name in Group pop-ups</strong>.</li>
-
 <li><strong><code>NEW:</code> Status of a deployment shows as "In-Progress" despite one or more devices in "Issue" state</strong>. </li>
-
-<li><strong><code>NEW:</code> In some cases, the license "IN USE" counter is incremented despite failure to allocate license(s) to a device</strong>.<br><strong>TO REMEDY</strong>: Change the licensing allocation preference from "Auto assignment" to any other setting (e.g. "By device model"). <strong><a href="../licensing/#iiiaddandapplylicenses">More info</a></strong>. </li>
 
 <li><strong>The “Lock Screen Visibility” feature of OEMConfig 13.3.0.5 (and later) is NOT supported</strong>. If enabled on the device, the lock screen appears blank on the ZDNA console during Remote Support sessions.</li>
 
