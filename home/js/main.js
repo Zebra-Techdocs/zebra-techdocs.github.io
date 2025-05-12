@@ -682,7 +682,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
     var oemconfig_10_5_text = ['About', 'Setup', 'Managed Configurations', 'FAQ'];
     var oemconfig_10_5_val = ['/about', '/setup', '/mc', '/faq'];
     // RxLogger
-    var rxlogger_5_4_text = ['About', 'Settings', 'Modules', 'APIs', 'Utility'];
+    var rxlogger_5_4_text = ['About', 'Settings', 'Modules', 'APIs', 'Log Viewer'];
     var rxlogger_5_4_val = ['/guide/about', '/guide/settings', '/guide/modules', '/guide/apis', '/guide/utility'];
     // SSM
     var ssm_1_0_text = ['About', 'Using SSM', 'APIs'];
@@ -1112,6 +1112,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/rxlogger/6-0':
         case '/rxlogger/7-0':
         case '/rxlogger/13-0':
+        case '/rxlogger/14-0':
             ddl_doc.options.length = 0;
             for (i=0; i < rxlogger_5_4_text.length; i++) {
                 createOption(ddl_doc, rxlogger_5_4_text[i], rxlogger_5_4_val[i]);
