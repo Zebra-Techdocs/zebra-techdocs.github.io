@@ -554,7 +554,8 @@ function selectDoc(prod_id, doc_id) {
                 doc = $("#vas-sdk-doc").val();
                 break;
         case 'btn-wi':
-            ver = $("#wi-version").val();
+            // ver = $("#wi-version").val();
+            ver = "";  // no version
             doc = $("#wi-doc").val();
             break;
         case 'btn-zdna':
@@ -703,8 +704,8 @@ function populateDropdown (ddl_ver, ddl_doc) {
     var vas_1_0_text = ['About', 'API', 'Demo'];
     var vas_1_0_val = ['/guide/about', '/guide/api', '/guide/demo'];
     // Wireless Insights
-    var wi_1_0_text = ['About', 'Setup', 'Licensing', 'Data'];
-    var wi_1_0_val = ['/guide/about', '/guide/setup', '/guide/license', '/guide/data'];
+    var wi_1_0_text = ['About', 'Wireless Insights Agent', 'Vendor Agent', 'Licensing', 'Data'];
+    var wi_1_0_val = ['/guide/about', '/guide/agent', '/guide/setup', '/guide/license', '/guide/data'];
     // Zebra DNA Cloud
     var zdna_1_2_text = ['About', 'Setup', 'User Guide', 'Licensing', 'FAQ'];
     var zdna_1_2_val = ['/about', '/setup', '/usage', '/licensing', '/faq'];
@@ -1186,12 +1187,13 @@ function populateDropdown (ddl_ver, ddl_doc) {
             }
             break;
         // Wireless Insights
-        case '/wireless-insights/1-0':
-            ddl_doc.options.length = 0;
-            for (i=0; i < wi_1_0_text.length; i++) {
-                createOption(ddl_doc, wi_1_0_text[i], wi_1_0_val[i]);
-            }
-            break;
+        //case '/wireless-insights/latest':
+        //    ddl_doc.options.length = 0;
+        //    for (i=0; i < wi_1_0_text.length; i++) {
+        //        createOption(ddl_doc, wi_1_0_text[i], wi_1_0_val[i]);
+        //    }
+        //    break;
+        
         // Zebra DNA Cloud
         case '/zebradna/1-2':
         case '/zebradna/2-0':
