@@ -90,11 +90,11 @@
                             </a>
                         </li>-->
 						
-                        <li>
+                         <!--  <li>
                             <a href="../api/index.html">
                                     APIs
                             </a>
-                        </li>
+                        </li> -->
                         <!--<li>
                             <a href="https://developer.zebra.com/community/home/discussions/">
                                     <i class="fa fa-comments-o"></i>
@@ -123,44 +123,13 @@
         <div class="">
             <section class="content-with-sidebar">
             <div class="row">
-                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
-                    
-                    
-                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
-                        
-                        <ul class="nav">
-                            <li><strong>Zebra Integrated RFID SDK for .NET MAUI`</strong></li>
-                        </ul>
-                    </nav>
-                    
-                    <script type="text/javascript">
-                        $(document).ready(function() {
-                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
-                      			console.log('Saving Options');
-                      			$("#modal-smartdocs").modal({show: false});
-                    		});
-                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
-                      			console.log('Clearing Options');
-                      			$("#modal-smartdocs").modal({show: false});
-                    		});
-                        });
-                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
-                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
-                    <script type="text/javascript">
-                        $(document).ready(function() {
-                    
-                        });
-                    
-                    
-                    </script>
-                </div>                
+                             
                 <div class="col-sm-9 ">
                     <div class="row">
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="inventory-tutorial" class="anchor"><a class="heading-anchor" href="#inventory-tutorial"><span></span></a>Zebra Integrated RFID SDK for .NET MAUI</h1>
-                                    
+                                 
                                 </div>
                             </section>                    
                         </div>
@@ -174,8 +143,11 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>
 
-<h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Setup RFID SDK</h2>
-<p>Following code segments provide the setup procedure for the RFID SDK</p>
+<h3>Zebra Integrated RFID SDK for .NET MAUI</h3>
+                                    
+
+<h3>Setup RFID SDK</h3>		
+<p>Following code segments provide the setup procedure for the RFID SDK.</p>
 <pre class="prettyprint"><code>
 
 IsrfidISdkApi apiInstance;
@@ -201,7 +173,8 @@ apiInstance.SrfidEnableAvailableReadersDetection(true);
 apiInstance.SrfidEnableAutomaticSessionReestablishment(true);
 </code></pre>
 
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Get RFID SDK version</h2>
+
+<h2>Get RFID SDK version</h2>		
 
 <p> RFID SDK version information could be obtained as follows:</p>
 
@@ -210,8 +183,8 @@ apiInstance.SrfidEnableAutomaticSessionReestablishment(true);
 	
 	</code></pre>
 
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Get RFID available scanners</h2>
 
+<h2>Get RFID available scanners</h2>		
 <p>Following code segment outputs the paired device list. Reader must be paired with the iOS device via Bluetooth before query action</p>
 
 <pre class="prettyprint"><code>
@@ -252,7 +225,8 @@ public void getNativeRfidSdkReaderList()
 
 </code></pre>
 
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>RFID Operation</h2>
+
+<h2>RFID Operation</h2>		
 <h3>Inventory</h3>		
 <ul>
 	
@@ -421,7 +395,8 @@ public override void SrfidEventProximityNotify(int readerID, intproximityPercent
 </pre>
 </li>																												
 </ul>										
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Battery</h2>	
+
+<h2>Battery</h2>	
 <p>
 The SDK also provides an ability to cause a particular active RFID reader to immediately send information about current battery status. The following example demonstrates both requesting and processing of asynchronous battery status related notifications.
 </p>
@@ -490,7 +465,9 @@ public override void SrfidEventBatteryNotity(int readerID,srfidBatteryEvent batt
 </code>
 </pre>
 
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Trigger Mapping</h2>										
+<h2>Trigger Mapping</h2>	
+									
+
 <h3><strong>Get Trigger Mapping</strong></h3>	
 <p>This “GetTriggerMapping” API will get the trigger key configuration</p>
 <pre class="prettyprint"><code>
@@ -568,7 +545,7 @@ public void SetTriggerMapping(SrfidNewEnumKeylayoutType upperTrigger , SrfidNewE
 </code>
 </pre>
 
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Access Operation</h2>
+<h2>Access Operation</h2>
 <h3><strong>Tag Read</strong></h3>	
 <p>Following values should be passed as arguments to AccessOperationTagRead API and it will
 return<br>
@@ -739,8 +716,65 @@ public bool AccessOperationTagKill(int readerID, string tagId, int password)
 
 </code>
 </pre>
+
+<h3><strong>Tag Write</strong></h3>
+<p>
+    The AccessOperationTagWrite method writes data to an RFID tag using a specified reader. It takes parameters like the tag ID, memory bank, offset, data, password, and a block write flag.  It logs the outcome and returns true if successful, or false if it fails or encounters a response error. 
+</p>
+<pre class="prettyprint"><code></code>
+public bool AccessOperationTagWrite(string tagId, SrfidMemorybank memoryBank, short offset, string data, int password, bool blockWrite)
+{
+
+    var handler = ReaderResponseStatusEventHandler;
+    string statusMessage = null;
+    bool status = false;
+    SrfidResult tagWriteResult = SrfidResult.Failure;
+
+    srfidTagData tagData = new srfidTagData();
+    IntPtr availableHandle = tagData.Handle;
+
+    //Retry for 2 times if we get any failure/timeref response
+    for (int i = 0; i < 2; i++)
+    {
+        tagWriteResult = apiInstance.SrfidWriteTag(connectedReaderID, tagId, ref availableHandle, memoryBank, offset, data, password, blockWrite, ref statusMessage);
+        tagData = ObjCRuntime.Runtime.GetNSObject<srfidTagData>(availableHandle);
+
+        if ((tagWriteResult != SrfidResult.ResponseTimeout) && (tagWriteResult != SrfidResult.Failure))
+        {
+            break;
+        }
+
+    }
+
+    if (tagWriteResult == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("Native SrfidWriteTag :" + tagData.TagId);
+        status = true;
+        ReaderResponseResult(tagWriteResult, "Tag Write Result");
+
+    }
+    else if (tagWriteResult == SrfidResult.ResponseError)
+    {
+        status = false;
+        System.Diagnostics.Debug.WriteLine("SrfidWriteTag ResponseError");
+        ReaderResponseResult(tagWriteResult, "Tag Write Result");
+    }
+    else if (tagWriteResult == SrfidResult.Failure || tagWriteResult == SrfidResult.ResponseTimeout)
+    {
+        status = false;
+        System.Diagnostics.Debug.WriteLine("SrfidWriteTag reder prob");
+
+        ReaderResponseResult(tagWriteResult, "Tag Write Result");
+    }
+
+
+
+    return status;
+}
+</code>
+</pre>
 	
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Access Sequence</h2>	
+<h2>Access Sequence</h2>	
 <p>This API is used to execute multiple access operations (Read, Write, etc) at the sametime</p>
 <pre class="prettyprint"><code>
 
@@ -769,7 +803,7 @@ public void AccessSequence(string fillterData ,string fillteMask)
 
     // Set access criteria pram for TID read
     srfidAccessParameters accesParamsTIDRead = new srfidAccessParameters();
-    accesParamsTIDRead.AccessOperationCode =`SrfidAccessoperationcode.Read;
+    accesParamsTIDRead.AccessOperationCode = SrfidAccessoperationcode.Read;
 
     accesParamsTIDRead.MemoryBank = SrfidMemorybank.Tid;
     accesParamsTIDRead.Offset = 0;
@@ -804,7 +838,7 @@ public void AccessSequence(string fillterData ,string fillteMask)
 </code>
 </pre>
 
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Barcode SDK</h2>
+<h2>Barcode SDK</h2>
 <h3><strong>Setup Barcode SDK</strong></h3>
 <p>Following code segments provide the setup procedure for the barcode SDK.</p>
 <pre class="prettyprint"><code>
@@ -905,7 +939,7 @@ public override void SbtEventBarcodeData(NSData barcodeData, intbarcodeType, int
 </code>
 </pre>
 
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Switch Mode into RFID or Scanner for RFD8500</h2>
+<h2>Switch Mode into RFID or Scanner for RFD8500</h2>
 <p>Changes the mode type of the RFD8500 device programmatically.</p>
 
 <pre class="prettyprint"><code>
@@ -950,7 +984,7 @@ public void SwitchModeIntoRfidOrBarcode(DeviceMode deviceMode)
 </code>
 </pre>
 
-<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Regulatory Configuration(Region)</h2>
+<h2>Regulatory Configuration(Region)</h2>
 <h3><strong>srfidGetSupportedRegions</strong></h3>
 <p>Request to receive information regarding all supported regions from a particular RFID reader.</p>
 <pre class="prettyprint"><code>
@@ -1116,8 +1150,971 @@ public string RfidSetRegulatoryConfig(srfidRegulatoryConfig regulatoryConfig)
 </code>
 </pre>
 
+<h2>WLAN</h2>
 
-                                       
+<h3>WLAN Scan Event</h3>		
+
+<p>The SrfidEventWifiScan method processes Wi-Fi scan results from an RFID reader by adding valid wlan scan data to a list.</p>
+<pre class="prettyprint"><code>
+
+public override void SrfidEventWifiScan(int readerID, srfidWlanScanList wlanScanObject)
+{
+    if (wlanScanObject.WlanSsid != null)
+    {
+        wifiScanListArray.Add(wlanScanObject);
+    }
+    var handler = WlanScanEvent;
+    if (handler != null)
+    {
+        handler.Invoke(readerID, wlanScanObject);
+        wifiScanListArray.Append(wlanScanObject);
+    }
+}
+
+</code>
+</pre>
+</li>
+
+<h3>WLAN Scan List</h3>		
+
+<p>The GetWlanScanList method retrieves available WLAN .</p>
+<pre class="prettyprint"><code>
+
+public NSMutableArray GetWlanScanList()
+{
+    string statusMessage = null;
+    NSMutableArray wlanScanList = new NSMutableArray();
+    IntPtr availableHandle = wlanScanList.Handle;
+    SrfidResult wlanScanListResult = apiInstance.SrfidGetWlanScanList(connectedReaderID, ref statusMessage);
+    wlanScanList = ObjCRuntime.Runtime.GetNSObject<NSMutableArray>(availableHandle);
+
+    if (wlanScanListResult == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("Native SrfidGetWlanScanList : Success");
+    }
+    else if (wlanScanListResult == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanScanList ResponseError");
+        logsString = "Response Error";
+    }
+    else if (wlanScanListResult == SrfidResult.InvalidParams)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanScanList Invalid Prams");
+        logsString = "Invalid Parameters";
+    }
+    else if (wlanScanListResult == SrfidResult.Failure || wlanScanListResult == SrfidResult.ResponseTimeout)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanScanList reder prob");
+        logsString = "Reader failure : Response timeout";
+    }
+    return wlanScanList;
+}
+
+
+
+
+</code>
+</pre>
+</li>
+
+
+
+<h3>WLAN Enable/ Disable</h3>		
+
+	
+
+<p>The RfidWifiEnableDisable method enables or disables the WiFi feature on an RFID device.</p>
+<pre class="prettyprint"><code>
+
+public void RfidWifiEnableDisable(bool state)
+{
+    string statusMessage = null;
+    SrfidResult wifiState = apiInstance.SrfidWifiEnableDisable(connectedReaderID, state, ref statusMessage);
+
+    if (wifiState == SrfidResult.Success)
+    {
+      System.Diagnostics.Debug.WriteLine("Native SrfidWifiEnableDisable : Success");
+      if (state == true)
+      {
+        logsString = "WiFi feature enabled Successfully";
+      }
+      else
+      {
+        logsString = "WiFi feature disabled Successfully";
+      }
+    }
+    else if (wifiState == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidWifiEnableDisable ResponseError");
+        logsString = "Response Error";
+    }
+    else if (wifiState == SrfidResult.InvalidParams)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidWifiEnableDisable Invalid Prams");
+        logsString = "Invalid Parameters";
+    }
+    else if (wifiState == SrfidResult.Failure || wifiState == SrfidResult.ResponseTimeout)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidWifiEnableDisable reder prob");
+        logsString = "Reader failure : Response timeout";
+    }
+}
+
+
+
+
+</code>
+</pre>
+</li>
+
+
+
+<h3>Get WLAN Status</h3>		
+
+	
+
+<p>The GetWiFiStatus method retrieves the current WiFi status from an RFID device.</p>
+<pre class="prettyprint"><code>
+
+public string GetWiFiStatus()
+{
+    string statusMessage = null;
+    srfidGetWifiStatusInfo wlanInfo = new srfidGetWifiStatusInfo();
+    IntPtr availableHandle = wlanInfo.Handle;
+
+    SrfidResult wlanScanStatus = SrfidResult.Failure;
+    //Retry for 2 times if we get any failure/timeref response
+    for (int i = 0; i < 2; i++)
+    {
+        wlanScanStatus = apiInstance.SrfidGetWifiStatus(connectedReaderID, ref availableHandle, ref statusMessage);
+        wlanInfo = ObjCRuntime.Runtime.GetNSObject<srfidGetWifiStatusInfo>(availableHandle);
+
+        if ((wlanScanStatus != SrfidResult.ResponseTimeout) && (wlanScanStatus != SrfidResult.Failure))
+        {
+             break;
+        }
+    }
+
+    if (wlanScanStatus == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("Native SrfidGetWifiStatus : Success");
+        logsString = "Wifi Status: " + wlanInfo.WifiStatus;
+        return wlanInfo.WifiStatus;
+    }
+    else if (wlanScanStatus == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWifiStatus ResponseError");
+        logsString = "Response Error";
+        return wlanInfo.WifiStatus;
+    }
+    else if (wlanScanStatus == SrfidResult.InvalidParams)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWifiStatus Invalid Prams");
+        logsString = "Invalid Parameters";
+        return wlanInfo.WifiStatus;
+    }
+    else if (wlanScanStatus == SrfidResult.Failure || wlanScanStatus == SrfidResult.ResponseTimeout)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWifiStatus reder prob");
+        logsString = "Reader failure : Response timeout";
+        return wlanInfo.WifiStatus;
+    }
+    else
+    {
+        return wlanInfo.WifiStatus;
+    }
+}
+
+
+
+</code>
+</pre>
+</li>
+
+
+
+<h3>Get WLAN Profile List</h3>		
+
+<p>The GetWlanProfileList method attempts to retrieve a list of WLAN profiles from an RFID device.</p>
+<pre class="prettyprint"><code>
+
+public SrfidResult GetWlanProfileList(NSMutableArray wlanProfileList)
+{
+    string statusMessage = null;
+    SrfidResult srfid_result = SrfidResult.Failure;
+    for (int i = 0; i < 2; i++)
+    {
+        srfid_result = apiInstance.SrfidGetWlanProfileList(connectedReaderID, ref wlanProfileList, ref statusMessage);
+
+        if ((srfid_result != SrfidResult.ResponseTimeout) && (srfid_result != SrfidResult.Failure))
+        {
+            break;
+        }
+    }
+    if (srfid_result == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanProfileList sucess");
+    }
+    else if (srfid_result == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanProfileList SRFID_RESULT_RESPONSE_ERROR");
+    }
+    else if (srfid_result == SrfidResult.Failure || srfid_result == SrfidResult.ResponseTimeout)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanProfileList readerProblem");
+    }
+    return srfid_result;
+}
+
+
+
+</code>
+</pre>
+</li>
+
+ 
+<h3>Save WLAN Profile </h3>		
+<p>The SaveWlanProfile method saves the current WLAN profile configuration to an RFID device.</p>
+<pre class="prettyprint"><code>
+
+public SrfidResult SaveWlanProfile()
+{
+    string statusMessage = null;
+    SrfidResult saveWlanProfile = apiInstance.SrfidWlanSaveProfile(connectedReaderID, ref statusMessage);
+    if (saveWlanProfile == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("Native SrfidWlanSaveProfile : Success");
+    }
+    else if (saveWlanProfile == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidWlanSaveProfile ResponseError");
+        logsString = "Response Error";
+    }
+    else if (saveWlanProfile == SrfidResult.InvalidParams)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidWlanSaveProfile Invalid Prams");
+        logsString = "Invalid Parameters";
+    }
+    else if (saveWlanProfile == SrfidResult.Failure || saveWlanProfile == SrfidResult.ResponseTimeout)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidWlanSaveProfile reder prob");
+        logsString = "Reader failure : Response timeout";
+    }
+    return saveWlanProfile;
+}
+
+
+
+</code>
+</pre>
+</li>
+
+
+
+
+
+<h3>Add WLAN Profile</h3>		
+<p>The AddWlanProfile method attempts to add a WLAN profile to an RFID device using the provided configuration.</p>
+<pre class="prettyprint"><code>
+
+public SrfidResult AddWlanProfile(sRfidAddProfileConfig profileConfig)
+{
+    string statusMessage = null;
+    SrfidResult addWlanProfile = apiInstance.SrfidAddWlanProfile(connectedReaderID, profileConfig, ref statusMessage);
+           
+    if (addWlanProfile == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("Native SrfidAddWlanProfile : Success");
+        logsString = "Success";
+    }
+    else if (addWlanProfile == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidAddWlanProfile ResponseError");
+        logsString = "Response Error";
+    }
+    else if (addWlanProfile == SrfidResult.InvalidParams)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidAddWlanProfile Invalid Prams");
+        logsString = "Invalid Parameters";
+    }
+    else if (addWlanProfile == SrfidResult.Failure || addWlanProfile == SrfidResult.ResponseTimeout)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidAddWlanProfile reder prob");
+        logsString = "Reader failure : Response timeout";
+    }
+    return addWlanProfile;
+ }
+
+
+
+</code>
+</pre>
+</li>
+
+
+<h3>Remove WLAN Profile </h3>		
+<p>The RemoveWlanProfile method removes a WLAN profile identified by its SSID from an RFID device.</p>
+<pre class="prettyprint"><code>
+
+public void RemoveWlanProfile(string ssidWlan)
+{
+    string statusMessage = null;
+    SrfidResult removeWlanProfile = apiInstance.SrfidRemoveWlanProfile(connectedReaderID, ssidWlan, ref statusMessage);
+    saved_networks_list.Remove(ssidWlan);
+    if (removeWlanProfile == SrfidResult.Success)
+    {
+     System.Diagnostics.Debug.WriteLine(“Native SrfidRemoveWlanProfile : Success”);
+    }
+    else if (removeWlanProfile == SrfidResult.ResponseError)
+    {
+     System.Diagnostics.Debug.WriteLine(“SrfidRemoveWlanProfile ResponseError”);
+    }
+    else if (removeWlanProfile == SrfidResult.InvalidParams)
+    {
+     System.Diagnostics.Debug.WriteLine(“SrfidRemoveWlanProfile Invalid Prams”);
+     logsString = “Invalid Parameters”;
+    }
+    else if (removeWlanProfile == SrfidResult.Failure || removeWlanProfile == SrfidResult.ResponseTimeout)
+    {
+     System.Diagnostics.Debug.WriteLine(“SrfidRemoveWlanProfile reder prob”);
+     logsString = “Reader failure : Response timeout”;
+    
+    }
+}
+
+
+</code>
+</pre>
+</li>
+
+
+<h3>Connect WLAN Profile  </h3>		
+<p>The ConnectWlanProfile method attempts to connect to a WLAN profile identified by its SSID.</p>
+<pre class="prettyprint"><code>
+
+public void RemoveWlanProfile(string ssidWlan)
+{
+    string statusMessage = null;
+    SrfidResult removeWlanProfile = apiInstance.SrfidRemoveWlanProfile(connectedReaderID, ssidWlan, ref statusMessage);
+    saved_networks_list.Remove(ssidWlan);
+    if (removeWlanProfile == SrfidResult.Success)
+    {
+     System.Diagnostics.Debug.WriteLine(“Native SrfidRemoveWlanProfile : Success”);
+    }
+    else if (removeWlanProfile == SrfidResult.ResponseError)
+    {
+     System.Diagnostics.Debug.WriteLine(“SrfidRemoveWlanProfile ResponseError”);
+    }
+    else if (removeWlanProfile == SrfidResult.InvalidParams)
+    {
+     System.Diagnostics.Debug.WriteLine(“SrfidRemoveWlanProfile Invalid Prams”);
+     logsString = “Invalid Parameters”;
+    }
+    else if (removeWlanProfile == SrfidResult.Failure || removeWlanProfile == SrfidResult.ResponseTimeout)
+    {
+     System.Diagnostics.Debug.WriteLine(“SrfidRemoveWlanProfile reder prob”);
+     logsString = “Reader failure : Response timeout”;
+    
+    }
+}
+
+
+</code>
+</pre>
+</li>
+
+
+<h3>Get WLAN Certificates List</h3>		
+<p>TThe GetWlanCertificatesList method retrieves a list of WLAN certificates from an RFID device.</p>
+<pre class="prettyprint"><code>
+
+public SrfidResult GetWlanCertificatesList(NSMutableArray wlanCertificatesList)
+{
+    string statusMessage = null;
+    IntPtr availableHandle = wlanCertificatesList.Handle;
+    SrfidResult getWlanCertificatesListApiCall = apiInstance.SrfidGetWlanCertificatesList(connectedReaderID, ref availableHandle, ref statusMessage);
+
+    if (getWlanCertificatesListApiCall == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanCertificatesList Success");
+        logsString = "Success";
+    }
+    else if (getWlanCertificatesListApiCall == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanCertificatesList ResponseError");
+        logsString = "Response Error";
+
+    }
+    else if (getWlanCertificatesListApiCall == SrfidResult.Failure || getWlanCertificatesListApiCall == SrfidResult.ResponseTimeout)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetWlanCertificatesList Failure");
+        logsString = "Failure";
+    }
+
+    return getWlanCertificatesListApiCall;
+
+
+}
+
+</code>
+</pre>
+</li>
+
+
+<h3>Disconnect WLAN Profile </h3>		
+<p>The DisconnectWlanProfile method disconnects an RFID device from the current WLAN profile.</p>
+<pre class="prettyprint"><code>
+
+  
+public SrfidResult DisconnectWlanProfile()
+{
+     string statusMessage = null;
+    SrfidResult disconnectWlanProfile = apiInstance.SrfidWlanDisConnectProfile(connectedReaderID, ref statusMessage);
+
+    if (disconnectWlanProfile == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("Native disconnectWlanProfile : Success");
+    }
+    else if (disconnectWlanProfile == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("disconnectWlanProfile ResponseError");
+
+    }
+    else if (disconnectWlanProfile == SrfidResult.InvalidParams)
+    {
+        System.Diagnostics.Debug.WriteLine("disconnectWlanProfile Invalid Prams");
+        logsString = "Invalid Parameters";
+    }
+    else if (disconnectWlanProfile == SrfidResult.Failure || disconnectWlanProfile == SrfidResult.ResponseTimeout)
+    {
+        System.Diagnostics.Debug.WriteLine("disconnectWlanProfile reder prob");
+        ogsString = "Reader failure : Response timeout";
+    }
+
+    return disconnectWlanProfile;
+}
+
+
+</code>
+</pre>
+</li>
+
+<h2>Endpoint Configuration</h2>	
+<h3>Add Endpoint Configuration</h3>		
+<p>The AddEndpointConfig method will add an endpoint for the RFID reader.</p>
+<pre class="prettyprint"><code>
+     //Create RfidSetEndPointConfig object
+    private RfidSetEndPointConfig ConfigureEndPoint()
+    {
+        RfidSetEndPointConfig config = new RfidSetEndPointConfig();
+    
+        
+        string operation;
+    
+        if (activate)
+        {
+          operation = "activate";
+        }
+        else 
+        {
+            if (Update)
+            {
+                operation = "update";
+            }
+            else
+            {
+                operation = "new";
+            }
+    
+        }
+        config.SetOperation(new NSString(operation));
+    
+        config.SetEpname(new NSString("endpoint name"));
+        config.SetType(new NSString("soti")); 
+        config.SetProtocol(new NSString("MQTT"));
+        config.SetUrl(new NSString("url"));
+        config.SetPort(new NSString("PORT Number"));
+        config.SetKeepalive(new NSString("Keepa live time"));
+        config.SetTenantid(new NSString("Tenant id"));
+        config.SetRcdelaymin(new NSString("Reconnect  delay min time"));
+        config.SetRcdelaymax(new NSString("Reconnect  delay max time"));
+        config.SetHostvfy(new NSString("hostVfy"));
+    
+        // Handle optional fields
+        config.SetUserName(new NSString("username"));
+        config.SetPassword(new NSString("password"));
+    
+        // Set clean session options
+        if (cleanSession)
+        {
+            config.SetEncleanss(true);
+            config.SetDscleanss(false);
+        }
+        else
+        {
+            config.SetEncleanss(false);
+            config.SetDscleanss(true);
+        }
+
+        //If setType MDM
+        //If setType SOTI no need to do bellow steps
+        //if setType MDM and setProtocol MQTT
+        config.SetSubname(new NSString("sub name"));
+        config.setPub1name(new NSString("Pub1 name"));
+        config.setPub2name(new NSString("Pub2 name"));
+
+        //if setType MDM and setProtocol MQTT_TLS
+        config.setCacertname(new NSString("CA certificate name"));
+        config.setCertname(new NSString("Certificate name"));
+        config.setKeyname(new NSString("Key name"));
+    
+    
+        return config;
+    }
+    
+   
+    public SrfidResult AddEndpointConfig (RfidSetEndPointConfig endPointConfig)
+    {
+        SrfidResult addEPconfig = SrfidResult.Failure;
+        string statusMsg = null;
+        try
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                addEPconfig = apiInstance.SrfidSetEndPointConfig(connectedReaderID, endPointConfig, ref statusMsg);
+                
+                if (addEPconfig != SrfidResult.ResponseTimeout && addEPconfig != SrfidResult.Failure)
+                {
+                    break;
+                }
+            }
+
+            if (addEPconfig == SrfidResult.Success)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidSetEndPointConfig Success");   
+            }
+            else if (addEPconfig == SrfidResult.ResponseError)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidSetEndPointConfig ResponseError");  
+            }
+            else if (addEPconfig == SrfidResult.ResponseTimeout || addEPconfig == SrfidResult.Failure)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidSetEndPointConfig ResponseTimeout/Failure"); 
+            }
+
+            return addEPconfig;
+
+        } catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidSetEndPointConfig Exception " + e);
+            return addEPconfig;
+        }
+        
+    }
+</code>
+</pre>
+</li>
+
+<h3>Get Endpoint Configuration List</h3>		
+<p>The GetEndpointList method retrieves a list of endpoints from an RFID reader.</p>
+<pre class="prettyprint"><code>
+
+   
+    public SrfidResult GetEndpointList(NSMutableArray endpointList)
+    {
+        SrfidResult getEndpointList = SrfidResult.Failure;
+        string statusMsg = null;
+        IntPtr availableHandle = endpointList.Handle;
+        try
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                getEndpointList = apiInstance.SrfidGetEndPointList(connectedReaderID, ref availableHandle, ref statusMsg);
+                endpointList = ObjCRuntime.Runtime.GetNSObject<NSMutableArray>(availableHandle);
+
+                if (getEndpointList != SrfidResult.ResponseTimeout && getEndpointList != SrfidResult.Failure)
+                {
+                    break;
+                }
+
+            }
+
+            if (getEndpointList == SrfidResult.Success)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidGetEndPointList Success");
+            }
+            else if (getEndpointList == SrfidResult.ResponseError)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidGetEndPointList ResponseError");
+            }
+            else if (getEndpointList == SrfidResult.ResponseTimeout || getEndpointList == SrfidResult.Failure)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidGetEndPointList ResponseTimeout/Failure");
+            }
+
+            System.Diagnostics.Debug.WriteLine("Returning the EP List");
+
+            return getEndpointList;
+
+        } catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidGetEndPointList Exception " + e);
+            return getEndpointList;
+
+        }
+          
+    }    
+</code>
+</pre>
+</li>
+
+
+<h3>Save Endpoint Configuration</h3>		
+<p>The SaveEndpointConfig method is responsible for saving the current endpoint configuration to an RFID reader.</p>
+<pre class="prettyprint"><code>
+
+   
+    public SrfidResult SaveEndpointConfig()
+    {
+        SrfidResult saveEPConfig = SrfidResult.Failure;
+        string statusMsg = null;
+
+        try
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                saveEPConfig = apiInstance.SrfidSaveEndPointConfig(connectedReaderID, ref statusMsg);
+                if (saveEPConfig == SrfidResult.ResponseTimeout || saveEPConfig == SrfidResult.Failure)
+                {
+                    break;
+                }
+            }
+
+            if (saveEPConfig == SrfidResult.Success)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidSaveEndPointConfig Success");
+            }
+            else if (saveEPConfig == SrfidResult.ResponseError)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidSaveEndPointConfig ResponseError");
+            }
+            else if (saveEPConfig == SrfidResult.ResponseTimeout || saveEPConfig == SrfidResult.Failure)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidSaveEndPointConfig ResponseTimeout/Failure");
+            }
+
+            return saveEPConfig;
+
+        } catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidSaveEndPointConfig Exception " + e);
+            return saveEPConfig;
+        }   
+    }
+
+
+</code>
+</pre>
+</li>
+
+<h3>Remove Endpoint Configuration</h3>		
+<p>The RemoveEndpoint method is designed to delete an endpoint configuration from an RFID reader.</p>
+<pre class="prettyprint"><code>
+
+   
+    public SrfidResult RemoveEndpoint(NSString epName) 
+    {
+        SrfidResult removeEP = SrfidResult.Failure;
+        string statusMsg = null;
+
+        try
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                removeEP = apiInstance.SrfidRemoveEndPointConfig(connectedReaderID, epName, ref statusMsg);
+                if (removeEP == SrfidResult.ResponseTimeout || removeEP == SrfidResult.Failure)
+                {
+                    break;
+                }
+            }
+
+            if (removeEP == SrfidResult.Success)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidRemoveEndPointConfig Success");
+       
+            }
+            else if (removeEP == SrfidResult.ResponseError)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidRemoveEndPointConfig ResponseError");
+       
+            }
+            else if (removeEP == SrfidResult.ResponseTimeout || removeEP == SrfidResult.Failure)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidRemoveEndPointConfig ResponseTimeout/Failure");
+ 
+            }
+
+
+            return removeEP;
+
+        } catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidRemoveEndPointConfig Exception " + e);
+            return removeEP;
+
+        }  
+    }
+
+
+</code>
+</pre>
+</li>
+
+<h3>Get Endpoint Configuration</h3>		
+<p>The GetEndpointConfig method retrieves the configuration for a specific endpoint on an RFID reader.</p>
+<pre class="prettyprint"><code>
+
+   
+    public SrfidResult GetEndpointConfig(NSString epName, srfidGetEndPointConfig epConfig)
+    {
+        SrfidResult getEPConfig = SrfidResult.Failure;
+        string statusMsg = null;
+        IntPtr availableHandle = epConfig.Handle;
+
+        try
+        {
+            getEPConfig = apiInstance.SrfidGetEndpointConfig(connectedReaderID, epName, ref availableHandle, ref statusMsg);
+            epConfig = ObjCRuntime.Runtime.GetNSObject<srfidGetEndPointConfig>(availableHandle);
+
+            if (getEPConfig == SrfidResult.Success)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidGetEndpointConfig Success");
+            }
+            else if (getEPConfig == SrfidResult.ResponseError)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidGetEndpointConfig ResponseError");
+            }
+            else if (getEPConfig == SrfidResult.ResponseTimeout || getEPConfig == SrfidResult.Failure)
+            {
+                System.Diagnostics.Debug.WriteLine("SrfidGetEndpointConfig ResponseTimeout/Failure");
+            }
+
+            return getEPConfig;
+
+        } catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidGetEndpointConfig Exception " + e);
+            return getEPConfig;
+        }
+
+        
+    }
+
+
+</code>
+</pre>
+</li>
+
+<h3>Get Active Endpoint Configuration List</h3>		
+<p>The GetActiveEndpoints method is designed to retrieve a list of active endpoints from an RFID reader.</p>
+<pre class="prettyprint"><code>
+
+public SrfidResult GetActiveEndpoints(srfidGetActiveEnpoints activeEPs)
+{
+    SrfidResult getActiveEPs = SrfidResult.Failure;
+    string statusMsg = null;
+
+    IntPtr availableHandle = activeEPs.Handle;
+
+    try
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            getActiveEPs = apiInstance.SrfidGetActiveEndPoints(connectedReaderID, ref availableHandle, ref statusMsg);
+            activeEPs = ObjCRuntime.Runtime.GetNSObject<srfidGetActiveEnpoints>(availableHandle);
+            if (getActiveEPs == SrfidResult.ResponseTimeout || getActiveEPs == SrfidResult.Failure)
+            {
+                break;
+            }
+        }
+
+        if (getActiveEPs == SrfidResult.Success)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidGetActiveEndPoints Success");
+        }
+        else if (getActiveEPs == SrfidResult.ResponseError)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidGetActiveEndPoints ResponseError");
+        }
+        else if (getActiveEPs == SrfidResult.ResponseTimeout || getActiveEPs == SrfidResult.Failure)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidGetActiveEndPoints ResponseTimeout/Failure");
+        }
+
+        return getActiveEPs;
+
+    } catch (Exception e)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidGetActiveEndPoints Exception " + e);
+        return getActiveEPs;
+    }   
+}
+
+</code>
+</pre>
+</li>
+
+<h2>Certificate Management</h2>	
+<h3>Add New Certificate</h3>		
+<p>The AddNewCertificate method attempts to add a new certificate to the RFID reader via a specified file.</p>
+<pre class="prettyprint"><code>
+public SrfidResult AddNewCertificate (NSString fileName, NSUrl filePath)
+{
+    SrfidResult addNewCert = SrfidResult.Failure;
+    string statusMsg = null;
+
+    addNewCert = apiInstance.SrfidAddCertificate(connectedReaderID, fileName, filePath, ref statusMsg);
+         
+
+    if (addNewCert == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidAddCertificate Success");
+  
+    }
+    else if (addNewCert == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidAddCertificate ResponseError");
+    }
+    else if (addNewCert == SrfidResult.ResponseTimeout || addNewCert == SrfidResult.Failure)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidAddCertificate ResponseTimeout/Failure");
+           
+    }
+
+    return addNewCert;
+}
+    </code>
+    </pre>
+    </li>
+
+<h3>Save Certificate</h3>		
+<p>The SaveCertificate method attempts to save a certificate to the connected RFID reader.</p>
+<pre class="prettyprint"><code>
+
+public SrfidResult SaveCertificate()
+{
+    string statusMsg = null;
+    SrfidResult saveCertificate = SrfidResult.Failure;
+
+    for (int i = 0; i < 2; i++)
+    {
+        saveCertificate = apiInstance.SrfidSaveCertificate(connectedReaderID, ref statusMsg);
+
+        if (saveCertificate == SrfidResult.ResponseTimeout || saveCertificate == SrfidResult.Failure)
+        {
+            break;
+        }
+    }
+
+    if (saveCertificate == SrfidResult.Success)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidSaveCertificate Success");
+
+    }
+    else if (saveCertificate == SrfidResult.ResponseError)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidSaveCertificate ResponseError");
+
+    }
+    else if (saveCertificate == SrfidResult.ResponseTimeout || saveCertificate == SrfidResult.Failure)
+    {
+        System.Diagnostics.Debug.WriteLine("SrfidSaveCertificate ResponseTimeout/Failure");
+  
+    }
+
+     return saveCertificate;
+}
+    </code>
+    </pre>
+    </li>
+
+<h3>Remove Certificate</h3>		
+<p>The RemoveCertificate method is designed to remove a specified certificate from the connected RFID reader.</p>
+<pre class="prettyprint"><code>
+
+    
+    public SrfidResult RemoveCertificate (NSString fileName)
+    {
+        string statusMsg = null;
+        SrfidResult removeCertificate = SrfidResult.Failure;
+
+        for (int i = 0; i < 2; i++)
+        {
+            removeCertificate = apiInstance.SrfidRemoveCertificate(connectedReaderID, fileName, ref statusMsg);
+
+            if (removeCertificate == SrfidResult.ResponseTimeout || removeCertificate == SrfidResult.Failure)
+            {
+                break;
+            }
+        }
+
+        if (removeCertificate == SrfidResult.Success)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidRemoveCertificate Success");
+        }
+        else if (removeCertificate == SrfidResult.ResponseError)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidRemoveCertificate ResponseError");   
+        }
+        else if (removeCertificate == SrfidResult.ResponseTimeout || removeCertificate == SrfidResult.Failure)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidRemoveCertificate ResponseTimeout/Failure");  
+        }
+
+        return removeCertificate;
+    }
+
+    </code>
+    </pre>
+    </li>
+    <h3>Remove All Certificates</h3>		
+<p>The RemoveAllCertificates method is designed to remove all certificates from the connected RFID reader.</p>
+<pre class="prettyprint"><code>
+
+    public SrfidResult RemoveAllCertificates()
+    {
+        string statusMsg = null;
+        SrfidResult removeAllCertificate = SrfidResult.Failure;
+
+        for (int i = 0; i < 2; i++)
+        {
+            removeAllCertificate = apiInstance.SrfidRemoveAllCertificates(connectedReaderID, ref statusMsg);
+
+            if (removeAllCertificate == SrfidResult.ResponseTimeout || removeAllCertificate == SrfidResult.Failure)
+            {
+                break;
+            }
+        }
+
+        if (removeAllCertificate == SrfidResult.Success)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidRemoveCertificate Success");
+        }
+        else if (removeAllCertificate == SrfidResult.ResponseError)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidRemoveCertificate ResponseError");
+        }
+        else if (removeAllCertificate == SrfidResult.ResponseTimeout || removeAllCertificate == SrfidResult.Failure)
+        {
+            System.Diagnostics.Debug.WriteLine("SrfidRemoveCertificate ResponseTimeout/Failure");
+        }
+
+        return removeAllCertificate;
+    }
+    </code>
+    </pre>
+    </li>
+  
 
 
                                     </div>
@@ -1126,7 +2123,7 @@ public string RfidSetRegulatoryConfig(srfidRegulatoryConfig regulatoryConfig)
                             </div>
                         </div>
                     </div>
-                </div><!--/.col-sm-6-->
+                </div>
             </div>
             </section>
         </div>
