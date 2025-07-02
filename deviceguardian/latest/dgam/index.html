@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Guardian Access Management
-                                            1.0
+                                            1.1
                         </p>
 
                     </ul>
@@ -75,47 +75,47 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/deviceguardian/1-0/about">
+                            <a href="/deviceguardian/1-1/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/getstarted">
+                            <a href="/deviceguardian/1-1/getstarted">
                                         Quick Start
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/setup">
+                            <a href="/deviceguardian/1-1/setup">
                                         Install
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/config">
+                            <a href="/deviceguardian/1-1/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/use">
+                            <a href="/deviceguardian/1-1/use">
                                         Device Use
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/dashboard">
+                            <a href="/deviceguardian/1-1/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/dgam">
+                            <a href="/deviceguardian/1-1/dgam">
                                         Access Management
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/api">
+                            <a href="/deviceguardian/1-1/api">
                                         APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/faq">
+                            <a href="/deviceguardian/1-1/faq">
                                         FAQ
                             </a>
                         </li>
@@ -125,7 +125,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/search">
+                            <a href="/deviceguardian/1-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="access-management" class="anchor"><a class="heading-anchor" href="#access-management"><span></span></a>Access Management</h1>
                                     <p>
                                             Device Guardian Access Management
-                                            1.0
+                                            1.1
                                     </p>
                                 </div>
                             </section>                    
@@ -250,21 +250,61 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>Device Guardian Access Management (DGAM)</strong> enhances device management and access by streamlining operations. A kiosk display delivers instant visibility into the Device Guardian system, enabling effortless monitoring of device availability within the local area, ensuring accountability through worker-device assignments, and ensuring that devices are fully charged for the next shift.</p>
+<p><strong>Device Guardian Access Management (DGAM)</strong> enhances device management and access by streamlining operations based on kiosk location. The kiosk display offers immediate visibility of devices within its vicinity, allowing for effortless monitoring of device availability. It ensures accountability through worker-device assignments and ensures that devices are fully charged for the upcoming shift, thereby improving local visibility, boosting workflow efficiencies, and facilitating the swift recovery of missing devices.</p>
 
-<p>Quickly locate missing devices by identifying the current and previous users, as well as the reason for the missing status, and initiate <a href="../use/">recovery</a> with <strong>Device Guardian.</strong> This enhances local visibility, boosts workflow efficiencies, and facilitates the swift recovery of missing devices.</p>
+<p>The kiosk monitors the status of its registered devices, categorizing them as In Use, Available, or Missing. Within the workflow, when users retrieve a device from the cradle and login, the device is marked as "In Use." When devices are returned to the powered cradle after use, they are classified as "Available." Misplaced devices can be quickly located by identifying the current and previous users and initiating <a href="../use/">recovery</a> either with <strong>Device Guardian</strong> or by scanning a barcode at the kiosk. A device is designated as “Missing” if it is neither logged in by a user nor placed on charge, or if recovery efforts are unsuccessful.</p>
 
 <p><strong><em>As an extension of Device Guardian, DGAM’s features and functionality are built upon the core capabilities of Device Guardian. This section provides guidance on the installation and use specific to DGAM. Any features not covered here are part of Device Guardian and are discussed in the respective Device Guardian sections.</em></strong></p>
 
 <hr>
 
-<h2 id="install" class="anchor"><a class="heading-anchor" href="#install"><span></span></a>Install</h2>
+<h2 id="specifications" class="anchor"><a class="heading-anchor" href="#specifications"><span></span></a>Specifications</h2>
 
-<p>Device Guardian Access Management (DGAM) requires the installation of Device Guardian on both kiosks and devices, as well as DGAM-specific licenses to access its functionality. To procure these licenses, visit the <a href="../license/">Licensing</a> guide.</p>
+<p><strong>Kiosks:</strong></p>
 
-<p><strong>Installation for both kiosks and devices:</strong></p>
+<ul>
+<li>Zebra recommends to maintain a minimum distance of 6 meters between kiosks.</li>
+</ul>
 
-<p>Install Device Guardian on both kiosks and devices; see <a href="../setup/">Device Guardian installation</a> for details. DGAM requires the following permissions to be granted for both kiosks and devices:</p>
+<p><strong>Devices:</strong></p>
+
+<ul>
+<li><strong>Within Kiosk Range (Less then 3 meters) -</strong> The device logs out automatically when placed on charge.</li>
+
+<li><strong>Intermediate Range (Between 3 and 6 meters) -</strong> The device may either log out or remain logged in while charging.</li>
+
+<li><strong>Out-of-range from Kiosk (More than 6 meters) -</strong> The device remains logged in when charging.</li>
+</ul>
+
+<hr>
+
+<h2 id="installation" class="anchor"><a class="heading-anchor" href="#installation"><span></span></a>Installation</h2>
+
+<p>Device Guardian Access Management (DGAM) requires the installation of the following components:</p>
+
+<ul>
+<li><strong>For Both Kiosks and Devices:</strong>
+
+
+<ul>
+<li><strong>Device Guardian -</strong> Refer to the <a href="../setup/">Device Guardian installation guide</a> for instructions. </li>
+
+<li><strong>DGAM-specific Licenses -</strong> Visit the <a href="../license/">Licensing</a> guide to obtain these licenses. </li></ul>
+</li>
+
+<li><strong>For Devices only:</strong>
+
+
+<ul>
+<li><strong><a href="/identityguardian">Identity Guardian</a> -</strong> Facilitates user authentication for device access. Configure Identity Guardian according to your user authentication strategy.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h3 id="permissions" class="anchor"><a class="heading-anchor" href="#permissions"><span></span></a>Permissions</h3>
+
+<p>DGAM requires the following permissions to be granted for both kiosks and devices:</p>
 
 <ul>
 <li><strong>Camera Permission -</strong> Needed to scan the registration QR code, essential for registering the device with a kiosk.</li>
@@ -278,10 +318,18 @@
 <li><strong>Files and Media Permission -</strong> Specific to Android 11, required to read from or write to the device’s storage, allowing access or modification of files and media content while adhering to Android 11’s scoped storage policies.</li>
 </ul>
 
+<hr>
+
+<h3 id="setupguide" class="anchor"><a class="heading-anchor" href="#setupguide"><span></span></a>Setup Guide</h3>
+
+<p>After installation, perform the following:</p>
+
 <p><strong>Kiosks:</strong></p>
 
 <ul>
-<li>Enroll the kiosk to the Device Guardian server; see <a href="../config/#deviceenrollment">Enroll Devices</a>.</li>
+<li><a href="../config/#deviceenrollment">Enroll the kiosk to the Device Guardian server</a>.</li>
+
+<li>Assign the <a href="#kiosk">kiosk</a> to a site.</li>
 </ul>
 
 <p><strong>Devices:</strong></p>
@@ -375,14 +423,14 @@
 
 <h2 id="kioskdashboard" class="anchor"><a class="heading-anchor" href="#kioskdashboard"><span></span></a>Kiosk Dashboard</h2>
 
-<p>The kiosk dashboard features three prominent cards that display device counts:</p>
+<p>The kiosk dashboard prominently displays three cards indicating device counts:</p>
 
 <ul>
-<li><strong>Available -</strong> Devices currently charging with no user signed in</li>
+<li><strong>Available -</strong> Devices placed on the charging cradle without any user signed in, ready for use.</li>
 
-<li><strong>In Use -</strong> Devices authenticated via <a href="/identityguardian">Identity Guardian</a>, indicating active use</li>
+<li><strong>In Use -</strong> Devices have been removed from the cradle and authenticated by users via <a href="/identityguardian">Identity Guardian</a>, indicating active use.</li>
 
-<li><strong>Missing -</strong> Devices with unknown locations</li>
+<li><strong>Missing -</strong> Devices that have been logged out by the user and have not been returned to the kiosk, or that could not be recovered.</li>
 </ul>
 
 <p><img alt="image" style="height:450px" src="kiosk-dashboard.png"></p>
@@ -409,17 +457,137 @@
 <li>Last Updated</li>
 </ul>
 
-<p><img alt="image" style="height:450px" src="kiosk-in-use.png"></p>
+<hr>
 
-<p><em>Missing Devices with device information</em></p>
+<h3 id="deviceusagereports" class="anchor"><a class="heading-anchor" href="#deviceusagereports"><span></span></a>Device Usage Reports</h3>
 
-<p>Dashboard actions:</p>
+<p><strong>Device Usage Reports</strong> enable organizations to detect trends and anomalies, assisting optimizing device availability and utilization. The reports provide the number of devices that are in use, missing, or available over various time periods: Yesterday, Last Week, and Last Month.</p>
+
+<p>To access these reports:</p>
+
+<ol>
+<li>On the kiosk dashboard, tap the menu icon at the top left.
+<img alt="image" style="height:450px" src="kiosk-dashboard-menu.png"></li>
+
+<li>Tap <strong>Reports.</strong>
+<img alt="image" style="height:450px" src="reports-menu-option.png"></li>
+
+<li>Select the desired time frame:
+
 
 <ul>
-<li><strong>Data Sorting -</strong> Organize data by tapping on visible column names, making it easier to manage and analyze information.</li>
+<li><strong>Yesterday -</strong> Displays hourly device counts for yesterday, categorized by status: 
 
-<li><strong>Data Filtering -</strong> Apply filter options based on specific columns, such as Device Name and Battery Level, to quickly target relevant data points. Tap <strong>Add Filter</strong> and select the desired columns for filtering.</li>
+
+<ul>
+<li>Available</li>
+
+<li>In Use</li>
+
+<li>Missing
+<img alt="image" style="height:550px" src="report-yesterday.png"></li></ul>
+</li>
+
+<li><strong>Last Week -</strong> Displays daily device counts for the past week, categorized by status: 
+
+
+<ul>
+<li>Available</li>
+
+<li>In Use</li>
+
+<li>Missing
+<img alt="image" style="height:550px" src="report-last-week.png"></li></ul>
+</li>
+
+<li><strong>Last Month -</strong> Displays daily device counts for the last 30 days, categorized by status: 
+
+
+<ul>
+<li>Available</li>
+
+<li>In Use</li>
+
+<li>Missing
+<img alt="image" style="height:550px" src="report-last-month.png">    </li></ul>
+</li></ul>
+</li>
+</ol>
+
+<!--
+Dashboard actions:
+
+- **Data Sorting -** Organize data by tapping on visible column names, making it easier to manage and analyze information.
+- **Data Filtering -** Apply filter options based on specific columns, such as Device Name and Battery Level, to quickly target relevant data points. Tap **Add Filter** and select the desired columns for filtering.
+
+<img alt="image" style="height:450px" src="kiosk-in-use.png" /> -->
+
+<hr>
+
+<h3 id="finddevice" class="anchor"><a class="heading-anchor" href="#finddevice"><span></span></a>Find Device</h3>
+
+<p>To recover lost or misplaced devices, this process can be initiated through the kiosk. The finding device would scan the QR code of the missing device from the kiosk. This process is applicable to devices categorized under <strong>Missing.</strong></p>
+
+<p>Steps to initiate the finding process via the kiosk:</p>
+
+<ol>
+<li>On the kiosk dashboard, tap <strong>Missing</strong> to view the relevant devices. Tap the menu icon under the Action column for the desired device and select <strong>Find device.</strong>
+<img alt="image" style="height:450px" src="kiosk-find-device.png"> </li>
+
+<li>The QR code is displayed.
+<img alt="image" style="height:450px" src="qr-code.png"> </li>
+
+<li>Open Device Guardian on the finding device. Tap on the options menu at the top right and select <strong>Register to Kiosk.</strong> Although the device will not be registered to the kiosk in this instance, the scan beam activates. Scan the QR code. 
+<img alt="image" style="height:500px" src="register-to-kiosk.png"> </li>
+
+<li>The app screen with the proximity meter appears, providing guidance on how close or far the user is located from the misplaced device. To proceed  finding the misplaced device, follow step 3 onwards from the <a href="../use/#finddevice">Find Device</a> procedure.
+<img alt="image" style="height:500px" src="../use/meter-further.png"></li>
+</ol>
+
+<hr>
+
+<h3 id="aboutkiosk" class="anchor"><a class="heading-anchor" href="#aboutkiosk"><span></span></a>About Kiosk</h3>
+
+<p>The About Kiosk screen provides information about the device and the status of specific features:</p>
+
+<ul>
+<li><strong>Kiosk Name -</strong> Model name of the kiosk</li>
+
+<li><strong>Kiosk Serial Number -</strong> Serial number of the kiosk</li>
+
+<li><strong>Kiosk Site -</strong> Site where the kiosk is located</li>
+
+<li><strong>Bluetooth Proximity -</strong> Status of <strong>Bluetooth Proximity,</strong> managed through <a href="../config/#managesites">Manage Sites</a>:
+
+
+<ul>
+<li>Enabled</li>
+
+<li>Disabled</li></ul>
+</li>
+
+<li><strong>Return To Different Kiosk -</strong> Status of <strong>Return To Different Kiosk,</strong> managed through <a href="../config/#managesites">Manage Sites</a>:
+
+
+<ul>
+<li>Enabled</li>
+
+<li>Disabled</li></ul>
+</li>
 </ul>
+
+<p>To access the About Kiosk screen:</p>
+
+<ol>
+<li>On the kiosk dashboard, tap the menu icon at the top left.
+<img alt="image" style="height:450px" src="kiosk-dashboard-menu.png"></li>
+
+<li>Tap <strong>About Kiosk.</strong>
+<img alt="image" style="height:450px" src="about-menu-option.png"></li>
+
+<li>The About screen is displayed.
+<img alt="image" style="height:450px" src="about-kiosk.png"></li>
+</ol>
 
 <hr>
 
@@ -433,55 +601,73 @@
 
 <h3 id="welcomedashboard" class="anchor"><a class="heading-anchor" href="#welcomedashboard"><span></span></a>Welcome Dashboard</h3>
 
-<p>The DGAM Welcome Dashboard (Dashboard &gt; Welcome Dashbaord) provides an intuitive dashboard that displays real-time data at-a-glance. It features three prominent cards that display device counts:</p>
-
-<ul>
-<li><strong>Available -</strong> Devices currently placed on charge</li>
-
-<li><strong>In Use -</strong> Devices where users have been authenticated with [Identity Guardian][/identityguardian]</li>
-
-<li><strong>Missing -</strong> Devices removed from charging</li>
-</ul>
+<p>The DGAM Welcome Dashboard (Dashboard &gt; Welcome Dashbaord) provides an intuitive interface that displays real-time data at-a-glance. </p>
 
 <p><img alt="image" style="height:650px" src="welcome-dashboard.jpg"></p>
 
 <p><em>Welcome Dashboard guide</em></p>
 
-<p>Tapping any card provides detailed information on the corresponding devices:</p>
+<p>It features three prominent cards that shows device counts. Click on each card for more device details:</p>
 
 <ul>
-<li>Device Name</li>
+<li><strong>Available -</strong> Lists devices currently on charge with no user logged in. Information provided includes: Device Name, Battery %, Site, User Name, Kiosk, and Last Updated.
+<img alt="image" style="height:450px" src="portal-avail-devices.png"></li>
 
-<li>Battery Level</li>
+<li><strong>In Use -</strong> Lists devices with users authenticated via <a href="/identityguardian">Identity Guardian</a>. Information provided includes: Device Name, Battery %, Site, User Name, Kiosk, and Last Updated. To take action on a specific device, tap the menu icon in the Actions column:
 
-<li>Serial Number</li>
 
-<li>Alias Name</li>
+<ul>
+<li><strong>Lost -</strong> Select this option to mark the device as "Lost" after unsuccessful attempts to locate it. Lost devices can be viewed in the <a href="#devices">Devices report</a>.</li>
 
-<li>Asset Type (Device or Peripheral)</li>
+<li><strong>Decommission -</strong> Select this option to decommission the device, removing its license and placing it out-of-service.
+<img alt="image" style="height:450px" src="portal-in-use.jpg"></li></ul>
+</li>
 
-<li>Last User</li>
+<li><strong>Missing -</strong> Lists devices that have been logged out by the user and have not been returned to the kiosk, or that could not be recovered. Information provided includes: Device Name, Battery %, Site, User Name, Kiosk, Last Updated, and Status. To take action on a specific device, tap the menu icon in the Actions column:
 
-<li>Last Access Point</li>
 
-<li>Last Updated</li>
+<ul>
+<li><strong>Lost -</strong> Select this option to mark the device as "Lost" after unsuccessful attempts to locate it. Lost devices can be viewed in the <a href="#devices">Devices report</a>.</li>
+
+<li><strong>Decommission -</strong> Select this option to decommission the device, removing its license and placing it out-of-service.
+<img alt="image" style="height:450px" src="portal-missing.png"></li></ul>
+</li>
 </ul>
-
-<p><img alt="image" style="height:600px" src="portal-avail-devices.png"></p>
-
-<p><em>Device Summary of Available Devices</em></p>
 
 <!-- **Data Sorting -** Organize data by tapping on visible column names, making it easier to manage and analyze information.  -->
 
 <hr>
 
+<h3 id="deviceautoassignment" class="anchor"><a class="heading-anchor" href="#deviceautoassignment"><span></span></a>Device Auto Assignment</h3>
+
+<p><strong>Device Auto Assignment</strong> (located under Settings &gt; Configuration) automatically assigns the mobile device to the nearest charging kiosk within its Bluetooth range, eliminating the need for manual <a href="#registerdevicetokiosk">device registration to the kiosk</a>.</p>
+
+<p><img alt="image" style="height:300px" src="auto-assign.jpg"></p>
+
+<hr>
+
 <h3 id="kiosk" class="anchor"><a class="heading-anchor" href="#kiosk"><span></span></a>Kiosk</h3>
 
-<p><strong>Kiosk</strong> (under Admin Setup &gt; Kiosk) displays kiosks that are enrolled to the server, along with the site it is assigned to.</p>
+<p><strong>Kiosk</strong> (under Admin Settings &gt; Kiosk) lists all kiosks enrolled with the server, along with their assigned site. The <strong>Bulk Upload</strong> feature allows for the simultaneous import and assignment of multiple kiosks to their respective sites. </p>
 
-<p><img alt="image" style="height:400px" src="kiosk.png"></p>
+<p><img alt="image" style="height:450px" src="kiosk.jpg"></p>
 
 <p><em>Kiosk guide</em></p>
+
+<p><br></p>
+
+<p>To perform a Bulk Upload:</p>
+
+<ol>
+<li>In the Kiosk screen, tap <strong>Bulk Upload</strong> and select <strong>Download Template.</strong></li>
+
+<li>Open the downloaded .CSV file and enter the Kiosk Name and Site Name based on the template. Save the changes.</li>
+
+<li>Tap <strong>Bulk Upload</strong> and select <strong>Upload CSV.</strong></li>
+
+<li>Drag and drop or select the file for upload, then click <strong>Import.</strong>
+<img alt="image" style="height:250px" src="bulk-import-kiosk.jpg"></li>
+</ol>
 
 <hr>
 
@@ -490,16 +676,33 @@
 <p><strong>Kiosk Device</strong> (under Admin Settings &gt; Kiosk Device) displays all <a href="#registerdevicetokiosk">devices registered</a> with a kiosk, displaying various device data, including their <strong>Status:</strong></p>
 
 <ul>
-<li><strong>Available -</strong> Devices currently placed on charge</li>
+<li><strong>Available -</strong> Devices placed on the charging cradle without any user signed in, ready for use.</li>
 
-<li><strong>In Use -</strong> Devices where users have been authenticated with [Identity Guardian][/identityguardian]</li>
+<li><strong>In Use -</strong> Devices have been removed from the cradle and authenticated by users via <a href="/identityguardian">Identity Guardian</a>, indicating active use.</li>
 
-<li><strong>Missing -</strong> Devices removed from charging</li>
+<li><strong>Missing -</strong> Devices that have been logged out by the user and have not been returned to the kiosk, or that could not be recovered.</li>
 </ul>
 
-<p><img alt="image" style="height:450px" src="kiosk-device.png"></p>
+<p>The <strong>Bulk Upload</strong> feature allows for the simultaneous import and assignment of multiple devices to their respective kiosk. </p>
+
+<p><img alt="image" style="height:450px" src="kiosk-device.jpg"></p>
 
 <p><em>Kiosk Device guide</em></p>
+
+<p><br></p>
+
+<p>To perform a Bulk Upload:</p>
+
+<ol>
+<li>In the Kiosk Device screen, tap <strong>Bulk Upload</strong> and select <strong>Download Template.</strong></li>
+
+<li>Open the downloaded .CSV file and enter the Kiosk Name and Site Name based on the template. Save the changes.</li>
+
+<li>Tap <strong>Bulk Upload</strong> and select <strong>Upload CSV.</strong></li>
+
+<li>Drag and drop or select the file for upload, then click <strong>Import.</strong>
+<img alt="image" style="height:250px" src="bulk-import-device.jpg"></li>
+</ol>
 
 <hr>
 
@@ -778,9 +981,9 @@ _Create user guide_
 
 
 <ul>
-<li><strong>Missing -</strong> The device is removed from the powered cradle and a user has not logged in for 2 minutes.</li>
+<li><strong>Missing -</strong> The device has been removed from the powered cradle and a user has not logged in for 2 minutes, or it could not be recovered.</li>
 
-<li><strong>Lost -</strong> The device location is unknown, and it is marked as missing to facilitate recovery efforts.</li>
+<li><strong>Lost -</strong> The device location is unknown after attempts of finding it.</li>
 
 <li><strong>Decommissioned -</strong> The device is no longer licensed and is considered out-of-service.</li>
 
@@ -835,7 +1038,7 @@ _Create user guide_
 
 <li><strong>Previous State Time -</strong> Timestamp of the previous state's occurrence</li>
 
-<li><strong>Previous State</strong> Device's prior state: missing, on_charge, or in_use</li>
+<li><strong>Previous State -</strong> Device's prior state: missing, on_charge, or in_use</li>
 
 <li><strong>New State Time -</strong> Timestamp of when the device transitioned to its current state</li>
 

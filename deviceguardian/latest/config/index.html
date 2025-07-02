@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Guardian + Access Management
-                                            1.0
+                                            1.1
                         </p>
 
                     </ul>
@@ -75,47 +75,47 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/deviceguardian/1-0/about">
+                            <a href="/deviceguardian/1-1/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/getstarted">
+                            <a href="/deviceguardian/1-1/getstarted">
                                         Quick Start
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/setup">
+                            <a href="/deviceguardian/1-1/setup">
                                         Install
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/config">
+                            <a href="/deviceguardian/1-1/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/use">
+                            <a href="/deviceguardian/1-1/use">
                                         Device Use
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/dashboard">
+                            <a href="/deviceguardian/1-1/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/dgam">
+                            <a href="/deviceguardian/1-1/dgam">
                                         Access Management
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/api">
+                            <a href="/deviceguardian/1-1/api">
                                         APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/faq">
+                            <a href="/deviceguardian/1-1/faq">
                                         FAQ
                             </a>
                         </li>
@@ -125,7 +125,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/search">
+                            <a href="/deviceguardian/1-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
                                     <p>
                                             Device Guardian + Access Management
-                                            1.0
+                                            1.1
                                     </p>
                                 </div>
                             </section>                    
@@ -942,9 +942,9 @@ To edit the site to which a manager is assigned:
 
 <hr>
 
-<h4 id="bulkupload" class="anchor"><a class="heading-anchor" href="#bulkupload"><span></span></a>Bulk Upload</h4>
+<h3 id="bulkupload" class="anchor"><a class="heading-anchor" href="#bulkupload"><span></span></a>Bulk Upload</h3>
 
-<p>Sites can be added by importing a .CSV file with relevant data. This process updates existing entries or adds new ones, except when deleting a site, which removes the site record. The data fields include:</p>
+<p>A .CSV file can be uploaded to add, edit, or delete relevant site data. The data fields include:</p>
 
 <table class="facelift" style="width:100%" border="1" padding="5px">
   <tbody><tr bgcolor="#dce8ef">
@@ -1012,25 +1012,45 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
 
 <p>Download a sample <a href="./site-sample.csv" download="">here</a>. When modifying the .CSV file, retain the header and replace the sample data with your own data. Ensure the AP location friendly name is easy to understand for device location within the facility. Save the .CSV file in a standard comma-separated values format and avoid UTF-8 encoding, as it may cause errors.</p>
 
-<p>Steps to add multiple sites at once:</p>
+<p><strong>Steps to add multiple sites at once:</strong></p>
 
 <ol>
 <li>Prepare a .CSV file containing the necessary information for each site, following the instructions above.</li>
 
-<li>In the web portal, go to Admin Settings &gt; Site. Click <strong>Bulk Upload.</strong></li>
+<li>In the web portal, go to Admin Settings &gt; Site. Click <strong>Bulk Upload,</strong> then select <strong>Add.</strong>
+<img alt="image" style="height:550px" src="site-bulk-upload-add.jpg"></li>
 
-<li>Upload the .CSV file.</li>
-
-<li>Click <strong>Import</strong> to upload the data and populate the the <strong>Site</strong> table.</li>
+<li>Upload the .CSV file, then click <strong>Import</strong> to upload the data and add the new sites.
+<img alt="image" style="height:275px" src="upload-csv-add.jpg"></li>
 </ol>
 
-<p><img alt="image" style="height:425px" src="bulk-upload.jpg"></p>
+<p><strong>Steps to edit site data in bulk:</strong></p>
 
-<p><em>Steps for a bulk upload</em></p>
+<ol>
+<li>Prepare a .CSV file containing the necessary information for each site to modify, following the instructions above.</li>
+
+<li>In the web portal, go to Admin Settings &gt; Site. Click <strong>Bulk Upload,</strong> then select <strong>Add.</strong>
+<img alt="image" style="height:550px" src="site-bulk-upload-modify.jpg"></li>
+
+<li>Upload the .CSV file, then click <strong>Import</strong> to upload the modified data.
+<img alt="image" style="height:275px" src="upload-csv-modify.jpg"></li>
+</ol>
+
+<p><strong>Steps to remove site data in bulk:</strong></p>
+
+<ol>
+<li>Prepare a .CSV file containing the necessary information for each site, following the instructions above.</li>
+
+<li>In the web portal, go to Admin Settings &gt; Site. Click <strong>Bulk Upload,</strong> then select <strong>Add.</strong>
+<img alt="image" style="height:550px" src="site-bulk-upload-delete.jpg"></li>
+
+<li>Upload the .CSV file, then click <strong>Import</strong> to remove the data from the site table.
+<img alt="image" style="height:275px" src="upload-csv-delete.jpg"></li>
+</ol>
 
 <hr>
 
-<h4 id="exportdata" class="anchor"><a class="heading-anchor" href="#exportdata"><span></span></a>Export Data</h4>
+<h3 id="exportdata" class="anchor"><a class="heading-anchor" href="#exportdata"><span></span></a>Export Data</h3>
 
 <p>The <strong>Export Data</strong> button exports the displayed data into a .CSV file.</p>
 
@@ -1040,14 +1060,25 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
 
 <hr>
 
-<h4 id="createsite" class="anchor"><a class="heading-anchor" href="#createsite"><span></span></a>Create Site</h4>
+<h3 id="createsite" class="anchor"><a class="heading-anchor" href="#createsite"><span></span></a>Create Site</h3>
 
 <p>Steps to create a site:</p>
 
 <ol>
-<li>In the web portal, go to Admin Settings &gt; Site. Click <strong>Create Site.</strong></li>
+<li>In the web portal, go to <strong>Admin Settings &gt; Site.</strong> Click <strong>Create Site.</strong></li>
 
-<li>Enter the information prompted. The required fields must be filled out.</li>
+<li>Enter the required information in the fields.</li>
+
+<li>(Optional) For Device Guardian Access Management, choose the <strong>Device Return Rule</strong> to determine how devices are returned to kiosks:
+
+
+<ul>
+<li><strong>Default -</strong> Devices are reported as returned to their originating kiosk, even if returned to a different kiosk.</li>
+
+<li><strong>Return Device to Same Kiosk -</strong> Devices must be returned to their originating kiosk. If returned to a different kiosk, an alarm is triggered when placed on the cradle, and an error message appears on the device indicating it must be returned to the correct kiosk. The alarm terminates when the device is removed from the incorrect kiosk. Certain Identity Guardian settings are required <strong><em>†</em></strong>.</li>
+
+<li><strong>Return Device To Different Kiosk -</strong> Devices can be returned to any kiosk, and their availability is updated to reflect the kiosk it to which they are returned. Certain Identity Guardian settings are required <strong><em>†</em></strong>.</li></ul>
+</li>
 
 <li>(Optional) If <strong>IP Range Configuration</strong> is selected for <a href="#siteassignment">Site Assignment</a>, enter the <strong>Start IP Address</strong> and <strong>End IP Address.</strong></li>
 
@@ -1097,50 +1128,125 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
 <li><strong>Include Attachments (.CSV) in Email -</strong> Select if it is desired to add an attachment to the email.</li></ul>
 </li>
 
+<li>(Optional) Enable <strong>Bluetooth Proximity</strong> to automatically log out users when a device is placed in a powered cradle within its kiosk’s Bluetooth range, and to trigger an alarm if the device is removed and taken beyond this range without logging in; the alarm deactivates when the user either returns within range or logs in. To prevent conflicts, ensure the following conditions are met:
+
+
+<ul>
+<li>If <strong>Bluetooth Proximity</strong> is enabled, the <strong>Device Return Rule</strong> must be set to "Disabled."</li>
+
+<li>If the <strong>Device Return Rule</strong> is set to "Return Device to Same Kiosk" or "Return Device to Different Kiosk," then <strong>Bluetooth Proximity</strong> must be disabled.</li>
+
+<li>Certain Identity Guardian settings are required <strong><em>‡</em></strong>.</li></ul>
+</li>
+
 <li>Click <strong>Create.</strong></li>
 </ol>
 
 <p><img alt="image" style="height:650px" src="create-site.jpg"></p>
 
-<p><em>Steps to create a site</em></p>
+<p><em>Guide to create a site</em></p>
+
+<p><strong><em>†</em></strong> Required Identity Guardian Managed Configuration settings to allow Device Guardian Access Management to control forced logout. Configure the following settings:</p>
+
+<ul>
+<li>Under <a href="/identityguardian/latest/mc/#lockscreenconfiguration">Lock Screen Configuration</a>, for Lock-screen Event Options:
+
+
+<ul>
+<li><strong>On Unlock:</strong>
+
+
+<ul>
+<li><strong>Verification Setup:</strong> NONE</li>
+
+<li><strong>Alternative Verification Setup:</strong> NONE</li></ul>
+</li>
+
+<li><strong>On Reboot:</strong>
+
+
+<ul>
+<li>Verification Setup: NONE</li>
+
+<li>Alternative Verification Setup: NONE</li></ul>
+</li>
+
+<li><strong>On AC Power Connected:</strong>
+
+
+<ul>
+<li><strong>Verification Setup:</strong> NONE</li>
+
+<li><strong>Alternative Verification Setup:</strong> NONE</li></ul>
+</li>
+
+<li><strong>On AC Power Disconnected:</strong>
+
+
+<ul>
+<li><strong>Verification Setup:</strong> NONE</li>
+
+<li><strong>Alternative Verification Setup:</strong> NONE</li></ul>
+</li></ul>
+</li>
+
+<li>Under <a href="/identityguardian/latest/mc/#authenticationconfiguration">Authentication Configuration</a> for Force Logout Options: 
+
+
+<ul>
+<li><strong>On Lock:</strong> false</li>
+
+<li><strong>On Reboot:</strong> false</li>
+
+<li><strong>On AC Power Connected:</strong> false</li>
+
+<li><strong>On AC Power Disconnected:</strong> false </li>
+
+<li><strong>On Force Lock:</strong> false</li></ul>
+</li>
+</ul>
+
+<p><strong><em>‡</em></strong> Required Identity Guardian Managed Configuration settings to allow the error screen to be displayed when a device is returned to the incorrect kiosk. In the <a href="/identityguardian/latest/mc/#lockscreenconfiguration">Lock Screen Configuration</a>, configure the following:</p>
+
+<ul>
+<li><strong>Apps Allowed On Lock Screen:</strong>
+
+
+<ul>
+<li><strong>Package Name:</strong> com.zebra.mdna.dg</li>
+
+<li><strong>Activity Name:</strong> com.zebra.mdna.dg.ui.WrongKioskActivity</li></ul>
+</li>
+</ul>
 
 <hr>
 
-<h4 id="modifysite" class="anchor"><a class="heading-anchor" href="#modifysite"><span></span></a>Modify Site</h4>
+<h3 id="modifysite" class="anchor"><a class="heading-anchor" href="#modifysite"><span></span></a>Modify Site</h3>
 
 <p>Steps to modify a site:</p>
 
 <ol>
-<li>In the web portal, go to Admin Settings &gt; Site.</li>
+<li>In the web portal, go to <strong>Admin Settings &gt; Site.</strong></li>
 
-<li>Select the site(s) to edit.</li>
+<li>Under the Actions column, click the edit icon for the select site to update.</li>
 
-<li>Click the <strong>Actions</strong> menu and select <strong>Modify Details.</strong>
-<img alt="image" style="height:375px" src="modify-site.png"></li>
-
-<li>Make the necessary edits and click <strong>Confirm.</strong>
-<img alt="image" style="height:425px" src="modify-site-2.png"></li>
-
-<li>The site's information is updated.</li>
+<li>Make the necessary edits and click <strong>Update.</strong> The site's information is updated.
+<img alt="image" style="height:600px" src="modify-site.jpg"></li>
 </ol>
 
 <hr>
 
-<h4 id="deletesites" class="anchor"><a class="heading-anchor" href="#deletesites"><span></span></a>Delete Sites</h4>
+<h3 id="deletesite" class="anchor"><a class="heading-anchor" href="#deletesite"><span></span></a>Delete Site</h3>
 
 <p>Steps to delete a site:</p>
 
 <ol>
-<li>In the web portal, go to Admin Settings &gt; Site.</li>
+<li>In the web portal, go to <strong>Admin Settings &gt; Site.</strong></li>
 
-<li>Select the site(s) to delete.</li>
+<li>Under the Actions column, click the garbage icon for the select site to remove.</li>
 
-<li>Click the <strong>Actions</strong> menu and select <strong>Delete.</strong>
-<img alt="image" style="height:400px" src="delete-site.png"></li>
-
-<li>A confirmation message appears. Click <strong>Confirm.</strong></li>
-
-<li>The site is removed from the table.</li>
+<li>A confirmation message appears. Click <strong>Confirm.</strong> The site is removed from the table.
+<img alt="image" style="height:400px" src="delete-site.jpg"></li>
 </ol>
 
 <!--
@@ -1906,13 +2012,14 @@ When modifying the .CSV file, keep the header information intact and replace the
 
 <h2 id="deviceenrollment" class="anchor"><a class="heading-anchor" href="#deviceenrollment"><span></span></a>Device Enrollment</h2>
 
-<p><u><strong>Enrollment is required for preparing a site to use Device Guardian</strong></u>; it configures devices to communicate with the organization's Device Guardian server. <strong>All devices must be enrolled before they can be found by Device Guardian or used to find other devices</strong>.</p>
+<p><u><strong>Enrollment is required for preparing a site to use Device Guardian</strong></u>; it configures devices and kiosks to communicate with the organization's Device Guardian server. <strong>All devices must be enrolled before they can be found by Device Guardian or used to find other devices</strong>.</p>
 
 <p><img alt="image" style="height:450px" src="device-enrollment.jpg"></p>
 
 <p><em>Device Enrollment screen</em></p>
 
-<p><strong>Download Kit -</strong> A <code>.zip</code> archive that contains a Managed Configuration <code>.config</code> file for enrolling a device with the server via Zebra DNA Cloud or EMM; see the <a href="../setup/">Installation Guide</a> for instructions. </p>
+<p><strong>Download Kit -</strong> A <code>.zip</code> archive containing a Managed Configuration <code>.config</code> file is used to enroll a device or kiosk with the server via Zebra DNA Cloud or EMM; see the <a href="../setup/">Installation Guide</a> for instructions.<br>
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>NOTE:</strong> When following the installation guide, ensure that <strong>Kiosk Mode</strong> is enabled in the Managed Configuration deployment for kiosks.</p>
 
 <!-- // Will be in future version
 - If the server has been upgraded from Device Tracker, the following files are also included for backward compatibility with Device Tracker:
@@ -1951,6 +2058,8 @@ When modifying the .CSV file, keep the header information intact and replace the
 <h3 id="siteassignment" class="anchor"><a class="heading-anchor" href="#siteassignment"><span></span></a>Site Assignment</h3>
 
 <p>Devices can be assigned to sites either manually, based on the CSV file upload, or automatically, based on the AP the device is connected to.</p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>NOTE:</strong> The Site Assignment feature is <em>not</em> applicable to kiosks.</p>
 
 <p>To select the method of device registration:</p>
 
@@ -2031,17 +2140,19 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <li>Disconnected</li></ul>
 
-<p>After a device has been automatically marked <strong>To Be Found</strong> based on the above selection, if the device state changes and no longer satisfies the selected state(s), then <strong>To Be Found</strong> is removed from the device.</p>
+<p>After a device has been automatically marked <strong>To Be Found</strong> based on the above selection, if the device state changes and no longer satisfies the selected state(s), then <strong>To Be Found</strong> is removed from the device.</p></li>
+</ol>
 
 <blockquote>
   <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Important:</strong> During the finding process, before marking the device as <strong>Found,</strong> <u><i>make sure one of the selected conditions is NOT satisfied</i></u> (e.g. charge the device if "not charging" is selected). Otherwise, the device will return back to the <strong>To Be Found</strong> state after it is marked <strong>Found.</strong></p>
-</blockquote></li>
+</blockquote>
 
-<li><p><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked <strong>Found.</strong> This eliminates the need to manually perform this action.</p></li>
+<ol>
+<li><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked <strong>Found.</strong> This eliminates the need to manually perform this action.</li>
 
-<li><p><strong>Automatically set "To Be Found" device to "In Service" upon checkout" -</strong> Enable this option to automatically place the device back <strong>In Service</strong> when a device in the <strong>To Be Found</strong> state is checked out. There is no need for the device to remain in the <strong>To Be Found</strong> state since the user has checked out the device.</p></li>
+<li><strong>Automatically set "To Be Found" device to "In Service" upon checkout" -</strong> Enable this option to automatically place the device back <strong>In Service</strong> when a device in the <strong>To Be Found</strong> state is checked out. There is no need for the device to remain in the <strong>To Be Found</strong> state since the user has checked out the device.</li>
 
-<li><p>Click on <strong>Save.</strong></p></li>
+<li>Click on <strong>Save.</strong></li>
 </ol>
 
 <!--
@@ -2057,15 +2168,40 @@ _Video: Learn how to automatically set "To Be Found" device to "In Service" when
 
 <h2 id="notifications" class="anchor"><a class="heading-anchor" href="#notifications"><span></span></a>Notifications</h2>
 
-<p>There are 2 types of notifications:</p>
+<p>A variety of notifications are accessible through different channels:</p>
 
 <ul>
-<li><strong><a href="#lostdevicenearby">Lost Device Nearby</a></strong></li>
+<li>Device Notifications:
 
-<li><strong><a href="#playsound">Play Sound</a></strong></li>
+
+<ul>
+<li><a href="#lostdevicenearby">Lost Device Nearby</a></li>
+
+<li><a href="#playsound">Play Sound on Lost Device</a></li></ul>
+</li>
+
+<li><a href="#email">Email Notifications</a></li>
+
+<li>Web Portal Notifications:
+
+
+<ul>
+<li><a href="#bulkupload">Bulk Upload</a></li></ul>
+</li>
 </ul>
 
-<p>See the sections below for information on each.</p>
+<p><img alt="image" style="height:550px" src="notifications.jpg"></p>
+
+<p><em>Notifications options</em></p>
+
+<p>The following sections provide details on each notification method.</p>
+
+<!-- 
+There are 2 types of notifications:
+
+- **[Lost Device Nearby](#lostdevicenearby)**
+- **[Play Sound](#playsound)**
+-->
 
 <hr>
 
@@ -2093,7 +2229,7 @@ _Video: Demonstration on automatically detecting lost devices nearby_
 <li>Click <strong>Settings</strong> in the left menu and click <strong>Notifications.</strong></li>
 
 <li>Click on the <strong>Lost Device Nearby</strong> tab.
-<img alt="image" style="height:550px" src="lost-device-nearby-options.png"></li>
+<img alt="image" style="height:550px" src="notification-lost-device-nearby.jpg"></li>
 
 <li>Toggle to enable the option <strong>Send Lost Device Nearby Notification.</strong> This option is disabled by default.</li>
 
@@ -2152,7 +2288,7 @@ _Video: Demonstration on automatically detecting lost devices nearby_
 <li>Click <strong>Settings</strong> in the left menu and click <strong>Notifications.</strong></li>
 
 <li>Click on the <strong>Play Sound</strong> tab.
-<img alt="image" style="height:550px" src="play-sound.png"></li>
+<img alt="image" style="height:550px" src="notification-play-sound.jpg"></li>
 
 <li><strong>Audio</strong> is enabled by default for the device to emit a sound when the <strong>Play Sound</strong> button is pressed.</li>
 
@@ -2223,6 +2359,109 @@ _Video: Demonstration on automatically detecting lost devices nearby_
 </ol>
 
 <p><strong>Reset to Default</strong> returns all Play Sound options to their default settings.</p>
+
+<hr>
+
+<h3 id="email" class="anchor"><a class="heading-anchor" href="#email"><span></span></a>Email</h3>
+
+<p>Email notification reports deliver information to recipients about devices registered to kiosks that are currently missing. These reports are sent as .CSV attachments from the email address <code>NPDVIQFNoReply@zebra.com</code>. The ability to manage email notifications is determined by user role:</p>
+
+<ul>
+<li><strong>Administrators -</strong> Add, view, edit, and delete email notification configurations across all sites. </li>
+
+<li><strong>Managers -</strong> Add, view, edit, and delete email notification configurations within their designated site.</li>
+
+<li><strong>Users/Associates -</strong> View email notification configurations within their designated site.</li>
+</ul>
+
+<p>To add, view, edit, or delete email notifications:</p>
+
+<ol>
+<li>Go to <strong>Settings &gt; Notifications &gt; Email Notification.</strong> Options are visible based on user role. To view, edit, and delete existing email notifications,click on the respective link. To add a new email notification, click <strong>Add New Configuration</strong> and follow the subsequent steps. 
+<img alt="image" style="height:650px" src="notification-email.jpg"></li>
+
+<li>Enter the appropriate information, then click <strong>Save:</strong>
+
+
+<ul>
+<li><strong>Name:</strong> [Enter the name identifier]</li>
+
+<li><strong>Email Addresses:</strong> [Enter recipient email addresses, separated by commas]</li>
+
+<li><strong>Site:</strong> [Select the site]</li>
+
+<li><strong>Status:</strong> Missing [This cannot be changed]</li>
+
+<li><strong>Status Reason:</strong> [Select one of the following reasons for reporting]
+
+
+<ul>
+<li><strong>INVALID_LOGIN -</strong> Failed login attempt due to user inability to login</li>
+
+<li><strong>NOT_RETURNED -</strong> Device not returned to the kiosk</li>
+
+<li><strong>COMMUNICATION_LOST -</strong> No communication between the device and kiosk</li>
+
+<li><strong>All of the above</strong></li></ul>
+</li>
+
+<li><strong>Scheduled At:</strong> [Specify the delivery time for the report]</li>
+
+<li><strong>Type of Report:</strong> [Select the report type to be sent]
+
+
+<ul>
+<li><strong>Device Status Notification (last 24 hours) -</strong> Includes:
+
+
+<ul>
+<li><strong>Device Name</strong></li>
+
+<li><strong>Serial Number</strong></li>
+
+<li><strong>Last Update -</strong> Time of most recent update</li>
+
+<li><strong>Battery Level (%)</strong></li>
+
+<li><strong>User Name</strong></li>
+
+<li><strong>Status:</strong> Missing</li>
+
+<li><strong>Status Reason</strong></li>
+
+<li><strong>Missing Days -</strong> Number of days missing</li>
+
+<li><strong>Site Name</strong></li></ul>
+</li>
+
+<li><strong>Detailed Device Status Notification (last 24 hours) -</strong> Includes all <strong>Device Status Notification</strong> data plus:
+
+
+<ul>
+<li><strong>Cabinet Name -</strong> Name of kiosk</li>
+
+<li><strong>Previous State Time -</strong> Timestamp of the previous state occurrence</li>
+
+<li><strong>Previous State -</strong> Device's prior state: missing, on_charge, or in_use</li>
+
+<li><strong>New State Time -</strong> Timestamp of when the device transitioned to its current state</li>
+
+<li><strong>New State -</strong> Current state of the device: missing, on_charge, or in_use</li></ul>
+</li>
+
+<li><strong>Detailed Device Notification - (last 6 months) -</strong> Contains all <strong>Detailed Device Status Notification</strong> data for the last 6 months.
+<img alt="image" style="height:650px" src="notification-new-email.png"></li></ul>
+</li></ul>
+</li>
+</ol>
+
+<hr>
+
+<h3 id="bulkupload-1" class="anchor"><a class="heading-anchor" href="#bulkupload-1"><span></span></a>Bulk Upload</h3>
+
+<p>The title bar in the web portal includes a notification icon that shows events related to bulk uploads for <a href="../dgam/#kiosk">Kiosks</a> and <a href="../dgam/#kioskdevice">Kiosk Devices</a>. These notifications indicate whether a bulk upload has started, succceeded, or failed. If a failure occurs, the .CSV file can be downloaded. Notifications remain visible for 14 days before being automatically removed.</p>
+
+<p><img alt="image" style="height:400px" src="notification-bulk-upload.png"></p>
 
 <hr>
 
@@ -2376,6 +2615,31 @@ _Video: Demonstration on automatically detecting lost devices nearby_
 <p>The <strong>Secondary Bluetooth Low Energy (BLE)</strong> feature is an optional setting that enables location detection of a device when it is powered off or has a critically low battery (5% or less). This works by having a seeking device listen for signals from the secondary BLE beacon on the device that is powered off or low on battery. As long as the battery is not fully depleted, the secondary BLE beacon continues to transmit.</p>
 
 <p>See <a href="../secondaryble/">Secondary BLE Configuration</a> to enable Secondary BLE.</p>
+
+<hr>
+
+<h2 id="myprofile" class="anchor"><a class="heading-anchor" href="#myprofile"><span></span></a>My Profile</h2>
+
+<p><strong>My Profile</strong> allows logged-in users to update their profile information, including changing their password. To access <strong>My Profile,</strong> click the dropdown arrow next to the username in the title bar of the web portal and select <strong>My Profile.</strong>
+<img alt="image" style="height:350px" src="my-profile-menu.png"></p>
+
+<p>To update, enter the desired information in the following field(s), then click <strong>Update:</strong></p>
+
+<ul>
+<li>First Name</li>
+
+<li>Last Name</li>
+
+<li>Current Password</li>
+
+<li>New Password</li>
+
+<li>Confirm Password</li>
+
+<li>Language</li>
+</ul>
+
+<p><img alt="image" style="height:650px" src="my-profile.png"></p>
 
 <hr>
 

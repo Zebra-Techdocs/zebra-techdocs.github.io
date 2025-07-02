@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Guardian + Access Management
-                                            1.0
+                                            1.1
                         </p>
 
                     </ul>
@@ -75,47 +75,47 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/deviceguardian/1-0/about">
+                            <a href="/deviceguardian/1-1/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/getstarted">
+                            <a href="/deviceguardian/1-1/getstarted">
                                         Quick Start
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/setup">
+                            <a href="/deviceguardian/1-1/setup">
                                         Install
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/config">
+                            <a href="/deviceguardian/1-1/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/use">
+                            <a href="/deviceguardian/1-1/use">
                                         Device Use
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/dashboard">
+                            <a href="/deviceguardian/1-1/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/dgam">
+                            <a href="/deviceguardian/1-1/dgam">
                                         Access Management
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/api">
+                            <a href="/deviceguardian/1-1/api">
                                         APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/faq">
+                            <a href="/deviceguardian/1-1/faq">
                                         FAQ
                             </a>
                         </li>
@@ -125,7 +125,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/1-0/search">
+                            <a href="/deviceguardian/1-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -235,7 +235,7 @@
                                     <h1 id="apis" class="anchor"><a class="heading-anchor" href="#apis"><span></span></a>APIs</h1>
                                     <p>
                                             Device Guardian + Access Management
-                                            1.0
+                                            1.1
                                     </p>
                                 </div>
                             </section>                    
@@ -311,14 +311,15 @@
 
 <p><strong>Procedure:</strong></p>
 
-<p>To allowlist Identity Guardian APIs in your app using StageNow:</p>
+<p>To allowlist Identity Guardian APIs in your app using StageNow:</p></li>
+</ul>
 
 <ol>
 <li><p>From the command line, navigate to the directory containing your .APK and "SigTools.jar.".</p></li>
 
 <li><p>Generate the certificate by executing the following command, replacing "LOB_app.apk" with your .APK file's name:</p>
 
-<pre class="prettyprint"><code>java -jar SigTools.jar getcert -inform apk -outform der -in LOB_app.apk -outfile app.crt
+<pre class="prettyprint"><code>  java -jar SigTools.jar getcert -inform apk -outform der -in LOB_app.apk -outfile app.crt
 </code></pre></li>
 
 <li><p>From your host system, open StageNow and click on <strong>Create New Profile.</strong></p></li>
@@ -326,13 +327,13 @@
 <li><p>Select the MX version that matches or exceeds the one on your device. Refer to the <a href="/mx/mx-version-on-device/">MX documentation</a> for guidance on how to determine the version.</p></li>
 
 <li><p>Select <strong>Expert Mode</strong> and click <strong>Create.</strong>
-<img alt="image" style="height:400px" src="sn-wizard.jpg"></p></li>
+  <img alt="image" style="height:400px" src="sn-wizard.jpg"></p></li>
 
 <li><p>Enter a profile name and click <strong>Start.</strong>
-<img alt="image" style="height:250px" src="sn-profile-name.png"></p></li>
+  <img alt="image" style="height:250px" src="sn-profile-name.png"></p></li>
 
 <li><p>Click the plus (+) sign next to <strong>AccessMgr.</strong> This adds AccessMgr to the Config tab on the right side. Click <strong>Add.</strong>
-<img alt="image" style="height:450px" src="sn-accessmgr.png"></p></li>
+  <img alt="image" style="height:450px" src="sn-accessmgr.png"></p></li>
 
 <li><p>Enter/select the following for <strong>AccessMgr:</strong></p>
 
@@ -355,14 +356,15 @@
 <ul>
 <li><span style="font-family:'Courier New'">content://com.zebra.mdna.els.provider/currentsession</span> (Device Check-out/Check-in)</li>
 
-<li><span style="font-family:'Courier New'">content://com.zebra.mdna.dg.provider/devicestate</span> (Device State)</li></ul></li></ol>
+<li><span style="font-family:'Courier New'">content://com.zebra.mdna.dg.provider/devicestate</span> (Device State)</li></ul>
 
-<p>After creating the StageNow profiles, use one of the following methods based on the desired tool for device deployment:</p>
+<p>After creating the StageNow profiles, use one of the following methods based on the desired tool for device deployment:</p></li>
+</ol>
 
 <ul>
 <li><strong>StageNow:</strong> Generate the appropriate barcode for your Android system version from the StageNow profile. Open StageNow client on the device and scan the barcode(s) generated from the installation, configuration and/or BLE profile.</li>
 
-<li><strong>EMM:</strong> Export each StageNow XML file from the StageNow installation, connection and BLE profiles. <em>Do not edit the XML file</em> - it can cause unexpected behavior. Send the XML using either <a href="/oemconfig">OEMConfig</a> or <a href="/mx/overview/">MX</a> to configure the app and grant all required permissions. The installation profile and server connectivity profile XML files must be used separately.</li></ul></li>
+<li><strong>EMM:</strong> Export each StageNow XML file from the StageNow installation, connection and BLE profiles. <em>Do not edit the XML file</em> - it can cause unexpected behavior. Send the XML using either <a href="/oemconfig">OEMConfig</a> or <a href="/mx/overview/">MX</a> to configure the app and grant all required permissions. The installation profile and server connectivity profile XML files must be used separately.</li>
 </ul>
 
 <hr>
@@ -373,7 +375,7 @@
 
 <p><strong>Content URI:</strong> &nbsp;&nbsp;<span style="font-family:'Courier New'">content://com.zebra.mdna.els.provider/currentsession</span></p>
 
-<p><strong>Parameters:</strong> </p>
+<p><strong>Parameters:</strong></p>
 
 <table class="facelift" style="width:95%" border="1" padding="5px">
   <tbody><tr bgcolor="#dce8ef">
@@ -413,7 +415,7 @@
 
 </tbody></table>
 
-<p><strong>Response:</strong> </p>
+<p><strong>Response:</strong></p>
 
 <ul>
 <li><p><strong><code>RESULT</code> bundle:</strong></p>
@@ -421,15 +423,13 @@
 <ul>
 <li><p>If successful:</p>
 
-<pre class="prettyprint"><code>{"status":"SUCCESS","message":"successfully executed"} 
-</code></pre></li>
+<p>{"status":"SUCCESS","message":"successfully executed"}</p></li>
 
-<li><p>If unsuccessful: </p>
+<li><p>If unsuccessful:</p>
 
-<pre class="prettyprint"><code>{"status":"FAILURE","message":"error desc"} 
-</code></pre>
+<p>{"status":"FAILURE","message":"error desc"}</p></li></ul>
 
-<p>The “message” value will vary depending on the error encountered.</p></li></ul></li>
+<p>The “message” value will vary depending on the error encountered.</p></li>
 
 <li><p><strong>Null -</strong> Returned if the content provider does not implement the call.</p></li>
 </ul>
@@ -472,7 +472,7 @@
 
 <p><strong>Content URI:</strong> &nbsp;&nbsp;<span style="font-family:'Courier New'">content://com.zebra.mdna.dg.provider/devicestate</span></p>
 
-<p><strong>Parameters:</strong> </p>
+<p><strong>Parameters:</strong></p>
 
 <table class="facelift" style="width:95%" border="1" padding="5px">
   <tbody><tr bgcolor="#dce8ef">
@@ -505,7 +505,7 @@
 
 </tbody></table>
 
-<p><strong>Response:</strong> </p>
+<p><strong>Response:</strong></p>
 
 <ul>
 <li><p><strong><code>RESULT</code> bundle:</strong></p>
@@ -513,15 +513,13 @@
 <ul>
 <li><p>If successful:</p>
 
-<pre class="prettyprint"><code>{"status":"SUCCESS","message":"Device state saved successfully"}
-</code></pre></li>
+<p>{"status":"SUCCESS","message":"Device state saved successfully"}</p></li>
 
-<li><p>If unsuccessful: </p>
+<li><p>If unsuccessful:</p>
 
-<pre class="prettyprint"><code>{"status":"FAILURE","message":"error desc"} 
-</code></pre>
+<p>{"status":"FAILURE","message":"error desc"}</p></li></ul>
 
-<p>The “message” value will vary depending on the error encountered.</p></li></ul></li>
+<p>The “message” value will vary depending on the error encountered.</p></li>
 
 <li><p><strong>Null -</strong> Returned if the content provider does not implement the call.</p></li>
 </ul>
@@ -544,7 +542,7 @@
     Bundle bundle = new Bundle();
 
     Integer intDeviceState = 1; //set device to missing state
-    String stateChangeReason = ""; // optional 
+    String stateChangeReason = ""; // optional
 
     bundle.putInt("device_state", intDeviceState);
     bundle.putString("state_change_reason", (stateChangeReason == null) ? "" : stateChangeReason);
