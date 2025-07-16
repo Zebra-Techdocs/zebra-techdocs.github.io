@@ -263,16 +263,14 @@
 <li><strong>Install the Zebra VAS Service .APK</strong> on the supported Zebra mobile computer. This is required to establish communication between the SDK and the Zebra device via the Zebra VAS Service.</li>
 </ol>
 
-<!-- // Applied from 1.0 to 2.0
-### Upgrade from Previous SDK
+<h3 id="upgradefromprevioussdk" class="anchor"><a class="heading-anchor" href="#upgradefromprevioussdk"><span></span></a>Upgrade from Previous SDK</h3>
 
-For apps developed with prior version VAS SDK v1.0, there are some APIs that have been updated or removed. Refer to the changes in the table below:
-
+<p>For apps developed with prior version VAS SDK v1.0, there are some APIs that have been updated or removed. Refer to the changes in the table below:</p>
 
 <table class="facelift" align="center" style="width:100%" border="1" padding="5px">
-  <tr bgcolor="#dce8ef">
-    <th>Original API <br />(VAS SDK v1.0)</th>
-    <th>Replacement API <br />(VAS SDK v2.0)</th>
+  <tbody><tr bgcolor="#dce8ef">
+    <th>Original API <br>(VAS SDK v1.0)</th>
+    <th>Replacement API <br>(VAS SDK v2.0)</th>
     <th>Description</th>
   </tr>
 
@@ -284,61 +282,59 @@ For apps developed with prior version VAS SDK v1.0, there are some APIs that hav
 
   <tr>
     <td>setPassTypeIds()</td>
-    <td>AppleVasConfig avc = new AppleVasConfig(); <br />avc.setPassTypeIds();</td>
+    <td>AppleVasConfig avc = new AppleVasConfig(); <br>avc.setPassTypeIds();</td>
     <td>This method is moved to AppleVasConfig class. The AppleVasConfig object must be created before calling this method.</td>
   </tr>
 
  <tr>
     <td>setPrivateKey()</td>
-    <td>AppleVasConfig avc = new AppleVasConfig();<br />avc.setPrivateKey();</td>
+    <td>AppleVasConfig avc = new AppleVasConfig();<br>avc.setPrivateKey();</td>
     <td>This method is moved to AppleVasConfig class. The AppleVasConfig object must be created before calling this method.</td>
  </tr>
 
  <tr>
     <td>setFilter()</td>
-    <td>AppleVasConfig avc = new AppleVasConfig(); <br />avc.setFilter();</td>
+    <td>AppleVasConfig avc = new AppleVasConfig(); <br>avc.setFilter();</td>
     <td>This method is moved to AppleVasConfig class. The AppleVasConfig object must be created before calling this method.</td>
  </tr>
 
  <tr>
     <td>setMerchantURL()</td>
-    <td>AppleVasConfig avc = new AppleVasConfig(); <br />avc.setMerchantURL();</td>
+    <td>AppleVasConfig avc = new AppleVasConfig(); <br>avc.setMerchantURL();</td>
     <td>This method is moved to AppleVasConfig class. The AppleVasConfig object must be created before calling this method.</td>
  </tr>
 
   <tr>
     <td>setVasConfig()</td>
-    <td>AppleVasConfig avc = new AppleVasConfig(); <br />ZebraNfcVas VasSdk = new ZebraNfcVas(Context);<br />VasSdk.setVasConfig(avc); </td>
+    <td>AppleVasConfig avc = new AppleVasConfig(); <br>ZebraNfcVas VasSdk = new ZebraNfcVas(Context);<br>VasSdk.setVasConfig(avc); </td>
     <td>VasConfig is an abstract class extended by AppleVasConfig. A ZebraNfcVas object must be created, then pass the AppleVasConfig object.</td>
  </tr>
 
   <tr>
     <td>setVasConfigs()</td>
-    <td>ZebraNfcVas VasSdk = new ZebraNfcVas(Context);<br />VasSdk.setVasConfigs(Arrays.asList(new VasConfig[]{az_cfg, z_cfg}));</td>
+    <td>ZebraNfcVas VasSdk = new ZebraNfcVas(Context);<br>VasSdk.setVasConfigs(Arrays.asList(new VasConfig[]{az_cfg, z_cfg}));</td>
     <td>VasConfig is an abstract class extended by AppleVasConfig. A ZebraNfcVas object must be created, then pass the list of AppleVasCOnfig objects. This allows multiple objects to be set at the same time.</td>
  </tr>
 
   <tr>
     <td>getType()</td>
-    <td>AppleVasConfig avc = new AppleVasConfig(); <br />avc.getType();</td>
+    <td>AppleVasConfig avc = new AppleVasConfig(); <br>avc.getType();</td>
     <td>This method is moved to AppleVasConfig class. The AppleVasConfig object must be created before calling this method.</td>
  </tr>
 
   <tr>
     <td>getMerchantUrl()</td>
-    <td>AppleVasConfig avc = new AppleVasConfig(); <br />Avc.getMerchantURL()</td>
+    <td>AppleVasConfig avc = new AppleVasConfig(); <br>Avc.getMerchantURL()</td>
     <td>This method is moved to AppleVasConfig class. The AppleVasConfig object must be created before calling this method.</td>
  </tr>
 
   <tr>
     <td>getTerminalMode()</td>
-    <td>AppleVasConfig avc = new AppleVasConfig(); <br />Avc.getTerminalMode()</td>
+    <td>AppleVasConfig avc = new AppleVasConfig(); <br>Avc.getTerminalMode()</td>
     <td>This method is moved to AppleVasConfig class. The AppleVasConfig object must be created before calling this method.</td>
  </tr>
 
-</table>
-
--->
+</tbody></table>
 
 <h3 id="xamarinsupport" class="anchor"><a class="heading-anchor" href="#xamarinsupport"><span></span></a>Xamarin Support</h3>
 
@@ -359,46 +355,10 @@ For apps developed with prior version VAS SDK v1.0, there are some APIs that hav
 
 <h3 id="applevas" class="anchor"><a class="heading-anchor" href="#applevas"><span></span></a>Apple VAS</h3>
 
-<p>This section provides guidance on how to develop an application capable of reading an NFC pass from Apple Wallet.</p>
-
-<p>Developers can select one of the following approaches:</p>
-
-<ul>
-<li><strong>Explicitly pass IZebraServiceConnection Interface to ZebraNfcVas object -</strong> Directly pass the IZebraServiceConnection interface to the ZebraNfcVas object to acquire callback methods from the Zebra NFC VAS service concerning service connection/disconnection and NFC pass object. This streamlined approach benefits developers using application frameworks like MVC, MVP, or MVVM to manage the service callback, removing the necessity of implementing the IZebraServecConnection within the Activity. <em>Start with step 1 and then skip steps 2 and 3 in the guide provided below.</em></li>
-
-<li><strong>Implement the IZebraServiceConnection interface within the Activity -</strong> Implement the IZebraServiceConnection interface within the Activity to receive callback methods from the Zebra NFC VAS service, specifically concerning the service connection/disconnection and NFC pass object. <em>Skip step 1 and proceed with step 2 in the guide below.</em></li>
-</ul>
-
-<p>Step-by-step guide to creating an application that can read an NFC pass from Apple Wallet:</p>
+<p>The following provides guidance to develop an application that reads an Apple Wallet NFC pass:</p>
 
 <ol>
-<li><p><strong>Explicitly pass IZebraServiceConnection Interface to ZebraNfcVas object -</strong> The three callback methods provided by the Zebra NFC VAS service include: onServiceConnected, onServiceDisconnected, and onPassDetected.</p>
-
-<pre class="prettyprint"><code>ZebraNfcVas vasSDK = new ZebraNfcVas(this, new IZebraServiceConnection() {
-    @Override
-    public void onServiceConnection() {
-        ...
-    }
-
-<pre><code>@Override
-public void onServiceDisconnection() {
-    ...
-}
-
-@Override
-public void onPassDetected(Pass pass) {
-    ...
-}
-</code></pre>
-
-});
-
-vasSDK.init();
-</code></pre>
-
-<p>To explicitly pass IZebraServiceConnection Interface to ZebraNfcVas object, continue to step 4.</p></li>
-
-<li><p><strong>Implement IZebraServiceConnection Interface -</strong> As an alternative to the approach from step 1, proceed with these next 2 steps to implement the IZebraServiceConnection interface within the Activity. The three callback methods provided by the Zebra NFC VAS service include: onServiceConnected, onServiceDisconnected, and onPassDetected.</p>
+<li><p><strong>Implement IZebraServiceConnection Interface -</strong> It is required to implement IZebraServiceConnection Interface to receive callback methods from the Zebra NFC VAS service on the service connection/disconnection and NFC pass object. The 3 callback methods are: onServiceConnected, onServiceDisconnected, and onPassDetected.</p>
 
 <pre class="prettyprint"><code>public class AppleVASActivity extends AppCompatActivity implements IZebraServiceConnection {
     ...
@@ -585,46 +545,10 @@ vasSDK.setVasConfigs(Arrays.asList(new VasConfig[]{az_cfg, z_cfg}));
 
 <h3 id="googlesmarttap" class="anchor"><a class="heading-anchor" href="#googlesmarttap"><span></span></a>Google Smart Tap</h3>
 
-<p>This section provides guidance on how to develop an application capable of reading an NFC pass from Google Wallet.</p>
-
-<p>Developers can select one of the following approaches:</p>
-
-<ul>
-<li><strong>Explicitly pass IZebraServiceConnection Interface to ZebraNfcVas object -</strong> Directly pass the IZebraServiceConnection interface to the ZebraNfcVas object to acquire callback methods from the Zebra NFC VAS service concerning service connection/disconnection and NFC pass object. This streamlined approach benefits developers using application frameworks like MVC, MVP, or MVVM to manage the service callback, removing the necessity of implementing the IZebraServecConnection within the Activity. <em>Start with step 1 and then skip steps 2 and 3 in the guide provided below.</em></li>
-
-<li><strong>Implement the IZebraServiceConnection interface within the Activity -</strong> Implement the IZebraServiceConnection interface within the Activity to receive callback methods from the Zebra NFC VAS service, specifically concerning the service connection/disconnection and NFC pass object. <em>Skip step 1 and proceed with step 2 in the guide below.</em></li>
-</ul>
-
-<p>Step-by-step guide to creating an application that can read an NFC pass from Google Wallet:</p>
+<p>The following provides guidance to develop an application that reads a Google Wallet NFC pass:</p>
 
 <ol>
-<li><p><strong>Explicitly pass IZebraServiceConnection Interface to ZebraNfcVas object -</strong> The three callback methods provided by the Zebra NFC VAS service include: onServiceConnected, onServiceDisconnected, and onPassDetected.</p>
-
-<pre class="prettyprint"><code>ZebraNfcVas vasSDK = new ZebraNfcVas(this, new IZebraServiceConnection() {
-    @Override
-    public void onServiceConnection() {
-        ...
-    }
-
-<pre><code>@Override
-public void onServiceDisconnection() {
-    ...
-}
-
-@Override
-public void onPassDetected(Pass pass) {
-    ...
-}
-</code></pre>
-
-});
-
-vasSDK.init();
-</code></pre>
-
-<p>To explicitly pass IZebraServiceConnection Interface to ZebraNfcVas object, continue to step 4.</p></li>
-
-<li><p><strong>Implement IZebraServiceConnection Interface -</strong> As an alternative to the approach from step 1, proceed with these next 2 steps to implement the IZebraServiceConnection interface within the Activity. The three callback methods provided by the Zebra NFC VAS service include: onServiceConnected, onServiceDisconnected, and onPassDetected.</p>
+<li><p><strong>Implement IZebraServiceConnection Interface -</strong> It is required to implement IZebraServiceConnection Interface to receive callback methods from the Zebra NFC VAS service on the service connection/disconnection and NFC pass object. The 3 callback methods are: onServiceConnected, onServiceDisconnected, and onPassDetected.</p>
 
 <pre class="prettyprint"><code>public class AppleVASActivity extends AppCompatActivity implements IZebraServiceConnection {
     ...
@@ -764,19 +688,7 @@ public void onPause() {
 
 <h2 id="zebranfcvas" class="anchor"><a class="heading-anchor" href="#zebranfcvas"><span></span></a>ZebraNfcVAS</h2>
 
-<p>ZebraNfcVAS is the main class of the SDK that establishes a connection with the Zebra NFC VAS service, handles all the communication with the NFC passes, configures the NFC reader, and reads the pass from the Apple or Google Wallet (if in use). This object must be explicitly created and initialized. After the pass is successfully read, ZebraNfcVas decrypts the data (given that a private key is provided and all information is correct and intact) and returns the Pass object back to the caller. If a private key is not provided, the SDK returns the encrypted data.</p>
-
-<p>When developing an app to read an NFC pass from Apple or Google Wallet, developers have 2 options:</p>
-
-<ul>
-<li>Explicitly pass IZebraServiceConnection Interface to ZebraNfcVas object</li>
-
-<li>Implement the IZebraServiceConnection interface within the Activity.</li>
-</ul>
-
-<p>See <a href="#developerguide">Developer Guide</a> for more information.</p>
-
-<p>The subsequent subsections provides the methods available from ZebraNfcVAS.</p>
+<p>ZebraNfcVAS is the main class of the SDK that establishes a connection with the Zebra NFC VAS service, handles all the communication with the NFC passes, configures the NFC reader, and reads the pass from the Apple or Google Wallet (if in use). This object must be explicitly created and initialized. After the pass is successfully read, ZebraNfcVas decrypts the data (given that a private key is provided and all information is correct and intact) and returns the Pass object back to the caller. If a private key is not provided, the SDK returns the encrypted data. The following subsections detail the available methods.</p>
 
 <!--
 Updated and removed APIs from VAS SDK 1.0:
@@ -990,8 +902,6 @@ Updated and removed APIs from VAS SDK 1.0:
 <li><code>public Date getPayloadDate()</code> - Returns the PayloadDate of the NFC pass detected</li>
 
 <li><code>public boolean isDecrypted()</code> – Returns the status of the payload message: decrypted or encrypted</li>
-
-<li><code>public byte[] getPayloadNDEFMessage()</code> - Returns the raw byte array representing the complete Smart Tap payload NDEF message. Developers can use this byte array to instantiate an NDEF message, which can then be parsed by their application, offering enhanced flexibility.</li>
 </ul>
 
 <p><strong>Parameter:</strong> Pass object</p>
@@ -1553,18 +1463,12 @@ Array of one or more ServiceTypes. This must not be null and or empty.</p>
 
 <p>Considering the SDK is an Android .AAR file that is imported into the application project, it is possible to decompile the .AAR file and regenerate it into a modified version that connects to a malicious service. This could compromise the security and encryption of the private key, as well as other essential data, introducing potential security vulnerabilities.</p>
 
-<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Zebra recommends that application developers implement the following integrity check to verify the authenticity of the Zebra VAS SDK.</strong> Ensure the authenticity of the Zebra VAS SDK by verifying that the checksum of the .AAR file matches the checksum of the SDK provided by Zebra. The SDK and its checksum details are available on the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/value-added-services-sdk.html">Zebra support portal</a>. Use any free "sha512sum" tool for this verification. Compare the resulting checksum with the following checksum for Zebra VAS SDK (.AAR) version 3.0:</p>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Zebra recommends application developers to implement the following integrity check to ensure the authenticity of Zebra VAS SDK:</strong> To ensure the authenticity of the Zebra VAS SDK, check whether the .AAR file checksum matches the checksum of the SDK provided by Zebra. The SDK is posted on the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/value-added-services-sdk.html">Zebra support portal</a> along with its file checksum details. To run the checksum of the SDK, Zebra recommends using any free “sha512sum” verification tool. Compare the result checksum with the checksum for Zebra VAS SDK (.AAR), which is the following for version 2.0.1:</p>
 
-<pre class="prettyprint"><code>    VAS SDK (.aar) version: 3.0
-    sha512 checksum:
-    bbabd41a38018b288f0942489fc0d824aafdc907b86568b10ebf0c5113fb00d12df105f38360f06ac39cfe59e12cc1934a9c9dcfc34c1b64ac2b4faaba7d9d0f
+<pre class="prettyprint"><code>    VAS SDK (.aar) version: 2.0.1
+    sha512 check sum:
+    a4089c74612aacd5b5cb45ac380d1d5bd53e0e6e9f4923f2dca50fcf61c14411123df67ffcdcf203bea1ab91ff38d7cd4f61243ee31945682a60a6818d0925e7
 </code></pre>
-
-<!-- 
-        VAS SDK (.aar) version: 2.0.2
-        sha512 check sum:
-        a1e387a6698aa481a42370247bac8514955006aba557fb9c4bd461611c5ed5d6c54c877cc27e27269a1f1c593108f366492f59a5a4e9f7a1f44e5e8863cbd589
--->
 
 <!--
 The Zebra VAS SDK (.AAR) checksum follows based on the version.
