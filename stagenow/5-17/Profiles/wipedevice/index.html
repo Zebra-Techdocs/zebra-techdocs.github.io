@@ -283,23 +283,15 @@
 
 <p>Use this Wizard to erase data on the device using Factory Reset (all data) or Enterprise Reset (only non-persistent data). <strong>See important additional information <a href="/mx/powermgr/#reboot">about reset actions</a></strong>. </p>
 
-<h3 id="bypassnotes" class="anchor"><a class="heading-anchor" href="#bypassnotes"><span></span></a>Bypass Notes</h3>
-
-<ul>
-<li><strong>Devices with MX 9.1 (or later) automatically skip the Android Set-up Wizard</strong> and begin staging when a <code>.bin</code> file is found.</li>
-
-<li><strong>On devices with MX 7.1 (or later)</strong>, it is possible to automatically bypass the Android Setup Wizard (also known as the "Welcome Screen") following an Enterprise Reset using the Power Manager CSP. More <a href="/mx/powermgr/#setup-wizard-bypass">about Power Manager's Setup Wizard Bypass</a> parameter. </li>
-
-<li><strong>On devices with Android 6 through 11</strong>, it's also possible to skip the Android Setup Wizard by scanning a barcode when the wizard appears or at any time thereafter. <a href="#setupwizardmanualbypass">See Setup Wizard Manual Bypass</a> section below for details. </li>
-</ul>
+<h3 id="setupwizardbypassnotes" class="anchor"><a class="heading-anchor" href="#setupwizardbypassnotes"><span></span></a>Setup Wizard Bypass Notes</h3>
 
 <blockquote>
-  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>The Setup-wizard Bypass feature is discontinued on devices running Android 13 and later</strong>.</p>
+  <p><i class="fa fa-check-circle" style="color:#27AE60;"></i><strong>The ability to skip the Android Setup Wizard by scanning a barcode has been partially restored</strong>. See <a href="#setupwizardbypass">Setup Wizard Bypass</a> (below) for details. </p>
 </blockquote>
 
 <hr>
 
-<h3 id="iclassfafaexclamationtrianglestylecolorffa500iaboutwizardbehavior" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iaboutwizardbehavior"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> About Wizard Behavior</h3>
+<h3 id="iclassfafaexclamationtrianglestylecolorffa500iaboutprofilewizardbehavior" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iaboutprofilewizardbehavior"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> About Profile Wizard Behavior</h3>
 
 <p>Settings created automatically by a Profile Wizard are sometimes not removed completely from the Profile when one or more of those settings are deleted manually. This occurs in Wizard-based Profiles that are further modified with settings created using Xpert mode. While parts of the deleted settings might still be visible, they are inaccessible by the administrator. However, the Profile does not execute them and otherwise functions normally.</p>
 
@@ -344,13 +336,61 @@
 
 <hr>
 
-<h3 id="setupwizardmanualbypass" class="anchor"><a class="heading-anchor" href="#setupwizardmanualbypass"><span></span></a>Setup Wizard Manual Bypass</h3>
+<h3 id="setupwizardbypass" class="anchor"><a class="heading-anchor" href="#setupwizardbypass"><span></span></a>Setup Wizard Bypass</h3>
 
-<blockquote>
-  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> The Setup-wizard Bypass feature is discontinued on devices running Android 13 and later.</p>
-  
-  <p><strong>With MX 9.1 and later, the barcode for bypassing the Android Setup Wizard is embedded within the configuration barcode(s). This combines bypass and device configuration into a single step.</strong> The processes and rules below apply to barcodes generated for devices with versions prior to MX 9.1. </p>
-</blockquote>
+<p><strong>The ability to skip the Android Setup Wizard by scanning a barcode has been partially restored</strong>. In 2024, Google requested that Zebra remove the ability it had developed for Zebra customers to bypass the "Setup Wizard" (SUW), the series of nine screens that required manual interaction for every new or Factory-reset device. Zebra voluntarily complied, and discontinued the SUW bypass feature beginning with devices running Android 13. Google has since relaxed its mandate, and now requires only three screens to acknowledge its Privacy Policies and Terms of Service, allowing the remainder of the device-setup process be automated.
+<br></p>
+
+<h4 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h4>
+
+<p>Scanning the barcode below skips the SUW on devices running: </p>
+
+<ul>
+<li><strong>Android 13 with MX 14.1</strong> (or later)</li>
+
+<li><strong>Android 14 with MX 14.1</strong> (or later)</li>
+
+<li><strong>An OS showing a "Build Date" of Feb., 2025</strong> or later *</li>
+</ul>
+
+<p><i><font size="2" color="DimGrey"> * Information found in <b>Settings &gt; About phone &gt; SW Components &gt; Build Date</b> </font></i></p>
+
+<hr>
+
+<h4 id="bypassthesuw" class="anchor"><a class="heading-anchor" href="#bypassthesuw"><span></span></a>Bypass the SUW</h4>
+
+<h5 id="whenfirststartingupaneworfactoryresetdevice" class="anchor"><a class="heading-anchor" href="#whenfirststartingupaneworfactoryresetdevice"><span></span></a>When first starting up a new or factory-reset device...</h5>
+
+<ol>
+<li><p><strong>Wait for the "Hi there" screen</strong> to appear: 
+<img alt="image" style="height:350px" src="../../images/profiles/517_Hi_there_plain.jpeg">
+<br></p></li>
+
+<li><p><strong>Scan the barcode below</strong> to skip <strong><em>most</em></strong> of the device-setup screens. 
+<img alt="image" style="height:100px" src="../../images/profiles/suw_barcode.jpg">
+<br></p></li>
+
+<li><p>If "Hi there" screen remains, <strong>press the "Start" button</strong>. Otherwise, <strong>skip to Step 4</strong>.
+<img alt="image" style="height:350px" src="../../images/profiles/517_Hi_there.jpeg">
+<br></p></li>
+
+<li><p>On the next two screens, <strong>acknowledge and/or change the settings</strong> as desired.<br>
+<strong>Tap "More" when finished</strong> with each screen's settings: 
+<img alt="image" style="height:400px" src="../../images/profiles/517_two_screens.jpeg">
+<br></p></li>
+
+<li><p>On the third screen, <strong>tap "Accept"</strong> to acknowledge Google's Terms of Service and Privacy Policy: 
+<img alt="image" style="height:400px" src="../../images/profiles/517_third_screen.jpeg">
+<br></p></li>
+</ol>
+
+<h5 id="iclassfafacheckcirclestylecolor27ae60iwhentheandroidhomescreenappearsstagingcanbeginthroughstagenoworanemmsystem" class="anchor"><a class="heading-anchor" href="#iclassfafacheckcirclestylecolor27ae60iwhentheandroidhomescreenappearsstagingcanbeginthroughstagenoworanemmsystem"><span></span></a><i class="fa fa-check-circle" style="color:#27AE60;"></i> When the Android Home screen appears, staging can begin through StageNow or an EMM system.</h5>
+
+<hr>
+
+<h3 id="priortoandroid13" class="anchor"><a class="heading-anchor" href="#priortoandroid13"><span></span></a>Prior to Android 13</h3>
+
+<p><strong>On devices with MX 9.1 through MX 11.9, the barcode for bypassing the Android Setup Wizard is embedded within the configuration barcode(s),  combining bypass and device configuration into a single step.</strong> <u>The processes and rules below apply to barcodes generated for devices with versions prior to MX 9.1</u>. </p>
 
 <p>When staging manually, it's possible to skip the Android Setup Wizard on devices with <strong>Android 6 through 11</strong> by scanning the barcode below at any stage of the wizard. On devices with Android 8 and later, scanning the barcode bypasses the Android <strong><em>and</em></strong> Zebra Setup Wizards (including Analytics opt-out). <strong>If the Android Setup wizard is partially completed, data entered prior to the bypass scan is applied</strong>. </p>
 
@@ -383,20 +423,26 @@
 </li>
 </ul>
 
-<h5 id="importantnotes" class="anchor"><a class="heading-anchor" href="#importantnotes"><span></span></a><code>IMPORTANT NOTES:</code></h5>
+<h4 id="importantnotes" class="anchor"><a class="heading-anchor" href="#importantnotes"><span></span></a><code>IMPORTANT NOTES</code></h4>
 
 <ul>
-<li><strong>On devices with MX 9.0</strong>, any <code>.bin</code> file causes Setup Wizard bypass. </li>
+<li><strong>On devices with MX 7.1 (or later)</strong>, it is possible to automatically bypass the Android Setup Wizard (also known as the "Welcome Screen") following an Enterprise Reset using the Power Manager CSP. More <a href="/mx/powermgr/#setup-wizard-bypass">about Power Manager's Setup Wizard Bypass</a> parameter. </li>
 
-<li><strong>On devices with MX 9.1 and later</strong>, a security check ensures that bypass occurs only if the StageNow Profile was created using MX 9.1 or later. </li>
+<li><strong>On devices with Android 6 through 11</strong>, it's also possible to skip the Android Setup Wizard by scanning a barcode when the wizard appears or at any time thereafter. <a href="#setupwizardmanualbypass">See Setup Wizard Manual Bypass</a> section below for details. </li>
 
-<li><strong>Devices with MX 9.1 (or later) automatically skip the Android Set-up Wizard</strong> and begin staging when a <code>.bin</code> file is found.</li>
+<li><strong>On devices with MX 9.0</strong>, processing any <code>.bin</code> file created for staging causes the Setup Wizard to be bypassed. </li>
+
+<li><strong>On devices with MX 9.1 and later</strong>, a security check upon scanning the bypass barcode ensures that bypass occurs only if the StageNow Profile was created using MX 9.1 or later. </li>
 </ul>
 
-<h5 id="othernotes" class="anchor"><a class="heading-anchor" href="#othernotes"><span></span></a>Other Notes:</h5>
+<!-- removed as redundant with 9.0 statement
+* **Devices with MX 9.1 (or later) automatically skip the Android Setup Wizard** and begin staging when a `.bin` file is found. 
+-->
+
+<h4 id="othernotes" class="anchor"><a class="heading-anchor" href="#othernotes"><span></span></a>Other Notes</h4>
 
 <ul>
-<li><strong>Android Setup-wizard bypass applies only to GMS devices</strong>; non-GMS devices do not employ the wizard.</li>
+<li><strong>Android Setup-wizard bypass applies only to GMS devices</strong>; non-GMS devices do not employ the SUW.</li>
 
 <li><strong>Scan-to-bypass functionality is present in all BSPs newer than those listed above</strong>.</li>
 
@@ -417,17 +463,17 @@
 <li><strong><a href="https://www.zebra.com/us/en/support-downloads/mobile-computers/handheld/tc20.html">TC20/TC25 OS update page</a></strong> - Android N or newer</li>
 </ul>
 
-<hr>
+<h4 id="android611only" class="anchor"><a class="heading-anchor" href="#android611only"><span></span></a>Android 6-11 only</h4>
 
-<h4 id="scantoskipwizardsandrunstagenowclient" class="anchor"><a class="heading-anchor" href="#scantoskipwizardsandrunstagenowclient"><span></span></a>Scan to skip wizards and run StageNow client:</h4>
+<p>Scanning the barcode below during any part of the Setup Wizard skips the remainder of the SUW, opens the Android Home screen and runs the StageNow client, allowing device-staging barcodes to be scanned to set up the device. </p>
 
 <p><img style="height:50px" src="../../images/profiles/skip_suw_and_run_sn.png">
 <br>
 <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Scanning the SUW bypass barcode signifies acceptance of <a href="https://policies.google.com/privacy/embedded?hl=en_us">Google Privacy Policy</a> and <a href="https://www.google.com/intl/en_us/policies/terms/embedded">Google Terms of Service</a>.</p>
 
-<blockquote>
-  <p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>The Setup-wizard Bypass feature is discontinued on devices running Android 13 and later</strong>.</p>
-</blockquote><p></p>
+<!-- 
+> <i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> **The Setup-wizard Bypass feature is discontinued on devices running Android 13**. 
+--><p></p>
                                         
 
 
