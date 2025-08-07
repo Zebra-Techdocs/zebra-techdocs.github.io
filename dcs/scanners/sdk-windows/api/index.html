@@ -151,7 +151,7 @@
 
                                                     <p>With the evolution of the SDK's capabilities, it is easier to increase the number of methods rather than increase the number of API commands. The benefit to the user is that, once you have the system up and running, a new method is just an additional operation to the existing code.</p>
 
-                                                    <p>In addition to the commands above, the Zebra Scanner SDK supports seven types of events:</p>
+                                                    <p>In addition to the commands above, the Zebra Scanner SDK supports nine types of events:</p>
 
                                                     <ul>
                                                         <li>ImageEvent</li>
@@ -161,6 +161,7 @@
                                                         <li>ScanRMDEvent</li>
                                                         <li>CommandResponseEvent</li>
                                                         <li>IOEvent</li>
+                                                        <li>ScannerNotificationEvent</li>
                                                         <li>BinaryDataEvent</li>
                                                     </ul>
 
@@ -1410,6 +1411,21 @@ void OnScanRMDEvent(
                                                             <td>16</td>
                                                             <td>Triggered when update error or status.</td>
                                                         </tr>
+                                                        <tr>
+                                                            <td>SCANNER_UC_SESS_START</td>
+                                                            <td>17</td>
+                                                            <td>Triggered when configuration push starts.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SCANNER_UC_PROGRESS</td>
+                                                            <td>18</td>
+                                                            <td>Triggered to indicate the current progress of the configuration push.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SCANNER_UC_SESS_END</td>
+                                                            <td>19</td>
+                                                            <td>Triggered when configuration push session ends.</td>
+                                                        </tr>
                                                     </table><br />
 
                                                     <h3 id="api-events-command-response" class="anchor"><a class="heading-anchor" href="#api-events-command-response"><span></span></a>CommandResponseEvent</h3>
@@ -1568,35 +1584,7 @@ void OnScannerNotification(
                                                         </tr>
                                                     </table><br />
 
-                                                    <p>For RTA_EVENT type only, <strong>pScannerData</strong> will contain following information:</p>
-
-                                                    <ol>
-                                                        <li>The Model and Serial number of the device that originated the RTA event is shown in the respective Model and Serial Number Columns.</li>
-                                                        <li>The "rta" tag represents the RTA event attribute ID.</li>
-                                                        <li>The "type" tag represents the Stat type of the event.</li>
-                                                        <li>Data1 and Data2 tags show the RTA event data received with the RTA event raised from the scanner.</li>
-                                                    </ol>
-
-<pre class="prettyprint">
-<code>
-&lt;?xml version="1.0" encoding="UTF-8"?>
-&lt;outArgs>
-    &lt;scannerID>2&lt;/scannerID>
-    &lt;arg-xml>
-        &lt;modelnumber>DS8178-SR0F007ZZWW&lt;/modelnumber>
-        &lt;serialnumber>99887766556655  &lt;/serialnumber>
-        &lt;GUID>&lt;/GUID>
-        &lt;rta>
-            &lt;id>30012&lt;/id>
-            &lt;type>12&lt;/type>
-            &lt;data-1>99&lt;/data-1>
-            &lt;data-2>0&lt;/data-2>
-            &lt;raw-data>0x75 0x3C 0x00 0x0C 0x00 0x63 0x00 0x00 0x00 0x00 &lt;/raw-data>
-        &lt;/rta>
-    &lt;/arg-xml>
-&lt;/outArgs>                                                            
-</code>
-</pre>
+                                                    <p>For more information, please refer to <a href="../../rta/dev-guide/" target="_blank">Real Time Alerts (RTA)</a>.</p>
 
                                                     <h3 id="api-events-binary" class="anchor"><a class="heading-anchor" href="#api-events-binary"><span></span></a>BinaryDataEvent</h3>
 
@@ -3041,6 +3029,94 @@ void OnBinaryDataEvent(
                                                         </tr>
 
                                                         <tr>
+                                                            <th colspan="2">LOAD_SCANNER_CONFIGURATION (Value 5020)</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Description</td>
+                                                            <td>Load the configuration to the selected scanner using a scanner configuration file cerated by using the 123Scan Configuration Utility.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Asynchronous supported</td>
+                                                            <td>N/A</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Supported Scanner Communication Protocols</td>
+                                                            <td>IBM Hand-held, IBM Table-top, SNAPI, SSI</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <strong>InXml</strong>
+<pre class="prettyprint">
+<code>
+&lt;inArgs>
+    &lt;scannerID>1&lt;/scannerID>
+    &lt;cmdArgs>
+        &lt;arg-string>C:\Config File_MP7200.scncfg&lt;/arg-string>
+    &lt;/cmdArgs>
+&lt;/inArgs>
+</code>
+</pre>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <strong>OutXml</strong>
+                                                                <p>Configuration load session start. &lt;maxcount> tag list the number of attributes.</p>
+
+<pre class="prettyprint">
+<code>
+&lt;outArgs>
+  &lt;scannerID>1&lt;/scannerID>
+  &lt;arg-xml>
+    &lt;uc_sess_start>
+      &lt;modelnumber>SP7208-SV00004CCWW&lt;/modelnumber>
+      &lt;serialnumber>23315523070177&lt;/serialnumber>
+      &lt;maxcount>333&lt;/maxcount>
+      &lt;status>0&lt;/status>
+    &lt;/uc_sess_start>
+  &lt;/arg-xml>
+&lt;/outArgs>
+</code>
+</pre>
+
+                                                                <p>Configuration load progress updata. &lt;progress> tag notify the progress count.</p>
+
+<pre class="prettyprint">
+<code>
+&lt;outArgs>
+  &lt;scannerID>1&lt;/scannerID>
+  &lt;arg-xml>
+    &lt;uc_progress>
+      &lt;modelnumber>SP7208-SV00004CCWW&lt;/modelnumber>
+      &lt;serialnumber>23315523070177  &lt;/serialnumber>
+      &lt;progress>33&lt;/progress>
+      &lt;status>0&lt;/status>
+    &lt;/uc_progress>
+  &lt;/arg-xml>
+&lt;/outArgs>
+</code>
+</pre>
+
+                                                                <p>Configuration load completion.</p>
+
+<pre class="prettyprint">
+<code>
+&lt;outArgs>
+  &lt;scannerID>1&lt;/scannerID>
+  &lt;arg-xml>
+    &lt;uc_sess_end>
+      &lt;modelnumber>SP7208-SV00004CCWW&lt;/modelnumber>
+      &lt;serialnumber>23315523070177  &lt;/serialnumber>
+      &lt;status>0&lt;/status>
+    &lt;/uc_sess_end>
+  &lt;/arg-xml>
+&lt;/outArgs>
+</code>
+</pre>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
                                                             <th colspan="2">UPDATE_DECODE_TONE (Value 5050)</th>
                                                         </tr>
                                                         <tr>
@@ -3112,7 +3188,7 @@ void OnBinaryDataEvent(
                                                         </tr>
 
                                                         <tr>
-                                                            <th colspan="2">GET SUPPORTED RTA EVENTS (Value 5500)</th>
+                                                            <th colspan="2" id="examples-rta-events">GET SUPPORTED RTA EVENTS (Value 5500)</th>
                                                         </tr>
                                                         <tr>
                                                             <td>Description</td>
