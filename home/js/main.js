@@ -429,6 +429,10 @@ function selectDoc(prod_id, doc_id) {
     var doc = "";
     
     switch (prod_id) {
+        case 'btn-ai-dc-sdk':
+            ver = "";   // no version
+            doc = $("#ai-dc-sdk-doc").val();
+            break;
         case 'btn-migration':
             ver = "";   // no version
             doc = $("#migration-doc").val();
@@ -532,6 +536,10 @@ function selectDoc(prod_id, doc_id) {
         case 'btn-rxlogger':
             ver = $("#rxlogger-version").val();
             doc = $("#rxlogger-doc").val();
+            break;
+        case 'btn-showcase-app':
+            ver = "";   // no version
+            doc = $("#showcase-app-doc").val();
             break;
         case 'btn-sn':
             ver = $("#sn-version").val();
