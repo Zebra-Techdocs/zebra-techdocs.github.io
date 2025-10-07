@@ -303,77 +303,91 @@ Other features:
 <p>After administrators deploy specific settings through a <a href="../setup/#standardenrollment">standard enrollment profile</a> to a device designated for user enrollment, follow these steps to enroll users (steps may vary depending on the options configured):</p>
 
 <ol>
-<li>In Identity Guardian, tap <strong>Start.</strong>
-<img alt="image" style="height:350px" src="welcome.png"></li>
+<li><p>In Identity Guardian, tap <strong>Start.</strong>
+<img alt="image" style="height:350px" src="welcome.png"></p></li>
 
-<li>(Optional) This is a 6 digit PIN set by the administrator. Tap <strong>Continue.</strong>
-<img alt="image" style="height:350px" src="corp-pin.png"></li>
+<li><p>(Optional) This is a 6 digit PIN set by the administrator. Tap <strong>Continue.</strong>
+<img alt="image" style="height:350px" src="corp-pin.png"></p></li>
 
-<li>Setup ID and passcode:
-
+<li><p>Setup ID and passcode:</p>
 
 <ul>
-<li>Enter ID or email (<strong>Note:</strong> This is case-sensitive — the string entered <em>must</em> exactly match that from the identity provider. Discrepancies may lead to authentication issues or failure if using the <a href="#autofillssologin">Auto-Fill SSO Login</a> feature.)</li>
+<li>Enter ID or email (Maximum of 60 characters. <strong>Note:</strong> This is case-sensitive — the string entered <em>must</em> exactly match that from the identity provider. Discrepancies may lead to authentication issues or failure if using the <a href="#autofillssologin">Auto-Fill SSO Login</a> feature.)</li>
 
-<li>(Optional) Select the appropriate user role (options vary based on your adminstrator setup)</li>
+<li>(Optional) Select the appropriate user role (options vary based on your administrator setup).</li>
 
 <li>(Optional) Enter the expiration date for the barcode. This applies for temporary users.</li>
 
 <li>Create a passcode based on the requirements set by the administrator.</li>
 
 <li>Re-enter the passcode
-<img alt="image" style="height:350px" src="setup-shared.png"></li></ul>
-</li>
+<img alt="image" style="height:350px" src="setup-shared.png"></li></ul></li>
 
-<li>(Optional) Capture facial biometrics. <em>If opting out, tap <strong>Skip</strong> and skip to step 7 below.</em> Otherwise, tap <strong>Add</strong> and continue with the subsequent steps.
-<img alt="image" style="height:350px" src="face-capture.png"></li>
+<li><p>(Optional) Capture facial biometrics. <em>If opting out, tap <strong>Skip</strong> and skip to step 7 below.</em> Otherwise, tap <strong>Add</strong> and continue with the subsequent steps.
+<img alt="image" style="height:350px" src="face-capture.png"></p></li>
 
-<li>Read the Terms &amp; Conditions. Tap <strong>Confirm</strong> to accept.
-<img alt="image" style="height:350px" src="t&amp;c.png"></li>
+<li><p>Read the Terms &amp; Conditions. Tap <strong>Confirm</strong> to accept.
+<img alt="image" style="height:350px" src="t&amp;c.png"></p></li>
 
-<li>Position your face within the device screen for the photo capture. Capture 1 to 3 facial photos that may vary based on the individual's look, for example, with eyeglasses, hat, etc. Confirm the photo capture(s). Tap <strong>Add</strong> to capture additional photos. Tap <strong>Next</strong> when done.
-<img alt="image" style="height:350px" src="face-capture-added.png"></li>
+<li><p>Position your face within the device screen for the photo capture. Capture 1 to 3 facial photos that may vary based on the individual's look, for example, with eyeglasses, hat, etc. Confirm the photo capture(s). Tap <strong>Add</strong> to capture additional photos. Tap <strong>Next</strong> when done.
+<img alt="image" style="height:350px" src="face-capture-added.png"></p></li>
 
-<li>The user barcode is generated and saved as a PDF file in the <code>/enterprise/usr/profiles</code> folder on the device. Tap <strong>Next.</strong>
-<img alt="image" style="height:350px" src="barcode.png"></li>
+<li><p>The user barcode is generated. Tap <strong>Next.</strong>
+<img alt="image" style="height:350px" src="barcode.png"></p></li>
 
-<li>Complete the enrollment process by choosing one of the following:
-
+<li><p>To complete the enrollment process, follow one of the options below based on the configurations set by your administrator:</p>
 
 <ul>
-<li><strong>No Barcodes:</strong> If barcode printing is not configured, tap <strong>Save</strong> to finalize the enrollment process.
-<img alt="image" style="height:350px" src="standard-enrollment-save.png"></li>
+<li><p><strong>No Barcode:</strong> If barcode printing is not required, tap <strong>Save</strong> to complete the enrollment process.
+<img alt="image" style="height:350px" src="standard-enrollment-save.png"></p></li>
 
-<li><strong>Print or Share the Barcode:</strong> Tap <strong>Print</strong> to launch the zCreator app, where the barcode is displayed on the preview screen. For instructions on printing or sharing the barcode, see <a href="#printsharebarcode">Print &amp; Share Barcode</a>. 
+<li><p><strong>Save the Barcode:</strong> If the "Allow opening barcode during enrollment" option in <a href="../mc/#enrollmentconfiguration">Enrollment Configuration</a> is disabled, barcode printing or sharing is not permitted during enrollment. Tap <strong>Save</strong> to save the barcode as a PDF file. It is stored in the <code>/enterprise/usr/profiles</code> folder on the device and can be accessed later via <a href="#afterenrollment">zCreator</a>. Tap <strong>Continue</strong> to finalize the enrollment process.
+</p><table>
+    <tbody><tr>
+        <td><img alt="image" style="height:350px" src="standard-enrollment-save.png"></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img alt="image" style="height:350px" src="congrats-shared.png"></td>
+    </tr>
+</tbody></table><p></p></li>
 
+<li><p><strong>Print or Share the Barcode:</strong> If the "Allow opening barcode during enrollment" option in <a href="../mc/#enrollmentconfiguration">Enrollment Configuration</a> is enabled, both the <strong>Print</strong> and <strong>Share</strong> buttons are visible.</p>
 
 <ul>
-<li>After printing or sharing, tap the back button to return to Identity Guardian, then tap <strong>Continue</strong> to complete enrollment.
-<table>
-<tbody><tr>
-    <td><img alt="image" style="height:350px" src="standard-enrollment-print.png"></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td><img alt="image" style="height:350px" src="congrats-shared.png"></td>
-</tr>
-</tbody></table></li></ul>
-</li>
+<li><p><strong>Printing or Sharing Barcode:</strong> Tap <strong>Print</strong> to launch the zCreator app, where the barcode displays on the preview screen. For detailed instructions on printing or sharing, see <a href="#printsharebarcode">Print &amp; Share Barcode</a>. After printing or sharing, tap the back button in zCreator to return to Identity Guardian, then tap <strong>Continue</strong> to complete enrollment. 
+<strong>Notes:</strong> </p>
 
-<li><strong>Save the Barcode:</strong> To skip printing or sharing the barcode immediately, tap <strong>Save,</strong> and then tap <strong>Continue</strong> to finalize the enrollment process.
-<table>
-<tbody><tr>
-    <td><img alt="image" style="height:350px" src="standard-enrollment-save.png"></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td><img alt="image" style="height:350px" src="congrats-shared.png"></td>
-</tr>
-</tbody></table></li></ul>
-</li>
+<ul>
+<li>This option <strong>does <u>not</u> save</strong> the barcode.</li>
+
+<li>If the user taps the back button in zCreator without printing the barcode, the Identity Guardian screen returns with the <strong>Continue</strong> button visible. However, the user loses the opportunity to print their barcode, and the previous enrollment steps cannot be revisited.</li></ul>
+
+<p></p><table>
+    <tbody><tr>
+        <td><img alt="image" style="height:350px" src="standard-enrollment-print.png"></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img alt="image" style="height:350px" src="standard-enroll-print-preview.png"></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img alt="image" style="height:350px" src="congrats-shared.png"></td>
+    </tr>
+</tbody></table><p></p></li><p></p>
+
+<p></p><p></p><li><p><strong>Saving the Barcode:</strong> Tap <strong>Save</strong> to save the barcode as a PDF file. It is stored in the <code>/enterprise/usr/profiles</code> folder on the device and can be accessed later via <a href="#afterenrollment">zCreator</a>.
+</p><table>
+    <tbody><tr>
+        <td><img alt="image" style="height:350px" src="standard-enrollment-print-2.png"></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img alt="image" style="height:350px" src="congrats-shared.png"></td>
+    </tr>
+</tbody></table><p></p></li><p></p></ul><p></p></li></ul><p></p></li>
 </ol>
 
-<p><strong>Optional:</strong> If using the <a href="#printsharebarcode">zCreator app</a>, open zCreator at any time to view, print or share the saved barcode.</p>
+<p>To retrieve the saved barcode for printing or sharing after enrollment, use the <a href="#printsharebarcode">zCreator app</a>. Open zCreator at any time to view, print or share the stored barcode.</p>
 
 <p>After completing enrollment, the user can then <a href="../usage/#signinauthentication">sign in</a> to the shared device where the administrator has deployed the authentication profile.</p>
 
-<p><br></p>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> If a user is in the middle of the standard enrollment process and the Admin deploys the Identity Guardian profile for authentication, the user may encounter the lock screen shown below and be unable to sign in. To resolve this, the user should reboot the device.
+    <img alt="image" style="height:400px" src="standard-enroll-lock.png">
+<br></p>
 
 <hr>
 
@@ -396,7 +410,7 @@ Other features:
 
 
 <ul>
-<li><strong>Employee ID or Email -</strong> This is populated based on the user ID entered in the SSO login screen</li>
+<li><strong>Employee ID or Email -</strong> This is populated based on the user ID entered in the SSO login screen. Maximum of 60 characters.</li>
 
 <li><strong>Role -</strong> This is populated based on the user ID entered and their role mapped in their SSO provider.</li>
 
@@ -433,6 +447,8 @@ Other features:
 <p>To print or share the saved barcode, launch the <a href="#printsharebarcode">zCreator app</a> at any time.</p>
 
 <p>After completing enrollment, the user can then <a href="../usage/#signinauthentication">sign in</a> to the shared device.</p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> To exit self-enrollment in the middle of the process, the user must repeatedly tap the back button until the Identity Guardian lock screen is displayed.</p>
 
 <hr>
 
@@ -543,6 +559,8 @@ Other features:
 
 <p>Unique, encrypted QR Codes serve as a secure authentication method for signing into <a href="../setup/#shareddevice">Shared Devices</a>. These barcodes are created based on either facial recognition or a passcode. Using the <strong>zCreator app,</strong> users can print or share their QR Codes during the <a href="../setup/#standardenrollment">Standard Enrollment</a> (if configured by the administrator) or <a href="../setup/#selfenrollment">Self-Enrollment</a> process, as well as after enrollment is complete. </p>
 
+<p>When previewing barcodes, the Preview screen displays the barcode in portrait mode and up to 35 characters are displayed for the user name, even if the actual name is longer in length. </p>
+
 <p><strong>Key differences between enrollment methods:</strong></p>
 
 <ul>
@@ -571,7 +589,7 @@ Other features:
 <li><strong>Network printers (WiFi or Ethernet)</strong></li></ul>
 </li>
 
-<li><strong>Canon Printers -</strong> <em>For supported Canon printers (see <a href="../setup/#requirements">Requirements</a>):</em> 
+<li><strong>Canon Printers -</strong> <em>For supported Canon printers (see <a href="../setup/#printsharebarcode">Requirements</a>):</em> 
 
 
 <ul>
@@ -619,9 +637,7 @@ Other features:
 <p>Tap <strong>Printer ZPL Bluetooth</strong> to initiate printing. If the device and printer are not already paired, the user is prompted to pair them. Once paired, a confirmation message appears upon successful printing.
 <img alt="image" style="height:350px" src="zcreator-bt-print.png"></p></li>
 
-<li><p><strong>Share To:</strong> </p>
-
-<p>Tap <strong>Share To.</strong> 
+<li><p><strong>Share To:</strong> Shares the barcode as <code>shared_image.png</code>. Tap <strong>Share To.</strong> 
 <img alt="image" style="height:350px" src="zcreator-share-to.png"></p>
 
 <p>Select one of the following options:</p>
@@ -640,16 +656,16 @@ Other features:
 <li><strong>Gmail -</strong> Ensure a Gmail account is added beforehand. Once added, select the Gmail account to open the compose email screen with the barcode attached as a .PNG file. 
 <img alt="image" style="height:350px" src="zcreator-share.png"></li></ul></li>
 
-<li><p><strong>NFC Tap &amp; Pair:</strong> Ensure NFC is enabled on the device and printer. If using Bluetooth, the printer and device must be paired. To use this feature:</p></li></ul>
+<li><p><strong>NFC Tap &amp; Pair:</strong> Ensure that NFC is enabled on both the device and printer. If connecting via Bluetooth, the printer and device must be paired. To use this feature:</p></li></ul>
 
 <ol>
 <li>Tap the device near the printer's NFC tag.</li>
 
-<li>The <strong>NFC Tap &amp; Pair</strong> screen appears and initiates the process to detect the printer's connection method in the following order: Ethernet, WiFi, and Bluetooth. </li>
+<li>The <strong>NFC Tap &amp; Pair</strong> screen appears and initiates the discovery process to locate nearby printers. Printers are discovered in the following order: Ethernet, WiFi, and Bluetooth. This process may take up to 30 seconds.</li>
 
-<li>Once the connection is detected, the Preview screen displays with the appropriate connection method (e.g. Bluetooth ZPL Printer). </li>
+<li>Once the printer is found, the Preview screen displays, showing the appropriate connection method (e.g. Bluetooth ZPL Printer). </li>
 
-<li>Follow the instructions based on the detected method:
+<li>Follow the instructions based on the connection method:
 
 
 <ul>
@@ -728,26 +744,30 @@ Other features:
 </li></ul>
 </li>
 
-<li><strong>Character Limitations for User Names in Barcodes:</strong>
+<li><strong>Preview Screen Character Limitations:</strong>
 
 
 <ul>
-<li>Up to 60 characters are supported through Identity Guardian.</li>
+<li>When tapping the <strong>Print</strong> button in Identity Guardian during user enrollment, the Preview screen in zCreator displays the user name with a maximum length of characters.</li>
 
-<li>When selecting a PDF file, the character limit is reduced to 59.</li></ul>
+<li>When opening a .PDF from the main screen of the zCreator app, the Preview screen limits the displayed user name to 35 characters, even if the actual user name exceeds this length.</li></ul>
 </li>
 
 <li><strong>QR Code Size Variation for Zebra Printers:</strong> The actual size of the QR code may vary slightly from the specified dimensions, with a possible deviation of 0.1 cm.</li>
+
+<li><strong>QR Codes Can be Scanned Directly from the Preview Screen:</strong> A QR Code displayed on a device can be scanned by another device straight from the Preview screen.</li>
 </ul>
 
 <p><strong>Connectivity and Technical Issues:</strong> </p>
 
 <ul>
-<li><strong>Wi-Fi Connection Issues:</strong> If the Wi-Fi connection is not established properly, users may encounter the following error message: “com.zebra.sdk.comm.Connect.ioException: Could not open connection.” In such cases, users should attempt to reconnect to the printer.</li>
+<li><strong>Wi-Fi Connection Issues:</strong> If the Wi-Fi connection is not established properly, users may encounter an error message. In such cases, users should attempt to reconnect to the printer.</li>
 
-<li><strong>Bluetooth Pairing for Printing:</strong> If the mobile device is not paired with the printer during the first Bluetooth print request, users will receive a prompt to pair with the device, which must be accepted to proceed. <br><strong>Note:</strong> On some printers, printing may not begin immediately after pairing. Users may need to re-initiate the print request.</li>
+<li><strong>Bluetooth Pairing for Printing:</strong> If the mobile device is not paired with the printer during the first Bluetooth print request, users will receive a prompt to pair with the device, which must be accepted to proceed. <br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> On some printers, printing may not begin immediately after pairing. Users may need to re-initiate the print request.</li>
 
 <li><strong>NFC Tap &amp; Pair Workflow:</strong> During the NFC Tap &amp; Pair process, the system first searches for an Ethernet printer. If not is found, it attempts to connect to a Wi-Fi printer, and if that fails, it switches to Bluetooth. Even if certain settings, like access to printer configurations, are disabled by the administrator, printing can still proceed based on printer detection via NFC.</li>
+
+<li><strong>Printing from Multiple Bluetooth Printers:</strong> Simultaneous printing from multiple devices is not supported over Bluetooth. If print jobs need to be performed via Bluetooth on multiple printers, Zebra recommends to introduce a delay of at least 30 seconds after the completion of the first device's print job before initiating the print job on the second device.</li>
 </ul>
 
 <hr>
