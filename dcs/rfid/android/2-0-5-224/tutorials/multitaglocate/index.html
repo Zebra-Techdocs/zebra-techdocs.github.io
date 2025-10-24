@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Hello RFID Application">
-    <title>NewGen2XPlay Sample Application - Zebra Technologies Techdocs</title>
+    <meta title="Multi-Tag Locate Tutorial">
+    <title>Multi-Tag Locate Tutorial - Zebra Technologies Techdocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -52,8 +52,8 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <li>
                                 <a href="/dcs/rfid">RFID</a>
-                        </li>
-                        <p class="navbar-text">RFID SDK for Android</p>                
+                        </li>                        
+                        <p class="navbar-text">RFID SDK for Android</p>                        
                     </ul>
                 </div>
                                 <div class="collapse navbar-collapse navbar-right">
@@ -62,32 +62,32 @@
 
 
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/about">
+                            <a href="/dcs/rfid/android/2-0-5-224/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/gettingstarted">
+                            <a href="/dcs/rfid/android/2-0-5-224/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/tutorials">
+                            <a href="/dcs/rfid/android/2-0-5-224/tutorials">
                                     Tutorials
                             </a>
                         </li>                        
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/samples">
+                            <a href="/dcs/rfid/android/2-0-5-224/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/programming-guides">
+                            <a href="/dcs/rfid/android/2-0-5-224/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/apis">
+                            <a href="/dcs/rfid/android/2-0-5-224/apis">
                                     APIs
                             </a>
                         </li>
@@ -97,7 +97,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/search">
+                            <a href="/dcs/rfid/android/2-0-5-224/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -124,7 +124,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>NewGen2XPlay Sample Application</strong></li>
+                            <li><strong>Multi-Tag Locate Tutorial</strong></li>
                         </ul>
                     </nav>
                     
@@ -154,11 +154,13 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="hello-rfid-tutorial" class="anchor"><a class="heading-anchor" href="#hello-rfid-tutorial"><span></span></a>Sample Application for Impinj Gen2X tag features</h1>
+                                    <h1 id="multitag-locate-tutorial" class="anchor"><a class="heading-anchor" href="#multitag-locate-tutorial"><span></span></a>Multi-Tag Locate Tutorial</h1>
                                     <p>
-                                      RFID SDK For Android
-                                      2.0.5.214
-                              </p>
+                                      RFID SDK for Android 2.0.5.224
+                                  </p>
+                                    <p>
+                                            Applicable Devices : Handheld Readers
+                                    </p>
                                 </div>
                             </section>                    
                         </div>
@@ -172,41 +174,95 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-                                        <p>This guide provides a walk-through of the steps for creating an application that uses <a href="../../apis">RFID3 API</a> to use Impinj Gen2X tag features.</p>
+<p>This Tutorial provides a walk-through of the steps to perform Multi-tag locate operation using <a href="../../apis">RFID3 API</a></p>
 
-                                        <blockquote>
-                                        <p>Note: <strong>The demo app in this guide is intended for tutorial purposes only</strong> and should not be used in production environments. </p>
-                                        </blockquote>
 
-                                        <hr>
-                                        <h3 id="basicaddition" class="anchor"><a class="heading-anchor" href="#enableandroidpermissions"><span></span></a>Prerequisites</h3>
+<h3 id="createtheproject" class="anchor"><a class="heading-anchor" href="#createtheproject"><span></span></a>Create The Project</h3>
+<ul>
+<li>Start by creating a new project in Android Studio. For help, see the <a href="../../tutorials/tutCreateProjectAndroidStudio">Android Studio tutorial</a>. </li>
+<li>Refer <a href="../../samples/hellorfid">Hello RFID</a> to prepare basic setup to work with RFID Reader and then follow this guide</li>
+</ul>
 
-                                        <ol>
-                                        <li><p>Developer machine with latest Android studio</p></li>
-                                        <li><p>Developer machine with Zebra Android device USB driver installed</p></li>
-                                        <li><p>Zebra Android device with developer mode turned on</p></li>
-                                        <li><p>Zebra RFID Manager application installed in case of MC3300R</p></li>
-                                        <li><p>Reader regulatory is configured as per norms using RFID Manager or Zebra RFID Demo application</p></li>
-                                        </ol>
+<h3 id="tutorial1" class="anchor"><a class="heading-anchor" href="#tutorial1"><span></span></a>Details</h3>
+<p>Multi-tag Tag locationing (referred as MultiTag Locate) feature is supported only on hand-held readers and is useful to locate Multiple Tags in the field of view of the reader’s antenna.<p>
 
-                                        <h3 id="createtheproject" class="anchor"><a class="heading-anchor" href="#createtheproject"><span></span></a>Create The Project</h3>
+<h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Setting it up</h2>
+<p>Need to initialize multiple tags that is interest to be located needs to be imported. In the sample below four multiple tags has been initialized to locate. Second parameter is the reference RSSI value for each tag from a reference distance. As TAGS RSSI value varies from a reference distance based on tag types and the environment this value helps to calibrate for accurate distance measurements</p>
+<pre class="prettyprint"><code>
+    ArrayMap<String, String> multiTagLocateTagMap = new ArrayMap<String, String>();
 
-                                        <ul>
-                                            <li>Start by creating a new project in Android Studio. For help, see the <a href="../../tutorials/tutCreateProjectAndroidStudio/">Android Studio tutorial</a>. </li>
-                                            <li>Refer <a href="../hellorfid/">Hello RFID</a> to prepare basic setup to work with RFID Reader and then follow this guide</li>
-                                        </ul>
+        multiTagLocateTagMap.clear();
+        multiTagLocateTagMap.put("000000000000000000000536", "-50");
+        multiTagLocateTagMap.put("000000000000000000000537", "-50");
+        multiTagLocateTagMap.put("000000000000000000000549", "-50");
+        multiTagLocateTagMap.put("000000000000000000000550", "-50");
+        
+        try {
+            reeader.Actions.MultiTagLocate.purgeItemList();
+            reader.Actions.MultiTagLocate.importItemList(multiTagLocateTagMap);
+        } catch (InvalidUsageException e) {
+            e.printStackTrace();
+        } catch (OperationFailureException e) {
+            e.printStackTrace();
+        }
+        
+        
+</code></pre>
 
-                                        <h3 id="details" class="anchor"><a class="heading-anchor" href="#details"><span></span></a>Details</h3>
-                                        <p><a href="../../tutorials/impinj-gen2x-apis/">Impinj Gen2X APIs</a> section provides details about the implementation of the Impinj Gen2X tag features using the RFID3 API including :</p>
-                                        <ul>
-                                            <li>Protected Mode</li>
-                                            <li>TagFocus</li>
-                                            <li>Tag Quieting</li>
-                                        </ul>
+<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Performing operation</h2>
 
-                                        <p>Sample app which demonstrates the Impinj Gen2X tag features using the RFID3 API is available in the <a href="NewGen2XPlay.zip">NewGen2XPlay.zip</a> project.</p>
-                                        <p>User guide for NewGen2XPlay Sample app : <a href="ZebraGen2X_AppUserGuide.pptx">ZebraGen2X_AppUserGuide.pptx</a></p>
-                                        <p>Sample app apk <a href="NewGen2XPlay-release-1.2.apk">NewGen2XPlay-release-1.2.apk</a></p>
+<p> <code>reader.Actions.MultiTagLocate.Perform</code> can be used to start locating a tag, and <code>reader.Actions.MultiTagLocate.Stop</code> to stop the locationing operation.</p>
+
+<pre class="prettyprint"><code>
+    // Performing Tag Locationing on imported TAG list
+    try {
+        reader.Actions.MultiTagLocate.perform();
+    } catch (InvalidUsageException e) {
+        e.printStackTrace();
+    } catch (OperationFailureException e) {
+        e.printStackTrace();
+    }
+    
+    reader.Actions.MultiTagLocate.stop();
+    
+</code></pre>
+
+<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Grab the results</h2>
+
+<p>The result of locationing of tagList is reported with TagData. When data event callback is enabled multitag info can be fetched from event data </p>
+
+<pre class="prettyprint"><code>
+    public void eventReadNotify(RfidReadEvents rfidReadEvents) {
+
+        final TagData[] myTags = mRfidReader.Actions.getMultiTagLocateTagInfo(100);
+            if (myTags != null) {
+                for (int index = 0; index < myTags.length; index++) {
+                    TagData tagData = myTags[index];
+                    if (tagData.isContainsMultiTagLocateInfo()) {
+                //Get correcponding Tag locate info
+                                Log(tagData.getTagID() + " " + tagData.MultiTagLocateInfo.getRelativeDistance());
+                }
+            }
+        
+        
+        }
+        
+</code></pre>
+
+<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>Closer look</h2>
+<ul>
+<li><code>tagData.MultiTagLocateInfo.getRelativeDistance()</code> gives relative distance i.e. from 0% to 100% where tag being tag very far to very close respectively</li>
+</ul>
+
+<h2 id="code2" class="anchor"><a class="heading-anchor" href="#code2"><span></span></a>What's Next</h2>
+<ul>
+<li><code>reader.Actions.MultiTagLocate.addItem(String epc, String rssi)</code> Add Tag o the existing list</li>
+<li><code>reader.Actions.MultiTagLocate.deleteItem(String tid)</code> Delete tag from the inported list</li>
+</ul>
+<p></p>
+                                        
+
+
                                     </div>
                                 </div>
 

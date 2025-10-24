@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Hello RFID Application">
-    <title>NewGen2XPlay Sample Application - Zebra Technologies Techdocs</title>
+    <meta title="FindIt Tutorial">
+    <title>FindIt Tutorial - Zebra Technologies Techdocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -52,8 +52,8 @@
                         <li class="navbar-text pull-left"><strong>TECHDOCS</strong></li>
                         <li>
                                 <a href="/dcs/rfid">RFID</a>
-                        </li>
-                        <p class="navbar-text">RFID SDK for Android</p>                
+                        </li>                        
+                        <p class="navbar-text">RFID SDK for Android</p>                        
                     </ul>
                 </div>
                                 <div class="collapse navbar-collapse navbar-right">
@@ -62,32 +62,32 @@
 
 
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/about">
+                            <a href="/dcs/rfid/android/2-0-5-224/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/gettingstarted">
+                            <a href="/dcs/rfid/android/2-0-5-224/guide/gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/tutorials">
+                            <a href="/dcs/rfid/android/2-0-5-224/tutorials">
                                     Tutorials
                             </a>
                         </li>                        
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/samples">
+                            <a href="/dcs/rfid/android/2-0-5-224/samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/programming-guides">
+                            <a href="/dcs/rfid/android/2-0-5-224/guide/programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/apis">
+                            <a href="/dcs/rfid/android/2-0-5-224/apis">
                                     APIs
                             </a>
                         </li>
@@ -97,7 +97,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/search">
+                            <a href="/dcs/rfid/android/2-0-5-224/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -124,7 +124,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>NewGen2XPlay Sample Application</strong></li>
+                            <li><strong>FindIt Tutorial</strong></li>
                         </ul>
                     </nav>
                     
@@ -154,11 +154,13 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="hello-rfid-tutorial" class="anchor"><a class="heading-anchor" href="#hello-rfid-tutorial"><span></span></a>Sample Application for Impinj Gen2X tag features</h1>
+                                    <h1 id="findit-tutorial" class="anchor"><a class="heading-anchor" href="#findit-tutorial"><span></span></a>FindIt Tutorial</h1>
                                     <p>
-                                      RFID SDK For Android
-                                      2.0.5.214
-                              </p>
+                                      RFID SDK for Android 2.0.5.224
+                                  </p>
+                                    <p>
+                                            Applicable Devices : Handheld Readers
+                                    </p>
                                 </div>
                             </section>                    
                         </div>
@@ -172,41 +174,188 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-                                        <p>This guide provides a walk-through of the steps for creating an application that uses <a href="../../apis">RFID3 API</a> to use Impinj Gen2X tag features.</p>
+<p>This Tutorial provides a walk-through of the steps to perform FindIt operation using <a href="../../apis">RFID3 API</a></p>
 
-                                        <blockquote>
-                                        <p>Note: <strong>The demo app in this guide is intended for tutorial purposes only</strong> and should not be used in production environments. </p>
-                                        </blockquote>
 
-                                        <hr>
-                                        <h3 id="basicaddition" class="anchor"><a class="heading-anchor" href="#enableandroidpermissions"><span></span></a>Prerequisites</h3>
+<h3 id="createtheproject" class="anchor"><a class="heading-anchor" href="#createtheproject"><span></span></a>Create The Project</h3>
+<ul>
+<li>Start by creating a new project in Android Studio. For help, see the <a href="../../tutorials/tutCreateProjectAndroidStudio">Android Studio tutorial</a>. </li>
+<li>Refer <a href="../../samples/hellorfid">Hello RFID</a> to prepare basic setup to work with RFID Reader and then follow this guide</li>
+<li>Refer to <a href="https://github.com/ZebraDevs/FindIt_Example/">FindIt Example</a> as a reference of how to use this feature in an application</li>
+</ul>
 
-                                        <ol>
-                                        <li><p>Developer machine with latest Android studio</p></li>
-                                        <li><p>Developer machine with Zebra Android device USB driver installed</p></li>
-                                        <li><p>Zebra Android device with developer mode turned on</p></li>
-                                        <li><p>Zebra RFID Manager application installed in case of MC3300R</p></li>
-                                        <li><p>Reader regulatory is configured as per norms using RFID Manager or Zebra RFID Demo application</p></li>
-                                        </ol>
+<h3 id="tutorial1" class="anchor"><a class="heading-anchor" href="#tutorial1"><span></span></a>Details</h3>
+<p>FindIt features are supported only on hand-held readers.  It consists of two phases, <strong>Confirm</strong> and <strong>Isolate</strong>.<p>
 
-                                        <h3 id="createtheproject" class="anchor"><a class="heading-anchor" href="#createtheproject"><span></span></a>Create The Project</h3>
+<h2 id="confirm" class="anchor"><a class="heading-anchor" href="#confirm"><span></span></a>Confirm</h2>
+<p>This phase runs a specialized inventory. Given a hexadecimal mask and an example target, it identifies all tags in the field of view of the reader’s antenna that match the target EPC using the mask.<p>
 
-                                        <ul>
-                                            <li>Start by creating a new project in Android Studio. For help, see the <a href="../../tutorials/tutCreateProjectAndroidStudio/">Android Studio tutorial</a>. </li>
-                                            <li>Refer <a href="../hellorfid/">Hello RFID</a> to prepare basic setup to work with RFID Reader and then follow this guide</li>
-                                        </ul>
+<h3 id="confirm-setup" class="anchor"><a class="heading-anchor" href="#confirm-setup"><span></span></a>Setting it up</h3>
+<p>Decide what bits of the target EPC are important for finding matching tags and build the mask accordingly.</p>
 
-                                        <h3 id="details" class="anchor"><a class="heading-anchor" href="#details"><span></span></a>Details</h3>
-                                        <p><a href="../../tutorials/impinj-gen2x-apis/">Impinj Gen2X APIs</a> section provides details about the implementation of the Impinj Gen2X tag features using the RFID3 API including :</p>
-                                        <ul>
-                                            <li>Protected Mode</li>
-                                            <li>TagFocus</li>
-                                            <li>Tag Quieting</li>
-                                        </ul>
+<h3 id="confirm-code1" class="anchor"><a class="heading-anchor" href="#confirm-code1"><span></span></a>Performing Confirm operation</h3>
+<p>If the mask is known, <strong>Confirm</strong> can be started as follows</p>
 
-                                        <p>Sample app which demonstrates the Impinj Gen2X tag features using the RFID3 API is available in the <a href="NewGen2XPlay.zip">NewGen2XPlay.zip</a> project.</p>
-                                        <p>User guide for NewGen2XPlay Sample app : <a href="ZebraGen2X_AppUserGuide.pptx">ZebraGen2X_AppUserGuide.pptx</a></p>
-                                        <p>Sample app apk <a href="NewGen2XPlay-release-1.2.apk">NewGen2XPlay-release-1.2.apk</a></p>
+<pre class="prettyprint"><code>
+    String targetEpc = "3030401E1981E716D1417AA3";
+    String targetMask = "00FF00FF00FF00FF00FF00FF";
+
+    try {
+        reader.Config.setRFIDProfile("FASTEST_READ");
+        reader.Actions.TagConfirm.perform(targetEpc, targetMask);
+    } catch (InvalidUsageException e) {
+        e.printStackTrace();
+    } catch (final OperationFailureException e) {
+        e.printStackTrace();
+    }  
+
+
+</code></pre>
+
+<p>If the mask is not known, <strong>Confirm</strong> uses a default mask for GTIN encoded tags "FFFFFFFFFFFFFFC000000000".</p>
+<pre class="prettyprint"><code>
+    String targetEpc = "3030401E1981E716D1417AA3";
+
+    try {
+        reader.Config.setRFIDProfile("FASTEST_READ");
+        reader.Actions.TagConfirm.perform(targetEpc);
+    } catch (InvalidUsageException e) {
+        e.printStackTrace();
+    } catch (final OperationFailureException e) {
+        e.printStackTrace();
+    }  
+
+
+</code></pre>
+
+<h3 id="confirm-code2" class="anchor"><a class="heading-anchor" href="#confirm-code2"><span></span></a>Grab the results</h3>
+<p>The result is a list of tags matching the target tag and mask. When data event callback is enabled, info can be fetched from event data.</p>
+
+<pre class="prettyprint"><code>
+    public void eventReadNotify(RfidReadEvents rfidReadEvents) {
+        
+        final TagData[] myTags = reader.Actions.getConfirmedTags(100);
+        if (myTags != null) {
+            for (TagData tagData : myTags) {
+                if (tagData != null) {
+                    Log(tagData.getTagID());
+                }
+            }
+        }
+    }
+
+
+</code></pre>
+
+<h2 id="isolate" class="anchor"><a class="heading-anchor" href="#isolate"><span></span></a>Isolate</h2>
+<p>This phase runs specific locationing for a given target tag. It reports the estimated direction in vertical and horizontal rotations (pitch & yaw) and a notation value.<p>
+
+<h3 id="isolate-setup" class="anchor"><a class="heading-anchor" href="#isolate-setup"><span></span></a>How to use</h3>
+<p>To use <strong>Isolate</strong>, the user should stand in one location and slowly swing the device like a metal detector.</p>
+
+<h3 id="isolate-code1" class="anchor"><a class="heading-anchor" href="#isolate-code1"><span></span></a>Performing Isolate operation</h3>
+<p>An application context must be supplied to allow the SDK to use the IMU for direction calculations.</p>
+
+<pre class="prettyprint"><code>
+    String targetEpc = "3030401E1981E716D1417AA3";
+
+    try {
+        reader.Config.setRFIDProfile("FASTEST_READ");
+        reader.Actions.TagIsolate.perform(context, targetEpc);
+    } catch (InvalidUsageException e) {
+        e.printStackTrace();
+    } catch (final OperationFailureException e) {
+        e.printStackTrace();
+    }  
+
+
+</code></pre>
+
+<h3 id="isolate-code2" class="anchor"><a class="heading-anchor" href="#isolate-code2"><span></span></a>Grab the results</h3>
+<p>The result is a <code>TagIsolateInfo</code> object. When data event callback is enabled, info can be fetched.</p>
+
+<pre class="prettyprint"><code>
+    public void eventReadNotify(RfidReadEvents rfidReadEvents) {
+        
+        TagIsolateInfo info = reader.Actions.getTagIsolateInfo();
+        if (info != null) {
+            TagData tagData = info.getTagData();
+            float pitch = info.getPitch();
+            float yaw = info.getYaw();
+            float notation = info.getNotation();
+
+            Log(tagData.getTagId() + ": found with angles " + pitch + " , " + yaw + " and relative distance " + notation);
+        }
+    }
+
+
+</code></pre>
+
+<h3 id="isolate-closer-look" class="anchor"><a class="heading-anchor" href="#isolate-closer-look"><span></span></a>Closer look</h2>
+<ul>
+<li><code>TagIsolateInfo.getPitch()</code> gives an angle value in the range [-π/2,π/2] representing the relative pitch angle difference between the device and target tag</li>
+<li><code>TagIsolateInfo.getYaw()</code> gives an angle value in the range [-π,π] representing the relative yaw angle difference between the device and target tag</li>
+<li><code>TagIsolateInfo.getNotation()</code> gives relative distance value from 0% to 100%, with 0 meaning the tag is very far and 100 meaning the tag is very close</li>
+</ul>
+
+<h2 id="ui-lib" class="anchor"><a class="heading-anchor" href="#ui-lib"><span></span></a>UI Library</h2>
+<p>There is the option to use a UI library with custom views that support the <strong>Confirm</strong> and <strong>Isolate</strong> phases.<p>
+
+<h3 id="ui-lib-code1" class="anchor"><a class="heading-anchor" href="#ui-lib-code1"><span></span></a>View XML</h3>
+<p>An example of how to add a FindIt view to your layout XML.</p>
+
+<pre class="prettyprint"><code>
+    &lt;com.zebra.finditservice.IsolateView
+        android:id="@+id/isolate_view"
+        android:layout_width="240dp"
+        android:layout_height="360dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" /&gt;
+
+
+</code></pre>
+
+<h3 id="ui-lib-code2" class="anchor"><a class="heading-anchor" href="#ui-lib-code2"><span></span></a>Use View in Activity</h3>
+<p>An example of how to start and stop <strong>Confirm</strong> or <strong>Isolate</strong> through the custom View in a Fragment or Activity.</p>
+
+<pre class="prettyprint"><code>
+    public static final String LIST_ARG = "target_epcs";
+    private ArrayList<String> targetTags;
+    private IsolateView isolate;
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        targetTags = getArguments().getStringArrayList(LIST_ARG);
+        isolate = getActivity().findViewById(R.id.isolate_view);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // Start Isolate phase
+        isolate.startIsolate(targetTags.get(targetTagIndex));
+    }
+
+    @Override
+    public void onPause() {
+        // Stop Isolate phase
+        isolate.stopIsolate();
+
+        super.onPause();
+    }
+
+
+</code></pre>
+
+<h3 id="ui-lib-access" class="anchor"><a class="heading-anchor" href="#ui-lib-access"><span></span></a>Library Info</h3>
+<ul>
+<li>The UI library is downloadable here <a href="ui-lib/findit-ui-release.aar" download>[Download]</a></li>
+<li>Example implementation code can be found here <a href="https://github.com/ZebraDevs/FindIt_Example">[FindIt Example]</a></li>
+</ul>
                                     </div>
                                 </div>
 

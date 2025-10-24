@@ -7,8 +7,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Hello RFID Application">
-    <title>NewGen2XPlay Sample Application - Zebra Technologies Techdocs</title>
+    <meta title="About RFID SDK For Android">
+    <title>About RFID SDK For Android - Zebra Technologies Techdocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -53,41 +53,39 @@
                         <li>
                                 <a href="/dcs/rfid">RFID</a>
                         </li>
-                        <p class="navbar-text">RFID SDK for Android</p>                
+                        <p class="navbar-text">RFID SDK for Android</p>                  
                     </ul>
                 </div>
-                                <div class="collapse navbar-collapse navbar-right">
+                <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         
-
-
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/about">
+                            <a href="../about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/gettingstarted">
+                            <a href="../gettingstarted">
                                     Getting Started
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/tutorials">
+                            <a href="../../tutorials">
                                     Tutorials
                             </a>
                         </li>                        
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/samples">
+                            <a href="../../samples">
                                     Samples
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/guide/programming-guides">
+                            <a href="../programming-guides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/apis">
+                            <a href="../../apis">
                                     APIs
                             </a>
                         </li>
@@ -97,7 +95,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/dcs/rfid/android/2-0-5-214/search">
+                            <a href="/dcs/rfid/android/2-0-5-224/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -124,9 +122,10 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>NewGen2XPlay Sample Application</strong></li>
+                            <li><strong>About RFID SDK For Android</strong></li>
                         </ul>
                     </nav>
+
                     
                     <script type="text/javascript">
                         $(document).ready(function() {
@@ -154,11 +153,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="hello-rfid-tutorial" class="anchor"><a class="heading-anchor" href="#hello-rfid-tutorial"><span></span></a>Sample Application for Impinj Gen2X tag features</h1>
+                                    <h1 id="about-rfid-sdk-for-android" class="anchor"><a class="heading-anchor" href="#about-rfid-sdk-for-android"><span></span></a>About RFID SDK For Android</h1>
                                     <p>
-                                      RFID SDK For Android
-                                      2.0.5.214
-                              </p>
+                                            RFID SDK For Android
+                                            2.0.5.224</p>
                                 </div>
                             </section>                    
                         </div>
@@ -172,41 +170,232 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-                                        <p>This guide provides a walk-through of the steps for creating an application that uses <a href="../../apis">RFID3 API</a> to use Impinj Gen2X tag features.</p>
+<p>The Unified Zebra RFID SDK for Android is Android aar library that adds a comprehensive set of APIs to easily create powerful applications for Zebra RFID Handheld readers and Fixed readers. RFID SDK for Android includes class library, sample apps and source code to enable developers to easily build apps that take full advantage of the power of Zebra devices.</p>
 
-                                        <blockquote>
-                                        <p>Note: <strong>The demo app in this guide is intended for tutorial purposes only</strong> and should not be used in production environments. </p>
-                                        </blockquote>
+<!-- <blockquote>
+  <p><strong>Important</strong>: <a href="../Guides">More info</a>.</p>
+</blockquote> -->
 
-                                        <hr>
-                                        <h3 id="basicaddition" class="anchor"><a class="heading-anchor" href="#enableandroidpermissions"><span></span></a>Prerequisites</h3>
+<hr>
 
-                                        <ol>
-                                        <li><p>Developer machine with latest Android studio</p></li>
-                                        <li><p>Developer machine with Zebra Android device USB driver installed</p></li>
-                                        <li><p>Zebra Android device with developer mode turned on</p></li>
-                                        <li><p>Zebra RFID Manager application installed in case of MC3300R</p></li>
-                                        <li><p>Reader regulatory is configured as per norms using RFID Manager or Zebra RFID Demo application</p></li>
-                                        </ol>
+<h3 id="supporteddevices" class="anchor"><a class="heading-anchor" href="#supporteddevices"><span></span></a>Supported Devices</h3>
 
-                                        <h3 id="createtheproject" class="anchor"><a class="heading-anchor" href="#createtheproject"><span></span></a>Create The Project</h3>
+<h4 id="readers" class="anchor"><a class="heading-anchor" href="#readers"><span></span></a>Mobile Computers</h4>
 
-                                        <ul>
-                                            <li>Start by creating a new project in Android Studio. For help, see the <a href="../../tutorials/tutCreateProjectAndroidStudio/">Android Studio tutorial</a>. </li>
-                                            <li>Refer <a href="../hellorfid/">Hello RFID</a> to prepare basic setup to work with RFID Reader and then follow this guide</li>
-                                        </ul>
+<ul>
+<li>TC53e-RFID<code>NEW</code></li>
+<li>EM45<code>NEW</code></li>
+<li>ET6x<code>NEW</code></li>
+</ul>
+     
+<h4 id="readers" class="anchor"><a class="heading-anchor" href="#readers"><span></span></a>HandHeld Readers</h4>
 
-                                        <h3 id="details" class="anchor"><a class="heading-anchor" href="#details"><span></span></a>Details</h3>
-                                        <p><a href="../../tutorials/impinj-gen2x-apis/">Impinj Gen2X APIs</a> section provides details about the implementation of the Impinj Gen2X tag features using the RFID3 API including :</p>
-                                        <ul>
-                                            <li>Protected Mode</li>
-                                            <li>TagFocus</li>
-                                            <li>Tag Quieting</li>
-                                        </ul>
+<ul>
+<li>RFD40XX </li>
+<li>RFD90XX </li>
+<li>MC33XXR </li>
+<li>RFD8500</li>
 
-                                        <p>Sample app which demonstrates the Impinj Gen2X tag features using the RFID3 API is available in the <a href="NewGen2XPlay.zip">NewGen2XPlay.zip</a> project.</p>
-                                        <p>User guide for NewGen2XPlay Sample app : <a href="ZebraGen2X_AppUserGuide.pptx">ZebraGen2X_AppUserGuide.pptx</a></p>
-                                        <p>Sample app apk <a href="NewGen2XPlay-release-1.2.apk">NewGen2XPlay-release-1.2.apk</a></p>
+</ul>
+
+                               
+<h4 id="readers" class="anchor"><a class="heading-anchor" href="#readers"><span></span></a>Fixed Readers</h4>
+
+<ul>
+<li>FX7500 </li> 
+<li>FX9600</li>
+<li>FXR90 </li>
+</ul>
+
+<h4 id="AndroidVersions" class="anchor"><a class="heading-anchor" href="#androidversions"><span></span></a>Android Versions 8 and Above</h4>
+
+<ul>
+<li>RFD40XX – Oreo and onwards </li>
+<li>RFD90XX – Oreo and onwards </li>
+<li>MC33XXR - Oreo and onwards</li>
+<li>RFD8500 - Oreo and onwards</li>
+</ul>
+
+<h4 id="AndroidVersions" class="anchor"><a class="heading-anchor" href="#androidversions"><span></span></a>Android Versions for fixed readers</h4>
+
+<ul>
+<li>CC6000 – Android 11.0 (R)</li>
+</ul>
+<hr>
+
+<h2 id="whatsnewin2192" class="anchor"><a class="heading-anchor" href="#whatsnewin2192"><span></span></a>What's New in 2.0.5.224</h2>
+
+<p> Admin Authentication feature for RFD40/90 EU devices </p>
+
+
+<h2 id="whatsnewin2192" class="anchor"><a class="heading-anchor" href="#whatsnewin2192"><span></span></a>What's New in 2.0.5.214</h2>
+<p>Support for Impinj Gen2X tag features</p>
+<ul>
+    <li>Protected Mode</li>
+    <li>TagFocus</li>
+    <li>Tag Quieting</li>
+</ul>
+
+<h2 id="whatsnewin2190" class="anchor"><a class="heading-anchor" href="#whatsnewin2190"><span></span></a>What's New in 2.0.4.190</h2>
+
+<ul>
+<li><strong></strong>Bug Fixes </li>
+</ul>
+
+<h2 id="whatsnewin2074" class="anchor"><a class="heading-anchor" href="#whatsnewin610"><span></span></a>What's New in 2.0.4.177</h2>
+<h3 id="devicesupport" class="anchor">Device Support<a class="heading-anchor" href="#devicesupport"><span></span></a> </h3>				<p>RFID SDK 2.0.4.177 adds support for <strong>RFD40/90</strong> </p>						
+<ul>
+<li><strong></strong>Certificates Management </li>
+<li><strong></strong>Endpoint Configuration </li>
+</ul>										
+
+<h2 id="whatsnewin2074" class="anchor"><a class="heading-anchor" href="#whatsnewin610"><span></span></a>What's New in 2.0.3.162</h2>
+<h3 id="devicesupport" class="anchor">Device Support<a class="heading-anchor" href="#devicesupport"><span></span></a> </h3>				<p>RFID SDK 2.0.3.162 adds support for <strong>RFID Integrated Mobile Computers</strong> </p>						
+	
+
+<h2 id="whatsnewin2074" class="anchor"><a class="heading-anchor" href="#whatsnewin610"><span></span></a>What's New in 2.0.3.148</h2>
+<h3 id="devicesupport" class="anchor">Device Support<a class="heading-anchor" href="#devicesupport"><span></span></a> </h3>				<p>WLAN support for <strong>RFD40/90</strong> </p>						
+<ul>
+<li><strong></strong>BugFixes </li>
+</ul>										
+										
+										
+<h2 id="whatsnewin2074" class="anchor"><a class="heading-anchor" href="#whatsnewin610"><span></span></a>What's New in 2.0.2.124</h2>
+<h3 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h3>				<p>RFID SDK 2.0.2.124 adds support for <strong>FXR90</strong> </p>						
+<ul>
+    <li><strong></strong>API support for FXR90</li>
+    <li><strong></strong>SDK Restructuring</li>	
+    <li><strong></strong>BarCode Batchmode support </li>
+    <li><strong></strong>BugFixes and Stability</li>
+</ul>										
+										 
+<h2 id="whatsnewin2074" class="anchor"><a class="heading-anchor" href="#whatsnewin610"><span></span></a>What's New in 2.0.2.116</h2>
+										
+<ul>
+<li><strong></strong>Bugfixes </li>
+<li><strong></strong>Barcode Batchmode support </li>
+</ul>										
+
+<h2 id="whatsnewin2074" class="anchor"><a class="heading-anchor" href="#whatsnewin610"><span></span></a>What's New in 2.0.2.94</h2>
+
+<h3 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h3>
+
+<p>RFID SDK 2.0.2.94 adds support for the following mobile computers running Android Oreo and above</p>
+
+<ul>
+<li><strong>RFD40XX </strong>RFID HandHeld Mobile Computer </li>
+<li><strong>RFD90XX </strong>RFID HandHeld Mobile Computer </li>
+</ul>
+
+
+<!-- <blockquote>
+  <p><strong>IMPORTANT</strong>: RFID SDK 2.0.1.15 does supports devices running Android Kitkat 4.4 and newer. </p>
+</blockquote> -->
+
+<hr>
+
+<h3 id="newfeatures" class="anchor"><a class="heading-anchor" href="#newfeatures"><span></span></a>New Features</h3>
+
+<ul>
+<li><strong>APIs new features</strong>: 
+
+
+<ul>
+<li>Enhancements for key remapping support for RFD40/RFD90</li>
+<!-- <li>o	Multitaglocate  API </li>
+<li>o	Scanner API</li>
+<li>o	Issue fixing, stability improvement</li>
+<li>o	USB connectivity </li>
+<li>o	Trigger remapping</li>
+-->
+</ul>
+</ul>
+
+<!-- <hr>
+
+<h3 id="deprecations" class="anchor"><a class="heading-anchor" href="#deprecations"><span></span></a>Deprecations</h3>
+
+<p><strong>None</strong></p>
+
+<hr> -->
+ <!--                                
+<hr>
+
+<h2 id="whatsnewin2015" class="anchor"><a class="heading-anchor" href="#whatsnewin610"><span></span></a>What's New in 2.0.1.15</h2>
+
+<h3 id="devicesupport" class="anchor"><a class="heading-anchor" href="#devicesupport"><span></span></a>Device Support</h3>
+
+<p>RFID SDK 2.0.1.15 adds support for the following mobile computers running Android N </p>
+
+<ul>
+<li><strong>MC33XXR</strong> RFID HandHeld Mobile Computer </li>
+
+</ul>-->
+
+
+<!-- <blockquote>
+  <p><strong>IMPORTANT</strong>: RFID SDK 2.0.1.15 does supports devices running Android Kitkat 4.4 and newer. </p>
+</blockquote> -->
+
+<!--<hr>
+
+<h3 id="newfeatures" class="anchor"><a class="heading-anchor" href="#newfeatures"><span></span></a>New Features</h3>
+
+<ul>
+<li><strong>APIs new features</strong>: 
+
+
+<ul>
+<li>API to add multiple pre-filter and singulation control via single call</li>
+<li>Synchronous access operations APIs have provision to apply pre-filter by SDK</li>
+<li>Synchronous write access operations APIs have provision to perform retries in case of failures</li>
+<li>Issue fixing, stability improvement</li>
+</li>
+</ul>
+</ul>
+-->
+<!-- <hr>
+
+<h3 id="deprecations" class="anchor"><a class="heading-anchor" href="#deprecations"><span></span></a>Deprecations</h3>
+
+<p><strong>None</strong></p>
+
+<hr> -->
+<hr>
+<p></p><h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+
+<p><strong>Note:</strong> Please refer this link for more information about version history</p>
+<p><a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/rfid-sdk-for-android.html"><strong>Version-history</strong></a></p>
+<hr>
+
+<h2 id="usagenotes" class="anchor"><a class="heading-anchor" href="#usagenotes"><span></span></a>Usage Notes</h2>
+
+<h3 id="generalinterest" class="anchor"><a class="heading-anchor" href="#generalinterest"><span></span></a>General Interest</h3>
+
+<ol>
+<li>Initial settings for a project can be found at <strong><a href="../../tutorials/tutCreateProjectAndroidStudio/">Creating a Project using Android Studio</a></strong>.</li>
+
+</ol>
+
+<hr>
+
+<!-- <h3 id="apirelatedusage" class="anchor"><a class="heading-anchor" href="#apirelatedusage"><span></span></a>API-related Usage</h3>
+
+<ol>
+<li>Access operation APIs (the last two argument addition <code>bPrefilter</code> <code>bTIDPrefilter</code>API)</li>
+
+</ol>
+
+<hr> -->
+
+<h2 id="components" class="anchor"><a class="heading-anchor" href="#components"><span></span></a>Components</h2>
+
+<h3 id="samplesprogrammersguide" class="anchor"><a class="heading-anchor" href="#samplesprogrammersguide"><span></span></a>Samples &amp; Programmer's Guide</h3>
+
+<p>Look at the <a href="../../samples/">Sample Guide</a> for more details on using these samples. You can also reference the <a href="../../tutorials/">Programmers Guide</a> for a complete walk-through of building your first application using RFID SDK for Android.</p>
+
+
                                     </div>
                                 </div>
 
