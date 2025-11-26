@@ -8,8 +8,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Getting Started">
-    <title>Getting Started - Zebra Technologies Techdocs</title>
+    <meta title="Reader Appeared-Disappeared">
+    <title>Reader Appeared/Disappeared - Zebra Technologies Techdocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -56,7 +56,7 @@
                         <li>
                             <a href="/dcs/rfid">RFID</a>
                         </li>
-                        <p class="navbar-text">Getting Started</p>
+                        <p class="navbar-text">RFID SDK for Android</p>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse navbar-right">
@@ -64,25 +64,46 @@
 
 
 
-                      <li>
-                                <a href="/dcs/rfid/jposFXP20/about/">About</a>
-                            </li>
-                            <li>
-                                <a href="/dcs/rfid/jposFXP20/getting-started">Getting Started</a>
-                            </li>
-                            <li>
-                                <a href="/dcs/rfid/jposFXP20/supported-feature/">Properties, Methods and Events</a>
-                            </li>
-                            <li>
-                                <a href="/dcs/rfid/jposFXP20/samples/">Samples</a>
-                            </li>
-<!--
                         <li>
-                            <a href="/dcs/rfid/xamarin/2-0-2-94/guide/programming-guides">
+                            <a href="/dcs/rfid/android/2-0-5-226/guide/about">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dcs/rfid/android/2-0-5-226/guide/gettingstarted">
+                                Getting Started
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dcs/rfid/android/2-0-5-226/tutorials">
+                                Tutorials
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dcs/rfid/android/2-0-5-226/samples">
+                                Samples
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dcs/rfid/android/2-0-5-226/guide/programming-guides">
                                 Guides
                             </a>
                         </li>
--->
+                        <li>
+                            <a href="/dcs/rfid/android/2-0-5-226/apis">
+                                APIs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.zebra.com/community/home/discussions/">
+                                <i class="fa fa-comments-o"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dcs/rfid/android/2-0-5-226/search">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
 
                         <!-- <li ><a href="/products">SDKs</a></li>
                         <li ><a href="/samples">Samples</a></li>
@@ -109,7 +130,7 @@
                             <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
 
                                 <ul class="nav">
-                                    <li><strong>Getting Started</strong></li>
+                                    <li><strong>Reader Appeared/Disappeared</strong></li>
                                 </ul>
                             </nav>
 
@@ -144,8 +165,14 @@
                                 <div class="col-sm-12">
                                     <section id="cta" class="wow fadeIn">
                                         <div class="">
-                                            <h1 id="hello-rfid-tutorial" class="anchor"><a class="heading-anchor" href="#hello-rfid-tutorial"><span></span></a>Getting Started</h1>
-                                            
+                                            <h1 id="Pre-Filter tutorial" class="anchor"><a class="heading-anchor" href="#Pre-Filter tutorial"><span></span></a>Reader Appeared/Disappeared</h1>
+                                            <p>
+                                              RFID SDK for Android
+                                                2.0.5.226
+                                          </p>
+                                            <p>
+                                                Applicable Devices : Handheld readers
+                                            </p>
                                         </div>
                                     </section>
                                 </div>
@@ -160,89 +187,41 @@
                                                 <p></p>
                                                 <h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-                                                <p>This section provides step-by-step instructions on developing a JPOS application using the Zebra JPOS driver package with IntelliJ IDEA.</p>
+                                                <p>This Tutorial provides a walk-through of the steps to handle reader attach and detach event and handling the callback <a href="../../apis">RFID3 API</a></p>
 
-                                                <blockquote>
-                                                    <p>Note: <strong>The demo application in this guide is intended for tutorial purposes only</strong> and should not be used in production environments.</p>
-                                                </blockquote>
 
-                                                <hr>
-                                            
-
-                                                <h3 id="createtheproject" class="anchor"><a class="heading-anchor" href="#createtheproject"><span></span></a>The JPOS driver package includes the following libraries:</h3>
-
+                                                <h3 id="createtheproject" class="anchor"><a class="heading-anchor" href="#createtheproject"><span></span></a>Create The Project</h3>
                                                 <ul>
-                                                    <li><strong>Lib : </strong> Contains the Service Class Library and other JPOS-dependent libraries. </li>
-                                                    <li><Strong>jpos-rfidscanner-test.jar : </Strong> Contains a sample application to demonstrate functionality.</li>
-                                                    <li><strong>Jpos.xml : </strong> A JPOS configuration file that contains the logical device name.</li>
-                                                    <li><strong>javaPosTest.bat : </Strong> A batch file to run the sample application.</li>
-                                                    <li><strong>jpos_trace.properties : </strong> This file allows users to configure log file settings such as logFilePath and logFileName. The jpos_trace.properties file should be located inside the<strong> bin </strong> folder.</li>
-                                                </ul> 
+                                                    <li>Start by creating a new project in Android Studio. For help, see the <a href="../../tutorials/tutCreateProjectAndroidStudio">Android Studio tutorial</a>. </li>
+                                                    <li>Refer <a href="../../samples/hellorfid">Hello RFID</a> to prepare basic setup to work with RFID Reader and then follow this guide</li>
+                                                </ul>
+
+                                                <h2 id="tutorial1" class="anchor"><a class="heading-anchor" href="#tutorial1"><span></span></a>Details</h2>
+                                                <p>Transport connections and disconnections needs to be handled under following call back functions and function can be implemented from <code>Readers.RFIDReaderEventHandler</code> interface class.  </p>
+<pre class="prettyprint"><code>
+    void RFIDReaderAppeared(ReaderDevice device);
+    void RFIDReaderDisappeared(ReaderDevice device);
+</code></pre>
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>To attach and detach event handlers</h2>
+<pre class="prettyprint"><code>
+    readers.attach(rfidReaderEventHandler);
+    readers.deattach(rfidReaderEventHandler);            
+</code></pre>
+
+                                                <h2 id="code1" class="anchor"><a class="heading-anchor" href="#code1"><span></span></a>Defining and Handling callback handlers</h2>
+<pre class="prettyprint"><code>
+    @Override
+    public void RFIDReaderAppeared(ReaderDevice readerDevice) {
+        // Initiate connection
+    }
     
-                                                <h2 id="sampleapplication" class="anchor"><a class="heading-anchor" href="#fullapp"><span></span></a>Creating a Project Using IntelliJ IDEA</h2>
-
-                                                   <p>This tutorial will assist you in creating a new application project using IntelliJ IDEA.</p>
-                            <h3>Creating the Project </h3>
-                                <p>Open the IntelliJ IDEA desktop application. If you have a previous project open, close it by selecting <strong>Close Project</strong> from the <strong>File</strong> menu.</p>
-                                <ol>
-                            <li><p> Under the <strong>Quick Start</strong> section, select <strong>Start a new IntelliJ project</strong>.</p>
-                                
-                            <li><p>In the new project wizard, you need to assign an application name, specify the project location, select Java as the language, and choose a build system based on the project type. In this tutorial, we will select IntelliJ as the build system and then choose the appropriate JDK. After making these selections, click the <strong>Create</strong>  button to proceed.</p>
-                                <p><img src="../../jposFXP20/images/createNewProject/newProject.png" alt="img"></p></li>
-                               
-                            <h4>Adding the Zebra JPOS Service Library and Other JPOS-Dependent Libraries</h4>
-                            <li><p>Copy the lib folder from the Zebra JPOS package and add it to your project directory, ensuring it is in the same location as the src folder. Additionally, place the <strong>jpos.xml</strong> file in the same directory. </p>
-                                <p><img src="../../jposFXP20/images/libLocation/libFolderlocation.png" alt="img"></p></li>
-                            <li><p>Importing the Libraries into the Project. Select <strong>Project Structure</strong> from the <strong>File</strong> menu. In the <strong>Project Structure</strong> window select <strong>Libraries </strong> click on <strong> + </strong> it will show the <strong> New Project Library </strong> select  <strong> Java </strong> and add the location of the lib folder you added to your project and select it.
-                            After adding the path, click on <strong> Apply </strong>, and then <strong> OK</strong>.</p>
-                               <p><img src="../../jposFXP20/images/importLib/importLibraries.png" alt="img"></p></li>
-
-                            <h5>Your project is now ready to use the JPOS API's.</h5>
-
-                        </div> 
-
-                                                
-
-                        <h2 id="fullapp1" class="anchor"><a class="heading-anchor" href="#fullapp"><span></span></a>Configuring the jpos.xml File</h2>
-<ol>
-                            <p>In the jpos.xml file, users can configure the COM port of the device and the antenna power of the reader.</p>
-                        <li>Open the jpos.xml file in your preferred text editor.Configure the COM port for the device by specifying the appropriate port number. This step is necessary if automatic discovery is not required.</li>
-<pre class="prettyprint"><code>
-    &lt;!-- If the comPort property is not set, the COM port will be automatically discovered --&gt;
-    &lt;prop name=&quot;comPort&quot; value=&quot;COM4&quot;/&gt;
+    @Override
+    public void RFIDReaderDisappeared(ReaderDevice readerDevice) {
+        //disconnect and dispose  
+    }      
 </code></pre>
-                        <li>Configure the antenna power as needed; otherwise, it will default to 27 dBm.</li>
-
-<pre class="prettyprint"><code>
-    &lt;!-- If the antennaPower property is not set, it will default to 27 dBm. --&gt;
-    &lt;prop name=&quot;antennaPower&quot; value=&quot;200&quot;/&gt;
-</code></pre>
-                        <li>Configure GPI enable setting to enable/disable GPI-based inventory. When gpioEnable is set to true, inventory for EPC IDs (with or without a timer) will start reporting tags only when GPI 1 is triggered, and it will stop after the specified timeout (gpioTimeout).</li>
-
-<pre class="prettyprint"><code>
-    &lt;!-- GPI based Inventory – enabled when value is set to "true", disabled when value is set to "false".--&gt;
-    &lt;prop name=&quot;gpioEnable&quot; value=&quot;true&quot;/&gt;
-    &lt;!-- Inventory duration in milliseconds for each trigger.--&gt;
-    &lt;prop name=&quot;gpioTimeout&quot; value=&quot;5000&quot;/&gt;
-</code></pre>
-<h4>Example of jpos.xml file.</h4>
-
-                        <p><img src="../../jposFXP20/images/jpos-xml/xml-configuration.png" alt="img"></p>
-
-                        
-</ol>
-                                    
-    
-
-
-                                                <!-- 4/24/18- dead link removed. No corresponding folder or sample found. -EC
-## Downloading the Sample
-Download the source for this project in the [associated sample](/emdk-for-android/6-10/guide/sample/samplebatteryintent).
-
- -->
-                                                <p></p>
-
-
+                                                <p>NOTE: readerDevice param in the callback function will not be the same readerdevice context that was used by the app to initiate connection. User needs to use the information in the reader device to get the actual readerDevice context in the app and then use that for disconnection.
+                                                </p>
 
                                             </div>
                                         </div>
@@ -256,7 +235,7 @@ Download the source for this project in the [associated sample](/emdk-for-androi
                 </section>
             </div>
         </section>
-
+               
         <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -276,7 +255,7 @@ Download the source for this project in the [associated sample](/emdk-for-androi
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-10">
-                    ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corporation and/or its affiliates. All rights reserved. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                    ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2024 Zebra Technologies Corporation and/or its affiliates. All rights reserved. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                 </div>
                 <!--                 
                     <div class="col-sm-2">
