@@ -348,6 +348,7 @@
                                 <li class="smartdocs-mx" data-value="14.1"><a>14.1</a></li>
                                 <li class="smartdocs-mx" data-value="14.2"><a>14.2</a></li>
                                 <li class="smartdocs-mx" data-value="15.0"><a>15.0</a></li>
+                                <li class="smartdocs-mx" data-value="15.1"><a>15.1</a></li>
                               </ul>
                               </li>
                         
@@ -815,6 +816,25 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -854,6 +874,10 @@
 
 <li>The domain name of a network to be joined</li></ul>
 </li>
+
+<li>Select which radios to enable/disable when a wired Ethernet connection is established</li>
+
+<li>Allows Wi-Fi and wired Ethernet connections to co-exist (requires MX 15.1 and Android 14 or later) </li>
 </ul>
 
 <blockquote>
@@ -871,29 +895,6 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1050,6 +1051,252 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                     
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="connection-mode"><a class="heading-anchor" href="#connection-mode"><span></span></a>Connection Mode</h2>
+                                    <p class=""></p><p>Used to select which <strong>wireless</strong> radio(s) to enable/disable when a <strong>wired</strong> Ethernet connection is established. This feature allows Wi-Fi and wired Ethernet connections to co-exist on devices with MX 15.1 (or later) and Android 14 (or later). All communications are restored to their previous settings when wired Ethernet is disconnected from the device.</p>
+
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iimportantnotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iimportantnotes"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Important Notes</h4>
+
+<ul>
+<li><strong>Casting Mode enables Wi-Fi Direct connections</strong> (e.g. for using Zebra <a href="/wwc">Wireless Workstation Connect</a>) and permits wired Ethernet to carry only data. </li>
+
+<li><strong>When using Zebra Defaults or Casting Mode</strong>, Wi-Fi state changes with Ethernet connection follow Data Protection Management (DPM) policy if the "Disallow config Wi-Fi" restriction is enabled.</li>
+
+<li>While in Casting Mode, the Miracast feature follows DPM policy if the "Disallow config tethering" restriction is enabled.</li>
+
+<li><strong>Connection Modes do not prevent manual settings changes</strong> by the device user.</li>
+
+<li><strong>On WLAN-only devices</strong>, Ethernet and Wi-Fi icons appear in the status bar when Ethernet is connected. </li>
+
+<li><strong>On WLAN/WWAN-enabled devices</strong>, only the Ethernet icon is shown; Wi-Fi and Mobile icons are not visible.</li>
+</ul>
+
+<table class="facelift" align="center" style="width:80%" border="1" padding="5px">
+<tbody><tr bgcolor="#dce8ef">
+</tr></tbody></table><table class="table table-striped">
+ <tbody><tr>
+<th>Connection Mode</th>
+<th>Device Condition</th>
+<th>Ethernet</th>
+<th>Wi-Fi</th>
+<th>Mobile Data</th>
+</tr>
+
+<tr>
+<td>Android defaults</td>
+<td>Device alone (no cradle)<br>Device cradled, wired Ethernet<br>Device cradled, wired Ethernet, no internet</td>
+<td>Off<br>On<br>Off</td>
+<td>On<br>On<br>On</td>
+<td>On<br>On<br>On</td>
+</tr>
+
+<tr>
+<td>Zebra defaults*</td>
+<td>Device alone (no cradle)<br>Device cradled, wired Ethernet<br>Device cradled, wired Ethernet, no internet</td>
+<td>Off<br>On<br>On</td>
+<td>On<br>Off<br>Off</td>
+<td>On<br>Off<br>Off</td>
+</tr>
+
+<tr>
+<td>Casting Mode</td>
+<td>Device alone (no cradle)<br>Device cradled, wired Ethernet<br>Device cradled, wired Ethernet, no internet</td>
+<td>Off<br>On<br>On</td>
+<td>On<br>On (data off)<br>On (data off)</td>
+<td>On<br>Off<br>Off</td>
+</tr>
+
+</tbody></table>
+
+
+<!-- TUT-115832 removed for now (above and below), per eng. also reduced other footnote to one *
+<font size="1" color="grey">&#42; Default setting for devices running Android 15 or later.</font><br>
+-->
+
+<p><font size="1" color="grey">* Default setting for devices running Android 14.</font></p><p></p>
+                                        <blockquote>
+                                        <p><b>Note:</b> This feature is supported only on devices with MX 15.1 or later running Android 14 or later.</p>
+                                        <p><b>Parm Name:</b> ConnectionMode</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="15.1" data-devicetype="A" data-api="34" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 15.1+ </p>
+                                                        <p>Android API: 34+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="15.1" data-devicetype="A" data-api="34" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>Android defaults</td>
+                                                <td>Allows communications on radios according to Android default settings (see table above).</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 15.1+ </p>
+                                                        <p>Android API: 34+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="15.1" data-devicetype="A" data-api="34" data-smartdoc="">
+                                                <td>2</td>
+                                                <td>Zebra defaults</td>
+                                                <td>Allows communications on radios according to Zebra default settings (see table above).</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 15.1+ </p>
+                                                        <p>Android API: 34+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="15.1" data-devicetype="A" data-api="34" data-smartdoc="">
+                                                <td>3</td>
+                                                <td>Casting Mode</td>
+                                                <td>Enables the device to establish a Wi-Fi Direct connection with another device for "casting" its screen and screen-touch actions (see table above).</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 15.1+ </p>
+                                                        <p>Android API: 34+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1140,58 +1387,6 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1326,15 +1521,6 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="6.2" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-api="23" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-ip-address"><a class="heading-anchor" href="#set-ip-address"><span></span></a>Set IP Address</h2>
@@ -1365,23 +1551,6 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1452,6 +1621,46 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="6.2" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-api="23" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-subnet-mask"><a class="heading-anchor" href="#set-subnet-mask"><span></span></a>Set Subnet Mask</h2>
@@ -1482,7 +1691,6 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -1566,11 +1774,6 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="6.2" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-api="23" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-secondary-dns"><a class="heading-anchor" href="#set-secondary-dns"><span></span></a>Set Secondary DNS</h2>
@@ -1601,43 +1804,6 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1795,6 +1961,31 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="6.2" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-api="23" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-proxy-host-name"><a class="heading-anchor" href="#set-proxy-host-name"><span></span></a>Set Proxy Host Name</h2>
@@ -1825,6 +2016,21 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1908,23 +2114,6 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="6.2" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.2" data-api="23" data-smartdoc="">
 
                                     <h2 class="anchor" id="set-bypass-proxy"><a class="heading-anchor" href="#set-bypass-proxy"><span></span></a>Set Bypass Proxy</h2>
@@ -1957,6 +2146,7 @@ Some features are available only on Zebra 6490-platform devices. **[See platform
                                     
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -2219,6 +2409,24 @@ info: This feature is supported only on Zebra 6490-platform devices.
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="13.3" data-api="33" data-smartdoc="">
 
                                     <h2 class="anchor" id="identity"><a class="heading-anchor" href="#identity"><span></span></a>Identity</h2>
@@ -2263,16 +2471,6 @@ info: This feature is supported only on Zebra 6490-platform devices.
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="13.3" data-api="33" data-smartdoc="">
 
                                     <h2 class="anchor" id="password"><a class="heading-anchor" href="#password"><span></span></a>Password</h2>
@@ -2301,8 +2499,6 @@ info: This feature is supported only on Zebra 6490-platform devices.
                                     
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -2395,6 +2591,8 @@ info: This feature is supported only on Zebra 6490-platform devices.
                                     
                                     
                                     
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="13.3" data-api="33" data-smartdoc="">
 
                                     <h2 class="anchor" id="mandatory-client-certificate"><a class="heading-anchor" href="#mandatory-client-certificate"><span></span></a>Mandatory Client Certificate</h2>
@@ -2432,20 +2630,6 @@ info: This feature is supported only on Zebra 6490-platform devices.
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="13.3" data-api="33" data-smartdoc="">
 
                                     <h2 class="anchor" id="optional-ca-certificate"><a class="heading-anchor" href="#optional-ca-certificate"><span></span></a>Optional CA Certificate</h2>
@@ -2474,6 +2658,29 @@ info: This feature is supported only on Zebra 6490-platform devices.
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3193,10 +3400,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "EthernetState",
@@ -3262,27 +3465,22 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
-                            name: "ConfigIpAddr",
+                            name: "ConnectionMode",
                             pivotal: "No",
                         
                         
                         listitems: [
                                 {
                                     code: "0",
-                                    name: "(unchecked)",
-                                    description: "Prevents an IP address from being assigned manually or through DHCP.",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.",
                                     requires: {
-                                        osx: "6.2",
+                                        osx: "",
                                         osxEnd: "",
-                                        mx: "6.2",
-                                        api: "23",
+                                        mx: "15.1",
+                                        api: "34",
                                         osxSpecific: "",
                                         osxSpecificList: "",
                                         osxExclude: "",
@@ -3293,13 +3491,47 @@ filtering
                         
                                 {
                                     code: "1",
-                                    name: "(checked)",
-                                    description: "Allows an IP address to be assigned manually or through DHCP.",
+                                    name: "Android defaults",
+                                    description: "Allows communications on radios according to Android default settings (see table above).",
                                     requires: {
-                                        osx: "6.2",
+                                        osx: "",
                                         osxEnd: "",
-                                        mx: "6.2",
-                                        api: "23",
+                                        mx: "15.1",
+                                        api: "34",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "2",
+                                    name: "Zebra defaults",
+                                    description: "Allows communications on radios according to Zebra default settings (see table above).",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "15.1",
+                                        api: "34",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "3",
+                                    name: "Casting Mode",
+                                    description: "Enables the device to establish a Wi-Fi Direct connection with another device for &quot;casting&quot; its screen and screen-touch actions (see table above).",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "15.1",
+                                        api: "34",
                                         osxSpecific: "",
                                         osxSpecificList: "",
                                         osxExclude: "",
@@ -3362,6 +3594,54 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    {
+                            presentif: "",
+                            name: "ConfigIpAddr",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "0",
+                                    name: "(unchecked)",
+                                    description: "Prevents an IP address from being assigned manually or through DHCP.",
+                                    requires: {
+                                        osx: "6.2",
+                                        osxEnd: "",
+                                        mx: "6.2",
+                                        api: "23",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "(checked)",
+                                    description: "Allows an IP address to be assigned manually or through DHCP.",
+                                    requires: {
+                                        osx: "6.2",
+                                        osxEnd: "",
+                                        mx: "6.2",
+                                        api: "23",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
                     
                     
                     
@@ -3453,15 +3733,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "6.2",
@@ -3481,23 +3752,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3557,6 +3811,46 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "6.2",
@@ -3576,7 +3870,6 @@ filtering
                         
                         
                     },
-                    
                     
                     
                     
@@ -3649,11 +3942,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "6.2",
@@ -3673,43 +3961,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -3814,6 +4065,31 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "6.2",
@@ -3833,6 +4109,21 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3905,23 +4196,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "6.2",
@@ -3941,6 +4215,7 @@ filtering
                         
                         
                     },
+                    
                     
                     
                     
@@ -4139,6 +4414,24 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -4174,16 +4467,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -4203,8 +4486,6 @@ filtering
                         
                         
                     },
-                    
-                    
                     
                     
                     
@@ -4289,6 +4570,8 @@ filtering
                     
                     
                     
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -4317,20 +4600,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -4350,6 +4619,29 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
