@@ -235,11 +235,15 @@
                                     <div class="">
 
                                         <p></p><blockquote>
-  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>PAGE UPDATED: July 28, 2025</strong></p>
+  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>PAGE UPDATED: Dec. 30, 2025</strong></p>
 </blockquote>
 
-<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <h4 id="-advisory" class="anchor"><a class="heading-anchor" href="#-advisory"><span></span></a><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> ADVISORY</h4> <b><u>Administrators are advised to discard all ZCPs downloaded prior to March 6, 2024</u>.</b> 
+<div class="alert alert-danger alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <h4 id="-important" class="anchor"><a class="heading-anchor" href="#-important"><span></span></a><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#FF0000;"></i> IMPORTANT</h4> <b><u>This guide applies ONLY to Android 13 upgrades on SDM660-platform devices</u>. <p></p><p></p>For upgrading to Android 14 (or later) or for <a href="https://supportcommunity.zebra.com/s/article/000022440?language=en_US">other Zebra platforms</a>, please see the <a href="../a14">A14+ guide</a>.</b> 
 <p></p> </div>
+
+<!-- 12/26/25- TUT-121666 Advisory updated to IMPORTANT (and above) based on req. from eng:
+"Using Zebra Conversion Package to upgrade directly to A14 is not supported and requires upgrade to A13 first. It is mandatory to perform Password Reset command from the EMM to the device when it is in the A13 BSP. Failure to do so may lead the device in the unknown state in A14."
+-->
 
 <hr>
 
@@ -930,6 +934,32 @@ EMM admin is starting FOTA from their EMM console. FOTA logic instructs admin to
 <h2 id="quickupgrade" class="anchor"><a class="heading-anchor" href="#quickupgrade"><span></span></a>Quick Upgrade</h2>
 
 <p><br></p>
+
+<!-- per eng. TUT-113317
+
+https://techdocs.zebra.com/lifeguard/a13/ 
+
+A13+ Upgrade page 
+
+Impact on SD660 products (currently enrolled in FOTA) 
+
+Install the FileGuardian utility and push the generated golden config.xml as per instructions given in the link Android 13+ Upgrade (SD660) - TechDocs to the required devices. 
+
+Wait for 24 hrs for the device to upload the A13_UPGRADE_READY special flag as part of the daily device information sync to the FOTA server. (If flag never came, process will not continue, see Step 5) 
+
+Trigger the deployment to desired A13 target (either by FOTA auto-update or manually through their EMM). 
+
+In either Step 3 scenario, FOTA server will push the A11 ZCP and A13 target bundle. 
+
+In the absence of golden config XML on the device (eg if Step 1 failed or was not done): 
+
+CUSTOM updates will fail with the error code 4021. 
+
+AUTO updates will continue to receive the latest A11. 
+
+Following a successful migration to A13, updates within A13 or higher OS will be a seamless transition. 
+
+-->
 
 <h4 id="lifeguardotaautomaticandcustomupdatestoandroid13orlater" class="anchor"><a class="heading-anchor" href="#lifeguardotaautomaticandcustomupdatestoandroid13orlater"><span></span></a>LifeGuard OTA: Automatic and Custom Updates to Android 13 or later</h4>
 
