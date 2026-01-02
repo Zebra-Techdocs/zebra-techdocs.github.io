@@ -255,7 +255,7 @@
 <ul>
 <li><p><strong>Supported Zebra Devices:</strong> </p>
 
-<table class="facelift" align="" style="width:60%" border="1" padding="5px">
+<table class="facelift" align="" style="width:80%" border="1" padding="5px">
 <tbody><tr bgcolor="#dce8ef">
     <th>Features</th>
     <th>Platform</th>
@@ -263,7 +263,7 @@
 </tr>
 
 <tr>
-    <td rowspan="2"><b>Products with DSP</b> <br>Fastest and most battery efficient</td>
+    <td rowspan="3"><b>Products with DSP</b> <br>Fastest and most battery efficient</td>
     <td>QC6490</td>
     <td>TC53, TC58, TC73, TC78, ET60, ET65 </td>
 </tr>
@@ -271,6 +271,11 @@
 <tr>
     <td>QC5430</td>
     <td>EM45</td>
+</tr>
+
+<tr>
+    <td>Q-6690</td>
+    <td>ET401</td>
 </tr>
 
 <tr>
@@ -310,37 +315,37 @@
   <tbody><tr bgcolor="#dce8ef">
     <th>Features</th>
     <th>Model Name</th>
-    <th>Model Version</th>
+    <th>Model Versions</th>
   </tr>
 
   <tr>
     <td><a href="../model/barcode-localizer/">Barcode Decoder</a></td>
     <td>barcode-localizer</td>
-    <td>5.0.1</td>
+    <td>5.0.1, 5.0.2</td>
   </tr>
 
   <tr>
     <td><a href="../model/barcode-localizer/">Barcode Localizer</a></td>
     <td>barcode-localizer</td>
-    <td>5.0.1</td>
+    <td>5.0.1, 5.0.2</td>
   </tr>
 
   <tr>
     <td><a href="../model/prod-recognizer/">Product Recognizer</a></td>
     <td>product-and-shelf-recognizer</td>
-    <td>3.4.2</td>
+    <td>3.4.2, 3.4.3</td>
   </tr>
 
   <tr>
     <td><a href="../model/prod-recognizer/">Shelf and Product Localizer</a></td>
     <td>product-and-shelf-recognizer</td>
-    <td>3.4.2</td>
+    <td>3.4.2, 3.4.3</td>
   </tr>
 
   <tr>
     <td><a href="../model/textocr/">TextOCR</a></td>
     <td>text-ocr-recognizer</td>
-    <td>2.7.3</td>
+    <td>2.7.3, 2.8.1</td>
   </tr>
 
 </tbody></table>
@@ -390,10 +395,7 @@ TextOCR.Settings textOCRSettings = new TextOCR.Settings(modelFile);
 <p>Follow these steps to include the SDK and models to your Android Studio project through Gradle:</p>
 
 <ol>
-<li><p><strong>Prepare the AndroidManifest.xml:</strong> Grant the necessary permissions for camera access and set the attribute <code>extractNativeLibs</code> to true:</p>
-
-<pre class="prettyprint"><code>&lt;application android:extractNativeLibs="true"/&gt;
-</code></pre></li>
+<li><p><strong>Prepare the AndroidManifest.xml:</strong> Grant the necessary permissions for camera access.</p></li>
 
 <li><p><strong>Update Gradle Settings:</strong> Open the application's version catalog file (<code>libs.versions.toml</code>) and add definitions for the SDK and model. Specify the desired model version as needed:</p>
 
