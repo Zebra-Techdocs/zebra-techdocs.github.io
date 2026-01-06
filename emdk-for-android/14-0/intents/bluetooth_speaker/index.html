@@ -11,8 +11,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="KC50 Kiosk Usage Guide">
-    <title>KC50 Kiosk Usage Guide - TechDocs</title>
+    <meta title="WS101 Bluetooth Communication Badge Programming Guide">
+    <title>WS101 Bluetooth Communication Badge Programming Guide - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!--     
@@ -157,7 +157,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>KC50 Kiosk Usage Guide</strong></li>
+                            <li><strong>WS101 Bluetooth Communication Badge Programming Guide</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -243,7 +243,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="kc50-kiosk-usage-guide" class="anchor"><a class="heading-anchor" href="#kc50-kiosk-usage-guide"><span></span></a>KC50 Kiosk Usage Guide</h1>
+                                    <h1 id="ws101-bluetooth-communication-badge-programming-guide" class="anchor"><a class="heading-anchor" href="#ws101-bluetooth-communication-badge-programming-guide"><span></span></a>WS101 Bluetooth Communication Badge Programming Guide</h1>
                                     <p>
                                             EMDK For Android
                                             14.0
@@ -261,11 +261,84 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>Zebra's KC50 is a rugged Android-based fixed-mount computer designed for kiosk applications including point-of-sale, information display and/or look-up, and various payment and conversational self-service scenarios</strong>. Zebra's kiosk computers are available in 22-inch and 15-inch sizes, some of which can be powered over Ethernet. </p>
+<p><strong>Zebra's <a href="https://www.zebra.com/us/en/products/mobile-computers/wearable-computers/ws1x-series.html">WS101 series Bluetooth Communication Badge</a> is a rugged Bluetooth speaker</strong> that can add hands-free voice capabilities to Zebra mobile computers and tablets. Small and light enough to be worn or pocketed, WS101-series devices provide workers with a means to easily communicate with fellow employees through Zebra's voice-enabled apps or a company's own. Staff can make calls, look up inventory items, hear responses and receive instructions, all without touching a mobile device or tablet. </p>
+
+<table>
+    <tbody><tr>
+        <td><img style="height:450px" src="ws101_hero_right_led.jpeg"></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><img style="height:450px" src="ws101-H_hero_left_led.jpeg"></td>
+        <td>&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+        <td col="" span="6"><i>WS101 and WS101-H: for healthcare and general usage.</i></td>
+    </tr>
+</tbody></table>
+
+<p><img alt="image" style="height:200px" src="">
+<i><font size="1" color="Grey">Click image to enlarge; ESC to exit.</font></i>
+<br></p>
+
+<!-- side-by-side shot:
+ws101-ws101-h.jpg 
+
+ws101_hero_right_led.jpeg
+ws101_hero_right.jpeg
+ws101-H_hero_left_led.jpeg
+ws101-H_green_led.jpeg
+ws101-H_hero.jpeg
+ws101-H_back_clip.jpeg
+ws101_top.jpeg
+ws101_front_hero.jpeg
+ws101_bottom.jpeg
+ws101-front.jpeg
+
+-->
+
+<h3 id="mainfeatures" class="anchor"><a class="heading-anchor" href="#mainfeatures"><span></span></a>Main Features</h3>
+
+<ul>
+<li><strong>Button Events</strong>: P1, P2, P3 (press/release/long-press)  </li>
+
+<li><strong>Voice Triggers</strong>: Wake Word, Duress Word </li>
+
+<li><strong>Connection Events</strong>: ACL connect/disconnect </li>
+
+<li><strong>SCO Audio</strong>: Start/stop mic capture </li>
+
+<li>SDK Version Query (getVersion()) </li>
+</ul>
+
+<h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
+
+<ul>
+<li>Android Studio with Java 11+ </li>
+
+<li>Android API level 24 or greater </li>
+
+<li>Minimum device OS: 
+
+
+<ul>
+<li>Bluetooth classic and SCO: Android 11 or older </li>
+
+<li>Bluetooth Connect/Scan runtime permissions: Android 12 or newer </li></ul>
+</li>
+</ul>
+
+<h4 id="whatisscoaudio" class="anchor"><a class="heading-anchor" href="#whatisscoaudio"><span></span></a>What is SCO Audio?</h4>
+
+<p>Synchronous Connection-oriented (SCO) Audio is a Bluetooth protocol designed for usage scenarios that can benefit from low-latency communications, such as those for voice. SCO Audio delivers its payload with less delay than other protocols by using reserved time slots. The trade-off is lower bandwidth, making SCO Audio unsuitable for music streaming and other high-fidelity audio content. </p>
+
+<hr>
+
+<h2 id="oldoldold" class="anchor"><a class="heading-anchor" href="#oldoldold"><span></span></a><code>OLD OLD OLD</code></h2>
+
+<p>Android-based fixed-mount computer designed for kiosk applications including point-of-sale, information display and/or look-up, and various payment and conversational self-service scenarios**. Zebra's kiosk computers are available in 22-inch and 15-inch sizes, some of which can be powered over Ethernet. </p>
 
 <p><strong>Also available is the TD50, a 15-inch touch display</strong> designed to work with the KC50 to provide secondary video output and touch input. All KC50 and TD50 models support standard VESA mounting, with wall, floor and countertop mounting solutions available. </p>
 
-<p><img alt="image" style="height:400px" src="KC50_15_TD50_15_NFC.jpeg">
+<p><img alt="image" style="height:400px" src="ws101_healthcare.jpg">
 <i><font size="1" color="Grey">The 15-inch KC50 (facing away) with optional TC50 Touch Display and back-to-back counter stand.</font></i>
 <i><font size="1" color="Grey">Click image to enlarge; ESC to exit.</font></i>
 <br></p>
@@ -346,34 +419,34 @@
   <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> For a list of product accessories and SKUs, see the <strong><a href="https://www.zebra.com/content/dam/zebra_dam/en/guide/configuration-and-accessories/kiosk-system-guide-accessory-source-en-us.pdf">Zebra Kiosk System Accessory Guide</a></strong> (<code>.pdf</code>). </p>
 </blockquote>
 
-<p><img alt="image" style="height:400px" src="KC50_22_Ice_Cream_kiosk.jpeg">
+<p><img alt="image" style="height:400px" src="ws101_retail.jpg">
 <i><font size="1" color="Grey">The 22-inch KC50 taking an order as a self-service kiosk.</font></i>
 <i><font size="1" color="Grey">Click image to enlarge; ESC to exit.</font></i>
 <br></p>
 
 <hr>
 
-<p><img alt="image" style="height:400px" src="kc50_line.jpg">
+<p><img alt="image" style="height:400px" src="ws101_cardio.jpg">
 <i><font size="1" color="Grey">Zebra KC50 kiosk computers can be powered by AC or PoE, and are suitable for countless self-service use cases.</font></i>
 <i><font size="1" color="Grey">Click image to enlarge; ESC to exit.</font></i>
 <br></p>
 
 <hr>
 
-<h3 id="defaultpowersettings" class="anchor"><a class="heading-anchor" href="#defaultpowersettings"><span></span></a>Default Power Settings</h3>
+<h3 id="defaultpoeratings" class="anchor"><a class="heading-anchor" href="#defaultpoeratings"><span></span></a>Default PoE Ratings</h3>
 
 <p>Shown immediately below are updated default settings for the 22- and 15-inch KC50 models after receiving the <a href="https://www.zebra.com/us/en/support-downloads/interactive-kiosks/kc50.html">KC50 March 2025 LifeGuard update</a>. The lower tables show "out-of-the-box" settings for KC50 devices at the time of their initial launch.</p>
 
 <h4 id="aftermarch2025lgupdate" class="anchor"><a class="heading-anchor" href="#aftermarch2025lgupdate"><span></span></a>After March 2025 LG Update:</h4>
 
-<p><img alt="image" style="height:400px" src="KC50_25marLG.jpg">
+<p><img alt="image" style="height:400px" src="ws101_retail_earphone.jpg">
 <i><font size="2" color="Grey">PoE settings of KC50-series devices <b>with March 2025 LifeGuard update</b>.</font></i>
 <i><font size="2" color="Grey">Click image to enlarge; ESC to exit.</font></i>
 <br></p>
 
 <h4 id="beforemarch2025lgupdate" class="anchor"><a class="heading-anchor" href="#beforemarch2025lgupdate"><span></span></a>Before March 2025 LG Update:</h4>
 
-<p><img alt="image" style="height:400px" src="KC50_kiosk_poe.jpg">
+<p><img alt="image" style="height:400px" src="ws101_pharma.jpg">
 <i><font size="2" color="Grey">Default PoE settings of KC50-series devices <b>without March 2025 LifeGuard update</b>.</font></i>
 <i><font size="2" color="Grey">Click image to enlarge; ESC to exit.</font></i>
 <br></p>
@@ -411,7 +484,7 @@
 </li>
 </ul>
 
-<p><img alt="image" style="height:400px" src="kc50_diagram.jpg">
+<p><img alt="image" style="height:400px" src="ws101_icu.jpg">
 <i><font size="1" color="Grey">With Z-Flex ports on all four sides, KC50 can be outfitted with accessories to fit an unlimited number of use cases. Click image to enlarge; ESC to exit.</font></i>
 <br></p>
 
@@ -426,10 +499,10 @@
 
 <p><strong>The KC50 supports an optional multi-color LED Light Bar that can be controlled programmatically through the Zebra LED service and its Android Interface Definition Language (AIDL) interface</strong>. This permits an app to control the light bar without the need for Android Notification APIs and the accompanying on-screen notifications. The sample code in this section can be modified for use in apps intended to run on the KC50. This gives app developers a means to visually indicate completed activities, required actions or any other purpose. Learn more <a href="https://developer.android.com/guide/components/aidl">about AIDL</a> <i class="fa fa-external-link" style="color:#3498DB;"></i>. </p>
 
-<p><img alt="image" style="height:400px" src="kc50_lightbar.jpg">
+<p><img alt="image" style="height:400px" src="ws101_icu.jpg">
 <br></p>
 
-<h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
+<h3 id="requirements-1" class="anchor"><a class="heading-anchor" href="#requirements-1"><span></span></a>Requirements</h3>
 
 <ul>
 <li>KC50 with Z-Flex Light Bar attached</li>
@@ -575,7 +648,7 @@ bindService(I, mConnection, BIND_AUTO_CREATE);
 <h4 id="tocontrolthekc50lightbarprogrammatically" class="anchor"><a class="heading-anchor" href="#tocontrolthekc50lightbarprogrammatically"><span></span></a>To control the KC50 Light Bar programmatically:</h4>
 
 <p><strong>1. <a href="ILedBarLightService.aidl">Download the KC50 AIDL file</a> and add it to the Android Studio project</strong>: <br>
- <img alt="image" style="height:200px" src="add_aidl.png">
+ <img alt="image" style="height:200px" src="ws101_icu.jpg">
 <br>
 <strong>2. Add the AIDL boilerplate code</strong> to connect with (and disconnect from) the Zebra LED service and modify as needed for the app under development.<br><strong>Note the</strong> <code>ComponentName</code> <strong>in the sample code below</strong>:</p>
 
