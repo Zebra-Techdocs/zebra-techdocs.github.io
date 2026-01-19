@@ -70,7 +70,7 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 5.19
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 5.20
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
                                 <li><a onclick="changeVersion('5-10','2-2','/stagenow/2-2/about')">StageNow 2.2</a></li>
@@ -87,42 +87,42 @@
 
 
                         <li>
-                            <a href="/stagenow/5-19/about">
+                            <a href="/stagenow/5-20/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/gettingstarted">
+                            <a href="/stagenow/5-20/gettingstarted">
                                     Start-up
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/stagingprofiles">
+                            <a href="/stagenow/5-20/stagingprofiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/ProfileWizards">
+                            <a href="/stagenow/5-20/ProfileWizards">
                                     Wizards
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/settingconfig">
+                            <a href="/stagenow/5-20/settingconfig">
                                     Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/settingtypes">
+                            <a href="/stagenow/5-20/settingtypes">
                                     Setting Types
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/stagingguides">
+                            <a href="/stagenow/5-20/stagingguides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/troubleshooting">
+                            <a href="/stagenow/5-20/troubleshooting">
                                     Troubleshoot
                             </a>
                         </li>
@@ -132,7 +132,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/download">
+                            <a href="/stagenow/5-20/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
@@ -142,7 +142,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-19/search">
+                            <a href="/stagenow/5-20/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -271,7 +271,7 @@
 
 
                                     StageNow
-                                     - 5.19
+                                     - 5.20
                                     <p></p>
                                 </div>
                             </section>                    
@@ -390,6 +390,7 @@
                                 <li class="smartdocs-mx" data-value="14.1"><a>14.1</a></li>
                                 <li class="smartdocs-mx" data-value="14.2"><a>14.2</a></li>
                                 <li class="smartdocs-mx" data-value="15.0"><a>15.0</a></li>
+                                <li class="smartdocs-mx" data-value="15.1"><a>15.1</a></li>
                               </ul>
                               </li>
                         
@@ -857,6 +858,34 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -1007,7 +1036,7 @@
   </tr>
 
   <tr>
-    <td>119</td>
+    <td>119<br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> See Important Notes, below</td>
     <td>Domain Search List</td>
       <td>On</td>
     <td>Yes</td>
@@ -1048,12 +1077,29 @@
 </tbody></table>
 </div>    
 
-<h4 id="notes" class="anchor"><a class="heading-anchor" href="#notes"><span></span></a>NOTES:</h4>
+<h4 id="iclassfafaexclamationtrianglestylecolorffa500iimportantnotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iimportantnotes"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Important Notes</h4>
 
 <ul>
 <li><strong>DHCP Options shown as "not configurable"</strong> are always enabled and <strong>cannot be configured using DHCP Option Manager</strong>.</li>
 
 <li><strong>Options 28 and 43 are configurable only on devices running Android 10 or earlier</strong>, and are removed from devices with MX 11.2 and later. </li>
+
+<li><strong>DHCP Option 119 functions only</strong>: 
+
+
+<ul>
+<li><strong>On devices in managed mode</strong> (including either COPE or Device Owner mode)</li>
+
+<li>When the Wi-Fi network is <strong>configured by a Device Owner using the Android Wi-Fi Manager API</strong></li>
+
+<li><strong>When activated in StageNow</strong></li>
+
+<li>With <strong>domain names containing no more than 87 characters</strong> </li>
+
+<li><strong>If the domain serarch list contains no more than seven (7) names</strong>, including those specified in Option 15 and 119</li></ul>
+</li>
+
+<li><strong>Option 119 cannot be applied to a Wi-Fi SSID</strong> if that SSID was configured using <a href="../wifi">MX Wi-Fi Manager</a>.</li>
 </ul>
 
 
@@ -1062,6 +1108,7 @@
                                     
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -1276,41 +1323,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="host-name-option-value"><a class="heading-anchor" href="#host-name-option-value"><span></span></a>Host Name Option Value</h2>
@@ -1343,6 +1355,9 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1520,32 +1535,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1858,6 +1847,39 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="vendor-encapsulated-43"><a class="heading-anchor" href="#vendor-encapsulated-43"><span></span></a>Vendor Encapsulated (43)</h2>
@@ -1965,15 +1987,6 @@
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2167,6 +2180,13 @@
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="5.0" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="vendor-class-value"><a class="heading-anchor" href="#vendor-class-value"><span></span></a>Vendor Class Value</h2>
@@ -2199,7 +2219,6 @@
                                     
                                     
                                 </div> 
-                                    
                                     
                                     
                                     
@@ -2337,12 +2356,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="client-identifier-value"><a class="heading-anchor" href="#client-identifier-value"><span></span></a>Client Identifier Value</h2>
@@ -2375,6 +2388,23 @@
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2512,23 +2542,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="tftp-server-address-150-enabledisable"><a class="heading-anchor" href="#tftp-server-address-150-enabledisable"><span></span></a>TFTP Server Address (150) Enable/Disable</h2>
@@ -2645,6 +2658,13 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="tftp-ser-name-66"><a class="heading-anchor" href="#tftp-ser-name-66"><span></span></a>TFTP Ser. Name (66)</h2>
@@ -2753,8 +2773,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
                                     
                                     
                                     
@@ -2881,8 +2899,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                     
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="boot-file-name-enabledisable-67"><a class="heading-anchor" href="#boot-file-name-enabledisable-67"><span></span></a>Boot File Name Enable/Disable (67)</h2>
@@ -2995,17 +3011,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3180,6 +3185,23 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="4.4" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="user-class-value"><a class="heading-anchor" href="#user-class-value"><span></span></a>User Class Value</h2>
@@ -3212,6 +3234,13 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3363,11 +3392,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="6.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="fqdn-value"><a class="heading-anchor" href="#fqdn-value"><span></span></a>FQDN Value</h2>
@@ -3400,18 +3424,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3461,6 +3473,26 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -3703,11 +3735,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="vendor-specific-186-enabledisable"><a class="heading-anchor" href="#vendor-specific-186-enabledisable"><span></span></a>Vendor Specific (186) Enable/Disable</h2>
@@ -3814,11 +3841,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3933,6 +3955,10 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                 </div> 
                                     
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="vendor-specific-230-enabledisable"><a class="heading-anchor" href="#vendor-specific-230-enabledisable"><span></span></a>Vendor Specific (230) Enable/Disable</h2>
@@ -4039,12 +4065,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -4202,6 +4222,12 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-option-number"><a class="heading-anchor" href="#custom-option-number"><span></span></a>Custom Option Number</h2>
@@ -4234,6 +4260,7 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                 </div> 
+                                    
                                     
                                     
                                     
@@ -4351,8 +4378,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                 </div> 
                                     
                                     
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.1" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="custom-option-number-1"><a class="heading-anchor" href="#custom-option-number-1"><span></span></a>Custom Option Number</h2>
@@ -4387,12 +4412,45 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                 </div> 
                                     
                                     
+                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.1" data-api="" data-smartdoc="">
+
+                                    <h2 class="anchor" id="send-custom-option-value"><a class="heading-anchor" href="#send-custom-option-value"><span></span></a>Send Custom Option Value</h2>
+                                    <p class="">
+
+        </p><p>Used to enter the Custom Option Value. </p>
+
+<p><strong>Parm value input rules</strong>: </p>
+
+<ul>
+<li>String from 1–91 characters</li>
+</ul>
+
+
+<p></p>
+                                        <blockquote>
+                                        <p><b>Shown if:</b> Send Custom Option is set to "Enable"</p>
+                                        <p><b>Parm Name:</b> SendCustomOptionValue</p>
+                                        <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
+                                        <p><b>Requires:</b> 
+                                            </p><ul>
+                                                <li>MX: 8.1+ </li>
+                                           </ul>
+                                        <p></p>
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    
+                                </div> 
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="dhcpv6-onoff"><a class="heading-anchor" href="#dhcpv6-onoff"><span></span></a>DHCPv6 On/Off</h2>
                                     <p class="">
 
-        </p><p>This is the On/Off switch for the DHCPv6 client, which can acquire an IPv6 address for the device. When disabled (option 2), the DHCPv4 client is used by default. <strong><u>See important device-staging notes</u> in the table below</strong>. </p>
+        </p><p>This is the On/Off switch for the DHCPv6 client, which enables the device to acquire an IPv6 address. When enabled (option 1), the client obtains an IPv6 Global Address (GA) from the DHCPv6 server in a stateful manner. When disabled (option 2), the client acquires an IPv6 address using the Stateless Address Autoconfiguration (SLAAC) protocol. <strong><u>See important device-staging notes</u> by hovering over the <i class="fa fa-info-circle" style="color:#108CED;"></i> icons in the table below</strong>. </p>
 
 
 <p></p>
@@ -4446,7 +4504,7 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.3" data-devicetype="A" data-api="29" data-smartdoc="">
                                                 <td>1</td>
                                                 <td>Enable</td>
-                                                <td>Enables the DHCPv6 client on the device.</td>
+                                                <td>Enables the device client to acquire an IPv6 Global Address (GA) from the DHCPv6 server in a stateful manner.</td>
                                                 <td>
                                     <i class="fa fa-info-circle" style="color:#108CED;" data-toggle="tooltip" data-placement="top" title="During staging of a device, this setting requires the device to disconnect/reconnect to the WLAN before an acquired IPv6 address becomes active." aria-hidden="true"></i>
                                     </td>
@@ -4474,7 +4532,7 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                             <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="10.3" data-devicetype="A" data-api="29" data-smartdoc="">
                                                 <td>2</td>
                                                 <td>Disable</td>
-                                                <td>Disables the DHCPv6 client on the device.</td>
+                                                <td>Enables the device client to acquire an IPv6 address using the Stateless Address Autoconfiguration (SLAAC) protocol.</td>
                                                 <td>
                                     <i class="fa fa-info-circle" style="color:#108CED;" data-toggle="tooltip" data-placement="top" title="After staging to disable DHCPv6, the device must disconnect/reconnect to the WLAN before a previously acquired IPv6 address is no longer active." aria-hidden="true"></i>
                                     </td>
@@ -4505,38 +4563,24 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                 </div> 
                                     
-                                        <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.1" data-api="" data-smartdoc="">
-
-                                    <h2 class="anchor" id="send-custom-option-value"><a class="heading-anchor" href="#send-custom-option-value"><span></span></a>Send Custom Option Value</h2>
-                                    <p class="">
-
-        </p><p>Used to enter the Custom Option Value. </p>
-
-<p><strong>Parm value input rules</strong>: </p>
-
-<ul>
-<li>String from 1–91 characters</li>
-</ul>
-
-
-<p></p>
-                                        <blockquote>
-                                        <p><b>Shown if:</b> Send Custom Option is set to "Enable"</p>
-                                        <p><b>Parm Name:</b> SendCustomOptionValue</p>
-                                        <!-- <p><b>Pivotal Parm:</b> Yes</p> -->
-                                        <p><b>Requires:</b> 
-                                            </p><ul>
-                                                <li>MX: 8.1+ </li>
-                                           </ul>
-                                        <p></p>
-                                        
-
-                                        
-                                        </blockquote>
                                     
                                     
                                     
-                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -4956,24 +5000,6 @@ The TFTP Server Address DHCP Option (option 150) is a Cisco-proprietary version 
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -4993,6 +5019,35 @@ filtering
         csp: "dhcpoptionmgr",
         name: "DHCP Option Manager",
         parms: [
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -5173,41 +5228,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -5227,6 +5247,9 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
                     
                     
                     
@@ -5357,32 +5380,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5643,6 +5640,39 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "VendorEncapsulatedState",
@@ -5703,15 +5733,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5857,6 +5878,13 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -5876,7 +5904,6 @@ filtering
                         
                         
                     },
-                    
                     
                     
                     
@@ -5968,12 +5995,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -5993,6 +6014,23 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -6074,23 +6112,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "TFTPServerAddrState",
@@ -6155,6 +6176,13 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "TFTPSerNameState",
@@ -6215,8 +6243,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
                     
                     
                     
@@ -6293,8 +6319,6 @@ filtering
                     
                     
                     
-                    
-                    
                     {
                             presentif: "",
                             name: "BootFileState",
@@ -6355,17 +6379,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6494,6 +6507,23 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -6513,6 +6543,13 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -6611,11 +6648,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -6638,18 +6670,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -6669,6 +6689,26 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -6858,11 +6898,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "VendorSpecific1State",
@@ -6923,11 +6958,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -6996,6 +7026,10 @@ filtering
                         ]
                     },
                     
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "VendorSpecific230State",
@@ -7056,12 +7090,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -7170,6 +7198,12 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -7189,6 +7223,7 @@ filtering
                         
                         
                     },
+                    
                     
                     
                     
@@ -7257,8 +7292,6 @@ filtering
                     },
                     
                     
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -7279,6 +7312,26 @@ filtering
                         
                     },
                     
+                    
+                    {
+                        requires: {
+                            osx: "",
+                            osxEnd: "",
+                            mx: "8.1",
+                            api: "",
+                            osxSpecific: "",
+                            osxSpecificList: "",
+                            osxExclude: "",
+                            osxExcludeEnd: "",
+                            devicetype: "A,B"
+                        },
+
+                            presentif: "Send Custom Option is set to &quot;Enable&quot;",
+                            name: "SendCustomOptionValue",
+                            pivotal: "Yes",
+                        
+                        
+                    },
                     
                     {
                             presentif: "",
@@ -7307,7 +7360,7 @@ filtering
                                 {
                                     code: "1",
                                     name: "Enable",
-                                    description: "Enables the DHCPv6 client on the device.",
+                                    description: "Enables the device client to acquire an IPv6 Global Address (GA) from the DHCPv6 server in a stateful manner.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -7324,7 +7377,7 @@ filtering
                                 {
                                     code: "2",
                                     name: "Disable",
-                                    description: "Disables the DHCPv6 client on the device.",
+                                    description: "Enables the device client to acquire an IPv6 address using the Stateless Address Autoconfiguration (SLAAC) protocol.",
                                     requires: {
                                         osx: "",
                                         osxEnd: "",
@@ -7341,25 +7394,6 @@ filtering
                         ]
                     },
                     
-                    {
-                        requires: {
-                            osx: "",
-                            osxEnd: "",
-                            mx: "8.1",
-                            api: "",
-                            osxSpecific: "",
-                            osxSpecificList: "",
-                            osxExclude: "",
-                            osxExcludeEnd: "",
-                            devicetype: "A,B"
-                        },
-
-                            presentif: "Send Custom Option is set to &quot;Enable&quot;",
-                            name: "SendCustomOptionValue",
-                            pivotal: "Yes",
-                        
-                        
-                    },
                     
                     
                     
@@ -7725,7 +7759,7 @@ u {color: #45AED6;}
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2026 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
