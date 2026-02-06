@@ -254,7 +254,24 @@
 
 <p>The default <code>Config.xml</code> file for Android devices is displayed below, followed by explanations of all tags and parameter settings for Android and Windows Mobile/CE. The EB <code>Config.xml</code> can be edited with an ordinary text editor or with the <a href="../ConfigEditor">Config Editor utility</a> included with the installation of Enterprise Browser 1.3 and later. </p>
 
-<h3 id="iclassfafaexclamationtrianglestylecolorffa500imxusernotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500imxusernotes"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> MX User Notes:</h3>
+<hr>
+
+<h3 id="iclassfafaexclamationtrianglestylecolorffa500iemmdeploymentnotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500iemmdeploymentnotes"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> EMM Deployment Notes</h3>
+
+<ul>
+<li><strong>Zebra recommends the following best practices for creating an "XML safe" <code>Config.XML</code> file</strong>: 
+
+
+<ul>
+<li><strong>Use literal slashes</strong> ("<code>/</code>") - Do <strong>NOT</strong> use encoded slashes ("<code>%2f</code>")</li>
+
+<li><strong>Use encoded ampersands</strong> ("<code>&amp;amp;</code>") - Do <strong>NOT</strong> use literal ampersands ("<code>&amp;</code>")</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h3 id="iclassfafaexclamationtrianglestylecolorffa500imxusernotes" class="anchor"><a class="heading-anchor" href="#iclassfafaexclamationtrianglestylecolorffa500imxusernotes"><span></span></a><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> MX User Notes</h3>
 
 <ul>
 <li><strong><u>On devices running Android 10</u></strong>: Some EB device-setting parameters are executed through the <a href="https://techdocs.zebra.com/mx/overview/">MX Framework</a>, Zebra's device management layer. If an EB app containing such parameters is executed immediately after a device is booted, some or all of the instructions could fail if the MX Framework isn't ready in time to receive them. To prevent such failures, <strong><u>Zebra recommends waiting 20 seconds after a device starts up before launching any EB app</u></strong> containing one or more of the configuration parameters listed below.<br></li>
@@ -1811,12 +1828,16 @@ When this parameter contains a setting of 1 and an EKB layout is selected as the
 
 <h3 id="startpage" class="anchor"><a class="heading-anchor" href="#startpage"><span></span></a>StartPage</h3>
 
-<p>Defines the start page of the Enterprise Browser application displayed at launch. <strong>Zebra recommends using a device-resident file</strong> to avoid connectivity issues on startup. <strong>StartPage entry must be a fully qualified local path using</strong> <code>file://</code> <strong>or URL using</strong> <code>http://</code>. For URLs, accepts UTF-8 characters only. Case sensitive. </p>
+<p>Defines the page to display when the Enterprise Browser app is first launched. <strong>Zebra recommends using a device-resident file as the startup page</strong> to avoid 404s due to connectivity issues on launch. <strong>StartPage entry must be a fully qualified local path using</strong> <code>file://</code> <strong>or a URL using</strong> <code>http://</code>. For URLs, accepts UTF-8 characters only. Case sensitive. </p>
 
 <p><strong>Possible Values</strong>:</p>
 
 <ul>
-<li>Fully qualified path to start page</li>
+<li>Fully qualified path and file name of start page</li>
+
+<li>Best Practice: <strong>Use literal slashes</strong> ("<code>/</code>") - Do <strong>NOT</strong> use encoded slashes ("<code>%2f</code>")</li>
+
+<li>Best Practice: <strong>Use encoded ampersands</strong> ("<code>&amp;amp;</code>") - Do <strong>NOT</strong> use literal ampersands ("<code>&amp;</code>")</li>
 </ul>
 
 <h4 id="example-20" class="anchor"><a class="heading-anchor" href="#example-20"><span></span></a>Example</h4>
@@ -2289,12 +2310,12 @@ When this parameter contains a setting of 1 and an EKB layout is selected as the
 
 <h3 id="pagezoom" class="anchor"><a class="heading-anchor" href="#pagezoom"><span></span></a>PageZoom</h3>
 
-<p>Sets the zoom factor of the page. Default zoom value is 1.0 (if unspecified). On Android, zero and negative values are not supported. On Windows, zoom value less than 1.0 reverts to 1.0 since lower values would not be readable. Page zoom settings will sometimes be reflected a few milliseconds after navigating from one page to another. A one-second delay should be anticipated. Not Supported when using Internet Explorer as the rendering engine.</p>
+<p>Sets the zoom factor of the page. <strong>Default = 1.0</strong> (if unspecified). On Android, zero and negative values are not supported. On Windows, zoom value less than 1.0 reverts to 1.0. Page zoom settings are sometimes reflected a few milliseconds after navigating from one page to another; a one-second delay should be anticipated. Not supported when using Internet Explorer as the rendering engine. <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>NOTE: There is no upper limit for the zoom factor value</strong>.</p>
 
 <p><strong>Possible Values</strong>:</p>
 
 <ul>
-<li>Zoom factor of the page</li>
+<li><strong>1.0 - ∞</strong> (no upper limit)</li>
 </ul>
 
 <h4 id="example-44" class="anchor"><a class="heading-anchor" href="#example-44"><span></span></a>Example</h4>
@@ -3272,7 +3293,7 @@ Whether or not to preload the NPAPI plugin to mimic the NoSIP ActiveX object in 
 
 <li>Multiple entries can be separated by a semicolon (;)</li>
 
-<li>Wildcard character (*) supported (i.e. https://*.*; *.MySite.com; www.*)</li>
+<li>Wildcard character (*) supported (i.e. https://*.*; .*MySite.com; www.*)</li>
 </ul>
 
 <h4 id="example-88" class="anchor"><a class="heading-anchor" href="#example-88"><span></span></a>Example</h4>
@@ -3294,7 +3315,7 @@ Whether or not to preload the NPAPI plugin to mimic the NoSIP ActiveX object in 
 
 <li>Multiple entries can be separated by a semicolon (;)</li>
 
-<li>Wildcard character (*) supported (i.e. https://*.*; *.MySite.com; www.*)</li>
+<li>Wildcard character (*) supported (i.e. https://*.*; .*MySite.com; www.*)</li>
 </ul>
 
 <h4 id="example-89" class="anchor"><a class="heading-anchor" href="#example-89"><span></span></a>Example</h4>
@@ -5323,7 +5344,7 @@ Specifies a fully qualified path to the directory containing CA certificates in 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2026 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a>
                     </div>
                      <!--
                      <div class="col-sm-2">
