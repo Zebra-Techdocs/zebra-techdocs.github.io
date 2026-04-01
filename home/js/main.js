@@ -693,6 +693,8 @@ function populateDropdown (ddl_ver, ddl_doc) {
     // RxLogger
     var rxlogger_5_4_text = ['About', 'Settings', 'Modules', 'APIs', 'Log Viewer'];
     var rxlogger_5_4_val = ['/guide/about', '/guide/settings', '/guide/modules', '/guide/apis', '/guide/utility'];
+    var rxlogger_15_0_text = ['About', 'Settings', 'User Guide', 'APIs'];
+    var rxlogger_15_0_val = ['/guide/about', '/guide/settings', '/guide/usage', '/guide/apis'];
     // SSM
     var ssm_1_0_text = ['About', 'Using SSM', 'APIs'];
     var ssm_1_0_val = ['/guide/about', '/guide/use', '/guide/api'];
@@ -1136,11 +1138,16 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/rxlogger/6-0':
         case '/rxlogger/7-0':
         case '/rxlogger/13-0':
-        case '/rxlogger/14-0':
-        case '/rxlogger/15-0':
+        case '/rxlogger/14-0':        
             ddl_doc.options.length = 0;
             for (i=0; i < rxlogger_5_4_text.length; i++) {
                 createOption(ddl_doc, rxlogger_5_4_text[i], rxlogger_5_4_val[i]);
+            }
+            break;
+        case '/rxlogger/15-0':
+            ddl_doc.options.length = 0;
+            for (i=0; i < rxlogger_15_0_text.length; i++) {
+                createOption(ddl_doc, rxlogger_15_0_text[i], rxlogger_15_0_val[i]);
             }
             break;
         
