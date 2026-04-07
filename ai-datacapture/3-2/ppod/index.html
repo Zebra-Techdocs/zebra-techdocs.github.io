@@ -11,8 +11,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Object Detector Model">
-    <title>Object Detector Model - TechDocs</title>
+    <meta title="Picture Proof of Delivery (PPOD)">
+    <title>Picture Proof of Delivery (PPOD) - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!--     
@@ -144,7 +144,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Object Detector Model</strong></li>
+                            <li><strong>Picture Proof of Delivery (PPOD)</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -230,7 +230,7 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="object-detector-model" class="anchor"><a class="heading-anchor" href="#object-detector-model"><span></span></a>Object Detector Model</h1>
+                                    <h1 id="picture-proof-of-delivery-ppod" class="anchor"><a class="heading-anchor" href="#picture-proof-of-delivery-ppod"><span></span></a>Picture Proof of Delivery (PPOD)</h1>
                                     <p>
                                             AI Data Capture SDK
                                             3.2
@@ -248,126 +248,182 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>Model Name:</strong> FCN-ResNet50-object-segmentation</p>
+<p>Picture Proof of Delivery (PPOD) is an on-device AI Blueprint that solves common challenges for delivery drivers. Under constant time pressure, drivers must capture clear, compliant images that show both the parcel and its surroundings, while simultaneously avoiding sensitive data like faces or license plates. This Blueprint simplifies the process, guiding the driver to get a compliant picture on the first attempt.</p>
 
-<p>The Image Transform Detector's <strong>Object Detector model</strong> provides object detection functionality using an <a href="https://github.com/pytorch/vision/blob/main/torchvision/models/segmentation/fcn.py">FCN-ResNet50 implementation</a>, which has been optimized for efficient execution within the AI Data Capture SDK. It is trained to detect multiple distinct object classes. The underlying implementation is derived from the PyTorch vision library and is licensed under <a href="https://github.com/pytorch/vision/blob/main/LICENSE">BSD-3-CLAUSE</a>.</p>
+<p>The Blueprint operates in two distinct stages:</p>
 
-<div>
-<form action="https://zebratech.jfrog.io/ui/repos/tree/General/emc-mvn-ext/com/zebra/ai/models/FCN-ResNet50-object-segmentation" method="get" target="_blank">
-    <button type="submit" style="background-color: #5087b5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Download Model</button>
-</form>
-</div>
+<ol>
+<li><strong>Compliance Check:</strong> Verifies the image meets compliance criteria (e.g., parcel is within the image).</li>
+
+<li><strong>Image Enhancement:</strong> Post-processes the captured image (e.g. blur text) to ensure privacy and data security.</li>
+</ol>
+
+<p>The specific options available for each stage are outlined below:</p>
+
+<table class="facelift" style="width:60%" border="1" padding="5px">
+    <thead>
+        <tr bgcolor="#dce8ef">
+        <th>Stage</th>
+        <th>Available Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Compliance Check</td>
+            <td>• Ensure parcel is present<br>• Ensure surroundings are shown<br>• Ensure image is NOT blurry<br>• Ensure people are NOT in image</td>
+        </tr>
+        <tr>
+            <td>Image Enhancement</td>
+            <td>• Blur People in Image<br>• Blur Text in image<br>• Blur Barcodes in Image</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The Blueprint is ready to be integrated into an Android application through a simplified pipeline exposed in Zebra’s AI Suite SDK.  </p>
 
 <hr>
 
-<h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
+<h2 id="nonguidedvsguidedppod" class="anchor"><a class="heading-anchor" href="#nonguidedvsguidedppod"><span></span></a>Non-Guided vs. Guided PPOD</h2>
+
+<p>The PPOD Blueprint offers two operational modes: a <strong>Non-Guided</strong> mode for post-capture analysis and a <strong>Guided</strong> mode for live, interactive feedback.</p>
+
+<p>Choosing the right approach depends on the application's requirements for user interaction and workflow integration. The table below outlines the key differences.</p>
+
+<table class="facelift" style="width:100%" border="1" padding="5px">
+    <thead>
+        <tr bgcolor="#dce8ef">
+        <th>Aspect</th>
+        <th>Non-Guided PPOD (Non-Interactive)</th>
+        <th>Guided PPOD (Live Feedback)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Interaction Model</td>
+            <td><b>Post-capture &amp; Non-interactive.</b> Analysis happens after the image is taken.</td>
+            <td><b>Live &amp; Interactive.</b> Provides real-time guidance before the image is taken.</td>
+        </tr>
+        <tr>
+            <td>Primary Use Case</td>
+            <td>Fast capture and non-disruptive batch processing of existing images.</td>
+            <td>Prioritizing first-time image quality and compliance through live guidance.</td>
+        </tr>
+        <tr>
+            <td>Core Technology</td>
+            <td><code>ImageAttributesDetector</code> &amp; <code>ImageTransformDetector</code> on a static image.</td>
+            <td><code>EntityTrackerAnalyzer</code> processing a live camera feed.</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2 id="guidedppod" class="anchor"><a class="heading-anchor" href="#guidedppod"><span></span></a>Guided PPOD</h2>
+
+<p>For more information on the live feedback approach, see <a href="../camerax/#guidedppod">Guided PPOD</a> within the <code>CameraX</code> section.</p>
+
+<hr>
+
+<h2 id="nonguidedppod" class="anchor"><a class="heading-anchor" href="#nonguidedppod"><span></span></a>Non-Guided PPOD</h2>
+
+<p>The <strong>Non-Guided Picture Proof of Delivery (PPOD)</strong> is a flexible method for processing images after they have been captured. Unlike the guided (live feedback) model, this workflow focuses on analyzing pre-existing or newly captured images without real-time user guidance.</p>
+
+<p>This method allows developers to embed an analysis and transformation pipeline into an existing application with minimal disruption to the established user workflow. The core process involves taking an image and passing it to one or more detectors to verify its compliance and redact sensitive information.</p>
+
+<p><strong>Key Characteristics:</strong></p>
 
 <ul>
-<li><p><strong>Operating System:</strong> Android 14 or higher. For specific OS versions, refer to the AI Data Capture SDK Release Notes on the <a href="https://www.zebra.com/us/en/support-downloads.html#q=ai%20suite">Zebra support portal</a>.</p></li>
+<li><strong>Post-Capture Analysis:</strong> Operates on images already captured from any source (camera, gallery, etc.).</li>
 
-<li><p><strong>Minimum SDK Version:</strong> AI Data Capture SDK v3.0.2 or later.</p></li>
+<li><strong>No Live Feedback:</strong> Does not use a live camera preview to provide real-time guidance.</li>
 
-<li><p><strong>License:</strong> A Picture Proof of Delivery License (AI Blueprint, Annual) is required. The SKU for this annual license is ZEBRA-AI-BP-PPOD. See <a href="../../license/">Licensing</a> for procurement and deployment instructions.</p></li>
+<li><strong>Minimal Disruption:</strong> Easily integrates as a background step in an existing application workflow (e.g., after a driver captures all their delivery photos).</li>
 
-<li><p><strong>Supported Zebra Devices:</strong></p>
-
-<table class="facelift" align="" style="width:80%" border="1" padding="5px">
-<tbody><tr bgcolor="#dce8ef">
-    <th>Features</th>
-    <th>Platform</th>
-    <th>Device Model</th>
-</tr>
-
-<tr>
-    <td rowspan="2"><b>Products with DSP</b> <br>Fastest and most battery efficient</td>
-    <td>QC6490</td>
-    <td>TC53, TC58, TC73, TC78, ET60, ET65 </td>
-</tr>
-
-<tr>
-    <td>Q-6690</td>
-    <td>ET401</td>
-</tr>
-
-</tbody></table>
-
-<p>For more information on devices based on platform, see <a href="https://support-new.zebra.com/article/000022440">Zebra Platform Devices</a>.</p></li>
+<li><strong>Component-Based:</strong> Primarily uses <a href="../imageattributes/">ImageAttributesDetector</a> for compliance checks and the <a href="../imagetransform/">ImageTransformDetector</a> for privacy redaction on a static image.</li>
 </ul>
 
 <hr>
 
-<h2 id="resources" class="anchor"><a class="heading-anchor" href="#resources"><span></span></a>Resources</h2>
+<h3 id="workflow" class="anchor"><a class="heading-anchor" href="#workflow"><span></span></a>Workflow</h3>
 
-<div style="display: flex; gap: 10px;">
+<p>The Non-Guided PPOD workflow provides a flexible pipeline for processing static images after capture. The process begins by initializing the SDK and the required detectors (ImageAttributesDetector, ImageTransformDetector). Once the image is loaded, there are two distinct processing paths available:</p>
 
-<form action="https://ptr.zebra.com/SDK-mobileAISuite" method="get" target="_blank">
-    <button type="submit" style="background-color: #5087b5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Download SDK</button>
-</form>
+<ul>
+<li><strong>Analyze then Transform:</strong> First, analyze the image with <code>ImageAttributesDetector</code>, and then optionaally apply privacy redaction with <code>ImageTransformDetector</code>. </li>
 
-<form action="/ai-datacapture" method="get" target="_blank">
-    <button type="submit" style="background-color: black; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">SDK Documentation</button>
-</form>
+<li><strong>Direct Transformation:</strong> Use <code>ImageTransformDetector</code> to directly apply privacy redaction without any prior analysis.</li>
+</ul>
 
-<form action="https://github.com/ZebraDevs/AISuite_Android_Samples/tree/main/AISuite_QuickStart" method="get" target="_blank">
-    <button type="submit" style="background-color: #5087b5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Sample Apps</button>
-</form>
+<p><img alt="image" style="height:900px" src="non-guided-ppod.png"></p>
 
-</div>
+<p><em>Non-Guided PPOD Workflow</em></p>
+
+<hr>
+
+<h2 id="sampleapp" class="anchor"><a class="heading-anchor" href="#sampleapp"><span></span></a>Sample App</h2>
+
+<p>A sample application and source code are available to demonstrate both the Guided and Non-Guided Picture Proof of Delivery (PPOD) workflows.</p>
+
+<ul>
+<li><strong>Zebra Showcase App:</strong> Download and install the <a href="/showcase-app">Zebra Showcase App</a> to see demonstrations of both the Guided and Non-Guided workflows.</li>
+
+<li><strong>Source Code:</strong> The <a href="https://github.com/ZebraDevs/AISuite_Android_Samples/tree/main/AISuite_Demos/AIProofOfDelivery">sample app source code</a> demonstrates how to use the <a href="../imageattributes/">Image Attributes Detector</a> and <a href="../imagetransform/">Image Transform Detector</a> classes with their underlying AI models to build a PPOD solution.</li>
+
+<li><strong>Licensing:</strong> The Zebra Showcase App provides a pre-licensed, ready to run demo app. To compile the sample app from source code, a Picture Proof of Delivery License (AI Blueprint, Annual) is required. The SKU for this annual license is <strong>ZEBRA-AI-BP-PPOD.</strong> See <a href="../license/">Licensing</a> for procurement and deployment instructions.</li>
+</ul>
 
 <hr>
 
 <h2 id="relatedguides" class="anchor"><a class="heading-anchor" href="#relatedguides"><span></span></a>Related Guides</h2>
 
 <ul>
-<li><a href="../../about/">About</a></li>
+<li><a href="../about/">About</a></li>
 
-<li><a href="../../setup/">Setup</a></li>
+<li><a href="../setup/">Setup</a></li>
 
-<li><a href="../../localizer/">Localizer</a>
+<li><a href="../localizer/">Localizer</a>
 
 
 <ul>
-<li>Models: <a href="../barcode-localizer/">Barcode</a>, <a href="../prod-recognizer/">Product &amp; Shelf</a></li></ul>
+<li>Models: <a href="../model/barcode-localizer/">Barcode</a>, <a href="../model/prod-recognizer/">Product &amp; Shelf</a></li></ul>
 </li>
 
-<li><a href="../../productrecognition/">Product Recognition</a> - Model: <a href="../prod-recognizer/">Model</a>
+<li><a href="../productrecognition/">Product Recognition</a> - Model: <a href="../model/prod-recognizer/">Model</a>
 
 
 <ul>
-<li><a href="../../productrecognition/#featureextractor">Feature Extractor</a></li>
+<li><a href="../productrecognition/#featureextractor">Feature Extractor</a></li>
 
-<li><a href="../../productrecognition/#featurestorage">Feature Storage</a></li>
+<li><a href="../productrecognition/#featurestorage">Feature Storage</a></li>
 
-<li><a href="../../productrecognition/#recognizer">Recognizer</a></li></ul>
+<li><a href="../productrecognition/#recognizer">Recognizer</a></li></ul>
 </li>
 
-<li><a href="../../barcodedecoder/">Barcode Decoder</a></li>
-
-<li><a href="../../textocr/">Text OCR</a>
+<li><a href="../textocr/">Text OCR</a>
 
 
 <ul>
-<li><a href="../textocr/">Model</a></li></ul>
+<li><a href="../model/textocr/">Model</a></li></ul>
 </li>
 
-<li><a href="../../camerax/">CameraX</a>
+<li><a href="../camerax/">CameraX</a>
 
 
 <ul>
-<li><a href="../../camerax/#entitytrackeranalyzer">EntityTrackerAnalyzer</a></li>
+<li><a href="../camerax/#entitytrackeranalyzer">EntityTrackerAnalyzer</a></li>
 
-<li><a href="../../camerax/#detectors">Detectors</a></li>
+<li><a href="../camerax/#detectors">Detectors</a></li>
 
-<li><a href="../../camerax/#entityviewfinder">EntityViewfinder</a></li></ul>
+<li><a href="../camerax/#entityviewfinder">EntityViewfinder</a></li></ul>
 </li>
 
 <li><a href="../imageattributes/">Image Attributes Detector</a></li>
 
 <li><a href="../imagetransform/">Image Transform Detector</a></li>
 
-<li><a href="../../entity/">Entity</a></li>
+<li><a href="../entity/">Entity</a></li>
 
-<li><a href="../../types/">Data Types</a></li>
+<li><a href="../types/">Data Types</a></li>
 </ul><p></p>
                                         
 
