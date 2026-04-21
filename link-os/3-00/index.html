@@ -6,8 +6,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Available Product Documentation">
-    <title>Available Product Documentation - Zebra Technologies TechDocs</title>
+    <meta title="Link-OS Multiplatform SDK - Zebra Technologies TechDocs">
+    <title>Link-OS Multiplatform SDK - Zebra Technologies TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -23,6 +23,102 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]--> 
+
+<style>
+   
+  /* Container for the box grid */
+  .los-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    padding: 20px;
+    max-width: 1000px; 
+    margin: 0 auto;   
+  }
+
+  /* Container for the overview */
+  .overview-container {
+    //display: grid;
+    //grid-template-columns: repeat(2, 1fr); 
+    //gap: 20px; 
+    padding: 20px;
+    max-width: 1000px; 
+    margin: 0 auto;   
+  }
+
+  p {
+    text-align: left;        
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: black;
+    padding: 4px 4px;        
+	margin: 0px;
+  }
+
+  /* Styling for the individual boxes */
+  .box {
+    background-color: white; 
+    border: 2px solid #757575; 
+    border-radius: 16px;       /* Enhanced rounded corners */
+    padding: 20px 20px;        
+    text-align: left;        
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    
+    /* Flexbox used to align the text and the button vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 10px; /* Space between the text and the button */
+    
+    /* Smooth transition for the box itself if you want to add effects later */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Optional: Lift the box slightly on hover for a better user experience */
+  .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 96, 100, 0.1);
+  }
+
+  /* Styling the "Learn More" button */
+  .learn-more-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 8px; /* Rounded corners for the button too */
+    cursor: pointer;
+    font-weight: normal;
+    
+    /* Hide the button initially */
+    opacity: 1;
+    transform: translateY(10px); /* Pushes the button down slightly */
+    
+    /* Smoothly animate the appearance */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Hover effect: When hovering over the .box, show the button */
+  .box:hover .learn-more-btn {
+    /* opacity: 1; */
+	background-color: #A8F931;
+	color: black;
+    transform: translateY(0); /* Brings the button back to its normal position */
+  }
+
+  /* Responsive styling for small screens */
+  @media (max-width: 600px) {
+    .container {
+      grid-template-columns: 1fr; 
+    }
+  }
+</style>
 
     <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script>
     <script type="text/javascript">
@@ -48,7 +144,9 @@
 }).call(window, window, document), window.JacoRecorder.push([ "init", "0e8738ef-44eb-4eed-8d47-e564ec9b5587", {} ]);
 </script>
     <link rel="shortcut icon" href="/favicon.ico">
-<script src="/js/jquery.js"></script></head><!--/head-->
+<script src="/js/jquery.js"></script>
+
+</head><!--/head-->
 
 
 <body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
@@ -76,7 +174,8 @@
 
                     </ul>
                 </div>
-                <div class="collapse navbar-collapse navbar-right">
+                <!--
+				<div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="/link-os/2-12">2.12</a></li>
                         <li><a href="/link-os/2-13">2.13</a></li>
@@ -85,167 +184,130 @@
                         <li><a href="/link-os/3-00">3.0</a></li>
                     </ul>
                 </div>
+				-->
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
 <div class="container-fluid">
-    <div id="mainContent" class="row">
+    <div>
         <div class="col-sm-12">
-            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+            <!-- <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms"> -->
             <!-- Start of guide -->
                 <div class="service-box wow fadeInRight">
-                    <div class="">
+                    
+					<!-- main heading -->
+					<div style="text-align:center">
+                        <h1 id="linkosmultiplatformsdk" >Link-OS Multiplatform SDK</h1>
 
-                        <p></p><h1 id="linkosmultiplatformsdk" class="anchor"><a class="heading-anchor" href="#linkosmultiplatformsdk"><span></span></a>Link-OS Printer Tools and Multiplatform SDK</h1>
+                        <!-- sub heading -->
+						<h3>APIs for Label and Receipt Printing</h3>
+					</div>
 
-<p>The robust Link-OS Multiplatform Software Development Kit enables printing app creation on PCs, smart phones and tablets supporting the most popular operating systems. The Link-OS SDK makes creating powerful apps simple and straightforward.</p><p></p>
-                        
 
+					<!-- start overview -->
+					<div class="overview-container">						
+						<p>The Link-OS Multiplatform Software Development Kit enables label and receipt printing from PCs, smart phones and tablets supporting the most popular operating systems. The Link-OS SDK makes creating powerful apps simple and straightforward.</p>
+						<p>The latest release of each SDK is available for download at <a href="http://www.zebra.com/linkossdk" target="_blank">www.zebra.com/linkossdk</a> and includes:</p>
 
-                    </div>
-                </div>
+						<ul>
+						<li><i class="media-object fa fa-check-square-o" style="color:#303030"></i>&nbsp;&nbsp;Libraries</li>
+						<li><i class="media-object fa fa-check-square-o" style="color:#303030"></i>&nbsp;&nbsp;API Documentation</li>
+						<li><i class="media-object fa fa-check-square-o" style="color:#303030"></i>&nbsp;&nbsp;Developer Demos with source code showing examples of common functionality</li>
+						</ul>
+
+						<div >
+							<p><i class="media-object fa fa-info-circle" style="color:#1F69FF"></i>&nbsp;&nbsp;Looking for the latest Card printer SDK? Visit the <a href="https://www.zebra.com/us/en/support-downloads/software/printer-software/card-sdk.html" target="_blank">Software Development Toolkit (SDK) for Card Printers</a> page.</p>
+						</div>
+
+						<div >
+							<p><i class="media-object fa fa-lightbulb-o" style="color:#528406"></i>&nbsp;&nbsp;Visit <a href="http://www.zebra.com/linkossdk" target="_blank">www.zebra.com/linkossdk</a> and sign up for new release notifcations.</p>
+						</div>						
+					</div>
+					<!-- end overview -->
+					
+					
+                <!-- </div> -->
 
             </div>
         </div>
     </div>
 
-    <section id="meet-team">
-        <div class="container">
+<!-- Start box container -->
 
-            <div class="row">
-            
-              <div class="col-sm-12 col-md-6">
-                  <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-              
-                      <div class="media">
-                        <div class="media-left " style="
-                              max-width: 120px;
-                              max-height: 120px;
-                              margin-right: 10px;
-                          ">
-                          <a href="#">
-                              <i class="media-object fas fa-3x fa-barcode"></i>
-                          </a>
-                        </div>
-                        <div class="media-body" style="
-                          padding-left: 15px;
-                          ">
-                          <h4 class="media-heading anchor" id="-label"><a class="heading-anchor" href="#-label"><span></span></a> <a href="labelIndex.html">Label and Receipt Printing</a></h4>
-                          <p>Zebra label and receipt printer SDK APIs for Windows, Android, and iOS</p>
-                          <p>version 2.14</p>
-                        </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-sm-12 col-md-6">
-                  <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-              
-                      <div class="media">
-                        <div class="media-left " style="
-                              max-width: 120px;
-                              max-height: 120px;
-                              margin-right: 10px;
-                          ">
-                          <a href="#">
-                              <i class="media-object fa fa-3x fa-credit-card"></i>
-                          </a>
-                        </div>
-                        <div class="media-body" style="
-                          padding-left: 15px;
-                          ">
-                          <h4 class="media-heading anchor" id="-card"><a class="heading-anchor" href="#-card"><span></span></a> <a href="cardIndex.html">Identity Card Printing</a></h4>
-                          <p>Zebra card printer SDK APIs for Windows and Android</p>
-                          <p>version 2.14</p>
-                        </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <div class="col-sm-12 col-md-6">
-                  <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-              
-                      <div class="media">
-                        <div class="media-left " style="
-                              max-width: 120px;
-                              max-height: 120px;
-                              margin-right: 10px;
-                          ">
-                          <a href="#">
-                              <i class="media-object fa fa-3x fa-cog"></i>
-                          </a>
-                        </div>
-                        <div class="media-body" style="
-                          padding-left: 15px;
-                          ">
-                          <h4 class="media-heading anchor" id="-bestpractices"><a class="heading-anchor" href="#-bestpractices"><span></span></a> <a href="/link-os/2-14/bestpractices">Best Practices and FAQ</a></h4>
-                          <p>Learn from the experts how to make printing easy, stable, and give the best user experience.</p>
-                          <p>version 2.2</p>
-                        </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <div class="col-sm-12 col-md-6">
-                  <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-              
-                      <div class="media">
-                        <div class="media-left " style="
-                              max-width: 120px;
-                              max-height: 120px;
-                              margin-right: 10px;
-                          ">
-                          <a href="#">
-                              <i class="media-object fa fa-3x fa-users"></i>
-                          </a>
-                        </div>
-                        <div class="media-body" style="
-                          padding-left: 15px;
-                          ">
-                          <h4 class="media-heading anchor" id="-community"><a class="heading-anchor" href="#-community"><span></span></a> <a href="https://developer.zebra.com/forum">Community</a></h4>
-                          <p>Get the latest developer news about Zebra printers.  Join the conversation in the forums and learn tips and tricks for printing and encoding.</p>
-              
-                        </div>
-                      </div>
-                  </div>
-              </div>
+<div class="los-container">
 
-              <div class="col-sm-12 col-md-6">
-                  <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-              
-                      <div class="media">
-                        <div class="media-left " style="
-                              max-width: 120px;
-                              max-height: 120px;
-                              margin-right: 10px;
-                          ">
-                          <a href="#">
-                              <i class="media-object fa fa-3x fa-code"></i>
-                          </a>
-                        </div>
-                        <div class="media-body" style="
-                          padding-left: 15px;
-                          ">
-                          <h4 class="media-heading anchor" id="-samples"><a class="heading-anchor" href="#-samples"><span></span></a> <a href="https://github.com/orgs/ZebraDevs/repositories?q=link-os&type=all&language=&sort=">Samples</a></h4>
-                          <p>Download the latest print sample code</p>
-              
-                        </div>
-                      </div>
-                  </div>
-              </div>
-              
-            </div>
-        </div>
-    </section>
+  <div class="box" id="android">
+	<h3><i class="media-object fa fa-android"></i>&nbsp;&nbsp;Android</h3>
+	<p>Java API for label and receipt printing from Android devices.</p>
+    <button class="learn-more-btn">API Documentation</button>
+  </div>
+  
+  <div class="box" id="netmaui">
+	<h3><i class="media-object fa fa-windows"></i>&nbsp;&nbsp;.NET MAUI</h3>
+	<p>.NET API for label and receipt printing from Windows, Android and iOS devices.</p>
+
+    <button class="learn-more-btn">API Documentation</button>
+  </div>
+  
+  <div class="box" id="ios">
+	<h3><i class="media-object fa fa-apple"></i>&nbsp;&nbsp;iOS</h3>
+	<p>Objective-C API for label and receipt printing with iOS devices.</p>
+    <button class="learn-more-btn">API Documentation</button>
+  </div>
+  
+  <div class="box" id="java">
+	<h3><i class="media-object fa fa-desktop"></i>&nbsp;&nbsp;Java for Desktop PC</h3>
+	<p>Java API for label and receipt printing from Desktop PC.<br>&nbsp;</p>
+    <button class="learn-more-btn">API Documentation</button>
+  </div>
+  
+  <div class="box" id="webservices">
+	<h3><i class="media-object fa fa-cloud"></i>&nbsp;&nbsp;Java for Webservices</h3>
+	<p>Java API for label and receipt printing from web servers using Websockets (Weblink) technology.<br>Download the SDK for documentation and sample project.</p>
+    <button class="learn-more-btn">Learn More</button>
+  </div>
+  
+  <div class="box" id="codesamples">
+	<h3><i class="media-object fa fa-github"></i>&nbsp;&nbsp;Code Samples</h3>
+	<p>A variety of open-source printing projects developed by Zebras for the community.<br>&nbsp;</p>
+
+    <button class="learn-more-btn">ZebraDevs on Github</button>
+  </div>
+
+  <div class="box" id="bestpractices">
+	<h3><i class="media-object fa fa-info-circle"></i>&nbsp;&nbsp;Best Practices and FAQ</h3>
+	<p>Best Practices for Printing.</p>
+    <button class="learn-more-btn">Learn More</button>
+  </div>
+  
+  <div class="box" id="demos">
+	<h3><i class="media-object fa fa-folder"></i>&nbsp;&nbsp;DNA for Printers Demos</h3>
+	<p>Various demos for Link-OS printers.</p>
+    <button class="learn-more-btn">Learn More</button>
+  </div>
+
+  <div class="box" id="community">
+	<h3><i class="media-object fa fa-users"></i>&nbsp;&nbsp;Community</h3>
+	<p>Join the conversation in the forums and learn tips and tricks for printing and encoding.</p>
+    <button class="learn-more-btn">Visit the Forum</button>
+  </div>
+
+
+
+</div>
+<!-- End box container -->
+
+
  </div>
+ 
          <footer id="footer" class="navbar-fixed-bottom">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-10">
-                        © 2018 ZIH Corp and/or its affiliates. All rights reserved. Zebra and the stylized Zebra head are trademarks of ZIH Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
+                    <div class="col-sm-10">ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corporation, registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2026 Zebra Technologies Corporation and/or its affiliates. All rights reserved.<a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms &amp; Conditions</a>
                     </div>
                     <div class="col-sm-2">
                         <ul class="social-icons">
-                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="https://www.youtube.com/playlist?list=PLrcZVTwQp0lcuGNzcN3WIF4dyDUtIV5LR"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/groups?home=&amp;gid=3220074&amp;trk=anet_ug_hm&amp;goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
@@ -302,5 +364,36 @@
         n.parentNode.insertBefore(s, n);
     })(document, window, 'Chatra');
 </script>         
+
+    <script>
+      // Click handlers
+      document.getElementById('android').onclick = function() {
+		window.open('/link-os/2-14/android/', '_blank');
+      }
+      document.getElementById('netmaui').onclick = function() {
+		window.open('/link-os/3-00/pc_net/', '_blank');
+      }
+      document.getElementById('ios').onclick = function() {
+		window.open('/link-os/2-13/ios/', '_blank');
+      }
+      document.getElementById('java').onclick = function() {
+		window.open('/link-os/2-14/pc/', '_blank');
+      }
+      document.getElementById('webservices').onclick = function() {
+		window.open('/link-os/2-14/webservices/', '_blank');
+      }
+	  document.getElementById('codesamples').onclick = function() {
+		window.open('https://github.com/orgs/ZebraDevs/repositories?q=link-os&type=all&language=&sort=', '_blank');
+      }
+	  document.getElementById('bestpractices').onclick = function() {
+		window.open('/link-os/2-14/bestpractices/', '_blank');
+      }
+	  document.getElementById('demos').onclick = function() {
+		window.open('/link-os/latest/demos/', '_blank');
+      }
+	  document.getElementById('community').onclick = function() {
+		window.open('https://developer.zebra.com/forum', '_blank');
+      }
+    </script>
 
 </body></html>
