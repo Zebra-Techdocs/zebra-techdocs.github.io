@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra DNA Cloud
-                                            6.3
+                                            6.4
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/zebradna/6-3/about">
+                            <a href="/zebradna/6-4/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/6-3/setup">
+                            <a href="/zebradna/6-4/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/6-3/usage">
+                            <a href="/zebradna/6-4/usage">
                                     Usage
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/6-3/licensing">
+                            <a href="/zebradna/6-4/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/6-3/design">
+                            <a href="/zebradna/6-4/design">
                                     Design
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/6-3/support">
+                            <a href="/zebradna/6-4/support">
                                     Support
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/6-3/faq">
+                            <a href="/zebradna/6-4/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zebradna/6-3/search">
+                            <a href="/zebradna/6-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="using-zebra-dna-cloud" class="anchor"><a class="heading-anchor" href="#using-zebra-dna-cloud"><span></span></a>Using Zebra DNA Cloud</h1>
                                     <p>
                                             Zebra DNA Cloud
-                                            6.3
+                                            6.4
                                     </p>
                                 </div>
                             </section>                    
@@ -745,9 +745,9 @@ Status changes from "In-Progress" to "Completed" once data collection is complet
 
 <h3 id="remotesupport" class="anchor"><a class="heading-anchor" href="#remotesupport"><span></span></a>Remote Support</h3>
 
-<p>On devices with zDNA client 1.2 (or later), the device screen can be viewed and controlled remotely. On devices with DNA Cloud v2.7 (or later) and running Zebra <a href="/zwc">Workstation Connect</a> software, administrators can access both the device screen and the screen of a connected external monitor.</p>
+<p>On devices with zDNA client 1.2 (or later), the device screen can be viewed and controlled remotely. On devices with DNA Cloud v2.7 (or later) and running Zebra <a href="/zwc">Workstation Connect</a> software, administrators can access both the device screen and the screen of a connected external monitor. DNA Cloud also supports remote control for devices managed by third-party EMM systems.  </p>
 
-<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> The Zebra TC53, TC58 and other 6490-platform devices require the May 2023 <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard update</a> to allow remote access to an external monitor.</p>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> The Zebra TC53, TC58 and other 6490-platform devices require the May 2023 <a href="https://www.zebra.com/us/en/support-downloads/lifeguard-security.html">LifeGuard update</a> (or later) to allow remote access to an external monitor.</p>
 
 <p>If supported on a device, the "Remote Support" Action is available:
 <img alt="image" style="height:350px" src="remote_01.png">
@@ -767,7 +767,14 @@ Status changes from "In-Progress" to "Completed" once data collection is complet
 <ul>
 <li><strong><a href="/zwc">Zebra Workstation Connect</a> (ZWC) must be installed and running</strong> on any device to be remotely controlled.</li>
 
-<li><strong>The ZDNA Client MUST be the Device Owner</strong> for support of Desktop Mode.</li>
+<li><strong>Desktop Mode is supported only if the remote device is enrolled in and managed by DNA Cloud</strong>.</li>
+
+<li><strong>For third-party EMM remote support</strong> (if kiosk or lock task mode is enabled in the EMM setup): 
+
+
+<ul>
+<li>The DNA Client app (<code>com.zebra.zebradna</code>) must be on the kiosk/lock task EMM admin whitelist.</li></ul>
+</li>
 
 <li><strong>The ZWC Desktop Mode must be enabled</strong> and the device restarted (if not previously enabled). See <a href="#useadvancedsettings">Advanced Settings</a> or <a href="/oemconfig">OEMConfig</a> for more info about enabling Desktop Mode.</li>
 
@@ -1406,7 +1413,9 @@ Android Updates
 <p><strong>The Device Users section allows admins to view the identities, device-access method(s), usage activities and other information relevant to users of <a href="/identityguardian">Identity Guardian</a></strong>, Zebra's biometric device authentication solution. Device users that enroll or are imported into Identity Guardian are automatically populated into the Device Users section, giving ZDNA administrators the ability to perform the actions listed below.</p>
 
 <blockquote>
-  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>For Device Users menu option to appear, <u>at least one user MUST be enrolled in Identity Guardian</u></strong>. <a href="../setup/#manageigusers">Learn more</a>.</p>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>For Device Users menu option to appear, <u>at least one user must be enrolled in Identity Guardian</u></strong>. <a href="../setup/#manageigusers">Learn more</a>.<br>
+  <i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>After a user has logged in, even if the device later goes offline</strong>:<br> 
+  <strong>Changes, expiration or deletion of account settings <u>DO NOT TAKE EFFECT until after they've logged out</u></strong> or their session has expired.</p>
 </blockquote>
 
 <p><img alt="image" style="height:350px" src="54_device_users.jpg">
@@ -1456,6 +1465,13 @@ Android Updates
 <p><strong>DNA Cloud 6.3 introduces a calendar for selection and filtering of registered Identity Guardian users</strong> by their "Created On" date. The feature supports custom date selection and includes several predefined ranges: 
 <img alt="image" style="height:350px" src="63_filterUsers_with_calendar.jpg">
 <em>Click image to enlarge; ESC to exit</em>.</p>
+
+<!-- remove EDCL-915 features, per eng
+
+**DNA Cloud 6.4 introduces greater access to user log-in history**, including calendar-based selection and filtering: 
+ <img alt="image" style="height:450px" src="64_user_login_history.png"/>
+ _Click image to enlarge; ESC to exit_.
+ -->
 
 <h3 id="exportuserdata" class="anchor"><a class="heading-anchor" href="#exportuserdata"><span></span></a>Export User Data</h3>
 
@@ -1882,7 +1898,7 @@ To add or remove Sub-profiles, click "Add Profile."
 
 <li><strong><a href="/ddt">Device Diagnostic Tool</a></strong></li>
 
-<li><strong><a href="/deviceguardian">Device Guardian</a></strong></li>
+<li><strong><a href="/deviceguardian">Device Guardian</a></strong>❗️</li>
 
 <li><strong><a href="/enterprise-browser">Enterprise Browser</a></strong></li>
 
@@ -1890,7 +1906,7 @@ To add or remove Sub-profiles, click "Add Profile."
 
 <li><strong><a href="/ekb">Enterprise Keyboard</a></strong></li>
 
-<li><strong><a href="/identityguardian">Identity Guardian</a></strong></li>
+<li><strong><a href="/identityguardian">Identity Guardian</a></strong>❗️</li>
 
 <li><strong><a href="/wireless-insights">Wireless Insights</a></strong></li>
 
@@ -1898,6 +1914,8 @@ To add or remove Sub-profiles, click "Add Profile."
 
 <li><strong><a href="/zwc">Workstation Connect</a></strong></li>
 </ul>
+
+<p>❗️<i><font size="1" color="DimGrey"> <b>Application of the April, 2026, LifeGuard Update blocks Google Play from performing updates to this app</b>. Zebra made this change for some of its built-in apps to prevent staging interruptions and/or loss of version control due to conflicts between the Zebra and Google updating systems. To bypass this restriction, apply <a href="/mx/appmgr/#:~:text=AllowApplicationUpgrade">App Manager Action 16</a> to the effected app(s).</font></i> </p>
 
 <hr>
 
