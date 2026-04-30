@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Zebra Workstation Connect
-                                            7.0
+                                            7.1
                         </p>
 
                     </ul>
@@ -82,27 +82,27 @@
 
 
                         <li>
-                            <a href="/zwc/7-0/about">
+                            <a href="/zwc/7-1/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/7-0/setup">
+                            <a href="/zwc/7-1/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/7-0/usage">
+                            <a href="/zwc/7-1/usage">
                                     Usage Notes
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/7-0/faq">
+                            <a href="/zwc/7-1/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/zwc/7-0/search">
+                            <a href="/zwc/7-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -218,7 +218,7 @@
                                     <h1 id="usage-notes" class="anchor"><a class="heading-anchor" href="#usage-notes"><span></span></a>Usage Notes</h1>
                                     <p>
                                             Zebra Workstation Connect
-                                            7.0
+                                            7.1
                                     </p>
                                 </div>
                             </section>                    
@@ -232,7 +232,7 @@
                                     <div class="">
 
                                         <p></p><blockquote>
-  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>PAGE UPDATED: Jan. 12, 2026</strong></p>
+  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>PAGE UPDATED: Mar. 31, 2026</strong></p>
 </blockquote>
 
 <!-- `NEW:`  -->
@@ -306,6 +306,8 @@
 <ul>
 <li><strong>Any allowlist <em>MUST</em> include ZWC and DisplayLink</strong> apps. <a href="../faq/#qwhyisntworkstationconnectautomaticallyshowingthedesktopafterlocktaskmodeisenabled">Learn more</a>.<br>
 <i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Some EMM systems also require the License Manager service (<code>com.zebra.licensemanagerservice</code>) to be allowlisted. This also is required if blocking "all system apps."</li>
+
+<li>Some EMM systems require the “DisplayLink Desktop (OEM)” (<code>.apk</code>) to be designated as a "system app."  </li>
 
 <li><strong>The address bar on some browsers cannot be edited when a web page is displayed on the Desktop</strong>. This occurs when using ZWC with the lock-down feature of some EMM systems. <strong>REMEDY</strong>: Under "Lock Down" settings in the EMM console, enable the "Allow screen capture while browsing" feature.  </li>
 
@@ -388,6 +390,8 @@
 <h3 id="audio" class="anchor"><a class="heading-anchor" href="#audio"><span></span></a>Audio</h3>
 
 <ul>
+<li><strong>Some audio-player apps close unexpectedly if an audio file is playing when the player app is moved</strong> from the Desktop to the device (or vice versa).</li>
+
 <li><strong>If audio is desired through the speaker on a docked mobile device</strong>, it must be selected manually using the Audio Settings panel.</li>
 
 <li><strong>Increasing audio volume past a certain level sometimes causes a safety warning to be displayed</strong> on the primary (device) screen. Tap "OK" to continue. </li>
@@ -485,6 +489,19 @@
 <h3 id="devicelockingapplogin" class="anchor"><a class="heading-anchor" href="#devicelockingapplogin"><span></span></a>Device Locking, App Log-in</h3>
 
 <ul>
+<li><strong>Changes to SSO support introduced with ZWC 7.1</strong>: 
+
+
+<ul>
+<li><strong>Zebra Identity Guardian SSO is now supported</strong> for device authentication.</li>
+
+<li><strong>Imprivata Guest Mode is now supported</strong>. </li>
+
+<li><strong>The Identity Guardian client app is now required</strong> on all devices to support SSO. <strong><a href="../setup/#configuresso">See Setup guide</a></strong>.</li></ul>
+</li>
+
+<li><strong>When a device is locked and displaying an SSO login screen on its primary display</strong>, the secondary display remains blank until SSO login is completed successfully. </li>
+
 <li><strong>When using Imprivata SSO to log into a device that is configured with an Android lock screen (PIN, password or pattern)</strong>, the Android lock screen appears on the external monitor and the Imprivata SSO log-in screen appears on the device.<i>‡</i>  </li>
 
 <li><strong>After logging in, if the device is locked again while still in the cradle</strong>, the Android lock screen appears on the external monitor. Once cleared, the monitor displays a blue screen until the Imprivata login is cleared on the device.  </li>
@@ -510,7 +527,7 @@
 <li><strong>Log-in and other app activities lacking a display ID</strong> appear on the primary (device) screen by default. To view on the secondary (external) screen, right-click the activity's task-bar icon and select "Move to desktop."</li>
 </ul>
 
-<p><i><font size="1" color="DimGrey"> ‡ Imprivata SSO is not yet supported with ZWC on devices running Android 15.</font></i>   </p>
+<p><i><font size="1" color="DimGrey"> ‡ Imprivata SSO is not supported on tablets running Android 15.</font></i>   </p>
 
 <hr>
 
