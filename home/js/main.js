@@ -624,7 +624,9 @@ function populateDropdown (ddl_ver, ddl_doc) {
     var ddt_2_5_val = ['/guide/about', '/guide/usage', '/guide/setup', '/guide/configuration', '/guide/criteria', '/guide/managed-config'];
     // Device Guardian
     var dg_1_0_text = ['About', 'Quick Start', 'Installation', 'Configuration', 'Device Use', 'Dashboard', 'Access Management', 'APIs', 'FAQ'];
-    var dg_1_0_val = ['/guide/about', '/guide/getstarted', '/guide/setup', '/guide/config', '/guide/use', '/guide/dashboard', '/guide/dgam', '/guide/api', '/guide/faq'];
+    var dg_1_0_val = ['/about', '/getstarted', '/setup', '/config', '/use', '/dashboard', '/dgam', '/api', '/faq'];
+    var dg_2_2_text = ['About', 'Quick Start', 'Installation', 'Configuration', 'Device Use', 'Dashboard', 'APIs', 'FAQ'];
+    var dg_2_2_val = ['/about', '/getstarted', '/setup', '/config', '/use', '/dashboard', '/api', '/faq'];
     // Device Tracker
     var dt_4_0_text = ['About', 'User Roles', 'Install & Administration', 'License', 'Device Management', 'Device Tracking'];
     var dt_4_0_val = ['/guide/about', '/guide/roles', '/guide/setup', '/guide/license', '/guide/mgmt', '/guide/use'];
@@ -860,11 +862,17 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/deviceguardian/1-1':
         case '/deviceguardian/1-2':
         case '/deviceguardian/2-0':
-        case '/deviceguardian/2-2':
-        case '/deviceguardian/2-3':
             ddl_doc.options.length = 0;
             for (i=0; i < dg_1_0_text.length; i++) {
                 createOption(ddl_doc, dg_1_0_text[i], dg_1_0_val[i]);
+            }
+            break;        
+        case '/deviceguardian/2-2':
+        case '/deviceguardian/2-3':
+        case '/deviceguardian/2-4':
+            ddl_doc.options.length = 0;
+            for (i=0; i < dg_2_2_text.length; i++) {
+                createOption(ddl_doc, dg_2_2_text[i], dg_2_2_val[i]);
             }
             break;        
         // Device Tracker
