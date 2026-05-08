@@ -1228,12 +1228,12 @@ function populateDropdown (ddl_ver, ddl_doc) {
             }
             break;
         // Wireless Insights
-        //case '/wireless-insights/latest':
-        //    ddl_doc.options.length = 0;
-        //    for (i=0; i < wi_1_0_text.length; i++) {
-        //        createOption(ddl_doc, wi_1_0_text[i], wi_1_0_val[i]);
-        //    }
-        //    break;
+        case '/wireless-insights/2-0':
+            ddl_doc.options.length = 0;
+            for (i=0; i < wi_1_0_text.length; i++) {
+                createOption(ddl_doc, wi_1_0_text[i], wi_1_0_val[i]);
+            }
+            break;
         
         // Zebra DNA Cloud
         case '/zebradna/1-2':
