@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             AI Data Capture SDK
-                                            3.2
+                                            3.3
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/ai-datacapture/3-2/about">
+                            <a href="/ai-datacapture/3-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-2/setup">
+                            <a href="/ai-datacapture/3-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-2/localizer">
+                            <a href="/ai-datacapture/3-3/localizer">
                                     Localizer
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-2/productrecognition">
+                            <a href="/ai-datacapture/3-3/productrecognition">
                                     Product Recognition
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-2/barcodedecoder">
+                            <a href="/ai-datacapture/3-3/barcodedecoder">
                                     Barcode Decoder
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-2/textocr">
+                            <a href="/ai-datacapture/3-3/textocr">
                                     Text OCR
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-2/camerax">
+                            <a href="/ai-datacapture/3-3/camerax">
                                     CameraX
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-2/search">
+                            <a href="/ai-datacapture/3-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="camerax" class="anchor"><a class="heading-anchor" href="#camerax"><span></span></a>CameraX</h1>
                                     <p>
                                             AI Data Capture SDK
-                                            3.2
+                                            3.3
                                     </p>
                                 </div>
                             </section>                    
@@ -266,7 +266,7 @@
 
 <h2 id="entitytrackeranalyzer" class="anchor"><a class="heading-anchor" href="#entitytrackeranalyzer"><span></span></a>EntityTrackerAnalyzer</h2>
 
-<p><code>EntityTrackerAnalyzer</code> implements the <code>ImageAnalysis.Analyzer</code> interface for real-time detection and tracking of <a href="../entity/">entities</a>. It integrates seamlessly with <code>CameraX</code>, processing image frames using a list of detectors to deliver aggregated entity tracking results. </p>
+<p><code>EntityTrackerAnalyzer</code> implements the <code>ImageAnalysis.Analyzer</code> interface for real-time detection and tracking of <a href="../entity/">entities</a>. It integrates seamlessly with <code>CameraX</code>, processing image frames using a list of detectors to deliver aggregated entity tracking results.</p>
 
 <p>The analyzer efficiently manages image buffers and executes detectors asynchronously, ensuring optimal performance. It also handles coordinate system transformations based on the coordinate system value passed to the constructor.</p>
 
@@ -279,7 +279,7 @@
 
 <li><a href="../productrecognition/#modulerecognizer">ModuleRecognizer</a></li>
 
-<li><a href="../imageattributes/">ImageAttributesDetector</a> </li>
+<li><a href="../imageattributes/">ImageAttributesDetector</a></li>
 </ul>
 
 <p>There are two primary ways for using the <code>EntityTrackerAnalyzer</code>, each designed for different use cases.</p>
@@ -318,7 +318,7 @@
 
 <p>For non-interactive image processing, see <a href="../ppod/#nonguidedppod">Non-Guided PPOD</a>.</p>
 
-<p><strong>Notes:</strong> </p>
+<p><strong>Notes:</strong></p>
 
 <ul>
 <li><strong>Detector Instance:</strong> Only a single instance of each detector type should be passed in to the constructor.</li>
@@ -336,7 +336,7 @@
 
 <h4 id="workflow" class="anchor"><a class="heading-anchor" href="#workflow"><span></span></a>Workflow</h4>
 
-<p>The Guided PPOD workflow integrates with the Android <code>CameraX</code> framework by leveraging the <code>EntityTrackerAnalyzer</code>, which implements the standard <code>ImageAnalysis.Analyzer</code> interface. The process requires initializing the SDK, followed by both the <code>ImageAttributesDetector</code> and the <code>ImageTransformDetector</code>. </p>
+<p>The Guided PPOD workflow integrates with the Android <code>CameraX</code> framework by leveraging the <code>EntityTrackerAnalyzer</code>, which implements the standard <code>ImageAnalysis.Analyzer</code> interface. The process requires initializing the SDK, followed by both the <code>ImageAttributesDetector</code> and the <code>ImageTransformDetector</code>.</p>
 
 <p>Guided PPOD integrates three key components with the Android <code>CameraX</code> API:</p>
 
@@ -381,16 +381,16 @@
 <pre class="prettyprint"><code>AIVisionSDK.getInstance(getApplicationContext()).init();
 </code></pre></li>
 
-<li><p><strong>Initialize Detectors -</strong> Create <code>ImageAttributesDetector</code> and <code>ImageTransformDetector</code> objects with the desired configurations. Both detectors can be initialized in parallel as they are independent of each other. 
+<li><p><strong>Initialize Detectors -</strong> Create <code>ImageAttributesDetector</code> and <code>ImageTransformDetector</code> objects with the desired configurations. Both detectors can be initialized in parallel as they are independent of each other.<br>
 <strong>Important:</strong> Both detectors initialize asynchronously and can be started in parallel. Ensure they are fully initialized before proceeding to the next steps. </p>
 
 <ul>
 <li><p><strong>Initialize <a href="../imageattributes/">ImageAttributesDetector</a> -</strong> Configure specific image attribute metrics to track during real-time camera preview. In this example, enable detection for people visibility and package visibility. Implement proper error handling using the <code>exceptionally()</code> callback on <code>CompletableFuture</code> to handle initialization failures gracefully.</p>
 
-<pre class="prettyprint"><code>// Initialize ImageAttributesDetector with specific image attribute metrics
-ImageAttributesDetector.Settings imageAttributeSettings = new ImageAttributesDetector.Settings();
+<pre class="prettyprint"><code>    // Initialize ImageAttributesDetector with specific image attribute metrics
+    ImageAttributesDetector.Settings imageAttributeSettings = new ImageAttributesDetector.Settings();
 
-// Configure image attribute metrics
+<pre><code>// Configure image attribute metrics
 imageAttributeSettings.configureImageAttributeMetrics(List.of(
     new ImageAttributeMetricValue.Builder(ImageAttributeMetric.ImageTagPeopleVisible)
         .setEnable(true)
@@ -404,20 +404,23 @@ imageAttributeSettings.configureImageAttributeMetrics(List.of(
 ImageAttributesDetector imageAttributesDetector = null;
 
 // Get ImageAttributesDetector
-CompletableFuture&lt;ImageAttributesDetector&gt; future = 
+CompletableFuture&amp;lt;ImageAttributesDetector&amp;gt; future =
     ImageAttributesDetector.getImageAttributesDetector(imageAttributeSettings, imageAttribExecutor);
 
 // Use the future to implement the thenAccept() callback of CompletableFuture
-future.thenAccept(detector -&gt; {
+future.thenAccept(detector -&amp;gt; {
     // Use the ImageAttributesDetector object returned here for detecting image attributes
     imageAttributesDetector = detector;
     Log.d(TAG, "ImageAttributesDetector initialized successfully");
-}).exceptionally(ex -&gt; {
+}).exceptionally(ex -&amp;gt; {
     Log.e(TAG, "ImageAttributesDetector initialization failed", ex);
     return null;
 });
-</code></pre></li>
+</code></pre>
 
+</code></pre>
+
+<ul>
 <li><p><strong>Initialize <a href="../imagetransform">ImageTransformDetector</a> -</strong> Configure the <code>ImageTransformDetector</code> with all available transformation actions. This detector will be used later to blur sensitive information in captured images.</p>
 
 <pre class="prettyprint"><code>// Initialize ImageTransformDetector with all available transformation actions
@@ -440,7 +443,7 @@ transformSettings.configureTransformationActions(descriptor);
 ImageTransformDetector imageTransformDetector = null;
 
 // Get ImageTransformDetector
-CompletableFuture&lt;ImageTransformDetector&gt; transformFuture = 
+CompletableFuture&lt;ImageTransformDetector&gt; transformFuture =
     ImageTransformDetector.getImageTransformDetector(transformSettings, imageTransformExecutor);
 
 // Use the transformFuture to implement the thenAccept() callback of CompletableFuture
@@ -452,7 +455,7 @@ transformFuture.thenAccept(transformDetector -&gt; {
     Log.e(TAG, "ImageTransformDetector initialization failed", ex);
     return null;
 });
-</code></pre></li></ul></li>
+</code></pre></li></ul></li></ul></li>
 
 <li><p><strong>Create EntityTrackerAnalyzer:</strong> Create an <code>EntityTrackerAnalyzer</code> with the <code>ImageAttributesDetector</code>. This analyzer processes camera frames in real-time and provides callbacks with attribute compliance results. The callback checks if all attribute results are compliant, at which point the user can proceed with image capture. This real-time compliance check allows guidance to users to position the camera correctly before capturing the image, ensuring optimal image quality and required content visibility.</p>
 
@@ -477,13 +480,13 @@ transformFuture.thenAccept(transformDetector -&gt; {
 </code></pre></li>
 
 <li><p><strong>Configure Camera and Bind Lifecycle -</strong> Set the <code>EntityTrackerAnalyzer</code> to an <code>ImageAnalysis</code> use case in <code>CameraX</code> and bind it to the lifecycle. This enables real-time frame analysis using the configured detectors. The <code>EntityTrackerAnalyzer</code> is set as the image analyzer for the camera controller. This allows the camera to analyze each frame and return results through the callback configured in Step 3.
-<strong>Alternative Approach:</strong> Instead of using real-time analysis, the user can simply do an image capture regardless of the attribute compliance and run it through the ImageTransformDetector to 
+<strong>Alternative Approach:</strong> Instead of using real-time analysis, the user can simply do an image capture regardless of the attribute compliance and run it through the ImageTransformDetector to
 transform the image and get its attributes.</p>
 
-<pre class="prettyprint"><code>LifecycleCameraController cameraController = new LifecycleCameraController(this);
-cameraController.bindToLifecycle(this);
+<pre class="prettyprint"><code>    LifecycleCameraController cameraController = new LifecycleCameraController(this);
+    cameraController.bindToLifecycle(this);
 
-// Create resolution selector
+<pre><code>// Create resolution selector
 ResolutionSelector resolutionSelector = new ResolutionSelector.Builder()
     .setAspectRatioStrategy(
         new AspectRatioStrategy(
@@ -508,6 +511,8 @@ cameraController.setImageAnalysisAnalyzer(
     cameraExecutor,
     (ImageAnalysis.Analyzer) entityTrackerAnalyzer
 );
+</code></pre>
+
 </code></pre></li>
 
 <li><p><strong>Capture and Transform Image -</strong> The user can capture the image at any point. They can either wait until all attributes are compliant to trigger the capture, or they can trigger it at will, even if some attributes are non-compliant. Once the user captures the image, it is transformed using <code>ImageTransformDetector</code>. For the Guided PPOD use case, the <code>ImageAttributeResult</code> for the transformed image is also provided.</p>
@@ -590,16 +595,16 @@ cameraController.takePicture(
 <li><p><strong>Resource Cleanup:</strong> After the Guided PPOD use case is complete, dispose of the detectors and shutdown executors to free up resources. This prevents memory leaks and ensures proper resource management. This method should be called in your Activity's <code>onDestroy()</code> or when the feature is no longer needed.
 <strong>Important:</strong> Always call <code>dispose()</code> on detector instances and <code>shutdown()</code> on executors when they are no longer needed. Failure to do so may result in resource leaks.</p>
 
-<pre class="prettyprint"><code>protected void dispose() {
-    imageAttribExecutor.shutdown();
-    if (imageAttributesDetector != null) {
-        imageAttributesDetector.dispose();
+<pre class="prettyprint"><code>    protected void dispose() {
+        imageAttribExecutor.shutdown();
+        if (imageAttributesDetector != null) {
+            imageAttributesDetector.dispose();
+        }
+        imageTransformExecutor.shutdown();
+        if (imageTransformDetector != null) {
+            imageTransformDetector.dispose();
+        }
     }
-    imageTransformExecutor.shutdown();
-    if (imageTransformDetector != null) {
-        imageTransformDetector.dispose();
-    }
-}
 </code></pre></li>
 </ol>
 
@@ -607,7 +612,7 @@ cameraController.takePicture(
 
 <h3 id="generalentitytracking" class="anchor"><a class="heading-anchor" href="#generalentitytracking"><span></span></a>General Entity Tracking</h3>
 
-<p>This guide demonstrates how to set up a flexible, real-time tracking system for use cases like Augmented Reality (AR), security, or asset tracking. It provides a step-by-step guide to setting up a barcode detection system using the <a href="../barcodedecoder/">Barcode Decoder</a>, <a href="../textocr/">Text OCR</a>, <a href="../productrecognition/">Product Recognition</a>, and <a href="#entitytrackeranalyzer">EntityTrackerAnalyzer</a>. </p>
+<p>This guide demonstrates how to set up a flexible, real-time tracking system for use cases like Augmented Reality (AR), security, or asset tracking. It provides a step-by-step guide to setting up a barcode detection system using the <a href="../barcodedecoder/">Barcode Decoder</a>, <a href="../textocr/">Text OCR</a>, <a href="../productrecognition/">Product Recognition</a>, and <a href="#entitytrackeranalyzer">EntityTrackerAnalyzer</a>.</p>
 
 <ol>
 <li><p><strong>Initialize AI Data Capture SDK -</strong> Initialize the AI Data Capture SDK to enable Zebra-specific features in the application. This initialization should be performed in <code>MainActivity</code>. <em>Ensure this initialization step is completed <u>before</u> making any other calls to the AI Data Capture SDK.</em> If the initialization fails, it indicates a critical problem, and the application should not proceed further.</p>
@@ -658,17 +663,17 @@ catch (e: Exception) {
 
 <li><p><strong>Initialize Text OCR -</strong> Configure the TextOCR settings and obtain an instance:</p>
 
-<pre class="prettyprint">try {
-    val textOCRSettings = TextOCR.Settings("text-ocr-recognizer") 
+<p>try {
+    val textOCRSettings = TextOCR.Settings("text-ocr-recognizer") </p>
 
-<pre><code>// (Optional) Configure settings as needed, e.g. runtime processor order, dims, etc. 
+<pre class="prettyprint"><code>// (Optional) Configure settings as needed, e.g. runtime processor order, dims, etc. 
 TextOCR.getTextOCR(textOCRSettings, ocrExecutor) 
     .thenAccept { ocrInstance -&gt; 
         textOCR = ocrInstance 
         ocrAnalyzer = TextOCRAnalyzer(callback, ocrInstance) 
         } 
 
-<pre><code>.exceptionally { ex -&amp;gt; 
+<pre><code>.exceptionally { ex -&amp;gt;
     Log.e(TAG, "TextOCR initialization failed: ${ex.message}", ex) 
     null 
 } 
@@ -676,24 +681,23 @@ TextOCR.getTextOCR(textOCRSettings, ocrExecutor)
 
 </code></pre>
 
-} 
+<p>} 
 catch (e: Exception) { 
     Log.e(TAG, "TextOCR initialization exception: ${e.message}", e) 
-} 
-</pre></li>
+} </p></li>
 
 <li><p><strong>Initialize Product Recognition -</strong> Configure the product recognition settings and obtain an instance:</p>
 
-<pre class="prettyprint">try { 
+<pre class="prettyprint"><code>try { 
     val moduleRecognizerSettings = ModuleRecognizer.Settings("product-and-shelf-recognizer") 
 
 <pre><code>ModuleRecognizer.getModuleRecognizer(moduleRecognizerSettings, productExecutor) 
-    .thenAccept { recognizerInstance -&gt; 
+    .thenAccept { recognizerInstance -&amp;gt;
         moduleRecognizer = recognizerInstance 
         productRecognitionAnalyzer = ProductRecognitionAnalyzer(callback, recognizerInstance) 
     } 
 
-<pre><code>.exceptionally { ex -&amp;gt; 
+<pre><code>.exceptionally { ex -&amp;amp;gt;
     Log.e(TAG, "Product Recognition initialization failed: ${ex.message}", ex) 
     null 
 } 
@@ -704,7 +708,7 @@ catch (e: Exception) {
 } catch (e: Exception) { 
     Log.e(TAG, "Product Recognition initialization exception: ${e.message}", e) 
 } 
-</pre></li></ul></li>
+</code></pre></li></ul></li>
 
 <li><p><strong>Create <code>EntityTrackerAnalyzer</code> -</strong> This is used for processing image frames.</p>
 
@@ -765,10 +769,9 @@ entityTrackerAnalyzer = EntityTrackerAnalyzer(listOf(moduleRecognizer), ImageAna
 }
 </code></pre></li>
 
-<li><p><strong>Set <code>EntityTrackerAnalyzer</code> as the <code>ImageAnalysis.Analyzer</code>:</strong></p></li>
-</ol>
+<li><p><strong>Set <code>EntityTrackerAnalyzer</code> as the <code>ImageAnalysis.Analyzer</code>:</strong></p>
 
-<pre class="prettyprint">// EntityTrackerAnalyzer Usecase 
+<pre class="prettyprint"><code>// EntityTrackerAnalyzer Usecase 
 val resolutionSelector = ResolutionSelector.Builder() 
     .setAspectRatioStrategy( 
         AspectRatioStrategy( 
@@ -795,13 +798,11 @@ imageAnalysis?.setAnalyzer(
     cameraExecutor, 
     entityTrackerAnalyzer as ImageAnalysis.Analyzer 
 ) 
-</pre>
+</code></pre></li>
 
-<ol>
-<li><strong>Configure the Camera Lifecycle -</strong> Integrate CameraX with the activity’s lifecycle.</li>
-</ol>
+<li><p><strong>Configure the Camera Lifecycle -</strong> Integrate CameraX with the activity’s lifecycle.</p>
 
-<pre class="prettyprint">val cameraProviderFuture = ProcessCameraProvider.getInstance(application) 
+<pre class="prettyprint"><code>val cameraProviderFuture = ProcessCameraProvider.getInstance(application) 
 cameraProviderFuture.addListener({ 
     try { 
         cameraProvider = cameraProviderFuture.get() 
@@ -832,9 +833,8 @@ provider.bindToLifecycle(
     preview, 
     imageAnalysis 
 ) 
-</pre>
+</code></pre></li>
 
-<ol>
 <li><p><strong>Resource Cleanup After Usage -</strong> Properly dispose of resources after use to prevent memory leaks and ensure that all resources are released after use:</p>
 
 <p>Barcode Decoder:</p>
@@ -2468,7 +2468,7 @@ A Matrix representing the transformation from sensor to view coordinates.</p
 <li>Access source code for these demos in the <a href="https://github.com/zebradevs/AISuite_Android_Samples/tree/main/AISuite_Demos">ZebraDevs github repo</a>, including the <a href="https://github.com/zebradevs/AISuite_Android_Samples/tree/main/AISuite_Demos/AI_Barcode_Finder">AI Barcode Finder</a> demo source, to easily build these capabilities into your application.</li></ul>
 </li>
 
-<li><strong>Refer to the Guided PPOD sample app's <a href="https://github.com/ZebraDevs/AISuite_Android_Samples">source code</a></strong> for a demonstration of <code>EntityTrackerAnalyzer</code> being used with two PPOD Detectors and AI Models to implement the guided use case. </li>
+<li><strong>Refer to the Guided PPOD sample app's <a href="https://github.com/ZebraDevs/AISuite_Android_Samples">source code</a></strong> for a demonstration of <code>EntityTrackerAnalyzer</code> being used with two PPOD Detectors and AI Models to implement the guided use case.</li>
 </ul>
 
 <hr>
