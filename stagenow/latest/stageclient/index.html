@@ -70,7 +70,7 @@
                     <ul class="nav navbar-nav">
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <li class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 5.20
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> StageNow 5.21
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
                                 <li><a onclick="changeVersion('5-10','2-2','/stagenow/2-2/about')">StageNow 2.2</a></li>
@@ -87,42 +87,42 @@
 
 
                         <li>
-                            <a href="/stagenow/5-20/about">
+                            <a href="/stagenow/5-21/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/gettingstarted">
+                            <a href="/stagenow/5-21/gettingstarted">
                                     Start-up
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/stagingprofiles">
+                            <a href="/stagenow/5-21/stagingprofiles">
                                     Profiles
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/ProfileWizards">
+                            <a href="/stagenow/5-21/ProfileWizards">
                                     Wizards
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/settingconfig">
+                            <a href="/stagenow/5-21/settingconfig">
                                     Settings
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/settingtypes">
+                            <a href="/stagenow/5-21/settingtypes">
                                     Setting Types
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/stagingguides">
+                            <a href="/stagenow/5-21/stagingguides">
                                     Guides
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/troubleshooting">
+                            <a href="/stagenow/5-21/troubleshooting">
                                     Troubleshoot
                             </a>
                         </li>
@@ -132,7 +132,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/download">
+                            <a href="/stagenow/5-21/download">
                                     <i class="fa fa-download"></i>
                             </a>
                         </li>
@@ -142,7 +142,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/stagenow/5-20/search">
+                            <a href="/stagenow/5-21/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -266,7 +266,7 @@
                                     <h1 id="device-staging" class="anchor"><a class="heading-anchor" href="#device-staging"><span></span></a>Device Staging</h1>
                                     <p>
                                             StageNow
-                                            5.20
+                                            5.21
                                     </p>
                                 </div>
                             </section>                    
@@ -287,7 +287,8 @@
   <p><strong><code>IMPORTANT:</code></strong> Use this guide only <u><i>after</i></u> one or more <a href="../stagingprofiles">Profiles</a> have been created. </p>
 </blockquote>
 
-<p><strong>NOTE</strong>: Some older target devices come with the Rapid Deployment Client instead of the StageNow client app. This client can be used to upgrade to StageNow, but older OS versions might provide reduced capabilities. For more information, see the <a href="#rapiddeploymentclient">Rapid Deployment Client section</a> later in this guide. </p>
+<!-- 4/13/26 removed per TUT-126832
+**NOTE**: Some older target devices come with the Rapid Deployment Client instead of the StageNow client app. This client can be used to upgrade to StageNow, but older OS versions might provide reduced capabilities. For more information, see the [Rapid Deployment Client section](#rapiddeploymentclient) later in this guide.  -->
 
 <h4 id="alsosee" class="anchor"><a class="heading-anchor" href="#alsosee"><span></span></a>Also see:</h4>
 
@@ -300,7 +301,7 @@
 </ul>
 
 <!-- 
-http://zebra-stage.github.io/stagenow/5-20/Profiles/wipedevice/#setupwizardmanualbypass
+http://zebra-stage.github.io/stagenow/5-21/Profiles/wipedevice/#setupwizardmanualbypass
  -->
 
 <hr>
@@ -724,26 +725,25 @@ Select Dismiss on any screen to dismiss the help.
 -----
 -->
 
-<h2 id="rapiddeploymentclient" class="anchor"><a class="heading-anchor" href="#rapiddeploymentclient"><span></span></a>Rapid Deployment Client</h2>
+<!-- 4/13/26 removed per TUT-126832
+## Rapid Deployment Client
 
-<p>Devices running Jelly Bean and some running older versions of KitKat include the Rapid Deployment (RD) Client instead of StageNow. Such devices can scan a StageNow-generated barcode with the RD Client. This initiates a network connection for installing MX and the StageNow Client on the device and launches StageNow and the specified settings Profile. However, older OS versions might reduce available device functions and/or StageNow features.</p>
+Devices running Jelly Bean and some running older versions of KitKat include the Rapid Deployment (RD) Client instead of StageNow. Such devices can scan a StageNow-generated barcode with the RD Client. This initiates a network connection for installing MX and the StageNow Client on the device and launches StageNow and the specified settings Profile. However, older OS versions might reduce available device functions and/or StageNow features.
 
-<p>Specifically, to stage a device that includes RD Client:</p>
+Specifically, to stage a device that includes RD Client:
 
-<ol>
-<li><p>The administrator uses the StageNow Workstation Tool to generate RD or StageNow profile barcode(s).</p></li>
+1. The administrator uses the StageNow Workstation Tool to generate RD or StageNow profile barcode(s).
 
-<li><p>The operator uses the device to scan the barcode(s). This downloads and installs other device components, including the MX Framework and the StageNow Client.</p></li>
+2. The operator uses the device to scan the barcode(s). This downloads and installs other device components, including the MX Framework and the StageNow Client.
 
-<li><p>The device reboots, and the StageNow Client automatically launches and applies Profile settings to complete the staging process. </p></li>
-</ol>
+3. The device reboots, and the StageNow Client automatically launches and applies Profile settings to complete the staging process. 
 
-<blockquote>
-  <p>Note: <br>
-  This SD Client staging process does not apply to re-branded devices.</p>
-</blockquote>
+>Note:  
+>This SD Client staging process does not apply to re-branded devices.
 
-<p><img alt="image" style="height:350px" src="../images/Client_RDclient.png"></p><p></p>
+  <img alt="image" style="height:350px" src="../images/Client_RDclient.png"/>
+
+ --><p></p>
                                         
 
 
