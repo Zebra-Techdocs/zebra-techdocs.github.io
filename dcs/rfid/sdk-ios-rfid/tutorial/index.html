@@ -137,7 +137,7 @@
 												
 
 													<h2 id="pair-by-scan" class="anchor"><a class="heading-anchor" href="#ImplementsrfidISdkApiDelegateProtocol"><span></span></a>Implement <em>srfidISdkApiDelegateProtocol</h2>
-													<p align="justify">The SDK supports a set of asynchronous notifications to  inform the application about RFID reader related events (e.g. reception of tag  data, starting of radio operation etc) and connectivity related events (e.g.  appearance of RFID reader). All supported callbacks are defined by <em>srfidISdkApiDelegate</em> Objective C  protocol. In order to receive asynchronous notifications from the SDK the  application shall perform following steps.</p>
+													<p align="justify">The SDK supports a set of asynchronous notifications to  inform the application about RFID reader related events (e.g. reception of tag  data, starting of radio operation etc.) and connectivity related events (e.g.  appearance of RFID reader). All supported callbacks are defined by <em>srfidISdkApiDelegate</em> Objective C  protocol. In order to receive asynchronous notifications from the SDK the  application shall perform the following steps.</p>
 													<p align="justify">Step 1: create an object that  implements <em>srfidISdkApiDelegateProtocol</em></p>
 													
 													<p align="justify">The ViewController.h  class</p>
@@ -159,50 +159,50 @@
 @implementation ViewController
 
 - (void)srfidEventBatteryNotity:(int)readerID aBatteryEvent:(srfidBatteryEvent *)batteryEvent {
-    // &lt;#code#>
+     // Add implementation here.
 }
 
 - (void)srfidEventCommunicationSessionEstablished:(srfidReaderInfo *)activeReader {
-    NSLog(@"Reader Connected ");
+    NSLog(@"Reader Connected");
 }
 
 
 - (void)srfidEventCommunicationSessionTerminated:(int)readerID {
-    NSLog(@"Reader Disconnected ");
+    NSLog(@"Reader Disconnected");
 }
 
 - (void)srfidEventMultiProximityNotify:(int)readerID aTagData:(srfidTagData *)tagData {
-    // &lt;#code#>
+    // Add implementation here.
 }
 
 - (void)srfidEventProximityNotify:(int)readerID aProximityPercent:(int)proximityPercent {
-    // &lt;#code#>
+    // Add implementation here.
 }
 
 - (void)srfidEventReadNotify:(int)readerID aTagData:(srfidTagData *)tagData {
-    // &lt;#code#>
+    // Add implementation here.
 }
 
 - (void)srfidEventReaderAppeared:(srfidReaderInfo *)availableReader {
-    // &lt;#code#>
+    // Add implementation here.
 }
 
 - (void)srfidEventReaderDisappeared:(int)readerID {
-    // &lt;#code#>
+    // Add implementation here.
 }
 
 - (void)srfidEventStatusNotify:(int)readerID aEvent:(SRFID_EVENT_STATUS)event aNotification:(id)notificationData {
-    // &lt;#code#>
+    // Add implementation here.
 }
 
 - (void)srfidEventTriggerNotify:(int)readerID aTriggerEvent:(SRFID_TRIGGEREVENT)triggerEvent {
-    // &lt;#code#>
+   // Add implementation here.
 }
 
 @end
 </code></pre>
 													
-                                                    <p align="justify">Step 2: register the created object as notification receiver via <em>srfidSetDelegate</em> API function.</p>
+                                                    <p align="justify">Step 2: register the created object as a notification receiver via <em>srfidSetDelegate</em> API function.</p>
 
 <pre class="prettyprint"><code>
 -(void)registerOfcallbackInterfaceWithSDK {
@@ -252,11 +252,11 @@
 													
 													<h2 id="pair-by-scan" class="anchor"><a class="heading-anchor" href="#Get available readers"><span></span></a>Get available readers</h2>
 													
-													<p align="justify">Following terms are introduced to distinguish RFID readers  that are seen by the SDK via OS API and RFID readers with that the SDK has  established a logical communication session and thus is able to interact. A  RFID reader is called available if it is already connected to the iOS device  via Bluetooth. Such RFID reader is seen by the SDK and the SDK can establish a  logical communication session to interact with the RFID reader. If a logical  communication session is established with already connected via Bluetooth RFID  reader the RFID reader is called active.</p>
+													<p align="justify">Following terms are introduced to distinguish RFID readers  that are seen by the SDK via OS API and RFID readers with which the SDK has established a logical communication session and thus is able to interact. A  RFID reader is called available if it is already connected to the iOS device  via Bluetooth. Such RFID reader is seen by the SDK and the SDK can establish a  logical communication session to interact with the RFID reader. If a logical  communication session is established with already connected via Bluetooth RFID  reader the RFID reader is called active.</p>
                                                   <p align="justify">The SDK supports simultaneous interaction with multiple  active RFID readers. To distinguish various RFID readers the SDK assigns the  unique integer identifier for each RFID reader when it becomes available first  time. </p>
                                                   <p align="justify">The SDK maintains internal lists of active and available  RFID readers. Following example demonstrates reception of lists of active and  available RFID readers from the SDK. </p>
 <pre class="prettyprint"><code>
--(void)getAvialableReaderList {
+-(void)getAvailableReaderList {
     /* allocate an array for storage of list of available RFID readers */
     NSMutableArray *available_readers = [[NSMutableArray alloc] init];
 
@@ -277,7 +277,7 @@
     for (srfidReaderInfo *info in readers) {
         /* print the information about RFID reader represented by srfidReaderInfo object */
         NSLog(@"RFID reader is %@: ID = %d name = %@\n", (([info isActive] == YES) ? @"active" : @"available"), [info getReaderID], [info getReaderName]);
-        lable_reader_list.text = [info getReaderName];
+        label_reader_list.text = [info getReaderName];
         readerId = [info getReaderID];
     }
 }
@@ -301,7 +301,7 @@
     srfidReaderVersionInfo *version_info = [[srfidReaderVersionInfo alloc] init];
 
 	/* retrieve version related information */
-	SRFID_RESULT result = [_apiInstance srfidGetReaderVersionInfo:_connectedRederID aReaderVersionInfo:&version_info aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidGetReaderVersionInfo:_connectedReaderID aReaderVersionInfo:&version_info aStatusMessage:&error_response];
 
  	if ((result != SRFID_RESULT_RESPONSE_TIMEOUT) && (result != SRFID_RESULT_FAILURE))
 	{
@@ -317,7 +317,7 @@
 	}
 	if (SRFID_RESULT_READER_NOT_AVAILABLE == result) {
       NSLog(@"RFID reader is not available\n");
-	  textView_reader_information.text = @"RFID readernot available";
+	  textView_reader_information.text = @"RFID reader not available";
 	}
 }
 
@@ -340,7 +340,7 @@
     /* an object for storage of error response received from RFID reader */
 	NSString *error_response = nil;
 	/* retrieve version related information */
-	SRFID_RESULT result = [_apiInstance srfidGetReaderVersionInfo:_connectedRederID aReaderVersionInfo:&version_info aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidGetReaderVersionInfo:_connectedReaderID aReaderVersionInfo:&version_info aStatusMessage:&error_response];
 
     if ((result != SRFID_RESULT_RESPONSE_TIMEOUT) && (result != SRFID_RESULT_FAILURE)) {
         NSLog(@"Time out or Failure");
@@ -354,7 +354,7 @@
     }
     if (SRFID_RESULT_READER_NOT_AVAILABLE == result) {
         NSLog(@"RFID reader is not available\n");
-        textView_reader_information.text = @"RFID readernot available";
+        textView_reader_information.text = @"RFID reader not available";
     }
 }
  </code></pre>
@@ -392,7 +392,7 @@
 
     /* retrieve capabilities information */
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
-    srfid_result = [_apiInstance srfidGetReaderCapabilitiesInfo:_connectedRederID aReaderCapabilitiesInfo:&capabilities aStatusMessage:&error_response];
+    srfid_result = [apiInstance srfidGetReaderCapabilitiesInfo:_connectedReaderID aReaderCapabilitiesInfo:&capabilities aStatusMessage:&error_response];
 
     if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
     {
@@ -419,7 +419,7 @@
 </code></pre>
 													
 <h2 id="pair-by-scan" class="anchor"><a class="heading-anchor" href="#Knowing Supported Regions"><span></span></a>Knowing Supported Regions</h2>
-<p align="justify">The RFID reader could be configured to operate in a various countries. The SDK provides an ability to retrieve the list of regions supported by a particular active RFID reader. The list of supported regions could be retrieved via <em>srfidGetSupportedRegions</em> API function as demonstrated in the following example.</p>
+<p align="justify">The RFID reader could be configured to operate in various countries. The SDK provides an ability to retrieve the list of regions supported by a particular active RFID reader. The list of supported regions could be retrieved via <em>srfidGetSupportedRegions</em> API function as demonstrated in the following example.</p>
 	
 <pre class="prettyprint"><code>
 -(void)getSupportRegion {
@@ -429,7 +429,7 @@
     NSString *error_response = nil;
 
     /* retrieve supported regions */
-    SRFID_RESULT result = [_apiInstance srfidGetSupportedRegions:_connectedRederID aSupportedRegions:&regions aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidGetSupportedRegions:_connectedReaderID aSupportedRegions:&regions aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         /* print supported regions information */
         NSLog(@"Number of supported regions: %lu\n", (unsigned long)[regions count]);
@@ -437,7 +437,6 @@
         {
   			NSLog(@"Regions [%@] is supported: %@\n", [info getRegionName],  [info getRegionCode]);
         }
-		NSString * result = [[regionsDetatilsArray valueForKey:@"description"] componentsJoinedByString:@"\n"];
     }
 	else if (SRFID_RESULT_RESPONSE_ERROR == result) 
     {
@@ -449,7 +448,7 @@
     }
 	else if (SRFID_RESULT_READER_NOT_AVAILABLE == result) 
     {
-		NSLog(@"RFID reader with id = %d is not available\n", _connectedRederID);
+		NSLog(@"RFID reader with id = %d is not available\n", _connectedReaderID);
     }
     else 
     {
@@ -459,7 +458,7 @@
 }
 </code></pre>
 					
-					<p align="justify">As the RFID reader could be configured to operate on a particular radio channels in some of countries the SDK provides an ability to retrieve the detailed information regarding one of regions supported by a particular active RFID reader. The detailed information includes a set of channel supported in the region and allowance of hopping configuration. This information could be retrieved via srfidGetRegionInfo API function as demonstrated in the following example</p>
+					<p align="justify">As the RFID reader could be configured to operate on a particular radio channels in some of countries the SDK provides an ability to retrieve the detailed information regarding one of regions supported by a particular active RFID reader. The detailed information includes a set of channels supported in the region and allowance of hopping configuration. This information could be retrieved via srfidGetRegionInfo API function as demonstrated in the following example</p>
 													
 <pre class="prettyprint"><code>
 -(void)getSupportChannelListForGivenRegion {
@@ -470,7 +469,7 @@
     /* an object for storage of error response received from RFID reader */
     NSString *error_response = nil;
     /* retrieve detailed information about region specified by "USA" region code */
-    SRFID_RESULT result = [_apiInstance srfidGetRegionInfo:_connectedRederID aRegionCode:@"AUS" aSupportedChannels:&channels aHoppingConfigurable:&hopping aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidGetRegionInfo:_connectedReaderID aRegionCode:@"AUS" aSupportedChannels:&channels aHoppingConfigurable:&hopping aStatusMessage:&error_response];
 
     if (SRFID_RESULT_SUCCESS == result) {
         /* print retrieved detailed information */
@@ -492,7 +491,7 @@
     }
 	else if (SRFID_RESULT_READER_NOT_AVAILABLE == result) 
     {
-	 NSLog(@"RFID reader with id = %d is not available\n", _connectedRederID);
+	 NSLog(@"RFID reader with id = %d is not available\n", _connectedReaderID);
     }
     else 
     {
@@ -503,7 +502,7 @@
 				
  </code></pre>
 				<h2 id="pair-by-scan" class="anchor"><a class="heading-anchor" href="Knowing  Supported Link Profiles"><span></span></a>Knowing  Supported Link Profiles</a></h2>
-				<p align="justify">An antenna of the RFID reader could be configured to operate in various RF modes (link profiles). The SDK provides an ability to retrieved the list of link profiles (RF modes) supported by a particular active RFID reader. The list of supported link profiles could be retrieved via <em>srfidGetSupportedLinkProfiles</em> API function as demonstrated in the following example.</p>
+				<p align="justify">An antenna of the RFID reader could be configured to operate in various RF modes (link profiles). The SDK provides an ability to retrieve the list of link profiles(RF modes) supported by a particular active RFID reader. The list of supported link profiles could be retrieved via <em>srfidGetSupportedLinkProfiles</em> API function as demonstrated in the following example.</p>
                 <pre class="prettyprint"><code>	
                     
 -(void)getSupportLinkProfile {
@@ -513,7 +512,7 @@
     /* an object for storage of error response received from RFID reader */
     NSString *error_response = nil;
     /* retrieve supported link profiles */
-    SRFID_RESULT result = [_apiInstance srfidGetSupportedLinkProfiles:_connectedRederID aLinkProfilesList:&profiles aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidGetSupportedLinkProfiles:_connectedReaderID aLinkProfilesList:&profiles aStatusMessage:&error_response];
 
     if (SRFID_RESULT_SUCCESS == result) {
         /* print retrieved information about supported link profiles */
@@ -537,7 +536,7 @@
         NSLog(@"Timeout occurs during communication with RFID reader\n");
     }
     else if (SRFID_RESULT_READER_NOT_AVAILABLE == result) {
-        NSLog(@"RFID reader with id = %d is not available\n", _connectedRederID);
+        NSLog(@"RFID reader with id = %d is not available\n", _connectedReaderID);
     }
     else {
         NSLog(@"Request failed\n");
@@ -554,7 +553,7 @@
     /* subscribe for battery related events */
 	[apiInstance srfidSubsribeForEvents:SRFID_EVENT_MASK_BATTERY];
 	/* cause RFID reader to generate asynchronous battery status notification */
-	SRFID_RESULT result = [apiInstance srfidRequestBatteryStatus:connectedReaderId];
+	SRFID_RESULT result = [apiInstance srfidRequestBatteryStatus:readerID];
 
 	if (SRFID_RESULT_SUCCESS == result) {
  		NSLog(@"Request succeed\n");
@@ -617,7 +616,7 @@
     /* an object for storage of error response received from RFID reader */
 	NSString *error_response = nil;
     /* retrieve antenna configuration */
-	SRFID_RESULT result = [_apiInstance srfidGetAntennaConfiguration:_connectedRederID aAntennaConfiguration:&antenna_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidGetAntennaConfiguration:_connectedReaderID aAntennaConfiguration:&antenna_cfg aStatusMessage:&error_response];
 
 	if (SRFID_RESULT_SUCCESS == result) {
 	/* antenna configuration received */
@@ -636,7 +635,7 @@
     }
 	else if (SRFID_RESULT_READER_NOT_AVAILABLE == result) 
     {
-	    NSLog(@"RFID reader with id = %d is not available\n", _connectedRederID);
+	    NSLog(@"RFID reader with id = %d is not available\n", _connectedReaderID);
     }
 	else 
     {
@@ -660,7 +659,7 @@
     /* allocate object for storage of link profiles information */
 	NSMutableArray *profiles = [[NSMutableArray alloc] init];
     /* retrieve supported link profiles */
-	SRFID_RESULT result  = [_apiInstance srfidGetSupportedLinkProfiles:_connectedRederID aLinkProfilesList:&profiles aStatusMessage:&error_response];
+	SRFID_RESULT result  = [apiInstance srfidGetSupportedLinkProfiles:_connectedReaderID aLinkProfilesList:&profiles aStatusMessage:&error_response];
 
     if (SRFID_RESULT_SUCCESS == result) 
     {
@@ -678,7 +677,7 @@
     srfidReaderCapabilitiesInfo *capabilities = [[srfidReaderCapabilitiesInfo alloc] init];
 
     /* retrieve capabilities information */
-	result = [_apiInstance srfidGetReaderCapabilitiesInfo:_connectedRederID aReaderCapabilitiesInfo:&capabilities aStatusMessage:&error_response];
+	result = [apiInstance srfidGetReaderCapabilitiesInfo:_connectedReaderID aReaderCapabilitiesInfo:&capabilities aStatusMessage:&error_response];
 	if (SRFID_RESULT_SUCCESS == result) 
     {
  	    power = [capabilities getMinPower];
@@ -692,7 +691,7 @@
 	[antenna_cfg setDoSelect:NO];
  	error_response = nil;
 	/* set antenna configuration */
-	result = [_apiInstance srfidSetAntennaConfiguration:_connectedRederID aAntennaConfiguration:antenna_cfg aStatusMessage:&error_response];
+	result = [apiInstance srfidSetAntennaConfiguration:_connectedReaderID aAntennaConfiguration:antenna_cfg aStatusMessage:&error_response];
 
 	if (SRFID_RESULT_SUCCESS == result) 
     {
@@ -709,7 +708,7 @@
 	}
 	else if (SRFID_RESULT_READER_NOT_AVAILABLE == result) 
     {
-	  NSLog(@"RFID reader with id = %d is not available\n", _connectedRederID);
+	  NSLog(@"RFID reader with id = %d is not available\n", _connectedReaderID);
 	}
 	else 
     {
@@ -741,7 +740,7 @@
 	NSString *error_response = nil;
 
     /* retrieve singulation configuration */
-	SRFID_RESULT result = [_apiInstance srfidGetSingulationConfiguration:_connectedRederID aSingulationConfig:&singulation_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidGetSingulationConfiguration:_connectedReaderID aSingulationConfig:&singulation_cfg aStatusMessage:&error_response];
 	if (SRFID_RESULT_SUCCESS == result) {
         /* singulation configuration received */
 	    NSLog(@"Tag population: %d\n", [singulation_cfg getTagPopulation]);
@@ -806,7 +805,7 @@
 	[singulation_cfg setInventoryState:SRFID_INVENTORYSTATE_A];
 	error_response = nil;
 	/* set updated singulation configuration */
-	SRFID_RESULT result = [_apiInstance srfidSetSingulationConfiguration:_connectedRederID aSingulationConfig:singulation_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidSetSingulationConfiguration:_connectedReaderID aSingulationConfig:singulation_cfg aStatusMessage:&error_response];
 	if (SRFID_RESULT_SUCCESS == result) 
     {
 	    /* singulation configuration applied successfully */
@@ -822,7 +821,7 @@
 	}
 	else if (SRFID_RESULT_READER_NOT_AVAILABLE == result) 
     {
-	     NSLog(@"RFID reader with id = %d is not available\n", _connectedRederID);
+	     NSLog(@"RFID reader with id = %d is not available\n", _connectedReaderID);
 	}
 	else
     {
@@ -868,7 +867,7 @@
     /* an object for storage of error response received from RFID reader */
 	NSString *error_response = nil;
     /* retrieve start trigger parameters */
-	SRFID_RESULT result = [_apiInstance srfidGetStartTriggerConfiguration:_connectedRederID aStartTriggeConfig:&start_trigger_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidGetStartTriggerConfiguration:_connectedReaderID aStartTriggeConfig:&start_trigger_cfg aStatusMessage:&error_response];
 
 	if (SRFID_RESULT_SUCCESS == result) 
     {
@@ -884,14 +883,14 @@
 	}
 }
 
--(void)getStoptTrigger 
+-(void)getStopTrigger 
 {
 	//stop
 	NSString *error_response = nil;
     /* allocate object for storage of start trigger settings */
 	srfidStopTriggerConfig *stop_trigger_cfg = [[srfidStopTriggerConfig alloc] init];
     /* retrieve stop trigger parameters */
-	SRFID_RESULT result = [_apiInstance srfidGetStopTriggerConfiguration:_connectedRederID aStopTriggeConfig:&stop_trigger_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidGetStopTriggerConfiguration:_connectedReaderID aStopTriggeConfig:&stop_trigger_cfg aStatusMessage:&error_response];
 
     if (SRFID_RESULT_SUCCESS == result) 
     {
@@ -941,7 +940,7 @@
 	[stop_trigger_cfg setStopOnAccessCount:NO];
 
     /* set stop trigger parameters */
-	SRFID_RESULT result = [_apiInstance srfidSetStopTriggerConfiguration:_connectedRederID aStopTriggeConfig:stop_trigger_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidSetStopTriggerConfiguration:_connectedReaderID aStopTriggeConfig:stop_trigger_cfg aStatusMessage:&error_response];
 	if (SRFID_RESULT_SUCCESS == result) 
     {
         /* stop trigger configuration applied */
@@ -968,7 +967,7 @@
 	[start_trigger_cfg setRepeatMonitoring:YES];
 	[start_trigger_cfg setStartDelay:0];
     /* set start trigger parameters */
-	SRFID_RESULT result = [_apiInstance srfidSetStartTriggerConfiguration:_connectedRederID aStartTriggeConfig:start_trigger_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidSetStartTriggerConfiguration:_connectedReaderID aStartTriggeConfig:start_trigger_cfg aStatusMessage:&error_response];
 	
     if (SRFID_RESULT_SUCCESS == result) 
     {
@@ -1007,7 +1006,7 @@
     /* an object for storage of error response received from RFID reader */
 	NSString *error_response = nil;
     /* retrieve tag report parameters */
-	SRFID_RESULT result = [_apiInstance srfidGetTagReportConfiguration:_connectedRederID aTagReportConfig:&report_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidGetTagReportConfiguration:_connectedReaderID aTagReportConfig:&report_cfg aStatusMessage:&error_response];
 	
     if (SRFID_RESULT_SUCCESS == result) 
     {
@@ -1041,7 +1040,7 @@
 	[report_cfg setIncLastSeenTime:NO];
 
     /* set tag report parameters */
-	SRFID_RESULT result = [_apiInstance srfidSetTagReportConfiguration:_connectedRederID aTagReportConfig:report_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidSetTagReportConfiguration:_connectedReaderID aTagReportConfig:report_cfg aStatusMessage:&error_response];
 	if (SRFID_RESULT_SUCCESS == result) 
     {
         /* tag report configuration applied */
@@ -1080,7 +1079,7 @@
 	NSString *error_response = nil;
 
     /* retrieve regulatory parameters */
-	SRFID_RESULT result = [_apiInstance srfidGetRegulatoryConfig:_connectedRederID aRegulatoryConfig:&regulatory_cfg aStatusMessage:&error_response];
+	SRFID_RESULT result = [apiInstance srfidGetRegulatoryConfig:_connectedReaderID aRegulatoryConfig:&regulatory_cfg aStatusMessage:&error_response];
 	if (SRFID_RESULT_SUCCESS == result) 
     {
         /* regulatory configuration received */
@@ -1115,7 +1114,7 @@
 	NSMutableArray *regions = [[NSMutableArray alloc] init];
 
     /* retrieve supported regions */
-	result = [_apiInstance srfidGetSupportedRegions:_connectedRederID aSupportedRegions:&regions aStatusMessage:&error_response];
+	result = [apiInstance srfidGetSupportedRegions:_connectedReaderID aSupportedRegions:&regions aStatusMessage:&error_response];
 
 	if (SRFID_RESULT_SUCCESS == result) 
     {
@@ -1131,7 +1130,7 @@
 	BOOL hopping_configurable = NO;
 
     /* retrieve detailed information about region specified by region code */
-	result = [_apiInstance srfidGetRegionInfo:_connectedRederID aRegionCode:region_code aSupportedChannels:&supported_channels aHoppingConfigurable:&hopping_configurable aStatusMessage:&error_response];
+	result = [apiInstance srfidGetRegionInfo:_connectedReaderID aRegionCode:region_code aSupportedChannels:&supported_channels aHoppingConfigurable:&hopping_configurable aStatusMessage:&error_response];
 
 	if (SRFID_RESULT_SUCCESS == result) 
     {
@@ -1162,7 +1161,7 @@
 	[regulatory_cfg setHoppingConfig:hopping_on];
 
     /* set regulatory parameters */
-	result = [_apiInstance srfidSetRegulatoryConfig:_connectedRederID aRegulatoryConfig:regulatory_cfg aStatusMessage:&error_response];
+	result = [apiInstance srfidSetRegulatoryConfig:_connectedReaderID aRegulatoryConfig:regulatory_cfg aStatusMessage:&error_response];
 	if (SRFID_RESULT_SUCCESS == result) 
     {
         /* regulatory configuration applied */
@@ -1205,7 +1204,7 @@
     /* an object for storage of error response received from RFID reader */
     NSString *error_response = nil;
     /* retrieve pre-filters */
-    SRFID_RESULT result = [_apiInstance srfidGetPreFilters:_connectedRederID aPreFilters:&prefilters aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidGetPreFilters:_connectedReaderID aPreFilters:&prefilters aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) 
     {
         /* pre-filters received */
@@ -1309,7 +1308,7 @@
     error_response = nil;
     
     /* set pre-filters */
-    result = [_apiInstance srfidSetPreFilters:_connectedRederID aPreFilters:prefilters aStatusMessage:&error_response];
+    result = [apiInstance srfidSetPreFilters:_connectedReaderID aPreFilters:prefilters aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         /* pre-filters have been set */
         NSLog(@"Pre-filters has been set\n");
@@ -1336,7 +1335,7 @@
     NSString *error_response = nil;
 
     /* retrieve beeper configuration */
-    SRFID_RESULT result = [_apiInstance srfidGetBeeperConfig:_connectedRederID aBeeperConfig:&beeper_cfg aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidGetBeeperConfig:_connectedReaderID aBeeperConfig:&beeper_cfg aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         /* beeper configuration received */
         switch (beeper_cfg) {
@@ -1361,7 +1360,7 @@
     error_response = nil;
 
     /* disable beeper */
-    result = [_apiInstance srfidSetBeeperConfig:_connectedRederID aBeeperConfig:SRFID_BEEPERCONFIG_QUIET aStatusMessage:&error_response];
+    result = [apiInstance srfidSetBeeperConfig:_connectedReaderID aBeeperConfig:SRFID_BEEPERCONFIG_QUIET aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         /* beeper configuration applied */
         NSLog(@"Beeper configuration has been set\n");
@@ -1379,7 +1378,7 @@
 				
 			
 			  <p align="justify">
-				  Various parameter of a particular RFID reader configured via SDK are lost after next power down. The SDK provides an ability to store and restore a persistent configuration of RFID reader. The srfidSaveReaderConfiguration API function could be used to either make current configuration persistent over power down and power up cycles or store current configuration to custom defaults area. The configuration stored to custom defaults area could be restored via srfidRestoreReaderConfiguration API function. The same API function is used to restore the factory defined configuration. The following example demonstrates utilization of mentioned API functions
+				  Various parameters of a particular RFID reader configured via SDK are lost after the next power down. The SDK provides an ability to store and restore a persistent configuration of RFID reader. The srfidSaveReaderConfiguration API function could be used to either make current configuration persistent over power down and power up cycles or store current configuration to custom defaults area. The configuration stored to custom defaults area could be restored via srfidRestoreReaderConfiguration API function. The same API function is used to restore the factory defined configuration. The following example demonstrates utilization of mentioned API functions
 			
 			</p>
 			
@@ -1388,8 +1387,8 @@
     /* an object for storage of error response received from RFID reader */
     NSString *error_response = nil;
         
-    /* cause the RFID reader to make current configuration persistent */
-    SRFID_RESULT result = [_apiInstance srfidSaveReaderConfiguration:_connectedRederID aSaveCustomDefaults:NO aStatusMessage:&error_response];
+    /* cause the RFID reader to make the current configuration persistent */
+    SRFID_RESULT result = [apiInstance srfidSaveReaderConfiguration:_connectedReaderID aSaveCustomDefaults:NO aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Current configuration became persistent\n");
     }
@@ -1403,7 +1402,7 @@
     /* an object for storage of error response received from RFID reader */
     NSString *error_response = nil;
     /* cause the RFID reader to save current configuration in custom defaults area */
-    SRFID_RESULT result = [_apiInstance srfidSaveReaderConfiguration:_connectedRederID aSaveCustomDefaults:YES aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidSaveReaderConfiguration:_connectedReaderID aSaveCustomDefaults:YES aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Current configuration stored in custom defaults\n");
     }
@@ -1418,7 +1417,7 @@
     /* an object for storage of error response received from RFID reader */
     NSString *error_response = nil;
     /* cause the RFID reader to restore configuration from custom defaults */
-    SRFID_RESULT result = [_apiInstance srfidRestoreReaderConfiguration:_connectedRederID aRestoreFactoryDefaults:NO aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidRestoreReaderConfiguration:_connectedReaderID aRestoreFactoryDefaults:NO aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Request Success\n");
     }   
@@ -1429,7 +1428,7 @@
     /* an object for storage of error response received from RFID reader */
     NSString *error_response = nil;
     /* cause the RFID reader to restore factory defined configuration*/
-    SRFID_RESULT result = [_apiInstance srfidRestoreReaderConfiguration:_connectedRederID aRestoreFactoryDefaults:YES aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidRestoreReaderConfiguration:_connectedReaderID aRestoreFactoryDefaults:YES aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Request Success\n");
     }
@@ -1484,7 +1483,7 @@
             [stop_trigger_cfg setStopOnInventoryCount:NO];
             [stop_trigger_cfg setStopOnAccessCount:NO];
             /* set start trigger parameters */
-            SRFID_RESULT result = [apiInstance srfidSetStartTriggerConfiguration:connectedReaderId aStartTriggeConfig:start_trigger_cfg aStatusMessage:&error_response];
+            SRFID_RESULT result = [apiInstance srfidSetStartTriggerConfiguration:readerID aStartTriggeConfig:start_trigger_cfg aStatusMessage:&error_response];
             if (SRFID_RESULT_SUCCESS == result) {
                 /* start trigger configuration applied */
                 NSLog(@"Start trigger configuration has been set\n");
@@ -1494,7 +1493,7 @@
                 break;
             }
             /* set stop trigger parameters */
-            result = [apiInstance srfidSetStopTriggerConfiguration:connectedReaderId aStopTriggeConfig:stop_trigger_cfg aStatusMessage:&error_response];
+            result = [apiInstance srfidSetStopTriggerConfiguration:readerID aStopTriggeConfig:stop_trigger_cfg aStatusMessage:&error_response];
             if (SRFID_RESULT_SUCCESS == result) {
                 /* stop trigger configuration applied */
                 NSLog(@"Stop trigger configuration has been set\n");
@@ -1522,14 +1521,14 @@
 
 
             /* request performing of rapid read operation */
-            result = [apiInstance srfidStartRapidRead:connectedReaderId aReportConfig:report_cfg aAccessConfig:access_cfg aStatusMessage:&error_response];
+            result = [apiInstance srfidStartRapidRead:readerID aReportConfig:report_cfg aAccessConfig:access_cfg aStatusMessage:&error_response];
             if (SRFID_RESULT_SUCCESS == result) {
                 NSLog(@"Request succeed\n");
                 
                 /* stop an operation after 1 minute */
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self->apiInstance srfidStopRapidRead:self->connectedReaderId aStatusMessage:nil];
+                    [self->apiInstance srfidStopRapidRead:self->readerID aStatusMessage:nil];
                 });
             }
             else if (SRFID_RESULT_RESPONSE_ERROR == result) {
@@ -1606,7 +1605,7 @@ The SDK will deliver asynchronous notifications to inform the  application about
         [stop_trigger_cfg setStopOnAccessCount:NO];
         
         /* set start trigger parameters */
-        SRFID_RESULT result = [apiInstance srfidSetStartTriggerConfiguration:connectedReaderId aStartTriggeConfig:start_trigger_cfg aStatusMessage:&error_response];
+        SRFID_RESULT result = [apiInstance srfidSetStartTriggerConfiguration:readerID aStartTriggeConfig:start_trigger_cfg aStatusMessage:&error_response];
         if (SRFID_RESULT_SUCCESS == result) {
             /* start trigger configuration applied */
             NSLog(@"Start trigger configuration has been set\n");
@@ -1616,7 +1615,7 @@ The SDK will deliver asynchronous notifications to inform the  application about
             break;
         }
         /* set stop trigger parameters */
-        result = [apiInstance srfidSetStopTriggerConfiguration:connectedReaderId aStopTriggeConfig:stop_trigger_cfg aStatusMessage:&error_response];
+        result = [apiInstance srfidSetStopTriggerConfiguration:readerID aStopTriggeConfig:stop_trigger_cfg aStatusMessage:&error_response];
         if (SRFID_RESULT_SUCCESS == result) {
             /* stop trigger configuration applied */
             NSLog(@"Stop trigger configuration has been set\n");
@@ -1642,13 +1641,13 @@ The SDK will deliver asynchronous notifications to inform the  application about
         [access_cfg setPower:270];
         [access_cfg setDoSelect:NO];
         /* request performing of inventory operation with reading from EPC memory bank */
-        result = [apiInstance srfidStartInventory:connectedReaderId aMemoryBank:SRFID_MEMORYBANK_EPC aReportConfig:report_cfg aAccessConfig:access_cfg aStatusMessage:&error_response];
+        result = [apiInstance srfidStartInventory:readerID aMemoryBank:SRFID_MEMORYBANK_EPC aReportConfig:report_cfg aAccessConfig:access_cfg aStatusMessage:&error_response];
             
         if (SRFID_RESULT_SUCCESS == result) {
             NSLog(@"Request succeed\n");
             /* request abort of an operation after 1 minute */
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self->apiInstance srfidStopInventory:self->connectedReaderId aStatusMessage:nil];
+                [self->apiInstance srfidStopInventory:self->readerID aStatusMessage:nil];
             });
         }
         else if (SRFID_RESULT_RESPONSE_ERROR == result) {
@@ -1737,7 +1736,7 @@ Events
     [access_cfg setDoSelect:YES];
 
     /* request performing of inventory operation with reading from EPC memory bank */
-    SRFID_RESULT result = [apiInstance srfidStartInventory:connectedReaderId aMemoryBank:SRFID_MEMORYBANK_EPC aReportConfig:report_cfg aAccessConfig:access_cfg aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidStartInventory:readerID aMemoryBank:SRFID_MEMORYBANK_EPC aReportConfig:report_cfg aAccessConfig:access_cfg aStatusMessage:&error_response];
 
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Request succeed\n");
@@ -1745,7 +1744,7 @@ Events
         /* request abort of an operation after 1 minute */
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self->apiInstance srfidStopInventory:self->connectedReaderId aStatusMessage:nil];
+            [self->apiInstance srfidStopInventory:self->readerID aStatusMessage:nil];
         });
     }
     else if (SRFID_RESULT_RESPONSE_ERROR == result) {
@@ -1761,7 +1760,7 @@ Events
 
 <h2 id="pair-by-scan" class="anchor"><a class="heading-anchor" href="#pair-by-scan"><span></span></a>Tag Locationing</a></h2>
 				
-<p>The SDK provides an ability to perform tag locationing operation.  The <em>srfidStartTagLocationing</em> API  function is used to request performing of tag locationing operation. Aborting  of tag locationing operation is requested via <em>srfidStopTagLocationing</em> API function. The actual operation is  started and stopped based on configured start and stop triggers parameters. The  SDK informs the application about starting and stopping of the actual operation  via delivery of asynchronous notifications if the application has subscriber  for events of this type. During an on-going operation the SDK will deliver  asynchronous notifications to inform the application about current tag  proximity value (in percents).<br>
+<p>The SDK provides an ability to perform tag locationing operation.  The <em>srfidStartTagLocationing</em> API  function is used to request performing of tag locationing operation. Aborting  of tag locationing operation is requested via <em>srfidStopTagLocationing</em> API function. The actual operation is  started and stopped based on configured start and stop triggers parameters. The  SDK informs the application about starting and stopping of the actual operation  via delivery of asynchronous notifications if the application has subscribed for events of this type. During an on-going operation the SDK will deliver  asynchronous notifications to inform the application about current tag  proximity value (in percents).<br>
   The following example demonstrates performing of tag  locationing operation.</p>
 				
 <pre class="prettyprint"><code>
@@ -1776,12 +1775,12 @@ Events
     NSString *tag_id = @"V6219894630101R41022102N";
     /* an object for storage of error response received from RFID reader */
     NSString *error_response = nil;
-    SRFID_RESULT result = [apiInstance srfidStartTagLocationing:connectedReaderId aTagEpcId:tag_id aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidStartTagLocationing:readerID aTagEpcId:tag_id aStatusMessage:&error_response];
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Request succeed\n");
         /* request abort of an operation after 1 minute */
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self->apiInstance srfidStopTagLocationing:self->connectedReaderId aStatusMessage:nil];
+            [self->apiInstance srfidStopTagLocationing:self->readerID aStatusMessage:nil];
         });
     }
     else if (SRFID_RESULT_RESPONSE_ERROR == result) {
@@ -1814,7 +1813,7 @@ Events
     [multipleTagsReportConfig addItem:tag_id_2 aRSSIValueLimit:-(40)];
     [multipleTagsReportConfig addItem:tag_id_3 aRSSIValueLimit:-(40)];
     
-    SRFID_RESULT result = [_apiInstance srfidStartMultiTagsLocationing:_connectedRederID aReportConfig:multipleTagsReportConfig aAccessConfig:nil aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidStartMultiTagsLocationing:_connectedReaderID aReportConfig:multipleTagsReportConfig aAccessConfig:nil aStatusMessage:&error_response];
     
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Request succeed\n");
@@ -1832,7 +1831,7 @@ Events
     
     NSString *error_response = nil;
     
-    SRFID_RESULT result = [_apiInstance srfidStopMultiTagsLocationing:_connectedRederID aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidStopMultiTagsLocationing:_connectedReaderID aStatusMessage:&error_response];
     
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Request succeed\n");
@@ -1879,7 +1878,7 @@ typedef enum {
     NSString *error_response = nil;
 
     /* request to read 8 words from EPC memory bank of tag specified by tag _id */
-    SRFID_RESULT result = [apiInstance srfidReadTag:connectedReaderId aTagID:tag_id aAccessTagData:&access_result aMemoryBank:SRFID_MEMORYBANK_EPC aOffset:0 aLength:8 aPassword:0x00 aStatusMessage:&error_response];
+    SRFID_RESULT result = [apiInstance srfidReadTag:readerID aTagID:tag_id aAccessTagData:&access_result aMemoryBank:SRFID_MEMORYBANK_EPC aOffset:0 aLength:8 aPassword:0x00 aStatusMessage:&error_response];
 
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Request succeed\n");
@@ -1909,7 +1908,7 @@ typedef enum {
     NSString *data = @"N20122014R1010364989126V";
 
     /* request to write a data to a EPC memory bank of tag specified by tag_id */
-    result = [apiInstance srfidWriteTag:connectedReaderId aTagID:tag_id aAccessTagData:&access_result aMemoryBank:SRFID_MEMORYBANK_EPC aOffset:0 aData:data aPassword:0x00 aDoBlockWrite:NO aStatusMessage:&error_response];
+    result = [apiInstance srfidWriteTag:readerID aTagID:tag_id aAccessTagData:&access_result aMemoryBank:SRFID_MEMORYBANK_EPC aOffset:0 aData:data aPassword:0x00 aDoBlockWrite:NO aStatusMessage:&error_response];
 
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Request succeed\n");
@@ -1990,7 +1989,7 @@ Access criteria allow us to set up the filters for the inventory operation.
     [untraceConfig setEpcLen:2];
     [untraceConfig setShowUser:YES];
     [untraceConfig setTid:SRFID_TID_SHOW];
-    SRFID_RESULT result = [_apiInstance srfidUntraceable:self->_connectedRederID aAccessCriteria:accessCriteria aAccessConfig:nil
+    SRFID_RESULT result = [apiInstance srfidUntraceable:self->_connectedReaderID aAccessCriteria:accessCriteria aAccessConfig:nil
     aPassword:01 aUntraceableConfig:untraceConfig aStatusMessage:&status];
 
 </code></pre>
@@ -2021,7 +2020,7 @@ Access criteria allow us to set up the filters for the inventory operation.
     [untraceConfig setEpcLen:2];
     [untraceConfig setShowUser:YES];
     [untraceConfig setTid:SRFID_TID_SHOW];
-    SRFID_RESULT result = [_apiInstance srfidUntraceable:self->_connectedRederID aAccessCriteria:accessCriteria aAccessConfig:nil
+    SRFID_RESULT result = [apiInstance srfidUntraceable:self->_connectedReaderID aAccessCriteria:accessCriteria aAccessConfig:nil
     aPassword:01 aUntraceableConfig:untraceConfig aStatusMessage:&status];
 
     if (SRFID_RESULT_SUCCESS == result) {
@@ -2042,7 +2041,7 @@ Access criteria allow us to set up the filters for the inventory operation.
   BarcodeViewController.h file.</p>
 
 <pre class="prettyprint"><code>
-#import UIKit/UIKit.h
+#import <UIKit/UIKit.h>
 #import "SbtSdkFactory.h"
 
 /// Responsible for barcode sdk events and action
@@ -2111,7 +2110,7 @@ Access criteria allow us to set up the filters for the inventory operation.
 /// @param scannerID The scanner id
 - (void)sbtEventCommunicationSessionTerminated:(int)scannerID {
    
-    NSLog(@"Device has Diconnected, Device ID %d",scannerID);
+    NSLog(@"Device has Disconnected, Device ID %d",scannerID);
     
 }
 
@@ -2119,9 +2118,9 @@ Access criteria allow us to set up the filters for the inventory operation.
 /// @param fwUpdateEventObj firmware update event object
 - (void)sbtEventFirmwareUpdate:(FirmwareUpdateEvent *)fwUpdateEventObj {
     
-    NSLog(@"Firmware updat event - Max record : %d",fwUpdateEventObj.maxRecords);
-    NSLog(@"Firmware updat event - Current record : %d",fwUpdateEventObj.currentRecord);
-    NSLog(@"Firmware updat event - Current Status : %d",fwUpdateEventObj.status);
+    NSLog(@"Firmware update event - Max record : %d",fwUpdateEventObj.maxRecords);
+    NSLog(@"Firmware update event - Current record : %d",fwUpdateEventObj.currentRecord);
+    NSLog(@"Firmware update event - Current Status : %d",fwUpdateEventObj.status);
 }
 
 
@@ -2200,7 +2199,7 @@ This method will provide the scanner SDK version
 <p align="justify">Requests to establish communication session with a particular available scanner in “SSI” mode</p>	
 
 <pre class="prettyprint"><code>
-/// This method will initiate the connection with particuler scanner
+/// This method will initiate the connection with particular scanner
 /// @param scanner_id Scanner id of the connecting scanner
 -(void)connectScanner:(int)scanner_id{
     if (sdkApi != nil)
@@ -2224,7 +2223,7 @@ This method will provide the scanner SDK version
 <p align="justify">Requests to terminate communication session with a particular active scanner</p>
 
 <pre class="prettyprint"><code>
-/// This method will initiate the disconnection with particuler scanner
+/// This method will initiate the disconnection with particular scanner
 /// @param scannerId Scanner id of the disconnecting the scanner
 - (void)disconnect:(int)scannerId
 {
@@ -2246,9 +2245,9 @@ This method will provide the scanner SDK version
 <h2 id="pair-by-scan" class="anchor"><a class="heading-anchor" href="#pair-by-scan"><span></span></a>Implement Firmware update</a></h2>
 
 <pre class="prettyprint"><code>
-- (IBAction)btnFirmwaareUpdate:(id)sender
+- (IBAction)btnFirmwareUpdate:(id)sender
 {
-    NSString *inputXML = [NSString stringWithFormat:@"<inArgs><scannerID>%d</scannerID><cmdArgs><arg-string>%@</arg-string></cmdArgs></inArgs>", _connectedRederID, @"FIRMWARE_FILE_PATH"];
+    NSString *inputXML = [NSString stringWithFormat:@"<inArgs><scannerID>%d</scannerID><cmdArgs><arg-string>%@</arg-string></cmdArgs></inArgs>", _connectedReaderID, @"FIRMWARE_FILE_PATH"];
     int firmwareFileTypeCommand = 0;
 
     //If firmware file is “.Dat” then command type is “SBT_UPDATE_FIRMWARE”.
@@ -2258,11 +2257,11 @@ This method will provide the scanner SDK version
     
     if (result) {
         
-        NSString *in_xml = [NSString stringWithFormat:@"<inArgs><scannerID>%d</scannerID></inArgs>", _connectedRederID];
+        NSString *in_xml = [NSString stringWithFormat:@"<inArgs><scannerID>%d</scannerID></inArgs>", _connectedReaderID];
         [self performStartNewFirmware:in_xml];
     
     }else{
-        NSLog(@"Firmare update failed !");
+        NSLog(@"Firmwareupdate failed !");
     }
 
 }
@@ -2272,7 +2271,7 @@ This method will provide the scanner SDK version
 - (void)performStartNewFirmware:(NSString*)param
 {
   
-    SBT_RESULT result = [self executeCommand:SBT_START_NEW_FIRMWARE aInXML:param aOutXML:nil forScanner:_connectedRederID];
+    SBT_RESULT result = [self executeCommand:SBT_START_NEW_FIRMWARE aInXML:param aOutXML:nil forScanner:_connectedReaderID];
     if (result != SBT_RESULT_SUCCESS)
     {
         NSLog(@"Firmware Update Failed.");
@@ -2290,7 +2289,7 @@ This method will provide the scanner SDK version
      NSLog(@"Current Record : %f",(float)event.currentRecord);
      NSLog(@"Max Record : %f",(float)event.maxRecords);
      int currentProgressInPrecentage = (int)((float)event.currentRecord/event.maxRecords*100);
-     NSLog(@"Precentage %d",currentProgressInPrecentage);
+     NSLog(@"Current Progress In Precentage %d",currentProgressInPrecentage);
 
 }
 
@@ -2301,7 +2300,7 @@ This method will provide the scanner SDK version
 - (SBT_RESULT)executeCommand:(int)opCode aInXML:(NSString*)inXML{
     if (sdkApi != nil){
         
-        SBT_RESULT resultExecuteCommand = [sdkApi sbtExecuteCommand:opCode aInXML:inXML aOutXML:NULL forScanner:_connectedRederID];
+        SBT_RESULT resultExecuteCommand = [sdkApi sbtExecuteCommand:opCode aInXML:inXML aOutXML:NULL forScanner:_connectedReaderID];
         return resultExecuteCommand;
     }
     return SBT_RESULT_FAILURE;
@@ -2317,9 +2316,9 @@ This method will provide the scanner SDK version
 - (void) locateTheReader:(BOOL)enabled
 {
     SRFID_RESULT conn_result = SRFID_RESULT_FAILURE;
-    if (self->_apiInstance != nil)
+    if (self->apiInstance != nil)
     {
-        conn_result = [self->_apiInstance srfidLocateReader:_connectedRederID doEnabled:enabled aStatusMessage:nil];
+        conn_result = [self->apiInstance srfidLocateReader:_connectedReaderID doEnabled:enabled aStatusMessage:nil];
 
         if (SRFID_RESULT_SUCCESS != conn_result)
         {
@@ -2357,12 +2356,12 @@ typedef enum
 -(SRFID_BATCHMODECONFIG)getBatchModeConfig:(NSString **)responsMessage
 {
     //SRFID_BATCHMODECONFIG_AUTO ,SRFID_BATCHMODECONFIG_ENABLE and SRFID_BATCHMODECONFIG_DISABLE
-    SRFID_BATCHMODECONFIG batchModeConfigiuration = SRFID_BATCHMODECONFIG_AUTO;
+    SRFID_BATCHMODECONFIG batchModeConfiguration = SRFID_BATCHMODECONFIG_AUTO;
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     
     for(int i = 0; i < 2; i++)
     {
-        srfid_result = [self->_apiInstance srfidGetBatchModeConfig:_connectedRederID aBatchModeConfig:&batchModeConfigiuration aStatusMessage:responsMessage ];
+        srfid_result = [self->apiInstance srfidGetBatchModeConfig:_connectedReaderID aBatchModeConfig:&batchModeConfiguration aStatusMessage:responsMessage ];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
         }
@@ -2371,7 +2370,7 @@ typedef enum
     if (srfid_result == SRFID_RESULT_SUCCESS)
     {
         
-        NSLog(@"getBatchMod Response Success: %u", batchModeConfigiuration);
+        NSLog(@"getBatchMod Response Success: %u", batchModeConfiguration);
     }
     else if(srfid_result == SRFID_RESULT_RESPONSE_ERROR)
     {
@@ -2382,7 +2381,7 @@ typedef enum
         NSLog(@"Timeout or Failure");
     }
     
-    return batchModeConfigiuration;
+    return batchModeConfiguration;
 }
 
 
@@ -2391,9 +2390,9 @@ typedef enum
 
 - (IBAction)btnGetBatchMode:(id)sender
 {
-    SRFID_BATCHMODECONFIG batchModeConfigiuration =  [self getBatchModeConfig:nil];
+    SRFID_BATCHMODECONFIG batchModeConfiguration =  [self getBatchModeConfig:nil];
     
-    switch (batchModeConfigiuration) {
+    switch (batchModeConfiguration) {
         case SRFID_BATCHMODECONFIG_DISABLE:
             NSLog(@"Batchmode Disable");
             break;
@@ -2424,7 +2423,7 @@ typedef enum
    
     for(int i = 0; i < 2; i++)
     {
-        srfid_result = [self->_apiInstance srfidSetBatchModeConfig:_connectedRederID aBatchModeConfig:batchModeConfig aStatusMessage:statusMessage];
+        srfid_result = [self->apiInstance srfidSetBatchModeConfig:_connectedReaderID aBatchModeConfig:batchModeConfig aStatusMessage:statusMessage];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
         }
@@ -2456,10 +2455,10 @@ typedef enum
 
     NSString *status_msg = nil;
 
-    if (nil != self->_apiInstance)
+    if (nil != self->apiInstance)
     {
         SRFID_RESULT result;
-        result = [self->_apiInstance srfidgetTags:_connectedRederID aStatusMessage:&status_msg];
+        result = [self->apiInstance srfidgetTags:_connectedReaderID aStatusMessage:&status_msg];
         return result;
     }
     return SRFID_RESULT_FAILURE;
@@ -2473,10 +2472,10 @@ typedef enum
 {
     NSString *status_msg = nil;
     
-    if (nil != self->_apiInstance)
+    if (nil != self->apiInstance)
     {
         SRFID_RESULT result;
-        result = [self->_apiInstance srfidPurgeTags:self->_connectedRederID aStatusMessage:&status_msg];
+        result = [self->apiInstance srfidPurgeTags:self->_connectedReaderID aStatusMessage:&status_msg];
         return result;
     }
     return SRFID_RESULT_FAILURE;
@@ -2487,7 +2486,7 @@ typedef enum
 <pre class="prettyprint"><code>
 - (void) reconnectAfterBatchMode
 {
-    [self->_apiInstance srfidGetConfigurations];
+    [self->apiInstance srfidGetConfigurations];
 }
 </code></pre>
 
@@ -2517,7 +2516,7 @@ SRFID_RESULT_SUCCESS
 </code>
 </pre>
 
-<p align="justify"><strong>Notes</strong>:  If the option is enabled the SDK will automatically establish communication session with the last active RFID reader that had unexpectedly disappeared once the RFID reader will be recognized as available:
+<p align="justify"><strong>Notes</strong>:  If the option is enabled the SDK will automatically establish communication session with the last active RFID reader that has unexpectedly disappeared once the RFID reader is recognized as available:
 The RFID reader could be recognized as available automatically by SDK if “Available readers detection” option is enabled.
 The RFID reader could be recognized as available during discovery procedure requested by srfidGetAvailableReadersList API.
 “Session Established” notification will be provided once the communication session is established, if this type of notification is enabled. </p>
@@ -2644,7 +2643,7 @@ memoryBank:(SRFID_MEMORYBANK)memoryBank offset:(int)offset length:(int)length pa
     [accessParamsArray addObject:[self setAccessParamsForWrite:SRFID_ACCESSOPERATIONCODE_WRITE memoryBank:SRFID_MEMORYBANK_EPC offset:3  password:00 doBlockWrite:false dataToWrite:@"11112222333344445555"]];
 
     SRFID_RESULT result;
-    result = [self->_apiInstance srfidPerformAccessInSequence:self->_connectedRederID aAccessCriteria:accessCriteria aAccessParameters:accessParamsArray aStatusMessage:nil];
+    result = [self->apiInstance srfidPerformAccessInSequence:self->_connectedReaderID aAccessCriteria:accessCriteria aAccessParameters:accessParamsArray aStatusMessage:nil];
     NSLog(@"Result Perform Access In Sequence %u",result);
     
 }
@@ -2665,7 +2664,7 @@ memoryBank:(SRFID_MEMORYBANK)memoryBank offset:(int)offset length:(int)length pa
     [attributeDet setAttrVal:[NSString stringWithFormat:@"10"]];
     
     /* cause RFID reader to generate asynchronous battery status notification */
-    SRFID_RESULT result = [apiInstance srfidSetAttribute:connectedReaderId aAttrInfo:attributeDet aStatusMessage:nil];
+    SRFID_RESULT result = [apiInstance srfidSetAttribute:readerID aAttrInfo:attributeDet aStatusMessage:nil];
 
     if (SRFID_RESULT_SUCCESS == result) {
         NSLog(@"Set attributes Success");
@@ -2761,7 +2760,7 @@ memoryBank:(SRFID_MEMORYBANK)memoryBank offset:(int)offset length:(int)length pa
     [accessParamsArray addObject:[self setAccessParamsForWrite:SRFID_ACCESSOPERATIONCODE_WRITE memoryBank:SRFID_MEMORYBANK_EPC offset:3  password:00 doBlockWrite:false dataToWrite:@"11112222333344445555"]];
 
     SRFID_RESULT result;
-    result = [self->_apiInstance srfidPerformAccessInSequence:self->_connectedRederID aAccessCriteria:accessCriteria aAccessParameters:accessParamsArray aStatusMessage:nil];
+    result = [self->apiInstance srfidPerformAccessInSequence:self->_connectedReaderID aAccessCriteria:accessCriteria aAccessParameters:accessParamsArray aStatusMessage:nil];
     NSLog(@"Result Perform Access In Sequence %u",result);
     
 }
@@ -2794,13 +2793,13 @@ typedef enum{
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     
     for(int i = ZT_TRIGGER_MAPPING_ZERO; i < ZT_MAX_RETRY; i++){
-        srfid_result = [m_RfidSdkApi srfidSetKeylayoutType:[m_ActiveReader getReaderID] upperTrigger:upperTrigger lowerTrigger:lowerTrigger];
+        srfid_result = [apiInstance srfidSetKeylayoutType:readerID upperTrigger:upperTrigger lowerTrigger:lowerTrigger];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
         }
     }
     if (srfid_result == SRFID_RESULT_SUCCESS){
-         NSLog(@"Trigger Config Sucess”);
+         NSLog(@"Trigger Config Success);
     }
     else if(srfid_result == SRFID_RESULT_RESPONSE_ERROR){
          NSLog(@"Error”);
@@ -2839,7 +2838,7 @@ typedef enum{
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     
     for(int i = ZT_TRIGGER_MAPPING_ZERO; i < ZT_MAX_RETRY; i++){
-        srfid_result = [m_RfidSdkApi srfidGetKeylayoutType:[m_ActiveReader getReaderID] upperTrigger:&upperTrigger lowerTrigger:&lowerTrigger];
+        srfid_result = [apiInstance srfidGetKeylayoutType:readerID upperTrigger:&upperTrigger lowerTrigger:&lowerTrigger];
         
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
@@ -2847,8 +2846,8 @@ typedef enum{
     }
     
     if (srfid_result == SRFID_RESULT_SUCCESS){
-         NSLog(@"Trigger Config Sucess upper trigger %u", upperTrigger);
-         NSLog(@"Trigger Config Sucess lower trigger %u", lowerTrigger);
+         NSLog(@"Trigger Config Success upper trigger %u", upperTrigger);
+         NSLog(@"Trigger Config Success lower trigger %u", lowerTrigger);
 
     }else if(srfid_result == SRFID_RESULT_RESPONSE_ERROR){
 
@@ -2878,7 +2877,7 @@ typedef enum{
 - (SRFID_RESULT)setReaderFactoryReset:(int)readerID status:(NSString **)statusMessage {
 
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
-    srfid_result = [m_RfidSdkApi srfidFactoryReset:readerID aStatusMessage:statusMessage];
+    srfid_result = [apiInstance srfidFactoryReset:readerID aStatusMessage:statusMessage];
     return srfid_result;
 }
 
@@ -2893,7 +2892,7 @@ typedef enum{
 - (SRFID_RESULT)setReaderReboot:(int)readerID status:(NSString **)statusMessage {
 
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
-    srfid_result = [m_RfidSdkApi srfidReboot:readerID aStatusMessage:statusMessage];
+    srfid_result = [apiInstance srfidReboot:readerID aStatusMessage:statusMessage];
     return srfid_result;
 
 }
@@ -2916,7 +2915,7 @@ typedef enum{
     
     for(int i = 0; i < ZT_MAX_RETRY; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidGetBatteryStatus:[m_ActiveReader getReaderID] batteryStatusArray:&batteryStatusValueList aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidGetBatteryStatus:readerID batteryStatusArray:&batteryStatusValueList aStatusMessage:statusMessage];
         
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
         {
@@ -2963,10 +2962,10 @@ typedef enum{
 	<pre class="prettyprint"><code>
 -(SRFID_RESULT)readTagAsync:(NSString*)tagID withTagData:(srfidTagData **)tagData withMemoryBankID:(SRFID_MEMORYBANK)memoryBankID withOffset:(short)offset withLength:(short)length withPassword:(long)password aStatusMessage:(NSString**)statusMessage{
 
-    if (_apiInstance != nil)
+    if (apiInstance != nil)
     {
     
-        return [_apiInstance srfidReadTagAsync:[m_ActiveReader getReaderID] aAccessCriteria:(srfidAccessCriteria*)tagID aMemoryBank:memoryBankID aOffset:offset aLength:length aPassword:password aStatusMessage:statusMessage];
+        return [apiInstance srfidReadTagAsync:readerID aAccessCriteria:(srfidAccessCriteria*)tagID aMemoryBank:memoryBankID aOffset:offset aLength:length aPassword:password aStatusMessage:statusMessage];
     }
 
     return SRFID_RESULT_FAILURE;
@@ -2998,10 +2997,10 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
 <pre class="prettyprint"><code>		
 -(SRFID_RESULT)writeTagAsync:(NSString*)tagID withTagData:(srfidTagData **)tagData withMemoryBankID:(SRFID_MEMORYBANK)memoryBankID withOffset:(short)offset withLength:(short)length withPassword:(long)password doBlockWrite:(BOOL)blockwrite aStatusMessage:(NSString**)statusMessage{
 
-    if (_apiInstance != nil)
+    if (apiInstance != nil)
     {
     
-        return [_apiInstance srfidReadTagAsync:[m_ActiveReader getReaderID] aAccessCriteria:(srfidAccessCriteria*)tagID aMemoryBank:memoryBankID aOffset:offset aLength:length aPassword:password aDoBlockWrite:blockWrite aStatusMessage:statusMessage];
+        return [apiInstance srfidReadTagAsync:readerID aAccessCriteria:(srfidAccessCriteria*)tagID aMemoryBank:memoryBankID aOffset:offset aLength:length aPassword:password aDoBlockWrite:blockWrite aStatusMessage:statusMessage];
     }
 
     return SRFID_RESULT_FAILURE;
@@ -3024,7 +3023,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     
     for(int i = ZT_TRIGGER_MAPPING_ZERO; i < 1; i++){
-        srfid_result = [m_RfidSdkApi srfidGetWifiStatus:readerID wifiStatusInfo:wifiStatusInfo aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidGetWifiStatus:readerID wifiStatusInfo:wifiStatusInfo aStatusMessage:statusMessage];
         
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE )) {
             break;
@@ -3065,7 +3064,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     
     for(int i = 0; i < 3; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidGetWlanScanList:readerID aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidGetWlanScanList:readerID aStatusMessage:statusMessage];
         
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
         {
@@ -3101,7 +3100,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
 
     for(int i = 0; i < ZT_MAX_RETRY; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidGetWlanCertificatesList:readerID wlanCertificatesList:wlanCertificatesList aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidGetWlanCertificatesList:readerID wlanCertificatesList:wlanCertificatesList aStatusMessage:statusMessage];
         
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
         {
@@ -3110,7 +3109,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     }
     if (srfid_result == SRFID_RESULT_SUCCESS)
     {
-        NSLog(@"App engine reader Wlan profile sucess");
+        NSLog(@"App engine reader Wlan profile Success");
     }
     else if(srfid_result == SRFID_RESULT_RESPONSE_ERROR)
     {
@@ -3139,7 +3138,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     
-    srfid_result = [m_RfidSdkApi srfidAddWlanProfile:readerID srfidProfileConfig:profileConfig aStatusMessage:statusMessage];
+    srfid_result = [apiInstance srfidAddWlanProfile:readerID srfidProfileConfig:profileConfig aStatusMessage:statusMessage];
     
     if (srfid_result == SRFID_RESULT_SUCCESS){
         NSLog(@"Add profile sucees");
@@ -3175,7 +3174,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
   
     for(int i = 0; i < ZT_MAX_RETRY; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidRemoveWlanProfile:readerID ssidWlan:ssidWlan aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidRemoveWlanProfile:readerID ssidWlan:ssidWlan aStatusMessage:statusMessage];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
         {
             break;
@@ -3215,7 +3214,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     if (YES == [wlanProfileListGuard lockBeforeDate:[NSDate distantFuture]]){
         
-        srfid_result = [m_RfidSdkApi srfidWlanSaveProfile:readerID aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidWlanSaveProfile:readerID aStatusMessage:statusMessage];
         
         if (srfid_result == SRFID_RESULT_SUCCESS){
             NSLog(@"Save profile sucees");
@@ -3252,7 +3251,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     for(int i = 0; i < ZT_MAX_RETRY; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidConnectWlanProfile:readerID ssidWlan:ssidWlan aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidConnectWlanProfile:readerID ssidWlan:ssidWlan aStatusMessage:statusMessage];
         
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
         {
@@ -3291,7 +3290,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     for(int i = 0; i < ZT_MAX_RETRY; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidWlanDisConnectProfile:readerID aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidWlanDisConnectProfile:readerID aStatusMessage:statusMessage];
         
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
         {
@@ -3338,7 +3337,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     [config setProtocol:@"MQTT"];
     [config setURL:@"url"];
     [config setPort:@"port number"];
-    [config setKeepalive:@"Keep a live time"];
+    [config setKeepalive:@"Keep-alive time"];
     [config setTenantid:@"tenant id"];
 
     //if enable clean session
@@ -3354,14 +3353,14 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
 
     //If setType MDM
 
-    //If setType SOTI no need to do bellow steps
+    //If setType SOTI no need to do below steps
     //if setType MDM and setProtocol MQTT
     [config setSubname:@"sub name"];
     [config setPub1name:@"command topic"];
     [config setPub2name:@"event topic"];
 
     //if setType MDM and setProtocol MQTT_TLS
-    [config setCacertname:@"ca certificat name"];
+    [config setCacertname:@"ca certificate name"];
     [config setCertname:@"certificate name"];
     [config setKeyname:@"key name"];
 
@@ -3375,7 +3374,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     
         for(int i = 0; i < ZT_MAX_RETRY; i++)
         {
-            srfid_result = [m_RfidSdkApi srfidSetEndPointConfig:readerID endPointConfig:endpointConfig aStatusMessage:statusMessage];
+            srfid_result = [apiInstance srfidSetEndPointConfig:readerID endPointConfig:endpointConfig aStatusMessage:statusMessage];
             
             if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
             {
@@ -3384,7 +3383,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
         }
         if (srfid_result == SRFID_RESULT_SUCCESS)
         {
-            NSLog(@"App engine add end Point Config sucess");
+            NSLog(@"App engine add end Point Config Success");
         }
         else if(srfid_result == SRFID_RESULT_RESPONSE_ERROR)
         {
@@ -3413,7 +3412,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     
         for(int i = 0; i < ZT_MAX_RETRY; i++)
         {
-            srfid_result = [m_RfidSdkApi srfidGetEndPointList:readerID endPointList:endPointList aStatusMessage:statusMessage];
+            srfid_result = [apiInstance srfidGetEndPointList:readerID endPointList:endPointList aStatusMessage:statusMessage];
             
             if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
             {
@@ -3422,7 +3421,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
         }
         if (srfid_result == SRFID_RESULT_SUCCESS)
         {
-            NSLog(@"App engine get End Point List sucess");
+            NSLog(@"App engine get End Point List Success");
         }
         else if(srfid_result == SRFID_RESULT_RESPONSE_ERROR)
         {
@@ -3448,7 +3447,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
         SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
         for(int i = 0; i < ZT_MAX_RETRY; i++)
         {
-            srfid_result = [m_RfidSdkApi srfidSaveEndPointConfig:readerID aStatusMessage:statusMessage];
+            srfid_result = [apiInstance srfidSaveEndPointConfig:readerID aStatusMessage:statusMessage];
             if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
             {
                 break;
@@ -3482,7 +3481,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     for(int i = 0; i < ZT_MAX_RETRY; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidRemoveEndPointConfig:readerID endPointName:endPointName aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidRemoveEndPointConfig:readerID endPointName:endPointName aStatusMessage:statusMessage];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
         {
             break;
@@ -3524,7 +3523,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
         SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
         for(int i = 0; i < 1; i++)
         {
-            srfid_result = [m_RfidSdkApi srfidGetEndpointConfig:readerID endPointName:endPointName endPointConfig:endPointConfig aStatusMessage:astatusMessage];
+            srfid_result = [apiInstance srfidGetEndpointConfig:readerID endPointName:endPointName endPointConfig:endPointConfig aStatusMessage:astatusMessage];
             
             if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE))
             {
@@ -3565,7 +3564,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     
     for(int i = 0; i < ZT_MAX_RETRY; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidRequestIOTStatus:[m_ActiveReader getReaderID]];
+        srfid_result = [apiInstance srfidRequestIOTStatus:readerID];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
         }
@@ -3585,10 +3584,10 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     return srfid_result;
 }
 </code></pre>	
-<p> The code [m_RfidSdkApi srfidSubsribeForEvents:(SRFID_EVENT_MASK_IOT_STATUS)]; subscribes the application to IoT status events through the RFID SDK, enabling it to receive updates when such events occur.</p>
+<p> The code [apiInstance srfidSubsribeForEvents:(SRFID_EVENT_MASK_IOT_STATUS)]; subscribes the application to IoT status events through the RFID SDK, enabling it to receive updates when such events occur.</p>
 <pre class="prettyprint"><code>	
 //Event subcribe: 
-[m_RfidSdkApi srfidSubsribeForEvents:(SRFID_EVENT_MASK_IOT_STATUS)];
+[apiInstance srfidSubsribeForEvents:(SRFID_EVENT_MASK_IOT_STATUS)];
 </code></pre>
 
 <p>The srfidEventIOTSatusNotity: method logs IoT status event details and asynchronously notifies all non-nil delegates in m_IOTStatusEventDelegates via onNewIOTStatusEvent: on the main thread, ensuring responsive updates.</p>
@@ -3627,7 +3626,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     for(int i = 0; i < 1; i++)
     {
       
-        srfid_result = [m_RfidSdkApi srfidGetChargeTerminalStatus:[m_ActiveReader getReaderID] chargeTerminalStatus:&chargeTerminalStatus];
+        srfid_result = [apiInstance srfidGetChargeTerminalStatus:readerID chargeTerminalStatus:&chargeTerminalStatus];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
         }
@@ -3655,7 +3654,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     for(int i = 0; i < 1; i++)
     {
       
-        srfid_result = [m_RfidSdkApi srfidEnableChargeTerminal:[m_ActiveReader getReaderID] enableStatus:status];
+        srfid_result = [apiInstance srfidEnableChargeTerminal:readerID enableStatus:status];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
         }
@@ -3695,7 +3694,7 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
     for(int i = 0; i < 1; i++)
     {
       
-        srfid_result = [m_RfidSdkApi srfidGetChargeTerminalStatus:[m_ActiveReader getReaderID] chargeTerminalStatus:&chargeTerminalStatus];
+        srfid_result = [apiInstance srfidGetChargeTerminalStatus:readerID chargeTerminalStatus:&chargeTerminalStatus];
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
         }
@@ -3720,10 +3719,10 @@ rfid_res = [[[zt_RfidAppEngine sharedAppEngine] operationEngine] stopInventory:n
 }
 
 </code></pre>	
-<p> The code [m_RfidSdkApi srfidSubsribeForEvents:(SRFID_EVENT_MASK_CONNECTED_INTERFACE)]; subscribes the application to events related to the connected interface using the RFID SDK, allowing it to receive updates when such events occur.</p>
+<p> The code [apiInstance srfidSubsribeForEvents:(SRFID_EVENT_MASK_CONNECTED_INTERFACE)]; subscribes the application to events related to the connected interface using the RFID SDK, allowing it to receive updates when such events occur.</p>
 <pre class="prettyprint"><code>	
 //Event subcribe: 
-[m_RfidSdkApi srfidSubsribeForEvents:(SRFID_EVENT_MASK_CONNECTED_INTERFACE)];
+[apiInstance srfidSubsribeForEvents:(SRFID_EVENT_MASK_CONNECTED_INTERFACE)];
 </code></pre>
 
 <p>The srfidEventConnectedInterfaceNotity: method logs the type of connection interface for an RFID reader and updates _connectedUserInterfaceType accordingly. It distinguishes between Bluetooth, USB, No Interface, Ethernet, and Terminal connections.</p>
@@ -3906,10 +3905,10 @@ Event:
     {
         
         
-        if (m_RfidSdkApi != nil)
+        if (apiInstance != nil)
         {
     
-            return [m_RfidSdkApi srfidProtectTag:[m_ActiveReader getReaderID] aTagID:tagID aAccessTagData:tagData aPassword:password aStatusMessage:statusMessage];
+            return [apiInstance srfidProtectTag:readerID aTagID:tagID aAccessTagData:tagData aPassword:password aStatusMessage:statusMessage];
         }
         
         return SRFID_RESULT_FAILURE;
@@ -3927,10 +3926,10 @@ Event:
  - (SRFID_RESULT)unprotectTag:(NSString*)tagID withTagData:(srfidTagData **)tagData withPassword:(NSString*)password aStatusMessage:(NSString**)statusMessage
  {
 
-    if (m_RfidSdkApi != nil)
+    if (apiInstance != nil)
     {
 
-        return [m_RfidSdkApi srfidUnprotectTag:[m_ActiveReader getReaderID]
+        return [apiInstance srfidUnprotectTag:readerID
                              aTagID:tagID
                      aAccessTagData:tagData
                           aPassword:password
@@ -3947,17 +3946,17 @@ Event:
 
 
 
-<h3>Enable Visbilty</h3>		
+<h3>Enable Visibility</h3>		
 <p>Enable Impinj Protected Mode.</p>
 <pre class="prettyprint"><code>
      
 - (SRFID_RESULT)enableVisibilityTag:(NSString*)password aStatusMessage:(NSString**)statusMessage
 {
 
-    if (m_RfidSdkApi != nil)
+    if (apiInstance != nil)
     {
 
-        return [m_RfidSdkApi srfidEnableTagVisibility:[m_ActiveReader getReaderID] aPassword:password aStatusMessage:statusMessage];
+        return [apiInstance srfidEnableTagVisibility:readerID aPassword:password aStatusMessage:statusMessage];
 
     }
 
@@ -3970,16 +3969,16 @@ Event:
 
 
 
-<h3>Disable Visbilty</h3>		
+<h3>Disable Visibility</h3>		
 <p>Disable Impinj Protected Mode.</p>
 <pre class="prettyprint"><code>
 - (SRFID_RESULT)disableVisibilityTag:(NSString*)password aStatusMessage:(NSString**)statusMessage
 {
 
-    if (m_RfidSdkApi != nil)
+    if (apiInstance != nil)
     {
 
-    return [m_RfidSdkApi srfidDisableTagVisibility:[m_ActiveReader getReaderID] aPassword:password aStatusMessage:statusMessage];
+    return [apiInstance srfidDisableTagVisibility:readerID aPassword:password aStatusMessage:statusMessage];
 
     }
 
@@ -3998,9 +3997,9 @@ Event:
                     
 - (SRFID_RESULT)enableTagFocus:(BOOL)enableTagFocus aStatusMessage:(NSString**)statusMessage {
 
-    if (m_RfidSdkApi != nil)
+    if (apiInstance != nil)
     {
-        return [m_RfidSdkApi srfidSetTagFocus:[m_ActiveReader getReaderID] isTagFocusEnable:enableTagFocus aStatusMessage:statusMessage];
+        return [apiInstance srfidSetTagFocus:readerID isTagFocusEnable:enableTagFocus aStatusMessage:statusMessage];
 
     }
 
@@ -4024,10 +4023,10 @@ Event:
     [config setTagPopulation:200];
     [config setInventoryState:inv_state];
 
-     SRFID_RESULT resultSigulation = SRFID_RESULT_FAILURE;
+     SRFID_RESULT resultSingulation = SRFID_RESULT_FAILURE;
      NSString *response = @"";
-    resultSigulation = [[zt_RfidAppEngine sharedAppEngine] setSingulationConfigurationTagFoucus:config status:&response];
-    if (resultSigulation == SRFID_RESULT_SUCCESS)
+    resultSingulation = [[zt_RfidAppEngine sharedAppEngine] setSingulationConfigurationTagFocus:config status:&response];
+    if (resultSingulation == SRFID_RESULT_SUCCESS)
     {
         NSLog(@"SRFID_RESULT_SUCCESS");
     }else{
@@ -4038,14 +4037,14 @@ Event:
 
 
 
-- (SRFID_RESULT)setSingulationConfigurationTagFoucus: (srfidSingulationConfig*)singulationConfiguration status:(NSString **)statusMessage
+- (SRFID_RESULT)setSingulationConfigurationTagFocus: (srfidSingulationConfig*)singulationConfiguration status:(NSString **)statusMessage
 {
  
     SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
     
     for(int i = 0; i < 2; i++)
     {
-        srfid_result = [m_RfidSdkApi srfidSetSingulationConfiguration:[m_ActiveReader getReaderID]aSingulationConfig:singulationConfiguration aStatusMessage:statusMessage];
+        srfid_result = [apiInstance srfidSetSingulationConfiguration:readerID aSingulationConfig:singulationConfiguration aStatusMessage:statusMessage];
         
         if ((srfid_result != SRFID_RESULT_RESPONSE_TIMEOUT) && (srfid_result != SRFID_RESULT_FAILURE)) {
             break;
@@ -4127,7 +4126,7 @@ typedef NS_ENUM(NSInteger, SRFID_ENUM_TAGQUIET_MASK) {
    
     -(SRFID_RESULT)enableTagQuiet:(BOOL)status meesage:(NSString**)statusMessage {
    
-        if (m_RfidSdkApi != nil)
+        if (apiInstance != nil)
         {
             NSMutableArray<NSNumber *> *tagQuietMaskArray = [NSMutableArray array];
             [tagQuietMaskArray addObject:@(ENUM_TAGQUIET_MASK_S3B)];
@@ -4136,7 +4135,7 @@ typedef NS_ENUM(NSInteger, SRFID_ENUM_TAGQUIET_MASK) {
                 
             if (status){
                     
-                resultTagQuiet = [m_RfidSdkApi srfidConfigureTagQuiet:[m_ActiveReader getReaderID] enumTagquietMasks:tagQuietMaskArray enumTarget:SRFID_SELECTTARGET_SL stateAwareAction:SRFID_SELECTACTION_INV_A__OR__ASRT_SL aStatusMessage:statusMessage];
+                resultTagQuiet = [apiInstance srfidConfigureTagQuiet:readerID enumTagquietMasks:tagQuietMaskArray enumTarget:SRFID_SELECTTARGET_SL stateAwareAction:SRFID_SELECTACTION_INV_A__OR__ASRT_SL aStatusMessage:statusMessage];
                     
                 SRFID_SLFLAG sl_flag = SRFID_SLFLAG_DEASSERTED;
                 SRFID_SESSION session = SRFID_SESSION_S2;
@@ -4146,10 +4145,10 @@ typedef NS_ENUM(NSInteger, SRFID_ENUM_TAGQUIET_MASK) {
                 [singulationConfig setSession:session];
                 [singulationConfig setInventoryState:inv_state];
                     
-                SRFID_RESULT resultSigulation = SRFID_RESULT_FAILURE;
+                SRFID_RESULT resultSingulation = SRFID_RESULT_FAILURE;
                 NSString *response2 = @"";
-                resultSigulation = [[zt_RfidAppEngine sharedAppEngine] setSingulationConfigurationTagFoucus:singulationConfig status:&response2];
-                if (resultSigulation == SRFID_RESULT_SUCCESS)
+                resultSingulation = [[zt_RfidAppEngine sharedAppEngine] setSingulationConfigurationTagFocus:singulationConfig status:&response2];
+                if (resultSingulation == SRFID_RESULT_SUCCESS)
                 {
                     NSLog(@"SRFID_RESULT_SUCCESS SingulationConfig");
                 }else{
@@ -4158,7 +4157,7 @@ typedef NS_ENUM(NSInteger, SRFID_ENUM_TAGQUIET_MASK) {
             }
             else
              {
-                resultTagQuiet = [m_RfidSdkApi srfidConfigureTagQuiet:[m_ActiveReader getReaderID]
+                resultTagQuiet = [apiInstance srfidConfigureTagQuiet:readerID
                                                        enumTagquietMasks:tagQuietMaskArray
                                                               enumTarget:SRFID_SELECTTARGET_SL
                                                         stateAwareAction:SRFID_SELECTACTION_INV_B__OR__DSRT_SL
@@ -4187,7 +4186,7 @@ typedef NS_ENUM(NSInteger, SRFID_ENUM_TAGQUIET_MASK) {
                 if (apiInstance != nil)
                 {
                
-                    return [apiInstance setFastID:availableReaderID enable:enableFastID statusMessage:statusMessage];
+                    return [apiInstance setFastID:readerID enable:enableFastID statusMessage:statusMessage];
                     
                 }
                 
@@ -4224,7 +4223,7 @@ typedef NS_ENUM(NSInteger, SRFID_ENUM_TAGQUIET_MASK) {
                 SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
                 SRFID_ENUM_INVENTORY_PROTOCOL protocolEnum;
 
-                srfid_result = [m_RfidSdkApi getInventoryProtocol:[m_ActiveReader getReaderID] protocol:&protocolEnum statusMessage:statusMessage];
+                srfid_result = [apiInstance getInventoryProtocol:readerID protocol:&protocolEnum statusMessage:statusMessage];
 
                 if (srfid_result == SRFID_RESULT_SUCCESS) {
                     *protocol = protocolEnum;  
@@ -4245,7 +4244,7 @@ typedef NS_ENUM(NSInteger, SRFID_ENUM_TAGQUIET_MASK) {
             -(SRFID_RESULT)setReaderInventoryProtocol:(SRFID_ENUM_INVENTORY_PROTOCOL)protocol aStatusMessage:(NSString**)statusMessage {
     
                 SRFID_RESULT srfid_result = SRFID_RESULT_FAILURE;
-                srfid_result = [m_RfidSdkApi setInventoryprotocol:[m_ActiveReader getReaderID] protocol:protocol statusMessage:statusMessage];
+                srfid_result = [apiInstance setInventoryprotocol:readerID protocol:protocol statusMessage:statusMessage];
                 return srfid_result;
                         
             }
