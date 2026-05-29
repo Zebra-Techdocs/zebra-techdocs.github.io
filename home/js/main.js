@@ -829,6 +829,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/devicecentral/4-1':
         case '/devicecentral/4-2':
         case '/devicecentral/4-3':
+        case '/devicecentral/4-4':
             ddl_doc.options.length = 0;
             for (i=0; i < dc_3_0_text.length; i++) {
                 createOption(ddl_doc, dc_3_0_text[i], dc_3_0_val[i]);
@@ -842,7 +843,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/ddt/2-4':
             ddl_doc.options.length = 0;
             for (i=0; i < ddt_1_1_text.length; i++) {
-                createOption(ddl_doc, ddt_1_1_text[i], ddt_1_1_val[i]);
+                createOption( ddl_doc, ddt_1_1_text[i], ddt_1_1_val[i]);
             }
             break;
         case '/ddt/2-5':
