@@ -1121,6 +1121,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/mobile-parcel/1-0':
         case '/mobile-parcel/2-0':
         case '/mobile-parcel/2-2':
+        case '/mobile-parcel/3-0':
             mp_doc.options.length = 0;
             for (i=0; i < mp_1_0_text.length; i++) {
                 createOption(mp_doc, mp_1_0_text[i], mp_1_0_val[i]);
