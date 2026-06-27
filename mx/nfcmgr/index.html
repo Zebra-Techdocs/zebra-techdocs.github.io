@@ -827,30 +827,6 @@
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
@@ -909,10 +885,11 @@
 
 <!-- 5/5/26 TUT-126200 removed models; incl. only platforms
 
-REMOVED, per eng (DEP)
- * Peer-to-Peer mode (DEPRECATED)
- * CPU boost mode
- * NFC usage when the Android "lock screen" is displayed
+REMOVED, per eng., restored (with dep icon) per DSD
+
+ * Peer-to-Peer mode  (**DEPRECATED**)
+ * CPU boost mode  (**DEPRECATED**)
+ * NFC usage when the Android "lock screen" is displayed (**DEPRECATED**)
 
 Removed from all parms:
 info: Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.
@@ -938,7 +915,13 @@ info: Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.
 
 <li>Card Emulation mode</li>
 
-<li>Low-power Card Detection (LPCD)</li></ul>
+<li>Low-power Card Detection (LPCD)</li>
+
+<li>Peer-to-Peer mode  (<strong>DEPRECATED</strong>)</li>
+
+<li>CPU boost mode  (<strong>DEPRECATED</strong>)</li>
+
+<li>NFC usage when the Android "lock screen" is displayed (<strong>DEPRECATED</strong>)</li></ul>
 </li>
 
 <li>Select type A, B, F, or V tags for use</li>
@@ -966,6 +949,34 @@ info: Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -1171,6 +1182,16 @@ info: Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="low-power-card-detection-turn-onoff"><a class="heading-anchor" href="#low-power-card-detection-turn-onoff"><span></span></a>Low-power Card Detection Turn On/Off</h2>
@@ -1277,10 +1298,6 @@ info: Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -1597,6 +1614,14 @@ info: Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="">
                                     
                                     <h2 class="anchor" id="reset-to-defaults-checkbox"><a class="heading-anchor" href="#reset-to-defaults-checkbox"><span></span></a>Reset To Defaults (checkbox)</h2>
@@ -1723,12 +1748,121 @@ info: Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.
                                     
                                     
                                     
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="cpu-boost-enabledisable"><a class="heading-anchor" href="#cpu-boost-enabledisable"><span></span></a>CPU Boost Enable/Disable</h2>
+                                    <p class=""></p><p>Controls whether CPU speed us boosted during NFC transactions, which improves transaction speed in some scenarios. </p>
+
+<!-- 5/5/26 TUT-126200 
+removed nfcmgr from "csp:" per eng (deprecated)
+
+6/25/26 - restored with trash icon and deprecation msg, per DSD
+--><p></p>
+                                        <blockquote>
+                                        <p><b><u>Status</u>:</b> Deprecated. This feature is scheduled to be removed in a future edition.</p>
+                                        <p><b>Parm Name:</b> enableCPUBoost</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
                                     
                                     
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>86</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>Enable</td>
+                                                <td>Boosts CPU speed during NFC transactions.</td>
+                                                <td></td>
+
+                                                <td>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature is scheduled to be removed in a future edition." aria-hidden="true"></i></a>
+                                    </td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Disable</td>
+                                                <td>Does not boost CPU speed during NFC transactions.</td>
+                                                <td></td>
+
+                                                <td>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature is scheduled to be removed in a future edition." aria-hidden="true"></i></a>
+                                    </td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
                                     
-                                    
-                                    
-                                    
+                                </div> 
                                     
                                     
                                     
@@ -1878,34 +2012,6 @@ info: Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -2160,6 +2266,142 @@ removed all DEPRECATION notes, per eng
                                     
                                     
                                     
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="peer-to-peer-usage"><a class="heading-anchor" href="#peer-to-peer-usage"><span></span></a>Peer-to-Peer Usage</h2>
+                                    <p class=""></p><p>Controls whether to allow peer-to-peer communication between two NFC devices. Common P2P applications include person-to-person money transfer, exchange of photos, business-card or other types of data and anything that uses Android Beam. </p>
+
+<!-- 5/5/26 TUT-126200 
+removed nfcmgr from "csp:" per eng (deprecated)
+
+6/25/26 - restored with trash icon and deprecation msg, per DSD
+--><p></p>
+                                        <blockquote>
+                                        <p><b>Note:</b> Supported only on MC93, TC52, TC57, TC72, TC77 and TC8380 devices.</p>
+                                        <p><b><u>Status</u>:</b> Deprecated. This feature is scheduled to be removed in a future edition.</p>
+                                        <p><b>Parm Name:</b> p2p</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
+                                    
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>86</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>use</td>
+                                                <td>Allows peer-to-peer data exchange between two NFC devices.</td>
+                                                <td></td>
+
+                                                <td>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature is scheduled to be removed in a future edition." aria-hidden="true"></i></a>
+                                    </td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>don't use</td>
+                                                <td>Prevents peer-to-peer data exchange.</td>
+                                                <td></td>
+
+                                                <td>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature is scheduled to be removed in a future edition." aria-hidden="true"></i></a>
+                                    </td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
+                                    
+                                </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2384,11 +2626,121 @@ info: This feature cannot be configured remotely on TC501X or TC701X devices; ac
                                     
                                     
                                     
+                                        <div class="">
+                                    
+                                    <h2 class="anchor" id="nfc-on-lock-screen-enabledisable"><a class="heading-anchor" href="#nfc-on-lock-screen-enabledisable"><span></span></a>NFC on Lock Screen Enable/Disable</h2>
+                                    <p class=""></p><p>Controls use of NFC when the device is displaying the Android lock screen. </p>
+
+<!-- 5/5/26 TUT-126200 
+removed nfcmgr from "csp:" per eng (deprecated)
+
+6/25/26 - restored with trash icon and deprecation msg, per DSD
+--><p></p>
+                                        <blockquote>
+                                        <p><b><u>Status</u>:</b> Deprecated. This feature is scheduled to be removed in a future edition.</p>
+                                        <p><b>Parm Name:</b> enableNfcLock</p>
+                                        <!-- <p><b>Pivotal Parm:</b> No</p> -->
+                                        
+
+                                        
+                                        </blockquote>
                                     
                                     
+                                    <div>
+                                        <table class="table">
+                                            <tbody><tr>
+                                                <th>Option</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                           <!-- <th>Model</th> -->
+                                                <th>Note</th>
+                                                <th>Status</th>
+                                                <th>Requires</th>
+                                            </tr>
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>86</td>
+                                                <td>Do not change</td>
+                                                <td>This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.</td>
+                                                <td></td>
+
+                                                <td></td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>1</td>
+                                                <td>Enable</td>
+                                                <td>Allows NFC to be used from the Android lock screen.</td>
+                                                <td></td>
+
+                                                <td>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature is scheduled to be removed in a future edition." aria-hidden="true"></i></a>
+                                    </td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            <tr data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-devicetype="A" data-api="" data-smartdoc="">
+                                                <td>0</td>
+                                                <td>Disable</td>
+                                                <td>Prevents NFC from being used from the Android lock screen.</td>
+                                                <td></td>
+
+                                                <td>
+                                    <a href="/mx/overview/#iconkey"><i class="fa fa-trash-o fa-lg" style="color:#FA2929;" data-toggle="tooltip" data-placement="top" title="Deprecated. This feature is scheduled to be removed in a future edition." aria-hidden="true"></i></a>
+                                    </td>
+
+
+                                        <!-- DEVICETYPE LOGIC FOR LIST TABLE --> 
+                                        
+<!--                                                <td> 
+ -->                                                    <!-- A -->
+<!--                                                     N/A on TC20/TC25
+                                                </td>
+ -->                                                
+                                                <td>
+                                                    
+
+                                                        <p>MX: 8.3+ </p>
+                                                    
+                                                </td> 
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </tbody></table>
+                                    </div>	
                                     
-                                    
-                                    
+                                </div> 
                                     
                                     
                                     
@@ -2594,10 +2946,6 @@ info: This feature cannot be configured remotely on TC501X or TC701X devices; ac
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="use-type-a-tags"><a class="heading-anchor" href="#use-type-a-tags"><span></span></a>Use Type A Tags</h2>
@@ -2631,6 +2979,16 @@ The signalling type NFC-A is based on ISO/IEC 14443A. It is similar to RFID type
                                     
                                     
                                 </div> 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                     
                                     
@@ -2742,6 +3100,23 @@ In manchester coding zero cross over happens in the bit period used to represent
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="use-type-f-tags"><a class="heading-anchor" href="#use-type-f-tags"><span></span></a>Use Type F Tags</h2>
@@ -2805,11 +3180,6 @@ Refer NFC basics article which covers NFC (Near Field Communication) basics incl
                                     
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
                                         <div class="" data-osx="" data-osx-end="" data-osx-specific-list="" data-osx-specific="" data-osx-exclude="" data-osx-exclude-end="" data-mx="8.3" data-api="" data-smartdoc="">
 
                                     <h2 class="anchor" id="use-type-v-tags"><a class="heading-anchor" href="#use-type-v-tags"><span></span></a>Use Type V Tags</h2>
@@ -2837,11 +3207,6 @@ Refer NFC basics article which covers NFC (Near Field Communication) basics incl
                                     
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3023,14 +3388,6 @@ Refer NFC basics article which covers NFC (Near Field Communication) basics incl
                                     </div>	
                                     
                                 </div> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     
                                     
@@ -3581,6 +3938,12 @@ Refer NFC basics article which covers NFC (Near Field Communication) basics incl
                                     
                                     
                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div><!--/.container-->
                                 
                             </section><!--/#services-->
@@ -3600,6 +3963,10 @@ filtering
         csp: "nfcmgr",
         name: "NFC Manager",
         parms: [
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -3806,6 +4173,16 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "Enabled NFC is NOT set to &quot;Disable&quot;",
                             name: "LPCD",
@@ -3866,10 +4243,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4140,6 +4513,14 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                             presentif: "",
                             name: "ResetToDefaults",
@@ -4230,12 +4611,66 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
+                    {
+                            presentif: "",
+                            name: "enableCPUBoost",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "86",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "Enable",
+                                    description: "Boosts CPU speed during NFC transactions.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "0",
+                                    name: "Disable",
+                                    description: "Does not boost CPU speed during NFC transactions.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
                     
                     
                     
@@ -4339,34 +4774,6 @@ filtering
                         
                         ]
                     },
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -4571,6 +4978,86 @@ filtering
                     
                     
                     
+                    {
+                            presentif: "",
+                            name: "p2p",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "86",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "use",
+                                    description: "Allows peer-to-peer data exchange between two NFC devices.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "0",
+                                    name: "don&#x27;t use",
+                                    description: "Prevents peer-to-peer data exchange.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -4735,11 +5222,66 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
+                    {
+                            presentif: "",
+                            name: "enableNfcLock",
+                            pivotal: "No",
+                        
+                        
+                        listitems: [
+                                {
+                                    code: "86",
+                                    name: "Do not change",
+                                    description: "This value (or the absence of this parm from the XML) causes no change to device settings; any previously selected setting is retained.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "1",
+                                    name: "Enable",
+                                    description: "Allows NFC to be used from the Android lock screen.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                                {
+                                    code: "0",
+                                    name: "Disable",
+                                    description: "Prevents NFC from being used from the Android lock screen.",
+                                    requires: {
+                                        osx: "",
+                                        osxEnd: "",
+                                        mx: "8.3",
+                                        api: "",
+                                        osxSpecific: "",
+                                        osxSpecificList: "",
+                                        osxExclude: "",
+                                        osxExcludeEnd: ""
+                                    },
+
+                                },
+                        
+                        ]
+                    },
                     
                     
                     
@@ -4900,10 +5442,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -4923,6 +5461,16 @@ filtering
                         
                         
                     },
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -5019,6 +5567,23 @@ filtering
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     {
                         requires: {
                             osx: "",
@@ -5067,11 +5632,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
                     {
                         requires: {
                             osx: "",
@@ -5091,11 +5651,6 @@ filtering
                         
                         
                     },
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -5240,14 +5795,6 @@ filtering
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     {
                             presentif: "",
                             name: "baudRateB",
@@ -5342,6 +5889,12 @@ filtering
                         
                         ]
                     },
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
