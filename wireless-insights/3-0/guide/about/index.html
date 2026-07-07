@@ -11,8 +11,8 @@
     <meta name="author" content="Zebra Technologies">
     <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
     <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
-    <meta title="Data">
-    <title>Data - TechDocs</title>
+    <meta title="About Wireless Insights">
+    <title>About Wireless Insights - TechDocs</title>
     <!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 <!--     
@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Wireless Insights
-                                            2.0
+                                            3.0
                         </p>
 
                     </ul>
@@ -82,32 +82,37 @@
 
 
                         <li>
-                            <a href="/wireless-insights/2-0/guide/about">
+                            <a href="/wireless-insights/3-0/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/wireless-insights/2-0/guide/agent">
+                            <a href="/wireless-insights/3-0/guide/agent">
                                     Wireless Insights Agent
                             </a>
                         </li>
                         <li>
-                            <a href="/wireless-insights/2-0/guide/setup">
+                            <a href="/wireless-insights/3-0/guide/setup">
                                     Vendor Agent
                             </a>
                         </li>
                         <li>
-                            <a href="/wireless-insights/2-0/guide/license">
+                            <a href="/wireless-insights/3-0/guide/license">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/wireless-insights/2-0/guide/data">
-                                    Data
+                            <a href="/wireless-insights/3-0/guide/data-wifi">
+                                    Wi-Fi Data
                             </a>
                         </li>
                         <li>
-                            <a href="/wireless-insights/2-0/search">
+                            <a href="/wireless-insights/3-0/guide/data-cellular">
+                                    Cellular Data
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/wireless-insights/3-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -134,7 +139,7 @@
                     <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
                         
                         <ul class="nav">
-                            <li><strong>Data</strong></li>
+                            <li><strong>About Wireless Insights</strong></li>
                         </ul>
                     </nav>
                     <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
@@ -220,10 +225,10 @@
                         <div class="col-sm-12">
                             <section id="cta" class="wow fadeIn">
                                 <div class="">
-                                    <h1 id="data" class="anchor"><a class="heading-anchor" href="#data"><span></span></a>Data</h1>
+                                    <h1 id="about-wireless-insights" class="anchor"><a class="heading-anchor" href="#about-wireless-insights"><span></span></a>About Wireless Insights</h1>
                                     <p>
                                             Wireless Insights
-                                            2.0
+                                            3.0
                                     </p>
                                 </div>
                             </section>                    
@@ -238,75 +243,82 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>This section provides the Wireless Insights data collected from Zebra Android devices used for analytics and visualization in the vendor-specific cloud dashboard.  </p>
+<p><strong>Wireless Insights</strong> is a Zebra technology that provides visibility into device Wi-Fi and cellular analytics. The curated data enables administrators to monitor network performance and proactively identify and resolve potential issues before they impact worker productivity. </p>
 
-<hr>
+<p>A solution using Wireless Insights consists of two key components:</p>
 
-<h2 id="datacollected" class="anchor"><a class="heading-anchor" href="#datacollected"><span></span></a>Data Collected</h2>
+<ul>
+<li><p><strong>Wireless Insights -</strong> The core technology embedded on Zebra's supported devices that gathers insights from wireless connectivity events, internal states, and network packets.</p></li>
 
-<p><br></p>
+<li><p><strong>Device Agent:</strong> An agent installed on the device to process and transmit the collected data to a dashboard. Use <em>one</em> of the following:</p>
 
-<table class="facelift" align="center" style="width:100%" border="1" padding="5px">
-  <tbody><tr bgcolor="#dce8ef">
-    <th>Data Type</th>
-    <th>Data Captured</th>
-  </tr>
+<ul>
+<li><strong>Wireless Insights Agent -</strong> Zebra's agent that captures and transmits data to Zebra's cloud, such as <a href="/zebradna">Zebra DNA (ZDNA) Cloud</a>, for dashboard visualization. </li>
 
-  <tr>
-    <td>Device Data</td>
-    <td><b>Management Packets</b><br>∙ 802.11-management packets (connection and roaming) and ARP, DHCP, DNS, and ICMP management and data packets<br>∙ 802.11-data (IP packets of any kind) of the connected device (unicast) and broadcast/multicast packets<br><br><b>Device Info</b><br>• Device MAC Address</td>
-  </tr>
+<li><strong>Vendor-specific Agent -</strong> An agent from a network infrastructure partner (e.g., Aruba/HPE, Extreme Networks, Juniper/Mist) that integrates with their specific dashboard (e.g., UXI, Intuitive Insights, Marvis).</li></ul>
 
- <tr>
-    <td>Voice Analysis</td>
-    <td><b>Active (Simulated)</b><br>∙ Generate synthetic voice traffic analysis reports (for a duration of time)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦ <b>Call quality feedback -</b> VoIP link quality [1-5 rating], Wi-Fi link quality [1-5 rating], latency, jitter and packet loss averages<br>∙ Generate roaming analysis active reports (for a duration of time)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦ Verbose Wi-Fi level performance analysis (e.g. roaming, scanning) and deep analysis of any VoIP, connectivity and roaming issues<br><br><b>Background (Live)</b><br>• Real-time voice app’s SIP+RTP Analysis reports (24/7)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦ <b>Call quality feedback -</b> VoIP link quality [1-5 rating], Wi-Fi link quality [1-5 rating], latency, jitter and packet loss averages<br>• Generate roaming analysis reports (24/7)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦ Wi-Fi level performance analysis and deep analysis of any VoIP, connectivity and roaming issues </td>
-  </tr>
-
- <tr>
-    <td>Roaming Analysis</td>
-    <td><b>Active (Simulated)</b><br>∙ Generate synthetic traffic analysis reports (for a duration of time)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦ <b>Traffic quality feedback -</b> Wi-Fi link quality [1-5 rating], latency, jitter and packet loss averages<br>∙ Generate roaming analysis active reports (for a duration of time)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦ Verbose Wi-Fi level performance analysis (e.g. roaming, scanning) and deep analysis of any VoIP, connectivity, and roaming issues<br><br><b>Background (Live)</b><br>• Generate roaming analysis reports, (24/7) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◦ Wi-Fi level performance analysis and deep analysis of any VoIP, connectivity, and roaming issues </td>
-</tr>
-
-</tbody></table>
-
-<hr>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Important:</strong> Vendor-specific Agents capture Zebra’s Wi-Fi data, but not Zebra’s cellular data.​</p></li>
+</ul>
 
 <!-- 
-## Configure Data Collection
+**Zebra Wireless Insights** is a cloud-based subscription service for Zebra devices that allows companies to examine Wi-Fi traffic in real time and diagnose and resolve network issues before they impact workforce productivity. The solution integrates its real-time data stream with dashboards from major access point manufacturers to present the data in a comprehensive dashboard accessible from anywhere. Wireless Insights works with [Zebra Wireless Analyzer](/mx/worryfreewifimgr), a free Wi-Fi analysis tool included with all Zebra devices that gathers statistics about its network traffic. 
 
-Configure data collection and analysis from **Wireless Analyzer** by provisioning devices using **[WorryFree Wi-Fi Manager](/mx/worryfreewifimgr/)** through [OEMConfig](/oemconfig) or [StageNow](/stagenow). Configuration of data collection and analysis includes the following:
-* Enable/Disable packet capture, ping data, Wi-Fi coverage area analysis, etc.
-* Select or configure:
-    * Analysis type: Connection, Voice or Roaming
-    * Passive (background) or Active (foreground) analysis
-    * Logging: errors only, warnings and errors, or all events.
-    * Scan interval
-    * Length of time for analysis session
-    * ... and more.
-* Capture all packets or only management packets for:
-    * Association requests or responses
-    * Re-association requests or responses
-    * Probe requests or responses
-    * Beacons
-    * ATIMS
-    * ... and more.
-* Filter packets by protocol
-
-See [WorryFree Wi-Fi Manager](/mx/worryfreewifimgr/) for more information.
-
----
+As a collaborative multivendor Wi-Fi solution that provides end to end network visibility, Wireless Insights collects Wi-Fi data from the Zebra device agent and delivers the data to a cloud server. The data is then analyzed and presented on an access point manufacturer's dashboard for further analysis or on-demand synthetic testing. 
 -->
+
+<hr>
+
+<h2 id="mainfeatures" class="anchor"><a class="heading-anchor" href="#mainfeatures"><span></span></a>Main Features</h2>
+
+<p>Wireless Insights provides the following key capabilities:</p>
+
+<ul>
+<li><strong>Proactively Monitor Network Health:</strong> Gain visibility into the performance of both Wi-Fi and cellular networks to identify issues early and minimize disruptive incidents.</li>
+
+<li><strong>Achieve End-to-End Network Visibility:</strong> View network performance from the device itself, providing an end-to-end picture of the user experience.</li>
+
+<li><strong>Access Real-Time and Historical Data:</strong> Retrieve comprehensive data and voice analytics across all connected Zebra devices, including metrics for:
+
+
+<ul>
+<li><a href="../data-wifi/">Wi-Fi data</a></li>
+
+<li><a href="../data-cellular/">Cellular Data</a></li></ul>
+</li>
+
+<li><strong>Correlate Events to Find Root Causes:</strong> Automatically correlate network and client-side events to rapidly identify root cause of issues and pinpoint the location of performance degradation.</li>
+
+<li><strong>Perform Advanced Network Analysis:</strong> Conduct passive monitoring and on-demand synthetic testing of devices, with options for packet capture for detailed offline analysis.</li>
+</ul>
+
+<hr>
+
+<h2 id="newinv30" class="anchor"><a class="heading-anchor" href="#newinv30"><span></span></a>New in v3.0</h2>
+
+<ul>
+<li>Now captures <a href="../data-cellular/">cellular data</a>, including failure events, performance metrics, and location information, and sends it to <a href="/zebradna">Zebra DNA Cloud</a> for fleet-wide analysis.</li>
+</ul>
+
+<hr>
+
+<h2 id="download" class="anchor"><a class="heading-anchor" href="#download"><span></span></a>Download</h2>
+
+<p>Download Wireless Insights Agent from the <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/wireless-insights.html">Zebra support portal</a>.</p>
+
+<hr>
 
 <h2 id="seealso" class="anchor"><a class="heading-anchor" href="#seealso"><span></span></a>See Also</h2>
 
 <ul>
-<li><a href="../about/">About</a></li>
-
 <li><a href="../agent/">Wireless Insights Agent</a></li>
 
 <li><a href="../setup">Vendor Agent</a></li>
 
 <li><a href="../license">Licensing</a></li>
+
+<li><a href="../data-wifi">Wi-Fi Data</a></li>
+
+<li><a href="../data-cellular">Cellular Data</a></li>
 </ul><p></p>
                                         
 
