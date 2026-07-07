@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             VAS SDK
-                                            3.0
+                                            4.1
                         </p>
 
                     </ul>
@@ -82,22 +82,22 @@
 
 
                         <li>
-                            <a href="/nfc-vas/3-0/guide/about">
+                            <a href="/nfc-vas/4-1/guide/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/nfc-vas/3-0/guide/api">
+                            <a href="/nfc-vas/4-1/guide/api">
                                     API
                             </a>
                         </li>
                         <li>
-                            <a href="/nfc-vas/3-0/guide/demo">
+                            <a href="/nfc-vas/4-1/guide/demo">
                                     Demo
                             </a>
                         </li>
                         <li>
-                            <a href="/nfc-vas/3-0/search">
+                            <a href="/nfc-vas/4-1/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -213,7 +213,7 @@
                                     <h1 id="about-zebra-vas-sdk" class="anchor"><a class="heading-anchor" href="#about-zebra-vas-sdk"><span></span></a>About Zebra VAS SDK</h1>
                                     <p>
                                             VAS SDK
-                                            3.0
+                                            4.1
                                     </p>
                                 </div>
                             </section>                    
@@ -228,19 +228,21 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p><strong>Zebra VAS SDK</strong> is an Android library built on top of the existing Android NFC APIs and third party VAS (Value Added Service) protocol, such as Apple VAS and Google Smart Tap. It is designed to build an application to read Apple VAS passes, Google Smart Tap passes, and other NFC technology tags. Zebra VAS SDK includes the following capabilities:</p>
+<p><strong>Zebra VAS SDK</strong> is an Android library built upon standard Android NFC APIs and third party VAS (Value Added Service) protocols. It enables the development of applications capable of reading Apple VAS passes, Google Smart Tap passes, Samsung Wallet passes, and other standard NFC tags. </p>
+
+<p>Key Zebra VAS SDK capabilities include:</p>
 
 <ul>
-<li>When reading NFC passes (e.g. from Apple Wallet or Google Wallet) establish a connection between a certified Zebra mobile computer (equipped with an integrated NFC reader) and the Apple or Google device</li>
+<li><strong>Establishing connections:</strong> Creates a communication link between a certified Zebra mobile computer (with an integrated NFC reader) and the Apple or Google device when reading NFC passes (e.g. from Apple, Google, or Samsung Wallet).</li>
 
-<li>Extract data from the NFC tag or NFC pass (stored in Apple Wallet or Google Wallet).</li>
+<li><strong>Extracting data:</strong> Securely pulls data from the NFC tag or mobile wallet passes.</li>
 
-<li>Retrieve the extracted data into the Android application on the Zebra mobile computer</li>
+<li><strong>Delivering data:</strong> Routes the extracted data to the Android application running on the Zebra mobile computer.</li>
 </ul>
 
-<p>VAS is a protocol designed to process NFC passes (such as event tickets, boarding passes, or loyalty cards) stored in mobile wallets. When an NFC pass is stored in the Apple or Google wallet, it enables easy access and utilization of the pass, granting users flexibility and convenience. Organizations seeking to process implement passes collaborate either directly with Apple or Google to acquire the necessary permissions, or partner with a provider capable of issuing such passes.</p>
+<p>VAS is a protocol designed to process NFC passes (such as event tickets, boarding passes, or loyalty cards) stored in mobile wallets. Storing an NFC pass in an Apple, Google, or Samsung wallet provides users with secure, convenient, and immediate access to their digital assets. Organizations seeking to issue and process these passes must collaborate either directly with Apple, Google, or Samsung to acquire the necessary permissions, or partner with a provider capable of issuing such passes.</p>
 
-<p>To use the NFC pass, the user aligns the NFC antennas between their Apple or Google device and the integrated NFC reader on a certified Zebra mobile computer. The devices detect the NFC signal, automatically activating the pass stored in the Apple or Google Wallet. The pass is processed and validated on the mobile computer by the Android application developed using <strong>Zebra VAS SDK.</strong></p>
+<p>To use an NFC pass, the user aligns the NFC antennas between their Apple or Google device and the integrated NFC reader on a certified Zebra mobile computer. The devices detect the NFC signal, automatically activating the pass stored in the mobile wallet. The pass then is processed and validated on the mobile computer by the Android application developed with the <strong>Zebra VAS SDK.</strong></p>
 
 <hr>
 
@@ -265,7 +267,21 @@
 
 <hr>
 
-<h2 id="newinvassdk30" class="anchor"><a class="heading-anchor" href="#newinvassdk30"><span></span></a>New in VAS SDK 3.0</h2>
+<h2 id="newinvassdk41" class="anchor"><a class="heading-anchor" href="#newinvassdk41"><span></span></a>New in VAS SDK 4.1</h2>
+
+<ul>
+<li><strong>Introduced <a href="../api/">Samsung Wallet</a> Support:</strong> Added a new set of APIs to configure, access, and process passes stored in Samsung Wallet.</li>
+
+<li><strong>Added a new <a href="#supportedpasstypes">Supported Pass Types</a> section detailing the pass formats compatible with major mobile wallet platforms.</strong></li>
+
+<li><strong>Updated the <a href="../api/#security">SDK checksum</a> for the latest Zebra VAS SDK (.AAR) release.</strong></li>
+</ul>
+
+<hr>
+
+<h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newinvassdk30" class="anchor"><a class="heading-anchor" href="#newinvassdk30"><span></span></a>New in VAS SDK 3.0</h3>
 
 <ul>
 <li>Updated <a href="../api/#security">checksum</a> for the new version of the Zebra VAS SDK (.AAR).</li>
@@ -289,43 +305,86 @@
 <li>Support for other NFC technology tags</li>
 </ul>
 
-<!--
-### New in VAS SDK 2.0.2
-
-* New [hash value](../api/#security) for the updated Zebra VAS SDK (.AAR)
-* Expanded our API for creating a [ZebraNfcVas object](../api/#developerguide), allowing developers to pass the IZebraServiceConnection object explicitly and receive the callback, instead of having to implement the IZebraServiceConnection in the Activity. This is beneficial for developers who use application frameworks like MVC, MVP, or MVVM, to manage the service callback.
- -->
-
 <hr>
 
 <h2 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h2>
 
 <ul>
-<li>Download and install <strong>Zebra VAS SDK</strong> from <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/value-added-services-sdk.html">Zebra support portal</a>. The download includes the NFC Ticket Demo application and Zebra VAS Service.</li>
+<li><strong>Download and install Zebra VAS SDK from <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/value-added-services-sdk.html">Zebra support portal</a>.</strong> The download includes the NFC Ticket Demo application and Zebra VAS Service.</li>
 
-<li>One of the following devices:
+<li>One of the following mobile devices:
 
 
 <ul>
-<li><strong>Apple device that supports Apple Wallet with Apple VAS capabilities,</strong> for example:</li>
+<li><strong>Apple device that supports Apple Wallet with Apple VAS capabilities,</strong> for example:
 
+
+<ul>
 <li>iPhone</li>
 
-<li>Apple Watch</li>
-
-<li><strong>Google device that supports Google Wallet with Smart Tap capabilities,</strong> for example:</li>
-
-<li>Android</li>
-
-<li>Android Smart Watch</li></ul>
+<li>Apple Watch</li></ul>
 </li>
 
-<li><strong>Certified Zebra mobile computer (with integrated NFC reader) for VAS devices,</strong> see the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/value-added-services-sdk.html">Zebra Support Portal</a> for supported devices</li>
+<li><strong>Android device that supports Samsung Wallet or Google Wallet with Smart Tap capabilities,</strong> for example:
 
-<li><strong>Optional:</strong> NFC tag that supports either of the following tag technologies: NfcA, NfcB, NfcF, NfcV, IsoDep, Ndef</li>
+
+<ul>
+<li>Android Phone</li>
+
+<li>Android Smart Watch</li></ul>
+</li></ul>
+</li>
+
+<li><strong>Certified Zebra mobile computer (with integrated NFC reader) for VAS devices.</strong> See the <a href="https://www.zebra.com/us/en/support-downloads/software/developer-tools/value-added-services-sdk.html">Zebra Support Portal</a> for supported devices</li>
+
+<li><strong>API Requirement:</strong> Android API Level 31 or higher.</li>
+
+<li><strong>Optional:</strong> NFC tag that supports any of the following tag technologies: NfcA, NfcB, NfcF, NfcV, IsoDep, Ndef</li>
 </ul>
 
-<!-- <font size="4" color="red">Replace with direct support portal link.</font> -->
+<hr>
+
+<h2 id="supportedpasstypes" class="anchor"><a class="heading-anchor" href="#supportedpasstypes"><span></span></a>Supported Pass Types</h2>
+
+<p>The solution supports a variety of pass formats across major mobile wallet platforms.</p>
+
+<p><strong>Google Passes:</strong></p>
+
+<ul>
+<li><strong>Loyalty:</strong> Retail loyalty programs, rewards, and stamps</li>
+
+<li><strong>Event Ticket:</strong> Concert, sports, or movie tickets.</li>
+
+<li><strong>Offer:</strong> Digital coupons, promo codes, and discounts.</li>
+
+<li><strong>Gift Card:</strong> Store-specific gift certificates.</li>
+
+<li><strong>Customer Record:</strong> Storage for specific CRM or account profile identifiers.</li>
+
+<li><strong>Private Label Card:</strong> Store-branded credit or payment cards (close-loop cards) typically issued by a retailer for exclusive use within their stores for payments, financing, and earning rewards.</li>
+
+<li><strong>Flight:</strong> Highly structured passes designed specifically for airline travel.</li>
+
+<li><strong>Transit:</strong> Bus, train, or subway tickets.</li>
+
+<li><strong>Generic:</strong> Flexible passes utilized for other custom use cases.</li>
+
+<li><strong>Generic Private:</strong> A highly secure version of the Generic pass.</li>
+</ul>
+
+<p><strong>Samsung Passes:</strong></p>
+
+<ul>
+<li>Loyalty </li>
+
+<li>Ticket </li>
+</ul>
+
+<p><strong>Apple Passes:</strong></p>
+
+<ul>
+<li>Fully supported (standard Apple Wallet pass types)</li>
+</ul>
 
 <hr>
 
@@ -369,7 +428,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10">
-                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2025 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2026 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
                     </div>
                      <!--
                      <div class="col-sm-2">
