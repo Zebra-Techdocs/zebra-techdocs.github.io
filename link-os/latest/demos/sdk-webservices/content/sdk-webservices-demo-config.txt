@@ -1,15 +1,62 @@
--- VERSION
-Date: 16-NOV-2018
+
+! U1 setvar "device.languages" "zpl" 
+
+^FX ************************************************************************* ^FS
+^FX *                                                                         ^FS
+^FX * Zebra Technologies                                                      ^FS
+^FX * Link-OS Webservices Developer Demo Printer Configuration File.          ^FS
+^FX * Version date: 13-JUL-2026                                               ^FS
+^FX * For use with Zebra DNA Printers                                         ^FS
+^FX * Visit http://techdocs.zebra.com/link-os/latest/demos/ for updates.      ^FS
+^FX *                                                                         ^FS
+^FX ************************************************************************* ^FS
+
 
 -- DEFAULTS
-! U1 setvar "capture.channel1.delimiter" ""
-! U1 setvar "capture.channel1.port" "off"
-! U1 setvar "alerts.configured" "COLD START,SNMP,Y,N,255.255.255.255,162,N"
-! U1 setvar "weblink.restore_defaults" ""
+{}{"capture.channel1.delimiter":"",
+"capture.channel1.port":"off",
+"alerts.configured":"COLD START,SNMP,Y,N,255.255.255.255,162,N",
+"weblink.restore_defaults":"",
+"file.delete":"E:WEBLINK2_CERT.NRD",
+"file.delete":"E:WEBLINK2_KEY.NRD",
+"file.delete":"E:WEBLINK2_CA.NRD"
+}
 
--- PROFILE MANAGER CONFIG
-! U1 setvar "weblink.ip.conn1.location" ""
-! U1 setvar "weblink.ip.conn2.location" "https://weblink.westeurope.cloudapp.azure.com/zebra/weblink/"
 
-! U1 setvar "device.reset" ""
+-- STORE CERT
+{}--lJNjwf8Ism5aRhxYJAvmRWcvIR3ABY
+Content-Disposition: form-data; name="files"; filename="E:WEBLINK2_CA.NRD"
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
 
+-----BEGIN CERTIFICATE-----
+MIIDhzCCAm+gAwIBAgICEAAwDQYJKoZIhvcNAQELBQAwezELMAkGA1UEBhMCR0Ix
+GDAWBgNVBAgMD0J1Y2tpbmdoYW1zaGlyZTEbMBkGA1UECgwSWmVicmEgVGVjaG5v
+bG9naWVzMRQwEgYDVQQLDAtTb2Z0d2FyZSBQTTEfMB0GA1UEAwwWWmVicmEgU29m
+dHdhcmUgUE0gUm9vdDAgFw0yMDA1MDUwOTEzNDVaGA8yMDYwMDQyNTA5MTM0NVow
+ezELMAkGA1UEBhMCR0IxGDAWBgNVBAgMD0J1Y2tpbmdoYW1zaGlyZTEbMBkGA1UE
+CgwSWmVicmEgVGVjaG5vbG9naWVzMRQwEgYDVQQLDAtTb2Z0d2FyZSBQTTEfMB0G
+A1UEAwwWWmVicmEgU29mdHdhcmUgUE0gUm9vdDCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMSB3jNvhu6rGxm3bdLWZNXFom6FFOYuV3Sy/yB/kPhaOj34
+vY5SYSG7YVHLklsSNNew+HoIowpzDF8+ConuW05krr9rInoZ1oIKQz2/pdntpi5g
+AoZAi7l3wowsVe7ATXINk3JNFyG37N/i4Y6k/syb6iZ1M7EzFbeKDrv7VlRrpnTx
+8ppvbYVOKMo3DwyThmqg2h7LsfNO2uHr2bhviiVEjyaqW43ayXNu8ymeyWzHlyTX
+0iquaZBZgLXgJPseW+uav/VMF/56oZXjCPTLg00ZEgKQx1QMN+Ek+9ai5rZFYzBm
+hIPmwUJkdBVUMLvbJtVTPTOh/9FmDINoFoeovkUCAwEAAaMTMBEwDwYDVR0TAQH/
+BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAhc0pDkZaLxjmrribmbEXgDyjIWy4
+ljGggG2qdFKWi+dvPZ5PEpR3c9qnCcJGeplHWPYU2ENdbKlgw3pK2BzvopOjInqE
+k5/wCygNuuwghCrxZTy1R8XFtYQXCBKR83RXEDPeJz/Te/FqtKPAp+QK/++OMh64
+vwi9GgutRwpqiRMrPDcYfmdHA5A9pamrqHhXGctpEsTHUVbdIS+JhTjbnxNpH8L3
+ZVew8lB0NWDwmo4h6nbNrVs9o5HMemUx9uBkGeL162vN6GHUmZMz8zr2vbmN58Qt
+/SFY1QVLwvLenKKD5FF8ILrrZbV+shfDCMOFIjh5JD5z2wJOT9xOngtE1A==
+-----END CERTIFICATE-----
+
+--lJNjwf8Ism5aRhxYJAvmRWcvIR3ABY--
+
+
+
+-- CONFIG
+{}{"weblink.logging.max_entries":"500",
+"weblink.ip.conn2.location":"https://weblink.westeurope.cloudapp.azure.com/zebra/weblink/",
+"device.reset":""
+}
