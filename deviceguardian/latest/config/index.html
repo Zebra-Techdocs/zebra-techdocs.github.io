@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Guardian &amp; Access Management
-                                            2.5
+                                            2.6
                         </p>
 
                     </ul>
@@ -75,42 +75,42 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/deviceguardian/2-5/about">
+                            <a href="/deviceguardian/2-6/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/getstarted">
+                            <a href="/deviceguardian/2-6/getstarted">
                                         Admin Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/setup">
+                            <a href="/deviceguardian/2-6/setup">
                                         Install
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/config">
+                            <a href="/deviceguardian/2-6/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/use">
+                            <a href="/deviceguardian/2-6/use">
                                         User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/dashboard">
+                            <a href="/deviceguardian/2-6/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/api">
+                            <a href="/deviceguardian/2-6/api">
                                         APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/faq">
+                            <a href="/deviceguardian/2-6/faq">
                                         FAQ
                             </a>
                         </li>
@@ -120,7 +120,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/search">
+                            <a href="/deviceguardian/2-6/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -230,7 +230,7 @@
                                     <h1 id="configuration" class="anchor"><a class="heading-anchor" href="#configuration"><span></span></a>Configuration</h1>
                                     <p>
                                             Device Guardian &amp; Access Management
-                                            2.5
+                                            2.6
                                     </p>
                                 </div>
                             </section>                    
@@ -428,17 +428,18 @@
 <p><strong>SSO Behavior Notes:</strong></p>
 
 <ul>
-<li><p><strong>Simultaneous Logins -</strong> If the same SSO credentials are used to log into the web portal in separate web browser instances simultaneously, logging out of one instance prevents renders the other instance non-operational.</p></li>
+<li><strong>Simultaneous Logins -</strong> If the same SSO credentials are used to log into the web portal in separate web browser instances simultaneously, logging out of one instance prevents renders the other instance non-operational.</li>
 
-<li><p><strong>First-time login to Chrome -</strong> When using Chrome for the first time on the device and attempting to login with SSO, the following steps are required before proceeding:</p>
+<li><strong>First-time login to Chrome -</strong> When using Chrome for the first time on the device and attempting to login with SSO, the following steps are required before proceeding:</li>
+</ul>
 
 <ol>
-<li>Accept the Google Terms of Service.</li>
+<li><p>Accept the Google Terms of Service.</p></li>
 
-<li>Select the desired option when prompted to turn on sync.</li></ol>
+<li><p>Select the desired option when prompted to turn on sync.</p>
 
 <p>If the device is running Android 8, the SSO login page may reappear after a successful loggin. Tap the back button to access the Device Guardian dashboard.</p></li>
-</ul>
+</ol>
 
 <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note: If Identity Guardian is <u>not</u> installed, SSO login will not be functional on devices.</strong> However, admins and managers can still login to Device Guardian using their non-SSO credentials.</p>
 
@@ -529,15 +530,12 @@ Refer to the video above or follow these steps to integrate SSO with Device Guar
 
 
 <ul>
-<li><strong>Client TLS Certificate -</strong> Uses client certificates for mutual authentication and secure communication between a client app and an identity provider.
+<li><strong>Client TLS Certificate -</strong> Uses client certificates for mutual authentication and secure communication between a client app and an identity provider.</li>
 
-
-<ul>
 <li><strong>Cert File -</strong> Browse to and upload a valid certificate file.</li>
 
 <li><strong>Key File -</strong> Browse to and upload the private key file.
-<img alt="image" style="height:125px" src="sso-ms-tls-cert.png"></li></ul>
-</li>
+<img alt="image" style="height:125px" src="sso-ms-tls-cert.png"></li>
 
 <li><strong>Client Secret -</strong> Uses a client ID and a client secret to authenticate a client app with an identity provider.</li></ul>
 </li>
@@ -663,7 +661,7 @@ Refer to the video above or follow these steps to integrate SSO with Device Guar
 <li><strong>Client TLS Certificate -</strong> Uses client certificates for authentication and secure communication between a client app and an identity provider.</li></ul>
 </li>
 
-<li><strong>Authorization Scope -</strong> Specifies the permission and access level that an app is requesting from an identity provider on behalf of a user. </li>
+<li><strong>Authorization Scope -</strong> Specifies the permission and access level that an app is requesting from an identity provider on behalf of a user.</li>
 
 <li><strong>SSO Endpoint URLs -</strong> Enter the appropriate information based on the SSO server settings:
 
@@ -682,11 +680,11 @@ Refer to the video above or follow these steps to integrate SSO with Device Guar
 
 
 <ul>
-<li><strong>UserID Parameter -</strong> An identifier for the user that is configured in SSO and returned from the SSO response upon authenticating the user. </li>
+<li><strong>UserID Parameter -</strong> An identifier for the user that is configured in SSO and returned from the SSO response upon authenticating the user.</li>
 
 <li><strong>Use SSO Defined Roles -</strong> Enable this option to utilize the roles defined in your SSO system, thereby eliminating the need to manage users through Device Guardian. When enabled, it employs role-based mapping to automatically assign the administrator and manager user roles according to your SSO definitions. If disabled, the admin and manager users must be defined in the <a href="../config/#manageusers">Manage Users</a> section.</li>
 
-<li><strong>Site Location -</strong> Site parameter that determines the location or site of the user. </li>
+<li><strong>Site Location -</strong> Site parameter that determines the location or site of the user.</li>
 
 <li><strong>Admin Role Parameter -</strong> Parameter that identifies whether the user is an admin.</li>
 
@@ -902,7 +900,7 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <h3 id="webportalusers" class="anchor"><a class="heading-anchor" href="#webportalusers"><span></span></a>Web Portal Users</h3>
 
-<p>Web portal users are assigned one of the following roles, which defines their permissions: </p>
+<p>Web portal users are assigned one of the following roles, which defines their permissions:</p>
 
 <ul>
 <li><strong>Admin -</strong> Manages all web portal users across the entire organization.</li>
@@ -912,7 +910,7 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 <li><strong>Company User -</strong> View-only access of web portal users across the entire organization.</li>
 </ul>
 
-<p>After a non-SSO user is created, an email is automatically sent to the user prompting them to set a password. This link expires within 1 hour. </p>
+<p>After a non-SSO user is created, an email is automatically sent to the user prompting them to set a password. This link expires within 1 hour.</p>
 
 <p>The user interface for managing web portal users differs depending on the app in use:</p>
 
@@ -1006,7 +1004,7 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <p><br></p>
 
-<p><strong>File Preparation:</strong> To perform a bulk upload, first create a <code>.csv</code> file containing the user data. </p>
+<p><strong>File Preparation:</strong> To perform a bulk upload, first create a <code>.csv</code> file containing the user data.</p>
 
 <p>File Constraints:</p>
 
@@ -1090,7 +1088,7 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 <li>Click <strong>Bulk Upload.</strong>
 <img alt="image" style="height:450px" src="user-mgmt-admin-bulk.png"></li>
 
-<li>Click <strong>Selected Files</strong> and browse to the prepared <code>.csv</code> file. Alternatively, drag and drop the file into the window. Click <strong>Import.</strong> 
+<li>Click <strong>Selected Files</strong> and browse to the prepared <code>.csv</code> file. Alternatively, drag and drop the file into the window. Click <strong>Import.</strong>
 <img alt="image" style="height:200px" src="bulk-upload-users.png"></li>
 
 <li>A message appears indicating whether the import was successful.
@@ -1105,7 +1103,7 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 
 <p>Only users with the <strong>Admin</strong> role can remove users in bulk from the <strong>User Management</strong> page. This capability is the same for all administrators, regardless of whether they use SSO. An admin can bulk-delete any Admin or Manager user type (both SSO and Non-SSO).</p>
 
-<p><strong>File Preparation:</strong> To perform a bulk upload, first create a <code>.csv</code> file containing the user data. </p>
+<p><strong>File Preparation:</strong> To perform a bulk upload, first create a <code>.csv</code> file containing the user data.</p>
 
 <p>Required Header Fields:</p>
 
@@ -1151,7 +1149,7 @@ c. <strong>IP Address Range Configuration</strong><br>Allow an IP address range 
 <li>Click <strong>Manage &gt; Delete.</strong>
 <img alt="image" style="height:450px" src="user-mgmt-admin-delete.png"></li>
 
-<li>Click <strong>Selected Files</strong> and browse to the prepared <code>.csv</code> file. Alternatively, drag and drop the file into the window. Click <strong>Import.</strong> 
+<li>Click <strong>Selected Files</strong> and browse to the prepared <code>.csv</code> file. Alternatively, drag and drop the file into the window. Click <strong>Import.</strong>
 <img alt="image" style="height:200px" src="bulk-upload-users.png"></li>
 
 <li>Click <strong>Delete.</strong> A message appears indicating whether the import was successful.A message appears indicating whether the import was successful.
@@ -1386,7 +1384,7 @@ To edit the site to which a manager is assigned:
 
 <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Important:</strong> This method is required when Identity Guardian is configured with “CLOUD” as the Comparison Source and “CLOUD_PASSCODE” as the Primary Authentication Factor.</p>
 
-<p><strong>Device Setup for Bulk Upload</strong> </p>
+<p><strong>Device Setup for Bulk Upload</strong></p>
 
 <p>Before adding device users via Bulk Upload, the following components must be set up on the devices:</p>
 
@@ -1453,18 +1451,19 @@ To edit the site to which a manager is assigned:
 <p>There are two methods to delete users:</p>
 
 <ul>
-<li><strong>Delete Single User:</strong>
-
+<li><strong>Delete Single User:</strong></li>
+</ul>
 
 <ol>
 <li>From the Device Users screen, click the delete icon next to the user to remove.</li>
 
 <li>Click <strong>Yes</strong> to confirm.
-<img alt="image" style="height:350px" src="delete-device-user.png"></li></ol>
-</li>
+ <img alt="image" style="height:350px" src="delete-device-user.png"></li>
+</ol>
 
-<li><strong>Delete Single or Multiple Users:</strong>
-
+<ul>
+<li><strong>Delete Single or Multiple Users:</strong></li>
+</ul>
 
 <ol>
 <li>From the Device Users screen, select the user(s) to remove.</li>
@@ -1472,9 +1471,8 @@ To edit the site to which a manager is assigned:
 <li>Click the <strong>Delete</strong> button.</li>
 
 <li>Click <strong>Yes</strong> to confirm.
-<img alt="image" style="height:350px" src="delete-multiple-device-user.png"></li></ol>
-</li>
-</ul>
+ <img alt="image" style="height:350px" src="delete-multiple-device-user.png"></li>
+</ol>
 
 <hr>
 
@@ -1680,18 +1678,21 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
     New York,America/New_York,30 21 * * ,TRUE,admin@my_company.com,"To Be Found,Being Found,Cannot Find,Low Battery,Disconnected,Never Connected,Decommissioned,Moveinout,Accessories",TRUE,10.30.1.50,10.30.1.100
 </code></pre>
 
-<p>Download a sample <a href="./site-sample.csv" download="">here</a>. When modifying the .CSV file, retain the header and replace the sample data with your own data. Ensure the AP location friendly name is easy to understand for device location within the facility. Save the .CSV file in a standard comma-separated values format and avoid UTF-8 encoding, as it may cause errors.</p>
+<!-- 
+Download a sample <a href="./site-sample.csv" download>here</a>. When modifying the .CSV file, retain the header and replace the sample data with your own data. Ensure the AP location friendly name is easy to understand for device location within the facility. Save the .CSV file in a standard comma-separated values format and avoid UTF-8 encoding, as it may cause errors. -->
 
 <p><strong>Steps to add multiple sites at once:</strong></p>
 
 <ol>
-<li>Prepare a .CSV file containing the necessary information for each site, following the instructions above.</li>
-
 <li>In the web portal, go to Admin Settings &gt; Site. Click <strong>Bulk Upload,</strong> then select <strong>Add.</strong>
 <img alt="image" style="height:550px" src="site-bulk-upload-add.jpg"></li>
 
-<li>Upload the .CSV file, then click <strong>Import</strong> to upload the data and add the new sites.
-<img alt="image" style="height:275px" src="upload-csv-add.jpg"></li>
+<li>If a formatted file is not yet available, click <strong>Download Template</strong> to retrieve a populated template with sample data. Replace the sample data with the required data, and save the file.</li>
+
+<li>Click <strong>Select files</strong> to browse for the <code>.csv</code> file containing the data, or drag and drop the file into the window.</li>
+
+<li>Click <strong>Import</strong> to upload the data and add the new sites.
+<img alt="image" style="height:275px" src="upload-csv.jpg"></li>
 </ol>
 
 <p><strong>Steps to edit site data in bulk:</strong></p>
@@ -1703,7 +1704,7 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
 <img alt="image" style="height:550px" src="site-bulk-upload-modify.jpg"></li>
 
 <li>Upload the .CSV file, then click <strong>Import</strong> to upload the modified data.
-<img alt="image" style="height:275px" src="upload-csv-modify.jpg"></li>
+<img alt="image" style="height:275px" src="upload-csv.jpg"></li>
 </ol>
 
 <p><strong>Steps to remove site data in bulk:</strong></p>
@@ -1715,7 +1716,7 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
 <img alt="image" style="height:550px" src="site-bulk-upload-delete.jpg"></li>
 
 <li>Upload the .CSV file, then click <strong>Import</strong> to remove the data from the site table.
-<img alt="image" style="height:275px" src="upload-csv-delete.jpg"></li>
+<img alt="image" style="height:275px" src="upload-csv.jpg"></li>
 </ol>
 
 <hr>
@@ -1741,7 +1742,7 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
 
 <li>Enter the required information in the fields.</li>
 
-<li>(Optional) For Device Guardian Access Management, choose a <strong>Device Return Rule</strong> to determine how devices are returned to kiosks. <br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Feature Limitation:</strong> The <strong>Device Return Rule, Bluetooth Proximity,</strong> and <strong><a href="#deviceautoassignment">Device Auto Assignment</a></strong> features are mutually exclusive; <em>only one</em> may be enabled at a time. 
+<li>(Optional) For Device Guardian Access Management, choose a <strong>Device Return Rule</strong> to determine how devices are returned to kiosks. <br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Feature Limitation:</strong> The <strong><a href="#deviceautoassignment">Device Auto Assignment</a></strong> feature can operate with either <strong>Device Return Rule</strong> or <strong>Bluetooth Proximity,</strong> but not both at the same time.
 
 
 <ul>
@@ -1765,7 +1766,7 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
 <li><strong>Include Attachments (.CSV) in Email -</strong> Select if it is desired to add an attachment to the email.</li></ul>
 </li>
 
-<li>(Optional) Enable <strong>Bluetooth Proximity</strong> to automatically log out users when a device is placed in a powered cradle within its kiosk’s Bluetooth range, and to trigger an alarm if the device is removed and taken beyond this range without logging in; the alarm deactivates when the user either returns within range or logs in. Certain Identity Guardian settings are required <strong><em>‡</em></strong>.<br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Feature Limitation:</strong> This feature is mutually exclusive with <strong>Device Return Rule</strong> and <strong><a href="#deviceautoassignment">Device Auto Assignment</a>.</strong> Only one of these three options can be active at a time.</li>
+<li>(Optional) Enable <strong>Bluetooth Proximity</strong> to automatically log out users when a device is placed in a powered cradle within its kiosk’s Bluetooth range, and to trigger an alarm if the device is removed and taken beyond this range without logging in; the alarm deactivates when the user either returns within range or logs in. Certain Identity Guardian settings are required <strong><em>‡</em></strong>.<br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Feature Limitation:</strong> This feature cannot operate concurrently with the <strong>Device Return Rule</strong>; only one of these options can be enabled at a time.</li>
 
 <li>Click <strong>Create.</strong></li>
 </ol>
@@ -1781,39 +1782,27 @@ Sample .CSV file content (<strong>Note:</strong> No spaces between fields or aft
 
 
 <ul>
-<li><strong>On Unlock:</strong>
+<li><strong>On Unlock:</strong></li>
 
-
-<ul>
 <li><strong>Verification Setup:</strong> NONE</li>
 
-<li><strong>Alternative Verification Setup:</strong> NONE</li></ul>
-</li>
+<li><strong>Alternative Verification Setup:</strong> NONE</li>
 
-<li><strong>On Reboot:</strong>
+<li><strong>On Reboot:</strong></li>
 
-
-<ul>
 <li><strong>Verification Setup:</strong> NONE</li>
 
-<li><strong>Alternative Verification Setup:</strong> NONE</li></ul>
-</li>
+<li><strong>Alternative Verification Setup:</strong> NONE</li>
 
-<li><strong>On AC Power Connected:</strong>
+<li><strong>On AC Power Connected:</strong></li>
 
-
-<ul>
 <li><strong>Verification Setup:</strong> NONE</li>
 
-<li><strong>Alternative Verification Setup:</strong> NONE</li></ul>
-</li>
+<li><strong>Alternative Verification Setup:</strong> NONE</li>
 
-<li><strong>On AC Power Disconnected:</strong>
+<li><strong>On AC Power Disconnected:</strong></li>
 
-
-<ul>
-<li><strong>Verification Setup:</strong> NONE</li></ul>
-</li>
+<li><strong>Verification Setup:</strong> NONE</li>
 
 <li><strong>Alternative Verification Setup:</strong> NONE</li></ul>
 </li>
@@ -2652,9 +2641,9 @@ When modifying the .CSV file, keep the header information intact and replace the
 <p><strong>Available Actions:</strong></p>
 
 <ul>
-<li><strong><a href="#bulkuploadupdatekiosks">Bulk Upload/Update Kiosks</a></strong> </li>
+<li><strong><a href="#bulkuploadupdatekiosks">Bulk Upload/Update Kiosks</a></strong></li>
 
-<li><strong><a href="#exportkioskdata">Export Kiosk Data</a></strong> </li>
+<li><strong><a href="#exportkioskdata">Export Kiosk Data</a></strong></li>
 
 <li><strong><a href="#modifykiosk">Modify Kiosk</a></strong></li>
 
@@ -2677,12 +2666,14 @@ When modifying the .CSV file, keep the header information intact and replace the
 
 <h3 id="bulkuploadupdatekiosks" class="anchor"><a class="heading-anchor" href="#bulkuploadupdatekiosks"><span></span></a>Bulk Upload/Update Kiosks</h3>
 
-<p>Bulk-assign kiosks to sites and define their display names using a <code>csv</code> file. Generate the required template using the <strong>Export Data</strong> feature.</p>
+<p>Bulk-assign kiosks to sites and define their display names using a <code>csv</code> file. </p>
 
 <ol>
 <li>In the Kiosk screen, click <strong>Bulk Upload.</strong></li>
 
-<li>Click <strong>Select files</strong> to browse to the <code>.csv</code> file, or drag and drop the file into the window.</li>
+<li>If a formatted file is not yet available, click <strong>Download Template</strong> to retrieve a populated template with sample data. Replace the sample data with the required data, and save the file.</li>
+
+<li>Click <strong>Select files</strong> to browse for the <code>.csv</code> file containing the data, or drag and drop the file into the window.</li>
 
 <li>Click <strong>Import.</strong>
 <img alt="image" style="height:250px" src="bulk-import-kiosk.jpg"></li>
@@ -2725,8 +2716,8 @@ When modifying the .CSV file, keep the header information intact and replace the
 </ol>
 
 <p>After a kiosk is deleted, DGAM displays a removal confirmation on the screen. To make DGAM operational again, it must be reinstalled.
-    <img alt="image" style="height:350px" src="kiosk-deleted.png">
-    <em>DGAM Screen on kiosk after deletion</em></p>
+<img alt="image" style="height:350px" src="kiosk-deleted.png">
+<em>DGAM Screen on kiosk after deletion</em></p>
 
 <hr>
 
@@ -2736,7 +2727,7 @@ When modifying the .CSV file, keep the header information intact and replace the
   <p>This section applies to <code>DGAM Only</code>.</p>
 </blockquote>
 
-<p>The <strong>Kiosk Device</strong> screen (under Admin Settings &gt; Kiosk Device) lists all <a href="#registerdevicetokiosk">devices registered</a> to a kiosk. For easier identification, Kiosks are identified by their assigned&nbsp;"DisplayName." If a&nbsp;"DisplayName"&nbsp;is not set, the system defaults to showing the "DeviceModel_SerialNumber." </p>
+<p>The <strong>Kiosk Device</strong> screen (under Admin Settings &gt; Kiosk Device) lists all <a href="#registerdevicetokiosk">devices registered</a> to a kiosk. For easier identification, Kiosks are identified by their assigned&nbsp;"DisplayName." If a&nbsp;"DisplayName"&nbsp;is not set, the system defaults to showing the "DeviceModel_SerialNumber."</p>
 
 <p><strong>Device Statuses:</strong></p>
 
@@ -2762,7 +2753,7 @@ There are three methods to register a device to a kiosk to allow device monitori
 <p><strong>Other Available Actions:</strong></p>
 
 <ul>
-<li><strong><a href="#bulkuploadupdatekioskdevices">Update Kiosk Devices</a></strong> </li>
+<li><strong><a href="#bulkuploadupdatekioskdevices">Update Kiosk Devices</a></strong></li>
 
 <li><strong><a href="#exportkioskdevicedata">Export Kiosk Device Data</a></strong></li>
 
@@ -2779,14 +2770,16 @@ There are three methods to register a device to a kiosk to allow device monitori
 
 <h3 id="bulkuploadupdatekioskdevices" class="anchor"><a class="heading-anchor" href="#bulkuploadupdatekioskdevices"><span></span></a>Bulk Upload/Update Kiosk Devices</h3>
 
-<p>Add or update multiple kiosk devices simultaneously via a <code>.csv</code> file upload. A template can be generated by using the <strong>Export Data</strong> feature and updating the resulting file. </p>
+<p>Add or update multiple kiosk devices simultaneously via a <code>.csv</code> file upload. </p>
 
 <p><strong>Prerequisite:</strong> Prior to the upload, devices must be registered with the server and visible in the <a href="#managedevices">Mobile Devices Dashboard</a>.</p>
 
 <ol>
 <li>In the Kiosk Device screen, click <strong>Bulk Upload.</strong></li>
 
-<li>Click <strong>Select files</strong> to browse to the <code>.csv</code> file or drag and drop the <code>.csv</code> file.</li>
+<li>If a formatted file is not yet available, click <strong>Download Template</strong> to retrieve a populated template with sample data. Replace the sample data with the required data, and save the file.</li>
+
+<li>Click <strong>Select files</strong> to browse for the <code>.csv</code> file containing the data, or drag and drop the file into the window.</li>
 
 <li>Click <strong>Import.</strong>
 <img alt="image" style="height:350px" src="bulk-import-kiosk-device.jpg"></li>
@@ -2875,7 +2868,7 @@ There are three methods to register a device to a kiosk to allow device monitori
 
 <p><strong>Device Auto Assignment</strong> (located under Settings &gt; Configuration) automatically assigns a mobile device to the nearest charging kiosk within Bluetooth range. This eliminates the need for manual <a href="../setup/#registerdevicetokiosk">device registration to the kiosk</a>. For this feature to work, both the kiosk and the mobile device <em>must</em> be assigned to the same site.</p>
 
-<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Feature Limitation:</strong> This feature is mutually exclusive with <strong><a href="#createsite">Bluetooth Proximity</a></strong> and <strong><a href="#createsite">Device Return Rule</a>.</strong> Only one of these three options can be active at a time.</p>
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Feature Limitation:</strong> This feature can operate with <strong><a href="#createsite">Bluetooth Proximity</a></strong> or <strong><a href="#createsite">Device Return Rule</a>,</strong> but not both at the same time.</p>
 
 <p><img alt="image" style="height:350px" src="auto-assign.jpg"></p>
 
@@ -2985,17 +2978,19 @@ There are three methods to register a device to a kiosk to allow device monitori
 
 <li>Disconnected</li></ul>
 
-<p>After a device has been automatically marked <strong>To Be Found</strong> based on the above selection, if the device state changes and no longer satisfies the selected state(s), then <strong>To Be Found</strong> is removed from the device.</p>
+<p>After a device has been automatically marked <strong>To Be Found</strong> based on the above selection, if the device state changes and no longer satisfies the selected state(s), then <strong>To Be Found</strong> is removed from the device.</p></li>
+</ol>
 
 <blockquote>
   <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Important:</strong> During the finding process, before marking the device as <strong>Found,</strong> <u><i>make sure one of the selected conditions is NOT satisfied</i></u> (e.g. charge the device if "not charging" is selected). Otherwise, the device will return back to the <strong>To Be Found</strong> state after it is marked <strong>Found.</strong></p>
-</blockquote></li>
+</blockquote>
 
-<li><p><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked <strong>Found.</strong> This eliminates the need to manually perform this action.</p></li>
+<ol>
+<li><strong>Automatically place device "In Service" when marked "Found" -</strong> Enable this option to automatically place the device back “In Service” after it is located and marked <strong>Found.</strong> This eliminates the need to manually perform this action.</li>
 
-<li><p><strong>Automatically set "To Be Found" device to "In Service" upon checkout -</strong> Enable this option to automatically place the device back <strong>In Service</strong> when a device in the <strong>To Be Found</strong> state is checked out. There is no need for the device to remain in the <strong>To Be Found</strong> state since the user has checked out the device.</p></li>
+<li><strong>Automatically set "To Be Found" device to "In Service" upon checkout -</strong> Enable this option to automatically place the device back <strong>In Service</strong> when a device in the <strong>To Be Found</strong> state is checked out. There is no need for the device to remain in the <strong>To Be Found</strong> state since the user has checked out the device.</li>
 
-<li><p>Click on <strong>Save.</strong></p></li>
+<li>Click on <strong>Save.</strong></li>
 </ol>
 
 <!--
@@ -3233,7 +3228,7 @@ _Video: Demonstration on automatically detecting lost devices nearby_
   <p>This section applies to <code>DGAM Only</code>.</p>
 </blockquote>
 
-<p>Email notification reports deliver information to recipients about devices registered to kiosks that are currently missing. These reports are sent as .CSV attachments from the email address <code>NPDVIQFNoReply@zebra.com</code>. The ability to manage email notifications is determined by user role:</p>
+<p>Email notification reports inform recipients with updates on devices registered to kiosks, providing information on either missing devices or all devices registered to the kiosk. These reports are delivered daily at a scheduled time from <code>NPDVIQFNoReply@zebra.com</code> and include a <code>CSV</code> attachment containing relevant device details, such as device name, serial number, and user name. The ability to manage email notifications depends on user role:</p>
 
 <ul>
 <li><strong>Administrators -</strong> Add, view, edit, and delete email notification configurations across all sites.</li>
@@ -3243,86 +3238,113 @@ _Video: Demonstration on automatically detecting lost devices nearby_
 <li><strong>Users/Associates -</strong> View email notification configurations within their designated site.</li>
 </ul>
 
-<p>To add, view, edit, or delete email notifications:</p>
+<p>There are two types of reports: </p>
+
+<ul>
+<li><strong>Missing:</strong> Details devices currently flagged as Missing</li>
+
+<li><strong>End of Day Device Status Report:</strong> Provides device details for all devices (Available, In Use, and Missing).</li>
+</ul>
+
+<p>Configuring email notifications:</p>
 
 <ol>
-<li>Go to <strong>Settings &gt; Notifications &gt; Email Notification.</strong> Options are visible based on user role. To view, edit, and delete existing email notifications,click on the respective link. To add a new email notification, click <strong>Add New Configuration</strong> and follow the subsequent steps.
-<img alt="image" style="height:650px" src="notification-email.jpg"></li>
+<li>Navigate to <strong>Settings &gt; Notifications &gt; Email Notification.</strong> Available options depend on user role. 
+
+
+<ul>
+<li>To view, edit, and delete existing email notifications, click on the respective link in the web portal. </li>
+
+<li>To add a new email notification, click <strong>Add New Configuration</strong> and follow the subsequent steps.
+<img alt="image" style="height:550px" src="notification-email.jpg"></li></ul>
+</li>
 
 <li>Enter the appropriate information, then click <strong>Save:</strong>
 
 
 <ul>
-<li><strong>Name:</strong> [Enter the name identifier]</li>
+<li><strong>Name:</strong> Enter a unique identifier for the configuration.</li>
 
-<li><strong>Email Addresses:</strong> [Enter recipient email addresses, separated by commas]</li>
+<li><strong>Email Addresses:</strong> Enter recipient email addresses separated by commas.</li>
 
-<li><strong>Site:</strong> [Select the site]</li>
+<li><strong>Site:</strong> Select the target site.</li>
 
-<li><strong>Status:</strong> Missing [This cannot be changed]</li>
-
-<li><strong>Status Reason:</strong> [Select one of the following reasons for reporting]
+<li><strong>Type of Report:</strong> Select one of the following:
 
 
 <ul>
-<li><strong>INVALID_LOGIN -</strong> Failed login attempt due to user inability to login</li>
+<li><strong>Missing -</strong> Details devices currently flagged as Missing</li>
 
-<li><strong>NOT_RETURNED -</strong> Device not returned to the kiosk</li>
+<li><strong>End of Day Device Status Report -</strong> Details all devices (Available, In Use, and Missing)</li></ul>
+</li>
 
-<li><strong>COMMUNICATION_LOST -</strong> No communication between the device and kiosk</li>
+<li><strong>Status Reason</strong> <em>(Only applicable when <strong>Type of Report</strong> is set to "Missing"):</em> Select the specific trigger reason for the report:
+
+
+<ul>
+<li><strong>INVALID_LOGIN -</strong> Failed login attempt due to user login failure.</li>
+
+<li><strong>NOT_RETURNED -</strong> Device was not returned to the kiosk.</li>
+
+<li><strong>COMMUNICATION_LOST -</strong> Device lost communication with the kiosk.</li>
 
 <li><strong>All of the above</strong></li></ul>
 </li>
 
-<li><strong>Scheduled At:</strong> [Specify the delivery time for the report]</li>
+<li><strong>Scheduled At:</strong> Specify the daily delivery time.</li>
 
-<li><strong>Type of Report:</strong> [Select the report type to be sent] 
-
-
-<ul>
-<li><strong>Device Status Notification (last 24 hours) -</strong> Includes: 
+<li><strong>Type of Report</strong> <em>(Only applies if <strong>Type of Report</strong> is set to "Missing"):</em> Select the format and data depth for the report:
 
 
 <ul>
-<li><strong>Device Name</strong> </li>
+<li><strong>Device Status Notification (last 24 hours) -</strong> Contains:
 
-<li><strong>Serial Number</strong> </li>
 
-<li><strong>Last Update -</strong> Time of most recent update </li>
+<ul>
+<li><strong>Device Name</strong></li>
 
-<li><strong>Battery Level (%)</strong> </li>
+<li><strong>Serial Number</strong></li>
 
-<li><strong>User Name</strong> </li>
+<li><strong>Last Update -</strong> Time of most recent update</li>
 
-<li><strong>Status:</strong> Missing </li>
+<li><strong>Battery Level (%)</strong></li>
 
-<li><strong>Status Reason</strong> </li>
+<li><strong>User Name</strong></li>
 
-<li><strong>Missing Days -</strong> Number of days missing </li>
+<li><strong>Status:</strong> Missing</li>
 
-<li><strong>Site Name</strong> </li></ul>
+<li><strong>Status Reason</strong></li>
+
+<li><strong>Missing Days -</strong> Number of days missing</li>
+
+<li><strong>Site Name</strong></li></ul>
 </li>
 
-<li><strong>Detailed Device Status Notification (last 24 hours) -</strong> Includes all <strong>Device Status Notification</strong> data plus: 
+<li><strong>Detailed Device Status Notification (last 24 hours) -</strong> Contains all <strong>Device Status Notification</strong> data, plus:
 
 
 <ul>
-<li><strong>Cabinet Name -</strong> Name of kiosk </li>
+<li><strong>Cabinet Name -</strong> Name of kiosk</li>
 
-<li><strong>Previous State Time -</strong> Timestamp of the previous state occurrence </li>
+<li><strong>Previous State Time -</strong> Timestamp of the previous state occurrence</li>
 
-<li><strong>Previous State -</strong> Device's prior state: missing, on_charge, or in_use </li>
+<li><strong>Previous State -</strong> Device's prior state: missing, on_charge, or in_use</li>
 
-<li><strong>New State Time -</strong> Timestamp of when the device transitioned to its current state </li>
+<li><strong>New State Time -</strong> Timestamp of when the device transitioned to its current state</li>
 
-<li><strong>New State -</strong> Current state of the device: missing, on_charge, or in_use </li></ul>
+<li><strong>New State -</strong> Current state of the device: missing, on_charge, or in_use</li></ul>
 </li>
 
-<li><strong>Detailed Device Notification - (last 6 months) -</strong> Contains all <strong>Detailed Device Status Notification</strong> data for the last 6 months.
-<img alt="image" style="height:650px" src="notification-new-email.png"></li></ul>
+<li><strong>Detailed Device Notification - (last 6 months) -</strong> Contains all historical <strong>Detailed Device Status Notification</strong> data spanning the last 6 months.</li></ul>
 </li></ul>
 </li>
 </ol>
+
+<p><img alt="image" style="height:500px" src="notification-email-missing.png">
+<em>Email Notification - Missing Device Report</em></p>
+
+<p><img alt="image" style="height:300px" src="notification-email-eod.png">
+<em>Email Notification - End of Day Device Status Report</em></p>
 
 <hr>
 

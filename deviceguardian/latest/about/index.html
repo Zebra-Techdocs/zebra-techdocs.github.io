@@ -67,7 +67,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Device Guardian &amp; Access Management
-                                            2.5
+                                            2.6
                         </p>
 
                     </ul>
@@ -75,42 +75,42 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="/deviceguardian/2-5/about">
+                            <a href="/deviceguardian/2-6/about">
                                         About
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/getstarted">
+                            <a href="/deviceguardian/2-6/getstarted">
                                         Admin Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/setup">
+                            <a href="/deviceguardian/2-6/setup">
                                         Install
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/config">
+                            <a href="/deviceguardian/2-6/config">
                                         Configuration
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/use">
+                            <a href="/deviceguardian/2-6/use">
                                         User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/dashboard">
+                            <a href="/deviceguardian/2-6/dashboard">
                                         Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/api">
+                            <a href="/deviceguardian/2-6/api">
                                         APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/faq">
+                            <a href="/deviceguardian/2-6/faq">
                                         FAQ
                             </a>
                         </li>
@@ -120,7 +120,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/deviceguardian/2-5/search">
+                            <a href="/deviceguardian/2-6/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -230,7 +230,7 @@
                                     <h1 id="about-device-guardian--access-management" class="anchor"><a class="heading-anchor" href="#about-device-guardian--access-management"><span></span></a>About Device Guardian &amp; Access Management</h1>
                                     <p>
                                             Device Guardian &amp; Access Management
-                                            2.5
+                                            2.6
                                     </p>
                                 </div>
                             </section>                    
@@ -334,14 +334,25 @@
 
 <hr>
 
-<h2 id="newin251" class="anchor"><a class="heading-anchor" href="#newin251"><span></span></a>New in 2.5.1</h2>
+<h2 id="newin26" class="anchor"><a class="heading-anchor" href="#newin26"><span></span></a>New in 2.6</h2>
 
 <ul>
-<li><strong>Added support for Okta as a <a href="../config/#singlesignonsso">Single Sign-On (SSO)</a> provider.</strong></li>
+<li><strong>New "Download Template" feature for Bulk Uploads:</strong> A template can now be downloaded directly from the bulk upload screen in the web portal for <a href="../config/#bulkuploadupdatekiosks">Kiosk</a>, <a href="../config/#bulkuploadupdatekioskdevices">Kiosk Device</a>, and <a href="../config/#bulkupload">Site</a> configurations. This eliminates the need to export existing data or retrieve a template externally.</li>
 
-<li><strong>New <a href="../config/#missingdevice">Missing Device Notifications</a> Setting:</strong> Administrators can now manage on-device alerts when a device is flagged "To Be Found" (Missing). Previously, this was enabled by default with no configuration settings.</li>
+<li><strong>Added "Save Filter" and "Clear Filter" options to the <a href="../dashboard/#dgamdashboard">DGAM Dashboard</a>:</strong> This allows admins to lock in custom Site and Kiosk views without reapplying them in each session.</li>
 
-<li><strong>Resolved Issue:</strong> Resolved an issue where the Device Guardian app became unresponsive if Bluetooth failed to enable during application launch. The app now handles this gracefully and displays the following message: “Unable to turn on Bluetooth. Please contact your administrator.”</li>
+<li><strong>For <code>DGAM Only</code>:</strong>
+
+
+<ul>
+<li><strong>Automated DataWedge Profile Creation:</strong> Upon installation, a <a href="../setup/#devicerequirements">DataWedge profile</a> named "DGAM" is automatically generated to enable barcode scanning for device registration and recovery. This eliminates the need to manually create the profile.</li>
+
+<li><strong>Enhanced Feature - Device Auto Assignment:</strong> The <a href="../config/#deviceautoassignment">Device Auto Assignment</a> feature now operates concurrently with either <a href="../config/#createsite">Bluetooth Proximity</a> or the <a href="../config/#createsite">Device Return Rule</a>. <strong>Note:</strong> Bluetooth Proximity and the Device Return Rule remain mutually exclusive and cannot be enabled simultaneously.</li>
+
+<li><strong>New Summary Report Email Notification:</strong> The <a href="../config/#email">Email Notification</a> feature has been enhanced with a "Type of Report" option, allowing administrators to choose between a "Missing" device report or a comprehensive "End of Day Device Status Report" that provides a unified view of all Available, In-Use, and Missing devices.</li></ul>
+</li>
+
+<li><strong>Resolved Issue:</strong> During the recovery process, returning the missing device to a charging cradle now automatically transitions its status from "Missing" to "Available.”</li>
 </ul>
 
 <!-- // Removed until TC101 is released:
@@ -364,9 +375,7 @@ Added support for the TC101 device (Android 15 or higher)
 
 <li>In the web portal, exporting Kiosk Devices with filters applied from the dashboard generates duplicate files with identical data.</li>
 
-<li>When an admin reassigns a manager’s site from one site to another, the site filter dropdown on the Historical Reports page continues to display the previous site name upon manager login.</li>
-
-<li>When a device is marked as “Missing” due to a disconnection state and then reconnects, the state updates correctly, but the missing reason remains as “Disconnected.”</li>
+<li>The DGAM locking cradle mechanism is not compatible with Zebra Enterprise Home Screen.</li>
 
 <li>When access points are deleted from the web console, the Device dashboard on the Android client still displays the old friendly name for the connected access points.</li>
 
@@ -374,14 +383,22 @@ Added support for the TC101 device (Android 15 or higher)
 
 <li>If the Lost Device Notification feature is disabled, the WS301 device cannot be registered to the Kiosk using a QR code. This device can still be registered using Managed Config, Bulk Upload, or Device Auto Assignment.</li>
 
-<li>The Return to Different/Same Kiosk, Bluetooth Proximity, and Device Auto Assignment features can only be used one at a time to avoid any unexpected behavior.</li>
-
 <li>The “Modified By” column in the device user’s section displays the tenant level email address rather than the specific email ID of the user who has made the change.</li>
 </ul>
 
 <hr>
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin251" class="anchor"><a class="heading-anchor" href="#newin251"><span></span></a>New in 2.5.1</h3>
+
+<ul>
+<li><strong>Added support for Okta as a <a href="../config/#singlesignonsso">Single Sign-On (SSO)</a> provider.</strong></li>
+
+<li><strong>New <a href="../config/#missingdevice">Missing Device Notifications</a> Setting:</strong> Administrators can now manage on-device alerts when a device is flagged "To Be Found" (Missing). Previously, this was enabled by default with no configuration settings.</li>
+
+<li><strong>Resolved Issue:</strong> Resolved an issue where the Device Guardian app became unresponsive if Bluetooth failed to enable during application launch. The app now handles this gracefully and displays the following message: “Unable to turn on Bluetooth. Please contact your administrator.”</li>
+</ul>
 
 <h3 id="newin24" class="anchor"><a class="heading-anchor" href="#newin24"><span></span></a>New in 2.4</h3>
 
@@ -400,11 +417,14 @@ Added support for the TC101 device (Android 15 or higher)
 <ul>
 <li>For Cabinet Devices and User Metrics, the first three columns are now: <strong>Serial Number, Model, and Device Name</strong> for easier identification.</li>
 
-<li>To simplify identification:</li>
+<li>To simplify identification:
 
+
+<ul>
 <li>The <strong>Device Name</strong> and <strong>Kiosk Name</strong> columns now display their defined aliases.</li>
 
 <li>The <strong>Serial Number</strong> is now located in its own separate column.</li></ul>
+</li></ul>
 </li>
 
 <li><strong>Added a "Last Updated" column in the <a href="../dashboard/#dgamdashboard">DGAM Dashboard</a> and <a href="../dashboard/#kioskdashboard">Kiosk Dashboard</a></strong> for the Available, In use, and Missing device categories to indicate when a device transitioned into its current state.</li>
@@ -467,15 +487,21 @@ Added support for the TC101 device (Android 15 or higher)
 
 
 <ul>
-<li>If wildcards are supported:</li>
+<li>If wildcards are supported:
 
-<li><code>*.swengagement.zebra.com</code></li>
 
-<li>If wildcards are not supported:</li>
+<ul>
+<li><code>*.swengagement.zebra.com</code></li></ul>
+</li>
 
+<li>If wildcards are not supported:
+
+
+<ul>
 <li><code>content.swengagement.zebra.com</code></li>
 
 <li><code>data.swengagement.zebra.com</code></li></ul>
+</li></ul>
 </li>
 </ul>
 

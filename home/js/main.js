@@ -872,6 +872,7 @@ function populateDropdown (ddl_ver, ddl_doc) {
         case '/deviceguardian/2-3':
         case '/deviceguardian/2-4':
         case '/deviceguardian/2-5':
+        case '/deviceguardian/2-6':
             ddl_doc.options.length = 0;
             for (i=0; i < dg_2_2_text.length; i++) {
                 createOption(ddl_doc, dg_2_2_text[i], dg_2_2_val[i]);
