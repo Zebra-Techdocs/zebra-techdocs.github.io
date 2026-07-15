@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             AI Data Capture SDK
-                                            3.3
+                                            4.0
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/ai-datacapture/3-3/about">
+                            <a href="/ai-datacapture/4-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/setup">
+                            <a href="/ai-datacapture/4-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/localizer">
+                            <a href="/ai-datacapture/4-0/localizer">
                                     Localizer
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/productrecognition">
+                            <a href="/ai-datacapture/4-0/productrecognition">
                                     Product Recognition
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/barcodedecoder">
+                            <a href="/ai-datacapture/4-0/barcodedecoder">
                                     Barcode Decoder
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/textocr">
+                            <a href="/ai-datacapture/4-0/textocr">
                                     Text OCR
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/camerax">
+                            <a href="/ai-datacapture/4-0/camerax">
                                     CameraX
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/search">
+                            <a href="/ai-datacapture/4-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="camerax" class="anchor"><a class="heading-anchor" href="#camerax"><span></span></a>CameraX</h1>
                                     <p>
                                             AI Data Capture SDK
-                                            3.3
+                                            4.0
                                     </p>
                                 </div>
                             </section>                    
@@ -382,7 +382,7 @@
 </code></pre></li>
 
 <li><p><strong>Initialize Detectors -</strong> Create <code>ImageAttributesDetector</code> and <code>ImageTransformDetector</code> objects with the desired configurations. Both detectors can be initialized in parallel as they are independent of each other.<br>
-<strong>Important:</strong> Both detectors initialize asynchronously and can be started in parallel. Ensure they are fully initialized before proceeding to the next steps. </p>
+<strong>Important:</strong> Both detectors initialize asynchronously and can be started in parallel. Ensure they are fully initialized before proceeding to the next steps.</p>
 
 <ul>
 <li><p><strong>Initialize <a href="../imageattributes/">ImageAttributesDetector</a> -</strong> Configure specific image attribute metrics to track during real-time camera preview. In this example, enable detection for people visibility and package visibility. Implement proper error handling using the <code>exceptionally()</code> callback on <code>CompletableFuture</code> to handle initialization failures gracefully.</p>
@@ -423,39 +423,38 @@ future.thenAccept(detector -&amp;gt; {
 <ul>
 <li><p><strong>Initialize <a href="../imagetransform">ImageTransformDetector</a> -</strong> Configure the <code>ImageTransformDetector</code> with all available transformation actions. This detector will be used later to blur sensitive information in captured images.</p>
 
-<pre class="prettyprint"><code>// Initialize ImageTransformDetector with all available transformation actions
-ImageTransformDetector.Settings transformSettings = new ImageTransformDetector.Settings();
+<p>// Initialize ImageTransformDetector with all available transformation actions
+  ImageTransformDetector.Settings transformSettings = new ImageTransformDetector.Settings();</p>
 
-// Configure all transformation actions
-List&lt;TransformationAction&gt; actions = List.of(
-    TransformationAction.LocalizeAndBlurPeople,
-    TransformationAction.LocalizeAndBlurText,
-    TransformationAction.LocalizeAndBlurBarcode
-);
+<p>// Configure all transformation actions
+  List<transformationaction> actions = List.of(
+      TransformationAction.LocalizeAndBlurPeople,
+      TransformationAction.LocalizeAndBlurText,
+      TransformationAction.LocalizeAndBlurBarcode
+  );</transformationaction></p>
 
-TransformActionDescriptor descriptor = new TransformActionDescriptor.Builder()
-    .setActions(actions)
-    .build();
+<p>TransformActionDescriptor descriptor = new TransformActionDescriptor.Builder()
+      .setActions(actions)
+      .build();</p>
 
-transformSettings.configureTransformationActions(descriptor);
+<p>transformSettings.configureTransformationActions(descriptor);</p>
 
-// Initialize ImageTransformDetector object
-ImageTransformDetector imageTransformDetector = null;
+<p>// Initialize ImageTransformDetector object
+  ImageTransformDetector imageTransformDetector = null;</p>
 
-// Get ImageTransformDetector
-CompletableFuture&lt;ImageTransformDetector&gt; transformFuture =
-    ImageTransformDetector.getImageTransformDetector(transformSettings, imageTransformExecutor);
+<p>// Get ImageTransformDetector
+  CompletableFuture<imagetransformdetector> transformFuture =
+      ImageTransformDetector.getImageTransformDetector(transformSettings, imageTransformExecutor);</imagetransformdetector></p>
 
-// Use the transformFuture to implement the thenAccept() callback of CompletableFuture
-transformFuture.thenAccept(transformDetector -&gt; {
-    // Use the ImageTransformDetector object returned here for transforming images
-    imageTransformDetector = transformDetector;
-    Log.i(TAG, "ImageTransformDetector initialized successfully");
-}).exceptionally(ex -&gt; {
-    Log.e(TAG, "ImageTransformDetector initialization failed", ex);
-    return null;
-});
-</code></pre></li></ul></li></ul></li>
+<p>// Use the transformFuture to implement the thenAccept() callback of CompletableFuture
+  transformFuture.thenAccept(transformDetector -&gt; {
+      // Use the ImageTransformDetector object returned here for transforming images
+      imageTransformDetector = transformDetector;
+      Log.i(TAG, "ImageTransformDetector initialized successfully");
+  }).exceptionally(ex -&gt; {
+      Log.e(TAG, "ImageTransformDetector initialization failed", ex);
+      return null;
+  });</p></li></ul></li></ul></li>
 
 <li><p><strong>Create EntityTrackerAnalyzer:</strong> Create an <code>EntityTrackerAnalyzer</code> with the <code>ImageAttributesDetector</code>. This analyzer processes camera frames in real-time and provides callbacks with attribute compliance results. The callback checks if all attribute results are compliant, at which point the user can proceed with image capture. This real-time compliance check allows guidance to users to position the camera correctly before capturing the image, ensuring optimal image quality and required content visibility.</p>
 
@@ -646,7 +645,7 @@ catch (e: Exception) {
 <li><p><strong>Initialize Barcode Decoder -</strong> Configure the barcode decoder settings and obtain an instance:</p>
 
 <pre class="prettyprint">try {
-    val barcodeSettings = BarcodeDecoder.Settings("barcode-localizer")
+    val barcodeSettings = BarcodeDecoder.Settings("barcode-decoder")
     BarcodeDecoder.getBarcodeDecoder(barcodeSettings, Executor)
         .thenAccept { decoderInstance -&gt; 
             barcodeDecoder = decoderInstance
@@ -664,50 +663,50 @@ catch (e: Exception) {
 <li><p><strong>Initialize Text OCR -</strong> Configure the TextOCR settings and obtain an instance:</p>
 
 <p>try {
-    val textOCRSettings = TextOCR.Settings("text-ocr-recognizer") </p>
+val textOCRSettings = TextOCR.Settings("text-ocr-recognizer")</p>
 
-<pre class="prettyprint"><code>// (Optional) Configure settings as needed, e.g. runtime processor order, dims, etc. 
-TextOCR.getTextOCR(textOCRSettings, ocrExecutor) 
-    .thenAccept { ocrInstance -&gt; 
-        textOCR = ocrInstance 
-        ocrAnalyzer = TextOCRAnalyzer(callback, ocrInstance) 
-        } 
+<pre class="prettyprint"><code>// (Optional) Configure settings as needed, e.g. runtime processor order, dims, etc.
+TextOCR.getTextOCR(textOCRSettings, ocrExecutor)
+    .thenAccept { ocrInstance -&gt;
+        textOCR = ocrInstance
+        ocrAnalyzer = TextOCRAnalyzer(callback, ocrInstance)
+        }
 
 <pre><code>.exceptionally { ex -&amp;gt;
-    Log.e(TAG, "TextOCR initialization failed: ${ex.message}", ex) 
-    null 
-} 
+    Log.e(TAG, "TextOCR initialization failed: ${ex.message}", ex)
+    null
+}
 </code></pre>
 
 </code></pre>
 
-<p>} 
-catch (e: Exception) { 
-    Log.e(TAG, "TextOCR initialization exception: ${e.message}", e) 
-} </p></li>
+<p>}
+catch (e: Exception) {
+Log.e(TAG, "TextOCR initialization exception: ${e.message}", e)
+}</p></li>
 
 <li><p><strong>Initialize Product Recognition -</strong> Configure the product recognition settings and obtain an instance:</p>
 
-<pre class="prettyprint"><code>try { 
-    val moduleRecognizerSettings = ModuleRecognizer.Settings("product-and-shelf-recognizer") 
+<pre class="prettyprint"><code>try {
+    val moduleRecognizerSettings = ModuleRecognizer.Settings("product-and-shelf-recognizer")
 
-<pre><code>ModuleRecognizer.getModuleRecognizer(moduleRecognizerSettings, productExecutor) 
+<pre><code>ModuleRecognizer.getModuleRecognizer(moduleRecognizerSettings, productExecutor)
     .thenAccept { recognizerInstance -&amp;gt;
-        moduleRecognizer = recognizerInstance 
-        productRecognitionAnalyzer = ProductRecognitionAnalyzer(callback, recognizerInstance) 
-    } 
+        moduleRecognizer = recognizerInstance
+        productRecognitionAnalyzer = ProductRecognitionAnalyzer(callback, recognizerInstance)
+    }
 
 <pre><code>.exceptionally { ex -&amp;amp;gt;
-    Log.e(TAG, "Product Recognition initialization failed: ${ex.message}", ex) 
-    null 
-} 
+    Log.e(TAG, "Product Recognition initialization failed: ${ex.message}", ex)
+    null
+}
 </code></pre>
 
 </code></pre>
 
-} catch (e: Exception) { 
-    Log.e(TAG, "Product Recognition initialization exception: ${e.message}", e) 
-} 
+} catch (e: Exception) {
+    Log.e(TAG, "Product Recognition initialization exception: ${e.message}", e)
+}
 </code></pre></li></ul></li>
 
 <li><p><strong>Create <code>EntityTrackerAnalyzer</code> -</strong> This is used for processing image frames.</p>
@@ -771,68 +770,68 @@ entityTrackerAnalyzer = EntityTrackerAnalyzer(listOf(moduleRecognizer), ImageAna
 
 <li><p><strong>Set <code>EntityTrackerAnalyzer</code> as the <code>ImageAnalysis.Analyzer</code>:</strong></p>
 
-<pre class="prettyprint"><code>// EntityTrackerAnalyzer Usecase 
-val resolutionSelector = ResolutionSelector.Builder() 
-    .setAspectRatioStrategy( 
-        AspectRatioStrategy( 
-            AspectRatio.RATIO_16_9, 
-            AspectRatioStrategy.FALLBACK_RULE_NONE 
-        ) 
-    ) 
-    .setResolutionStrategy( 
-        ResolutionStrategy( 
-            Size(1920, 1080), 
-            ResolutionStrategy.FALLBACK_RULE_CLOSEST_HIGHER_THEN_LOWER 
-        ) 
-    ) 
-    .build() 
+<pre class="prettyprint"><code>// EntityTrackerAnalyzer Usecase
+val resolutionSelector = ResolutionSelector.Builder()
+    .setAspectRatioStrategy(
+        AspectRatioStrategy(
+            AspectRatio.RATIO_16_9,
+            AspectRatioStrategy.FALLBACK_RULE_NONE
+        )
+    )
+    .setResolutionStrategy(
+        ResolutionStrategy(
+            Size(1920, 1080),
+            ResolutionStrategy.FALLBACK_RULE_CLOSEST_HIGHER_THEN_LOWER
+        )
+    )
+    .build()
 
-// Image analysis use case 
-imageAnalysis = ImageAnalysis.Builder() 
-    .setResolutionSelector(resolutionSelector) 
-    .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST) 
-    .build() 
+// Image analysis use case
+imageAnalysis = ImageAnalysis.Builder()
+    .setResolutionSelector(resolutionSelector)
+    .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+    .build()
 
-// Set the analyzer 
-imageAnalysis?.setAnalyzer( 
-    cameraExecutor, 
-    entityTrackerAnalyzer as ImageAnalysis.Analyzer 
-) 
+// Set the analyzer
+imageAnalysis?.setAnalyzer(
+    cameraExecutor,
+    entityTrackerAnalyzer as ImageAnalysis.Analyzer
+)
 </code></pre></li>
 
 <li><p><strong>Configure the Camera Lifecycle -</strong> Integrate CameraX with the activity’s lifecycle.</p>
 
-<pre class="prettyprint"><code>val cameraProviderFuture = ProcessCameraProvider.getInstance(application) 
-cameraProviderFuture.addListener({ 
-    try { 
-        cameraProvider = cameraProviderFuture.get() 
-    } 
-    catch (e: Exception) { 
-        Log.e(TAG, "Camera initialization failed", e) 
-    } 
-}, ContextCompat.getMainExecutor(application)). 
+<pre class="prettyprint"><code>val cameraProviderFuture = ProcessCameraProvider.getInstance(application)
+cameraProviderFuture.addListener({
+    try {
+        cameraProvider = cameraProviderFuture.get()
+    }
+    catch (e: Exception) {
+        Log.e(TAG, "Camera initialization failed", e)
+    }
+}, ContextCompat.getMainExecutor(application)).
 
-// Initialize Preview use case 
-preview = Preview.Builder() 
-    .build() 
+// Initialize Preview use case
+preview = Preview.Builder()
+    .build()
 
-// Connect the preview to the PreviewView 
+// Connect the preview to the PreviewView
 preview?.surfaceProvider = previewView.surfaceProvider;
 
-// Update EntityTrackerAnalyzer transform when PreviewView is ready 
-previewView.previewStreamState.observe(lifecycleOwner) { streamState -&gt; 
-    if (streamState == PreviewView.StreamState.STREAMING) { 
-        entityTrackerAnalyzer?.updateTransform(previewView.sensorToViewTransform) 
-    } 
-} 
+// Update EntityTrackerAnalyzer transform when PreviewView is ready
+previewView.previewStreamState.observe(lifecycleOwner) { streamState -&gt;
+    if (streamState == PreviewView.StreamState.STREAMING) {
+        entityTrackerAnalyzer?.updateTransform(previewView.sensorToViewTransform)
+    }
+}
 
-// Bind use cases to camera 
-provider.bindToLifecycle( 
-    lifecycleOwner, 
-    CameraSelector.DEFAULT_BACK_CAMERA, 
-    preview, 
-    imageAnalysis 
-) 
+// Bind use cases to camera
+provider.bindToLifecycle(
+    lifecycleOwner,
+    CameraSelector.DEFAULT_BACK_CAMERA,
+    preview,
+    imageAnalysis
+)
 </code></pre></li>
 
 <li><p><strong>Resource Cleanup After Usage -</strong> Properly dispose of resources after use to prevent memory leaks and ensure that all resources are released after use:</p>

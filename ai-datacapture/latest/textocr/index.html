@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             AI Data Capture SDK
-                                            3.3
+                                            4.0
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/ai-datacapture/3-3/about">
+                            <a href="/ai-datacapture/4-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/setup">
+                            <a href="/ai-datacapture/4-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/localizer">
+                            <a href="/ai-datacapture/4-0/localizer">
                                     Localizer
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/productrecognition">
+                            <a href="/ai-datacapture/4-0/productrecognition">
                                     Product Recognition
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/barcodedecoder">
+                            <a href="/ai-datacapture/4-0/barcodedecoder">
                                     Barcode Decoder
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/textocr">
+                            <a href="/ai-datacapture/4-0/textocr">
                                     Text OCR
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/camerax">
+                            <a href="/ai-datacapture/4-0/camerax">
                                     CameraX
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/search">
+                            <a href="/ai-datacapture/4-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="text-ocr" class="anchor"><a class="heading-anchor" href="#text-ocr"><span></span></a>Text OCR</h1>
                                     <p>
                                             AI Data Capture SDK
-                                            3.3
+                                            4.0
                                     </p>
                                 </div>
                             </section>                    
@@ -1625,7 +1625,7 @@ Sets the minimum confidence score required for a text box to be included in the 
 
 <p><strong>Description:</strong> Expands or "stretches" detected boxes outward to include full characters and some background. Expands box size before recognition to improve results. Tight-fitting boxes might benefit from some extra background for better decoding.</p>
 
-<p><strong>Tuning effect:</strong> Increasing this parameter enlarges text boxes, potentially improving recognition. An <code>unclipRatio</code> of 1 keeps boxes unchanged, while 1.5 enlarges them by 50%.</p>
+<p><strong>Tuning effect:</strong> Increasing this parameter enlarges text boxes, potentially improving recognition. </p>
 
 <ul>
 <li><strong>Increase Parameter:</strong> For curved, rotated, or incomplete detections</li>
@@ -1633,9 +1633,9 @@ Sets the minimum confidence score required for a text box to be included in the 
 <li><strong>Decrease Parameter:</strong> To avoid overlapping with neighboring text regions or noisy regions</li>
 </ul>
 
-<p><strong>Default:</strong> 1.5f</p>
+<p><strong>Default:</strong> 0.6f</p>
 
-<p><strong>Valid range:</strong> [1.0f, inf]</p>
+<!-- **Valid range:** [1.0f, inf] -->
 
 <hr>
 
@@ -1703,8 +1703,6 @@ futureResult.thenAccept (ocrResults -&gt; {
 textOCR.dispose();
 </code></pre></li>
 </ol>
-
-<p>---Frontline AI EnablerFrontline AI Enabler</p>
 
 <h2 id="textrecognition" class="anchor"><a class="heading-anchor" href="#textrecognition"><span></span></a>Text Recognition</h2>
 
@@ -1942,19 +1940,18 @@ textOCR.dispose();
 <li><strong>Performance Tuning:</strong> Fine-tune parameters to achieve an optimal balance between processing speed and accuracy, based on specific application requirements.</li>
 </ul>
 
-<h2 id="-2" class="anchor"><a class="heading-anchor" href="#-2"><span></span></a><!--</h2>
+<!--
 
-<h4 id="tiling-3">Tiling</h4>
+#### Tiling
 
-<pre><code>    TilerSettings TextOCR.Settings.tiling
-</code></pre>
+        TilerSettings TextOCR.Settings.tiling
 
-<p><strong>Description:</strong> Tiling involves dividing a large image into smaller, manageable sections called "tiles" to analyze text more accurately. This structure contains parameters for handling very long text boxes.
---><p></p>
+**Description:** Tiling involves dividing a large image into smaller, manageable sections called "tiles" to analyze text more accurately. This structure contains parameters for handling very long text boxes.
+-->
 
 <hr>
 
-</h2><h4 id="enable" class="anchor"><a class="heading-anchor" href="#enable"><span></span></a>enable</h4>
+<h4 id="enable" class="anchor"><a class="heading-anchor" href="#enable"><span></span></a>enable</h4>
 
 <pre class="prettyprint"><code>    Boolean TextOCR.Settings.TilerSettings.enable
 </code></pre>

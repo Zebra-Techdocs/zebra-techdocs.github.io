@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             AI Data Capture SDK
-                                            3.3
+                                            4.0
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/ai-datacapture/3-3/about">
+                            <a href="/ai-datacapture/4-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/setup">
+                            <a href="/ai-datacapture/4-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/localizer">
+                            <a href="/ai-datacapture/4-0/localizer">
                                     Localizer
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/productrecognition">
+                            <a href="/ai-datacapture/4-0/productrecognition">
                                     Product Recognition
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/barcodedecoder">
+                            <a href="/ai-datacapture/4-0/barcodedecoder">
                                     Barcode Decoder
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/textocr">
+                            <a href="/ai-datacapture/4-0/textocr">
                                     Text OCR
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/camerax">
+                            <a href="/ai-datacapture/4-0/camerax">
                                     CameraX
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/search">
+                            <a href="/ai-datacapture/4-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="image-attributes-proof-of-delivery-model" class="anchor"><a class="heading-anchor" href="#image-attributes-proof-of-delivery-model"><span></span></a>Image Attributes Proof of Delivery Model</h1>
                                     <p>
                                             AI Data Capture SDK
-                                            3.3
+                                            4.0
                                     </p>
                                 </div>
                             </section>                    
@@ -250,10 +250,12 @@
 
 <p><strong>Model Name:</strong> image-attributes-proof-of-delivery</p>
 
-<p>The Image Attributes Proof of Delivery (POD) model analyzes images at a fixed input size to detect a specific attribute. For each detected attribute, the model returns a confidence score between 0.0 and 1.0. For more details, see <a href="../../imageattributes/#imageattributes">Image Attributes</a>.</p>
+<p>The Image Attributes Proof of Delivery (POD) model analyzes images at a fixed input size to detect a specific attribute. For each detected attribute, the model returns a confidence score between 0.0 and 1.0. For more details, see <a href="../../imageattributes/#imageattributes">Image Attributes</a>. </p>
+
+<p><strong>Note:</strong> Zebra strongly recommends updating to the latest models.</p>
 
 <div>
-<form action="https://zebratech.jfrog.io/ui/repos/tree/General/emc-mvn-ext/com/zebra/ai/models/image-attributes-proof-of-delivery/" method="get" target="_blank">
+<form action="https://zebratech.jfrog.io/ui/repos/tree/General/emc-mvn-ext/com/zebra/ai/models/vision/image-attributes-proof-of-delivery/" method="get" target="_blank">
     <button type="submit" style="background-color: #5087b5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Download Model</button>
 </form>
 </div>
@@ -262,12 +264,46 @@
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
 
+<h3 id="newinv221" class="anchor"><a class="heading-anchor" href="#newinv221"><span></span></a>New in v2.2.1</h3>
+
+<ul>
+<li><p>Updated default values for <a href="../../imageattributes/#imageattributes">Image Attributes</a>:</p>
+
+<table class="facelift" align="" style="width:60%" border="1" padding="5px">
+        <tbody><tr bgcolor="#dce8ef">
+            <th>Metric Name</th>
+            <th>Current Value</th>
+            <th>New Value</th>
+        </tr>
+        <tr>
+            <td>Image Quality Clear <br>(ImageQualityClear)  </td>
+            <td>0.08  </td>
+            <td>0.03 </td>
+        </tr>
+        <tr>
+            <td>Surround Visible <br>(ImageTagSurroundVisible)  </td>
+            <td>0.56  </td>
+            <td>0.57 </td>
+        </tr>
+        <tr>
+            <td>People Visible <br>(ImageTagPeopleVisible) </td>
+            <td>0.55 </td>
+            <td>0.12 </td>
+        </tr>
+        <tr>
+            <td>Package Visible <br>(ImageTagPackageVisible) </td>
+            <td>0.55 </td>
+            <td>0.28 </td>
+        </tr>
+</tbody></table></li>
+</ul>
+
 <h3 id="newinv210" class="anchor"><a class="heading-anchor" href="#newinv210"><span></span></a>New in v2.1.0</h3>
 
 <ul>
 <li><p>Introduced more precise <a href="../../imageattributes/#imageattributes">attribute</a> detection and new default values, as detailed in the table below:</p>
 
-<table class="facelift" align="" style="width:70%" border="1" padding="5px">
+<table class="facelift" align="" style="width:60%" border="1" padding="5px">
     <tbody><tr bgcolor="#dce8ef">
         <th>Metric Name</th>
         <th>Current Value</th>
@@ -303,7 +339,7 @@
 <ul>
 <li><p><strong>Operating System:</strong> Android 14 or higher. For specific OS versions, refer to the AI Data Capture SDK Release Notes on the <a href="https://www.zebra.com/us/en/support-downloads.html#q=ai%20suite">Zebra support portal</a>.</p></li>
 
-<li><p><strong>Minimum SDK Version:</strong> AI Data Capture SDK v3.0.2 or later.</p></li>
+<li><p><strong>Minimum SDK Version:</strong> AI Data Capture SDK v4.0.0 or later.</p></li>
 
 <li><p><strong>Licenses:</strong> A Picture Proof of Delivery License (AI Blueprint, Annual) is required. The SKU for this annual license is ZEBRA-AI-BP-PPOD. See <a href="../../license/">Licensing</a> for procurement and deployment instructions.</p></li>
 
@@ -330,6 +366,8 @@
 </tbody></table>
 
 <p>For more information on devices based on platform, see <a href="https://support-new.zebra.com/article/000022440">Zebra Platform Devices</a>.</p></li>
+
+<li><p><strong>Memory Requirements:</strong> Since running multiple on-device models concurrently is highly resource-intensive, using multiple models within the AI Data Capture SDK is recommended for high-memory devices only.</p></li>
 </ul>
 
 <hr>

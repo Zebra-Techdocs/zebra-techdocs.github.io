@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             AI Data Capture SDK
-                                            3.3
+                                            4.0
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/ai-datacapture/3-3/about">
+                            <a href="/ai-datacapture/4-0/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/setup">
+                            <a href="/ai-datacapture/4-0/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/localizer">
+                            <a href="/ai-datacapture/4-0/localizer">
                                     Localizer
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/productrecognition">
+                            <a href="/ai-datacapture/4-0/productrecognition">
                                     Product Recognition
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/barcodedecoder">
+                            <a href="/ai-datacapture/4-0/barcodedecoder">
                                     Barcode Decoder
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/textocr">
+                            <a href="/ai-datacapture/4-0/textocr">
                                     Text OCR
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/camerax">
+                            <a href="/ai-datacapture/4-0/camerax">
                                     CameraX
                             </a>
                         </li>
                         <li>
-                            <a href="/ai-datacapture/3-3/search">
+                            <a href="/ai-datacapture/4-0/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="barcode-decoder" class="anchor"><a class="heading-anchor" href="#barcode-decoder"><span></span></a>Barcode Decoder</h1>
                                     <p>
                                             AI Data Capture SDK
-                                            3.3
+                                            4.0
                                     </p>
                                 </div>
                             </section>                    
@@ -248,9 +248,9 @@
 
                                         <p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
 
-<p>The <code>BarcodeDecoder</code> class is designed to decode various types of barcodes detected in images. Initially, the <a href="../localizer/">Localizer</a> class identifies the location of barcodes in captured images. Subsequently, the <code>BarcodeDecoder</code> class decodes barcodes from either entire images or specific regions of the image defined by <a href="../types/#bbox/">bounding boxes</a>. It can handle single and multiple barcode decoding within a single image.</p>
+<p>The <code>BarcodeDecoder</code> class detects and decodes various types of barcodes in images. It first identifies the location of barcodes within captured images, and then decodes them from either the entire image or from specific regions defined by <a href="../types/#bbox/">bounding boxes</a>. <code>BarcodeDecoder</code> supports both single and multi-barcode decoding within a single image.</p>
 
-<p>Additionally, the <code>process()</code> method of the <code>BarcodeDecoder</code> class facilitates the ability to localize and decode barcodes simultaneously. This interface enables the development of CameraX analyzers in conjunction with other detectors.</p>
+<p>The <code>process()</code> method of the <code>BarcodeDecoder</code> class facilitates the ability to localize and decode barcodes simultaneously. This interface enables the development of CameraX analyzers in conjunction with other detectors.</p>
 
 <p>Common applications:</p>
 
@@ -268,7 +268,7 @@
 
 <h2 id="aimodel" class="anchor"><a class="heading-anchor" href="#aimodel"><span></span></a>AI Model</h2>
 
-<p>The <strong>barcode-localizer</strong> model is designed specifically for barcode decoding. For more information and to download the model, refer to <a href="../model/barcode-localizer">Barcode Localizer Model</a>.</p>
+<p>The <strong>barcode-decoder</strong> model is designed specifically for barcode decoding. For more information and to download the model, refer to <a href="../model/barcode-localizer">Barcode Decoder Model</a>.</p>
 
 <hr>
 
@@ -285,7 +285,7 @@
 
 <li><strong>Configure Barcode Symbologies:</strong> Enable the desired barcode symbologies to recognize and set its parameters; refer to the <a href="#barcodesymbologies">Supported Barcode Symbologies</a>.</li>
 
-<li><strong>Initialize and Load the Model Asynchronously -</strong> Declare a <code>BarcodeDecoder</code> object and use a <code>CompletableFuture</code> to load the model asynchronously. Refer to the <a href="../model/barcode-localizer">Barcode Localizer Model</a> info card to learn about the supported and cached input resolutions for reducing model load time.</li>
+<li><strong>Initialize and Load the Model Asynchronously -</strong> Declare a <code>BarcodeDecoder</code> object and use a <code>CompletableFuture</code> to load the model asynchronously. Refer to the <a href="../model/barcode-localizer">Barcode Decoder Model</a> info card to learn about the supported and cached input resolutions for reducing model load time.</li>
 
 <li><strong>Handle Synchronous Initialization -</strong> Implement the <code>thenAccept()</code> callback to use the decoder instance once it is available.</li>
 </ol>
@@ -298,7 +298,7 @@
     AIVisionSDK.getInstance(this.getApplicationContext()).init();
 
     // Initialize BarcodeDecoder settings object
-    String mavenModelName = "barcode-localizer";
+    String mavenModelName = "barcode-decoder";
     BarcodeDecoder.Settings settings = new BarcodeDecoder.Settings(mavenModelName)
 
     // Enable UPCE1 and its parameters or other desired symbologies
@@ -498,7 +498,7 @@ decoderSettings.detectorSetting.inferencerOptions.defaultDims.width = 640; // se
 <p>Sample Code:</p>
 
 <pre class="prettyprint"><code>    // Barcode Detection
-    String mavenModelName = "barcode-localizer";
+    String mavenModelName = "barcode-decoder";
     Localizer.Settings settings = new Localizer( mavenModelName);
 
     // Optional: Set model input size parameters
@@ -610,7 +610,7 @@ decoderSettings.detectorSetting.inferencerOptions.defaultDims.width = 640; // se
 
 <li><strong>AIVisionSDKModelException -</strong> Thrown if the current SDK version is below the minimum required version. To resolve this, update the SDK to a newer or the latest version.</li>
 
-<li><strong>AIVisionSDKLicenseException -</strong> Thrown if there is a licensing issue related to the barcode-localizer model.</li>
+<li><strong>AIVisionSDKLicenseException -</strong> Thrown if there is a licensing issue related to the barcode-decoder model.</li>
 </ul>
 
 <hr>
@@ -841,13 +841,44 @@ decoderSettings.detectorSetting.inferencerOptions.defaultDims.width = 640; // se
 <p>The sample code below demonstrates how to disable all symbologies. </p>
 
 <pre class="prettyprint"><code>    // Initialize BarcodeDecoder settings object
-    String mavenModelName = "barcode-localizer";
+    String mavenModelName = "barcode-decoder";
     BarcodeDecoder.Settings settings = new BarcodeDecoder.Settings(mavenModelName);
     settings.DisableAllSymbologies();
 
     //Below code refers to enabling UPCE1 only
 
     settings.Symbology.UPCE1.enable(true);
+</code></pre>
+
+<h3 id="enableaibarcodedecode" class="anchor"><a class="heading-anchor" href="#enableaibarcodedecode"><span></span></a>enableAIBarcodeDecode </h3>
+
+<pre class="prettyprint"><code>    public boolean enableAIBarcodeDecode = false; 
+</code></pre>
+
+<p><strong>Description:</strong> Enables model-based barcode decoding. This mode improves decoding performance when the device camera is in motion or when decoding from farther distances — for example, retail environments where an associate walks along an aisle to read barcoded shelf labels. </p>
+
+<p>Parameters:</p>
+
+<ul>
+<li><strong>false (default) -</strong> Model based barcode decoding is disabled. </li>
+
+<li><strong>true -</strong> Model based barcode decoding is enabled. </li>
+</ul>
+
+<p><strong>Note:</strong> When this parameter is enabled, per-symbology parameters configured under <code>BarcodeDecoder.Settings.Symbology</code> are <em>not</em> supported. </p>
+
+<div class="alert alert-info alert-dismissible fade in" role="alert"><b>Important Notice: Beta Feature</b><br>
+This feature is a Beta release and is under active development. Please be aware of the following: 
+<ul><li>It may contain bugs, defects, or instabilities.</li><li>It is subject to significant changes in future releases.</li></ul>
+</div>
+
+<p><strong>Sample Code:</strong></p>
+
+<p>The sample code below initializes the BarcodeDecoder settings object.</p>
+
+<pre class="prettyprint"><code>    String mavenModelName = "barcode-decoder"; 
+    BarcodeDecoder.Settings settings = new BarcodeDecoder.Settings(mavenModelName); 
+    settings.enableAIBarcodeDecode=true; 
 </code></pre>
 
 <h3 id="enableduplicatebarcodedecode" class="anchor"><a class="heading-anchor" href="#enableduplicatebarcodedecode"><span></span></a>enableDuplicateBarcodeDecode</h3>
@@ -868,7 +899,7 @@ decoderSettings.detectorSetting.inferencerOptions.defaultDims.width = 640; // se
 <p>The sample code below enables the decoding of duplicate barcodes.</p>
 
 <pre class="prettyprint"><code>    // Initialize BarcodeDecoder settings object
-    String mavenModelName = "barcode-localizer";
+    String mavenModelName = "barcode-decoder";
     BarcodeDecoder.Settings settings = new BarcodeDecoder.Settings(mavenModelName);
     settings.enableDuplicateBarcodeDecode=true;
 </code></pre>
@@ -926,7 +957,7 @@ decoderSettings.detectorSetting.inferencerOptions.defaultDims.width = 640; // se
 <p>The sample code below demonstrates how to enable a symbology and configure its options. In this example, UPC-E1 is enabled with report check digit option activated. These steps can be modified to enable other symbologies and adjust their specific parameters:</p>
 
 <pre class="prettyprint"><code>// Initialize BarcodeDecoder settings object
-String mavenModelName = "barcode-localizer";
+String mavenModelName = "barcode-decoder";
 BarcodeDecoder.Settings settings = new BarcodeDecoder.Settings(mavenModelName);
 
 // Enabling Symbology UPCE1 and it’s parameters
@@ -4543,6 +4574,8 @@ Consult the following sample apps:
 <li><a href="../imageattributes/">Image Attributes Detector</a></li>
 
 <li><a href="../imagetransform/">Image Transform Detector</a></li>
+
+<li><a href="../customdetector/">Custom Detector</a></li>
 
 <li><a href="../entity/">Entity</a></li>
 
