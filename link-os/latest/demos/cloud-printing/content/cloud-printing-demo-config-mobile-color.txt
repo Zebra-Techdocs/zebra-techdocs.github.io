@@ -3,43 +3,87 @@
 ^FX *                                                                         ^FS
 ^FX * Zebra Technologies                                                      ^FS
 ^FX * Link-OS Cloud Printing Demo Printer Configuration File.                 ^FS
-^FX * Version date: 14-NOV-2018                                               ^FS
-^FX * For use with the following printer models: ZQ600 series.                ^FS
+^FX * Version date: 09-JUL-2026                                               ^FS
+^FX * For use with the following printer models: ZQ600 Plus series.           ^FS
 ^FX * Visit http://techdocs.zebra.com/link-os/latest/demos/ for updates.      ^FS
 ^FX *                                                                         ^FS
 ^FX ************************************************************************* ^FS
 
 -- DEFAULTS
-! U1 setvar "capture.channel1.delimiter" ""
-! U1 setvar "capture.channel1.port" "off"
-! U1 setvar "alerts.configured" "COLD START,SNMP,Y,N,255.255.255.255,162,N"
-! U1 setvar "weblink.restore_defaults" ""
+
+{}{"capture.channel1.delimiter":"",
+"capture.channel1.port":"off",
+"alerts.configured":"COLD START,SNMP,Y,N,255.255.255.255,162,N",
+"weblink.restore_defaults":"",
+"file.delete" : "E:WEBLINK2_CERT.NRD",
+"file.delete" : "E:WEBLINK2_KEY.NRD",
+"file.delete" : "E:WEBLINK2_CA.NRD",
+"file.delete" : "E:index.wml"
+}
+
+
+-- STORE CERT
+{}--lJNjwf8Ism5aRhxYJAvmRWcvIR3ABY
+Content-Disposition: form-data; name="files"; filename="E:WEBLINK2_CA.NRD"
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary
+
+-----BEGIN CERTIFICATE-----
+MIIDhzCCAm+gAwIBAgICEAAwDQYJKoZIhvcNAQELBQAwezELMAkGA1UEBhMCR0Ix
+GDAWBgNVBAgMD0J1Y2tpbmdoYW1zaGlyZTEbMBkGA1UECgwSWmVicmEgVGVjaG5v
+bG9naWVzMRQwEgYDVQQLDAtTb2Z0d2FyZSBQTTEfMB0GA1UEAwwWWmVicmEgU29m
+dHdhcmUgUE0gUm9vdDAgFw0yMDA1MDUwOTEzNDVaGA8yMDYwMDQyNTA5MTM0NVow
+ezELMAkGA1UEBhMCR0IxGDAWBgNVBAgMD0J1Y2tpbmdoYW1zaGlyZTEbMBkGA1UE
+CgwSWmVicmEgVGVjaG5vbG9naWVzMRQwEgYDVQQLDAtTb2Z0d2FyZSBQTTEfMB0G
+A1UEAwwWWmVicmEgU29mdHdhcmUgUE0gUm9vdDCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMSB3jNvhu6rGxm3bdLWZNXFom6FFOYuV3Sy/yB/kPhaOj34
+vY5SYSG7YVHLklsSNNew+HoIowpzDF8+ConuW05krr9rInoZ1oIKQz2/pdntpi5g
+AoZAi7l3wowsVe7ATXINk3JNFyG37N/i4Y6k/syb6iZ1M7EzFbeKDrv7VlRrpnTx
+8ppvbYVOKMo3DwyThmqg2h7LsfNO2uHr2bhviiVEjyaqW43ayXNu8ymeyWzHlyTX
+0iquaZBZgLXgJPseW+uav/VMF/56oZXjCPTLg00ZEgKQx1QMN+Ek+9ai5rZFYzBm
+hIPmwUJkdBVUMLvbJtVTPTOh/9FmDINoFoeovkUCAwEAAaMTMBEwDwYDVR0TAQH/
+BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAhc0pDkZaLxjmrribmbEXgDyjIWy4
+ljGggG2qdFKWi+dvPZ5PEpR3c9qnCcJGeplHWPYU2ENdbKlgw3pK2BzvopOjInqE
+k5/wCygNuuwghCrxZTy1R8XFtYQXCBKR83RXEDPeJz/Te/FqtKPAp+QK/++OMh64
+vwi9GgutRwpqiRMrPDcYfmdHA5A9pamrqHhXGctpEsTHUVbdIS+JhTjbnxNpH8L3
+ZVew8lB0NWDwmo4h6nbNrVs9o5HMemUx9uBkGeL162vN6GHUmZMz8zr2vbmN58Qt
+/SFY1QVLwvLenKKD5FF8ILrrZbV+shfDCMOFIjh5JD5z2wJOT9xOngtE1A==
+-----END CERTIFICATE-----
+
+--lJNjwf8Ism5aRhxYJAvmRWcvIR3ABY--
 
 -- DEMO CONFIG
-! U1 setvar "apl.enable" "none"
-! U1 setvar "weblink.ip.conn1.location" ""
-! U1 setvar "weblink.ip.conn2.location" "https://weblink.westeurope.cloudapp.azure.com/zebra/weblink/"
-! U1 setvar "alerts.add" "SGD SET,HTTP-POST,Y,N,http://weblink.westeurope.cloudapp.azure.com/ZebraDemo/,0,N,capture.channel1.data.raw"
-! U1 setvar "alerts.add" "SGD SET,HTTP-POST,Y,N,http://weblink.westeurope.cloudapp.azure.com/ZebraDemo/,0,N,device.user_p1"
-! U1 setvar "capture.channel1.delimiter" "\\015\\012"
-! U1 setvar "capture.channel1.port" "bt"
-! U1 setvar "display.root_wml" "e:index.wml"
-! U1 setvar "device.location" "Hotel #101"
+{}{"apl.enable":"pdf",
+"weblink.ip.conn1.location":"",
+"weblink.ip.conn2.location":"https://weblink.westeurope.cloudapp.azure.com/zebra/weblink/",
+"weblink.ip.conn2.retry_interval_random_max":"0",
+"weblink.ip.conn2.retry_interval":"15",
+"alerts.add":"SGD SET,HTTP-POST,Y,N,http://weblink.westeurope.cloudapp.azure.com//ZebraDemo/,0,N,capture.channel1.data.raw",
+"alerts.add":"SGD SET,HTTP-POST,Y,N,http://weblink.westeurope.cloudapp.azure.com//ZebraDemo/,0,N,device.user_p1",
+"capture.channel1.delimiter":"\\015\\012",
+"capture.channel1.port":"bt",
+"display.root_wml":"e:index.wml",
+"device.location":"Hotel 101",
+"display.password.level":"none",
+"zpl.format_prefix":"5E",
+"zpl.command_prefix":"7E",
+"zpl.delimiter":"2C"
+}
 
 
 ! CISDFCRC16
-43E2
+0000
 index.wml
-00001500
-A058
+00001A24
+0000
 <wml>
 <display>
 	<font name="$(display.wml_font)" vspace="0"></font>
-	<color fgcolor="0xFFFFFFFF" bgcolor="0xFF00A7FF"/>
-	
-<card id="main" title="" ontimer="#main" alerts="off">
+	<color fgcolor="0xFFFFFFFF" bgcolor="0xFF000000"/>
+
+<card id="connect" title="" ontimer="#connect" alerts="off">
 	<timer value="2"></timer>
-	<setvar name="display.backlight_on_time" value="20"/>
+	<setvar name="display.backlight_on_time" value="0"/>
 	<setvar name="display.backlight" value="on"/>
 	<setvar name="device.user_vars.create" value="user_p3:STRING:0-3:000"/>
 	<br/>
@@ -53,29 +97,30 @@ A058
 	<p align="center"> $(interface.network.active.ip_addr)</p>
 
 	<if condition="weblink.ip.conn2.num_connections = 2">
-			<goto_card href="#menu"/>
-	</if>	
+		<goto_card href="#main"/>
+	</if>
 </card>
 
-<card id="menu" title="" ontimer="#menu" alerts="off">
+<card id="main" title="" ontimer="#main" alerts="off">
 	<timer value="30"></timer>
 	
 	<if condition="weblink.ip.conn2.num_connections = 0">
-		<goto_card href="#main"/>
-	</if>	
-	<setvar name="display.backlight_on_time" value="20"/>
+		<goto_card href="#connect"/>
+	</if>
+	<setvar name="display.backlight_on_time" value="0"/>
 		<br/>
-		<p align="center" pre-allcaps="on" allcaps="on">CLOUD PRINTING DEMO</p><br/><br/>
+		<p align="center" pre-allcaps="on" allcaps="on">CLOUD PRINTING DEMO</p><br/>
+		<br/>
 		<p align="center" pre-allcaps="off" allcaps="off">Select a demo</p><br/>
 		<br/>
 		<p align="center" pre-allcaps="on" allcaps="off"><a href="selectupc">Price Markdown</a></p><br/>
 		<p align="center" pre-allcaps="on" allcaps="off"><a href="valet">Valet  Parking</a></p><br/>
-
+		<br/>
 	<nav_bar>
-      	 <p2 highlight="off" href="#info">ABOUT</p2>
-	</nav_bar>	
+		<p1 highlight="off" href="#tools">TOOLS</p1>
+		<p2 highlight="off" href="#info">ABOUT</p2>
+	</nav_bar>
 </card>
-
 
 <card id="info" title="" ontimer="#main" alerts="off">
 	<timer value="60"></timer>
@@ -83,9 +128,11 @@ A058
 	<p align="center" pre-allcaps="off" allcaps="off">ABOUT</p><br/>
 	<br/>
 	<p> f/w : $(appl.name)</p><br/>
+	<p> os  : $(appl.link_os_version_full)</p><br/>
+	<p> apl : $(apl.enable)</p><br/>
 	<p> addr: $(interface.network.active.ip_addr)</p><br/>
 	<p> id  : $(device.unique_id)</p><br/>
-	<p> ver : 1.5</p><br/>
+	<p> ver : 09 Jul 2026</p>
 </card>
 
 <card id="selectupc" title="" alerts="off">
@@ -96,11 +143,11 @@ A058
 	<p align="center" pre-allcaps="on" allcaps="off"><a href="#item1">Item: 764011221302</a></p><br/>
 	<p align="center" pre-allcaps="on" allcaps="off"><a href="#item2">Item: 222011292640</a></p><br/>
 	<p align="center" pre-allcaps="on" allcaps="off"><a href="#item3">Item: 492837421302</a></p><br/>
-	<p align="center" pre-allcaps="on" allcaps="off"><a href="#item4">Item: 592736583648</a></p><br/><br/>
-
+	<p align="center" pre-allcaps="on" allcaps="off"><a href="#item4">Item: 592736583648</a></p><br/>
+	<br/>
 	<nav_bar>
-      	 <p1 highlight="off" href="#main">HOME</p1>
-	</nav_bar>	
+		<p1 highlight="off" href="#main">HOME</p1>
+	</nav_bar>
 </card>
 
 <card id="valet" title="" alerts="off">
@@ -111,8 +158,8 @@ A058
 	<p align="center" pre-allcaps="on" allcaps="off"><a href="#vitem1">Print Ticket</a></p><br/>
 
 	<nav_bar>
-      	 <p1 highlight="off" href="#main">HOME</p1>
-	</nav_bar>	
+		<p1 highlight="off" href="#main">HOME</p1>
+	</nav_bar>
 </card>
 
 <card id="vitem1" ontimer="#valet">
@@ -124,7 +171,6 @@ A058
 	<br/>
 	<setvar name="device.user_p1" value="VALET"/>
 </card>
-
 
 <card id="item1" ontimer="#selectupc">
 	<timer value="30"></timer>
@@ -164,11 +210,11 @@ A058
 	<p align="center" pre-allcaps="off" allcaps="off">for ticket</p><br/>
 	<br/>
 	<p align="center">$(device.user_vars.user_p3)</p><br/>
-	
+
 	<nav_bar>
-      	<p1 highlight="off" href="#confirm">ACCEPT</p1>
+		<p1 highlight="off" href="#confirm">ACCEPT</p1>
 		<p2 highlight="off" href="#valet">REJECT</p2>
-	</nav_bar>	
+	</nav_bar>
 </card>
 
 <card id="showthanks" ontimer="#valet">
@@ -188,10 +234,48 @@ A058
 	<setvar name="device.user_p1" value="confirmed"/>
 </card>
 
+<card id="tools">
+	<timer value="0"></timer>
+	<setvar name="display.backlight" value="on"/>
+	<br/>
+	<p align="center" pre-allcaps="on" allcaps="on">TOOLS</p><br/>
+	<br/>
+	<p align="center" pre-allcaps="off" allcaps="off"><a href="#aplnone">Set APL to NONE</a></p><br/>
+	<br/>
+	<p align="center" pre-allcaps="off" allcaps="off"><a href="#aplpdf">Set APL to PDF</a></p><br/>
+	<br/>
+	<p align="center" pre-allcaps="off" allcaps="off"><a href="#restart">Restart Printer</a></p><br/>	
+	<br/>
+	<nav_bar>
+		<p1 highlight="off" href="#main">HOME</p1>
+	</nav_bar>
+</card>
+
+<card id="aplnone" ontimer="#tools">
+	<timer value="20"></timer>
+	<setvar name="display.backlight" value="on"/>
+	<setvar name="apl.enable" value="none"/>
+	<br/><br/><br/>
+	<p align="center" pre-allcaps="off" allcaps="off">APL set to none</p><br/>
+</card>
+
+<card id="aplpdf" ontimer="#tools">
+	<timer value="20"></timer>
+	<setvar name="display.backlight" value="on"/>
+	<setvar name="apl.enable" value="pdf"/>
+	<br/><br/><br/>
+	<p align="center" pre-allcaps="off" allcaps="off">APL set to pdf</p><br/>	
+</card>
+
+<card id="restart" ontimer="#tools">
+	<setvar name="device.reset" value=""/>
+</card>
+
 </display>
 
 </wml>
 
 ^XZ
-! U1 setvar "device.reset" ""
+
+{}{"device.reset":""}
 
