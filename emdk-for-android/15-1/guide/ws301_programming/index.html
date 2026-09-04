@@ -283,16 +283,6 @@
     </tr>
 </tbody></table>
 
-<!--
-<img alt="image" style="height:150px" src="ws50_renderings.png"/>
-_The Zebra WS50. Click image to enlarge; ESC to exit._
-
-<img alt="image" style="height:250px" src="ec30_multi.png"/>
-<img alt="image" style="height:250px" src="ec30_multi2.png"/>
-_Click images to enlarge._
-
- -->
-
 <p><strong>Key industrial applications for the WS series include warehousing, transportation and logistics, manufacturing, retail, field service, healthcare, hospitality and many others.</strong> Warehouse workers can use them for receiving, item sorting and put-away; Transportation and logistics workers can perform high-intensity scanning with visual, audible and haptic feedback, and on-screen prompts help ensure proper package placement for loading bay, conveyor, etc. Manufacturing workers can benefit from real-time updates on machine function status and low component stock. Productivity can be improved in all sectors through peer-to-peer communications, task assignment and tracking, and many other applications.</p>
 
 <h3 id="ws301featuresandcontrols" class="anchor"><a class="heading-anchor" href="#ws301featuresandcontrols"><span></span></a>WS301 Features and Controls</h3>
@@ -302,244 +292,9 @@ _Click images to enlarge._
 <em>Click image to enlarge; ESC to exit</em>.
 <br></p>
 
-<!-- 
-<img alt="image" style="height:550px" src="301_front__and_sides.jpg"/>
-
------
-
-<img alt="image" style="height:350px" src="301_top.jpg"/>
-
------
-
-<img alt="image" style="height:350px" src="301_bottom.jpg"/>
-
------
-
-<img alt="image" style="height:350px" src="301_rear.jpg"/>
-
- -->
-
 <blockquote>
   <p><i class="fa fa-hand-o-right" style="color:#27AE60;"></i> For more information and illustrations, see the <a href="https://www.zebra.com/us/en/products/spec-sheets/mobile-computers/wearable/ws301.html">WS301 Product Reference Guide</a>.</p>
 </blockquote>
-
-<hr>
-
-<h2 id="powermanagement" class="anchor"><a class="heading-anchor" href="#powermanagement"><span></span></a>Power Management</h2>
-
-<p><strong>The WS301's 750 mAh Li-Ion PowerPrecision+ battery</strong> is rated to provide a full 10 hours of continuous operation. However, battery performance varies greatly depending on usage patterns and device settings, especially those of the display panel. <strong>To maximize operation of WS301 devices while on battery power, Zebra recommends the power-management best practices listed below</strong>. </p>
-
-<h5 id="toprolongbatterylife" class="anchor"><a class="heading-anchor" href="#toprolongbatterylife"><span></span></a>To Prolong Battery Life:</h5>
-
-<ul>
-<li><strong>Enable Dark Mode by default</strong>:
-
-
-<ul>
-<li>Android "Dark Mode" (aka Dark Theme) shifts the device UI from a white background to a darker color palette, reducing energy usage. </li>
-
-<li>For tips on broad deployment, see <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong><a href="https://support.zebra.com/article/000027855">Enable Dark Theme Mode via MDM/EMM</a>*</strong> (Zebra support article).</li>
-
-<li><strong>Also see <i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> <a href="#colorusage">Color Usage section</a></strong>.</li></ul>
-</li>
-
-<li><strong>Optimize Back-End Communications</strong>:
-
-
-<ul>
-<li>Design apps to batch non-critical server requests, sending data in consolidated bursts rather than a continuous stream. This allows the WS301 wireless radio to remain in its low-power state for longer periods.</li></ul>
-</li>
-
-<li><strong>Optimize Shared-device Reconfiguration</strong>:
-
-
-<ul>
-<li>If pre-configuring shift-worker devices, do so at the end of the previous shift, when the device returned to the charging cradle. This helps minimize battery drain when the next worker begins their shift. </li></ul>
-</li>
-
-<li><strong>Set screen brightness to the minimum level</strong> for effective use.</li>
-
-<li><strong>Set a short screen timeout interval</strong> (10-15 seconds).</li>
-
-<li><strong>Reduce the device wake-up sources</strong> to include only controls not easily pressed accidentally. <i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> See <a href="#keyremapping">keymapping section</a>.</li>
-
-<li><strong>Ensure apps are managing activities</strong> during the Doze maintenance window.</li>
-
-<li><strong>Do not disable Doze mode</strong> (controlled by <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> MX <a href="/mx/powermgr/#doze-mode-enabledisable">Power Manager</a>).</li>
-
-<li><strong>Do not "whitelist" an app for battery optimization</strong> (prevents Doze mode).</li>
-
-<li><strong>Test apps to ensure proper operation</strong> when entering/exiting Doze mode.</li>
-</ul>
-
-<p><strong>*</strong> <i><font size="1" color="DimGrey">Microsoft Intune is used as an example. Adapt as needed for the EMM system in use.</font></i> </p>
-
-<hr>
-
-<h2 id="datacapture" class="anchor"><a class="heading-anchor" href="#datacapture"><span></span></a>Data Capture</h2>
-
-<p>Some Zebra models (including the WS301) include no scanner, and use the camera to acquire data from barcodes as well as to capture images and video. Consequently, <strong><a href="/datawedge/15-1/guide/gettingstarted/#datawedgefunctionality">DataWedge Profile0</a> is disabled on the WS301 by default</strong>, and must be enabled manually (or programmatically) to take advantage of this Zebra-recommended (and simplest) means of data acquisition. There are several ways of enabling Profile0 functionality; three are shown below.</p>
-
-<!-- On many Zebra devices that have both a scanner and a camera, which allows organizations to easily scan barcode data into the text field(s) of any app on the device without the need to re-code their app(s). 
-
-However, . Consequently, Profile0 is disabled by default, and it's left up to app developers to control when the camera is used for the desired purpose. **Zebra recommends using Profile0 to acquire data from barcodes** and process it as keyboard input in apps.  
-
- -->
-
-<!-- 4/23/26 removed per SPR-60016
-
-#### Enable Profile0 manually:
-
-1. Locate the DataWedge app in the app drawer and tap it. A list of Profiles is displayed. 
-2. Tap "Profile0" to enable it. 
-3. Exit DataWedge. 
-
-##### <i class="fa fa-check-circle" style="color:#27AE60;"></i> Profile0 is enabled on the WS301.
-
- -->
-
-<hr>
-
-<h4 id="1enableprofile0bypushingafile" class="anchor"><a class="heading-anchor" href="#1enableprofile0bypushingafile"><span></span></a>1. Enable Profile0 by pushing a file:</h4>
-
-<ol>
-<li><p><strong>On a full-sized device, open DataWedge</strong> to display the "DataWedge Profiles" page. </p></li>
-
-<li><p><strong>Locate and tap "Profile0"</strong> to enable it. </p></li>
-
-<li><p>Return to the "DataWedge Profiles" page, tap the <i class="fa fa-ellipsis-v" style="color:#000000;"></i> menu and <strong>select "Settings" from the menu</strong>:
-<img alt="image" style="height:200px" src="301_datawedge-profile0.jpg">
-<em>DataWedge Profiles list on the WS301</em>.<br>
-<em>Click image to enlarge; ESC to exit</em>.</p></li>
-
-<li><p><strong>Locate and tap "Export"</strong> to save the current settings. Tap "EXPORT" again to confirm, making note of the destination folder shown. </p></li>
-
-<li><p><strong>Get the exported file from the device</strong> and save it to an accessible location on the admin PC. <br>
-<img alt="image" style="height:450px" src="datawedge-export-folder.jpg">
-<em>DataWedge folder structure on the Android device</em>.<br>
-<em>Click image to enlarge; ESC to exit</em>.</p></li>
-
-<li><p><strong>Push the Profile to the same folder on the WS301 device</strong> using the Android Debug Bridge or any compatible means:  </p>
-
-<pre class="prettyprint"><code>
-adb push datawedge-enabledProfile0.db /sdcard/Android/data/com.symbol.datawedge/files/autoimport/datawedge.db 
-</code></pre></li>
-</ol>
-
-<h5 id="iclassfafacheckcirclestylecolor27ae60iprofile0isenabledonthews301nexttimedatawedgeislaunched" class="anchor"><a class="heading-anchor" href="#iclassfafacheckcirclestylecolor27ae60iprofile0isenabledonthews301nexttimedatawedgeislaunched"><span></span></a><i class="fa fa-check-circle" style="color:#27AE60;"></i> Profile0 is enabled on the WS301 next time DataWedge is launched.</h5>
-
-<hr>
-
-<h4 id="2enableprofile0withotherdatawedgeintents" class="anchor"><a class="heading-anchor" href="#2enableprofile0withotherdatawedgeintents"><span></span></a>2. Enable Profile0 with other DataWedge intents:</h4>
-
-<pre class="prettyprint"><code>
-Intent intent = new Intent("com.symbol.datawedge.api.ACTION");
-Bundle mainBundle = new Bundle();
-mainBundle.putString("PROFILE_NAME", "Profile0 (default)");
-mainBundle.putString("CONFIG_MODE", "UPDATE");
-mainBundle.putString("PROFILE_ENABLED", "true");
-intent.putExtra("com.symbol.datawedge.api.SET_CONFIG", mainBundle);
-sendBroadcast(intent); 
-</code></pre>
-
-<p><i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong>Learn more <a href="/datawedge/latest/guide/output/intent/">about DataWedge intent APIs</a></strong></p>
-
-<hr>
-
-<h4 id="3enableprofile0withreset_default_profile" class="anchor"><a class="heading-anchor" href="#3enableprofile0withreset_default_profile"><span></span></a>3. Enable Profile0 with <code>RESET_DEFAULT_PROFILE</code>:</h4>
-
-<p><strong>Profile0 can be enabled programmatically</strong> using the DataWedge <code>RESET_DEFAULT_PROFILE</code> preconfigured intent. </p>
-
-<p><i class="fa fa-hand-o-right" style="color:#27AE60;"></i> There's more about this process (plus sample code) in the <a href="/datawedge/15-1/guide/api/resetdefaultprofile/">DataWedge default profile section</a>.</p>
-
-<hr>
-
-<!-- 
-
-### Additional WS301 Resources
-
-- **[WS301 Product Reference Guide](https://docs.zebra.com/us/en/mobile-computers/wearable/ws301/bm-ws301-product-reference-guide-android-14-ditamap/c-ws301-product-reference-guide-for-android-14-landing-page.html) |** Comprehensive guide to hardware controls and settings, preinstalled software and device usage details
-- **[WS301 Product Page](https://www.zebra.com/us/en/products/mobile-computers/wearable-computers/ws3-series/ws301.html) |** Information, specifications, accessories, support and other relevant links
-- **[WS301 Spec Sheet](https://www.zebra.com/us/en/products/spec-sheets/mobile-computers/wearable/ws301.html) |** Hardware, software and device usage details
-- **[WS301 Support Page](https://www.zebra.com/us/en/support-downloads/mobile-computers/wearable-computers/ws301.html) |** Primary product support page with downloads and LifeGuard updates 
-
----
-
-<img alt="image" style="height:250px" src="301_Android_launcher.jpg"/>
-
-<img alt="image" style="height:250px" src="301_optimized_apps.jpg"/>
-
-<img alt="image" style="height:250px" src="301_gesture_nav.jpg"/>
-
-<img alt="image" style="height:250px" src="301_debugging.jpg"/>
-
-DEBUGGING
-
-Debug customer reported issues using:
-RxLogger (BTSnoop, RAMoops, TCPDump, etc.)
-USB/Wireless debugging under Developer Options (logcat, adb)
-Bug report under Developer Options or via adb
-
-<img alt="image" style="height:350px" src="301_buttons.jpg"/>
-
-
-
-To enter Recovery mode, hold corner button (#2) during boot.
-To enter Fastboot mode, hold middle button (#2) during boot.
-
-<img alt="image" style="height:350px" src="301_enroll_FOTA.jpg"/>
-
-
-Enroll for automatic BSP update using FOTA for NGMS in Settings.
-
-
-<img alt="image" style="height:350px" src="301_DataWedge.jpg"/>
-
-
-By default, DataWedge Profile0 is disabled and needs to be enabled 
-Options to enable Profile0:
-
-1. Push a DataWedge database file with `Profile0` enabled exported from another Zebra device onto the WS301.
-2. Programmatically broadcast an intent to enable `Profile0`.
-
-<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> **DWDemo app is not available on the WS301**.
- -->
-
-<hr>
-
-<h3 id="appdevicecompatibility" class="anchor"><a class="heading-anchor" href="#appdevicecompatibility"><span></span></a>App/Device Compatibility</h3>
-
-<p>While the WS301 is built around a full-scale application processor and Android version, <strong>its two-inch display and 4GB RAM might require modifications to existing apps, UIs and workflows</strong>. In many cases, building an all-new app might be the most efficient route.</p>
-
-<p><img alt="image" style="height:150px" src="ws50_launcher+quickTiles.png">
-<em>The Android 'Quick Settings' tiles (l) and Launcher.<br>Click image to enlarge; ESC to exit</em>.<br><br>
-<img alt="image" style="height:150px" src="ws50_settings+buttons.png">
-<em>The Android Settings panel (l) and BACK, HOME and POWER buttons.<br>Click image to enlarge; ESC to exit</em>.<br></p>
-
-<hr>
-
-<h3 id="ws301devicevariations" class="anchor"><a class="heading-anchor" href="#ws301devicevariations"><span></span></a>WS301 Device Variations</h3>
-
-<p><strong>The resources available to developers in the WS301 differ from those of most other Zebra devices</strong> and wearable terminals. This guide addresses each of the variations and when possible, provides guidance and/or recommendations for additional development resources.</p>
-
-<ul>
-<li><strong>Two-inch Screen Adaptations</strong>:
-
-
-<ul>
-<li><strong>Includes a small, scrollable soft input panel</strong> (SIP) for data entry</li>
-
-<li><strong>Split screen functionality is disabled</strong> for all apps</li>
-
-<li><strong>Status bar is hidden and Navigation bar removed</strong> to maximize screen space for apps</li></ul>
-</li>
-
-<li><strong>Memory limited to 4GB RAM, 64GB internal storage</strong></li>
-
-<li><strong>No GMS capability</strong></li>
-</ul>
-
-<p><strong>Zebra recommends reading Google's <a href="https://developer.android.com/guide/practices/screens_support">screen compatibility overview</a></strong> <i class="fa fa-external-link" style="color:#45AED6;"></i> and <strong>guidelines for adapting apps to <a href="https://developer.android.com/training/multiscreen/screensizes">support different screen sizes</a></strong>. <i class="fa fa-external-link" style="color:#45AED6;"></i> These and other useful links can be found in the <a href="#alsosee">"Also See"</a> section at the bottom of this guide.</p>
 
 <hr>
 
@@ -548,12 +303,6 @@ Options to enable Profile0:
 <h3 id="physicaldimensions" class="anchor"><a class="heading-anchor" href="#physicaldimensions"><span></span></a>Physical Dimensions</h3>
 
 <table class="facelift" align="center" style="width:80%" border="1" padding="5px">
-<!-- 
-<tbody><tr bgcolor="#dce8ef">
- -->
-<!-- <table class="table table-striped">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
- -->
 
 <tbody><tr>
 <th><img alt="image" style="height:250px" src="301_clip-mount-worn.jpg"></th>
@@ -673,7 +422,7 @@ Options to enable Profile0:
 <ul>
 <li><strong>Operating System</strong>: Android 14 AOSP (non-GMS)</li>
 
-<li><strong>Custom soft-input panel</strong>. <i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> <a href="#customsip">Go to section</a></li>
+<li><strong>Custom soft-input panel</strong>. <i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> <a href="#customsip">Go to section</a>.</li>
 
 <li><strong><a href="https://www.zebra.com/us/en/products/software/mobile-computers/mobility-dna.html">Mobility DNA</a></strong> includes an <strong><a href="/mx/ws50">MX feature subset</a></strong></li>
 
@@ -686,9 +435,326 @@ Options to enable Profile0:
 
 <hr>
 
+<h2 id="powermanagement" class="anchor"><a class="heading-anchor" href="#powermanagement"><span></span></a>Power Management</h2>
+
+<p><strong>The WS301's 750 mAh Li-Ion PowerPrecision+ battery</strong> is rated to provide a full 10 hours of continuous operation. However, battery performance varies greatly depending on usage patterns and device settings, especially those of the display panel. <strong>To maximize operation of WS301 devices while on battery power, Zebra recommends the power-management best practices listed below</strong>. </p>
+
+<h4 id="toprolongbatterylife" class="anchor"><a class="heading-anchor" href="#toprolongbatterylife"><span></span></a>To Prolong Battery Life:</h4>
+
+<ul>
+<li><strong>Enable Dark Mode by default</strong>:
+
+
+<ul>
+<li>Android "Dark Mode" (aka Dark Theme) shifts the device UI from a white background to a darker color palette, reducing energy usage. </li>
+
+<li>For tips on broad deployment, see <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong><a href="https://support.zebra.com/article/000027855">Enable Dark Theme Mode via MDM/EMM</a>*</strong> (Zebra support article).</li>
+
+<li><strong>Also see <i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> <a href="#colorusage">Color Usage section</a></strong>.</li></ul>
+</li>
+
+<li><strong>Optimize Back-End Communications</strong>:
+
+
+<ul>
+<li>Design apps to batch non-critical server requests, sending data in consolidated bursts rather than a continuous stream. This allows the WS301 wireless radio to remain in its low-power state for longer periods.</li></ul>
+</li>
+
+<li><strong>Optimize Shared-device Reconfiguration</strong>:
+
+
+<ul>
+<li>If pre-configuring shift-worker devices, do so at the end of the previous shift, when the device returned to the charging cradle. This helps minimize battery drain when the next worker begins their shift. </li></ul>
+</li>
+
+<li><strong>Set screen brightness to the minimum level</strong> for effective use.</li>
+
+<li><strong>Set a short screen timeout interval</strong> (10-15 seconds).</li>
+
+<li><strong>Reduce the device wake-up sources</strong> to include only controls not easily pressed accidentally. <i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> See <a href="#keyremapping">keymapping section</a>.</li>
+
+<li><strong>Ensure apps are managing activities</strong> during the Doze maintenance window.</li>
+
+<li><strong>Do not disable Doze mode</strong> (controlled by <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> MX <a href="/mx/powermgr/#doze-mode-enabledisable">Power Manager</a>).</li>
+
+<li><strong>Do not "whitelist" an app for battery optimization</strong> (prevents Doze mode).</li>
+
+<li><strong>Test apps to ensure proper operation</strong> when entering/exiting Doze mode.</li>
+</ul>
+
+<p><strong>*</strong> <i><font size="1" color="DimGrey">Microsoft Intune is used as an example. Adapt as needed for the EMM system in use.</font></i> </p>
+
+<h4 id="morepowersavingtips" class="anchor"><a class="heading-anchor" href="#morepowersavingtips"><span></span></a>More Power-saving Tips</h4>
+
+<ul>
+<li><strong>Further Optimize Background and Back-end Communication</strong>. High-frequency network calls, alarms and polling activities can impact battery life. Consider the following approaches in addition to those listed in the section above:
+
+
+<ul>
+<li>Eliminate hard-coded short-interval polling (e.g. 30s heartbeats).</li>
+
+<li>Transition background synchronization, health checks and status reporting to use Android's WorkManager or batched alarms with significantly larger windows (e.g., 15 to 60 minutes).</li>
+
+<li>Implement smart, dynamic intervals that scale back when the device is detected as stationary or idle.</li></ul>
+</li>
+
+<li><strong>Mitigate High-performance CPU Whitelisting and Frequency Ramping</strong>:
+
+
+<ul>
+<li>Review all service configurations to ensure background tasks do not request or inherit high-performance CPU whitelists.</li>
+
+<li>Constrain tasks running in the background to run on efficient, lower-frequency CPU cores. </li>
+
+<li>Restrict high-performance/high-frequency modes to active, user-facing real-time actions.</li></ul>
+</li>
+
+<li><strong>Eliminate Persistent Partial Wake Locks</strong>: 
+
+
+<ul>
+<li>Persistent wake locks completely block the Android OS from entering Deep Doze mode. Transition to modern push architectures.</li>
+
+<li>Avoid holding permanent, indefinite partial wake locks. All wake locks must have explicit, tight timeouts.</li>
+
+<li>Transition communication architectures from a persistent "always-listening" background wake lock to a lightweight, event-driven push notification framework (such as FCM or custom lightweight push sockets) that can wake the device on demand.</li></ul>
+</li>
+
+<li><strong>Mitigate Database Crashes and Exponential Back-offs</strong>. When a service crashes, the operating system executes a CPU-heavy process to tear down resources, write stack traces to storage and spin up a new process instance. If service restarts are immediate and aggressive, it creates an intense power spike.
+
+
+<ul>
+<li>Audit database connection life cycles to ensure SQL connections are opened cleanly, cached and closed without leaking.</li>
+
+<li>For any service or network call that fails or crashes, enforce a strict exponential back-off algorithm with jitter for retries (rather than allowing immediate restart or reconnection loops).</li>
+
+<li>In a poor network environment, the Wi-Fi radio and the impacted apps work harder. To reduce power draw and optimize battery life, review and modify behavior of background services when a target server is unreachable or when the configuration (such as the server JSON configuration files) is incomplete. Ensure the application degrades network activity gracefully when a connection is offline or failing, rather than entering a continuous high-speed packet-retry loop.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="datacapture" class="anchor"><a class="heading-anchor" href="#datacapture"><span></span></a>Data Capture</h2>
+
+<p><strong>The WS301 is one of a few Zebra models that DOES NOT include a dedicated scanner</strong>, and instead <strong>uses the <em>camera</em> to acquire data from barcodes</strong> (as well as to capture images and video). Consequently, <strong>the WS301 comes with <a href="/datawedge/15-1/guide/gettingstarted/#datawedgefunctionality">DataWedge Profile0</a> disabled by default</strong>. DataWedge is included with all Zebra devices. It allows barcode data to be injected as keyboard input into any app without modification with just a few taps. Most devices come with Profile0 set as the default for "out-of-the-box" scanning. </p>
+
+<p><strong>Since Profile0 is disabled on the WS301, the job of managing the scanner falls entirely on the developer's app(s)</strong> unless Profile0 (or another profile) is enabled (or if scanner APIs are used). In general, Zebra recommends DataWedge as the simplest means of populating apps with barcode data. Its use is further simplified by enabling Profile0, which automatically activates DataWedge for any app on the device that's not explicitly associated with another DataWedge profile. DataWedge profiles allow for processing of acquired data and applying post-acquisition actions such as simulating a TAB keypress. <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong>Learn more <a href="/datawedge">about DataWedge</a></strong>.</p>
+
+<blockquote>
+  <p><i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>To enable Profile0 on a device, select one of the methods shown below</strong>.</p>
+</blockquote>
+
+<hr>
+
+<h3 id="enableprofile0" class="anchor"><a class="heading-anchor" href="#enableprofile0"><span></span></a>Enable Profile0</h3>
+
+<p><strong>Before beginning any of the processes below, <a href="Zebra-WS301-tools.zip">Download Zebra WS301 tools</a></strong> onto a PC and expand the downloaded <code>.zip</code> file.</p>
+
+<ul>
+<li><strong>The archive contains the following four (4) files</strong>:
+
+
+<ul>
+<li><code>BarcodeGenerator.html</code> - <strong>Web page that converts keyboard input into a barcode</strong> for scanning into a field. <i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> <strong><a href="#customsip">See Custom SIP</a></strong>, below.</li>
+
+<li><code>datawedge-disabledProfile0.db</code> - <strong>Disables Profile0</strong> when pushed to the device folder as shown below.</li>
+
+<li><code>datawedge-enabledProfile0.db</code> - <strong>Enables Profile0</strong> when pushed to the device folder as shown below.</li>
+
+<li><code>EnableDisableProfile0.apk</code> - <strong>Installs "Enable Profile0" and "Disable Profile0" apps</strong>.</li></ul>
+</li>
+</ul>
+
+<p><i class="fa fa-check-circle" style="color:#27AE60;"></i> <strong>Following any of these methods, Profile0 is enabled on the device the next time DataWedge is launched</strong>. </p>
+
+<hr>
+
+<h4 id="ienableprofile0bypushingafile" class="anchor"><a class="heading-anchor" href="#ienableprofile0bypushingafile"><span></span></a>I. Enable Profile0 by pushing a file:</h4>
+
+<ol>
+<li><strong>Navigate to the directory containing the files</strong> downloaded as instructed above.</li>
+
+<li><strong>Push the desired database (<code>.db</code>) file to the device(s) with Android Debug Bridge (adb)</strong><i>‡</i> using one of these commands:</li>
+</ol>
+
+<h5 id="toenable" class="anchor"><a class="heading-anchor" href="#toenable"><span></span></a>TO ENABLE:</h5>
+
+<pre class="prettyprint"><code>    
+    adb push datawedge-enabledProfile0.db /sdcard/Android/data/com.symbol.datawedge/files/autoimport/datawedge.db
+</code></pre>
+
+<h5 id="todisable" class="anchor"><a class="heading-anchor" href="#todisable"><span></span></a>TO DISABLE:</h5>
+
+<pre class="prettyprint"><code>    
+    adb push datawedge-disabledProfile0.db /sdcard/Android/data/com.symbol.datawedge/files/autoimport/datawedge.db
+</code></pre>
+
+<p><i>‡</i> <i><font size="2" color="DimGrey">Requires adb to be enabled on device. <a href="https://developer.android.com/tools/adb">Learn how</a> <i class="fa fa-external-link" style="color:#45AED6;"></i>. &nbsp; Action also can be performed using an EMM system.</font></i></p>
+
+<hr>
+
+<h4 id="iienableusingdatawedgeintents" class="anchor"><a class="heading-anchor" href="#iienableusingdatawedgeintents"><span></span></a>II. Enable using DataWedge intents:</h4>
+
+<p><strong>Run the following code from within an Android app</strong>:  </p>
+
+<pre class="prettyprint"><code>    
+    Intent intent = new Intent("com.symbol.datawedge.api.ACTION");
+    Bundle mainBundle = new Bundle();
+    mainBundle.putString("PROFILE_NAME", "Profile0 (default)");
+    mainBundle.putString("CONFIG_MODE", "UPDATE");
+    mainBundle.putString("PROFILE_ENABLED", "true");
+    intent.putExtra("com.symbol.datawedge.api.SET_CONFIG", mainBundle);
+    sendBroadcast(intent); 
+</code></pre>
+
+<p><i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong>Learn more <a href="/datawedge/latest/guide/api">about DataWedge intent APIs</a></strong>.</p>
+
+<hr>
+
+<h4 id="iiienablewithanapponthedevice" class="anchor"><a class="heading-anchor" href="#iiienablewithanapponthedevice"><span></span></a>III. Enable with an app on the device:</h4>
+
+<ol>
+<li><strong>Push the</strong> <code>EnableDisableProfile0.apk</code> <strong>package downloaded above to target device(s) and install</strong>.</li>
+
+<li><strong>Locate and tap</strong> <code>EnableProfile0</code> <strong>or</strong> <code>DisableProfile0</code> <strong>apps</strong>, which run versions of the method above.</li>
+</ol>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>NOTE</strong>: The WS301 camera cannot be used to capture images or video while Profile0 is enabled on the device. </p>
+
+<hr>
+
+<!-- TUT-128820 removed per eng.
+
+#### 1. Enable Profile0 by pushing a file:
+
+1. **On a full-sized device, open DataWedge** to display the "DataWedge Profiles" page. 
+2. **Locate and tap "Profile0"** to enable it. 
+3. Return to the "DataWedge Profiles" page, tap the <i class="fa fa-ellipsis-v" style="color:#000000;"></i> menu and **select "Settings" from the menu**:
+<img alt="image" style="height:200px" src="301_datawedge-profile0.jpg"/>
+_DataWedge Profiles list on the WS301_.<br>
+_Click image to enlarge; ESC to exit_.
+
+4. **Locate and tap "Export"** to save the current settings. Tap "EXPORT" again to confirm, making note of the destination folder shown. 
+5. **Get the exported file from the device** and save it to an accessible location on the admin PC.  
+<img alt="image" style="height:450px" src="datawedge-export-folder.jpg"/>
+_DataWedge folder structure on the Android device_.<br>
+_Click image to enlarge; ESC to exit_.
+
+6. **Push the Profile to the same folder on the WS301 device** using the Android Debug Bridge or any compatible means:  
+
+        :::terminal
+        adb push datawedge-enabledProfile0.db /sdcard/Android/data/com.symbol.datawedge/files/autoimport/datawedge.db 
+
+##### <i class="fa fa-check-circle" style="color:#27AE60;"></i> Profile0 is enabled on the WS301 next time DataWedge is launched. 
+
+----- 
+
+For #3, asked eng for removal reason. NHB
+
+#### 3. Enable Profile0 with `RESET_DEFAULT_PROFILE` intent:
+
+**Profile0 can be enabled programmatically** using the DataWedge `RESET_DEFAULT_PROFILE` preconfigured intent. 
+
+<i class="fa fa-hand-o-right" style="color:#27AE60;"></i> There's more about this process (plus sample code) in the [DataWedge default profile section](/datawedge/15-1/guide/api/resetdefaultprofile/).
+
+-----
+
+ -->
+
+<!-- 
+
+### Additional WS301 Resources
+
+- **[WS301 Product Reference Guide](https://docs.zebra.com/us/en/mobile-computers/wearable/ws301/bm-ws301-product-reference-guide-android-14-ditamap/c-ws301-product-reference-guide-for-android-14-landing-page.html) |** Comprehensive guide to hardware controls and settings, preinstalled software and device usage details
+- **[WS301 Product Page](https://www.zebra.com/us/en/products/mobile-computers/wearable-computers/ws3-series/ws301.html) |** Information, specifications, accessories, support and other relevant links
+- **[WS301 Spec Sheet](https://www.zebra.com/us/en/products/spec-sheets/mobile-computers/wearable/ws301.html) |** Hardware, software and device usage details
+- **[WS301 Support Page](https://www.zebra.com/us/en/support-downloads/mobile-computers/wearable-computers/ws301.html) |** Primary product support page with downloads and LifeGuard updates 
+
+---
+
+<img alt="image" style="height:250px" src="301_Android_launcher.jpg"/>
+
+<img alt="image" style="height:250px" src="301_optimized_apps.jpg"/>
+
+<img alt="image" style="height:250px" src="301_gesture_nav.jpg"/>
+
+<img alt="image" style="height:250px" src="301_debugging.jpg"/>
+
+DEBUGGING
+
+Debug customer reported issues using:
+RxLogger (BTSnoop, RAMoops, TCPDump, etc.)
+USB/Wireless debugging under Developer Options (logcat, adb)
+Bug report under Developer Options or via adb
+
+<img alt="image" style="height:350px" src="301_buttons.jpg"/>
+
+
+
+To enter Recovery mode, hold corner button (#2) during boot.
+To enter Fastboot mode, hold middle button (#2) during boot.
+
+<img alt="image" style="height:350px" src="301_enroll_FOTA.jpg"/>
+
+
+Enroll for automatic BSP update using FOTA for NGMS in Settings.
+
+
+<img alt="image" style="height:350px" src="301_DataWedge.jpg"/>
+
+
+By default, DataWedge Profile0 is disabled and needs to be enabled 
+Options to enable Profile0:
+
+1. Push a DataWedge database file with `Profile0` enabled exported from another Zebra device onto the WS301.
+2. Programmatically broadcast an intent to enable `Profile0`.
+
+<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> **DWDemo app is not available on the WS301**.
+ -->
+
+<h3 id="appdevicecompatibility" class="anchor"><a class="heading-anchor" href="#appdevicecompatibility"><span></span></a>App/Device Compatibility</h3>
+
+<p>While the WS301 is built around a full-scale application processor and Android version, <strong>its two-inch display and 4GB RAM might require modifications to existing apps, UIs and workflows</strong>. In many cases, building an all-new app might be the most efficient route.</p>
+
+<p><img alt="image" style="height:150px" src="ws50_launcher+quickTiles.png">
+<em>The Android 'Quick Settings' tiles (l) and Launcher.<br>Click image to enlarge; ESC to exit</em>.<br><br>
+<img alt="image" style="height:150px" src="ws50_settings+buttons.png">
+<em>The Android Settings panel (l) and BACK, HOME and POWER buttons.<br>Click image to enlarge; ESC to exit</em>.<br></p>
+
+<hr>
+
+<h3 id="ws301devicevariations" class="anchor"><a class="heading-anchor" href="#ws301devicevariations"><span></span></a>WS301 Device Variations</h3>
+
+<p><strong>The resources available to developers in the WS301 differ from those of most other Zebra devices</strong> and wearable terminals. This guide addresses each of the variations and when possible, provides guidance and/or recommendations for additional development resources.</p>
+
+<ul>
+<li><strong>Two-inch Screen Adaptations</strong>:
+
+
+<ul>
+<li><strong>Includes a small, scrollable soft input panel</strong> (SIP) for data entry</li>
+
+<li><strong>Split screen functionality is disabled</strong> for all apps</li>
+
+<li><strong>Status bar is hidden and Navigation bar removed</strong> to maximize screen space for apps</li></ul>
+</li>
+
+<li><strong>Memory limited to 4GB RAM, 64GB internal storage</strong></li>
+
+<li><strong>No GMS capability</strong></li>
+</ul>
+
+<p><strong>Zebra recommends reading Google's <a href="https://developer.android.com/guide/practices/screens_support">screen compatibility overview</a></strong> <i class="fa fa-external-link" style="color:#45AED6;"></i> and <strong>guidelines for adapting apps to <a href="https://developer.android.com/training/multiscreen/screensizes">support different screen sizes</a></strong>. <i class="fa fa-external-link" style="color:#45AED6;"></i> These and other useful links can be found in the <a href="#alsosee">"Also See"</a> section at the bottom of this guide.</p>
+
+<hr>
+
 <h2 id="customsip" class="anchor"><a class="heading-anchor" href="#customsip"><span></span></a>Custom SIP</h2>
 
 <p><strong>To facilitate keyed input on its reduced screen size</strong>, the WS301 comes with a custom software keyboard that's presented whenever an input field gains focus. The alphanumeric keyboard is presented in a scrollable window.</p>
+
+<blockquote>
+  <p><i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong>For entering longer or more complex strings, visit this <a href="../barcodegen/barcodegenerator.html">Barcode Generator page</a></strong> with a larger device or PC, input the desired text and hit enter. Then, with the WS301 cursor in the field to be populated, scan the barcode. </p>
+</blockquote>
 
 <p><img alt="image" style="height:150px" src="ws50_keyboard_1+2.png">
 <em>Standard QWERTY keyboard is scrollable across two screen widths</em>.<br>
@@ -729,8 +795,13 @@ Options to enable Profile0:
 
 <p><strong>All four of the WS301 buttons* can be fully or partially reprogrammed, according to the notes listed below</strong>. Default button mappings can be reassigned using <a href="/mx/keymappingmgr/">Key Mapping Manager</a> through Zebra <a href="/zebradna">DNA Cloud</a>, <a href="/stagenow">StageNow</a> or a company's own EMM system with <a href="/oemconfig">OEMConfig</a>. Wake-up Source designations are assigned through <a href="/mx/powermgr/#wake-up-sources-enabledisable">Power Manager</a>.</p>
 
-<p><img alt="image" style="height:350px" src="301_button_remapping.jpg">
+<p><img alt="image" style="height:250px" src="ws301-keymapping-table-new.jpg">
 <br></p>
+
+<!-- 9/1/26 replaced w/image above per eng. TUT-128820
+<img alt="image" style="height:350px" src="301_button_remapping.jpg"/>
+<br>
+-->
 
 <h4 id="remappingnotes" class="anchor"><a class="heading-anchor" href="#remappingnotes"><span></span></a>Remapping Notes</h4>
 
@@ -743,9 +814,9 @@ Options to enable Profile0:
 
 
 <ul>
-<li><strong>In clip or wrist mount</strong>: Push-to-talk (PTT) for Sync app and other compatible communications apps</li>
+<li><strong>In Clip or wrist mount</strong>: "KEYCODE_BUTTON_L2" is output, which is often used by Push-to-Talk (PTT) and Workcloud Sync apps.</li>
 
-<li><strong>Device alone</strong>: Scan trigger for top camera-scanner ("G" in <a href="#ws301featuresandcontrols">WS301 Features and Controls</a> diagram)</li></ul>
+<li><strong>Device alone</strong>: "KEYCODE_SCAN" is output, and is often used to trigger the top camera-scanner ("G" in <i class="fa fa-arrow-circle-up" style="color:#27AE60;"></i> <a href="#ws301featuresandcontrols">WS301 Features and Controls</a> diagram above).</li></ul>
 </li>
 
 <li><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Multi-function button restrictions</strong>: 
@@ -760,9 +831,16 @@ Options to enable Profile0:
 </li>
 </ul>
 
+<blockquote>
+  <p><i class="fa fa-thumbs-up" style="color:#27AE60;"></i> <strong>PRO TIP: To enable PTT inside and outside of the mount</strong>: Remap "Scan" from "KEYCODE_SCAN" to "KEYCODE_BUTTON_L2". </p>
+</blockquote>
+
 <p>* <i><font size="1" color="DimGrey"> The terms "button" and "key" are used interchangeably in this guide, as are the terms "remapped" and "reprogrammed."</font></i> </p>
 
-<!-- WS50 stuff
+<!-- 
+
+-----
+WS50 stuff
 
 &#42; <i><font size="1" color="DimGrey"> Wake-up Source designations are accessible through [Power Manager](/mx/powermgr/#wake-up-sources-enabledisable).</font></i> 
 
@@ -929,7 +1007,7 @@ Options to enable Profile0:
 </li>
 </ul>
 
-<p><i><font size="2" color="DimGrey"> * For keyboard layouts, touch zones can be smaller. With a 2X scale ratio, dp values are half the pixel values.</font></i></p>
+<p>* <i><font size="2" color="DimGrey"> For keyboard layouts, touch zones can be smaller. With a 2X scale ratio, dp values are half the pixel values.</font></i></p>
 
 <blockquote>
   <p><i class="fa fa-question-circle fa-lg fa-inverse" style="color:#3498DB;"></i> <strong>What's a dp?</strong> <br>
