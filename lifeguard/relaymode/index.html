@@ -1,0 +1,1114 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Documentation for Zebra Technologies developer tools and utilties, including EMDK for Android, EMDK for Xamarin, StageNow and Enterprise Browser.">
+    <meta name="author" content="Zebra Technologies">
+    <meta name="google-site-verification" content="i4B78BrWnNy8ShJwe5feRW3jO3HE6gfYlYqYbxfl8yY">
+    <meta name="msvalidate.01" content="6B651B00161BCE79B8950AC09D5C4C75">
+    <meta title="Using Relay Mode">
+    <title>Using Relay Mode - TechDocs</title>
+    <!-- core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--     
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+ -->    
+    <link href="/css/all.css" rel="stylesheet">
+    <link href="/css/v4-shims.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/owl.carousel.css" rel="stylesheet">
+    <link href="/css/owl.transitions.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/prettify.css" rel="stylesheet">
+    <link href="/css/bootstrap-treenav.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]--> 
+
+    <!-- 6/13/24- a "crown" icon randomly appeared in the MX matrix today. Rob said it looked like sumo. 
+        <script src="//load.sumome.com/" data-sumo-site-id="699cb66cf4dc59352efb45705526d15cbe314e1cd43f7761b94d96f3cf7338e8" async="async"></script> -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-01QJCMQM9N"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-01QJCMQM9N');
+</script><script src="/js/jquery.js"></script></head><!--/head-->
+
+<!-- Google tag -->
+
+
+
+
+
+<body id="home" class="homepage" data-spy="scroll" data-offset="100" data-target="#toc">
+
+    <header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo" style="max-height:66px;float: inherit;
+    padding-right: 3px;"></a> 
+                    
+                   
+                </div>
+                <div class="collapse navbar-collapse navbar-left">
+                    <ul class="nav navbar-nav">
+                        <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
+                        <p class="navbar-text">
+                                            LifeGuard
+                        </p>
+
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        
+
+
+                        <li>
+                            <a href="/lifeguard/about">
+                                    About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lifeguard/update">
+                                    Device Update
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lifeguard/relaymode">
+                                    Relay Mode
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lifeguard/a13">
+                                    A13+ Upgrade (SD660)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lifeguard/a14">
+                                    A14+ Upgrade (others)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lifeguard/faq">
+                                    FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lifeguard/search">
+                                    <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        
+                        <!-- <li ><a href="/products">SDKs</a></li>
+                        <li ><a href="/samples">Samples</a></li>
+                        <li ><a href="/guides">Guides</a></li>
+                        <li ><a href="/tutorials">Tutorials</a></li>
+                        <li ><a href="/apis">APIs</a></li> -->
+                        <!-- <li><a href="#"><input type="text" class="st-default-search-input"></a></li> -->
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+<div class="container-fluid">
+    <section id="blog">
+        <div class="">
+            <section class="content-with-sidebar">
+            <div class="row">
+                <div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+                    
+                    
+                    <nav id="toc" data-toggle="toc" data-spy="affix" style="height: 75%; max-width: 225px; overflow-y: auto; ">
+                        
+                        <ul class="nav">
+                            <li><strong>Using Relay Mode</strong></li>
+                        </ul>
+                    </nav>
+                    <div class="modal fade" id="modal-smartdocs" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+                    	<div class="modal-dialog">
+                    		<div class="modal-content">
+                    			<div class="modal-header">
+                    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    			</div>
+                    			<div class="modal-body">
+                    				<form>
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">MX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="4.0">4.0</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="5.0">5.0</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">OSX Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="1.0">1.0</option>
+                    					  <option value="1.2">1.2</option>
+                    					  <option value="1.3.4-56">1.3.4-56</option>
+                    					  <option value="3.4">3.4</option>
+                    					  <option value="3.5">3.5</option>
+                    					  <option value="3.6">3.6</option>
+                    					  <option value="4.1">4.1</option>
+                    					  <option value="4.2">4.2</option>
+                    					  <option value="4.3">4.3</option>
+                    					  <option value="4.4">4.4</option>
+                    					</select>
+                    				  </div>						
+                    				  <div class="form-group">
+                    				    <label for="exampleInputEmail1">Android Version On Device:</label>
+                    				    <select class="form-control">
+                    					  <option value="23">6.0 Marshmallow</option>
+                    					  <option value="22">5.1 Lollipop</option>
+                    					  <option value="21">5.0 Lollipop</option>
+                    					  <option value="19">4.4 Kitkat</option>
+                    					  <option value="18">4.3 Jellybean</option>
+                    					  <option value="17">4.2.x Jellybean</option>
+                    					  <option value="16">4.1.x Jellybean</option>
+                    					  <option value="15">4.0.3-4.0.4 Ice Cream Sandwich</option>
+                    					  <option value="14">4.0-4.0.2 Ice Cream Sandwich</option>
+                    					  <option value="10">2.3.3-2.3.4 Gingerbread</option>
+                    					</select>
+                    				  </div>
+                    				  <div class="form-group">
+                    				  	<button class="primary" id="btn_SaveSmartDocOptions">Save Changes</button><button class="primary" id="btn_ClearSmartDocOptions">Clear Changes</button>
+                    				  </div>
+                    				</form>
+                    			</div>
+                    	</div>
+                      </div>
+                    </div>
+                    
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Saving Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        	$( "#btn_SaveSmartDocOptions" ).click(function() {
+                      			console.log('Clearing Options');
+                      			$("#modal-smartdocs").modal({show: false});
+                    		});
+                        });
+                    </script><link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.css">
+                    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.3.0/dist/bootstrap-toc.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                    
+                        });
+                    
+                    
+                    </script>
+                </div>                
+                <div class="col-sm-9 ">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <section id="cta" class="wow fadeIn">
+                                <div class="">
+                                    <h1 id="using-relay-mode" class="anchor"><a class="heading-anchor" href="#using-relay-mode"><span></span></a>Using Relay Mode</h1>
+                                    <p>
+                                            LifeGuard
+                                    </p>
+                                </div>
+                            </section>                    
+                        </div>
+                    </div>
+                    <div id="mainContent" class="row">
+                        <div class="col-sm-12">
+                            <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <!-- Start of guide -->
+                                <div class="service-box wow fadeInRight">
+                                    <div class="">
+
+                                        <p></p><blockquote>
+  <p><i class="fa fa-calendar" style="color:#27AE60;"></i> <strong>LAST UPDATED: Sept. 9, 2026</strong> </p>
+</blockquote>
+
+<hr>
+
+<p></p><h2 id="overview" class="anchor"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h2>
+
+<p><strong>Relay Mode allows Zebra devices to receive LifeGuard updates from a customer-hosted FTP/S or HTTP/S file server</strong>, eliminating reliance on Zebra-owned servers for pushing updates to individual devices. This provides Zebra customers with a do-it-yourself option of maintaining localized control of their own servers for deployment of updates currently delivered through the Zebra LifeGuard service, 
+which includes Android OS updates, security patches and firmware. Configuration of Relay Mode can be maintained by the company's existing Enterprise Mobility Management (EMM) system and <a href="/oemconfig">Zebra OEMConfig</a>. Once configured, the system operates autonomously, periodically polling the designated server for updates and installing them to devices according to established policies, all with on-device logging. </p>
+
+<h3 id="requirements" class="anchor"><a class="heading-anchor" href="#requirements"><span></span></a>Requirements</h3>
+
+<ul>
+<li><strong>Supported server protocols</strong>:
+
+
+<ul>
+<li>FTP or FTPS</li>
+
+<li>HTTP or HTTPS</li></ul>
+</li>
+
+<li><strong>Network recommendations</strong>: 
+
+
+<ul>
+<li>Minimum <strong>3 Mbps dedicated bandwidth per device</strong></li></ul>
+</li>
+
+<li><strong>Required server components</strong>: 
+
+
+<ul>
+<li><strong>Highly scalable server software</strong> for HTTP, HTTPS, FTP, or FTPS</li>
+
+<li><strong>Directory dedicated to repository storage</strong></li>
+
+<li><strong>Index file to catalog each stored update file</strong> and its hash and security patch level (SPL)</li></ul>
+</li>
+
+<li><strong>Supported device minimums</strong>: 
+
+
+<ul>
+<li>Android 14 with April, 2026, update</li>
+
+<li>Android 15 with May, 2026, update</li>
+
+<li>FOTA 5.0.0.88 client</li>
+
+<li>OEMConfig 15.3 client</li></ul>
+</li>
+</ul>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> All devices to receive updates from a company's Relay Server must be specifically configured to do so. See <i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> <a href="#vconfiguredevices">Device Updates section</a> below for details.  </p>
+
+<!-- 9/4/26 TUT-133331 removed per PdM
+
+* **Server recommendations**: 
+ * **500 GB available storage capacity** `<<-- ESTIMATED - TO BE CHECKED BY ENG`
+ * **1000 simultaneous connection capability** `<<-- ESTIMATED - TO BE CHECKED BY ENG`
+* **Required server components**: 
+ * **2 GB storage required for EACH Zebra device model** to be updated (200 GB minimum) `<<-- ESTIMATED - TO BE CHECKED BY ENG`
+
+ -->
+
+<hr>
+
+<h3 id="relayserversetup" class="anchor"><a class="heading-anchor" href="#relayserversetup"><span></span></a>Relay Server Setup</h3>
+
+<h4 id="setupsynopsis" class="anchor"><a class="heading-anchor" href="#setupsynopsis"><span></span></a>Setup Synopsis</h4>
+
+<ol>
+<li>Download* and store "Full Update" <code>.zip</code> files<i>‡</i> for deployed devices from Zebra support site.</li>
+
+<li>Generate hash values for each of the (<code>.zip</code>) files.</li>
+
+<li>Extract security patch level (SPL, a date) for each of the (<code>.zip</code>) files from its release notes.</li>
+
+<li>Create, validate and store the <code>filedata.xml</code> file on the server. </li>
+
+<li>Configure all devices to receive updates from the Relay Server.  </li>
+</ol>
+
+<p><strong>*</strong> <i><font size="1" color="DimGrey"> Zebra.com login required for download.</font></i> </p>
+
+<p><i>‡</i> <i><font size="1" color="DimGrey"> Relay Mode supports only updates designated with "STD" in the file name.</font></i> </p>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Zebra recommends including only the latest update for each product in the</strong> <code>filedata.xml</code> <strong>file</strong>.</p>
+</blockquote>
+
+<hr>
+
+<h2 id="usagenotes" class="anchor"><a class="heading-anchor" href="#usagenotes"><span></span></a>Usage Notes</h2>
+
+<ul>
+<li><strong>Device Enrollment</strong> 
+
+
+<ul>
+<li>After Relay Mode is configured, LifeGuard Over-the-Air updates fail with error code 5151 ("Unable to perform OS update as LifeGuard OTA is configured in Relay mode").</li></ul>
+</li>
+
+<li><strong>Security</strong>
+
+
+<ul>
+<li>For enhanced security, Zebra strongly recommends using encrypted passwords for server authentication. </li>
+
+<li>The <a href="/det">Zebra DET tool</a> can be used to generate encrypted passwords.</li>
+
+<li>Encrypted and non-encrypted passwords are supported in the same text field. The FOTA client automatically detects encrypted passwords.</li></ul>
+</li>
+
+<li><strong>Full URL Support</strong>
+
+
+<ul>
+<li>A full URL (e.g., <code>ftps://username:password@ipaddress:portno/</code>) can be provided in the Server Host field. </li>
+
+<li>If a full URL is provided, the Username and Password fields can be left blank.</li></ul>
+</li>
+
+<li><strong>Update Package Constraints</strong>
+
+
+<ul>
+<li><strong><u>Relay Mode supports only updates designated with "STD"</u> in the file name</strong>.</li>
+
+<li>Updates for "hotfixes" and custom packages are not supported.</li>
+
+<li>Baseline (U00) delta update packages are not supported.</li>
+
+<li>OS downgrades are not supported.</li></ul>
+</li>
+
+<li><strong>Network Connectivity</strong>
+
+
+<ul>
+<li>Devices must be connected to a Wi-Fi network to access the FTP/FTPS server and download updates.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="idownloadosupdatefiles" class="anchor"><a class="heading-anchor" href="#idownloadosupdatefiles"><span></span></a>I. Download OS Update Files</h2>
+
+<p><strong>1. Download* the newest "Full Update"</strong> <code>.zip</code> file(s) for devices deployed in your organization from one of these Zebra sites:<br></p>
+
+<p><i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>NOTE: Relay Mode <u>supports only updates designated with "STD"</u> in the file name</strong>. </p>
+
+<p>&nbsp;&nbsp;&nbsp; <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong><a href="https://www.zebra.com/us/en/support-downloads/mobile-computers.html">See updates by device type</a>:</strong><br> 
+  <img alt="image" style="height:300px" src="by-product-type.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<hr>
+
+<p>&nbsp;&nbsp;&nbsp; <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong><a href="https://www.zebra.com/ap/en/support-downloads/lifeguard-security.html#:~:text=Clear%20Filters-,Download%20The%20Updates,-CC6000%C2%A0GMS%0AEC30">See updates by device model</a>:</strong><br>
+  <img alt="image" style="height:350px" src="by-model.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<p><strong>2. Before navigating to the next file to download</strong>, consider following the instructions in Section II for the current file now. </p>
+
+<p><i class="fa fa-thumbs-up" style="color:#27AE60;"></i> <strong>PRO TIP</strong>: Store all downloaded files in a single directory on a Windows PC to simplify steps in Section III, below. </p>
+
+<p><strong>3. Repeat this section until all required updates are downloaded</strong>. </p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>NOTE: Update files are required ONLY for devices deployed within your organization</strong>. It is not necessary to obtain updates for all Zebra devices.  </p>
+
+<p><strong>*</strong> <i><font size="1" color="DimGrey"> Zebra.com login required for download.</font></i> </p>
+
+<hr>
+
+<h2 id="iiretrievespls" class="anchor"><a class="heading-anchor" href="#iiretrievespls"><span></span></a>II. Retrieve SPLs</h2>
+
+<p>Service patch level information for a given update is found in its accompanying release notes document (usually found on the same page as the download link itself). Dates are extracted from the relevant release notes, converted to a specific date format and saved for later use.</p>
+
+<h4 id="getsecuritypatchlevels" class="anchor"><a class="heading-anchor" href="#getsecuritypatchlevels"><span></span></a>Get Security Patch Levels</h4>
+
+<p><strong>1. Locate and display the release notes</strong> for the update: 
+  <img alt="image" style="height:450px" src="update-release-notes.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<p><strong>2. Scroll (or search) to find the Security Patch level</strong>:
+  <img alt="image" style="height:450px" src="update-spl.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<p><strong>3. Format the date as YYYY-MM-DD</strong> and record it for use in Section IV. </p>
+
+<hr>
+
+<h2 id="iiicreatehashvalues" class="anchor"><a class="heading-anchor" href="#iiicreatehashvalues"><span></span></a>III. Create Hash Values</h2>
+
+<p>To verify the validity downloaded files, a hash value must be generated for all update files in the repository. To assist in this process, follow the instructions below <strong><u>on a Windows PC</u></strong> to automate the creation of the required SHA-1 hash values for the <code>.zip</code> files downloaded in Section I.</p>
+
+<h4 id="generatehashvalues" class="anchor"><a class="heading-anchor" href="#generatehashvalues"><span></span></a>Generate Hash Values</h4>
+
+<ol>
+<li><strong>Create a new text file</strong> in the same directory as the OS update <code>.zip</code> files downloaded in Section I.</li>
+
+<li><strong>Copy the script below</strong> and paste it into the text file.</li>
+
+<li><strong>Save the file</strong> with a descriptive name and a <code>.bat</code> extension (e.g., "<code>Generate_Hashes.bat</code>").</li>
+
+<li><strong>Double-click the file</strong> to execute it.<br>
+<strong>A terminal window opens and the script generates hash values for each downloaded file</strong>, compiling them into a new file called "<code>SHA1List.txt</code>".</li>
+</ol>
+
+<h4 id="hashcollectionscript" class="anchor"><a class="heading-anchor" href="#hashcollectionscript"><span></span></a>Hash Collection Script</h4>
+
+<pre class="prettyprint"><code>
+@echo off
+del SHA1List.txt 2&gt;nul
+echo Generating SHA1 values....
+echo All values will be saved in SHA1List.txt
+echo Please wait.
+for %%i in (*.zip) do (
+PowerShell -NoProfile -NoLogo -ExecutionPolicy unrestricted -Command "&amp; Get-FileHash '%%i' -Algorithm SHA1" &gt;&gt; SHA1List.txt
+)
+echo Generation complete.
+pause 
+</code></pre>
+
+<hr>
+
+<h2 id="ivcreatefiledataxmlfile" class="anchor"><a class="heading-anchor" href="#ivcreatefiledataxmlfile"><span></span></a>IV. Create Filedata.xml File</h2>
+
+<p>The <code>Filedata.xml</code> file is to contain a catalog of the available OS updates on the Relay Server. Each file entry must be wrapped within a root <code>&lt;filedata&gt;</code> element, and each OS update package must include a child <code>&lt;file&gt;</code> element containing the three required parameters shown below.</p>
+
+<ul>
+<li><strong>Required Parameters</strong>:
+
+
+<ul>
+<li><code>&lt;value&gt;</code> - The name of the update file itself downloaded in Section I.</li>
+
+<li><code>&lt;hash&gt;</code> - The hash generated <strong>specifically for that file</strong> in Section III.</li>
+
+<li><code>&lt;spl&gt;</code> - The service patch level extracted from the file's release notes in Section II.</li></ul>
+</li>
+</ul>
+
+<h4 id="createthecatalogfile" class="anchor"><a class="heading-anchor" href="#createthecatalogfile"><span></span></a>Create the catalog file</h4>
+
+<ol>
+<li>Using a text editor, create a file called "<code>Filedata.xml</code>" and save it. </li>
+
+<li>Using the information collected in the sections above, assemble an XML-structured document using one of the formats below. </li>
+
+<li>Store the completed file in the same directory as the downloaded update files.  </li>
+</ol>
+
+<h4 id="xmlexamples" class="anchor"><a class="heading-anchor" href="#xmlexamples"><span></span></a>XML Examples</h4>
+
+<p>Example A: Single OS update image</p>
+
+<pre class="prettyprint"><code>
+&lt;filedata&gt;
+    &lt;file&gt;
+        &lt;value&gt;NE_FULL_UPDATE_14-15-22.00-UG-U142-STD-NEM-04.zip&lt;/value&gt;
+        &lt;hash&gt;F832ABB95DB09D867F297B88D02138B710C2E3DF&lt;/hash&gt;
+        &lt;spl&gt;2026-05-01&lt;/spl&gt;
+    &lt;/file&gt;
+&lt;/filedata&gt;
+</code></pre>
+
+<p>Example B: Multiple OS update images and device models</p>
+
+<pre class="prettyprint"><code>
+&lt;filedata&gt;
+&lt;!-- Device Model 1 (e.g., NEM) --&gt;
+  &lt;file&gt;
+    &lt;value&gt;NE_FULL_UPDATE_14-15-22.00-UG-U142-STD-NEM-04.zip&lt;/value&gt;
+    &lt;hash&gt;F832ABB95DB09D867F297B88D02138B710C2E3DF&lt;/hash&gt;
+    &lt;spl&gt;2026-05-01&lt;/spl&gt;
+  &lt;/file&gt;
+
+&lt;!-- Device Model 2 (e.g., ATH) --&gt;
+  &lt;file&gt;
+    &lt;value&gt;AT_FULL_UPDATE_14-35-10.00-UG-U26-STD-ATH-04.zip&lt;/value&gt;
+    &lt;hash&gt;3689EA562AC62AF262E8969EFE62CF2E2F876B2D&lt;/hash&gt;
+      &lt;spl&gt;2025-11-05&lt;/spl&gt;
+  &lt;/file&gt;
+&lt;/filedata&gt;
+</code></pre>
+
+<hr>
+
+<h2 id="vconfiguredevices" class="anchor"><a class="heading-anchor" href="#vconfiguredevices"><span></span></a>V. Configure Devices</h2>
+
+<p><strong>Devices must be running Android 14 (or later) with specific LifeGuard updates</strong>. See <i class="fa fa-arrow-circle-up" style="color:#27AE60;"></i> <a href="#requirements">device requirements section</a> for further details. </p>
+
+<h4 id="configuredevicesforrelaymode" class="anchor"><a class="heading-anchor" href="#configuredevicesforrelaymode"><span></span></a>Configure Devices for Relay Mode</h4>
+
+<p><strong>1. <a href="https://www.zebra.com/us/en/support-downloads/software/oem-software/oemconfig-android-application.html?downloadId=da4e9d20-4607-4177-949e-a8397bad4936">Download OEMConfig client app 15.3</a> (or later) and push to target device(s)</strong> through Zebra DNA Cloud or an EMM system with OEMConfig Powered by MX. </p>
+
+<p><strong>2. In an EMM system with Zebra OEMConfig</strong>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a. Navigate to <strong>System Configuration &gt; Configure</strong>. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;b. Navigate further to <strong>LifeGuard Configuration &gt; Relay Mode</strong>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c. <strong>Enable Relay Mode and configure server details</strong>.<i>‡</i> <br>
+&nbsp;&nbsp;&nbsp;&nbsp; (Available fields and sample data shown in the image below).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;d. When fields are populated as needed, <strong>save and apply the policy to device(s)</strong>.<br>
+  <img alt="image" style="height:450px" src="relay-mode-client-setup.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<p><strong>3. Successful policy deployment is indicated by a device notification</strong> similar to the image below: </p>
+
+<p><img alt="image" style="height:450px" src="relay-mode-running.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<p><strong>*</strong> <i><font size="1" color="DimGrey"> If specifying a full HTTP/S URL as the host name, fields for port number, username, password, file location, etc., can be left blank.</font></i> </p>
+
+<p><i>‡</i> <i><font size="1" color="DimGrey"> <b>Selecting FTP or FTPS limits device-update downloads to Wi-Fi only.</b></font></i> </p>
+
+<h4 id="iclassfafacheckcirclestylecolor27ae60iaftercompletingallfivesectionsaboverelaymodeisready" class="anchor"><a class="heading-anchor" href="#iclassfafacheckcirclestylecolor27ae60iaftercompletingallfivesectionsaboverelaymodeisready"><span></span></a><i class="fa fa-check-circle" style="color:#27AE60;"></i> After completing all five sections above, Relay Mode is ready.</h4>
+
+<hr>
+
+<h2 id="devicenotifications" class="anchor"><a class="heading-anchor" href="#devicenotifications"><span></span></a>Device Notifications</h2>
+
+<ul>
+<li><strong>Relay Mode is running -</strong> Device is configured to receive updates from a non-Zebra relay server:
+<img alt="image" style="height:450px" src="relay-mode-running.jpg">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></li>
+
+<li><strong>An update package is downloading -</strong> An update is being downloaded to the device:
+<img alt="image" style="height:450px" src="relay-mode-update-downloading.jpg">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></li>
+
+<li><strong>Ready to update -</strong> An update has been downloaded and is ready to be applied:
+<img alt="image" style="height:450px" src="relay-mode-update-flow.jpg">
+<em>Click image to enlarge; ESC to exit.</em>
+<br></li>
+</ul>
+
+<hr>
+
+<!-- 
+
+
+4. Configuration Parameters
+The following table details the parameters that need to be configured to enable and customize Relay Mode using Zebra OEMConfig:
+
+Format of FTP/FTPS and HTTP/HTTPS Full URLs
+
+ Important Note: If a proper full URL (ending in a slash /) is not provided, then the port number, username, password, and file location are mandatory.
+
+If the host name is provided as a full URL, unsupported special characters must be replaced with their respective percentile-encoded values:
+ -->
+
+<h2 id="serverconfiguration" class="anchor"><a class="heading-anchor" href="#serverconfiguration"><span></span></a>Server Configuration</h2>
+
+<p>The table below contains parameters and available options for configuring a server for Relay Mode. </p>
+
+<table class="facelift" align="center" style="width:80%" border="1" padding="5px">
+<tbody><tr bgcolor="#dce8ef">
+</tr></tbody></table><table class="table table-striped">
+ <tbody><tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default Value</th>
+<th>Example(s)</th>
+</tr>
+
+<tr>
+<td>Relay Mode State</td>
+<td>Used to select whether the Relay Mode feature is activated on the device.</td>
+<td>Do not change</td>
+<td>"Enable"<br>"Disable"</td>
+</tr>
+
+<tr>
+<td>Server Protocol</td>
+<td>The communication protocol to be used on the server for hosting update files and by devices for accessing them.<br>Supported protocols:<br>• FTP<br>• FTPS<br>• HTTP<br>• HTTPS<br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <b>Selecting FTP or FTPS limits device-update downloads to Wi-Fi only</b>.</td>
+<td>FTP</td>
+<td>"HTTP"</td>
+</tr>
+
+<tr>
+<td>Server Port</td>
+<td>The port number for the specified server protocol. </td>
+<td>FTP: 21<br>FTPS: 990*<br>FTPS: 21‡<br>HTTP: 80<br>HTTPS: 443</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Server Host</td>
+<td>The host name of the server hosting OS Update files. Can be a full URL, IP address or domain name.<br><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> Proper host-name formatting is critical. <b><i class="fa fa-arrow-circle-down" style="color:#27AE60;"></i> <b><a href="#hostnameformatting">See below</a></b></b></td>
+<td>none</td>
+<td>"ftp.zebra-updates.com"<br>"123.134.22.44"<br></td>
+</tr>
+
+<tr>
+<td>Username</td>
+<td>Log-in name of a valid user on the server hosting the update files with access to the relevant directory.</td>
+<td>none</td>
+<td>"ftp_user"</td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td>Password of a valid user. Supports plain text or encrypted text.<br>Zebra recommends using encrypted passwords. <b><a href="/det">Learn how</a></b>.</td>
+<td>none</td>
+<td>none</td>
+</tr>
+
+<tr>
+<td>Update File Location</td>
+<td>The directory path on the server where update files are stored.</td>
+<td>/ (root)</td>
+<td>"/zebra/firmware/updates/"</td>
+</tr>
+
+<tr>
+<td>Update Frequency</td>
+<td>The length of time (in minutes) the device waits between checks for an update.<br>Minimum = 15. Recommended value: 1440 (24 hours). </td>
+<td>1440</td>
+<td>"720" (2x per day)<br>"10080" (weekly)</td>
+</tr>
+
+<tr>
+<td>Postponed Update Frequency</td>
+<td>The length of time (in minutes) to display the "Update Postponed" window.<br>Zebra recommends a value between five and 60.</td>
+<td>1</td>
+<td>"5"</td>
+</tr>
+
+<tr>
+<td>User Notification Attempts</td>
+<td>The number of times an update can be postponed before it is forced.</td>
+<td>5</td>
+<td>"3"</td>
+</tr>
+
+<tr>
+<td>Logging</td>
+<td>Used to select whether update-activity logs are collected.<br>When saved, device logs are accessible using <a href="/rxlogger">Zebra RxLogger</a>.</td>
+<td>Do not change</td>
+<td>"Enable"<br>"Disable"</td>
+</tr>
+
+</tbody></table>
+
+
+<p><strong>*</strong> <i><font size="1" color="DimGrey"> <b>Implicit FTPS</b>: Supports only secure connections; drops unencrypted requests.</font></i> </p>
+
+<p><strong>‡</strong> <i><font size="1" color="DimGrey"> <b>Explicit FTPS</b>: Supports encrypted or unencrypted connections. </font></i> </p>
+
+<hr>
+
+<h3 id="hostnameformatting" class="anchor"><a class="heading-anchor" href="#hostnameformatting"><span></span></a>Host Name Formatting</h3>
+
+<p>To ensure reliable and error-free device updates, it's important to correctly input and format all device configuration data, including the Relay Server host name, login credentials and port information. Some examples of valid and invalid data are shown below. <i class="fa fa-exclamation-circle" style="color:#FF0000;"></i> <strong>In some cases, percent-encoding must be used in place of special characters</strong>. See Special Character Encoding, below. </p>
+
+<blockquote>
+  <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>While supported, <u>Zebra recommends AGAINST storing update files in the server's root directory</u></strong>.</p>
+</blockquote>
+
+<!-- (by entering just a slash (/) in the "Update File Location" field),  -->
+
+<ul>
+<li><strong>Valid FTP/FTPS URLs</strong>: 
+
+
+<ul>
+<li><code>ftp://user:pass@12.34.56.78:2121/</code> </li>
+
+<li><code>ftp://host.com/pub/</code> </li>
+
+<li><code>ftp://user:pass%401234@12.34.56.78:2121/</code> </li>
+
+<li><code>ftp://username:password@ipaddress:portno/</code> </li>
+
+<li><code>ftps://user:pass@12.34.56.78:2121/filelocation/</code></li></ul>
+</li>
+
+<li><strong>Valid HTTP/HTTPS URLs</strong>:
+
+
+<ul>
+<li><code>https://example.com/</code> </li>
+
+<li><code>http://192.168.1.100/admin/</code> </li>
+
+<li><code>http://localhost:8080/dashboard/</code> </li></ul>
+</li>
+
+<li><strong>INVALID URLs</strong>:
+
+
+<ul>
+<li><code>https://example.com</code> (trailing slash missing)</li>
+
+<li><code>http://192.168.1.100/admin</code> (trailing slash missing)</li>
+
+<li><code>http://localhost:8080/dashboard/</code> (inaccessible server)</li>
+
+<li><code>ftp://user:pass@12.34.56.78:2121</code> (missing path to file repo)</li></ul>
+</li>
+</ul>
+
+<p><br></p>
+
+<h4 id="specialcharacterencoding" class="anchor"><a class="heading-anchor" href="#specialcharacterencoding"><span></span></a>Special Character Encoding</h4>
+
+<p><strong>When including special characters within a URL, they must be percent-encoded</strong>, which replaces the special character with a percent sign (%) plus two hexadecimal digits representing the ASCII value of the character. For example, a space (not shown below) is encoded as <code>%20</code>. Other common special characters are shown below with their percent-encoded equivalents. </p>
+
+<ul>
+<li><strong>Special characters and their percent-encoded equivalents</strong>:
+
+
+<ul>
+<li><strong>@</strong> -&gt; <strong>%40</strong></li>
+
+<li><strong>:</strong> -&gt; <strong>%3A</strong> </li>
+
+<li><strong>$</strong> -&gt; <strong>%24</strong> </li>
+
+<li><strong>%</strong> -&gt; <strong>%25</strong></li>
+
+<li><strong>!</strong> -&gt; <strong>%21</strong> </li>
+
+<li><strong>;</strong> -&gt; <strong>%3B</strong> </li>
+
+<li><strong>,</strong> -&gt; <strong>%2C</strong> </li>
+
+<li><strong>?</strong> -&gt; <strong>%3F</strong> </li>
+
+<li><strong>+</strong> -&gt; <strong>%2B</strong>  </li>
+
+<li><strong>*</strong> -&gt; <strong>%2A</strong></li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="devicemonitoring" class="anchor"><a class="heading-anchor" href="#devicemonitoring"><span></span></a>Device Monitoring</h2>
+
+<p>As a localized solution, Relay Mode does not provide centralized status reporting for update successes or failures.</p>
+
+<h3 id="bestpractices" class="anchor"><a class="heading-anchor" href="#bestpractices"><span></span></a>Best Practices</h3>
+
+<h4 id="validation" class="anchor"><a class="heading-anchor" href="#validation"><span></span></a>Validation</h4>
+
+<p>Administrators should use their existing EMM-system console to validate the active OS version on managed devices and confirm successful deployments.</p>
+
+<h4 id="debugginglogs" class="anchor"><a class="heading-anchor" href="#debugginglogs"><span></span></a>Debugging Logs</h4>
+
+<p>For detailed troubleshooting, Zebra RxLogger can be used to extract logs from individual devices. For help retrieving device logs, see the <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <a href="/rxlogger/latest/guide/usage/">RxLogger User Guide</a>. </p>
+
+<hr>
+
+<h2 id="troubleshooting" class="anchor"><a class="heading-anchor" href="#troubleshooting"><span></span></a>Troubleshooting</h2>
+
+<p>This section describes some common error notifications and their possible resolutions. </p>
+
+<p><i class="fa fa-hand-o-right" style="color:#FF0000;"></i> <strong>Please read this section before contacting Zebra for support</strong>.  </p>
+
+<hr>
+
+<h4 id="ftpserverconnectionunsuccessful" class="anchor"><a class="heading-anchor" href="#ftpserverconnectionunsuccessful"><span></span></a>"FTP server connection unsuccessful"</h4>
+
+<p><strong>Resolution</strong>: Double-check the configuration settings. Ensure that the server protocol, port number, and host name are entered correctly.<br></p>
+
+<p><img alt="image" style="height:350px" src="relay-mode-connection-unsuccessful.jpg
+">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<p>Status and relay-server settings are visible on the device in <strong>Settings &gt; System &gt; System Update</strong>:
+  <img alt="image" style="height:350px" src="relay-server-settings.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<hr>
+
+<h4 id="failedtodownload" class="anchor"><a class="heading-anchor" href="#failedtodownload"><span></span></a>"Failed to download"</h4>
+
+<p><img alt="image" style="height:350px" src="relay-mode-dowload-failed.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<ul>
+<li><strong>Possible resolutions</strong>:
+
+
+<ul>
+<li>Verify that the device has an active and stable network connection.</li>
+
+<li>Check your network security settings to ensure a firewall is not blocking the download.</li>
+
+<li>Ensure the device has enough free space; low memory can block downloads.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h4 id="downloadfileiscorrupted" class="anchor"><a class="heading-anchor" href="#downloadfileiscorrupted"><span></span></a>"Download file is corrupted"</h4>
+
+<p><img alt="image" style="height:350px" src="relay-mode-file-corrupted.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<ul>
+<li><strong>Possible resolutions</strong>:
+
+
+<ul>
+<li>Verify that the device has an active and stable network connection.</li>
+
+<li>Check that the SHA-1 hash provided in <code>Filedata.xml</code> is correct.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h4 id="osupdatecannotbestartedduetolowbattery" class="anchor"><a class="heading-anchor" href="#osupdatecannotbestartedduetolowbattery"><span></span></a>"OS Update cannot be started due to low battery"</h4>
+
+<p><img alt="image" style="height:450px" src="relay-mode-low-battery.jpg">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<ul>
+<li><strong>Possible resolution</strong>:
+
+
+<ul>
+<li>Connect the device to a charger and wait until the battery level reaches at least 30 percent.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h4 id="jobintervalisnotinvalidrange" class="anchor"><a class="heading-anchor" href="#jobintervalisnotinvalidrange"><span></span></a>"Job interval is not in valid range"</h4>
+
+<p><img alt="image" style="height:450px" src="relay-mode-not-valid.jpg
+">
+  <em>Click image to enlarge; ESC to exit.</em>
+  <br></p>
+
+<ul>
+<li><strong>Possible resolution</strong>:
+
+
+<ul>
+<li>Ensure the update frequency is configured to be at least 15 minutes.</li></ul>
+</li>
+</ul>
+
+<hr>
+
+<h3 id="buildupdateissues" class="anchor"><a class="heading-anchor" href="#buildupdateissues"><span></span></a>Build Update Issues</h3>
+
+<p>If the device does not contain the correct build, follow these steps: </p>
+
+<p><strong>1. Server-side checks</strong>:</p>
+
+<p>Verify the following before investigating the device:  </p>
+
+<p>&nbsp;&nbsp;&nbsp; a. The server is up and running properly.<br>
+&nbsp;&nbsp;&nbsp; b. The build/package is available on the server.<br> 
+&nbsp;&nbsp;&nbsp; c. The device is correctly assigned to receive the build.<br> 
+&nbsp;&nbsp;&nbsp; d. There are no connectivity or network issues between the device and the server.<br> </p>
+
+<p><strong>2. Enable RxLogger on the device</strong></p>
+
+<p>If no issues are found on the server, enable RxLogger on the device. </p>
+
+<p><strong>3. Wait for configured frequency</strong></p>
+
+<p>The customer can configure the update cadence to 24, 48, or any supported interval. The device will poll the server for the latest build according to the configured cadence. The device will automatically download and apply it within the next configured interval (for example, 24 or 48 hours). </p>
+
+<p><strong>4. Collect logs if the issue persists</strong> </p>
+
+<p>If the issue still persists after 24 hours, collect the RxLogger logs from the device. </p>
+
+<p><strong>5. Contact support</strong> </p>
+
+<p>Raise a customer support ticket and share the collected logs with the Zebra Technical Support Team for further investigation. </p>
+
+<hr>
+
+<h2 id="frequentlyaskedquestions" class="anchor"><a class="heading-anchor" href="#frequentlyaskedquestions"><span></span></a>Frequently Asked Questions</h2>
+
+<h3 id="isrelaymodeautomaticallyenabledonmanageddevices" class="anchor"><a class="heading-anchor" href="#isrelaymodeautomaticallyenabledonmanageddevices"><span></span></a>Is Relay Mode automatically enabled on managed devices?</h3>
+
+<p><strong>A: No, Relay Mode is disabled by default</strong>. It must be explicitly enabled using managed configurations created and deployed to devices with Zebra OEMConfig. See the <i class="fa fa-arrow-circle-up" style="color:#27AE60;"></i> <a href="#vconfiguredevices">Configure Devices section</a> above.</p>
+
+<hr>
+
+<h3 id="wherearerelaymodedeploymentfailuresanddebuglogsstored" class="anchor"><a class="heading-anchor" href="#wherearerelaymodedeploymentfailuresanddebuglogsstored"><span></span></a>Where are Relay Mode deployment failures and debug logs stored?</h3>
+
+<p><strong>A: Logs are captured and stored within each device's logcat logs</strong>. For help retrieving device logs, see the <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <a href="/rxlogger/latest/guide/usage/">Zebra RxLogger User Guide</a>.</p>
+
+<hr>
+
+<h3 id="whatisthemaximumnumberofdevicesthatcanbeupdatedconcurrently" class="anchor"><a class="heading-anchor" href="#whatisthemaximumnumberofdevicesthatcanbeupdatedconcurrently"><span></span></a>What is the maximum number of devices that can be updated concurrently?</h3>
+
+<p><strong>A: Relay Mode imposes no hard limit on concurrent device updates</strong>. The maximum number of <em>simultaneous</em> downloads depends on the bandwidth and capacity limitations of the customer-hosted server and network infrastructure.</p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>CAUTION: Relay Mode does not support download staggering. Zebra recommends small-scale testing of the solution before ramping up to full-scale deployment</strong>.</p>
+
+<hr>
+
+<h3 id="canrelaymodebeenabledwhilealifeguardotadeploymentisactivelyinprogress" class="anchor"><a class="heading-anchor" href="#canrelaymodebeenabledwhilealifeguardotadeploymentisactivelyinprogress"><span></span></a>Can Relay Mode be enabled while a LifeGuard OTA deployment is actively in progress?</h3>
+
+<p><strong>A: The answer depends on the current state of a given LifeGuard deployment</strong>. </p>
+
+<ul>
+<li><p><strong>If an update was created by Zebra but not yet scheduled for deployment</strong>, that update is cancelled (returning error code 5151) and Relay Mode takes precedence.</p></li>
+
+<li><p><strong>If an update is scheduled or in progress</strong>, the update is allowed to complete, after which Relay Mode is enabled after the next device reboot.</p></li>
+</ul>
+
+<hr>
+
+<h3 id="ifrelaymodeisnolongerdesiredhowcanzebramanagedlifeguardotadeploymentsberesumed" class="anchor"><a class="heading-anchor" href="#ifrelaymodeisnolongerdesiredhowcanzebramanagedlifeguardotadeploymentsberesumed"><span></span></a>If Relay Mode is no longer desired, how can Zebra-managed LifeGuard OTA deployments be resumed?</h3>
+
+<p><strong>A: Relay Mode is disabled simply by changing a setting in the OEMConfig device client pushing the updated configuration to the devices and rebooting</strong>. Updates from Zebra servers resume on the next update cycle. </p>
+
+<hr>
+
+<h3 id="candevicesbeenrolledinzebradnacloudiftheyreconfiguredforrelaymode" class="anchor"><a class="heading-anchor" href="#candevicesbeenrolledinzebradnacloudiftheyreconfiguredforrelaymode"><span></span></a>Can devices be enrolled in Zebra DNA Cloud if they're configured for Relay Mode?</h3>
+
+<p>A: <strong>Yes, but the LifeGuard Update feature is disabled</strong> and attempting to update from DNA Cloud fail with error code 5151. Devices enrolled in DNA Cloud otherwise function normally.</p>
+
+<hr>
+
+<h3 id="dorelaymodeenableddevicesstillappearonthezdnacloudosupdatepage" class="anchor"><a class="heading-anchor" href="#dorelaymodeenableddevicesstillappearonthezdnacloudosupdatepage"><span></span></a>Do Relay Mode-enabled devices still appear on the ZDNA Cloud OS update page?</h3>
+
+<p><strong>A: Yes, enrolled devices configured for Relay Mode appear in the ZDNA console, but Relay Mode does not report progress back to DNA Cloud</strong>. Therefore, devices sometimes appear as "out-of-date" in status reports despite having the current update.</p>
+
+<hr>
+
+<h3 id="doesthezebralifeguardotasystemknowifadeviceisconfiguredinrelaymode" class="anchor"><a class="heading-anchor" href="#doesthezebralifeguardotasystemknowifadeviceisconfiguredinrelaymode"><span></span></a>Does the Zebra LifeGuard OTA system know if a device is configured in Relay Mode?</h3>
+
+<p><strong>A: No, the LifeGuard OTA system is not aware of the device's Relay Mode status</strong>, and the switch to Relay Mode disables a device's calls to Zebra servers for updates. Relay Mode is a localized configuration and managed entirely by your company.</p>
+
+<hr>
+
+<h3 id="howistherequiredfotaclientinstalledonthedevices" class="anchor"><a class="heading-anchor" href="#howistherequiredfotaclientinstalledonthedevices"><span></span></a>How is the required FOTA client installed on the devices?</h3>
+
+<p><strong>A: The FOTA client is installed and kept up to date in one of two ways</strong>:</p>
+
+<ul>
+<li>The FOTA client automatically updates itself if configured to do so. <i class="fa fa-hand-o-right" style="color:#27AE60;"></i> <strong><a href="../update/#automaticupdates">Learn how</a></strong>. </li>
+
+<li>The Relay Mode-ready FOTA client is scheduled to be built into Zebra's version of Android starting with the Sept., 2026, LifeGuard update.</li>
+</ul>
+
+<hr><p></p>
+                                        
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-sm-6-->
+            </div>
+            </section>
+        </div>
+    </section>    
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-backdrop="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+					</div>
+					<div class="modal-body">
+						<div id="modalImg">
+						
+						</div>
+					</div>
+			</div>
+		  </div>
+		</div> </div>
+         <footer id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. Some content or images may have been created with the assistance of AI. ©2026 Zebra Technologies Corp. and/or its affiliates.<br> <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal.html">Legal</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/compliance/information-privacy/terms-of-use.html">Terms of Use</a> | <a href="https://www.zebra.com/us/en/about-zebra/company-information/legal/privacy-statement.html">Privacy Policy</a> 
+                    </div>
+                     <!--
+                     <div class="col-sm-2">
+                        <ul class="social-icons">
+                            <li><a href="http://www.facebook.com/pages/Zebra-Technologies/107703715989073"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ZebraDevs"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.youtube.com/zebratechnologies/"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/groups?home=&gid=3220074&trk=anet_ug_hm&goback=%2Egmr_3220074"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/developer-zebra"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                    </div> -->
+                 </div>
+            </div>
+        </footer>
+    
+    <!--/#footer 
+        10/25/18 removed <footer id="footer" class="navbar-fixed-bottom">
+    
+    7/7/26- per Pamela Anderson (the Zebra, not the movie star), remove (below) and replace with (above).
+    
+    ZEBRA and the stylized Zebra head are trademarks of Zebra Technologies Corp., registered in many jurisdictions worldwide. All other trademarks are the property of their respective owners. ©2026 Zebra Technologies Corp. and/or its affiliates.
+    
+    SEM: I suggest changing "...may be created with..." to "...might have been created with..." to eliminate ambiguity.
+    
+    7/9/26 - we split the baby and went with "...may have been created with..."
+    
+    -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/mousescroll.js"></script>
+    <script src="/js/smoothscroll.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/bootstrap-treenav.min.js"></script>
+    <script src="/js/prettify.js"></script>
+    <script src="/js/zepto.js"></script>
+    <script src="/js/jquery.waterfall.js"></script>   
+    <script src="/js/main.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','zRzEsAUhWTTkrdEN2YfA','2.0.0');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72584442-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+<script>
+    ChatraID = 'QDvZ76min4DhLW5vJ';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>         
+
+
+</body></html>
