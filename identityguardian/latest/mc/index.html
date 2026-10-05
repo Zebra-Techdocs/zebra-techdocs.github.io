@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            3.1
+                                            3.3
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/3-1/about">
+                            <a href="/identityguardian/3-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/setup">
+                            <a href="/identityguardian/3-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/licensing">
+                            <a href="/identityguardian/3-3/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/mc">
+                            <a href="/identityguardian/3-3/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/usage">
+                            <a href="/identityguardian/3-3/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/api">
+                            <a href="/identityguardian/3-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/faq">
+                            <a href="/identityguardian/3-3/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/search">
+                            <a href="/identityguardian/3-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="managed-configurations" class="anchor"><a class="heading-anchor" href="#managed-configurations"><span></span></a>Managed Configurations</h1>
                                     <p>
                                             Identity Guardian
-                                            3.1
+                                            3.3
                                     </p>
                                 </div>
                             </section>                    
@@ -273,7 +273,7 @@ For more information about configuring Zebra devices with managed configurations
 
 <p>For procedures on implementing configuration policies through Zebra DNA Cloud, refer to the <a href="../setup/#zebradnacloud">ZDNA Cloud setup guide</a>. For additionl information on use of ZDNA Cloud, refer to the <a href="/zebradna/latest/usage/#myapps">ZDNA Cloud documentation</a>.</p>
 
-<p><img alt="image" style="height:450px" src="zdna-myapps.jpg"></p>
+<p><img alt="image" style="height:450px" src="../../images/3-2/zdna-myapps.jpg"></p>
 
 <hr>
 
@@ -441,6 +441,14 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 </tr>
 
 <tr>
+<td>Secure Re-Enrollment</td>
+<td>enableSecureReEnrollment</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
+<td>Enable to require secure user identity verification via SSO or One-Time PIN before generating new credentials when an enrollment expires.</td>
+</tr>
+
+<tr>
 <td>Enrollment Key</td>
 <td>enrollmentKey</td>
 <td>[string]</td>
@@ -586,7 +594,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <pre class="prettyprint"><code>openssl rsa -pubout -in private_key.pem -out public_key.pem
 </code></pre></li></ul></li>
 
-<li><p><strong>Create Text Files from Keys:</strong> These raw text files are required for the subsequent encryption process. </p>
+<li><p><strong>Create Text Files from Keys:</strong> These raw text files are required for the subsequent encryption process.</p>
 
 <ul>
 <li><p>Copy the content from <code>private_key.pem</code> between the header/footer lines and paste it into <code>private.txt</code>:</p>
@@ -596,19 +604,17 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 -----END PRIVATE KEY-----
 </code></pre></li>
 
-<li><p>Copy the content from <code>public_key.pem</code> between the header/footer lines and paste it into <code>public.txt</code>:</p>
-
-<pre class="prettyprint"><code>-----BEGIN PUBLIC KEY-----
+<li><p>Copy the content from <code>public_key.pem</code> between the header/footer lines and paste it into <code>public.txt</code>:
+-----BEGIN PUBLIC KEY-----
 [Content]
------END PUBLIC KEY-----
-</code></pre></li></ul></li>
+-----END PUBLIC KEY-----</p></li></ul></li>
 </ol>
 
 <p><br></p>
 
 <h5 id="phase2encryptkeys" class="anchor"><a class="heading-anchor" href="#phase2encryptkeys"><span></span></a>Phase 2: Encrypt Keys</h5>
 
-<p>There are two supported methods to encrypt the formatted keys: the  Automated Process (using the self-contained standalone tool; highly recommended) or the Manual Process (requiring local Java configuration).</p>
+<p>There are two supported methods to encrypt the formatted keys: the Automated Process (using the self-contained standalone tool; highly recommended) or the Manual Process (requiring local Java configuration).</p>
 
 <p><strong><u>Method 1:</u> Automated Process (Recommneded)</strong></p>
 
@@ -642,32 +648,32 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <li><p><strong>Bouncy Castle Cryptography Library:</strong> Required by the Java runtime environment to properly process the encryption algorithms.</p>
 
 <ul>
-<li><p><a href="https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/1.84/bcprov-jdk18on-1.84.jar">Download Bouncy Castle JAR (v1.84)</a></p></li>
+<li><a href="https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/1.84/bcprov-jdk18on-1.84.jar">Download Bouncy Castle JAR (v1.84)</a></li>
 
-<li><p><strong>Bouncy Castle Installation:</strong> The Java runtime environment requires this library to process the necessary encryption algorithms. Follow the configuration steps based on the system's environment variables.</p>
+<li><strong>Bouncy Castle Installation:</strong> The Java runtime environment requires this library to process the necessary encryption algorithms. Follow the configuration steps based on the system's environment variables.</li>
 
-<ul>
-<li><p>If <code>JAVA_HOME</code> is set as an environment variable:</p>
+<li>If <code>JAVA_HOME</code> is set as an environment variable:</li></ul>
 
 <ol>
 <li><p>Copy the Bouncy Castle library .JAR file to <code>$JAVA_HOME/jre/lib/ext/</code>.</p></li>
 
 <li><p>Register the Bouncy Castle provider by editing <code>$JAVA_HOME/jre/lib/security/java.security</code> and adding the following to the list of providers:</p>
 
-<pre class="prettyprint"><code>security.provider.11=org.bouncycastle.jce.provider.BouncyCastleProvider
-</code></pre></li></ol></li>
+<pre class="prettyprint"><code>  security.provider.11=org.bouncycastle.jce.provider.BouncyCastleProvider
+</code></pre></li></ol>
 
-<li><p>If <code>JAVA_HOME</code> is not set as an environment variable:</p>
+<ul>
+<li>If <code>JAVA_HOME</code> is not set as an environment variable:</li></ul>
 
 <ol>
 <li><p>Locate the Java installation folder and copy the Bouncy Castle library .JAR file to folder <code>jre/lib/ext</code>.</p></li>
 
 <li><p>Register the Bouncy Castle provider by editing file <code>jre/lib/security/java.security</code> and adding the following to the list of providers:</p>
 
-<pre class="prettyprint"><code>security.provider.11=org.bouncycastle.jce.provider.BouncyCastleProvider`
+<pre class="prettyprint"><code>  security.provider.11=org.bouncycastle.jce.provider.BouncyCastleProvider`
 </code></pre></li>
 
-<li><p>To execute the Java commands for the <a href="/det/1-0/guide/about/#commands">DET tool</a>, in the command line navigate to the following subfolder in the Java installation folder path: <code>jre[version]\bin</code>, replacing <code>[version]</code> with the Java Runtime Environment (JRE) version installed.</p></li></ol></li></ul></li></ul></li>
+<li><p>To execute the Java commands for the <a href="/det/1-0/guide/about/#commands">DET tool</a>, in the command line navigate to the following subfolder in the Java installation folder path: <code>jre[version]\bin</code>, replacing <code>[version]</code> with the Java Runtime Environment (JRE) version installed.</p></li></ol></li>
 </ul>
 
 <p><strong>Manual Procedure for Encrypting Keys:</strong></p>
@@ -705,6 +711,92 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 
 <li><strong>Authentication Key:</strong> Copy the encrypted <strong>private</strong> key value into the <strong>Authentication Key</strong> field in the <a href="#shareddeviceauthentication">Shared Device Authentication</a>.</li>
 </ul>
+
+<hr>
+
+<h3 id="nfcconfiguration" class="anchor"><a class="heading-anchor" href="#nfcconfiguration"><span></span></a>NFC Configuration</h3>
+
+<p>Configure Identity Guardian for NFC authentication on <a href="../setup/#shareddevice">shared devices</a>, including storage mode, application IDs, and dynamic security key sets.</p>
+
+<p><font color="#5A9EC4"><i>Note: Colored rows indicate a parent option.</i></font></p>
+
+<table class="facelift" align="center" style="width:80%" border="1" padding="5px">
+<tbody><tr bgcolor="#dce8ef">
+</tr></tbody></table><table class="table table-striped">
+<tbody><tr>
+<th>Name</th>
+<th>Key</th>
+<th>Value(s)</th>
+<th>Display Name</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>NFC Data Storage</td>
+<td>nfcStorageArea</td>
+<td>Standard NDEF<br>Secure Layer</td>
+<td>Standard NDEF (default)<br>Secure Layer</td>
+<td>Selects the data form for the NFC card:<br>&nbsp;&nbsp;&nbsp;<b>• Standard NDEF:</b> Uses open, unencrypted formatting readable by standard NFC devices.<br>&nbsp;&nbsp;&nbsp;<b>• Secure Layer:</b> Reads data from encrypted sectors/files (MIFARE/DESFire) requiring specific authentication keys.</td>
+</tr>
+
+<tr>
+<td>IG Data Identifier (AID)</td>
+<td>nfcAid</td>
+<td>string</td>
+<td>[enter 3-character string, default: <code>IDG</code>]</td>
+<td>A unique 3-character identifier used to locate application data on the card and prevent conflicts with thrid-party systems sharing the same card.</td>
+</tr>
+
+<tr bgcolor="#D9E7ED">
+<td>MIFARE Classic Keys (6-Byte)</td>
+<td>nfcMifareKeySet</td>
+<td>key bundle</td>
+<td></td>
+<td>Configurations for authenticating and decrypting data sectors on MIFARE Classic NFC cards.</td>
+</tr>
+
+<tr>
+<td>Primary Read Key (Key A)</td>
+<td>nfcMifarePrimaryReadKey</td>
+<td>hex string</td>
+<td>[enter 12-character hex string]</td>
+<td>Enter a 12-character hexadecimal string (6 bytes; characters <code>0–9</code> and <code>A–F</code>) (e.g., <code>1A2B3C4D5E6F</code>).</td>
+</tr>
+
+<tr>
+<td>Secondary Read Key (Fallback Key A)</td>
+<td>nfcMifareSecondaryReadKey</td>
+<td>[hex string]</td>
+<td>[enter 12-character hex string]</td>
+<td>Enter a 12-character hexadecimal string (6 bytes; characters <code>0–9</code> and <code>A–F</code>) used as a fallback read key during key rotation.</td>
+</tr>
+
+<tr bgcolor="#D9E7ED">
+<td bgcolor="#D9E7ED">DESFire EV3 Keys (AES-128)</td>
+<td>nfcDESFireKeySet</td>
+<td>key bundle</td>
+<td></td>
+<td>Configurations for authenticating and decrypting data sectors on MIFARE DESFire EV3 NFC cards.</td>
+</tr>
+
+<tr>
+<td>Primary Read Key (AES Key 1)</td>
+<td>nfcDESFirePrimaryReadKey</td>
+<td>hex string</td>
+<td>[enter 32-character hex string]</td>
+<td>Enter a 32-character hexadecimal string (16 bytes AES-128 Key; characters <code>0–9</code> and <code>A–F</code>).</td>
+</tr>
+
+<tr>
+<td>Secondary Read Key (Fallback AES Key 1)</td>
+<td>nfcDESFireSecondaryReadKey</td>
+<td>hex string</td>
+<td>[enter 32-character hex string]</td>
+<td>Enter a 32-character hexadecimal string (16 bytes AES-128 Key; characters <code>0–9</code> and <code>A–F</code>) used as a fallback read key during key rotation.</td>
+</tr>
+
+</tbody></table>
+
 
 <hr>
 
@@ -1613,7 +1705,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td></td>
 <td>preferredAuthenticationApp</td>
 <td>String</td>
-<td>Imprivata<br>Identity Guardian</td>
+<td>Imprivata<br>Workspace ONE<br>Identity Guardian</td>
 <td>Sets the specified application as the primary screen blocking and authentication app when Identity Guardian is in <a href="../usage/#proxymode">Proxy Mode.</a></td>
 </tr>
 
@@ -1624,7 +1716,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 
 <h3 id="personaldeviceauthentication" class="anchor"><a class="heading-anchor" href="#personaldeviceauthentication"><span></span></a>Personal Device Authentication</h3>
 
-<p>Configure Identity Guardian for user verification and authentication on <a href="../setup/#personallyassigneddevice">personally assigned devices</a>. </p>
+<p>Configure Identity Guardian for user verification and authentication on <a href="../setup/#personallyassigneddevice">personally assigned devices</a>.</p>
 
 <p><font color="#5A9EC4"><i>Note: Colored rows indicate a parent option.</i></font></p>
 
@@ -1660,7 +1752,7 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>personalAuthenticationScheme1<wbr>PrimaryAuthMethodFactor1<br><br><i>(Note: The above is a single continuous word with no spaces or hyphens)</i></td>
 <td>ANDROID_LOCK<br>FACE<br>PASSCODE</td>
 <td>ANDROID_LOCK<br>FACE<br>PASSCODE</td>
-<td>Specifies the primary method for user authentication:<br><br><b>• ANDROID_LOCK -</b> Uses the native Android lock screen credentials. Requires "Keyguard" to be <i>enabled</i> under <b><a href="#usagemode">Usage Mode</a></b>. If "Keyguard" is disabled, the system defaults to "FACE." If SSO is enabled, Identity Guardian checks for an active session. If an active session is detected, the user is logged in automatically; otherwise, the SSO login page is displayed.<br><b>• FACE -</b> Uses facial biometrics for authentication. If "Keyguard" is enabled and the prompt times out or the user opts out, the system falls back to "ANDROID_LOCK." If "Keyguard" is disabled and face authentication is not configured during enrollment, the system falls back to "PASSCODE."<br><b>Note:</b> If "FACE" authentication times out, the system defaults to "ANDROID_LOCK." If "FACE" authentication is opted out during enrollment, "ANDROID_LOCK" becomes the Primary Authentication Factor.<br><b>• PASSCODE -</b> Uses the personal passcode created by the user during enrollment. Requires "Keyguard" to be <i>disabled</i> under <b><a href="#usagemode">Usage Mode</a></b>. If "Keyguard" is enabled, Identity Guardian rejects the configuration and displays a configuration error.</td>
+<td>Specifies the primary method for user authentication:<br><br><b>• ANDROID_LOCK -</b> Uses the native Android lock screen credentials. Requires "Keyguard" to be <i>enabled</i> under <b><a href="#usagemode">Usage Mode</a></b>. If "Keyguard" is disabled, the system defaults to "FACE." If SSO is enabled, Identity Guardian checks for an active session. If an active session is detected, the user is logged in automatically; otherwise, the SSO login page is displayed.<br><b>• FACE -</b> Uses facial biometrics for authentication. The system fallback behavior is determined by the <b>Keyguard</b> setting under <b>Usage Mode.</b> <br>&nbsp;&nbsp;<b>- When "Keyguard" is "Enabled":</b> If a user opts out of facial capture during enrollment or the authentication times out, the system falls back to "ANDROID_LOCK" as the primary authentication method. <br>&nbsp;&nbsp;<b>- When "Keyguard" is "Disabled" (Typical Enrollment):</b> If a user opts out of facial capture during enrollment or the authentication times out, the system falls back to "PASSCODE." If the device is suspended and resumed while in the "PASSCODE" fallback state, the Identity Guardian lock screen is displayed and the primary authentication restarts with "FACE."<br><b>• PASSCODE -</b> Uses the personal passcode created by the user during enrollment. Requires "Keyguard" to be <i>disabled</i> under <b><a href="#usagemode">Usage Mode</a></b>. If "Keyguard" is enabled, Identity Guardian rejects the configuration and displays a configuration error.</td>
 </tr>
 
 <tr>
@@ -1901,17 +1993,55 @@ For <strong><em>personally assigned devices,</em></strong> the "PERSONALLY_ASSIG
 <td>tempIdAuthMode</td>
 <td>[string]</td>
 <td>PIN (default)<br>FACE<br>ANY</td>
-<td><b>PIN -</b> Requires authentication with a PIN.<br><b>FACE -</b> Requires authentication with facial recognition.<br><b>ANY -</b> Allows users to choose between PIN or Face Authentication.
-
-</td>
+<td><b>PIN -</b> Requires authentication with a PIN.<br><b>FACE -</b> Requires authentication with facial recognition.<br><b>ANY -</b> Allows users to choose between PIN or Face Authentication.</td>
 </tr>
 
 <tr>
-<td>Select Length</td>
-<td>lengthOfPin</td>
-<td>4<br>5<br>6</td>
-<td>4 (default)<br>5<br>6</td>
-<td>Set the length of the PIN code value entered by the user.</td>
+<td>Temp Id Type</td>
+<td>tempIdType</td>
+<td>Numeric<br>AlphaNumeric</td>
+<td>Numeric<br>AlphaNumeric</td>
+<td>Choose the passcode type, either numeric only or a combination of alphanumeric characters. When AlphaNumeric is selected, other options can be required as desired: minimum for uppercase letters, lowercase letters, numbers, and special symbols.</td>
+</tr>
+
+<tr>
+<td>Minimum Length</td>
+<td>tempIdRuleMinLength</td>
+<td>4 to 20</td>
+<td>4 to 20 (default: 4)</td>
+<td>Set the minimum number of characters to accept for the Temp ID.</td>
+</tr>
+
+<tr>
+<td>Minimum Uppercase Letters</td>
+<td>tempIdRuleMinUppercase</td>
+<td>0<br>1</td>
+<td>0 (default)<br>1</td>
+<td>Select the minimum number of uppercase letters to accept for the Temp ID.</td>
+</tr>
+
+<tr>
+<td>Minimum Lowercase Letters</td>
+<td>tempIdRuleMinLowercase</td>
+<td>0<br>1</td>
+<td>0 (default)<br>1</td>
+<td>Select the minimum number of lowercase letters to accept for the Temp ID.</td>
+</tr>
+
+<tr>
+<td>Minimum Numbers</td>
+<td>tempIdRuleMinNumbers</td>
+<td>0<br>1</td>
+<td>0 (default)<br>1</td>
+<td>Select the minimum amount of numbers to accept for the Temp ID.</td>
+</tr>
+
+<tr>
+<td>Minimum Symbols</td>
+<td>tempIdRuleMinSymbols</td>
+<td>0<br>1</td>
+<td>0 (default)<br>1</td>
+<td>Select the minimum number symbols or special characters to accept for the passcode. Acceptable symbols are: <code>!,@,#,$,%,^,&amp;,,-,_,?,</code></td>
 </tr>
 
 <!--
@@ -2168,6 +2298,38 @@ Default: 3. </td>
 <td>Set the delay time in seconds (30 seconds to 2 hours) for this level.</td>
 </tr>
 
+<tr bgcolor="#D9E7ED">
+<td bgcolor="#D9E7ED">Account lockout configuration</td>
+<td>accountLockoutConfiguration</td>
+<td></td>
+<td></td>
+<td>Configures settings to automatically <a href="../usage/#accountlockoutpasscode">lock a user account</a> for a specified duration after consecutive failed <i>passcode</i> sign-in attempts.</td>
+</tr>
+
+<tr>
+<td>Enable account lockout after failed sign-in attempts</td>
+<td>enableUserAccountLockOnFailedLogin</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
+<td>Locks the user account after exceeding the configured threshold failed sign-in attempts.</td>
+</tr>
+
+<tr>
+<td>Maximum failed sign-in attempts</td>
+<td>maxUserFailedAttempts</td>
+<td>5<br>6<br>7<br>8<br>9<br>10</td>
+<td>5 (default)<br>6<br>7<br>8<br>9<br>10</td>
+<td>Sets the number of allowable failed sign-in attempts before locking the account.</td>
+</tr>
+
+<tr>
+<td>Auto-unlock time for locked accounts</td>
+<td>timeoutLockedUserAccount</td>
+<td>[Integer]</td>
+<td>30 (default)</td>
+<td>Set the duration in minutes before a locked account automatically unlocks.</td>
+</tr>
+
 </tbody></table>
 
 <hr>
@@ -2223,6 +2385,14 @@ Default: 3. </td>
 <td>[string]</td>
 <td>[enter string]</td>
 <td>Enter the specific app activity to launch on the lock screen (e.g. <code>com.android.your-app.appActivity</code>), or enter <code>*</code> to permit all activities from this application.</td>
+</tr>
+
+<tr>
+<td>Add to Quick Access</td>
+<td>addToQuickAccess</td>
+<td>1<br>0</td>
+<td>true<br>false</td>
+<td>When enabled, provides direct access to the specified application from the <a href="../usage/#quickaccessapps">Quick Access</a> launcher on the lock screen without user authentication.</td>
 </tr>
 
 <tr>
@@ -2474,7 +2644,7 @@ Default: 3. </td>
 
 <h4 id="keyguardconfigurationandupgradeimpactforversion30" class="anchor"><a class="heading-anchor" href="#keyguardconfigurationandupgradeimpactforversion30"><span></span></a>Keyguard Configuration and Upgrade Impact for Version 3.0</h4>
 
-<p>When upgrading to version 3.0, existing configurations are automatically migrated. The specific behavior depends on whether the legacy <strong>Launch IG lockscreen from Keyguard</strong> option was enabled or disabled for Personal Devices. This distinction is necessary because certain options are no longer  applicable to this mode; see <a href="#personaldeviceauthentication">Personal Device Authentication</a> for more information.</p>
+<p>When upgrading to version 3.0, existing configurations are automatically migrated. The specific behavior depends on whether the legacy <strong>Launch IG lockscreen from Keyguard</strong> option was enabled or disabled for Personal Devices. This distinction is necessary because certain options are no longer applicable to this mode; see <a href="#personaldeviceauthentication">Personal Device Authentication</a> for more information.</p>
 
 <p><strong>Upgrade Behavior When Keyguard Integration Was <code>Disabled</code>:</strong> If the legacy Keyguard integration was disabled, the authentication settings are migrated for <strong>Personal Devices</strong> with the following changes:</p>
 
@@ -2547,57 +2717,128 @@ Default: 3. </td>
 <td>Select whether to automatically fill in the password for SSO logins after it is saved from the initial login attempt when SSO is set as the secondary authentication method.</td>
 </tr>
 
-<!-- 
+<tr>
+<td>MPIN Configuration</td>
+<td>isEnableMPIN</td>
+<td>true<br>false (default)</td>
+<td>true<br>false (default)</td>
+<td>When enabled, allows SSO and Cloud Passcode users to view and manage saved credentials within <a href="../usage/#guardiansafe">Guardian Safe.</a></td>
+</tr>
+
+<tr>
+<td>Does Autofill require authentication</td>
+<td>isAuthenticationRequired</td>
+<td>true<br>false (default)</td>
+<td>true<br>false (default)</td>
+<td>When enabled, requires MPIN authentication prior to autofilling credentials, unless SSO authentication is active and <a href="../usage/#ssotemporaryid">Temp ID</a> is enabled. This setting requires <b>MPIN Configuration</b> to be set to "true."</td>
+</tr>
+
 <tr bgcolor="#D9E7ED">
 <td bgcolor="#D9E7ED">Enable Personalization Configuration</td>
 <td>enablePersonalizedSettings</td>
-<td>1<br />0</td>
-<td>true<br />false (default)</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
 <td>Enable the <a href="../usage/#personalizeddevicesettings">Personalized Device settings</a> feature to grant access to specified Android system settings, allowing individual customization of key device preferences to meet specific needs.</td>
 </tr>
 
 <tr>
 <td>Language Settings</td>
 <td>languageSettingsValue</td>
-<td>1<br />0</td>
-<td>true<br />false (default)</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
 <td>Enable to grant user access to Language Settings.</td>
 </tr>
 
 <tr>
 <td>Font and Display Settings</td>
 <td>fontAndDisplaySettingsValue</td>
-<td>1<br />0</td>
-<td>true<br />false (default)</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
 <td>Enable to grant user access to Font and Display Settings.</td>
 </tr>
 
 <tr>
 <td>Touch and Haptics Settings</td>
 <td>touchAndHapticSettingsValue</td>
-<td>1<br />0</td>
-<td>true<br />false (default)</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
 <td>Enable to grant user access to Touch and Haptics Settings.</td>
 </tr>
 
 <tr>
 <td>Sound Settings</td>
 <td>soundSettingsValue</td>
-<td>1<br />0</td>
-<td>true<br />false (default)</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
 <td>Enable to grant user access to Sound Settings.</td>
 </tr>
 
 <tr>
 <td>Accessibility Settings</td>
 <td>accessibilitySettingsValue</td>
-<td>1<br />0</td>
-<td>true<br />false (default)</td>
+<td>1<br>0</td>
+<td>true<br>false (default)</td>
 <td>Enable to grant user access to Accessibility Settings.</td>
 </tr>
--->
+
 </tbody></table>
 
+
+<!-- 
+---
+
+### Admin-Controlled Enrollment
+
+Enables administrators to create users in Zebra DNA Cloud in advance and invite them to enroll. The user sets their passcode either in the Identity Guardian app on the device or through a web browser, depending on the **Enrollment Type** setting.
+
+
+<table align="center" style="width:80%" border="1" padding="5px">
+<tbody><tr bgcolor="#dce8ef">
+<table class="table table-striped">
+<tr>
+<th>Configuration Name</th>
+<th>Key</th>
+<th>Value(s)</th>
+<th>Display Name</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Enrollment Type</td>
+<td>enrollmentType</td>
+<td>IG (default)<br />WEB</td>
+<td>IG (default)<br />WEB</td>
+<td>Select the method for user enrollment: <br /><b>• IG:</b> Enroll using the Identity Guardian app on the device.<br /><b>• WEB:</b> Enroll using a web browser on a host PC. The Encryption Key must be supplied.</td>
+</tr>
+
+<tr>
+<td>Number of Reminders</td>
+<td>noOfRemainders</td>
+<td>0 (default)<br />1<br />2<br />3</td>
+<td>0 (default)<br />1<br />2<br />3</td>
+<td>Specifies the number of daily reminder emails sent (0 to 3) prior to PIN expiration. Reminders dispatch once daily during the final <i>N</i> days of the <strong>Enrollment Expiry Value</strong> window, where <i>N</i> represents the selected reminder count.<br /><b>• 7-day Expiry (3 Reminders):</b> Dispatches on days 4, 5, and 6. <br /><b>• 14-day Expiry (3 Reminders):</b> Dispatches on days 11, 12, and 13.</td>
+</tr>
+
+<tr>
+<td>Enrollment Expiry Value(s)</td>
+<td>enrollmentExpiryDays</td>
+<td>1 to 14</td>
+<td>Integer: 1 to 14 (default: 7)</td>
+<td>Enter the number of days (1–14) until the enrollment PIN expires.</td>
+</tr>
+
+<tr>
+<td>Encryption Key</td>
+<td>encryptionKey</td>
+<td>[String]</td>
+<td>[Enter key]</td>
+<td>Specifies the encryption key used to secure the generated user barcode. This is required when <strong>Enrollment Type</strong> is set to <strong>WEB</strong>. For key generation instructions, see <a href="#generateenrollmentauthenticationkey">Generate Key</a>. If left blank, the default Zebra key is used.</td>
+</tr>
+
+</tbody>
+</table>
+
+-->
 
 <hr>
 
@@ -2753,6 +2994,139 @@ Default: 3. </td>
 <td>[string]</td>
 <td>[enter string]</td>
 <td>Enter the Bluetooth printer MAC address (e.g., 00:11:22:33:FF:EE).</td>
+</tr>
+
+</tbody></table>
+
+
+<h3 id="nfcconfiguration-1" class="anchor"><a class="heading-anchor" href="#nfcconfiguration-1"><span></span></a>NFC Configuration</h3>
+
+<p>Configure NFC card write properties, including storage mode, application IDs, and dynamic security key sets. For more information, refer to <a href="../setup/#securenfc">Secure NFC</a>.</p>
+
+<p><font color="#5A9EC4"><i>Note: Colored rows indicate a parent option.</i></font></p>
+
+<table class="facelift" align="center" style="width:80%" border="1" padding="5px">
+<tbody><tr bgcolor="#dce8ef">
+</tr></tbody></table><table class="table table-striped">
+<tbody><tr>
+<th>Name</th>
+<th>Key</th>
+<th>Value(s)</th>
+<th>Display Name</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>NFC Data Storage</td>
+<td>nfcStorageArea</td>
+<td>Standard NDEF<br>Secure Layer</td>
+<td>Standard NDEF (default)<br>Secure Layer</td>
+<td>Selects the data form for the NFC card:<br>&nbsp;&nbsp;&nbsp;<b>• Standard NDEF:</b> Uses open, unencrypted formatting readable by standard NFC devices.<br>&nbsp;&nbsp;&nbsp;<b>• Secure Layer:</b> Reads data from encrypted sectors/files (MIFARE/DESFire) requiring specific authentication keys.</td>
+</tr>
+
+<tr>
+<td>User Data Operation</td>
+<td>nfcUserDataOperation</td>
+<td>APPEND<br>WIPE_STORAGE <br>WIPE_CARD </td>
+<td>Append<br>Wipe Storage and Write (default)<br>Wipe card and write</td>
+<td>Defines the operational mode to govern card memory handling: <br>&nbsp;&nbsp;&nbsp;<b> • Append:</b> Writes Identity Guardian credential records into designated secure sectors while preserving all other data on the card. Use this when adding Identity Guardian data to a card already used by other systems (like building access). This only applies when <b>NFC Data Storage</b> is set to <b>Secure Layer.</b><br>&nbsp;&nbsp;&nbsp;<b>• Wipe Storage and Write:</b> Clears only the data belonging to Identity Guardian before writing new data. The rest of the card is unaffected.<br><b>Note:</b> Removing a card prematurely during this operation can corrupt card formatting or leave memory sectors blank. Operators must hold the card stationary against the device NFC antenna until the confirmation dialog displays on the screen.<br>&nbsp;&nbsp;&nbsp;<b>• Wipe card and write:</b> Clears the entire card before writing new Identity Guardian data. This mode is required when downgrading a card population from <b>Secure Layer</b> back to <b>Standard NDEF.</b>
+</td>
+</tr>
+
+<tr>
+<td>Allow Different User Overwrite</td>
+<td>nfcAllowDifferentUserOverwrite</td>
+<td>true<br>false</td>
+<td>true (default)<br>false</td>
+<td>If set to false, it blocks the application from overwriting a card that has already been enrolled to a different user until its same User.</td>
+</tr>
+
+<tr>
+<td>IG Data Identifier (AID)</td>
+<td>nfcAid</td>
+<td>string</td>
+<td>[enter 3-character string, default: <code>IDG</code>]</td>
+<td>A unique 3-character identifier used to locate application data on the card and prevent conflicts with thrid-party systems sharing the same card.</td>
+</tr>
+
+<tr bgcolor="#D9E7ED">
+<td>MIFARE Classic Keys (6-Byte)</td>
+<td>nfcMifareKeySet</td>
+<td>key bundle</td>
+<td></td>
+<td>Configurations for authenticating and decrypting data sectors on MIFARE Classic NFC cards.</td>
+</tr>
+
+<tr>
+<td>Primary Read Key (Key A)</td>
+<td>nfcMifarePrimaryReadKey</td>
+<td>hex string</td>
+<td>[enter 12-character hex string]</td>
+<td>Enter a 12-character hexadecimal string (6 bytes; characters <code>0–9</code> and <code>A–F</code>) (e.g., <code>1A2B3C4D5E6F</code>).</td>
+</tr>
+
+<tr>
+<td>Primary Write Key (Key B)</td>
+<td>nfcMifareSecondaryReadKey</td>
+<td>[hex string]</td>
+<td>[enter 12-character hex string]</td>
+<td>Enter a 12-character hexadecimal string (6 bytes; characters <code>0–9</code> and <code>A–F</code>).</td>
+</tr>
+
+<tr>
+<td>Secondary Read Key (Fallback A)</td>
+<td>nfcMifarePrimaryReadKey</td>
+<td>hex string</td>
+<td>[enter 12-character hex string]</td>
+<td>Enter a 12-character hexadecimal string (6 bytes; characters <code>0–9</code> and <code>A–F</code>) (e.g., <code>1A2B3C4D5E6F</code>) used as a fallback write key during key rotation.</td>
+</tr>
+
+<tr>
+<td>Secondary Write Key (Fallback Key B)</td>
+<td>nfcMifareSecondaryReadKey</td>
+<td>[hex string]</td>
+<td>[enter 12-character hex string]</td>
+<td>Enter a 12-character hexadecimal string (6 bytes; characters <code>0–9</code> and <code>A–F</code>) used as a fallback write key during key rotation.</td>
+</tr>
+
+<tr bgcolor="#D9E7ED">
+<td bgcolor="#D9E7ED">DESFire EV3 Keys (AES-128)</td>
+<td>nfcDESFireKeySet</td>
+<td>key bundle</td>
+<td></td>
+<td>Configurations for authenticating and decrypting data sectors on MIFARE DESFire EV3 NFC cards.</td>
+</tr>
+
+<tr>
+<td>Primary Read Key (AES Key 1)</td>
+<td>nfcDESFirePrimaryReadKey</td>
+<td>hex string</td>
+<td>[enter 32-character hex string]</td>
+<td>Enter a 32-character hexadecimal string (16 bytes; characters <code>0–9</code> and <code>A–F</code>).</td>
+</tr>
+
+<tr>
+<td>Primary Write Key (AES Key 2)</td>
+<td>nfcDESFirePrimaryWriteKey</td>
+<td>[hex string]</td>
+<td>[enter 32-character hex string]</td>
+<td>Enter a 32-character hexadecimal string (16 bytes; characters <code>0–9</code> and <code>A–F</code>) .</td>
+</tr>
+
+<tr>
+<td>Secondary Read Key (Fallback AES Key 1)</td>
+<td>nfcDESFireSecondaryReadKey</td>
+<td>hex string</td>
+<td>[enter 32-character hex string]</td>
+<td>Enter a 32-character hexadecimal string (16 bytes; characters <code>0–9</code> and <code>A–F</code>) used as a fallback read key during key rotation.</td>
+</tr>
+
+<tr>
+<td>Secondary Write Key (Fallback AES Key 2)</td>
+<td>nfcDESFireSecondaryWriteKey</td>
+<td>[hex string]</td>
+<td>[enter 32-character hex string]</td>
+<td>Enter a 32-character hexadecimal string (16 bytes; characters <code>0–9</code> and <code>A–F</code>) used as a fallback write key during key rotation.</td>
 </tr>
 
 </tbody></table>

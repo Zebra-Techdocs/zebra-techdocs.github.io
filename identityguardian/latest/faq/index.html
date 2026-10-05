@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            3.1
+                                            3.3
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/3-1/about">
+                            <a href="/identityguardian/3-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/setup">
+                            <a href="/identityguardian/3-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/licensing">
+                            <a href="/identityguardian/3-3/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/mc">
+                            <a href="/identityguardian/3-3/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/usage">
+                            <a href="/identityguardian/3-3/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/api">
+                            <a href="/identityguardian/3-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/faq">
+                            <a href="/identityguardian/3-3/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/search">
+                            <a href="/identityguardian/3-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="frequently-asked-questions" class="anchor"><a class="heading-anchor" href="#frequently-asked-questions"><span></span></a>Frequently Asked Questions</h1>
                                     <p>
                                             Identity Guardian
-                                            3.1
+                                            3.3
                                     </p>
                                 </div>
                             </section>                    
@@ -252,21 +252,23 @@
 
 <p>Network connectivity is not required for the user to sign into the device, with the exception of SSO authentication. Since the idP manages SSO, it necessitates a network connection. The device itself handles the comparison and logic for barcode, facial recognition, and passcode entry.</p>
 
-<h3 id="qwhatshouldbedoneifanopenexternalapppromptappearsduringssosignin" class="anchor"><a class="heading-anchor" href="#qwhatshouldbedoneifanopenexternalapppromptappearsduringssosignin"><span></span></a>Q: What should be done if an "Open external app" prompt appears during SSO sign-in?</h3>
+<h3 id="qwhatactionshouldbetakenifanopenexternalapppromptappearsduringssosignin" class="anchor"><a class="heading-anchor" href="#qwhatactionshouldbetakenifanopenexternalapppromptappearsduringssosignin"><span></span></a>Q: What action should be taken if an "Open external app" prompt appears during SSO sign-in?</h3>
 
-<p>Tap <strong>Open</strong> (or <strong>Open external app</strong> depending on the Microsoft Edge version installed on the device). This is a standard Edge confirmation required to return control to Identity Guardian and complete the sign-in. <em>Do not tap <strong>Cancel,</strong> as it aborts the authentication process.</em></p>
+<p>Depending on the Microsoft Edge version installed on the device, tap <strong>Open</strong> or <strong>Open external app.</strong> This is a standard confirmation from Microsoft Edge required to return control to Identity Guardian and complete the sign-in process. <strong>Caution:</strong> <em>Do not tap <strong>Cancel,</strong> as that action aborts the authentication process.</em></p>
 
 <p>This prompt typically appears in the following scenarios:</p>
 
 <ul>
-<li><strong>PingID or Okta SSO:</strong> Appears on <em>every</em> sign-in if Microsoft Edge is the default browser and Google Chrome is disabled or not installed.</li>
+<li><strong>PingID:</strong> Appears on <em>every</em> sign-in if Microsoft Edge is the default browser and Google Chrome is disabled or not installed.</li>
+
+<li><strong>Okta SSO:</strong> Appears on <em>every</em> sign-in and may also appear during sign-out when Identity Guardian returns from Okta, if Microsoft Edge is the default browser and Google Chrome is disabled or not installed.</li>
 
 <li><strong>Initial Microsoft Entra Sign-In:</strong> Appears <em>once</em> per user during initial enrollment on Edge-default devices lacking Microsoft Authenticator and Company Portal, before Multi-Factor Authentication (MFA) is completed. It does not repeat on subsequent sign-ins.</li>
 
-<li><strong>Tenant-Side Policy Changes:</strong> Appears <em>once</em> following a policy change (e.g., new MFA requirement, password reset, or security-info re-confirmation) after a brief redirection through an additional Microsoft page. It does not repeat afterward.</li>
+<li><strong>Tenant-Side Policy Changes:</strong> Appears <em>once</em> following a policy change (e.g., new MFA requirement, password reset, or security info re-confirmation) after a brief redirection through an additional Microsoft page. It does not repeat afterward.</li>
 </ul>
 
-<p>If the prompt appears on <em>every</em> Microsoft Entra sign-in (rather than just during initial enrollment), or if tapping <strong>Open</strong> fails to complete the sign-in process, please contact <a href="https://support.zebra.com/">Zebra Technical Support</a> to open a support case.</p>
+<p>If the prompt appears on <em>every</em> Microsoft Entra sign-in (not just during initial enrollment), or if tapping <strong>Open</strong> fails to complete the sign-in process, contact <a href="https://support.zebra.com/">Zebra Technical Support</a> to open a support case.</p>
 
 <h3 id="qisabarcoderequiredforuserauthentication" class="anchor"><a class="heading-anchor" href="#qisabarcoderequiredforuserauthentication"><span></span></a>Q: Is a barcode required for user authentication?</h3>
 
@@ -331,6 +333,30 @@
 <h3 id="qwhatvisibilitydoeszebradnacloudprovideintodeviceusageviaidentityguardian" class="anchor"><a class="heading-anchor" href="#qwhatvisibilitydoeszebradnacloudprovideintodeviceusageviaidentityguardian"><span></span></a>Q: What visibility does Zebra DNA Cloud provide into device usage via Identity Guardian?</h3>
 
 <p>The <a href="/zebradna">Zebra DNA Cloud</a> has visibility into which users have device access profiles, including information on when these profiles were created, last used, and the specific device(s) they were utilized on, among other data points.</p>
+
+<hr>
+
+<h2 id="securenfc" class="anchor"><a class="heading-anchor" href="#securenfc"><span></span></a>Secure NFC</h2>
+
+<h3 id="qwearemigratingfromoldndefcardstothenewsecurelayerformatwhatisthemostimportantsetting" class="anchor"><a class="heading-anchor" href="#qwearemigratingfromoldndefcardstothenewsecurelayerformatwhatisthemostimportantsetting"><span></span></a>Q: We are migrating from old NDEF cards to the new Secure Layer format. What is the most important setting?</h3>
+
+<p>When migrating from NDEF to Secure Layer, the most critical setting is to set the <strong>User Data Operation</strong> in zCreator's <a href="../mc/#nfcconfiguration-1">NFC Configuration</a> to <strong>Wipe card and write.</strong> This ensures that the old, unencrypted NDEF data is destroyed before the new, secure data is written, preventing any data persistence risks.</p>
+
+<h3 id="qwhathappensifileavethesecuritykeyfieldsblankintheemmconfiguration" class="anchor"><a class="heading-anchor" href="#qwhathappensifileavethesecuritykeyfieldsblankintheemmconfiguration"><span></span></a>Q: What happens if I leave the security key fields blank in the EMM configuration?</h3>
+
+<p>The system is secure by default. If the key fields are left blank, the application automatically falls back to using a set of default, proprietary factory keys. Only custom keys need to be defined if the organization's security policy requires it.</p>
+
+<h3 id="qhowdoichangemyorganizationssecuritykeyswithoutlockingoutallmyusers" class="anchor"><a class="heading-anchor" href="#qhowdoichangemyorganizationssecuritykeyswithoutlockingoutallmyusers"><span></span></a>Q: How do I change my organization's security keys without locking out all my users?</h3>
+
+<p>Follow the <a href="../setup/#securitykeys">Key Rotation</a> strategy. In the EMM configuration for both IG and zCreator, move the current (old) keys into the Secondary Key fields and enter the new keys into the Primary Key fields. The system then attempts to read cards with the new primary key and, if that fails, will automatically fall back to the old secondary key, ensuring users with older cards can still log in without disruption.</p>
+
+<h3 id="qauserscardisnotbeingreadbyidentityguardianwhatshouldicheckfirst" class="anchor"><a class="heading-anchor" href="#qauserscardisnotbeingreadbyidentityguardianwhatshouldicheckfirst"><span></span></a>Q: A user's card is not being read by Identity Guardian. What should I check first?</h3>
+
+<p>First, ensure the user's device has the correct Identity Guardian policy from your EMM. If using <strong>Secure Layer,</strong> verify that the Primary and Secondary Read Keys in the Identity Guardian <a href="../mc/#nfcconfiguration">NFC Configuration</a> match the keys that were used to write the card via the zCreator policy. Also, confirm the <strong>IG Data Identifier</strong> matches between both policies.</p>
+
+<h3 id="qcanipreventanoperatorfromoverwritingacardthatbelongstosomeoneelse" class="anchor"><a class="heading-anchor" href="#qcanipreventanoperatorfromoverwritingacardthatbelongstosomeoneelse"><span></span></a>Q: Can I prevent an operator from overwriting a card that belongs to someone else?</h3>
+
+<p>Yes. In the zCreator Managed Configuration for <a href="../mc/#nfcconfiguration-1">NFC Configuration</a>, set the <strong>Allow Different User Overwrite</strong> option to <strong>false.</strong> With this policy, zCreator first checks if a card contains data from a different user ID. If it does, the write operation is blocked.</p>
 
 <hr>
 

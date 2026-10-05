@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            3.1
+                                            3.3
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/3-1/about">
+                            <a href="/identityguardian/3-3/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/setup">
+                            <a href="/identityguardian/3-3/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/licensing">
+                            <a href="/identityguardian/3-3/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/mc">
+                            <a href="/identityguardian/3-3/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/usage">
+                            <a href="/identityguardian/3-3/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/api">
+                            <a href="/identityguardian/3-3/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/faq">
+                            <a href="/identityguardian/3-3/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-1/search">
+                            <a href="/identityguardian/3-3/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="about-identity-guardian" class="anchor"><a class="heading-anchor" href="#about-identity-guardian"><span></span></a>About Identity Guardian</h1>
                                     <p>
                                             Identity Guardian
-                                            3.1
+                                            3.3
                                     </p>
                                 </div>
                             </section>                    
@@ -311,27 +311,43 @@
 
 <hr>
 
-<h2 id="newin31" class="anchor"><a class="heading-anchor" href="#newin31"><span></span></a>New in 3.1</h2>
+<h2 id="newin33" class="anchor"><a class="heading-anchor" href="#newin33"><span></span></a>New in 3.3</h2>
 
 <ul>
-<li><strong>New <a href="../usage/#bruteforceprotection">Brute-Force Protection</a>:</strong> A tiered device security mechanism that deters unauthorized access by enforcing progressive, customizable login delays while providing an admin bypass option for immediate lockout resolution.</li>
+<li><strong>Automated Security Enhancements:</strong>
 
-<li><strong>New Keyboard Input Configuration:</strong> Administrators can now streamline the user sign-in experience by configuring a specific Alphanumeric or Numeric-only <a href="../mc/#usagemode">keyboard layout</a> for all authentication screens.</li>
 
-<li><strong><a href="../usage/#unlockvianfcbarcode">Unlock via NFC/Barcode</a>:</strong> Streamline workflows on shared devices by allowing users to instantly resume an active, locked session with a simple NFC tap or barcode scan, bypassing the need for full re-authentication.</li>
+<ul>
+<li><strong><a href="../usage/#automaticbarcodenfcexpiration">Automatic Barcode/NFC Expiration</a>:</strong> Enforces configurable expiration periods on enrollments requiring barcode or NFC card authentication, automatically restricting expired profiles and prompting re-enrollment to ensure credentials remain up to date.</li>
 
-<li><strong>New <a href="../usage/#launchappstoshare">Launch Apps to Share Enrollment Barcode</a>:</strong> Streamline the self-enrollment workflow by pre-authenticating SSO-enabled applications (Microsoft Teams and Outlook) to ensure seamless, one-step barcode sharing without login interruptions.</li>
+<li><strong><a href="../usage/#accountlockoutpasscode">Account Lockout (Passcode)</a>:</strong> Automatically locks accounts for a predefined duration after exceeding allowable failed <i>passcode</i> attempts, mitigating brute-force risks.</li></ul>
+</li>
 
-<li><strong>New <a href="../usage/#defaultssodomain">Default SSO Domain Configuration</a>:</strong> Streamline Microsoft Entra ID authentication by allowing users to log in using only their username while the system automatically applies the pre-configured domain.</li>
+<li><strong>New <a href="../usage/#quickaccessapps">Quick Access (Apps)</a> allows device users to open approved non-sensitive utility applications directly from the Identity Guardian lock screen without requiring prior authentication.</strong></li>
 
-<li><strong>A Managed Configuration setting for <a href="../mc/#guardiansafeconfiguration">Guardian Safe</a> has been renamed from "Guardian Safe" to "Append Username and Password Safe."</strong></li>
+<li><strong>Introduced direct authentication via <a href="../usage/#mpinprotectedguardiansafe">SSO or Zebra DNA Cloud Passcode with an MPIN</a> when using Guardian Safe.</strong> This enhancement eliminates the need for physical barcodes or NFC cards, allowing users to securely access Identity Guardian and Guardian Safe through a seamless, efficient login experience.</li>
 
-<li><strong>Updated instructions for <a href="../mc/generateenrollmentauthenticationkey">Generate Enrollment &amp; Authentication Key</a>.</strong></li>
+<li><strong>New <a href="../usage/#mpinprotectedguardiansafe">MPIN-Proected Guardian Safe</a> -</strong> Secures credentials and personalized settings on Shared Devices using a Master Personal Identification Number (MPIN), enabling profile access across multiple sessions and devices without replacing administrator-configured authentication factors. </li>
+
+<li><strong>Introduced <a href="../setup/#securenfc">Secure NFC</a> support:</strong> Enables encrypted contactless smart card authentication, zero-downtime key rotation, and seamless multi-application badge coexistence on Zebra Android devices through new NFC Configuration parameters for <a href="../mc/#nfcconfiguration">Identity Guardian</a> and <a href="../mc/#nfcconfiguration-1">zCreator</a> in Managed Configurations.</li>
+
+<li><strong>Identity Guardian now integrates with Workspace ONE in <a href="../usage/#proxymode">Proxy Mode</a>,</strong> enabling registered Line of Business (LOB) applications to automatically receive user login and logout state changes for streamlined device accountability.</li>
+
+<li><strong>New <a href="../usage/#personalizeddevicesettings">Personalized Device Settings</a>:</strong> Grants authenticated users access to specified Android system settings, allowing individual customization of key display, audio, and accessibility preferences tailored to the needs of their active sessions.</li>
+
+<li><strong>Support for <a href="../wearable">Wearable Computers</a>:</strong> Delivers an optimized, compact interface for streamlined multi-factor authentication on devices such as WS301 and WS501.</li>
+
+<li><strong>Now supports TC201 and HC201 devices running Android 15; see <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/identity-guardian.html#Ta-item-92f439149f-tab">Zebra Support Portal</a> for details.</strong></li>
+
+<li><strong>Enhanced Rules for SSO Temporary ID:</strong> Administrators can now enforce security requirements for <a href="../usage/#ssotemporaryid">SSO Temp IDs</a>, mirroring the existing Passcode complexity rules. This update introduces alphanumeric Temp ID support with customizable length limits (4–20 characters) and options to require uppercase letters, lowercase letters, numbers, and special characters.</li>
+
+<li><strong>Added <a href="../usage/#mifarecardwriting">MIFARE NFC Card Writing Guidelines</a>:</strong> Documented write-time expectations (3 to 15 seconds) and best practices for secure data transfer to MIFARE Classic cards.</li>
+
+<li><strong>Added Offline Login and Delayed Account Lockout Guidelines:</strong> Documented the procedures for authenticating without a network connection, along with behavioral expectations regarding cached failed passcode attempts and temporary screen access during <a href="../usage/#accountlockoutpasscode">account passcode lockouts</a>.</li>
 </ul>
 
-<!--  // MOVED TO IG 3.2
-- **New [Personalized Device Settings](../usage/#personalizeddevicesettings):** Grants authenticated users access to specified Android system settings, allowing individual customization of key display, audio, and accessibility preferences tailored to the needs of their active sessions.
-- **Introduced direct authentication via [SSO or Zebra DNA Cloud Passcode with an MPIN](../usage/#ssocloudpasscodeauthenticationwithmpin) when using Guardian Safe.** This enhancement eliminates the need for physical barcodes or NFC cards, allowing users to securely access Identity Guardian and Guardian Safe through a seamless, efficient login experience.
+<!--  // Removed from IG 3.3
+- **New [Admin-Initiated Enrollment](../setup/#admincontrolledenrollment):** Enables non-SSO shared-device users managed by Zebra DNA Cloud to self-enroll directly on a device or host PC using an email-delivered one-time PIN. This extends self-service onboarding without requiring manual administrator intervention.
 -->
 
 <h3 id="knownissues" class="anchor"><a class="heading-anchor" href="#knownissues"><span></span></a>Known Issues</h3>
@@ -356,7 +372,7 @@
 <li><strong>Users may experience a brief delay in password autofill when using the "Auto Fill for SSO" or "Guardian Safe" features,</strong> particularly after a device reboot or when the device wakes from a low-power state (doze mode). To minimize this impact, allow a few seconds after the device restarts or wakes up before attempting to log in.</li>
 
 <li><strong>Guardian Safe Overlaps Keyboard:</strong> To prevent the blue Guardian Safe icon from blocking the keyboard, tap the <code>&gt;</code> character to minimize it.
-<img alt="image" style="height:250px" src="guardian-safe-keyboard.png"></li>
+<img alt="image" style="height:250px" src="../../images/3-2/guardian-safe-keyboard.png"></li>
 
 <li><strong>Guardian Safe and Auto-Fill SSO supports only a single device per user ID for Personally Assigned Devices.</strong> Registering multiple devices with the same user ID causes undefined behavior.</li>
 
@@ -387,6 +403,15 @@
 <li><strong>A user authentication error might occur intermittently if a user attempts to cancel SSO authentication and then tries to re-authenticate.</strong> To resolve this, click on any button on the error screen to dismiss the error, allowing the user to proceed further.</li>
 
 <li><strong>SSO Temporary ID Persistence:</strong> When upgrading Identity Guardian with SSO Temp ID enabled, previously created Temporary IDs do not persist across the upgrade cycle and cannot be retrieved. The user must generate a new Temporary ID again.</li>
+
+<li><strong>Camera Fails After Cancellation:</strong> On WS301, WS501, and ET401 devices equipped with camera-scanners and configured for both Barcode and Face Authentication, canceling Face Authentication and subsequently attempting to scan a barcode prevents the camera from launching.<br><strong>Recovery:</strong> On ET401, suspend and resume the device to restore camera functionality. On WS301 and WS501, perform an Admin Bypass login/logout or execute a full device reboot to restore camera functionality.</li>
+
+<li><strong>Authentication Method Update Discrepancy:</strong> During transitions from SSO-based re-enrollment to One-Time PIN authentication within an existing profile, device updates may fail to register. Consequently, selecting "Re-enroll" on the device triggers the original SSO prompt rather than the intended One-Time PIN verification screen.<br>
+<strong>Workaround:</strong> Ensure the correct authentication method is applied by fully removing the existing profile from the target device. Once removed, deploy the newly configured profile. A standard profile overwrite (re-application) is insufficient.</li>
+
+<li><strong>Passcode Screen UI:</strong> On the passcode authentication screen, entering an incorrect passcode displays an error message that shifts the layout, causing the keypad to partially obscure the bottom action button.<br>
+<strong>Impact/Workaround:</strong> The visible portion of the action button remains functional and responsive to touch input.
+<img alt="image" style="height:150px" src="../../images/3-3/passcode-cutoff.png"></li>
 </ul>
 
 <p><strong>EMM, Launcher, &amp; Third-Party Integrations:</strong></p>
@@ -399,11 +424,31 @@
 <li><strong>Post-Reboot Identity Guardian Sequence Issue:</strong> When a device reboots after a Workspace ONE logout, the Identity Guardian lock screen displays after the Workspace ONE Launcher login screen instead of preceding it.</li>
 
 <li><strong>The behavior of Guardian Safe may vary depending on the version of Workspace ONE launcher in use.</strong> If any discrepancies are observed, please contact <a href="https://support.zebra.com/">Zebra Support</a>.</li>
+
+<li><strong>Identity Guardian may become temporarily unresponsive after Workspace ONE Intelligent Hub update.</strong> To recover, tap <strong>Wait</strong> on the system prompt. Identity Guardian should resume once the Hub service becomes available. If it does not recover, reboot the device. This is a temporary condition and does not block the user permanently.</li>
 </ul>
 
 <hr>
 
 <h2 id="versionhistory" class="anchor"><a class="heading-anchor" href="#versionhistory"><span></span></a>Version History</h2>
+
+<h3 id="newin31" class="anchor"><a class="heading-anchor" href="#newin31"><span></span></a>New in 3.1</h3>
+
+<ul>
+<li><strong>New <a href="../usage/#bruteforceprotection">Brute-Force Protection</a>:</strong> A tiered device security mechanism that deters unauthorized access by enforcing progressive, customizable login delays while providing an admin bypass option for immediate lockout resolution.</li>
+
+<li><strong>New Keyboard Input Configuration:</strong> Administrators can now streamline the user sign-in experience by configuring a specific Alphanumeric or Numeric-only <a href="../mc/#usagemode">keyboard layout</a> for all authentication screens.</li>
+
+<li><strong><a href="../usage/#unlockvianfcbarcode">Unlock via NFC/Barcode</a>:</strong> Streamline workflows on shared devices by allowing users to instantly resume an active, locked session with a simple NFC tap or barcode scan, bypassing the need for full re-authentication.</li>
+
+<li><strong>New <a href="../usage/#launchappstoshare">Launch Apps to Share Enrollment Barcode</a>:</strong> Streamline the self-enrollment workflow by pre-authenticating SSO-enabled applications (Microsoft Teams and Outlook) to ensure seamless, one-step barcode sharing without login interruptions.</li>
+
+<li><strong>New <a href="../usage/#defaultssodomain">Default SSO Domain Configuration</a>:</strong> Streamline Microsoft Entra ID authentication by allowing users to log in using only their username while the system automatically applies the pre-configured domain.</li>
+
+<li><strong>A Managed Configuration setting for <a href="../mc/#guardiansafeconfiguration">Guardian Safe</a> has been renamed from "Guardian Safe" to "Append Username and Password Safe."</strong></li>
+
+<li><strong>Updated instructions for <a href="../mc/generateenrollmentauthenticationkey">Generate Enrollment &amp; Authentication Key</a>.</strong></li>
+</ul>
 
 <h3 id="newin30" class="anchor"><a class="heading-anchor" href="#newin30"><span></span></a>New in 3.0</h3>
 
@@ -554,7 +599,7 @@
 <ul>
 <li><strong>Introduced the <a href="../usage/#alternateauthenticationkey">Alternate Authentication Key</a> to enable seamless security certificate rotation.</strong> This feature allows old and new keys to run concurrently, ensuring users experience no downtime during the migration period.</li>
 
-<li><strong>The default <a href="../setup/#datawedgeprofile">barcode scan timeout</a> in the pre-configured DataWedge profile has been increased to 15 seconds.</strong> This provides users more time to align the scanner, reducing scan failures, especially in environments with vehicle-mounted devices.</li>
+<li><strong>The default <a href="../setup/#sdconfiguredatawedge">barcode scan timeout</a> in the pre-configured DataWedge profile has been increased to 15 seconds.</strong> This provides users more time to align the scanner, reducing scan failures, especially in environments with vehicle-mounted devices.</li>
 
 <li><strong>Now integrated with native <a href="../usage/#unifiedlockscreenkeyguard">Android Lock Screen (Keyguard)</a> for users to unlock the device in one seamless step using their Identity Guardian authentication.</strong></li>
 
@@ -580,7 +625,7 @@
 <h3 id="newin22" class="anchor"><a class="heading-anchor" href="#newin22"><span></span></a>New in 2.2</h3>
 
 <ul>
-<li><strong>The <a href="../setup/#printsharebarcodezcreator">zCreator app</a> has replaced the IGQRPrint App, offering a streamlined solution for printing and sharing user authentication barcodes.</strong></li>
+<li><strong>The <a href="../setup/#sdprintsharebarcodezcreator">zCreator app</a> has replaced the IGQRPrint App, offering a streamlined solution for printing and sharing user authentication barcodes.</strong></li>
 
 <li><strong>Revised procedure for configuring <a href="../setup/#okta">Okta</a> with Identity Guardian.</strong></li>
 
@@ -671,7 +716,7 @@
 
 <li>Now supports Zebra devices with Android 14; see <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/identity-guardian.html#Ta-item-92f439149f-tab">Zebra Support Portal</a> for supported devices.</li>
 
-<li><strong>Added instructions for <a href="../setup/#datawedgeprofile">creating and deploying a DataWedge profile</a> to enable barcode scanning with Identity Guardian.</strong></li>
+<li><strong>Added instructions for <a href="../setup/#sdconfiguredatawedge">creating and deploying a DataWedge profile</a> to enable barcode scanning with Identity Guardian.</strong></li>
 
 <li><strong>Resolved Issues:</strong>
 
@@ -707,7 +752,7 @@
 <li><strong>The new <a href="../usage/#globalsignout">Global Sign-Out</a> feature automatically signs users out of Identity Guardian</strong> whenever a user signs out from any SSO-enabled application on the device in shared mode. This is only supported with Microsoft Entra ID.</li>
 
 <li><strong>Enhanced the user interface to notify users of unsuccessful face captures during user enrollment.</strong>
-<img alt="image" style="height:325px" src="./facial-capture-failed.png"></li>
+<img alt="image" style="height:325px" src="../../images/3-2/facial-capture-failed.png"></li>
 
 <li><strong>Integrated Microsoft Authentication Library v5.8.2</strong> for improved SSO authentication with the Microsoft Entra provider, offering enhanced security and compatibility with the latest Microsoft identity platform features.</li>
 
@@ -758,7 +803,7 @@
 <li><strong>Now securely <a href="../usage/#selfenrollment">self-enroll</a> new users directly from the Identity Guardian lock screen on devices configured for Authentication mode, using SSO for identity verification.</strong> This eliminates the need for switching the application mode between Enrollment and Authentication.</li>
 
 <li><strong>Early Access Preview:</strong>
-<strong>The <a href="../usage/#printsharebarcodezcreator">Identity Guardian QR Print (IGQRPrint)</a> app facilitates the immediate printing and sharing of barcodes after user enrollment, simplifying the process.</strong> To use this feature, a separate IGQR print application must be installed.</li>
+<strong>The <a href="../usage/#sdprintsharebarcodezcreator">Identity Guardian QR Print (IGQRPrint)</a> app facilitates the immediate printing and sharing of barcodes after user enrollment, simplifying the process.</strong> To use this feature, a separate IGQR print application must be installed.</li>
 
 <li><strong>The new <a href="../usage/#proxymode">Proxy Mode</a> feature allows third-party apps to notify Identity Guardian of user check-in/check-out events,</strong> enabling this information to be shared with other Zebra apps like <a href="/devicetracker">Device Tracker</a> for user accountability. It is designed for organizations that use their own blocking screen apps for device access, who wish to track user accountability across Zebra apps.</li>
 
@@ -820,7 +865,7 @@
 <li><strong><a href="../usage/#adminbypass">Admin Bypass</a> login is added to the Identity Guardian lock menu</strong> along with fallback authentication supported in earlier versions.</li>
 
 <li><strong>An enhanced user experience allows users to unlock the device using facial authentication without user interaction.</strong> This <a href="../usage/#unlockviaface">Auto-Unlock</a> feature eliminates the need to press the Unlock button in the lock screen.
-<img alt="image" style="height:300px" src="../usage/scan-to-unlock.jpg"></li>
+<img alt="image" style="height:300px" src="../../images/3-2/scan-to-unlock.jpg"></li>
 
 <li><strong>Non-Identity Guardian barcodes can now be used as a comparison source.</strong> This allows users to scan <a href="../usage/#nonidentityguardianbarcode">non-Identity Guardian barcodes</a> for device sign-in. Optionally, admins can add a prefix to validate the barcode. Zebra recommends using Identity Guardian-generated barcodes for maximum security.</li>
 
@@ -855,7 +900,7 @@
 <li><strong>During user enrollment, users can now create a numeric-only passcode instead of an alphanumeric one.</strong> To enable this, administrators should select “Numeric” for the “Passcode Type” under <a href="../mc/#enrollmentconfiguration">Passcode Rules</a> in Managed Configurations.</li>
 
 <li>The user name is now visible in the <a href="../usage/#signin">lock screen</a>, in addition to the device name and serial number.
-<img alt="image" style="height:300px" src="lock-screen-user.png"></li>
+<img alt="image" style="height:300px" src="../../images/3-2/lock-screen-user.png"></li>
 
 <li><strong>Resolved Issues:</strong>
 
@@ -885,7 +930,7 @@
 <h3 id="newin13" class="anchor"><a class="heading-anchor" href="#newin13"><span></span></a>New in 1.3</h3>
 
 <ul>
-<li><strong>Google Play Availability and Auto-Updates:</strong> Starting with Identity Guardian 1.3, the app is now available for download from <a href="../setup/#download">Google Play</a> as well as the <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/identity-guardian.html">Zebra Support Portal</a>.</li>
+<li><strong>Google Play Availability and Auto-Updates:</strong> Starting with Identity Guardian 1.3, the app is now available for download from <a href="../setup/#requirements">Google Play</a> as well as the <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/identity-guardian.html">Zebra Support Portal</a>.</li>
 
 <li>The <strong><a href="../mc/#shareddeviceauthentication">Authentication Data Storage</a> feature, formerly a preview, is now officially available.</strong> It provides temporary storage for user barcode data, requiring just a single scan for initial usage during a work shift. Based on admin configurations, device access may trigger primary and secondary authentication.</li>
 
