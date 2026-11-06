@@ -71,7 +71,7 @@
                         <li class="navbar-text pull-left"><strong>TechDocs</strong></li>
                         <p class="navbar-text">
                                             Identity Guardian
-                                            3.3
+                                            3.4
                         </p>
 
                     </ul>
@@ -82,42 +82,42 @@
 
 
                         <li>
-                            <a href="/identityguardian/3-3/about">
+                            <a href="/identityguardian/3-4/about">
                                     About
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-3/setup">
+                            <a href="/identityguardian/3-4/setup">
                                     Setup
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-3/licensing">
+                            <a href="/identityguardian/3-4/licensing">
                                     Licensing
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-3/mc">
+                            <a href="/identityguardian/3-4/mc">
                                     Managed Configurations
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-3/usage">
+                            <a href="/identityguardian/3-4/usage">
                                     User Guide
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-3/api">
+                            <a href="/identityguardian/3-4/api">
                                     APIs
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-3/faq">
+                            <a href="/identityguardian/3-4/faq">
                                     FAQ
                             </a>
                         </li>
                         <li>
-                            <a href="/identityguardian/3-3/search">
+                            <a href="/identityguardian/3-4/search">
                                     <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -233,7 +233,7 @@
                                     <h1 id="setup" class="anchor"><a class="heading-anchor" href="#setup"><span></span></a>Setup</h1>
                                     <p>
                                             Identity Guardian
-                                            3.3
+                                            3.4
                                     </p>
                                 </div>
                             </section>                    
@@ -251,7 +251,7 @@
 <p>Identity Guardian provides secure, frictionless device access while safeguarding user data. To accommodate diverse operational workflows, the application offers two primary device deployment architectures:</p>
 
 <ul>
-<li><strong>Shared Device:</strong> Designed for multi-user device pools, utilizing encrypted <a href="#sdprintsharebarcodezcreator">barcodes</a> or <a href="../usage/#nfccardzcreator">NFC cards</a> followed by optional secondary verification (facial biometrics, passcode, or SSO). Alternatively, configure <a href="../usage/#mpinprotectedguardiansafe">Guardian Safe with MPIN</a> to secure credentials and personalized settings on Shared Devices using a Master Personal Identification Number (MPIN). </li>
+<li><strong>Shared Device:</strong> Designed for multi-user device pools, utilizing encrypted <a href="#sdprintsharebarcodezcreator">barcodes</a> or <a href="../usage/#nfccardzcreator">NFC cards</a> followed by optional secondary verification (facial biometrics, passcode, or SSO). Alternatively, configure <a href="../usage/#mpinprotectedguardiansafe">Guardian Safe with MPIN</a> to secure credentials and personalized settings on Shared Devices using a Master Personal Identification Number (MPIN).</li>
 
 <li><strong>Personally Assigned Device:</strong> Designed for dedicated, single-user devices, streamlining access via facial biometrics, SSO or a local passcode with secured user privacy.</li>
 </ul>
@@ -263,7 +263,7 @@
 <ul>
 <li><strong><a href="/zebradna">Zebra DNA Cloud</a>:</strong> Provides centralized application management via <strong>My Apps &gt; Zebra Collection</strong> along with an administrative dashboard for operational insights and device usage tracking.</li>
 
-<li><strong><a href="#emm">Enterprise Mobility Management (EMM) system</a>:</strong> Enables administrators to deploy the application and establish usage policies, device controls, and restrictions via <a href="../mc/">Managed Configurations</a>.</li>
+<li><strong><a href="#iiiconfiguresettingsmanagedconfigurations">Enterprise Mobility Management (EMM) system</a>:</strong> Enables administrators to deploy the application and establish usage policies, device controls, and restrictions via <a href="../mc/">Managed Configurations</a>.</li>
 </ul>
 
 <p><a href="#securenfc">Secure NFC</a> extends Identity Guardian authentication by enabling encrypted credential storage on contactless smart cards. The architecture pairs Identity Guardian for policy-driven card reading and user sign-in with zCreator for secure card provisioning and credential encryption, delivering enterprise-grade badge authentication without disrupting existing building access infrastructure.</p>
@@ -358,7 +358,7 @@
 <ul>
 <li><strong>Post-Installation Initialization:</strong> After device installation, Identity Guardian <em>must</em> be launched for configurations to apply successfully.</li>
 
-<li><strong>Single Sign-On (SSO) Compatibility:</strong> Identity Guardian supports Microsoft Entra ID (formerly Azure Active Directory), PingID and OKTA platforms using OAUTH and OAUTH+OIDC authentication protocols.</li>
+<li><strong>Identity provider (IdP) (Optional):</strong> Supports integration with an IdP for single sign-on (SSO) functionality. Supported platforms include Microsoft Entra ID (formerly Azure Active Directory), PingID and OKTA using OAuth and OAuth+OIDC authentication protocols.</li>
 
 <li><strong>Barcode Authentication:</strong> If the workflow requires barcodes to be printed or shared, refer to the <a href="#sdprintsharebarcodezcreator">Print &amp; Share Barcode</a> section for zCreator setup.</li>
 </ul>
@@ -395,23 +395,22 @@
 <ul>
 <li><strong>Operating Frequency:</strong> 13.56 MHz (NFC standard)</li>
 
-<li><strong>Compatible Card Types:</strong> 
+<li><strong>Compatible Card Types:</strong>
 
 
 <ul>
 <li>MIFARE Classic</li>
 
-<li>MIFARE DESFire EV3<br>
-<i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> If the MIFARE DESFire card is secured with a custom Master Key, zCreator cannot write or append to the card.</li></ul>
+<li>MIFARE DESFire EV3<br></li></ul>
 </li>
 
-<li><strong>Storage Formats:</strong> 
+<li><strong>Storage Formats:</strong>
 
 
 <ul>
 <li>Secure Layer (encrypted)</li>
 
-<li>NDEF (unencrypted) </li></ul>
+<li>NDEF (unencrypted)</li></ul>
 </li>
 
 <li><strong>Minimum Capacity:</strong> A minimum card capacity of 4 KB is required to successfully store user enrollment data.</li>
@@ -423,7 +422,7 @@
 
 <h2 id="securenfc" class="anchor"><a class="heading-anchor" href="#securenfc"><span></span></a>Secure NFC</h2>
 
-<p><strong>Secure NFC</strong> provides hardware-level, encrypted authentication for workers using contactless smart cards. Operating alongside the zCreator companion app, Secure NFC enables organization to migrate from unencrypted card storage to encrypted storage with zero-downtime key rotation and multi-application card coexistence with existing enterprise access control systems. </p>
+<p><strong>Secure NFC</strong> provides hardware-level, encrypted authentication for workers using contactless smart cards. Operating alongside the zCreator companion app, Secure NFC enables organization to migrate from unencrypted card storage to encrypted storage with zero-downtime key rotation and multi-application card coexistence with existing enterprise access control systems.</p>
 
 <p>Identity Guardian supports two card data storage architectures:</p>
 
@@ -558,39 +557,45 @@
 <p>Follow these steps:</p>
 
 <ol>
-<li><p>In the Microsoft Entra admin center, navigate to <strong>Applications &gt; App registrations.</strong> Click <strong>New registration.</strong>
-<img alt="image" style="height:450px" src="../../images/3-2/register-app-new.jpg"></p></li>
+<li>In the Microsoft Entra admin center, navigate to <strong>Applications &gt; App registrations.</strong> Click <strong>New registration.</strong>
+<img alt="image" style="height:450px" src="../../images/3-2/register-app-new.jpg"></li>
 
-<li><p>In the <strong>Register an application</strong> screen, enter/select the following, then click <strong>Register.</strong>:</p>
+<li>In the <strong>Register an application</strong> screen, enter/select the following, then click <strong>Register.</strong>:
 
-<p></p><ul>
-<li><strong>Name:</strong> [Enter a name, e.g., Zebra Identity Guardian]</li></ul><p></p>
 
-<p></p></li><li><strong>Supported account type:</strong> Accounts in this organizational directory only (Single tenant)</li><p></p>
+<ul>
+<li><strong>Name:</strong> [Enter a name, e.g., Zebra Identity Guardian]</li>
 
-<p></p><li><strong>Redirect URI:</strong> Public client/native (mobile &amp; desktop) msauth://com.zebra.mdna.els/
-<img alt="image" style="height:525px" src="../../images/3-2/register-app.png"></li><p></p>
+<li><strong>Supported account type:</strong> Accounts in this organizational directory only (Single tenant)</li>
 
-<li><p>Navigate to <strong>Applications &gt; App registrations &gt; Authentication.</strong> Click <strong>Add a platform</strong> then click <strong>Android</strong>.
-<img alt="image" style="height:475px" src="../../images/3-2/configure-platform.jpg"></p></li>
+<li><strong>Redirect URI:</strong> Public client/native (mobile &amp; desktop) msauth://com.zebra.mdna.els/
+<img alt="image" style="height:525px" src="../../images/3-2/register-app.png"></li></ul>
+</li>
 
-<li><p>Enter the following, then click <strong>Configure.</strong></p>
+<li>Navigate to <strong>Applications &gt; App registrations &gt; Authentication.</strong> Click <strong>Add a platform</strong> then click <strong>Android</strong>.
+<img alt="image" style="height:475px" src="../../images/3-2/configure-platform.jpg"></li>
 
-<p></p><ul>
-<li><strong>Package name:</strong> com.zebra.mdna.els</li></ul><p></p>
+<li>Enter the following, then click <strong>Configure.</strong>
 
-<p></p></li><li><strong>Signature hash:</strong> KqmK9tYXpw+eW2lke7US3iG9EAQ=
-<img alt="image" style="height:500px" src="../../images/3-2/configure-app.jpg"></li><p></p>
 
-<li><p>The Android configuration screen displays. Copy and save the <strong>MSAL Configuration</strong>; <em>it is required in a later step.</em> Click <strong>Done.</strong>
-<img alt="image" style="height:500px" src="../../images/3-2/android-config.png"></p>
+<ul>
+<li><strong>Package name:</strong> com.zebra.mdna.els</li>
 
-<p><br></p></li>
+<li><strong>Signature hash:</strong> KqmK9tYXpw+eW2lke7US3iG9EAQ=
+<img alt="image" style="height:500px" src="../../images/3-2/configure-app.jpg"></li></ul>
+</li>
+
+<li>The Android configuration screen displays. Copy and save the <strong>MSAL Configuration</strong>; <em>it is required in a later step.</em> Click <strong>Done.</strong>
+<img alt="image" style="height:500px" src="../../images/3-2/android-config.png"></li>
 </ol>
+
+<p><br></p>
 
 <h4 id="iiadda3rdpartydevicecompliancepartner" class="anchor"><a class="heading-anchor" href="#iiadda3rdpartydevicecompliancepartner"><span></span></a>II. Add a 3rd-party Device Compliance Partner</h4>
 
-<p><strong>When using Microsoft Authenticator for single sign-on (SSO) in shared device mode, a third-party device compliance partner solution can be integrated with Microsoft Intune.</strong> This allows for the collection of device compliance data alongside Intune's own compliance results. The combined data can then be used to develop access policies, offering enhanced protection for the organization and its data. Examples of third-party device compliance partners include solutions such as SOTI MobiControl, VMware Workspace ONE UEM (formerly AirWatch). <em>For guidance on adding a third-party device compliance partner in Intune, consult your EMM or Microsoft's documentation .</em></p>
+<p><strong>When using Microsoft Authenticator for single sign-on (SSO) in shared device mode, a third-party device compliance partner solution can be integrated with Microsoft Intune.</strong> This allows for the collection of device compliance data alongside Intune's own compliance results. The combined data can then be used to develop access policies, offering enhanced protection for the organization and its data. Examples of third-party device compliance partners include solutions such as SOTI MobiControl, VMware Workspace ONE UEM (formerly AirWatch). <em>For guidance on adding a third-party device compliance partner in Intune, consult your EMM or Microsoft's documentation.</em></p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> Microsoft Entra ID SSO with Identity Guardian requires devices managed via Microsoft Intune to be enrolled as <em>corporate-owned dedicated devices with Microsoft Entra ID shared mode.</em></p>
 
 <p><br></p>
 
@@ -616,7 +621,7 @@
 
 <li><strong>Shared Device Mode Registration token:</strong> <code>%SHARED_DEVICE_REG_TOKEN%</code>
 <img alt="image" style="height:400px" src="../../images/3-2/managed-config-shared-device.png">
-_Sample of Managed App Config from SOTI MobiControl. Other EMMs may vary.*</li></ul></li>
+<em>Sample of Managed App Config from SOTI MobiControl. Other EMMs may vary.</em></li></ul></li>
 
 <li><p>Click <strong>Save.</strong></p></li>
 </ol>
@@ -1230,7 +1235,7 @@ Make any other required edits for the user, including multiple roles if needed, 
 </tbody>
 </table></li>
 
-<li><strong>Upload the required APKs to the EMM</strong> via Android Enterprise or the EMM's App Store.
+<li><strong>Upload the required APKs to the EMM</strong> via Android Enterprise or the EMM's App Store. 
 
 
 <ul>
@@ -1249,7 +1254,13 @@ Make any other required edits for the user, including multiple roles if needed, 
 
 <p>If the EMM kiosk configuration is being used, ensure the <strong>zCreator app</strong> package name is included in the allowlist: <code>com.zebra.mdna.zcreator</code></p>
 
-<p><strong>When configuring an EMM profile for Shared Devices,</strong> include the required package and activity names based on specific use cases:</p>
+<p><strong>When configuring an EMM profile for Shared Devices, include the required package and activity names from the table below based on specific use cases.</strong> <i>Only</i> add the activities required for the specific deployment scenario. For example:</p>
+
+<ul>
+<li>Exclude Chrome and Microsoft SSO activities unless the sign-in flow specifically uses Microsoft SSO via Chrome Custom Tabs.</li>
+
+<li>Allowlist the zDNA activity only if the deployment requires launching zDNA directly from the kiosk or Check-in/Check-out screen.</li>
+</ul>
 
 <table class="facelift" style="width:100%; border-collapse: collapse;" border="1" cellpadding="8">
 <thead>
@@ -1262,8 +1273,24 @@ Make any other required edits for the user, including multiple roles if needed, 
 <tbody>
     <tr>
     <td><b>Identity Guardian</b> Authentication</td>
-    <td rowspan="5"><code>com.zebra.mdna.els</code></td>
+    <td rowspan="9"><code>com.zebra.mdna.els</code></td>
     <td><code>com.zebra.mdna.els.authentication.AuthenticationActivity</code></td>
+    </tr>
+    <tr>
+    <td><b>Identity Guardian</b> Authentication</td>
+    <td><code>com.zebra.mdna.els.passwordvault.authentication.AuthenticationActivity</code></td>
+    </tr>
+    <tr>
+    <td><b>Identity Guardian</b> Enrollment</td>
+    <td><code>com.zebra.mdna.els/com.zebra.mdna.els.userEnrollment.activity.EnrollmentActivity</code></td>
+    </tr>
+    <tr>
+    <td><b>Identity Guardian</b> SSO Login</td>
+    <td><code>net.openid.appauth.AuthorizationManagementActivity</code></td>
+    </tr>
+    <tr>
+    <td><b>Identity Guardian</b> SSO Login</td>
+    <td><code>net.openid.appauth.RedirectUriReceiverActivity</code></td>
     </tr>
     <tr>
     <td><b>Guardian Safe:</b> Save Credentials</td>
@@ -1282,9 +1309,19 @@ Make any other required edits for the user, including multiple roles if needed, 
     <td><code>com.zebra.mdna.els.passwordvault.ListCredentialActivity</code></td>
     </tr>
     <tr>
-    <td><b>zDNA Client</b> Launch (if required by deployment workflow)</td>
+    <td><b>Device Guardian</b> Launch</td>
+    <td><code>com.zebra.mdna.dg</code></td>
+    <td><code>com.zebra.mdna.dg.MainActivity</code></td>
+    </tr>
+    <tr>
+    <td><b>zDNA Client</b> Launch</td>
     <td><code>com.zebra.zebradna</code></td>
     <td><code>com.zebra.zebradna.MainActivity</code></td>
+    </tr>
+    <tr>
+    <td><b>License Manager</b> Add License</td>
+    <td><code>com.zebra.licenseuiapp</code></td>
+    <td><code>com.zebra.licenseuiapp.ui.landing.LandingActivity</code></td>
     </tr>
     <tr>
     <td><b>Microsoft SSO</b> with Chrome: Browser Launcher</td>
@@ -1310,14 +1347,6 @@ Make any other required edits for the user, including multiple roles if needed, 
     </tr>
 </tbody>
 </table>
-
-<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Configuration Note:</strong> Add <i>only</i> the activities required for the specific deployment scenario. For example:</p>
-
-<ul>
-<li>Exclude Chrome and Microsoft SSO activities unless the <strong>Shared Device</strong> sign-in flow specifically uses Microsoft SSO via Chrome Custom Tabs.</li>
-
-<li>Similarly, allowlist the zDNA activity only if the deployment requires zDNA to launch directly from the kiosk or Check-in/Check-out screen.</li>
-</ul>
 
 <p><br></p>
 
@@ -1436,13 +1465,13 @@ Make any other required edits for the user, including multiple roles if needed, 
 <p>This video provides step-by-step instructions for setting up Identity Guardian on <strong><em>shared devices</em></strong> using SOTI MobiControl. It covers:</p>
 
 <ol>
-<li>Deploying the Identity Guardian APK file</li>
+<li>Deploy the Identity Guardian APK file.</li>
 
-<li>Automatically launching the app</li>
+<li>Automatically launch the app.</li>
 
-<li>Creating and applying an enrollment profile</li>
+<li>Create and apply an enrollment profile.</li>
 
-<li>Creating and applying an authentication profile</li>
+<li>Create and apply an authentication profile.</li>
 </ol>
 
 <p><strong>Note:</strong> For <strong><em>personally assigned devices,</em></strong> select <strong>Personally Assigned</strong> from <strong>Application Mode</strong> under the <strong><a href="../mc/#usagemode">Usage Mode</a></strong> section. This creates a profile that includes both enrollment and authentication configurations.</p>
@@ -1453,14 +1482,16 @@ Make any other required edits for the user, including multiple roles if needed, 
 
 <h4 id="vmwareworkspaceoneuem" class="anchor"><a class="heading-anchor" href="#vmwareworkspaceoneuem"><span></span></a>VMware Workspace ONE UEM</h4>
 
-<p>This video provides step-by-step instructions for setting up Identity Guardian on <strong><em>shared devices</em></strong> using VMware Workspace One UEM. This process involves the following steps (Note: Step 3 is an additional configuration required, not covered in the video):</p>
+<p>This video provides step-by-step instructions for deploying and configuring Identity Guardian on <strong><em>shared devices</em></strong> using VMware Workspace One UEM. </p>
+
+<p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Note:</strong> Steps 3, 4, and 5 represent mandatory, supplemental configurations that are not covered in the video.</p>
 
 <ol>
-<li><p>Deploying the Identity Guardian APK file.</p></li>
+<li><p>Deploy the Identity Guardian APK file.</p></li>
 
-<li><p>Creating and applying an enrollment profile.</p></li>
+<li><p>Create and apply an enrollment profile.</p></li>
 
-<li><p><strong>Adding Custom XML Settings (Required):</strong> Supplementing the video, a custom XML <em>must</em> be deployed. In the Workspace One UEM console, navigate to <strong>Resources &gt; Profile &amp; Baselines &gt; Profiles &gt; Add</strong> and select <strong>Custom Settings</strong> (navigation paths may vary depending on console version). Add the following XML content:</p>
+<li><p><strong>Configure Custom XML Settings (Required):</strong> A custom XML <em>must</em> be deployed. In the Workspace One UEM console, navigate to <strong>Resources &gt; Profile &amp; Baselines &gt; Profiles &gt; Add</strong> and select <strong>Custom Settings</strong> (navigation paths may vary based on console version). Add the following XML content:</p>
 
 <pre class="prettyprint"><code>&lt;characteristic type="com.android.agent.miscellaneousSettingsGroup" uuid="2c787987-1c4a-4eaa-8cd4-3acb39b8f97f"&gt;
 &lt;parm name="cicoBroadcastApps" value="com.zebra.mdna.els" /&gt;
@@ -1468,6 +1499,56 @@ Make any other required edits for the user, including multiple roles if needed, 
 </code></pre>
 
 <p><img alt="image" style="height:250px" src="../../images/3-2/aw-custom-settings-xml.png"></p></li>
+
+<li><p><strong>Add the following package names and activities to the EMM allowlist.</strong> These are required in addition to the standard entries documented in the <a href="#iiconfigureemmallowlistingshareddeviceskiosks">EMM Activity Allowlist</a>:</p>
+
+<table class="facelift" style="width:80%; border-collapse: collapse;" border="1" cellpadding="8">
+<thead>
+    <tr style="background-color:#dce8ef; text-align: left;"> 
+    <th>Package</th>
+    <th>Activity</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td><code>com.android.chrome</code></td>
+        <td><code>net.openid.appauth.AuthorizationManagementActivity</code></td>
+    </tr>
+    <tr>
+        <td><code>com.android.chrome</code></td>
+        <td><code>com.microsoft.identity.common.internal.broker.BrokerActivity</code></td>
+    </tr>
+    <tr>
+        <td><code>com.android.chrome</code></td>
+        <td><code>net.openid.appauth.RedirectUriReceiverActivity</code></td>
+    </tr>
+    <tr>
+        <td><code>com.zebra.oemconfig.release</code></td>
+        <td><code>com.zebra.oemconfig.release.MainActivity</code></td>
+    </tr>
+</tbody>
+</table></li>
+
+<li><p><strong>Configure app data exclusion for Check-in/Check-out.</strong> When using Check-in/Check-out with Device Guardian, add the following Android package names to the data and cache exclusion list. This prevents necessary data from being wiped out when a user logs out.</p>
+
+<ul>
+<li>com.zebra.mdna.els</li>
+
+<li>com.zebra.zebradna</li>
+
+<li>com.zebra.oemconfig.release</li>
+
+<li>com.zebra.licenseuiapp</li>
+
+<li>com.zebra.mdna.dg</li>
+
+<li>com.displaylink.desktop.oem</li>
+
+<li>com.zebra.workstationconnect.release</li>
+
+<li>com.symbol.tool.stagenow</li>
+
+<li>com.airwatch.browser</li></ul></li>
 
 <li><p>Automatically launching Identity Guardian.</p></li>
 </ol>
@@ -1677,7 +1758,7 @@ Make any other required edits for the user, including multiple roles if needed, 
 
 <p><strong>Enrollment Methods:</strong></p>
 
-<p>Identity Guardian offers three distinct enrollment methods for <em>shared devices:</em></p>
+<p>Identity Guardian offers two distinct enrollment methods for <em>shared devices:</em></p>
 
 <ul>
 <li><strong><a href="#standardenrollment">Standard Enrollment</a> -</strong> <em>This method separates the enrollment and authentication processes across two different devices.</em> It is ideal for scenarios where enrollment is centrally managed, while authentication is distributed.
@@ -1691,7 +1772,7 @@ Make any other required edits for the user, including multiple roles if needed, 
 
 <li><strong><a href="#selfenrollment">Self-Enrollment</a> -</strong> <em>This method combines both enrollment and authentication on the same shared device.</em> The device is configured with a unified Authentication profile that incorporates enrollment settings defined by the administrator. Users complete enrollment and authenticate directly on the same shared device. This streamlined approach is best suited for environments where users independently manage their enrollment and authentication on shared devices.
 <!-- 
-- **[Admin-Controlled Enrollment](#admincontrolledenrollment) -** _This method enables non-SSO users managed by Zebra DNA Cloud to self-enroll through the Identity Guardian app on-device or a web browser on a host PC._ It extends self-service onboarding without requiring manual administrator setup interventions.
+- **[Administrator-Controlled Enrollment](#administratorcontrolledenrollment) -** _This method enables non-SSO users managed by Zebra DNA Cloud to self-enroll through the Identity Guardian app on-device or a web browser on a host PC._ It extends self-service onboarding without requiring manual administrator setup interventions.
   - **Administrators create user records in Zebra DNA Cloud.**
   - **Users initiate the one-time PIN email** through either the Identity Guardian app on the device or the web browser on a host PC using the invitation username. Enrollment is completed by authenticating the received one-time PIN, setting a passcode, and provisioning physical barcode or NFC credentials.
 --></li>
@@ -1718,7 +1799,7 @@ Make any other required edits for the user, including multiple roles if needed, 
 <li><strong>Self-Enrollment -</strong> The user must manually save the NFC data or write it to the card.</li></ul>
 </li>
 
-<li><strong><a href="../usage/#mpinprotectedguardiansafe">Guardian Safe with MPIN</a> -</strong> Secures credentials and personalized settings on Shared Devices using a Master Personal Identification Number (MPIN), enabling profile access across multiple sessions and devices without replacing administrator-configured authentication factors. </li>
+<li><strong><a href="../usage/#mpinprotectedguardiansafe">Guardian Safe with MPIN</a> -</strong> Secures credentials and personalized settings on Shared Devices using a Master Personal Identification Number (MPIN), enabling profile access across multiple sessions and devices without replacing administrator-configured authentication factors.</li>
 </ul>
 
 <p><strong>Authentication Process:</strong></p>
@@ -1762,7 +1843,7 @@ Make any other required edits for the user, including multiple roles if needed, 
 <p>To enable Standard Enrollment on shared devices, administrators must follow these steps:</p>
 
 <ol>
-<li><strong>Create and deploy separate Enrollment and Authentication profiles:</strong> These profiles enable user enrollment and authentication; for guidance, see <a href="../setup/#emm">EMM Setup</a>.</li>
+<li><strong>Create and deploy separate Enrollment and Authentication profiles:</strong> These profiles enable user enrollment and authentication; for guidance, see <a href="#iiiconfiguresettingsmanagedconfigurations">EMM Setup</a>.</li>
 
 <li><strong>(Optional) Install and configure zCreator app if user barcodes or NFC cards will be used:</strong> For barcodes, this is optional since Standard Enrollment allows barcodes to be saved after enrollment without requiring the app. Download zCreator from <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/identity-guardian.html">Zebra support portal</a>.</li>
 
@@ -1802,7 +1883,7 @@ Make any other required edits for the user, including multiple roles if needed, 
 <li><strong>Enrollment Storage Method:</strong> [Select <strong>NFC</strong> or <strong>Barcode</strong>]</li></ul>
 </li>
 
-<li><a href="#nfcconfiguration">NFC Configurations</a>: Applies for NFC card usage.
+<li><a href="../mc/#nfcconfiguration-1">NFC Configurations</a>: Applies for NFC card usage.
 
 
 <ul>
@@ -1812,11 +1893,13 @@ Make any other required edits for the user, including multiple roles if needed, 
 
 <li><strong>MIFARE Classic Keys:</strong> [Enter the 12-character hexadecimal <strong>Primary Read/Write Keys</strong> and <strong>Secondary Read/Write Keys.</strong>]</li>
 
-<li><strong>DESFire EV3 Keys:</strong> [Enter the 32-character hexadecimal <strong>Primary Read/Write Keys</strong> and <strong>Secondary Read/Write Keys.</strong>]</li></ul>
+<li><strong>DESFire EV3 Keys:</strong> [Enter the 32-character hexadecimal <strong>Primary Read/Write Keys</strong> and <strong>Secondary Read/Write Keys.</strong>]</li>
+
+<li><strong>Card Master Key:</strong> [If the DESFire NFC card is secured, enter the 32- or 48-character hexadecimal custom Master Key.]</li></ul>
 </li></ul>
 </li>
 
-<li><strong>If applicable, install zCreator and create a profile for barcode use:</strong> 
+<li><strong>If applicable, install zCreator and create a profile for barcode use:</strong>
 
 
 <ul>
@@ -1852,7 +1935,7 @@ Make any other required edits for the user, including multiple roles if needed, 
 </li></ul>
 </li>
 
-<li><strong>If applicable, install zCreator and create a profile for NFC use:</strong> 
+<li><strong>If applicable, install zCreator and create a profile for NFC use:</strong>
 
 
 <ul>
@@ -1870,7 +1953,9 @@ Make any other required edits for the user, including multiple roles if needed, 
 
 <li><strong>MIFARE Classic Keys:</strong> [Enter the 12-character hexadecimal <strong>Primary Read/Write Keys</strong> and <strong>Secondary Read/Write Keys.</strong>]</li>
 
-<li><strong>DESFire EV3 Keys:</strong> [Enter the 32-character hexadecimal <strong>Primary Read/Write Keys</strong> and <strong>Secondary Read/Write Keys.</strong>]</li></ul>
+<li><strong>DESFire EV3 Keys:</strong> [Enter the 32-character hexadecimal <strong>Primary Read/Write Keys</strong> and <strong>Secondary Read/Write Keys.</strong>]</li>
+
+<li><strong>Card Master Key:</strong> [For Secure NFC, enter a card master key]</li></ul>
 </li></ul>
 </li>
 
@@ -1919,14 +2004,14 @@ Make any other required edits for the user, including multiple roles if needed, 
 <ol>
 <li><strong>Install and configure the zCreator app.</strong> This app is required, allowing for barcode printing and sharing or NFC card use. Download zCreator from <a href="https://www.zebra.com/us/en/support-downloads/software/mobile-computer-software/identity-guardian.html">Zebra support portal</a>.</li>
 
-<li><strong>Create and deploy an Authentication profile.</strong> This enables user enrollment and authentication; refer to <a href="../setup/#emm">EMM Setup</a>.</li>
+<li><strong>Create and deploy an Authentication profile.</strong> This enables user enrollment and authentication; refer to <a href="#iiiconfiguresettingsmanagedconfigurations">Configure Settings</a>.</li>
 
 <li><strong>Guide users to complete enrollment directly on the device.</strong></li>
 </ol>
 
 <h5 id="configuration-1" class="anchor"><a class="heading-anchor" href="#configuration-1"><span></span></a>Configuration</h5>
 
-<p>Step-by-step Configuration (refer to <a href="../setup/#emm">EMM Setup</a>):</p>
+<p>Step-by-step Configuration (refer to <a href="#iiiconfiguresettingsmanagedconfigurations">Configure Settings</a>):</p>
 
 <ol>
 <li><strong>Install zCreator on the devices.</strong></li>
@@ -2159,11 +2244,9 @@ Make any other required edits for the user, including multiple roles if needed, 
 <p>After enrollment is complete, users can <a href="../usage/#signinauthentication">authenticate and sign in</a> to the device.</p>
 
 <!-- 
----
+#### Administrator-Controlled Enrollment
 
-#### Admin-Controlled Enrollment
-
-**Admin-Controlled Enrollment** enables non-SSO shared-device users managed by [Zebra DNA Cloud](/zebradna) to self-enroll, either through a web browser on a host PC or the Identity Guardian app on the device. This extends self-service enrollment to non-SSO environments while eliminating manual administrator setup interventions.
+**Administrator-Controlled Enrollment** enables non-SSO shared-device users managed by [Zebra DNA Cloud](/zebradna) to self-enroll, either through a web browser on a host PC or the Identity Guardian app on the device. This extends self-service enrollment to non-SSO environments while eliminating manual administrator setup interventions.
 
 After an administrator creates the user record in ZDNA Cloud, the system sends an email invitation initiating enrollment. Operational behavior depends on the configured Enrollment Type:
 
@@ -2172,7 +2255,7 @@ After an administrator creates the user record in ZDNA Cloud, the system sends a
 
 For enrolled users, self-service profile updates and lost credential replacements are available. The administrator approves credential replacement requests through the [Device Users](/zebradna/latest/usage/#deviceusers) page on ZDNA Cloud.
 
-For user workflow, refer to the [Admin-Controlled Enrollment](../usage/#admincontrolledenrollment) guide.
+For user workflow, refer to the [Administrator-Controlled Enrollment](../usage/#administratorcontrolledenrollment) guide.
 
 Self-enrollment is accessible for non-SSO users through issued email invitations containing a one-time PIN.
 
@@ -2211,7 +2294,7 @@ The following conditions must be met prior to initiating enrollment:
 - **Profile Assignment:** Identity Guardian profile deployed to the device with the following Managed Configurations:
   - **[Enrollment Configuration](../mc/#enrollmentconfiguration):** Configured per enrollment requirements (e.g., Passcode Rules, Enrollment Storage Method, etc.).
   - **[Facial Authentication Configuration](../mc/#facialauthenticationconfiguration):** Configured per facial authentication requirements.
-  - **[Admin Controlled Enrollment](../mc/#admincontrolledenrollment):** **Enrollment Type** is set to `IG` and adjust the remaining options as needed (such as reminder frequency and PIN expiration).
+  - **[Administrator-Controlled Enrollment](../mc/#administratorcontrolledenrollment):** **Enrollment Type** is set to `IG` and adjust the remaining options as needed (such as reminder frequency and PIN expiration).
 -->
 
 <hr>
@@ -2443,7 +2526,7 @@ Toggle on <strong>Network Parameters</strong> and enter the IP address of the ne
 
 <h4 id="profilesetup" class="anchor"><a class="heading-anchor" href="#profilesetup"><span></span></a>Profile Setup</h4>
 
-<p>For personally assigned devices, administrators create a profile encompassing both enrollment and authentication configurations (see <a href="../setup/#emm">EMM Setup</a>):</p>
+<p>For personally assigned devices, administrators create a profile encompassing both enrollment and authentication configurations (see <a href="#iiiconfiguresettingsmanagedconfigurations">Configure Settings</a>):</p>
 
 <ol>
 <li><strong>Create a profile:</strong> Use <a href="../mc">Managed Configurations</a> to configure a profile. Under <strong>Usage Mode,</strong> set <strong>Application Mode = PERSONALLY ASSIGNED.</strong> Configure all necessary <a href="../mc/">Managed Configuration</a> settings, such as Enrollment, Authentication, and SSO Authentication.</li>
@@ -2678,12 +2761,13 @@ Toggle on <strong>Network Parameters</strong> and enter the IP address of the ne
 
 <li><p>Look for the <strong>Pass-Through Command</strong> field and copy/paste this code to enable automatic updates:</p>
 
-<p><wap-provisioningdoc>
-  <characteristic version="10.3" type="AppMgr">
-  <parm name="Action" value="AllowApplicationUpgrade">
-  <parm name="Package" value="com.zebra.mdna.els">
-  </parm></parm></characteristic>
-  </wap-provisioningdoc></p></li></ol>
+<pre class="prettyprint"><code>&lt;wap-provisioningdoc&gt;
+&lt;characteristic version="10.3" type="AppMgr"&gt;
+&lt;parm name="Action" value="AllowApplicationUpgrade"/&gt;
+&lt;parm name="Package" value="com.zebra.mdna.els"/&gt;
+&lt;/characteristic&gt;
+&lt;/wap-provisioningdoc&gt;
+</code></pre>
 
 <p>To disable automatic updates, use:</p>
 
@@ -2693,7 +2777,7 @@ Toggle on <strong>Network Parameters</strong> and enter the IP address of the ne
 &lt;parm name="Package" value="com.zebra.mdna.els"/&gt;
 &lt;/characteristic&gt;
 &lt;/wap-provisioningdoc&gt;
-</code></pre></li>
+</code></pre></li></ol></li>
 </ul>
 
 <p><i class="fa fa-exclamation-triangle" style="color:#FFA500;"></i> <strong>Behavior Persistence Note:</strong> This setting persists after a device reboot or an OTA upgrade.</p>
